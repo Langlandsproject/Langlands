@@ -1,0 +1,71 @@
+site:
+  title: Reductive Linear Algebraic Groups Knowledge DAG
+  short_title: Reductive Groups
+graph:
+  max_visible_nodes: 120
+  max_expand_nodes: 80
+  proof_plans: selected-only
+sources:
+  require_source_spans: false
+  library:
+  - id: borel-linear-algebraic-groups
+    title: Linear Algebraic Groups
+    short: Borel LAG
+    authors: Armand Borel
+  - id: springer-linear-algebraic-groups
+    title: Linear Algebraic Groups
+    short: Springer LAG
+    authors: T. A. Springer
+  - id: humphreys-linear-algebraic-groups
+    title: Linear Algebraic Groups
+    short: Humphreys LAG
+    authors: James E. Humphreys
+  - id: sga3
+    title: Schemas en groupes
+    short: SGA 3
+    authors: M. Demazure and A. Grothendieck
+  - id: conrad-reductive-group-schemes
+    title: Reductive Group Schemes
+    short: Conrad RGS
+    authors: Brian Conrad
+  - id: bruhat-tits-groupes-reductifs-i
+    title: Groupes reductifs sur un corps local, I
+    short: Bruhat-Tits I
+    authors: Francois Bruhat and Jacques Tits
+  - id: bruhat-tits-groupes-reductifs-ii
+    title: Groupes reductifs sur un corps local, II
+    short: Bruhat-Tits II
+    authors: Francois Bruhat and Jacques Tits
+  - id: brylinski-deligne-central-extensions
+    title: Central Extensions of Reductive Groups by K_2
+    short: Brylinski-Deligne
+    authors: Jean-Luc Brylinski and Pierre Deligne
+  - id: kottwitz-isocrystals
+    title: Isocrystals with Additional Structure
+    short: Kottwitz
+    authors: Robert E. Kottwitz
+  - id: kaletha-rigid-inner-forms
+    title: Rigid Inner Forms of Real and p-adic Groups
+    short: Kaletha Rigid Inner Forms
+    authors: Tasho Kaletha
+topics:
+- id: foundational_inputs
+  title: Foundational Inputs
+- id: linear_algebraic_groups
+  title: Linear Algebraic Groups
+- id: descent_and_forms
+  title: Galois Descent, Cohomology, and Forms
+- id: reductive_structure
+  title: Reductive Group Structure
+- id: root_data_and_duality
+  title: Root Data and Duality
+- id: classical_and_exceptional_groups
+  title: Classical and Exceptional Groups
+- id: buildings_and_parahorics
+  title: Buildings and Parahorics
+- id: kottwitz_structures
+  title: Kottwitz Structures
+- id: nilpotent_orbits
+  title: Nilpotent Orbits
+- id: bd_covers
+  title: Brylinski-Deligne and Metaplectic Covers
