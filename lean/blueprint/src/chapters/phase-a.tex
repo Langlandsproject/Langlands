@@ -99,20 +99,35 @@ its structure morphism.
 \section{Trivial group scheme and base change}
 
 \begin{definition}[Trivial group scheme]\label{def:trivial-group}\issue{5}
+\lean{Langlands.AlgebraicGeometry.trivialGrpObj}
+\leanok
 \uses{def:affine-group-scheme}
 For any scheme $S$, the \emph{trivial group scheme} $\mathbf{1}_S$ over $S$
 is $S$ itself with the identity structure morphism and the trivial group
 object structure (the unit object of the cartesian monoidal structure on
 $\Over{S}$). It satisfies \texttt{IsAlgebraicGroup} $\mathbf{1}_S\,S$.
+In Lean, the underlying \texttt{Scheme.Over} instance is
+\texttt{schemeOverSelf} and the group-object instance is
+\texttt{trivialGrpObj}; the \texttt{IsAlgebraicGroup} aggregator is then
+inferred automatically.
 \end{definition}
 
 \begin{lemma}[Base change preserves \texttt{IsAlgebraicGroup}]
   \label{lem:base-change-algebraic}\issue{5}
+\lean{Langlands.AlgebraicGeometry.isAlgebraicGroup_pullback}
+\leanok
 \uses{def:algebraic-group}
 Let $f : T \to S$ be a morphism of schemes, and let $G$ be an algebraic group
 over $S$. Then the pullback $G \times_S T$ is an algebraic group over $T$.
-The Lean proof composes Mathlib's
-\texttt{Scheme.GrpObjAsOverPullback} (preservation of the group object
-structure) with base-change of \texttt{IsAffineHom} and
-\texttt{LocallyOfFiniteType}.
 \end{lemma}
+\begin{proof}
+\leanok
+The \texttt{GrpObj} part is automatic via Mathlib's
+\texttt{Scheme.GrpObjAsOverPullback}. The \texttt{LocallyOfFiniteType}
+part is automatic via Mathlib's existing pullback instance. The
+\texttt{IsAffineHom} part follows from the
+\texttt{MorphismProperty.IsStableUnderBaseChange} evidence on
+\texttt{@IsAffineHom}, packaged in the local helper
+\texttt{isAffineHom\_pullback\_snd}. The Phase A2 aggregator forwarder
+then synthesizes \texttt{IsAlgebraicGroup} from the three pieces.
+\end{proof}
