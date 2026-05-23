@@ -6,6 +6,7 @@ import LanglandsLean.AlgebraicGeometry.Examples.Trivial
 import LanglandsLean.AlgebraicGeometry.HopfSpec
 import LanglandsLean.AlgebraicGeometry.Comodule
 import LanglandsLean.AlgebraicGeometry.HopfConvolution
+import LanglandsLean.AlgebraicGeometry.HopfObjectBridge
 
 /-!
 # AlgebraicGeometry umbrella

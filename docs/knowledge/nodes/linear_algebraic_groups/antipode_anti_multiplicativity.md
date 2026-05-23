@@ -9,9 +9,15 @@ topics:
 uses:
 - foundational_inputs.hopf_algebras
 - linear_algebraic_groups.coordinate_rings_and_hopf_algebras
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.HopfObjectBridge
+  declarations:
+    - Langlands.AlgebraicGeometry.HopfObjectBridge.antipode_anti_multiplicativity
 verification:
   statement: accepted
   proof: accepted
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the lemma stated for arbitrary Hopf algebras (no commutativity assumption)?"
