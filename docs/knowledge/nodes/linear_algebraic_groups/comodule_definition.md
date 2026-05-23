@@ -9,9 +9,16 @@ topics:
 uses:
 - linear_algebraic_groups.coordinate_rings_and_hopf_algebras
 - foundational_inputs.hopf_algebras
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.Comodule
+  declarations:
+    - Langlands.AlgebraicGeometry.Comodule
+    - Langlands.AlgebraicGeometry.Comodule.Hom
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the definition stated over an arbitrary commutative semiring?"
