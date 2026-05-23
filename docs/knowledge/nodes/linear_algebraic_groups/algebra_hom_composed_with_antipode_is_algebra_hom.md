@@ -8,9 +8,15 @@ topics:
 - linear_algebraic_groups
 uses:
 - linear_algebraic_groups.antipode_anti_multiplicativity
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.HopfObjectBridge
+  declarations:
+    - Langlands.AlgebraicGeometry.HopfAntipode.algHomCompAntipode
 verification:
   statement: accepted
   proof: accepted
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "What is the minimal commutativity hypothesis — on the source A, on the target B, or both?"

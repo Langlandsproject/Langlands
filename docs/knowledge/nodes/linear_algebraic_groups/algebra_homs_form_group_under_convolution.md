@@ -9,9 +9,15 @@ topics:
 uses:
 - linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
 - linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.AlgHomGroup
+  declarations:
+    - Langlands.AlgebraicGeometry.AlgHomGroup.instGroup
 verification:
   statement: accepted
   proof: accepted
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the statement at the right level — Hopf source, commutative target — and is the group commutative when the bialgebra is cocommutative?"

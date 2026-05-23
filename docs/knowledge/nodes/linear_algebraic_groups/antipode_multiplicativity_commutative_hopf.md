@@ -8,9 +8,15 @@ topics:
 - linear_algebraic_groups
 uses:
 - linear_algebraic_groups.antipode_anti_multiplicativity
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.HopfObjectBridge
+  declarations:
+    - Langlands.AlgebraicGeometry.HopfAntipode.antipode_mul_of_commutative
 verification:
   statement: accepted
   proof: accepted
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the hypothesis 'A is a commutative Hopf algebra' the right level — does the statement fail without commutativity?"
