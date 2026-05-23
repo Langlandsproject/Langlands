@@ -8,7 +8,7 @@ topics:
 - linear_algebraic_groups
 uses:
 - linear_algebraic_groups.algebra_homs_form_group_under_convolution
-- linear_algebraic_groups.hopf_spec_functor
+- linear_algebraic_groups.spec_representability_via_global_sections
 - linear_algebraic_groups.affine_group_scheme_definition
 verification:
   statement: accepted
@@ -38,44 +38,60 @@ over \(\operatorname{Spec} R\).
 We use the Yoneda lemma to bypass the explicit construction of
 multiplication, identity, and inverse morphisms.
 
-Step 1 — *the group-valued presheaf.* For any commutative \(R\)-algebra
-\(B\), the
-[[node:linear_algebraic_groups.algebra_homs_form_group_under_convolution|set of \(R\)-algebra homomorphisms \(\operatorname{Hom}_{R\text{-Alg}}(A, B)\) is a group under convolution]].
-The assignment \(B \mapsto (\operatorname{Hom}_{R\text{-Alg}}(A, B), *)\)
-is functorial in \(B\) (post-composition by a morphism
-\(B \to B'\) sends a convolution product to a convolution product, by
-the algebra-hom property of the post-composition map). Equivalently,
-we obtain a functor
+*Setup.* The category \(\mathsf{Over}(\operatorname{Spec} R)\) is
+Cartesian monoidal (binary products are pullbacks over \(\operatorname{Spec} R\),
+terminal object is \(\operatorname{Spec} R\) itself). This is
+\(\texttt{Over.cartesianMonoidalCategory}\) in Mathlib; it is the
+ambient structure needed for the notion of group object in
+\(\mathsf{Over}(\operatorname{Spec} R)\).
+
+Step 1 — *the group-valued presheaf, defined for all \(T\).* For any
+object \(T \in \mathsf{Over}(\operatorname{Spec} R)\) (not necessarily
+affine), the global-sections ring \(\Gamma(T, \mathcal{O}_T)\) is a
+commutative \(R\)-algebra via the structure morphism
+\(T \to \operatorname{Spec} R\). By
+[[node:linear_algebraic_groups.algebra_homs_form_group_under_convolution|the convolution group structure]],
+the set
+\(\operatorname{Hom}_{R\text{-Alg}}\bigl(A,\, \Gamma(T, \mathcal{O}_T)\bigr)\)
+is a group. The assignment
 
 \[
-F : (\mathsf{CommAlg}_R)^{\mathrm{op}} \;\longrightarrow\; \mathsf{Grp},
-\qquad F(B) = (\operatorname{Hom}_{R\text{-Alg}}(A, B), *).
+F : (\mathsf{Over}(\operatorname{Spec} R))^{\mathrm{op}} \longrightarrow \mathsf{Grp},
+\qquad
+F(T) = \operatorname{Hom}_{R\text{-Alg}}\bigl(A,\, \Gamma(T, \mathcal{O}_T)\bigr)
 \]
 
-Composing with the equivalence \(\mathsf{Over}(\operatorname{Spec} R) \simeq (\mathsf{CommAlg}_R)^{\mathrm{op}}\)
-(restricted to affine objects) and extending to all of
-\(\mathsf{Over}(\operatorname{Spec} R)\) via Zariski sheafification (or
-working with the restricted version when convenient) yields a
-group-valued presheaf
-\(\widetilde{F} : (\mathsf{Over}(\operatorname{Spec} R))^{\mathrm{op}} \to \mathsf{Grp}\).
+is functorial in \(T\): a morphism \(g : T' \to T\) gives
+\(g^\sharp : \Gamma(T, \mathcal{O}_T) \to \Gamma(T', \mathcal{O}_{T'})\)
+as a ring hom, and post-composing an algebra hom
+\(\varphi : A \to \Gamma(T, \mathcal{O}_T)\) with \(g^\sharp\) preserves
+convolution (the convolution product depends only on \(\Delta_A\) and
+on the target's multiplication, both of which are preserved by ring
+homs).
 
-Step 2 — *representability.* Under the standard
-[[node:linear_algebraic_groups.hopf_spec_functor|algSpec equivalence]]
-between commutative \(R\)-algebras and affine \(R\)-schemes,
-\(\operatorname{Hom}_{R\text{-Alg}}(A, B)\) is naturally identified
-with \(\operatorname{Hom}_{\mathsf{Over}(\operatorname{Spec} R)}(\operatorname{Spec} B, \operatorname{Spec} A)\).
-Hence the underlying set-valued functor \(\widetilde{F} \circ \text{forget}\)
+Step 2 — *representability.* By
+[[node:linear_algebraic_groups.spec_representability_via_global_sections|the \(\operatorname{Spec} \dashv \Gamma\) adjunction]],
+there is a natural bijection of sets
+
+\[
+\operatorname{Hom}_{\mathsf{Over}(\operatorname{Spec} R)}(T,\, \operatorname{Spec} A)
+\;\;\simeq\;\;
+\operatorname{Hom}_{R\text{-Alg}}\bigl(A,\, \Gamma(T, \mathcal{O}_T)\bigr)
+\;=\; F(T).
+\]
+
+Hence the underlying set-valued functor \(F \circ \operatorname{forget}\)
 is the Yoneda presheaf representable by \(\operatorname{Spec} A\).
 
 Step 3 — *Yoneda yields the group object structure.* Applying
 \(\operatorname{GrpObj.ofRepresentableBy}\) (Mathlib's
 \(\texttt{CategoryTheory.Monoidal.Cartesian.Grp\_}\)) to the
-group-valued presheaf \(\widetilde{F}\) and the representability
-witness from Step 2 produces a canonical \(\operatorname{GrpObj}\)
-structure on \(\operatorname{Spec} A\) in
-\(\mathsf{Over}(\operatorname{Spec} R)\). The multiplication, identity,
-and inverse morphisms of this group object are uniquely determined by
-the group structure on the points functor.  
+group-valued presheaf \(F\) and the representability witness from
+Step 2 produces a canonical \(\operatorname{GrpObj}\) structure on
+\(\operatorname{Spec} A\) in \(\mathsf{Over}(\operatorname{Spec} R)\).
+The multiplication, identity, and inverse morphisms of this group
+object are uniquely determined (by Yoneda) by the group structure on
+the points functor.  
 \(\square\)
 
 **Remark.** This construction bypasses the explicit dualization of the

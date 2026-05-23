@@ -8,6 +8,7 @@ topics:
 - linear_algebraic_groups
 uses:
 - linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme
+- linear_algebraic_groups.hopf_spec_grpobj_via_yoneda
 - foundational_inputs.affine_schemes
 - foundational_inputs.hopf_algebras
 lean:
@@ -42,13 +43,13 @@ Let \(R\) be a commutative ring. The classical Spec functor
 restricts to a functor on commutative \(R\)-algebras
 
 \[
-\operatorname{algSpec}_R : (\mathsf{CommAlgCat}\,R)^{\mathrm{op}} \to \mathsf{Over}(\operatorname{Spec} R)
+\operatorname{algSpec}_R : (\mathsf{CommAlgCat}\,R)^{\mathrm{op}} \to \mathsf{Over}(\operatorname{Spec} R),
 \]
 
 sending a commutative \(R\)-algebra \(A\) to the affine scheme
 \(\operatorname{Spec} A\), regarded as a scheme over \(\operatorname{Spec}
-R\) via the structure morphism \(\operatorname{Spec}\) of the algebra
-map \(R \to A\). The functor is the composition of the equivalence
+R\) via the structure morphism \(\operatorname{Spec}(R \to A)\). The
+functor is the composition of the equivalence
 \(\mathsf{CommAlgCat}\,R \simeq R\,/\,\mathsf{CommRingCat}\) with the
 opposite of the equivalence \(\mathsf{Over}(\operatorname{Spec} R) \simeq
 (\operatorname{Spec} R\,/\,\mathsf{Scheme})^{\mathrm{op}}\) and
@@ -63,12 +64,42 @@ to group objects yields the **Spec functor on Hopf algebras**:
   \longrightarrow \mathsf{Grp}(\mathsf{Over}(\operatorname{Spec} R)).
 \]
 
-In the project's Lean development, \(\texttt{algSpec}\) is implemented
-directly as the composition above. The Hopf-level functor
-\(\texttt{hopfSpec}\) is declared but not yet implemented (placeholder
-with \(\texttt{sorry}\)): the body \(\texttt{(algSpec R).mapGrp}\)
-requires \(\texttt{Functor.Monoidal}\) on \(\texttt{algSpec R}\), which
-in turn requires monoidal-category instances on the intermediate
-categories (\((R\,/\,\mathsf{CommRingCat})^{\mathrm{op}}\) and
-\(\mathsf{Over}(\operatorname{op} R)\)) that are not yet in Mathlib
-master. An object-level hand-roll is a viable alternative path.
+## Construction via Yoneda
+
+The naive approach \((\operatorname{algSpec}_R).\operatorname{mapGrp}\)
+requires \(\operatorname{algSpec}_R\) to be a monoidal functor, which in
+turn requires monoidal-category instances on the intermediate
+categories \((R\,/\,\mathsf{CommRingCat})^{\mathrm{op}}\) and
+\(\mathsf{Over}(\operatorname{op} R)\) that are not in Mathlib master.
+
+We adopt instead the **Yoneda construction**:
+
+- **Object level**: for each commutative \(R\)-Hopf algebra \(A\),
+  [[node:linear_algebraic_groups.hopf_spec_grpobj_via_yoneda|the group
+  object structure on \(\operatorname{Spec} A\)]] is produced by
+  \(\operatorname{GrpObj.ofRepresentableBy}\) applied to the
+  group-valued points presheaf
+  \(T \mapsto \operatorname{Hom}_{R\text{-Alg}}(A, \Gamma(T, \mathcal{O}_T))\).
+  Set
+  \(\operatorname{hopfSpec}_R(A) := \bigl(\operatorname{algSpec}_R(A),\, \text{this }\operatorname{GrpObj}\bigr)\).
+
+- **Morphism level**: a morphism of Hopf algebras \(f : A \to A'\) is in
+  particular an algebra hom; \(\operatorname{algSpec}_R(f) : \operatorname{Spec} A' \to \operatorname{Spec} A\)
+  is a morphism in \(\mathsf{Over}(\operatorname{Spec} R)\). Because both
+  \(\operatorname{GrpObj}\) structures are defined by Yoneda from the
+  convolution group structure on algebra homs, and post-composition by
+  \(f\) is a group hom on the convolution side (since \(f\) preserves
+  the comultiplication, counit, and antipode), the induced morphism is
+  a group object morphism.
+
+- **Functoriality**: identity and composition follow from
+  \(\operatorname{algSpec}_R\) being a functor, plus the Yoneda
+  determination of the group-object morphism.
+
+In the project's Lean development, the object-level construction lives
+in
+[[node:linear_algebraic_groups.hopf_spec_grpobj_via_yoneda|the dedicated
+node]]; functoriality is established on top of it. The combined
+package \(\operatorname{hopfSpec}_R\) is what replaces the
+\(\texttt{sorry}\) placeholder in
+\(\texttt{lean/LanglandsLean/AlgebraicGeometry/HopfSpec.lean}\).

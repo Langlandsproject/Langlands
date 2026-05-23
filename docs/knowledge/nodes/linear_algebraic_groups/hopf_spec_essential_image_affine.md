@@ -52,9 +52,21 @@ of \(\operatorname{algSpec}_R\) is the affine schemes over
 \(\operatorname{Spec} R\). This follows from the standard equivalence
 between commutative \(R\)-algebras and affine schemes over
 \(\operatorname{Spec} R\) (one direction by global sections, the other
-by \(\operatorname{Spec}\)). Group objects are preserved and reflected
-by \(\operatorname{mapGrp}\) on equivalences, so the conclusion lifts to
-the Hopf level.
+by \(\operatorname{Spec}\)).
+
+To lift to the Hopf level: given an affine group object \(G\) in
+\(\mathsf{Over}(\operatorname{Spec} R)\), the underlying scheme is
+\(\operatorname{algSpec}_R(A)\) for the commutative \(R\)-algebra
+\(A = \Gamma(G, \mathcal{O}_G)\) ([[node:linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme|the coordinate algebra]]).
+The group object structure on \(G\) endows \(A\) with comultiplication,
+counit, and antipode (each is the pullback of the corresponding
+scheme-level morphism), making \(A\) a commutative \(R\)-Hopf algebra.
+Under [[node:linear_algebraic_groups.hopf_spec_grpobj_via_yoneda|the
+Yoneda construction]] of \(\operatorname{hopfSpec}_R\), the
+\(\operatorname{GrpObj}\) it produces on \(\operatorname{algSpec}_R(A)\)
+matches the original \(\operatorname{GrpObj}\) on \(G\) (because both
+are uniquely determined by the convolution group structure on
+\(\operatorname{Hom}_{R\text{-Alg}}(A, -)\)).
 
 The inverse functor at the algebra level is the global-sections functor
 \(\Gamma : G \mapsto \mathcal{O}(G)\); see

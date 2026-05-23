@@ -36,10 +36,21 @@ The classical Spec functor
 \(\operatorname{Spec} : \mathsf{CommRingCat}^{\mathrm{op}} \to
 \mathsf{Scheme}\) is fully faithful (Stacks 01HU). Restricting to
 \(R\)-algebras and composing with the slice-category equivalences yields
-that \(\operatorname{algSpec}_R\) is fully faithful. The
-\(\operatorname{mapGrp}\) construction preserves full-faithfulness (a
-morphism of group objects in a Cartesian monoidal category is determined
-by the underlying morphism of objects), so the Hopf-level lift
-\(\operatorname{hopfSpec}_R = (\operatorname{algSpec}_R).\operatorname{mapGrp}\)
-is fully faithful as well.  
+that \(\operatorname{algSpec}_R\) is fully faithful.
+
+Hopf-level full-faithfulness then follows because a morphism of group
+objects is uniquely determined by its underlying morphism on the
+underlying objects (this is a general fact about group objects in any
+Cartesian monoidal category: the group-hom axioms are a property, not
+extra data). Concretely: given Hopf algebras \(A, A'\) and a morphism
+of underlying schemes \(\varphi : \operatorname{Spec} A' \to \operatorname{Spec} A\)
+in \(\mathsf{Over}(\operatorname{Spec} R)\), if \(\varphi\) is a group
+object morphism then by \(\operatorname{algSpec}_R\) full-faithfulness
+\(\varphi = \operatorname{algSpec}_R(f)\) for a unique
+\(R\)-algebra hom \(f : A \to A'\); the group-hom property of
+\(\varphi\) translates to \(f\) preserving the Hopf structure
+(comultiplication, counit, antipode), via the Yoneda determination
+of the group object structures in
+[[node:linear_algebraic_groups.hopf_spec_grpobj_via_yoneda|the Yoneda
+construction]].  
 \(\square\)
