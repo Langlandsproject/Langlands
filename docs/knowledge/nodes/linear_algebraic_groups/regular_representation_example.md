@@ -9,9 +9,15 @@ topics:
 uses:
 - linear_algebraic_groups.comodule_definition
 - linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.Comodule
+  declarations:
+    - Langlands.AlgebraicGeometry.regularComodule
 verification:
   statement: accepted
   proof: accepted
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the example stated over an arbitrary base field?"

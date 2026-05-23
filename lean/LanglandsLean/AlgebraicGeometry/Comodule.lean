@@ -68,4 +68,28 @@ structure Hom (ρ : Comodule R A V) (σ : Comodule R A W) where
 
 end Comodule
 
+/-- The **regular comodule**: for any `R`-coalgebra `A`, the underlying
+module `A` carries an `A`-comodule structure with coaction equal to the
+comultiplication `Δ : A → A ⊗ A`.
+
+Geometrically (when `A = O(G)` is the coordinate Hopf algebra of an
+affine group scheme `G`), this is the action of `G` on its own
+coordinate ring; see the blueprint node
+`linear_algebraic_groups.regular_representation_example`. -/
+def regularComodule : Comodule R A A where
+  coaction := CoalgebraStruct.comul
+  coassoc := by
+    ext a
+    have h := congr($(Coalgebra.coassoc (R := R) (A := A)) a)
+    simp only [LinearMap.coe_comp, Function.comp_apply, LinearEquiv.coe_coe] at *
+    rw [← h]
+    simp
+  counit := by
+    ext a
+    have h := Coalgebra.lTensor_counit_comul (R := R) (A := A) a
+    simp only [LinearMap.coe_comp, Function.comp_apply,
+      LinearEquiv.coe_coe, LinearMap.id_coe, id_eq]
+    rw [h]
+    simp [TensorProduct.rid_tmul]
+
 end Langlands.AlgebraicGeometry
