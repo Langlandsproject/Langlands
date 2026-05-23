@@ -8,6 +8,7 @@ import LanglandsLean.AlgebraicGeometry.Comodule
 import LanglandsLean.AlgebraicGeometry.HopfConvolution
 import LanglandsLean.AlgebraicGeometry.HopfObjectBridge
 import LanglandsLean.AlgebraicGeometry.AlgHomGroup
+import LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
 
 /-!
 # AlgebraicGeometry umbrella
