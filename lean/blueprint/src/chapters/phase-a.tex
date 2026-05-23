@@ -39,6 +39,8 @@ theory requires it.
 \section{Faithful linear representations}
 
 \begin{definition}[Faithful linear representation]\label{def:faithful-rep}\issue{3}
+\lean{Langlands.AlgebraicGeometry.FaithfulLinearRepresentation}
+\leanok
 \uses{def:algebraic-group}
 Let $k$ be a field and $G$ an algebraic group over $\Spec k$. A
 \emph{faithful finite-dimensional representation} of $G$ is a finite-dimensional
@@ -47,13 +49,16 @@ $\rho : G \to \GL(V)$ such that $\rho$ is a closed immersion.
 \end{definition}
 
 \begin{theorem}[Embedding theorem; statement form]\label{thm:embedding-statement}\issue{3}
+\lean{Langlands.AlgebraicGeometry.HasFaithfulLinearRepresentation}
+\leanok
 \uses{def:faithful-rep}
 Every algebraic group $G$ over a field $k$ admits a faithful
 finite-dimensional representation. Equivalently, $G$ is a closed subgroup
 scheme of $\GL_n$ for some $n$. The proof is deferred to Phase~B (Hopf
-algebra correspondence and the regular representation argument); this Phase~A
-issue only stores the statement form via the
-\texttt{FaithfulLinearRepresentation} structure.
+algebra correspondence and the regular representation argument); this
+Phase~A milestone only records the statement as the proposition
+\texttt{HasFaithfulLinearRepresentation k G}. The proof block is left
+without \texttt{\textbackslash leanok}.
 \end{theorem}
 
 \section{Points functor}

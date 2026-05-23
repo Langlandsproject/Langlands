@@ -1,1 +1,1 @@
-import LanglandsLean.LinearAlgebraicGroups
+import LanglandsLean.AlgebraicGeometry
