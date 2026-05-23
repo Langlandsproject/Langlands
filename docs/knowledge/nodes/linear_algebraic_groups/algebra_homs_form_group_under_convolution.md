@@ -17,7 +17,7 @@ lean:
 verification:
   statement: accepted
   proof: accepted
-  alignment: pending
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the statement at the right level — Hopf source, commutative target — and is the group commutative when the bialgebra is cocommutative?"
