@@ -6,6 +6,8 @@ refactors the existing scaffold to use it, and exposes the points functor.
 \section{Affine and algebraic group schemes}
 
 \begin{definition}[Affine group scheme]\label{def:affine-group-scheme}\issue{2}
+\lean{Langlands.AlgebraicGeometry.IsAffineGroupScheme}
+\leanok
 \uses{conv:typeclass-idiom}
 Let $S$ be a scheme and let $G$ be a scheme equipped with a structure morphism
 $G \to S$. We say that $G$ is an \emph{affine group scheme over $S$} if
@@ -16,6 +18,8 @@ $[\GrpObj(\asOver\,G\,S)]$ with $[\mathsf{IsAffineHom}\,(G \downarrow S)]$.
 \end{definition}
 
 \begin{definition}[Algebraic group]\label{def:algebraic-group}\issue{2}
+\lean{Langlands.AlgebraicGeometry.IsAlgebraicGroup}
+\leanok
 \uses{def:affine-group-scheme}
 An \emph{algebraic group} over $S$ is an affine group scheme over $S$ whose
 structure morphism is locally of finite type. Following Milne and
