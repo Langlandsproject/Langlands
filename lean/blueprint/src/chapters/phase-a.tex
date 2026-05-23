@@ -1,0 +1,93 @@
+\chapter{Phase A --- Affine algebraic group foundations}
+
+Phase A establishes the typeclass framework for affine algebraic groups,
+refactors the existing scaffold to use it, and exposes the points functor.
+
+\section{Affine and algebraic group schemes}
+
+\begin{definition}[Affine group scheme]\label{def:affine-group-scheme}\issue{2}
+\uses{conv:typeclass-idiom}
+Let $S$ be a scheme and let $G$ be a scheme equipped with a structure morphism
+$G \to S$. We say that $G$ is an \emph{affine group scheme over $S$} if
+$G$ carries a group object structure in the slice category $\Over{S}$ and
+its structure morphism is affine. In Lean, the aggregator typeclass
+\texttt{IsAffineGroupScheme G S} bundles
+$[\GrpObj(\asOver\,G\,S)]$ with $[\mathsf{IsAffineHom}\,(G \downarrow S)]$.
+\end{definition}
+
+\begin{definition}[Algebraic group]\label{def:algebraic-group}\issue{2}
+\uses{def:affine-group-scheme}
+An \emph{algebraic group} over $S$ is an affine group scheme over $S$ whose
+structure morphism is locally of finite type. Following Milne and
+SGA\,3, we do \emph{not} require smoothness.
+In Lean, the aggregator typeclass \texttt{IsAlgebraicGroup G S} extends
+\texttt{IsAffineGroupScheme G S} with
+$[\mathsf{LocallyOfFiniteType}\,(G \downarrow S)]$.
+\end{definition}
+
+\begin{remark}\label{rem:no-smoothness}
+The omission of smoothness is deliberate. In characteristic~$p$ the schemes
+$\mu_p$ and $\alpha_p$ (Phase~D, omitted from the first goal) are algebraic
+groups but not smooth. Smoothness is added as an extra hypothesis where the
+theory requires it.
+\end{remark}
+
+\section{Faithful linear representations}
+
+\begin{definition}[Faithful linear representation]\label{def:faithful-rep}\issue{3}
+\uses{def:algebraic-group}
+Let $k$ be a field and $G$ an algebraic group over $\Spec k$. A
+\emph{faithful finite-dimensional representation} of $G$ is a finite-dimensional
+$k$-vector space $V$ together with a morphism of group schemes
+$\rho : G \to \GL(V)$ such that $\rho$ is a closed immersion.
+\end{definition}
+
+\begin{theorem}[Embedding theorem; statement form]\label{thm:embedding-statement}\issue{3}
+\uses{def:faithful-rep}
+Every algebraic group $G$ over a field $k$ admits a faithful
+finite-dimensional representation. Equivalently, $G$ is a closed subgroup
+scheme of $\GL_n$ for some $n$. The proof is deferred to Phase~B (Hopf
+algebra correspondence and the regular representation argument); this Phase~A
+issue only stores the statement form via the
+\texttt{FaithfulLinearRepresentation} structure.
+\end{theorem}
+
+\section{Points functor}
+
+\begin{definition}[Points of a group scheme]\label{def:points}\issue{4}
+\uses{def:affine-group-scheme}
+Let $k$ be a field and $G$ an affine group scheme over $\Spec k$. For any
+$k$-algebra $R$, the \emph{$R$-points} of $G$ are
+\[
+  G(R) \;=\; \Hom_{\Spec k}(\Spec R,\, G),
+\]
+the set of $\Spec k$-morphisms $\Spec R \to G$.
+\end{definition}
+
+\begin{lemma}[$G(R)$ is a group]\label{lem:points-group}\issue{4}
+\uses{def:points}
+For $G$ a group scheme over $\Spec k$ and $R$ a $k$-algebra, the set $G(R)$
+carries a canonical group structure induced by the group object structure on
+$G$. Furthermore, $R \mapsto G(R)$ is a functor from $k$-algebras to groups.
+\end{lemma}
+
+\section{Trivial group scheme and base change}
+
+\begin{definition}[Trivial group scheme]\label{def:trivial-group}\issue{5}
+\uses{def:affine-group-scheme}
+For any scheme $S$, the \emph{trivial group scheme} $\mathbf{1}_S$ over $S$
+is $S$ itself with the identity structure morphism and the trivial group
+object structure (the unit object of the cartesian monoidal structure on
+$\Over{S}$). It satisfies \texttt{IsAlgebraicGroup} $\mathbf{1}_S\,S$.
+\end{definition}
+
+\begin{lemma}[Base change preserves \texttt{IsAlgebraicGroup}]
+  \label{lem:base-change-algebraic}\issue{5}
+\uses{def:algebraic-group}
+Let $f : T \to S$ be a morphism of schemes, and let $G$ be an algebraic group
+over $S$. Then the pullback $G \times_S T$ is an algebraic group over $T$.
+The Lean proof composes Mathlib's
+\texttt{Scheme.GrpObjAsOverPullback} (preservation of the group object
+structure) with base-change of \texttt{IsAffineHom} and
+\texttt{LocallyOfFiniteType}.
+\end{lemma}

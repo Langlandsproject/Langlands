@@ -1,0 +1,32 @@
+% ---------- Theorem environments ----------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{convention}[theorem]{Convention}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---------- Convenience macros ----------
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\GrpObj}{\operatorname{GrpObj}}
+\newcommand{\asOver}{\operatorname{asOver}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Sch}{\mathsf{Sch}}
+\newcommand{\Over}[1]{\mathsf{Over}\,#1}
+\newcommand{\AffGrp}{\mathsf{AffGrp}}
+\newcommand{\Ga}{\mathbb{G}_a}
+\newcommand{\Gm}{\mathbb{G}_m}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+
+% ---------- Issue link helper ----------
+% Usage: \issue{1}  -->  inline link to GitHub issue #1
+\providecommand{\issue}[1]{%
+  \href{https://github.com/Langlandsproject/Langlands/issues/#1}{%
+    \texttt{[\##1]}}}

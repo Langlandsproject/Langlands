@@ -1,0 +1,29 @@
+\chapter{Introduction}
+
+This blueprint accompanies the Lean~4 formalization in the
+\href{https://github.com/Langlandsproject/Langlands}{Langlands} repository.
+Its scope follows the design document at
+\texttt{docs/superpowers/specs/2026-05-23-affine-algebraic-group-design.md},
+which records twelve phases of work from \emph{affine algebraic groups} up
+through the Chevalley classification of split reductive groups.
+
+Each blueprint node carries a back-reference to the GitHub issue that tracks
+its implementation. The convention for these references is illustrated below.
+
+\begin{convention}\label{conv:typeclass-idiom}\issue{1}
+Throughout this project, an \emph{affine algebraic group} $G$ over a base scheme $S$
+is represented in Lean by the data
+\[
+  (G : \Sch) \;,\; [G.\mathsf{Over}\,S] \;,\; [\GrpObj(\asOver\,G\,S)]
+\]
+together with property typeclasses such as $[\mathsf{IsAffineHom}\,(G \downarrow S)]$
+and $[\mathsf{LocallyOfFiniteType}\,(G \downarrow S)]$. We deliberately avoid
+introducing a bundled type \texttt{GroupScheme S}; the Mathlib idiom is the
+canonical reference. Two aggregator typeclasses
+(Definitions~\ref{def:affine-group-scheme} and~\ref{def:algebraic-group}) are
+provided as Level~1 sugar over the underlying stack.
+
+This convention is the subject of Phase A1; the namespace and documentation
+hub live in
+\texttt{lean/LanglandsLean/AlgebraicGeometry/Conventions.lean}.
+\end{convention}
