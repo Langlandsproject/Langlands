@@ -1,12 +1,21 @@
 # Affine Algebraic Groups in Lean 4: Design Document
 
-**Date:** 2026-05-23
-**Status:** Brainstorm complete, awaiting user review
+**Date:** 2026-05-23 (last revised: Phase A landed + 24 mdblueprint nodes)
+**Status:** Phase A done; Phase B partial (B1 algSpec ✓, hopfSpec sorry);
+Phase D mathematical content authored as mdblueprint, Lean pending.
 **Scope:** Foundational Lean 4 layer for the Langlands project: affine algebraic
 groups, basic properties, standard examples, tori, Lie algebras, unipotent /
 solvable groups, reductive groups, Borel / parabolic / Levi structure, maximal
 tori with root data, isogeny, and the Chevalley classification of split
 reductive groups.
+
+**Blueprint system.** This project uses
+[mdblueprint](file:///Users/hoxide/mycodes/mdblueprint) (Markdown nodes
+under `docs/knowledge/nodes/`), **not** LaTeX / PFR-style Lean Blueprint.
+See `AGENTS.md` for the canonical rule. Earlier versions of this spec
+referenced a `lean/blueprint/src/*.tex` scaffold; that scaffold was
+deleted (commit a3bdc79) and replaced by mdblueprint nodes
+(commits ed3a647 and later).
 
 ## 1. Context
 
@@ -343,6 +352,12 @@ detailed sub-spec when Phase A is finishing.
   "signature theorem" of affine algebraic groups, and several downstream
   proofs (unipotent characterization, faithful-rep arguments) call back into
   it. Doing it early prevents `sorry`s in later phases.
+- **D10.** Blueprint format: mdblueprint (Markdown under
+  `docs/knowledge/nodes/`), **not** LaTeX / PFR-style Lean Blueprint.
+  Records: see `AGENTS.md`; the LaTeX scaffold under `lean/blueprint/`
+  was a misstep and was deleted. Phase A / B / D mathematical content
+  lives as `linear_algebraic_groups.*` sub-nodes; each is admitted with
+  full natural-language statement and (where applicable) proof.
 
 ## 7. Risks and known unknowns
 
@@ -364,9 +379,49 @@ detailed sub-spec when Phase A is finishing.
   yet have enough infrastructure (proper morphisms, fixed-point theorems,
   complete varieties); K / I ordering may shift in response.
 
-## 8. Next step
+## 8. Status (current snapshot)
 
-Phase A as five PR-sized issues (A1 with the aggregator inference acceptance
-test, A2 with the typeclass aggregator, A3 with the scaffold refactor, A4
-with the points functor, plus a smoke-test issue). After all Phase A issues
-close, produce a detailed sub-spec for Phase B (Hopf + embedding).
+### Phase A — DONE
+Five GitHub issues (#1–#5) closed. Lean shipped in
+`lean/LanglandsLean/AlgebraicGeometry/`:
+
+- `Conventions.lean` — namespace + idiom docstring
+- `IsAlgebraicGroup.lean` — aggregator typeclasses (with all 4
+  acceptance checks shipped as a `Tests` namespace)
+- `FaithfulRepresentation.lean` — statement-form replacement of the old
+  scaffold
+- `Points.lean` — points functor with `Group` instance (one documented
+  `sorry` on naturality)
+- `Examples/Trivial.lean` — trivial group + base-change preservation
+
+Lake build: 2456 jobs green.
+
+mdblueprint: 8 admitted sub-nodes under
+`docs/knowledge/nodes/linear_algebraic_groups/` linked to Lean
+declarations via `lean.modules` / `lean.declarations` and
+`verification.alignment: aligned`.
+
+### Phase B — Partial
+
+Mathematical content authored as 10 mdblueprint nodes (statements +
+proofs in natural language). Five GitHub issues (#9–#13) open.
+
+Lean: only `algSpec` shipped (`HopfSpec.lean`). `hopfSpec` is a
+documented `sorry` blocked on upstream `Functor.Monoidal` instances
+(see §7); a viable alternative is an object-level hand-roll, bypassing
+`mapGrp`. Comodule infrastructure (B2) is not in Mathlib master but the
+notion is light (≤ 30 LoC structure), not a real blocker.
+
+### Phase D early examples — Statement form
+
+Six mdblueprint nodes for `𝔾_a`, `𝔾_m`, `GL_n` and their points
+formulas. Three GitHub issues (#6, #7, #8) open. No Lean yet.
+
+### Next moves
+
+1. Define `Comodule R A V` in Lean (Phase B2; small, self-contained).
+2. Hand-roll `hopfSpec`-on-objects to close the B1 `sorry` (medium,
+   ~200 LoC).
+3. Bridge `Phase A3 affine_finite_type_faithful_representation`
+   statement to a real theorem via B1 + B2 + B3 + B4.
+4. Begin Phase D Lean implementations once B1 is unstuck.
