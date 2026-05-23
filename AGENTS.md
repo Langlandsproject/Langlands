@@ -149,6 +149,77 @@ cd lean && lake build
   binding; the dependency relation is encoded in the "Blocked by"
   section. Repo: `Langlandsproject/Langlands`.
 
+## Standard workflow
+
+For any new mathematical content (a sub-module, a cluster of related
+theorems, a new phase milestone), follow this 4-step pipeline:
+
+### 1. Identify
+
+Read the spec (`docs/superpowers/specs/`) or roadmap. Pick a coherent
+unit: one definition + its immediate properties, one theorem + its
+required lemmas, etc. Do not interleave unrelated topics.
+
+### 2. Blueprint
+
+Write mdblueprint nodes under
+`docs/knowledge/nodes/<topic>/<node-id>.md` for every definition,
+theorem, lemma, example, or proof-plan in the unit. Each node has:
+
+- complete YAML frontmatter (id, title, kind, status, primary_topic,
+  topics, uses, verification, generality, tags) — `kind` must be one of
+  `topic | concept | definition | lemma | proposition | theorem | example | proof-plan | external-theorem | task`;
+- precise statement in KaTeX with `\(...\)` / `\[...\]` delimiters;
+- for theorems / lemmas with substantive math, a real natural-language
+  proof in the body — not "see Lean";
+- correct `uses:` list (forms an acyclic DAG);
+- `lean:` field left empty at this stage (it gets filled when the Lean
+  implementation lands).
+
+Run `uv run python -m tools.knowledge.check docs/knowledge` (from
+`~/mycodes/mdblueprint`) until it reports `0 error(s)`. Run
+`uv run python -m tools.knowledge.publish` to materialize the site, and
+visually skim the rendered dep graph if practical.
+
+### 3. Issue
+
+For each blueprint node (or a tightly coupled cluster), create one
+GitHub issue:
+
+- title: `[Phase X] <Implement Lean for ...>` or `<formalize node-id>`;
+- body: link the blueprint node id; restate acceptance criteria;
+  "Blocked by #N" lines mirroring the blueprint `uses` graph;
+- labels: `phase:X` + `area:algebraic-geometry` (or other area label);
+- milestone: the phase's milestone (create one if not present).
+
+Use `gh issue create` with bodies authored as files in `/tmp/`.
+
+### 4. Execute
+
+Implement in Lean following the DAG order from the blueprint. Per issue:
+
+- write the Lean code; aim for minimal stubs over speculative
+  refactors; `sorry` only with a documented gap;
+- update the corresponding blueprint node:
+  `lean.modules`, `lean.declarations`, and
+  `verification.alignment: aligned`;
+- run `lake build` (green) and re-run mdblueprint check (green);
+- commit with a body that names the blueprint node and the issue;
+- close the issue with a comment naming the commit.
+
+### Why this pipeline
+
+Two reasons, learned the hard way:
+
+1. **Blueprint-first prevents over-commitment in Lean.** Writing the
+   natural-language proof first forces honesty about what's actually
+   provable and identifies the right Mathlib hooks (or gaps) before
+   investing in code that may need to be rewritten.
+2. **Issues-from-blueprint keeps the formalization tractable.** Each
+   issue is one node; "Blocked by" mirrors a mathematical dependency,
+   not an engineering preference. The PR-per-node granularity matches
+   what a single focused session can finish.
+
 ## Things that have burned us before
 
 - **Setting up a parallel PFR-style TeX blueprint** when this project
