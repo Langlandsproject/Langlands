@@ -8,9 +8,17 @@ topics:
 - linear_algebraic_groups
 uses:
 - linear_algebraic_groups.algebra_hom_convolution
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.HopfConvolution
+  declarations:
+    - Langlands.AlgebraicGeometry.HopfConvolution.convAlg
+    - Langlands.AlgebraicGeometry.HopfConvolution.convAlg_toLinearMap
+    - Langlands.AlgebraicGeometry.HopfConvolution.convAlg_apply
 verification:
   statement: accepted
   proof: accepted
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the hypothesis 'B commutative' really essential?"
