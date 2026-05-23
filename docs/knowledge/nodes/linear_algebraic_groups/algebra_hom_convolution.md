@@ -10,9 +10,16 @@ uses:
 - linear_algebraic_groups.coordinate_rings_and_hopf_algebras
 - foundational_inputs.hopf_algebras
 - foundational_inputs.commutative_algebra
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.HopfConvolution
+  declarations:
+    - Langlands.AlgebraicGeometry.HopfConvolution.convLinear
+    - Langlands.AlgebraicGeometry.HopfConvolution.convLinear_apply
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the definition stated at the right level — bialgebra source, commutative target — to support the group-structure construction?"
