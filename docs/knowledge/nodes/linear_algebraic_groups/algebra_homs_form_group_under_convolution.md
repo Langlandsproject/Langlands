@@ -8,6 +8,7 @@ topics:
 - linear_algebraic_groups
 uses:
 - linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
+- linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom
 verification:
   statement: accepted
   proof: accepted

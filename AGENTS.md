@@ -160,6 +160,32 @@ Read the spec (`docs/superpowers/specs/`) or roadmap. Pick a coherent
 unit: one definition + its immediate properties, one theorem + its
 required lemmas, etc. Do not interleave unrelated topics.
 
+**Mathlib survey (mandatory).** Before drafting blueprint nodes, run a
+short discovery pass to learn what Mathlib actually has. The cheap
+tools to use, in order:
+
+1. `lean_leansearch` — natural-language semantic search across Mathlib
+   (e.g., "antipode anti-multiplicative", "convolution algebra hom",
+   "Yoneda from group object to representable presheaf").
+2. `lean_loogle` — type-pattern search when you have a target signature
+   in mind.
+3. Targeted `grep` against `lean/.lake/packages/mathlib/Mathlib/` for
+   directory hierarchies and namespace conventions.
+
+The survey should produce a one-paragraph "Mathlib state" entry for the
+unit being scoped, listing:
+
+- existing lemmas/definitions to depend on;
+- categorical alternatives (e.g., `CategoryTheory.HopfObj.mul_antipode`
+  lives at the abstract level even when the ring-theoretic version
+  isn't packaged);
+- genuine gaps that should be tracked as their own issues, separate
+  from the main work.
+
+This step catches cases where the gap is engineering (a missing
+bridge instance) rather than mathematics (a missing theorem). The two
+demand very different issue scoping and effort estimates.
+
 ### 2. Blueprint
 
 Write mdblueprint nodes under
