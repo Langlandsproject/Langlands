@@ -64,6 +64,8 @@ without \texttt{\textbackslash leanok}.
 \section{Points functor}
 
 \begin{definition}[Points of a group scheme]\label{def:points}\issue{4}
+\lean{Langlands.AlgebraicGeometry.points}
+\leanok
 \uses{def:affine-group-scheme}
 Let $k$ be a field and $G$ an affine group scheme over $\Spec k$. For any
 $k$-algebra $R$, the \emph{$R$-points} of $G$ are
@@ -74,11 +76,25 @@ the set of $\Spec k$-morphisms $\Spec R \to G$.
 \end{definition}
 
 \begin{lemma}[$G(R)$ is a group]\label{lem:points-group}\issue{4}
+\lean{Langlands.AlgebraicGeometry.points.instGroup}
+\leanok
 \uses{def:points}
 For $G$ a group scheme over $\Spec k$ and $R$ a $k$-algebra, the set $G(R)$
 carries a canonical group structure induced by the group object structure on
-$G$. Furthermore, $R \mapsto G(R)$ is a functor from $k$-algebras to groups.
+$G$. Furthermore, $R \mapsto G(R)$ is a functor from $k$-algebras to groups
+(the functoriality is recorded in Lean as \texttt{points.map}; the proof
+that the induced map is a group homomorphism is a \texttt{sorry}-stub
+pending naturality of \texttt{Hom.group} in the first argument).
 \end{lemma}
+\begin{proof}
+\leanok
+The group structure on $G(R)$ is inherited from Mathlib's \texttt{Hom.group}
+(\texttt{Mathlib/CategoryTheory/Monoidal/Cartesian/Grp\_.lean}), which
+equips $\Hom_C(X, G)$ with a group structure whenever $C$ is Cartesian
+monoidal and $G$ is a group object in $C$. Apply this with $C = \Over{\Spec
+k}$, $X = (\Spec R)_{/\Spec k}$, and $G$ regarded as an object of $C$ via
+its structure morphism.
+\end{proof}
 
 \section{Trivial group scheme and base change}
 

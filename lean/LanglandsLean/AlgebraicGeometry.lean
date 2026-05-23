@@ -1,6 +1,7 @@
 import LanglandsLean.AlgebraicGeometry.Conventions
 import LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup
 import LanglandsLean.AlgebraicGeometry.FaithfulRepresentation
+import LanglandsLean.AlgebraicGeometry.Points
 
 /-!
 # AlgebraicGeometry umbrella
