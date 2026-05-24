@@ -125,15 +125,82 @@ lemma convAntipode_mul_convId : convAntipode (R := R) (A := A) * convId = 1 := b
   rw [← LinearMap.rTensor_def A (HopfAlgebraStruct.antipode (R := R) (A := A))]
   exact HopfAlgebra.mul_antipode_rTensor_comul_apply a
 
+/-- `S ∘ μ` is a right convolution inverse of `μ` in
+`WithConv (A ⊗[R] A →ₗ[R] A)`. Derived from `id * S = 1` in
+`WithConv (A →ₗ[R] A)` by pre-composing with the coalg-hom `mulCoalgHom`. -/
+lemma convMul_mul_convCompAntipode :
+    WithConv.toConv (LinearMap.mul' R A) *
+      WithConv.toConv (HopfAlgebraStruct.antipode (R := R) ∘ₗ LinearMap.mul' R A) =
+        1 := by
+  have h := LinearMap.convMul_comp_coalgHom_distrib
+    (R := R) (C := A) (A := A) (B := A ⊗[R] A)
+    convId convAntipode mulCoalgHom
+  rw [convId_mul_convAntipode] at h
+  -- h : (1).ofConv ∘ mulCoalgHom.toLinearMap = (toConv (id ∘ μ) * toConv (S ∘ μ)).ofConv
+  apply WithConv.ofConv_injective
+  show ((WithConv.toConv (LinearMap.mul' R A)) *
+      (WithConv.toConv (HopfAlgebraStruct.antipode (R := R) ∘ₗ
+        LinearMap.mul' R A))).ofConv = (1 : WithConv (A ⊗[R] A →ₗ[R] A)).ofConv
+  -- Rewrite RHS using mulCoalgHom.counit_comp.
+  have hcounit : (1 : WithConv (A ⊗[R] A →ₗ[R] A)).ofConv =
+      ((1 : WithConv (A →ₗ[R] A)).ofConv).comp
+        (mulCoalgHom (R := R) (A := A)).toLinearMap := by
+    show (Algebra.linearMap R A ∘ₗ CoalgebraStruct.counit) =
+      (Algebra.linearMap R A ∘ₗ CoalgebraStruct.counit) ∘ₗ
+        (mulCoalgHom (R := R) (A := A)).toLinearMap
+    rw [LinearMap.comp_assoc]
+    congr 1
+    exact (mulCoalgHom (R := R) (A := A)).counit_comp.symm
+  rw [hcounit, h]
+  rfl
+
+/-- `S ∘ μ` is also a *left* convolution inverse of `μ` in
+`WithConv (A ⊗[R] A →ₗ[R] A)`. Same derivation as the right-inverse
+case, with the WithConv factors swapped: `S * id = 1`. -/
+lemma convCompAntipode_mul_convMul :
+    WithConv.toConv (HopfAlgebraStruct.antipode (R := R) ∘ₗ LinearMap.mul' R A) *
+      WithConv.toConv (LinearMap.mul' R A) = 1 := by
+  have h := LinearMap.convMul_comp_coalgHom_distrib
+    (R := R) (C := A) (A := A) (B := A ⊗[R] A)
+    convAntipode convId mulCoalgHom
+  rw [convAntipode_mul_convId] at h
+  apply WithConv.ofConv_injective
+  show ((WithConv.toConv (HopfAlgebraStruct.antipode (R := R) ∘ₗ
+        LinearMap.mul' R A)) *
+      (WithConv.toConv (LinearMap.mul' R A))).ofConv =
+      (1 : WithConv (A ⊗[R] A →ₗ[R] A)).ofConv
+  have hcounit : (1 : WithConv (A ⊗[R] A →ₗ[R] A)).ofConv =
+      ((1 : WithConv (A →ₗ[R] A)).ofConv).comp
+        (mulCoalgHom (R := R) (A := A)).toLinearMap := by
+    show (Algebra.linearMap R A ∘ₗ CoalgebraStruct.counit) =
+      (Algebra.linearMap R A ∘ₗ CoalgebraStruct.counit) ∘ₗ
+        (mulCoalgHom (R := R) (A := A)).toLinearMap
+    rw [LinearMap.comp_assoc]
+    congr 1
+    exact (mulCoalgHom (R := R) (A := A)).counit_comp.symm
+  rw [hcounit, h]
+  rfl
+
 /-- The antipode of a commutative `R`-Hopf algebra is multiplicative:
 `S(a · b) = S(a) · S(b)`.
 
 This is the commutative-source analog of
 `CategoryTheory.HopfObj.mul_antipode` (Mathlib). The proof shape goes
 through the convolution semiring `WithConv (A ⊗[R] A →ₗ[R] A)`:
-both `S ∘ μ` and `μ ∘ (S ⊗ S)` are two-sided convolution inverses of
-`μ`, so they agree by `left_inv_eq_right_inv`. Applying at `a ⊗ b`
-gives the desired equation. -/
+- `S ∘ μ` is a *two-sided* convolution inverse of `μ`
+  (`convMul_mul_convCompAntipode` and `convCompAntipode_mul_convMul`,
+  both **proved** above using `mulCoalgHom`).
+- `μ ∘ (S ⊗ S)` is also a right inverse — would be derived from the
+  antipode axiom on `A ⊗[R] A` (a Hopf algebra via
+  `TensorProduct.instHopfAlgebra`) post-composed with the algebra hom
+  `Algebra.TensorProduct.lmul' R`. This is the missing piece: the
+  `HopfAlgebra R (A ⊗[R] A)` instance hits the `AddCommMonoid` diamond
+  between `TensorProduct.instModule` and `Algebra.toModule`, so its
+  antipode lives in a different `→ₗ[R]` than the one our convolution
+  semiring uses.
+- Once that right-inverse equation is in place, `left_inv_eq_right_inv`
+  on `convCompAntipode_mul_convMul` + the right-inverse equation yields
+  `S ∘ μ = μ ∘ (S ⊗ S)`; applying at `a ⊗ b` gives the equation. -/
 theorem antipode_mul_of_commutative (a b : A) :
     HopfAlgebraStruct.antipode (R := R) (a * b) =
       HopfAlgebraStruct.antipode (R := R) a *
