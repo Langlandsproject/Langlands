@@ -403,17 +403,68 @@ noncomputable def specRepresentability :
       invFun := algHomToHomOver R A T
       left_inv := by
         intro f
-        -- Roundtrip: homOverToAlgHom ∘ algHomToHomOver = id.
-        -- Both sides reduce to f via the adjunction's left-triangle.
-        sorry
+        -- Roundtrip: algHomToHomOver ∘ homOverToAlgHom on f reduces
+        -- to f via the adjunction's (homEquiv).apply_symm_apply on f.left.
+        apply Over.OverMorphism.ext
+        show ΓSpec.adjunction.homEquiv T.left (op (CommRingCat.of A))
+            (op (CommRingCat.ofHom
+              ((Scheme.ΓSpecIso (CommRingCat.of A)).inv ≫ f.left.appTop).hom))
+            = f.left
+        -- This is `(homEquiv).apply_symm_apply f.left`, with the symm
+        -- formula unfolded.
+        have hSymm :
+            (ΓSpec.adjunction.homEquiv T.left (op (CommRingCat.of A))).symm
+              f.left =
+            op (CommRingCat.ofHom
+              ((Scheme.ΓSpecIso (CommRingCat.of A)).inv ≫ f.left.appTop).hom) := by
+          rw [Adjunction.homEquiv_counit,
+            ΓSpec.adjunction_counit_app]
+          rfl
+        rw [← hSymm, Equiv.apply_symm_apply]
       right_inv := by
         intro φ
-        -- Roundtrip: algHomToHomOver ∘ homOverToAlgHom = id on AlgHom.
-        sorry }
+        -- Roundtrip: homOverToAlgHom ∘ algHomToHomOver on φ reduces to φ
+        -- via (homEquiv).symm_apply_apply on op (φ.toRingHom).
+        apply AlgHom.ext
+        intro a
+        -- Use symm_apply_apply for the adjunction homEquiv.
+        have happ :=
+          (ΓSpec.adjunction.homEquiv T.left (op (CommRingCat.of A))).symm_apply_apply
+            (op (CommRingCat.ofHom φ.toRingHom))
+        rw [Adjunction.homEquiv_counit, ΓSpec.adjunction_counit_app] at happ
+        -- happ : op (...) ≫ op (ΓSpecIso A).inv = op (CommRingCat.ofHom φ.toRingHom).
+        -- Take .unop to get a CommRingCat hom equality.
+        have hunop := congrArg Quiver.Hom.unop happ
+        -- Apply both sides at a (as functions, via CommRingCat hom coercion).
+        have := congrArg (fun (r : CommRingCat.of A ⟶
+            CommRingCat.of (Γ(T.left, ⊤) : CommRingCat)) => r.hom a) hunop
+        -- The LHS reduces to ((ΓSpecIso A).inv ≫ ...).hom a,
+        -- the RHS to (CommRingCat.ofHom φ.toRingHom).hom a = φ a.
+        simpa using this }
   homEquiv_comp := by
-    intro X X' f g
-    -- Naturality of the homEquiv with respect to morphisms in Over (Spec R).
-    sorry
+    intro X X' g f
+    -- Naturality of the homEquiv: both sides reduce to the AlgHom
+    -- with underlying ring hom `(ΓSpecIso A).inv ≫ f.left.appTop ≫ g.left.appTop`.
+    letI := gammaAlgebra R X
+    letI := gammaAlgebra R X'
+    apply AlgHom.ext
+    intro a
+    show ((Scheme.ΓSpecIso (CommRingCat.of A)).inv ≫
+        (g ≫ f).left.appTop).hom a =
+      ((gammaAlgHom R g).comp
+        (homOverToAlgHom R A X' f)) a
+    -- Unfold gammaAlgHom and homOverToAlgHom: both sides are
+    -- g.left.appTop ((ΓSpecIso A).inv ≫ f.left.appTop applied to a).
+    show ((Scheme.ΓSpecIso (CommRingCat.of A)).inv ≫
+        (g ≫ f).left.appTop).hom a =
+      g.left.appTop.hom (((Scheme.ΓSpecIso (CommRingCat.of A)).inv ≫
+        f.left.appTop).hom a)
+    -- (g ≫ f).left = g.left ≫ f.left in Over; appTop is contravariant.
+    have hcomp : (g ≫ f).left.appTop = f.left.appTop ≫ g.left.appTop := by
+      show (g.left ≫ f.left).appTop = _
+      rw [Scheme.Hom.comp_appTop]
+    rw [hcomp]
+    rfl
 
 /-! ### Step 4: GrpObj on `specObjOver R A` via Yoneda
 
