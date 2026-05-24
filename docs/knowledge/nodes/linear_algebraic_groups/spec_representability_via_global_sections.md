@@ -9,9 +9,17 @@ topics:
 uses:
 - linear_algebraic_groups.coordinate_rings_and_hopf_algebras
 - foundational_inputs.affine_schemes
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
+  declarations:
+    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.specRepresentability
+    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.homOverToAlgHom
+    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.algHomToHomOver
 verification:
   statement: accepted
   proof: accepted
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Does the statement apply to arbitrary schemes T over Spec R, not only affine T?"

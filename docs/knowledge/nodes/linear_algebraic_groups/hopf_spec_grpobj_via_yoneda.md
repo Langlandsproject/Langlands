@@ -10,9 +10,17 @@ uses:
 - linear_algebraic_groups.algebra_homs_form_group_under_convolution
 - linear_algebraic_groups.spec_representability_via_global_sections
 - linear_algebraic_groups.affine_group_scheme_definition
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
+  declarations:
+    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.pointsPresheaf
+    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.hopfSpecGrpObj
+    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.specObjOver
 verification:
   statement: accepted
   proof: accepted
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the construction stated for an arbitrary commutative base ring R?"
