@@ -100,6 +100,14 @@ theorem points.map_is_group_hom (k : Type u) [Field k]
     {R R' : Type u} [CommRing R] [Algebra k R] [CommRing R'] [Algebra k R']
     (f : R →ₐ[k] R') (p q : points k G R) :
     points.map k G f (p * q) = points.map k G f p * points.map k G f q := by
-  sorry -- TODO(#4 follow-up): naturality of Hom.group in the first arg.
+  -- p * q = lift p q ≫ μ (definition of Hom.group's mul).
+  -- points.map f p = specOverHom k f ≫ p.
+  -- Want: specOverHom k f ≫ (lift p q ≫ μ) =
+  --       lift (specOverHom k f ≫ p) (specOverHom k f ≫ q) ≫ μ.
+  -- This is comp_lift + associativity.
+  show specOverHom k f ≫ (CartesianMonoidalCategory.lift p q ≫ MonObj.mul) =
+    CartesianMonoidalCategory.lift (specOverHom k f ≫ p)
+      (specOverHom k f ≫ q) ≫ MonObj.mul
+  rw [← Category.assoc, CartesianMonoidalCategory.comp_lift]
 
 end Langlands.AlgebraicGeometry
