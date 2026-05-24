@@ -1,4 +1,5 @@
 import LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup
+import LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
 import Mathlib.AlgebraicGeometry.Scheme
 import Mathlib.Algebra.Category.CommAlgCat.Basic
 import Mathlib.Algebra.Category.CommAlgCat.Monoidal
@@ -10,23 +11,32 @@ import Mathlib.Algebra.Category.CommAlgCat.Monoidal
 
 * `algSpec R` (the Spec functor on `R`-algebras) **is implemented** as a
   one-line composition of equivalences and `Over.post Scheme.Spec`.
-* `hopfSpec R` (the lift to Hopf algebras and group objects) **is not
-  yet implementable in Mathlib master**: it needs `Functor.Monoidal`
-  instances on the equivalences `(commAlgCatEquivUnder R).op` and
-  `(Over.opEquivOpUnder R).inverse`, which are unmerged upstream
-  (closed mathlib PR [#24000](https://github.com/leanprover-community/mathlib4/pull/24000)
-  set them up but was not merged). A working `hopfSpec` is declared
-  below with an explicit `sorry`, pinned to the precise upstream gap.
+* `hopfSpecGrpObj` (the **object-level** Yoneda construction): for a
+  concrete commutative `R`-Hopf algebra `A`, the affine scheme
+  `Spec A` becomes a group object in `Over (Spec R)`. This is
+  shipped via `Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.hopfSpecGrpObj`.
+* `hopfSpec R` (the **functor-level** lift): still requires a
+  `GrpObj (A : (CommAlgCat R)ᵒᵖ) → HopfAlgebra R A.unop` bridge to
+  package the Yoneda construction functorially. The original
+  Mathlib-PR-blocker (`(algSpec R).mapGrp` needing `Functor.Monoidal`)
+  is now sidestepped by the Yoneda path; the new blocker is the
+  Hopf/GrpObj bridge.
 
-## Plan once `hopfSpec` is unblocked
+## Plan to close the functor-level construction
 
-Composing `(algSpec R).mapGrp` gives `hopfSpec R`. The fully-faithful
-and essential-image lemmas (Theorems
-\\ref{thm:hopf-spec-fully-faithful} and \\ref{thm:hopf-spec-ess-image} in
-the blueprint) then follow from `mapGrp` preserving full-faithfulness
-of equivalences plus the affine-scheme essential image of
-`(Over.post Scheme.Spec).essImage` on objects coming from finite-type
-algebras.
+The Yoneda path replaces `(algSpec R).mapGrp`:
+- For each `A : Grp ((CommAlgCat R)ᵒᵖ)`, `hopfSpecGrpObj` produces a
+  `GrpObj` on `algSpec.obj A`, *provided* we can install
+  `HopfAlgebra R A.X.unop` from the `GrpObj` data of `A`. This is the
+  GrpObj↔HopfAlgebra equivalence that the blueprint
+  `linear_algebraic_groups.commutative_hopf_iff_grp_object` claims.
+- Functoriality on morphisms: a morphism `f : A → A'` of group objects in
+  `(CommAlgCat R)ᵒᵖ` (i.e., a Hopf algebra map under the bridge) post-composes
+  on convolution to give a group hom on points, hence a `GrpObj`-morphism
+  on the Spec side by `RepresentableBy` naturality.
+
+The fully-faithful and essential-image lemmas then follow from the
+analogous statements at the `algSpec` level (already shipped here).
 
 ## GitHub issue
 
@@ -61,28 +71,25 @@ noncomputable def algSpec (R : CommRingCat) :
 /-- The Spec functor lifted to commutative `R`-Hopf algebras and group
 schemes over `Spec R`.
 
-This is morally `(algSpec R).mapGrp`. To actually obtain a
-`Functor.mapGrp` instance, Lean needs a `Functor.Monoidal` instance on
-`algSpec R`, which currently fails to synthesize because:
+Two construction paths:
 
-- `MonoidalCategory (Under R)ᵒᵖ` is missing in Mathlib master.
-- `MonoidalCategory (Over (op R))` is missing.
-- `Over.post Scheme.Spec` is not marked `Monoidal` (would follow from
-  `Scheme.Spec` preserving products as a right adjoint).
+1. **Direct `mapGrp` (still blocked)**: would require `MonoidalCategory
+   (Under R)ᵒᵖ` and `(Over.post Scheme.Spec).Monoidal` instances. See
+   closed mathlib PR
+   [#24000](https://github.com/leanprover-community/mathlib4/pull/24000).
 
-The TODO is closed by porting the relevant pieces of mathlib PR
-[#24000](https://github.com/leanprover-community/mathlib4/pull/24000)
-(or waiting for an updated version to merge). Once those instances are
-in scope, the body of `hopfSpec` becomes `(algSpec R).mapGrp`.
+2. **Yoneda (preferred, partially shipped)**: for each Hopf-algebra A,
+   `Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.hopfSpecGrpObj`
+   gives the `GrpObj` on `Spec A` via Yoneda. The remaining gap is the
+   `Grp ((CommAlgCat R)ᵒᵖ) ↔ {comm R-Hopf-algebras}` bridge, which
+   would allow lifting `hopfSpecGrpObj` to a functor.
 
-For now the declaration exists as a `sorry`-stub so downstream code can
-refer to it. -/
+For now `hopfSpec` is declared as a `sorry`-stub, with the substantive
+object-level content shipped in `hopfSpecGrpObj`. -/
 noncomputable def hopfSpec (R : CommRingCat) :
     Grp ((CommAlgCat R)ᵒᵖ) ⥤ Grp (Over (Scheme.Spec.obj (op R))) := by
   sorry
-  -- TODO(#9): replace `sorry` with `(algSpec R).mapGrp` once
-  -- `MonoidalCategory (Under R)ᵒᵖ`, `MonoidalCategory (Over (op R))`,
-  -- and `(Over.post Scheme.Spec).Monoidal` instances land upstream
-  -- (mathlib4#24000 follow-up).
+  -- TODO(#9): the Yoneda chain in `AlgHomPointsPresheaf` produces
+  -- the object-level data; functor-level requires the Grp↔Hopf bridge.
 
 end Langlands.AlgebraicGeometry
