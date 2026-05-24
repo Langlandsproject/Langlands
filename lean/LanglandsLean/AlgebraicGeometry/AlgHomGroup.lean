@@ -33,7 +33,7 @@ open WithConv LinearMap
 namespace Langlands.AlgebraicGeometry.AlgHomGroup
 
 variable {R : Type*} [CommRing R]
-variable {A : Type*} [Ring A] [HopfAlgebra R A]
+variable {A : Type*} [CommRing A] [HopfAlgebra R A]
 variable {B : Type*} [CommRing B] [Algebra R B]
 
 /-- The convolution identity for `A →ₐ[R] B`: the composition of the
