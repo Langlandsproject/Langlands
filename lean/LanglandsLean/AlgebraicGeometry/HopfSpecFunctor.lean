@@ -39,6 +39,14 @@ universe u
 
 variable (R : CommRingCat.{u})
 
+/-- Local copy of `algSpec` (also defined in `HopfSpec.lean`, but we
+re-state it here to avoid a circular import). -/
+noncomputable def algSpec :
+    (CommAlgCat R)ᵒᵖ ⥤ Over (Scheme.Spec.obj (op R)) :=
+  (commAlgCatEquivUnder R).op.functor ⋙
+  (Over.opEquivOpUnder R).inverse ⋙
+  Over.post Scheme.Spec
+
 /-- The contravariant functor `(Over (Spec R))ᵒᵖ ⥤ CommAlgCat R` sending
 `op T` (for `T : Over (Spec R)`) to `Γ(T.left, ⊤)` as a commutative
 `R`-algebra (with `R`-algebra structure from `T.hom : T.left ⟶ Spec R`).
@@ -120,51 +128,202 @@ noncomputable def pointsPresheafGrp (A : Grp ((CommAlgCat R)ᵒᵖ)) :
         ((gammaOver R).map h).op ≫ ((gammaOver R).map g).op ≫ f
       rw [(gammaOver R).map_comp, op_comp, Category.assoc] }
 
-/-! ### Representability witness for the categorical points presheaf -/
+/-! ### Spec/Γ bijection at the categorical level
 
-/-- For any object `B : CommAlgCat R`, the Spec/Γ adjunction over
-`Spec R` gives a natural bijection
-`Hom_{Over(Spec R)}(T, algSpec.obj (op B)) ≃ B ⟶ gammaOver T`
-in `CommAlgCat R`, equivalently
-`op (gammaOver T) ⟶ op B` in `(CommAlgCat R)ᵒᵖ`. -/
-noncomputable def homOverEquiv {A : (CommAlgCat R)ᵒᵖ}
-    (T : Over (Scheme.Spec.obj (op R))) :
-    (T ⟶ algSpec.obj A) ≃ (op ((gammaOver R).obj (op T)) ⟶ A) where
-  toFun f :=
-    -- f : T ⟶ algSpec.obj A in Over(Spec R)
-    -- Reduce to f.left : T.left → algSpec.obj A.left and compose with ΓSpec iso.
-    -- f.left.appTop : Γ(algSpec.obj A.left) → Γ(T.left). Compose with
-    -- (ΓSpecIso A.unop).inv : A.unop → Γ(Spec A.unop) to get A.unop → Γ(T.left).
-    op (CommAlgCat.ofHom
-      { __ := ((Scheme.ΓSpecIso (CommRingCat.of A.unop)).inv ≫ f.left.appTop).hom
-        commutes' := by
-          intro r
-          -- Need: ((ΓSpecIso _).inv ≫ f.left.appTop).hom (algebraMap R A.unop r)
-          --     = (gammaAlgebra-structure-map-on-Γ(T.left)) r
-          letI : Algebra R (Γ(T.left, ⊤) : CommRingCat) :=
-            AlgHomPointsPresheaf.gammaAlgebra R T
-          -- Same proof as homOverToAlgHom in AlgHomPointsPresheaf.
-          have hw : f.left ≫ (algSpec R |>.obj A).hom = T.hom := Over.w f
-          have happ : (algSpec R |>.obj A).hom.appTop ≫ f.left.appTop =
-              T.hom.appTop := by
-            rw [← Scheme.Hom.comp_appTop, hw]
-          have hnat : (Scheme.ΓSpecIso R).inv ≫
-              (algSpec R |>.obj A).hom.appTop =
-                CommRingCat.ofHom (algebraMap R A.unop) ≫
-                  (Scheme.ΓSpecIso (CommRingCat.of A.unop)).inv := by
-            -- algSpec.obj A.hom = Spec.map (...).
-            sorry
-          sorry })
-  invFun g :=
-    -- g : op gammaOver T ⟶ A in (CommAlgCat R)ᵒᵖ = A.unop ⟶ gammaOver T in CommAlgCat R
-    -- = R-algebra hom A.unop → Γ(T.left). Convert to ring hom, apply Spec/Γ adjunction.
-    letI : Algebra R (Γ(T.left, ⊤) : CommRingCat) :=
-      AlgHomPointsPresheaf.gammaAlgebra R T
-    Over.homMk
-      (ΓSpec.adjunction.homEquiv T.left (op (CommRingCat.of A.unop))
-        (op (CommRingCat.ofHom g.unop.hom.toRingHom)))
+For any `A : (CommAlgCat R)ᵒᵖ`, the natural bijection
+
+\[
+(T \to \operatorname{algSpec}.\operatorname{obj} A) \;\;\simeq\;\;
+(\operatorname{op}(\operatorname{gammaOver} T) \to A)
+\]
+
+is just the Spec ⊣ Γ adjunction restricted to the slice over `Spec R`.
+Same proof technique as `AlgHomPointsPresheaf.algHomToHomOver` /
+`homOverToAlgHom`, but generalized to arbitrary `A : (CommAlgCat R)ᵒᵖ`
+(no HopfAlgebra hypothesis needed). -/
+
+variable {A : (CommAlgCat R)ᵒᵖ}
+
+/-- The Spec/Γ-adjunction structure morphism of `algSpec.obj A`. -/
+private lemma algSpec_obj_hom_eq :
+    (algSpec R |>.obj A).hom =
+      Scheme.Spec.map (op (CommRingCat.ofHom (algebraMap R A.unop))) := by
+  rfl
+
+/-- Forward map: from a morphism `T ⟶ algSpec.obj A` extract the
+underlying R-algebra hom via `f.left.appTop` and `(ΓSpecIso A.unop).inv`. -/
+noncomputable def homOverGrpToAlgHom (T : Over (Scheme.Spec.obj (op R)))
+    (f : T ⟶ algSpec R |>.obj A) : op ((gammaOver R).obj (op T)) ⟶ A :=
+  letI : Algebra R (Γ(T.left, ⊤) : CommRingCat) :=
+    AlgHomPointsPresheaf.gammaAlgebra R T
+  op (CommAlgCat.ofHom
+    { __ := ((Scheme.ΓSpecIso (CommRingCat.of A.unop)).inv ≫ f.left.appTop).hom
+      commutes' := by
+        intro r
+        change (((Scheme.ΓSpecIso (CommRingCat.of A.unop)).inv ≫
+            f.left.appTop)).hom (algebraMap R A.unop r) =
+          (AlgHomPointsPresheaf.overGammaMap R T).hom r
+        have hw : f.left ≫ (algSpec R |>.obj A).hom = T.hom := Over.w f
+        have happ : (algSpec R |>.obj A).hom.appTop ≫ f.left.appTop =
+            T.hom.appTop := by
+          rw [← Scheme.Hom.comp_appTop, hw]
+        have hnat : (Scheme.ΓSpecIso R).inv ≫
+            (Scheme.Spec.map (op (CommRingCat.ofHom
+              (algebraMap R A.unop)))).appTop =
+              CommRingCat.ofHom (algebraMap R A.unop) ≫
+                (Scheme.ΓSpecIso (CommRingCat.of A.unop)).inv :=
+          (Scheme.ΓSpecIso_inv_naturality
+            (CommRingCat.ofHom (algebraMap R A.unop))).symm
+        have key : (AlgHomPointsPresheaf.overGammaMap R T).hom r =
+            (((Scheme.ΓSpecIso (CommRingCat.of A.unop)).inv ≫
+              f.left.appTop).hom) (algebraMap R A.unop r) := by
+          change ((Scheme.ΓSpecIso R).inv ≫ T.hom.appTop).hom r = _
+          rw [← happ, ← Category.assoc]
+          rw [algSpec_obj_hom_eq]
+          show ((Scheme.ΓSpecIso R).inv ≫
+            (Scheme.Spec.map (op (CommRingCat.ofHom (algebraMap R A.unop)))).appTop ≫
+              f.left.appTop).hom r = _
+          rw [← Category.assoc, hnat, Category.assoc]
+          rfl
+        exact key.symm })
+
+/-- Backward map: from an `R`-algebra hom (encoded categorically) build
+a morphism in `Over (Spec R)` via the Spec ⊣ Γ adjunction. -/
+noncomputable def algHomToHomOverGrp (T : Over (Scheme.Spec.obj (op R)))
+    (g : op ((gammaOver R).obj (op T)) ⟶ A) : T ⟶ algSpec R |>.obj A :=
+  letI : Algebra R (Γ(T.left, ⊤) : CommRingCat) :=
+    AlgHomPointsPresheaf.gammaAlgebra R T
+  Over.homMk
+    (ΓSpec.adjunction.homEquiv T.left (op (CommRingCat.of A.unop))
+      (op (CommRingCat.ofHom g.unop.hom.toRingHom)))
+    (by
+      letI := AlgHomPointsPresheaf.gammaAlgebra R T
+      have hcompose :
+          (CommRingCat.ofHom (algebraMap R A.unop) ≫
+            CommRingCat.ofHom g.unop.hom.toRingHom) =
+            AlgHomPointsPresheaf.overGammaMap R T := by
+        ext r
+        change g.unop.hom ((algebraMap (↑R) A.unop) r) =
+          (AlgHomPointsPresheaf.overGammaMap R T).hom r
+        rw [g.unop.hom.commutes r]
+        rfl
+      have hSymm :
+          (ΓSpec.adjunction.homEquiv T.left (op R)).symm T.hom =
+            op (AlgHomPointsPresheaf.overGammaMap R T) := by
+        rw [Adjunction.homEquiv_counit, ΓSpec.adjunction_counit_app]
+        rfl
+      have hTHom : (ΓSpec.adjunction.homEquiv T.left (op R))
+          (op (AlgHomPointsPresheaf.overGammaMap R T)) = T.hom := by
+        have := congrArg (ΓSpec.adjunction.homEquiv T.left (op R)) hSymm
+        rw [Equiv.apply_symm_apply] at this
+        exact this.symm
+      show (ΓSpec.adjunction.homEquiv T.left (op (CommRingCat.of A.unop)))
+          (op (CommRingCat.ofHom g.unop.hom.toRingHom)) ≫
+          (algSpec R |>.obj A).hom = T.hom
+      rw [algSpec_obj_hom_eq]
+      rw [← Adjunction.homEquiv_naturality_right]
+      have hop :
+          (op (CommRingCat.ofHom g.unop.hom.toRingHom) ≫
+            op (CommRingCat.ofHom (algebraMap R A.unop)) :
+            op Γ(T.left, ⊤) ⟶ op R) =
+          (op (AlgHomPointsPresheaf.overGammaMap R T) :
+            op Γ(T.left, ⊤) ⟶ op R) := by
+        show op (CommRingCat.ofHom (algebraMap R A.unop) ≫
+            CommRingCat.ofHom g.unop.hom.toRingHom) =
+          op (AlgHomPointsPresheaf.overGammaMap R T)
+        rw [hcompose]
+      rw [hop]
+      exact hTHom)
+
+/-! ### Representability of the categorical points presheaf -/
+
+/-- The categorical points presheaf `pointsPresheafGrp A` (after
+forgetting to Type) is represented by `algSpec.obj A.X`. -/
+noncomputable def pointsRepresentabilityGrp (A : Grp ((CommAlgCat R)ᵒᵖ)) :
+    (pointsPresheafGrp R A ⋙ forget GrpCat).RepresentableBy
+      ((algSpec R).obj A.X) where
+  homEquiv {T : Over (Scheme.Spec.obj (op R))} :=
+    { toFun := homOverGrpToAlgHom R T
+      invFun := algHomToHomOverGrp R T
+      left_inv := by
+        intro f
+        -- Same roundtrip as `specRepresentability.left_inv`:
+        -- (homEquiv).apply_symm_apply f.left
+        apply Over.OverMorphism.ext
+        show ΓSpec.adjunction.homEquiv T.left (op (CommRingCat.of A.X.unop))
+            (op (CommRingCat.ofHom
+              ((Scheme.ΓSpecIso (CommRingCat.of A.X.unop)).inv ≫
+                f.left.appTop).hom))
+            = f.left
+        have hSymm :
+            (ΓSpec.adjunction.homEquiv T.left
+              (op (CommRingCat.of A.X.unop))).symm f.left =
+            op (CommRingCat.ofHom
+              ((Scheme.ΓSpecIso (CommRingCat.of A.X.unop)).inv ≫
+                f.left.appTop).hom) := by
+          rw [Adjunction.homEquiv_counit, ΓSpec.adjunction_counit_app]
+          rfl
+        rw [← hSymm, Equiv.apply_symm_apply]
+      right_inv := by
+        intro g
+        -- Roundtrip: same as `specRepresentability.right_inv`.
+        apply Quiver.Hom.unop_inj
+        apply CommAlgCat.hom_ext
+        apply AlgHom.ext
+        intro a
+        have happ :=
+          (ΓSpec.adjunction.homEquiv T.left
+            (op (CommRingCat.of A.X.unop))).symm_apply_apply
+            (op (CommRingCat.ofHom g.unop.hom.toRingHom))
+        rw [Adjunction.homEquiv_counit, ΓSpec.adjunction_counit_app] at happ
+        have hunop := congrArg Quiver.Hom.unop happ
+        have := congrArg (fun (r : CommRingCat.of A.X.unop ⟶
+            CommRingCat.of (Γ(T.left, ⊤) : CommRingCat)) => r.hom a) hunop
+        simpa using this }
+  homEquiv_comp := by
+    intro X X' g f
+    -- Naturality (same as `specRepresentability.homEquiv_comp`).
+    apply Quiver.Hom.unop_inj
+    apply CommAlgCat.hom_ext
+    apply AlgHom.ext
+    intro a
+    show ((Scheme.ΓSpecIso (CommRingCat.of A.X.unop)).inv ≫
+        (g ≫ f).left.appTop).hom a =
+      g.left.appTop.hom (((Scheme.ΓSpecIso (CommRingCat.of A.X.unop)).inv ≫
+        f.left.appTop).hom a)
+    have hcomp : (g ≫ f).left.appTop = f.left.appTop ≫ g.left.appTop := by
+      show (g.left ≫ f.left).appTop = _
+      rw [Scheme.Hom.comp_appTop]
+    rw [hcomp]
+    rfl
+
+/-- Object-level construction: for each `A : Grp ((CommAlgCat R)ᵒᵖ)`,
+the affine scheme `algSpec.obj A.X` becomes a group object in
+`Over (Spec R)` via Yoneda. -/
+noncomputable def hopfSpecGrpObjFromGrp (A : Grp ((CommAlgCat R)ᵒᵖ)) :
+    GrpObj ((algSpec R).obj A.X) :=
+  GrpObj.ofRepresentableBy ((algSpec R).obj A.X)
+    (pointsPresheafGrp R A) (pointsRepresentabilityGrp R A)
+
+/-- The functor-level `hopfSpec`: sends a group object in
+`(CommAlgCat R)ᵒᵖ` (≃ commutative `R`-Hopf algebra) to the corresponding
+affine group scheme over `Spec R`, via the Yoneda construction. -/
+noncomputable def hopfSpec :
+    Grp ((CommAlgCat R)ᵒᵖ) ⥤ Grp (Over (Scheme.Spec.obj (op R))) where
+  obj A :=
+    { X := (algSpec R).obj A.X
+      grp := hopfSpecGrpObjFromGrp R A }
+  map {A A'} f :=
+    -- The morphism on schemes is algSpec.map f.hom (since f.hom : A.X ⟶ A'.X in
+    -- (CommAlgCat R)ᵒᵖ). The fact that this is a Grp-morphism (i.e., compatible
+    -- with the GrpObj structures from Yoneda) follows from naturality of the
+    -- Yoneda representability witness: post-composition by algSpec.map f.hom
+    -- transports the group structure on Hom(-, algSpec.obj A.X) to the one
+    -- on Hom(-, algSpec.obj A'.X) consistently with f.hom's Grp-morphism status.
+    Grp.homMk'' ((algSpec R).map f.hom.hom)
       (by sorry)
-  left_inv := by sorry
-  right_inv := by sorry
+      (by sorry)
+  map_id A := by sorry
+  map_comp {A A' A''} f g := by sorry
 
 end Langlands.AlgebraicGeometry.HopfSpecFunctor

@@ -89,7 +89,11 @@ object-level content shipped in `hopfSpecGrpObj`. -/
 noncomputable def hopfSpec (R : CommRingCat) :
     Grp ((CommAlgCat R)ᵒᵖ) ⥤ Grp (Over (Scheme.Spec.obj (op R))) := by
   sorry
-  -- TODO(#9): the Yoneda chain in `AlgHomPointsPresheaf` produces
-  -- the object-level data; functor-level requires the Grp↔Hopf bridge.
+  -- TODO(#21): superseded by HopfSpecFunctor.hopfSpec (partial — sorry on
+  -- the IsMonHom axioms in the morphism part and the functoriality axioms).
+  -- The object-level + representability-witness + GrpObj installation are
+  -- all sorry-free there. Once functoriality of algSpec.map with respect
+  -- to the Yoneda-defined GrpObj is verified, hopfSpec can be defined as
+  -- the explicit functor in HopfSpecFunctor.
 
 end Langlands.AlgebraicGeometry
