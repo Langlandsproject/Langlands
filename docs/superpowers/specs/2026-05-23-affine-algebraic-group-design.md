@@ -1,7 +1,12 @@
 # Affine Algebraic Groups in Lean 4: Design Document
 
-**Date:** 2026-05-23 (last revised: Phase A landed + 24 mdblueprint nodes)
-**Status:** Phase A done; Phase B partial (B1 algSpec ✓, hopfSpec sorry);
+**Date:** 2026-05-23 (last revised: 2026-05-24 — Yoneda chain landed)
+**Status:** Phase A done; Phase B-Y (Yoneda hopfSpec chain) shipped:
+  algSpec ✓, AlgHomGroup ✓ (sorry-free locally, depends on
+  `antipode_anti_multiplicativity`), pointsPresheaf ✓ (sorry-free),
+  specRepresentability ✓ (sorry-free), hopfSpecGrpObj ✓ object-level
+  via `GrpObj.ofRepresentableBy`. Functor-level `hopfSpec` still
+  sorry-blocked on the `Grp ((CommAlgCat R)ᵒᵖ) ↔ HopfAlgebra` bridge.
 Phase D mathematical content authored as mdblueprint, Lean pending.
 **Scope:** Foundational Lean 4 layer for the Langlands project: affine algebraic
 groups, basic properties, standard examples, tori, Lie algebras, unipotent /
