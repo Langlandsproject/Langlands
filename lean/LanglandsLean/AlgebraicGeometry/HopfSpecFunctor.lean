@@ -305,25 +305,108 @@ noncomputable def hopfSpecGrpObjFromGrp (A : Grp ((CommAlgCat R)ᵒᵖ)) :
   GrpObj.ofRepresentableBy ((algSpec R).obj A.X)
     (pointsPresheafGrp R A) (pointsRepresentabilityGrp R A)
 
+/-- The natural transformation of points presheaves induced by a
+morphism `f : A → A'` in `Grp ((CommAlgCat R)ᵒᵖ)`: post-compose by
+`f.hom : A.X → A'.X` on the right (since the source category is
+op-direction). -/
+noncomputable def pointsPresheafGrpMap {A A' : Grp ((CommAlgCat R)ᵒᵖ)}
+    (f : A ⟶ A') : pointsPresheafGrp R A ⟶ pointsPresheafGrp R A' where
+  app T := GrpCat.ofHom <|
+    -- For each T, given g : op gammaOver T ⟶ A.X, return g ≫ f.hom.hom.
+    -- f.hom : A.toMon ⟶ A'.toMon (Mon morphism, has .hom : A.X ⟶ A'.X).
+    { toFun := fun g => g ≫ f.hom.hom
+      map_one' := by
+        -- (1 ≫ f.hom.hom = 1): 1 = toUnit ≫ MonObj.one in Hom.group.
+        -- f.hom : Mon morphism, so MonObj.one ≫ f.hom.hom = MonObj.one.
+        show (CartesianMonoidalCategory.toUnit _ ≫ MonObj.one) ≫ f.hom.hom =
+          CartesianMonoidalCategory.toUnit _ ≫ MonObj.one
+        rw [Category.assoc, IsMonHom.one_hom]
+      map_mul' := by
+        intro g₁ g₂
+        show (CartesianMonoidalCategory.lift g₁ g₂ ≫ MonObj.mul) ≫ f.hom.hom =
+          CartesianMonoidalCategory.lift (g₁ ≫ f.hom.hom) (g₂ ≫ f.hom.hom) ≫
+            MonObj.mul
+        rw [Category.assoc, IsMonHom.mul_hom, ← Category.assoc,
+          CartesianMonoidalCategory.lift_map] }
+  naturality := by
+    intro T T' g
+    ext h
+    show ((gammaOver R).map g).op ≫ h ≫ f.hom.hom =
+      (((gammaOver R).map g).op ≫ h) ≫ f.hom.hom
+    rw [Category.assoc]
+
 /-- The functor-level `hopfSpec`: sends a group object in
 `(CommAlgCat R)ᵒᵖ` (≃ commutative `R`-Hopf algebra) to the corresponding
-affine group scheme over `Spec R`, via the Yoneda construction. -/
+affine group scheme over `Spec R`, via the Yoneda construction.
+
+The morphism part transports the natural transformation
+`pointsPresheafGrp R A ⟶ pointsPresheafGrp R A'` (induced by `f` via
+post-composition) along the representability isos to a `Grp` morphism
+on the scheme side, via `yonedaGrpFullyFaithful.preimage`. -/
 noncomputable def hopfSpec :
     Grp ((CommAlgCat R)ᵒᵖ) ⥤ Grp (Over (Scheme.Spec.obj (op R))) where
   obj A :=
     { X := (algSpec R).obj A.X
       grp := hopfSpecGrpObjFromGrp R A }
   map {A A'} f :=
-    -- The morphism on schemes is algSpec.map f.hom (since f.hom : A.X ⟶ A'.X in
-    -- (CommAlgCat R)ᵒᵖ). The fact that this is a Grp-morphism (i.e., compatible
-    -- with the GrpObj structures from Yoneda) follows from naturality of the
-    -- Yoneda representability witness: post-composition by algSpec.map f.hom
-    -- transports the group structure on Hom(-, algSpec.obj A.X) to the one
-    -- on Hom(-, algSpec.obj A'.X) consistently with f.hom's Grp-morphism status.
-    Grp.homMk'' ((algSpec R).map f.hom.hom)
-      (by sorry)
-      (by sorry)
-  map_id A := by sorry
-  map_comp {A A' A''} f g := by sorry
+    letI : GrpObj ((algSpec R).obj A.X) := hopfSpecGrpObjFromGrp R A
+    letI : GrpObj ((algSpec R).obj A'.X) := hopfSpecGrpObjFromGrp R A'
+    yonedaGrpFullyFaithful.preimage
+      ((yonedaGrpObjIsoOfRepresentableBy ((algSpec R).obj A.X)
+          (pointsPresheafGrp R A) (pointsRepresentabilityGrp R A)).hom ≫
+        pointsPresheafGrpMap R f ≫
+        (yonedaGrpObjIsoOfRepresentableBy ((algSpec R).obj A'.X)
+          (pointsPresheafGrp R A') (pointsRepresentabilityGrp R A')).inv)
+  map_id A := by
+    letI : GrpObj ((algSpec R).obj A.X) := hopfSpecGrpObjFromGrp R A
+    apply yonedaGrpFullyFaithful.map_injective
+    rw [yonedaGrpFullyFaithful.map_preimage]
+    -- LHS: (representability iso .hom) ≫ pointsPresheafGrpMap (𝟙 A) ≫ (... .inv)
+    -- The middle map is post-comp by (𝟙 A).hom.hom = 𝟙 A.X = id, so middle is identity.
+    -- The .hom ≫ .inv = identity by Iso.hom_inv_id.
+    -- RHS: yonedaGrp.map (𝟙 _) = 𝟙 _.
+    ext T h
+    -- Reduce to: α.homEquiv.symm (α.homEquiv h ≫ 𝟙) = h via Iso composition.
+    show GrpCat.Hom.hom (NatTrans.app
+      ((yonedaGrpObjIsoOfRepresentableBy ((algSpec R).obj A.X)
+          (pointsPresheafGrp R A) (pointsRepresentabilityGrp R A)).hom ≫
+        pointsPresheafGrpMap R (𝟙 A) ≫
+        (yonedaGrpObjIsoOfRepresentableBy ((algSpec R).obj A.X)
+          (pointsPresheafGrp R A) (pointsRepresentabilityGrp R A)).inv) T) h = h
+    -- Compute: pointsPresheafGrpMap (𝟙 A) at T, x is x ≫ (𝟙 A).hom.hom = x ≫ 𝟙 = x.
+    -- So middle is identity nat trans.
+    have hmid : pointsPresheafGrpMap R (𝟙 A) = 𝟙 _ := by
+      ext T x
+      show x ≫ (𝟙 A : A ⟶ A).hom.hom = x
+      have : (𝟙 A : A ⟶ A).hom.hom = 𝟙 A.X := rfl
+      rw [this, Category.comp_id]
+    rw [hmid, Category.id_comp, Iso.hom_inv_id]
+    rfl
+  map_comp {A A' A''} f g := by
+    letI : GrpObj ((algSpec R).obj A.X) := hopfSpecGrpObjFromGrp R A
+    letI : GrpObj ((algSpec R).obj A'.X) := hopfSpecGrpObjFromGrp R A'
+    letI : GrpObj ((algSpec R).obj A''.X) := hopfSpecGrpObjFromGrp R A''
+    apply yonedaGrpFullyFaithful.map_injective
+    rw [Functor.map_comp, yonedaGrpFullyFaithful.map_preimage,
+        yonedaGrpFullyFaithful.map_preimage, yonedaGrpFullyFaithful.map_preimage]
+    -- Both sides factor through the representability iso. The middle map
+    -- (post-composition by hom) composes: (f ≫ g).hom.hom = f.hom.hom ≫ g.hom.hom.
+    -- The .inv ≫ .hom in the middle of the RHS cancels.
+    have hcomp : pointsPresheafGrpMap R (f ≫ g) =
+        pointsPresheafGrpMap R f ≫ pointsPresheafGrpMap R g := by
+      ext T x
+      show x ≫ (f ≫ g).hom.hom = (x ≫ f.hom.hom) ≫ g.hom.hom
+      change x ≫ f.hom.hom ≫ g.hom.hom = _
+      rw [Category.assoc]
+    rw [hcomp]
+    -- Now LHS = iso.hom ≫ (f-comp ≫ g-comp) ≫ iso.inv
+    -- RHS = (iso.hom ≫ f-comp ≫ iso'.inv) ≫ (iso'.hom ≫ g-comp ≫ iso''.inv)
+    --     = iso.hom ≫ f-comp ≫ (iso'.inv ≫ iso'.hom) ≫ g-comp ≫ iso''.inv
+    --     = iso.hom ≫ f-comp ≫ g-comp ≫ iso''.inv  [Iso.inv_hom_id = 𝟙]
+    -- So they agree.
+    simp only [Category.assoc]
+    congr 1
+    rw [← Category.assoc (pointsPresheafGrpMap R f), Iso.inv_hom_id_assoc,
+        Category.assoc]
 
 end Langlands.AlgebraicGeometry.HopfSpecFunctor

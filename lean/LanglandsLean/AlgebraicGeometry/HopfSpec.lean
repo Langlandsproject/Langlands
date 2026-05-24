@@ -1,5 +1,6 @@
 import LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup
 import LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
+import LanglandsLean.AlgebraicGeometry.HopfSpecFunctor
 import Mathlib.AlgebraicGeometry.Scheme
 import Mathlib.Algebra.Category.CommAlgCat.Basic
 import Mathlib.Algebra.Category.CommAlgCat.Monoidal
@@ -87,13 +88,7 @@ Two construction paths:
 For now `hopfSpec` is declared as a `sorry`-stub, with the substantive
 object-level content shipped in `hopfSpecGrpObj`. -/
 noncomputable def hopfSpec (R : CommRingCat) :
-    Grp ((CommAlgCat R)ᵒᵖ) ⥤ Grp (Over (Scheme.Spec.obj (op R))) := by
-  sorry
-  -- TODO(#21): superseded by HopfSpecFunctor.hopfSpec (partial — sorry on
-  -- the IsMonHom axioms in the morphism part and the functoriality axioms).
-  -- The object-level + representability-witness + GrpObj installation are
-  -- all sorry-free there. Once functoriality of algSpec.map with respect
-  -- to the Yoneda-defined GrpObj is verified, hopfSpec can be defined as
-  -- the explicit functor in HopfSpecFunctor.
+    Grp ((CommAlgCat R)ᵒᵖ) ⥤ Grp (Over (Scheme.Spec.obj (op R))) :=
+  HopfSpecFunctor.hopfSpec R
 
 end Langlands.AlgebraicGeometry

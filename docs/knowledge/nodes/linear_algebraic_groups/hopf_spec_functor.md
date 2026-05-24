@@ -20,7 +20,7 @@ lean:
 verification:
   definition: accepted
   proof: not_applicable
-  alignment: pending
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the functor defined for an arbitrary commutative base ring \\(R\\), not only a field?"
