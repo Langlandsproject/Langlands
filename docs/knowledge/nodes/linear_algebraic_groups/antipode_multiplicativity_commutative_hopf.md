@@ -19,7 +19,7 @@ lean:
 verification:
   statement: accepted
   proof: accepted
-  alignment: pending
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the hypothesis 'A is a commutative Hopf algebra' the right level — does the statement fail without commutativity?"

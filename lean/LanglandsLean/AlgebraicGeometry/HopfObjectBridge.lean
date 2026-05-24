@@ -181,6 +181,84 @@ lemma convCompAntipode_mul_convMul :
   rw [hcounit, h]
   rfl
 
+/-- **Key bilinear identity** (uses commutativity of `A`):
+for any `c₁, c₂ : A ⊗[R] A`,
+
+  `mul'_A ((map μ (μ ∘ (S ⊗ S)) ∘ twist) (c₁ ⊗ c₂))`
+    = `mul'_A ((lTensor A S) c₁) · mul'_A ((lTensor A S) c₂)`.
+
+This factors the four-factor product `x · x' · S(y) · S(y')` (for
+pure tensors `c₁ = x ⊗ y`, `c₂ = x' ⊗ y'`) into
+`(x · S(y)) · (x' · S(y'))` by `mul_comm` in `A`. -/
+lemma mul_map_twist_eq_lTensor_smul_lTensor (c₁ c₂ : A ⊗[R] A) :
+    LinearMap.mul' R A
+      ((TensorProduct.map (LinearMap.mul' R A)
+        ((LinearMap.mul' R A) ∘ₗ TensorProduct.map
+          (HopfAlgebraStruct.antipode (R := R))
+          (HopfAlgebraStruct.antipode (R := R))))
+        ((TensorProduct.AlgebraTensorModule.tensorTensorTensorComm R R R R A A A A)
+          (c₁ ⊗ₜ c₂))) =
+      LinearMap.mul' R A
+        ((LinearMap.lTensor A (HopfAlgebraStruct.antipode (R := R))) c₁) *
+      LinearMap.mul' R A
+        ((LinearMap.lTensor A (HopfAlgebraStruct.antipode (R := R))) c₂) := by
+  induction c₁ with
+  | zero => simp
+  | tmul x y =>
+    induction c₂ with
+    | zero => simp
+    | tmul x' y' =>
+      -- Pure tensor case: both sides reduce to
+      -- (x · x') · (S(y) · S(y')) and (x · S(y)) · (x' · S(y')) respectively.
+      -- Equal by `mul_comm` in commutative A.
+      simp [TensorProduct.AlgebraTensorModule.tensorTensorTensorComm_tmul,
+        TensorProduct.map_tmul, LinearMap.mul'_apply,
+        LinearMap.lTensor_tmul]
+      ring
+    | add p q hp hq =>
+      simp only [TensorProduct.tmul_add, map_add, mul_add]
+      rw [hp, hq]
+  | add p q hp hq =>
+    simp only [TensorProduct.add_tmul, map_add, add_mul]
+    rw [hp, hq]
+
+/-- `μ ∘ (S ⊗ S)` is a right convolution inverse of `μ` in
+`WithConv (A ⊗[R] A →ₗ[R] A)`. Proved by direct Sweedler computation
+on `a ⊗ b`: the bilinear identity above factors `(μ * (μ ∘ (S ⊗ S))) (a ⊗ b)`
+into `(∑ a₁ S(a₂)) · (∑ b₁ S(b₂))`, then the antipode axiom on each
+factor gives `ε(a) · ε(b) = ε_{A⊗A}(a ⊗ b)`. -/
+lemma convMul_mul_convMulCompSSTensor :
+    WithConv.toConv (LinearMap.mul' R A) *
+      WithConv.toConv ((LinearMap.mul' R A) ∘ₗ
+        TensorProduct.map (HopfAlgebraStruct.antipode (R := R))
+          (HopfAlgebraStruct.antipode (R := R))) = 1 := by
+  apply WithConv.toConv_injective
+  ext a b
+  -- Goal: (μ * (μ ∘ (S⊗S))) (a ⊗ b) = algebraMap (counit_{A⊗A} (a ⊗ b))
+  show LinearMap.mul' R A
+    ((TensorProduct.map (LinearMap.mul' R A) ((LinearMap.mul' R A) ∘ₗ
+        TensorProduct.map (HopfAlgebraStruct.antipode (R := R))
+          (HopfAlgebraStruct.antipode (R := R))))
+      (CoalgebraStruct.comul (a ⊗ₜ[R] b))) =
+    (algebraMap R A) (CoalgebraStruct.counit (a ⊗ₜ[R] b))
+  -- Unfold the tensor-product comul, then apply the bilinear identity (uses commutativity).
+  rw [TensorProduct.comul_tmul, mul_map_twist_eq_lTensor_smul_lTensor]
+  -- LHS: mul'(lTensor S (comul a)) · mul'(lTensor S (comul b))
+  --   = algebraMap(counit a) · algebraMap(counit b)   [antipode axiom × 2]
+  rw [show (LinearMap.lTensor A (HopfAlgebraStruct.antipode (R := R))) =
+      TensorProduct.map LinearMap.id (HopfAlgebraStruct.antipode (R := R)) from
+    LinearMap.lTensor_def A _]
+  rw [show TensorProduct.map (LinearMap.id : A →ₗ[R] A)
+        (HopfAlgebraStruct.antipode (R := R)) =
+      LinearMap.lTensor A (HopfAlgebraStruct.antipode (R := R)) from
+    (LinearMap.lTensor_def A _).symm]
+  rw [HopfAlgebra.mul_antipode_lTensor_comul_apply,
+      HopfAlgebra.mul_antipode_lTensor_comul_apply]
+  -- RHS: algebraMap (counit_{A⊗A}(a ⊗ b)) = algebraMap (counit a · counit b)
+  -- Both sides are algebraMap(counit a) · algebraMap(counit b).
+  rw [TensorProduct.counit_tmul]
+  simp [mul_comm]
+
 /-- The antipode of a commutative `R`-Hopf algebra is multiplicative:
 `S(a · b) = S(a) · S(b)`.
 
@@ -188,24 +266,23 @@ This is the commutative-source analog of
 `CategoryTheory.HopfObj.mul_antipode` (Mathlib). The proof shape goes
 through the convolution semiring `WithConv (A ⊗[R] A →ₗ[R] A)`:
 - `S ∘ μ` is a *two-sided* convolution inverse of `μ`
-  (`convMul_mul_convCompAntipode` and `convCompAntipode_mul_convMul`,
-  both **proved** above using `mulCoalgHom`).
-- `μ ∘ (S ⊗ S)` is also a right inverse — would be derived from the
-  antipode axiom on `A ⊗[R] A` (a Hopf algebra via
-  `TensorProduct.instHopfAlgebra`) post-composed with the algebra hom
-  `Algebra.TensorProduct.lmul' R`. This is the missing piece: the
-  `HopfAlgebra R (A ⊗[R] A)` instance hits the `AddCommMonoid` diamond
-  between `TensorProduct.instModule` and `Algebra.toModule`, so its
-  antipode lives in a different `→ₗ[R]` than the one our convolution
-  semiring uses.
-- Once that right-inverse equation is in place, `left_inv_eq_right_inv`
-  on `convCompAntipode_mul_convMul` + the right-inverse equation yields
-  `S ∘ μ = μ ∘ (S ⊗ S)`; applying at `a ⊗ b` gives the equation. -/
+  (`convMul_mul_convCompAntipode` and `convCompAntipode_mul_convMul`).
+- `μ ∘ (S ⊗ S)` is also a right inverse (`convMul_mul_convMulCompSSTensor`).
+By `left_inv_eq_right_inv`, the two-sided inverse equals the right inverse,
+so `S ∘ μ = μ ∘ (S ⊗ S)`. Applying at `a ⊗ b` gives the desired equation. -/
 theorem antipode_mul_of_commutative (a b : A) :
     HopfAlgebraStruct.antipode (R := R) (a * b) =
       HopfAlgebraStruct.antipode (R := R) a *
         HopfAlgebraStruct.antipode (R := R) b := by
-  sorry
+  have hEq : WithConv.toConv (HopfAlgebraStruct.antipode (R := R) ∘ₗ
+        LinearMap.mul' R A) =
+      WithConv.toConv (LinearMap.mul' R A ∘ₗ
+        TensorProduct.map (HopfAlgebraStruct.antipode (R := R))
+          (HopfAlgebraStruct.antipode (R := R))) :=
+    left_inv_eq_right_inv convCompAntipode_mul_convMul
+      convMul_mul_convMulCompSSTensor
+  have hApp := congrArg (·.ofConv (a ⊗ₜ b)) hEq
+  simpa [LinearMap.mul'_apply] using hApp
 
 /-- The antipode is anti-multiplicative: `S(a · b) = S(b) · S(a)`. For a
 commutative `A` this is the same as `antipode_mul_of_commutative` up to
