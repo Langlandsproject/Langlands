@@ -72,3 +72,15 @@ bridge is in scope, this lemma is one rewrite away from
 \(\texttt{mul\_antipode}\). The downstream consequence motivating this
 lemma in the project is that \(f \circ S\) is itself an algebra hom
 when the target is commutative.
+
+**Project use.** For affine group schemes we only need the
+**commutative-source** specialization,
+[[node:linear_algebraic_groups.antipode_multiplicativity_commutative_hopf|the
+multiplicativity statement \(S(ab) = S(a) S(b)\)]], which admits a
+**direct proof bypassing the categorical bridge**: see that node for
+the full convolution-inverse-uniqueness argument using
+[[node:linear_algebraic_groups.multiplication_is_coalgebra_hom|\(\mu\)
+as a coalgebra hom]] plus a single use of commutativity. The
+non-commutative anti-multiplicativity result on this page is the
+more general statement, but is **not currently needed** by the project
+(deferred to upstream Mathlib).
