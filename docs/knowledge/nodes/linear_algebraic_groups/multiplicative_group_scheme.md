@@ -10,9 +10,17 @@ uses:
 - linear_algebraic_groups.algebraic_group_definition
 - linear_algebraic_groups.basic_examples
 - linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.Examples.Gm
+  declarations:
+    - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup
+    - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup.instGrpObj
+    - Langlands.AlgebraicGeometry.Examples.Gm
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the construction stated over an arbitrary base scheme \\(S\\)?"
