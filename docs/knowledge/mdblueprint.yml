@@ -1,6 +1,22 @@
 site:
   title: Reductive Linear Algebraic Groups Knowledge DAG
   short_title: Reductive Groups
+math:
+  macros:
+    "\\xrightarrow": "\\overset{#1}{\\longrightarrow}"
+    "\\xleftarrow": "\\overset{#1}{\\longleftarrow}"
+    "\\xleftrightarrow": "\\overset{#1}{\\longleftrightarrow}"
+    "\\rightsquigarrow": "\\leadsto"
+    "\\Sha": "\\unicode{x0428}"
+lean:
+  default_repository: langlands
+  repositories:
+    - id: langlands
+      title: LanglandsLean
+      local_path: ../../lean
+      web_url: https://github.com/Langlandsproject/Langlands
+      revision: main
+      source_url_template: "{web_url}/blob/{revision}/lean/{path}#L{line}"
 graph:
   max_visible_nodes: 120
   max_expand_nodes: 80
