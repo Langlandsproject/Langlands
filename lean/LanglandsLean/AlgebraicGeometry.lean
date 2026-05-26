@@ -10,6 +10,7 @@ import LanglandsLean.AlgebraicGeometry.HopfObjectBridge
 import LanglandsLean.AlgebraicGeometry.AlgHomGroup
 import LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
 import LanglandsLean.AlgebraicGeometry.HopfSpecFunctor
+import LanglandsLean.AlgebraicGeometry.Examples.Gm
 
 /-!
 # AlgebraicGeometry umbrella
