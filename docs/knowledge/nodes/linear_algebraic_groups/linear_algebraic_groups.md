@@ -13,23 +13,82 @@ verification:
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Is this topic stated at the intended roadmap level before decomposition?"
-  verdict: "Yes. This node is intentionally a broad topic-level subject to be expanded into definitions, constructions, examples, standard theorems, references, and Lean targets."
+  prompt: "Is the topic stated at the modern scheme-theoretic level over a general base, not specialised to fields?"
+  verdict: "Yes. The topic treats affine group schemes over an arbitrary base ring or scheme; the classical field case is the special case `S = Spec k`."
 tags:
 - linear-algebraic-groups
 ---
 
 # Linear Algebraic Groups
 
-This is a topic-level node in the reductive linear algebraic groups knowledge DAG. It records a mathematical subject that should later be expanded into definitions, examples, constructions, standard theorems, references, and formalization targets.
+A **linear algebraic group over a base scheme \(S\)** is, in the modern
+sense (Milne, SGA 3), an
+[[node:linear_algebraic_groups.affine_group_scheme_definition|affine group scheme]]
+that is locally of finite type over \(S\). Equivalently, a closed
+subgroup scheme of some \(\operatorname{GL}_{n,S}\) (see
+[[node:linear_algebraic_groups.embedding_theorem|the embedding theorem]]).
 
-## Expansion List
+When \(S = \operatorname{Spec} k\) for a field \(k\), this recovers the
+classical theory of linear algebraic groups over \(k\); when \(S\) is
+arbitrary, base change and descent considerations enter.
 
-- Fix the precise setup and notation for this subject.
-- Identify the basic definitions and canonical examples.
-- Record the standard constructions and comparison results.
-- Separate structural theorems from classification statements.
-- Add literature references and later Lean targets when the scope is stable.
+## Scope of this topic
+
+The `linear_algebraic_groups` topic collects the foundational
+infrastructure used throughout the Langlands roadmap:
+
+1. **Definitions and structure.**
+   [[node:linear_algebraic_groups.affine_group_scheme_definition|Affine group scheme]] +
+   [[node:linear_algebraic_groups.algebraic_group_definition|locally of finite type]];
+   the Path-4 + Level-1 idiom records this via
+   `(G : Scheme) [G.Over S] [GrpObj (Scheme.asOver G S)]` plus
+   `[IsAffineHom (G ↘ S)]` and `[LocallyOfFiniteType (G ↘ S)]`.
+
+2. **Coordinate-ring duality.**
+   [[node:linear_algebraic_groups.coordinate_rings_and_hopf_algebras|Coordinate rings and Hopf algebras]]
+   establishes that affine group schemes over \(S\) correspond to
+   commutative Hopf algebras over \(\Gamma(S, \mathcal{O}_S)\); the
+   functor implementing this is
+   [[node:linear_algebraic_groups.hopf_spec_functor|`hopfSpec`]].
+
+3. **Canonical examples.**
+   [[node:linear_algebraic_groups.basic_examples|Basic examples]] —
+   \(\mathbb{G}_a\), \(\mathbb{G}_m\), \(\mu_n\), \(\operatorname{GL}_n\),
+   \(\operatorname{SL}_n\), tori, finite étale group schemes — provide
+   the building blocks for everything that follows.
+
+4. **Categorical structure.**
+   [[node:linear_algebraic_groups.morphisms_and_closed_subgroups|Morphisms and closed subgroups]],
+   [[node:linear_algebraic_groups.kernels_images_and_quotients|kernels and quotients]],
+   [[node:linear_algebraic_groups.base_change|base change]],
+   [[node:linear_algebraic_groups.automorphism_groups|automorphism groups]].
+
+5. **Geometric properties.**
+   [[node:linear_algebraic_groups.connected_components|Connected components]],
+   [[node:linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras|smoothness, tangent spaces, and Lie algebras]].
+
+6. **Representation theory.**
+   [[node:linear_algebraic_groups.representation_equals_comodule|representations as comodules]],
+   [[node:linear_algebraic_groups.faithful_linear_representation_definition|faithful linear representations]],
+   the embedding into \(\operatorname{GL}_n\).
+
+## Position in the Langlands roadmap
+
+This topic supplies the foundational layer beneath
+[[node:reductive_structure.borel_subgroups|reductive structure]] (root data,
+parabolics, Borel subgroups),
+[[node:descent_and_forms.forms_of_algebraic_groups|descent and forms]] (inner/outer forms,
+quasi-split groups), and
+[[node:buildings_and_parahorics.bn_pairs_and_tits_systems|buildings and parahorics]] (the
+local-field theory). Every later topic assumes the affine group-scheme
+infrastructure recorded here.
+
+## References
+
+- Milne, *Algebraic Groups* (CUP, 2017).
+- Waterhouse, *Introduction to Affine Group Schemes* (GTM 66, 1979).
+- SGA 3 (Demazure–Grothendieck), *Schémas en Groupes*.
+- Jantzen, *Representations of Algebraic Groups* (AMS, 2003).
 
 ## Prerequisite Topics
 
