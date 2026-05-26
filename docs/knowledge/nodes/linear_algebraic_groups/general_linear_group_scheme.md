@@ -10,9 +10,19 @@ uses:
 - linear_algebraic_groups.algebraic_group_definition
 - linear_algebraic_groups.basic_examples
 - linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme
+lean:
+  modules:
+    - LanglandsLean.AlgebraicGeometry.Examples.GLn
+  declarations:
+    - Langlands.AlgebraicGeometry.Examples.GLn.universalMatrix
+    - Langlands.AlgebraicGeometry.Examples.GLn.det
+    - Langlands.AlgebraicGeometry.Examples.GLn.coordRing
+    - Langlands.AlgebraicGeometry.Examples.GLn.over
+    - Langlands.AlgebraicGeometry.Examples.GLnSch
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the construction stated over an arbitrary base scheme \\(S\\) and arbitrary positive integer \\(n\\)?"
