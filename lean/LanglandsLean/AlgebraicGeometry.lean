@@ -12,6 +12,7 @@ import LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
 import LanglandsLean.AlgebraicGeometry.HopfSpecFunctor
 import LanglandsLean.AlgebraicGeometry.Examples.Gm
 import LanglandsLean.AlgebraicGeometry.Examples.Ga
+import LanglandsLean.AlgebraicGeometry.Examples.MuN
 
 /-!
 # AlgebraicGeometry umbrella
