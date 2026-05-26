@@ -1,0 +1,336 @@
+{
+  "roots": [
+    {
+      "id": "bd_covers",
+      "title": "Bd Covers",
+      "depth": 1,
+      "parent": null,
+      "node_count": 6,
+      "direct_node_count": 6,
+      "kind_counts": {
+        "topic": 6
+      },
+      "status_counts": {
+        "admitted": 6
+      },
+      "href": "bd_covers/index.html",
+      "children": []
+    },
+    {
+      "id": "buildings_and_parahorics",
+      "title": "Buildings And Parahorics",
+      "depth": 1,
+      "parent": null,
+      "node_count": 16,
+      "direct_node_count": 16,
+      "kind_counts": {
+        "topic": 16
+      },
+      "status_counts": {
+        "admitted": 16
+      },
+      "href": "buildings_and_parahorics/index.html",
+      "children": []
+    },
+    {
+      "id": "classical_and_exceptional_groups",
+      "title": "Classical And Exceptional Groups",
+      "depth": 1,
+      "parent": null,
+      "node_count": 2,
+      "direct_node_count": 2,
+      "kind_counts": {
+        "topic": 2
+      },
+      "status_counts": {
+        "admitted": 2
+      },
+      "href": "classical_and_exceptional_groups/index.html",
+      "children": []
+    },
+    {
+      "id": "descent_and_forms",
+      "title": "Descent And Forms",
+      "depth": 1,
+      "parent": null,
+      "node_count": 22,
+      "direct_node_count": 22,
+      "kind_counts": {
+        "topic": 22
+      },
+      "status_counts": {
+        "admitted": 22
+      },
+      "href": "descent_and_forms/index.html",
+      "children": []
+    },
+    {
+      "id": "foundational_inputs",
+      "title": "Foundational Inputs",
+      "depth": 1,
+      "parent": null,
+      "node_count": 8,
+      "direct_node_count": 8,
+      "kind_counts": {
+        "topic": 8
+      },
+      "status_counts": {
+        "admitted": 8
+      },
+      "href": "foundational_inputs/index.html",
+      "children": []
+    },
+    {
+      "id": "kottwitz_structures",
+      "title": "Kottwitz Structures",
+      "depth": 1,
+      "parent": null,
+      "node_count": 9,
+      "direct_node_count": 9,
+      "kind_counts": {
+        "topic": 9
+      },
+      "status_counts": {
+        "admitted": 9
+      },
+      "href": "kottwitz_structures/index.html",
+      "children": []
+    },
+    {
+      "id": "linear_algebraic_groups",
+      "title": "Linear Algebraic Groups",
+      "depth": 1,
+      "parent": null,
+      "node_count": 46,
+      "direct_node_count": 46,
+      "kind_counts": {
+        "definition": 14,
+        "example": 1,
+        "lemma": 2,
+        "theorem": 18,
+        "topic": 11
+      },
+      "status_counts": {
+        "admitted": 45,
+        "needs_definition_review": 1
+      },
+      "href": "linear_algebraic_groups/index.html",
+      "children": []
+    },
+    {
+      "id": "nilpotent_orbits",
+      "title": "Nilpotent Orbits",
+      "depth": 1,
+      "parent": null,
+      "node_count": 10,
+      "direct_node_count": 10,
+      "kind_counts": {
+        "topic": 10
+      },
+      "status_counts": {
+        "admitted": 10
+      },
+      "href": "nilpotent_orbits/index.html",
+      "children": []
+    },
+    {
+      "id": "reductive_structure",
+      "title": "Reductive Structure",
+      "depth": 1,
+      "parent": null,
+      "node_count": 13,
+      "direct_node_count": 13,
+      "kind_counts": {
+        "topic": 13
+      },
+      "status_counts": {
+        "admitted": 13
+      },
+      "href": "reductive_structure/index.html",
+      "children": []
+    },
+    {
+      "id": "root_data_and_duality",
+      "title": "Root Data And Duality",
+      "depth": 1,
+      "parent": null,
+      "node_count": 21,
+      "direct_node_count": 21,
+      "kind_counts": {
+        "topic": 21
+      },
+      "status_counts": {
+        "admitted": 21
+      },
+      "href": "root_data_and_duality/index.html",
+      "children": []
+    }
+  ],
+  "topics": {
+    "bd_covers": {
+      "id": "bd_covers",
+      "title": "Bd Covers",
+      "depth": 1,
+      "parent": null,
+      "node_count": 6,
+      "direct_node_count": 6,
+      "kind_counts": {
+        "topic": 6
+      },
+      "status_counts": {
+        "admitted": 6
+      },
+      "href": "bd_covers/index.html",
+      "children": []
+    },
+    "buildings_and_parahorics": {
+      "id": "buildings_and_parahorics",
+      "title": "Buildings And Parahorics",
+      "depth": 1,
+      "parent": null,
+      "node_count": 16,
+      "direct_node_count": 16,
+      "kind_counts": {
+        "topic": 16
+      },
+      "status_counts": {
+        "admitted": 16
+      },
+      "href": "buildings_and_parahorics/index.html",
+      "children": []
+    },
+    "classical_and_exceptional_groups": {
+      "id": "classical_and_exceptional_groups",
+      "title": "Classical And Exceptional Groups",
+      "depth": 1,
+      "parent": null,
+      "node_count": 2,
+      "direct_node_count": 2,
+      "kind_counts": {
+        "topic": 2
+      },
+      "status_counts": {
+        "admitted": 2
+      },
+      "href": "classical_and_exceptional_groups/index.html",
+      "children": []
+    },
+    "descent_and_forms": {
+      "id": "descent_and_forms",
+      "title": "Descent And Forms",
+      "depth": 1,
+      "parent": null,
+      "node_count": 22,
+      "direct_node_count": 22,
+      "kind_counts": {
+        "topic": 22
+      },
+      "status_counts": {
+        "admitted": 22
+      },
+      "href": "descent_and_forms/index.html",
+      "children": []
+    },
+    "foundational_inputs": {
+      "id": "foundational_inputs",
+      "title": "Foundational Inputs",
+      "depth": 1,
+      "parent": null,
+      "node_count": 8,
+      "direct_node_count": 8,
+      "kind_counts": {
+        "topic": 8
+      },
+      "status_counts": {
+        "admitted": 8
+      },
+      "href": "foundational_inputs/index.html",
+      "children": []
+    },
+    "kottwitz_structures": {
+      "id": "kottwitz_structures",
+      "title": "Kottwitz Structures",
+      "depth": 1,
+      "parent": null,
+      "node_count": 9,
+      "direct_node_count": 9,
+      "kind_counts": {
+        "topic": 9
+      },
+      "status_counts": {
+        "admitted": 9
+      },
+      "href": "kottwitz_structures/index.html",
+      "children": []
+    },
+    "linear_algebraic_groups": {
+      "id": "linear_algebraic_groups",
+      "title": "Linear Algebraic Groups",
+      "depth": 1,
+      "parent": null,
+      "node_count": 46,
+      "direct_node_count": 46,
+      "kind_counts": {
+        "definition": 14,
+        "example": 1,
+        "lemma": 2,
+        "theorem": 18,
+        "topic": 11
+      },
+      "status_counts": {
+        "admitted": 45,
+        "needs_definition_review": 1
+      },
+      "href": "linear_algebraic_groups/index.html",
+      "children": []
+    },
+    "nilpotent_orbits": {
+      "id": "nilpotent_orbits",
+      "title": "Nilpotent Orbits",
+      "depth": 1,
+      "parent": null,
+      "node_count": 10,
+      "direct_node_count": 10,
+      "kind_counts": {
+        "topic": 10
+      },
+      "status_counts": {
+        "admitted": 10
+      },
+      "href": "nilpotent_orbits/index.html",
+      "children": []
+    },
+    "reductive_structure": {
+      "id": "reductive_structure",
+      "title": "Reductive Structure",
+      "depth": 1,
+      "parent": null,
+      "node_count": 13,
+      "direct_node_count": 13,
+      "kind_counts": {
+        "topic": 13
+      },
+      "status_counts": {
+        "admitted": 13
+      },
+      "href": "reductive_structure/index.html",
+      "children": []
+    },
+    "root_data_and_duality": {
+      "id": "root_data_and_duality",
+      "title": "Root Data And Duality",
+      "depth": 1,
+      "parent": null,
+      "node_count": 21,
+      "direct_node_count": 21,
+      "kind_counts": {
+        "topic": 21
+      },
+      "status_counts": {
+        "admitted": 21
+      },
+      "href": "root_data_and_duality/index.html",
+      "children": []
+    }
+  }
+}
