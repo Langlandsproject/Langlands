@@ -11,20 +11,29 @@ uses:
 - linear_algebraic_groups.spec_representability_via_global_sections
 - linear_algebraic_groups.affine_group_scheme_definition
 lean:
+  repository: langlands
   modules:
-    - LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
+  - LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf
   declarations:
-    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.pointsPresheaf
-    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.hopfSpecGrpObj
-    - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.specObjOver
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.pointsPresheaf
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.hopfSpecGrpObj
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.specObjOver
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.algHomCompAntipode_postcomp
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.convAlg_postcomp
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.convOneAlg_postcomp
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.gammaAlgHom
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.gammaAlgebra
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.overGammaMap
+  - Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.pointsObj
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: "Is the construction stated for an arbitrary commutative base ring R?"
-  verdict: "Yes. The Yoneda + convolution argument works over any commutative R; specialization to a field is a special case."
+  prompt: Is the construction stated for an arbitrary commutative base ring R?
+  verdict: Yes. The Yoneda + convolution argument works over any commutative R; specialization
+    to a field is a special case.
 tags:
 - hopf-spec
 - yoneda

@@ -12,19 +12,33 @@ uses:
 - foundational_inputs.affine_schemes
 - foundational_inputs.hopf_algebras
 lean:
+  repository: langlands
   modules:
-    - LanglandsLean.AlgebraicGeometry.HopfSpec
+  - LanglandsLean.AlgebraicGeometry.HopfSpec
+  - LanglandsLean.AlgebraicGeometry.HopfSpecFunctor
   declarations:
-    - Langlands.AlgebraicGeometry.algSpec
-    - Langlands.AlgebraicGeometry.hopfSpec
+  - Langlands.AlgebraicGeometry.algSpec
+  - Langlands.AlgebraicGeometry.hopfSpec
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.algHomToHomOverGrp
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.algSpec
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.algSpec_obj_hom_eq
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.gammaOver
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.homOverGrpToAlgHom
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.hopfSpec
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.hopfSpecGrpObjFromGrp
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsPresheafGrp
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsPresheafGrpMap
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsRepresentabilityGrp
 verification:
   definition: accepted
   proof: not_applicable
   alignment: aligned
 generality:
   reviewed: true
-  prompt: "Is the functor defined for an arbitrary commutative base ring \\(R\\), not only a field?"
-  verdict: "Yes. The construction is over any \\(R \\in \\mathsf{CommRingCat}\\); restricting to a field is a special case."
+  prompt: Is the functor defined for an arbitrary commutative base ring \(R\), not
+    only a field?
+  verdict: Yes. The construction is over any \(R \in \mathsf{CommRingCat}\); restricting
+    to a field is a special case.
 tags:
 - hopf-spec
 - functor

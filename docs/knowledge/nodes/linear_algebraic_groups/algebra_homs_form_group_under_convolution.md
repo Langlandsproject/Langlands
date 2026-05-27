@@ -10,18 +10,35 @@ uses:
 - linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
 - linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom
 lean:
+  repository: langlands
   modules:
-    - LanglandsLean.AlgebraicGeometry.AlgHomGroup
+  - LanglandsLean.AlgebraicGeometry.AlgHomGroup
   declarations:
-    - Langlands.AlgebraicGeometry.AlgHomGroup.instGroup
+  - Langlands.AlgebraicGeometry.AlgHomGroup.instGroup
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_eq_via_toConv
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_inv_mul_cancel
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_mul_assoc
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_mul_one
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_one_mul
+  - Langlands.AlgebraicGeometry.AlgHomGroup.convAlg_toConv
+  - Langlands.AlgebraicGeometry.AlgHomGroup.convOneAlg
+  - Langlands.AlgebraicGeometry.AlgHomGroup.convOneAlg_apply
+  - Langlands.AlgebraicGeometry.AlgHomGroup.convOneAlg_toLinearMap
+  - Langlands.AlgebraicGeometry.AlgHomGroup.inv_def
+  - Langlands.AlgebraicGeometry.AlgHomGroup.mul_def
+  - Langlands.AlgebraicGeometry.AlgHomGroup.one_def
+  - Langlands.AlgebraicGeometry.AlgHomGroup.toConv_convOneAlg
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: "Is the statement at the right level — Hopf source, commutative target — and is the group commutative when the bialgebra is cocommutative?"
-  verdict: "Yes. The Hopf hypothesis is essential for inverses; commutativity of B is essential for the convolution to land in algebra homs. The convolution group is commutative iff A is cocommutative (Δ is symmetric)."
+  prompt: Is the statement at the right level — Hopf source, commutative target —
+    and is the group commutative when the bialgebra is cocommutative?
+  verdict: Yes. The Hopf hypothesis is essential for inverses; commutativity of B
+    is essential for the convolution to land in algebra homs. The convolution group
+    is commutative iff A is cocommutative (Δ is symmetric).
 tags:
 - convolution
 - hopf-algebra
