@@ -281,7 +281,10 @@ noncomputable def specObjOver : Over (Scheme.Spec.obj (op R)) :=
 
 /-- Forward map: a morphism `T ⟶ specObjOver R A` in `Over (Spec R)`
 yields an `R`-algebra hom `A →ₐ[R] Γ(T.left, ⊤)` by applying `Γ`
-(i.e., `f.left.appTop`) and pre-composing with the `ΓSpec` iso. -/
+(i.e., `f.left.appTop`) and pre-composing with the `ΓSpec` iso.
+
+Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+-/
 noncomputable def homOverToAlgHom (T : Over (Scheme.Spec.obj (op R)))
     (f : T ⟶ specObjOver R A) :
     letI := gammaAlgebra R T
@@ -335,7 +338,10 @@ noncomputable def homOverToAlgHom (T : Over (Scheme.Spec.obj (op R)))
 
 /-- Backward map: an R-algebra hom `φ : A →ₐ[R] Γ(T.left, ⊤)` yields a
 morphism `T ⟶ specObjOver R A` in `Over (Spec R)` via the `Γ ⊣ Spec`
-adjunction. -/
+adjunction.
+
+Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+-/
 noncomputable def algHomToHomOver (T : Over (Scheme.Spec.obj (op R)))
     (φ : letI := gammaAlgebra R T; A →ₐ[R] Γ(T.left, ⊤)) :
     T ⟶ specObjOver R A :=
@@ -394,7 +400,10 @@ noncomputable def algHomToHomOver (T : Over (Scheme.Spec.obj (op R)))
 
 /-- The representability witness: the forgetful image of
 `pointsPresheaf` is naturally isomorphic to `Hom_{Over Spec R}(-, Spec A)`,
-hence representable by `specObjOver R A`. -/
+hence representable by `specObjOver R A`.
+
+Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+-/
 noncomputable def specRepresentability :
     (pointsPresheaf R A ⋙ forget GrpCat).RepresentableBy (specObjOver R A) where
   homEquiv {T : Over (Scheme.Spec.obj (op R))} :=

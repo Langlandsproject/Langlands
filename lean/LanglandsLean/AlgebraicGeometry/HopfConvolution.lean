@@ -94,14 +94,20 @@ each factor of which is an algebra homomorphism (the comultiplication
 is an algebra hom by the bialgebra axiom; `Algebra.TensorProduct.map f
 g` is an algebra hom because `f, g` are; the multiplication
 `Algebra.TensorProduct.lmul'` of a commutative algebra is an algebra
-hom). -/
+hom).
+
+Blueprint: linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
+-/
 noncomputable def convAlg {B : Type*} [CommSemiring B] [Algebra R B]
     (f g : A →ₐ[R] B) : A →ₐ[R] B :=
   (Algebra.TensorProduct.lmul' R).comp
     ((Algebra.TensorProduct.map f g).comp (Bialgebra.comulAlgHom R A))
 
 /-- The underlying linear map of `convAlg f g` agrees with the
-`convLinear f g` definition. -/
+`convLinear f g` definition.
+
+Blueprint: linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
+-/
 theorem convAlg_toLinearMap {B : Type*} [CommSemiring B] [Algebra R B]
     (f g : A →ₐ[R] B) :
     (convAlg f g).toLinearMap = convLinear f g := by
@@ -110,7 +116,10 @@ theorem convAlg_toLinearMap {B : Type*} [CommSemiring B] [Algebra R B]
   simp [convAlg, Function.comp_apply]
   rfl
 
-/-- Pointwise: `convAlg f g a = convLinear f g a`. -/
+/-- Pointwise: `convAlg f g a = convLinear f g a`.
+
+Blueprint: linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
+-/
 theorem convAlg_apply {B : Type*} [CommSemiring B] [Algebra R B]
     (f g : A →ₐ[R] B) (a : A) : convAlg f g a = convLinear f g a := by
   rw [← convAlg_toLinearMap]; rfl
