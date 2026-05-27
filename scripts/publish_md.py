@@ -84,6 +84,27 @@ def validate_source(paths: Paths, *, dry_run: bool) -> None:
     )
 
 
+def validate_reverse_links(
+    paths: Paths, *, strict: bool, dry_run: bool,
+) -> None:
+    """Run lean_reverse_check to gate on Lean ↔ MD link drift.
+
+    Fails the publish on any cross_mismatch (exit 2). With ``strict``
+    also fails on lean_only warnings (exit 1). Cross-mismatch means
+    a Lean ``Blueprint:`` marker and an MD ``lean.declarations``
+    reference disagree on which node owns a declaration — never
+    publish through that.
+    """
+    cmd = [
+        "uv", "run", "python", "-m", "tools.knowledge.lean_reverse_check",
+        str(paths.knowledge_root),
+    ]
+    if strict:
+        cmd.append("--strict")
+    run(cmd, cwd=paths.mdblueprint_root, dry_run=dry_run)
+
+
+
 def build_site(paths: Paths, *, dry_run: bool) -> None:
     if paths.build_dir.exists() and not dry_run:
         shutil.rmtree(paths.build_dir)
@@ -194,6 +215,20 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     parser.add_argument("--push-pages", action="store_true")
     parser.add_argument("--message", default="Publish Langlands knowledge site")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--skip-reverse-check",
+        action="store_true",
+        help="Skip the Lean ↔ MD reverse-link cross-check. Cross-mismatches "
+             "are still surfaced by other tooling; this only suppresses the "
+             "publish-time gate.",
+    )
+    parser.add_argument(
+        "--strict-reverse-links",
+        action="store_true",
+        help="Also fail publish on `lean_only` warnings from "
+             "lean_reverse_check (Lean decl with Blueprint marker that MD "
+             "doesn't list). Default: only `cross_mismatch` fails publish.",
+    )
     return parser.parse_args(argv)
 
 
@@ -216,6 +251,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         ensure_paths(paths)
         validate_source(paths, dry_run=args.dry_run)
+        if not args.skip_reverse_check:
+            validate_reverse_links(
+                paths,
+                strict=args.strict_reverse_links,
+                dry_run=args.dry_run,
+            )
         build_site(paths, dry_run=args.dry_run)
         if not args.dry_run:
             verify_artifacts(paths)
