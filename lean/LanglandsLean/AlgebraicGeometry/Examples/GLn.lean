@@ -58,7 +58,7 @@ This is a substantial follow-up (~300-500 LoC). See blueprint node
 
 ## GitHub issue
 
-Phase D: <https://github.com/Langlandsproject/Langlands/issues/25>.
+Phase D4: <https://github.com/Langlandsproject/Langlands/issues/8>.
 -/
 
 open AlgebraicGeometry CategoryTheory Opposite MvPolynomial

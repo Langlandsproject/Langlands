@@ -42,7 +42,7 @@ get `G_a` as an `IsAlgebraicGroup`.
 
 ## GitHub issue
 
-Phase D1: <https://github.com/Langlandsproject/Langlands/issues/23>.
+Phase D1: <https://github.com/Langlandsproject/Langlands/issues/6>.
 -/
 
 open AlgebraicGeometry CategoryTheory Opposite Polynomial

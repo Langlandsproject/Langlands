@@ -16,25 +16,18 @@ import Mathlib.Algebra.Category.CommAlgCat.Monoidal
   concrete commutative `R`-Hopf algebra `A`, the affine scheme
   `Spec A` becomes a group object in `Over (Spec R)`. This is
   shipped via `Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.hopfSpecGrpObj`.
-* `hopfSpec R` (the **functor-level** lift): still requires a
-  `GrpObj (A : (CommAlgCat R)ᵒᵖ) → HopfAlgebra R A.unop` bridge to
-  package the Yoneda construction functorially. The original
-  Mathlib-PR-blocker (`(algSpec R).mapGrp` needing `Functor.Monoidal`)
-  is now sidestepped by the Yoneda path; the new blocker is the
-  Hopf/GrpObj bridge.
+* `hopfSpec R` (the **functor-level** lift): implemented in
+  `Langlands.AlgebraicGeometry.HopfSpecFunctor.hopfSpec`, using the
+  Yoneda construction at the level of group objects in
+  `(CommAlgCat R)ᵒᵖ`.
 
-## Plan to close the functor-level construction
+## Functor-level construction
 
-The Yoneda path replaces `(algSpec R).mapGrp`:
-- For each `A : Grp ((CommAlgCat R)ᵒᵖ)`, `hopfSpecGrpObj` produces a
-  `GrpObj` on `algSpec.obj A`, *provided* we can install
-  `HopfAlgebra R A.X.unop` from the `GrpObj` data of `A`. This is the
-  GrpObj↔HopfAlgebra equivalence that the blueprint
-  `linear_algebraic_groups.commutative_hopf_iff_grp_object` claims.
-- Functoriality on morphisms: a morphism `f : A → A'` of group objects in
-  `(CommAlgCat R)ᵒᵖ` (i.e., a Hopf algebra map under the bridge) post-composes
-  on convolution to give a group hom on points, hence a `GrpObj`-morphism
-  on the Spec side by `RepresentableBy` naturality.
+The Yoneda path replaces `(algSpec R).mapGrp`. For each
+`A : Grp ((CommAlgCat R)ᵒᵖ)`, `HopfSpecFunctor.hopfSpecGrpObjFromGrp`
+produces the `GrpObj` on the underlying affine scheme using the
+group-valued points presheaf represented by `Spec A`. Functoriality on
+morphisms is transported through the representability witness.
 
 The fully-faithful and essential-image lemmas then follow from the
 analogous statements at the `algSpec` level (already shipped here).
@@ -85,8 +78,8 @@ Two construction paths:
    `Grp ((CommAlgCat R)ᵒᵖ) ↔ {comm R-Hopf-algebras}` bridge, which
    would allow lifting `hopfSpecGrpObj` to a functor.
 
-For now `hopfSpec` is declared as a `sorry`-stub, with the substantive
-object-level content shipped in `hopfSpecGrpObj`. -/
+The object-level Hopf-algebra construction remains available as
+`Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.hopfSpecGrpObj`. -/
 noncomputable def hopfSpec (R : CommRingCat) :
     Grp ((CommAlgCat R)ᵒᵖ) ⥤ Grp (Over (Scheme.Spec.obj (op R))) :=
   HopfSpecFunctor.hopfSpec R

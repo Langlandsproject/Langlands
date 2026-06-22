@@ -37,7 +37,7 @@ mathematical statement.
 
 ## GitHub issue
 
-Phase D: <https://github.com/Langlandsproject/Langlands/issues/26>.
+Phase D4: <https://github.com/Langlandsproject/Langlands/issues/8>.
 -/
 
 open AlgebraicGeometry CategoryTheory Opposite

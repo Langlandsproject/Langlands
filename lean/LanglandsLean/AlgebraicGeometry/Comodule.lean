@@ -1,4 +1,5 @@
 import LanglandsLean.AlgebraicGeometry.Conventions
+import Mathlib.RingTheory.Bialgebra.Basic
 import Mathlib.RingTheory.Coalgebra.Basic
 
 /-!
@@ -67,6 +68,35 @@ structure Hom (ρ : Comodule R A V) (σ : Comodule R A W) where
     σ.coaction ∘ₗ toLinearMap = LinearMap.rTensor A toLinearMap ∘ₗ ρ.coaction
 
 end Comodule
+
+section Trivial
+
+variable (B : Type*) [Semiring B] [Bialgebra R B]
+variable (V : Type*) [AddCommMonoid V] [Module R V]
+
+/-- The coaction of the **trivial comodule**: `v ↦ v ⊗ 1`. -/
+def trivialCoaction : V →ₗ[R] V ⊗[R] B :=
+  (TensorProduct.mk R V B).flip 1
+
+@[simp]
+theorem trivialCoaction_apply (v : V) :
+    trivialCoaction R B V v = v ⊗ₜ[R] (1 : B) := rfl
+
+/-- The **trivial comodule** on any `R`-module `V` over a bialgebra `B`.
+
+When `B` is the coordinate Hopf algebra of an affine group scheme `G`,
+this is the representation on which every point of `G` acts by the
+identity. -/
+def trivialComodule : Comodule R B V where
+  coaction := trivialCoaction R B V
+  coassoc := by
+    ext v
+    simp [trivialCoaction, Algebra.TensorProduct.one_def]
+  counit := by
+    ext v
+    simp [trivialCoaction]
+
+end Trivial
 
 /-- The **regular comodule**: for any `R`-coalgebra `A`, the underlying
 module `A` carries an `A`-comodule structure with coaction equal to the

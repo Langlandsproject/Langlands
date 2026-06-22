@@ -33,7 +33,7 @@ chain end-to-end on an actual algebraic group.
 
 ## GitHub issue
 
-Phase D2: <https://github.com/Langlandsproject/Langlands/issues/22>.
+Phase D2: <https://github.com/Langlandsproject/Langlands/issues/7>.
 -/
 
 open AlgebraicGeometry CategoryTheory Opposite LaurentPolynomial

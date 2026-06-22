@@ -8,12 +8,13 @@ import Mathlib.RingTheory.TensorProduct.Maps
 open scoped TensorProduct
 
 /-!
-# Antipode multiplicativity for commutative Hopf algebras
+# Antipode anti-multiplicativity for Hopf algebras
 
-For a commutative `R`-Hopf algebra `A`, the antipode satisfies
-`S(a · b) = S(a) · S(b)` (and equivalently `S(a · b) = S(b) · S(a)`).
-This file is restricted to **commutative** `A`, which is exactly what
-affine group schemes need.
+For any `R`-Hopf algebra `A`, the antipode reverses multiplication:
+`S(a · b) = S(b) · S(a)`. Mathlib now provides this as
+`HopfAlgebra.antipode_mul`; this file exposes a project-namespaced
+wrapper and the commutative-source corollary needed by affine group
+coordinate rings.
 
 ## Strategy
 
@@ -41,13 +42,28 @@ Phase B-Y2.5: <https://github.com/Langlandsproject/Langlands/issues/18>
 
 ## Status
 
-`antipode_mul_of_commutative` packaged via `mulCoalgHom` (μ as a
-coalgebra hom) with a single Sweedler step deferred.
-`antipode_anti_multiplicativity` for commutative A is derived as a
-trivial corollary (uses `mul_comm` in A).
+`antipode_anti_multiplicativity` is a direct wrapper around Mathlib's
+`HopfAlgebra.antipode_mul`. The older direct convolution lemmas for the
+commutative-source corollary remain below as local API.
 -/
 
 namespace Langlands.AlgebraicGeometry.HopfAntipode
+
+section General
+
+variable {R : Type*} [CommSemiring R]
+variable {A : Type*} [Semiring A] [HopfAlgebra R A]
+
+/-- The antipode is anti-multiplicative: `S(a · b) = S(b) · S(a)`. -/
+theorem antipode_anti_multiplicativity (a b : A) :
+    HopfAlgebraStruct.antipode (R := R) (a * b) =
+      HopfAlgebraStruct.antipode (R := R) b *
+        HopfAlgebraStruct.antipode (R := R) a :=
+  HopfAlgebra.antipode_mul (R := R) (A := A) a b
+
+end General
+
+section Commutative
 
 variable {R : Type*} [CommRing R]
 variable {A : Type*} [CommRing A] [HopfAlgebra R A]
@@ -274,24 +290,18 @@ theorem antipode_mul_of_commutative (a b : A) :
     HopfAlgebraStruct.antipode (R := R) (a * b) =
       HopfAlgebraStruct.antipode (R := R) a *
         HopfAlgebraStruct.antipode (R := R) b := by
-  have hEq : WithConv.toConv (HopfAlgebraStruct.antipode (R := R) ∘ₗ
-        LinearMap.mul' R A) =
-      WithConv.toConv (LinearMap.mul' R A ∘ₗ
-        TensorProduct.map (HopfAlgebraStruct.antipode (R := R))
-          (HopfAlgebraStruct.antipode (R := R))) :=
-    left_inv_eq_right_inv convCompAntipode_mul_convMul
-      convMul_mul_convMulCompSSTensor
-  have hApp := congrArg (·.ofConv (a ⊗ₜ b)) hEq
-  simpa [LinearMap.mul'_apply] using hApp
+  rw [antipode_anti_multiplicativity, mul_comm]
 
-/-- The antipode is anti-multiplicative: `S(a · b) = S(b) · S(a)`. For a
+/-- Commutative-source alias for anti-multiplicativity. For a
 commutative `A` this is the same as `antipode_mul_of_commutative` up to
 `mul_comm`. -/
-theorem antipode_anti_multiplicativity (a b : A) :
+theorem antipode_anti_multiplicativity_commutative (a b : A) :
     HopfAlgebraStruct.antipode (R := R) (a * b) =
       HopfAlgebraStruct.antipode (R := R) b *
-        HopfAlgebraStruct.antipode (R := R) a := by
-  rw [antipode_mul_of_commutative, mul_comm]
+        HopfAlgebraStruct.antipode (R := R) a :=
+  antipode_anti_multiplicativity a b
+
+end Commutative
 
 end Langlands.AlgebraicGeometry.HopfAntipode
 

@@ -44,7 +44,8 @@ added; this construction is on the `basic_examples` track.
 
 ## GitHub issue
 
-Phase D-Y: <https://github.com/Langlandsproject/Langlands/issues/24>.
+Phase D standard examples; follow-up issue to be split from
+<https://github.com/Langlandsproject/Langlands/issues/8> if needed.
 -/
 
 open AlgebraicGeometry CategoryTheory Opposite
