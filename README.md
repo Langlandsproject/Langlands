@@ -1,8 +1,4 @@
-# Langlands
-
-A Stacks-Project-style mathematical knowledge base for the Langlands
-program, paired with a Lean 4 formalization layer that hooks into the
-same node identifiers.
+# A Knowledge Base for the Langlands Program
 
 ## Goal
 
