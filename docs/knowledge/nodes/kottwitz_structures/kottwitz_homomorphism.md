@@ -29,7 +29,7 @@ The **Kottwitz homomorphism** \(\kappa_G : B(G) \to \pi_1(G)_\Gamma\)
 is the canonical map from \(\sigma\)-conjugacy classes in
 \(G(\breve F)\) to the Galois-coinvariants of the algebraic
 fundamental group. Together with the **Newton map** it makes
-\([[node:kottwitz_structures.b_of_g|B(G)]]\) into a tractable
+[[node:kottwitz_structures.b_of_g|\(B(G)\)]] into a tractable
 combinatorial set.
 
 ## Setup

@@ -18,11 +18,10 @@ lean:
     - Langlands.AlgebraicGeometry.Examples.GLn.det
     - Langlands.AlgebraicGeometry.Examples.GLn.coordRing
     - Langlands.AlgebraicGeometry.Examples.GLn.over
-    - Langlands.AlgebraicGeometry.Examples.GLnSch
 verification:
   definition: accepted
   proof: not_applicable
-  alignment: pending
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the construction stated over an arbitrary base scheme \\(S\\) and arbitrary positive integer \\(n\\)?"

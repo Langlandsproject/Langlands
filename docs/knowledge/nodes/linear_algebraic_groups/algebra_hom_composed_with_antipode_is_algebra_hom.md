@@ -1,13 +1,13 @@
 ---
 id: linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom
-title: Composition of an Algebra Hom with the Antipode Is an Algebra Hom
+title: Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras
 kind: theorem
 status: admitted
 primary_topic: linear_algebraic_groups
 topics:
 - linear_algebraic_groups
 uses:
-- linear_algebraic_groups.antipode_anti_multiplicativity
+- linear_algebraic_groups.antipode_multiplicativity_commutative_hopf
 lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.HopfObjectBridge
@@ -19,8 +19,8 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: "What is the minimal commutativity hypothesis — on the source A, on the target B, or both?"
-  verdict: "Commutativity of B alone suffices. The antipode is anti-multiplicative on A; composing with f gives anti-mult in B; commutativity of B then symmetrises this to multiplicativity. A need not be commutative for this result."
+  prompt: "Is this node aligned with the Lean result currently used for affine group coordinate rings?"
+  verdict: "Yes. The formalized project theorem assumes the Hopf algebra A is commutative and the target B is commutative; the more general noncommutative-source variant is deferred to the general antipode anti-multiplicativity node."
 tags:
 - antipode
 - algebra-hom
@@ -28,11 +28,11 @@ tags:
 - linear-algebraic-groups
 ---
 
-# Composition of an Algebra Hom with the Antipode Is an Algebra Hom
+# Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras
 
-Let \(R\) be a commutative ring, \(A\) an \(R\)-Hopf algebra with
-antipode \(S : A \to A\), and \(B\) a **commutative** \(R\)-algebra.
-For any \(R\)-algebra homomorphism \(f : A \to B\), the composition
+Let \(R\) be a commutative ring, \(A\) a **commutative** \(R\)-Hopf algebra
+with antipode \(S : A \to A\), and \(B\) a commutative \(R\)-algebra. For
+any \(R\)-algebra homomorphism \(f : A \to B\), the composition
 
 \[
 f \circ S : A \to B
@@ -40,9 +40,10 @@ f \circ S : A \to B
 
 is again an \(R\)-algebra homomorphism.
 
-This is the technical fact that makes the inverse of the convolution
-group structure on \([[node:linear_algebraic_groups.algebra_homs_form_group_under_convolution|\operatorname{Hom}_{R\text{-Alg}}(A, B)]]\)
-well-defined.
+This is the technical fact that makes the inverse in
+[[node:linear_algebraic_groups.algebra_homs_form_group_under_convolution|the convolution group of algebra homomorphisms]]
+well-defined; the underlying set is
+\(\operatorname{Hom}_{R\text{-Alg}}(A, B)\).
 
 *Proof.*  
 \(R\)-linearity of \(f \circ S\) is automatic. Preservation of the
@@ -56,15 +57,8 @@ where the middle equality uses \(S(1_A) = 1_A\) (antipode preserves
 unit).
 
 Preservation of multiplication. By
-[[node:linear_algebraic_groups.antipode_anti_multiplicativity|antipode anti-multiplicativity]],
-\(S(a \cdot b) = S(b) \cdot S(a)\). Applying \(f\) (an algebra hom),
-
-\[
-(f \circ S)(a \cdot b) \;=\; f(S(b) \cdot S(a)) \;=\; f(S(b)) \cdot f(S(a)) \;=\; (f \circ S)(b) \cdot (f \circ S)(a).
-\]
-
-By **commutativity of \(B\)**, \((f \circ S)(b) \cdot (f \circ S)(a) = (f \circ S)(a) \cdot (f \circ S)(b)\),
-hence
+[[node:linear_algebraic_groups.antipode_multiplicativity_commutative_hopf|multiplicativity of the antipode for commutative Hopf algebras]],
+\(S(a \cdot b) = S(a) \cdot S(b)\). Applying \(f\) (an algebra hom),
 
 \[
 (f \circ S)(a \cdot b) \;=\; (f \circ S)(a) \cdot (f \circ S)(b).
@@ -72,6 +66,8 @@ hence
 
 \(\square\)
 
-**Remark.** \(A\) need not be commutative for this result. The
-commutativity of \(B\) alone is enough to "fix" the anti-multiplicativity
-of \(S\) into ordinary multiplicativity of \(f \circ S\).
+**Remark.** If the general anti-multiplicativity theorem is formalized for
+arbitrary Hopf algebras, then the same conclusion holds for noncommutative
+\(A\) whenever \(B\) is commutative. The present node records the
+commutative-coordinate-ring version currently used by the affine group
+scheme development.

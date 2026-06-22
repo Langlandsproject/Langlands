@@ -13,15 +13,15 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.HopfObjectBridge
   declarations:
-    - Langlands.AlgebraicGeometry.HopfObjectBridge.antipode_anti_multiplicativity
+    - Langlands.AlgebraicGeometry.HopfAntipode.antipode_anti_multiplicativity
 verification:
   statement: accepted
   proof: accepted
-  alignment: pending
+  alignment: aligned
 generality:
   reviewed: true
   prompt: "Is the lemma stated for arbitrary Hopf algebras (no commutativity assumption)?"
-  verdict: "Yes. Anti-multiplicativity holds for every Hopf algebra; the multiplicativity-for-commutative-A consequence is a corollary."
+  verdict: "Yes. Anti-multiplicativity holds for every Hopf algebra; the Lean wrapper delegates to Mathlib's ring-theoretic theorem."
 tags:
 - antipode
 - hopf-algebra
@@ -62,25 +62,15 @@ equal: \(S \circ \mu = \mu \circ (S \otimes S) \circ \tau\), i.e.\
 \(S(ab) = S(b) S(a)\).  
 \(\square\)
 
-**Mathlib state.** This lemma is **proved at the categorical level** as
-\(\texttt{CategoryTheory.HopfObj.mul\_antipode}\) in
-\(\texttt{Mathlib.CategoryTheory.Monoidal.Hopf\_}\), in any braided
-monoidal category. The remaining work is to bridge the ring-theoretic
-\(\texttt{HopfAlgebra}\,R\,A\) typeclass to the categorical
-\(\texttt{HopfObj}\,(\texttt{ModuleCat.of}\,R\,A)\) instance; once that
-bridge is in scope, this lemma is one rewrite away from
-\(\texttt{mul\_antipode}\). The downstream consequence motivating this
-lemma in the project is that \(f \circ S\) is itself an algebra hom
-when the target is commutative.
+**Mathlib state.** This lemma is now proved directly at the
+ring-theoretic level as \(\texttt{HopfAlgebra.antipode\_mul}\) in
+\(\texttt{Mathlib.RingTheory.HopfAlgebra.Basic}\). The project exposes
+the same theorem under
+\(\texttt{Langlands.AlgebraicGeometry.HopfAntipode.antipode\_anti\_multiplicativity}\)
+so downstream nodes do not depend on Mathlib naming details.
 
-**Project use.** For affine group schemes we only need the
+**Project use.** For affine group schemes we usually use the
 **commutative-source** specialization,
 [[node:linear_algebraic_groups.antipode_multiplicativity_commutative_hopf|the
-multiplicativity statement \(S(ab) = S(a) S(b)\)]], which admits a
-**direct proof bypassing the categorical bridge**: see that node for
-the full convolution-inverse-uniqueness argument using
-[[node:linear_algebraic_groups.multiplication_is_coalgebra_hom|\(\mu\)
-as a coalgebra hom]] plus a single use of commutativity. The
-non-commutative anti-multiplicativity result on this page is the
-more general statement, but is **not currently needed** by the project
-(deferred to upstream Mathlib).
+multiplicativity statement \(S(ab) = S(a) S(b)\)]], which follows from
+anti-multiplicativity plus commutativity of the coordinate ring.

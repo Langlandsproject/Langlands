@@ -21,7 +21,6 @@ lean:
     - Polynomial.instHopfAlgebra
     - Langlands.AlgebraicGeometry.Examples.additiveGroup
     - Langlands.AlgebraicGeometry.Examples.additiveGroup.instGrpObj
-    - Langlands.AlgebraicGeometry.Examples.Ga
 verification:
   definition: accepted
   proof: not_applicable

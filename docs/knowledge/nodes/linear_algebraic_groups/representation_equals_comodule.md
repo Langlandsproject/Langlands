@@ -36,7 +36,7 @@ data are naturally equivalent:
    structure on \(V\) (a coaction
    \(\rho : V \to V \otimes_k A\) satisfying coassociativity and counit);
 2. a natural action of the functor of points
-   \([[node:linear_algebraic_groups.points_functor_definition|G(-)]]\) on
+   [[node:linear_algebraic_groups.points_functor_definition|\(G(-)\)]] on
    the functor \(R \mapsto V \otimes_k R\) — that is, for each
    \(k\)-algebra \(R\) a group homomorphism
    \(G(R) \to \operatorname{GL}_R(V \otimes_k R)\), natural in \(R\);

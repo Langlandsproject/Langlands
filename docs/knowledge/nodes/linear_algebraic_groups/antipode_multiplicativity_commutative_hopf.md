@@ -199,32 +199,19 @@ S(a \cdot b)
 
 ## Mathlib formalization
 
-The Lean formalization in `LanglandsLean/AlgebraicGeometry/HopfObjectBridge.lean`
-ships everything except the final assembly:
+Mathlib now proves the general anti-multiplicativity theorem as
+`HopfAlgebra.antipode_mul`. The project theorem
+`Langlands.AlgebraicGeometry.HopfAntipode.antipode_mul_of_commutative`
+uses that result and commutativity of \(A\) to obtain
+\[
+S(ab)=S(a)S(b).
+\]
 
-- `mulCoalgHom : A ⊗[R] A →ₗc[R] A` — \(\mu\) packaged as a coalgebra
-  hom, both axioms proved (see
-  [[node:linear_algebraic_groups.multiplication_is_coalgebra_hom|the dedicated lemma]]).
-- `convMul_mul_convCompAntipode` — Step 1, right-inverse direction,
-  proved via Mathlib's `LinearMap.convMul_comp_coalgHom_distrib`
-  applied to `mulCoalgHom`.
-- `convCompAntipode_mul_convMul` — Step 1, left-inverse direction,
-  same lemma with the WithConv factors swapped.
-- **Open**: the right-inverse equation \(\mu * (\mu \circ (S \otimes S)) = 1\)
-  (Step 2). The "slick" path would post-compose the antipode axiom
-  \(\operatorname{id}_{A \otimes A} * S_{A \otimes A} = 1\) in
-  \(\operatorname{End}_R(A \otimes A)\) with the algebra hom
-  \(\mu = \texttt{Algebra.TensorProduct.lmul' } R\), via Mathlib's
-  `LinearMap.algHom_comp_convMul_distrib`. This hits a known
-  `AddCommMonoid` diamond between `TensorProduct.instModule` and
-  `Algebra.toModule` on `A ⊗[R] A` from the
-  `HopfAlgebra R (A ⊗[R] A)` instance. The direct Sweedler proof in
-  Step 2 above avoids the diamond entirely but requires explicit
-  representations of `Δ a` and `Δ b` and Sweedler-style bookkeeping
-  (Mathlib's `Coalgebra.Repr` API).
-
-Once Step 2 is in scope, Step 3 is one application of
-`left_inv_eq_right_inv` plus evaluation at `a ⊗ₜ b`.
+The file `LanglandsLean/AlgebraicGeometry/HopfObjectBridge.lean` also
+retains the intermediate convolution lemmas (`mulCoalgHom`,
+`convMul_mul_convCompAntipode`, `convCompAntipode_mul_convMul`) because
+they are useful local API for comparing the direct Sweedler proof with
+Mathlib's theorem.
 
 ## Remark: the non-commutative case
 
