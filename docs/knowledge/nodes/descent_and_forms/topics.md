@@ -27,6 +27,17 @@ This catalog lists topic-level nodes under the `descent_and_forms` mathematical 
 - [[node:descent_and_forms.twisted_conjugacy_classes|Twisted Conjugacy Classes]]
 - [[node:descent_and_forms.vogan_diagrams|Vogan Diagrams]]
 
+## Springer Linear Algebraic Group Nodes
+
+- [[node:descent_and_forms.f_subgroup_field_of_definition|Field of Definition for Subgroups of F-Groups]]
+- [[node:descent_and_forms.lang_theorem_finite_fields|Lang Theorem for Connected Algebraic Groups over Finite Fields]]
+
+## Springer Wave By Issue
+
+These groups are a human execution order only; they do not create DAG edges.
+
+- #37 Phase M1: [[node:descent_and_forms.f_subgroup_field_of_definition|Field of Definition for Subgroups of F-Groups]] and [[node:descent_and_forms.lang_theorem_finite_fields|Lang Theorem for Connected Algebraic Groups over Finite Fields]].
+
 ## Details To Discuss
 
 - Refine this list as the category is expanded.

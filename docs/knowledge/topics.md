@@ -18,3 +18,23 @@ The public taxonomy has no `topic` root. Its roots are the mathematical categori
 - `kottwitz_structures`: Kottwitz Structures
 - `nilpotent_orbits`: Nilpotent Orbits
 - `bd_covers`: Brylinski-Deligne and Metaplectic Covers
+
+## Current Springer Expansion Wave
+
+The current source-backed expansion extracts statement-level nodes from
+Springer, *Linear Algebraic Groups*. These entries are navigation and project
+planning only; mathematical dependency remains encoded in each node's `uses:`
+frontmatter.
+
+Recommended issue order:
+
+1. Operations on algebraic groups: #22, #23, #24.
+2. Diagonalizable, Lie, unipotent, and solvable structure: #25, #26, #27, #28.
+3. Borel, maximal tori, reductive groups, roots, parabolics, and Bruhat cells:
+   #29, #30, #31, #32, #33, #34, #35.
+4. Chevalley classification and rational/relative \(F\)-group structure:
+   #36, #37, #38, #39.
+
+Lean execution for these issues follows `AGENTS.md`: use the `lean4` skill and
+Archon/Lean LSP MCP for local diagnostics and proof-state checks. Full project
+builds are checkpoint/CI-style validation only when explicitly requested.
