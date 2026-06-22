@@ -125,7 +125,40 @@ uv run --extra browser python -m tools.knowledge.render_check \
   /tmp/langlands-mdblueprint-site
 ```
 
-Lean side:
+Lean side is **not** normally checked with `lake build` during ordinary
+formalization. Use the `lean4` skill plus Archon/Lean LSP MCP for local,
+interactive feedback. `lake build` is reserved for explicit checkpoint,
+CI-parity, or release-style validation, because it is too heavy for normal
+proof iteration.
+
+Preferred Lean MCP calls:
+
+```text
+# File-level compiler diagnostics after editing a Lean file.
+lean_diagnostic_messages(file_path := "lean/LanglandsLean/...")
+
+# Inspect a proof state at a line/column before changing tactics.
+lean_goal(file_path := "lean/LanglandsLean/...", line := <line>, column := <col>)
+
+# Try several candidate tactics without editing the file.
+lean_multi_attempt(
+  file_path := "lean/LanglandsLean/...",
+  line := <line>,
+  column := <col>,
+  snippets := ["simp", "rw [...]", "exact ..."]
+)
+
+# Search declarations before guessing names.
+lean_local_search(query := "HopfAlgebra.antipode")
+lean_leansearch(query := "antipode anti-multiplicative")
+lean_loogle(query := "_ * _")
+```
+
+Use `lean_hover_info` to check exact types and docs. Use `lean_build` MCP
+only when a new import or module graph change requires an LSP rebuild. Do
+not use shell `lake build` as the default way to discover proof errors.
+
+Full Lean build, only when explicitly needed:
 
 ```bash
 cd lean && lake build
@@ -162,14 +195,16 @@ required lemmas, etc. Do not interleave unrelated topics.
 
 **Mathlib survey (mandatory).** Before drafting blueprint nodes, run a
 short discovery pass to learn what Mathlib actually has. The cheap
-tools to use, in order:
+tools to use through Archon/Lean LSP MCP, in order:
 
-1. `lean_leansearch` — natural-language semantic search across Mathlib
+1. `lean_local_search` — verify whether a suspected declaration or
+   namespace exists locally before guessing.
+2. `lean_leansearch` — natural-language semantic search across Mathlib
    (e.g., "antipode anti-multiplicative", "convolution algebra hom",
    "Yoneda from group object to representable presheaf").
-2. `lean_loogle` — type-pattern search when you have a target signature
+3. `lean_loogle` — type-pattern search when you have a target signature
    in mind.
-3. Targeted `grep` against `lean/.lake/packages/mathlib/Mathlib/` for
+4. Targeted `grep` against `lean/.lake/packages/mathlib/Mathlib/` for
    directory hierarchies and namespace conventions.
 
 The survey should produce a one-paragraph "Mathlib state" entry for the
@@ -224,12 +259,18 @@ Use `gh issue create` with bodies authored as files in `/tmp/`.
 
 Implement in Lean following the DAG order from the blueprint. Per issue:
 
+- activate/read the `lean4` skill if available, then use Archon/Lean LSP
+  MCP as the primary formalization interface;
 - write the Lean code; aim for minimal stubs over speculative
   refactors; `sorry` only with a documented gap;
+- after each focused edit, run `lean_diagnostic_messages` on the touched
+  file; use `lean_goal`, `lean_hover_info`, and `lean_multi_attempt` for
+  proof states and tactic experiments;
 - update the corresponding blueprint node:
   `lean.modules`, `lean.declarations`, and
   `verification.alignment: aligned`;
-- run `lake build` (green) and re-run mdblueprint check (green);
+- re-run mdblueprint check (green); run shell `lake build` only when the
+  user explicitly asks for a full checkpoint/CI-style verification;
 - commit with a body that names the blueprint node and the issue;
 - close the issue with a comment naming the commit.
 
@@ -256,6 +297,10 @@ Two reasons, learned the hard way:
   structure definition closes it. `hopfSpec` does not strictly require
   `Functor.Monoidal`; an object-level hand-roll works. Investigate
   before declaring blocked.
+- **Using shell `lake build` as the main Lean feedback loop**. It is too
+  heavy and can trigger large dependency builds. Use Archon/Lean LSP MCP
+  diagnostics and goals for ordinary formalization; reserve full builds
+  for explicit checkpoint or CI-parity runs.
 - **Adding `GroupScheme S := Grp (Over S)` abbrev**: Mathlib does not
   package group schemes this way; the canonical idiom is the
   typeclass-on-scheme pattern above. See spec §3 and the existing
