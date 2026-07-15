@@ -178,3 +178,16 @@ remains untouched after the diagnosis; do not delete or rebuild it from this rep
 - Status: `rejected`
 - Reason: these require missing reductive-group, Lie-of-group, orbit geometry, or representation
   infrastructure and cannot produce an honest three-to-five-day Lean deliverable.
+
+## Created Student Issues
+
+Only candidates with successful isolated Lean 4.28 representative probes were promoted to issues:
+
+- C1: [#46](https://github.com/Langlandsproject/Langlands/issues/46)
+- C2: [#47](https://github.com/Langlandsproject/Langlands/issues/47)
+- C3: [#48](https://github.com/Langlandsproject/Langlands/issues/48)
+- N1: [#49](https://github.com/Langlandsproject/Langlands/issues/49)
+
+C4 and N2 were deliberately not issued after the strict 3-5 day review. The broader roadmap issues
+#41, #42, #43, and #45 remain research-scale and are not student-sized substitutes for these four
+bounded tasks.
