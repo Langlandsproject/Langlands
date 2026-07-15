@@ -36,8 +36,18 @@ Lean 4.30.0, while the project toolchain and Langlands artifacts are Lean 4.28.0
 then mixed 4.28 and 4.30 artifacts in the shared directory. `lake cache get` does not clear that
 mixture. An isolated `/tmp` Lake environment was then built from the v4.28 manifest and the
 required Mathlib targets were compiled from source. The probe file
-`/tmp/langlands-lean428-probe-env/probe.lean` now compiles with Lean 4.28.0. The shared cache
-remains untouched after the diagnosis; do not delete or rebuild it from this repository.
+The durable probe is now
+`docs/superpowers/research/probes/AI4MathShortProjects.lean`. It compiles with Lean 4.28.0 in the
+isolated environment using:
+
+```bash
+cd /tmp/langlands-lean428-probe-env
+ELAN_HOME=/Users/hoxide/.elan lake env lean \
+  /Users/hoxide/mydoc/Langlands/docs/superpowers/research/probes/AI4MathShortProjects.lean
+```
+
+The command exits successfully with four non-fatal tactic/linter warnings and no errors. The shared
+cache remains untouched after the diagnosis; do not delete or rebuild it from this repository.
 
 ## Coxeter Candidates
 
