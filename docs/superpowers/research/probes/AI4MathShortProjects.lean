@@ -108,15 +108,17 @@ def f : Matrix (Fin 2) (Fin 2) K := !![0, 0; 1, 0]
 
 theorem lie_h_e : ⁅h (K := K), e (K := K)⁆ = (2 : K) • e (K := K) := by
   ext i j
-  fin_cases i <;> fin_cases j <;> simp [Ring.lie_def, e, h] <;> ring
+  fin_cases i <;> fin_cases j <;> simp [Ring.lie_def, e, h]
+  ring
 
 theorem lie_h_f : ⁅h (K := K), f (K := K)⁆ = -(2 : K) • f (K := K) := by
   ext i j
-  fin_cases i <;> fin_cases j <;> simp [Ring.lie_def, f, h] <;> ring
+  fin_cases i <;> fin_cases j <;> simp [Ring.lie_def, f, h]
+  ring
 
 theorem lie_e_f : ⁅e (K := K), f (K := K)⁆ = h (K := K) := by
   ext i j
-  fin_cases i <;> fin_cases j <;> simp [Ring.lie_def, e, f, h] <;> ring
+  fin_cases i <;> fin_cases j <;> simp [Ring.lie_def, e, f, h]
 
 theorem e_nilpotent : IsNilpotent (e (K := K) : Matrix (Fin 2) (Fin 2) K) := by
   refine ⟨2, ?_⟩

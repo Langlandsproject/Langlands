@@ -46,7 +46,7 @@ ELAN_HOME=/Users/hoxide/.elan lake env lean \
   /Users/hoxide/mydoc/Langlands/docs/superpowers/research/probes/AI4MathShortProjects.lean
 ```
 
-The command exits successfully with four non-fatal tactic/linter warnings and no errors. The shared
+The command exits successfully with no diagnostics. The shared
 cache remains untouched after the diagnosis; do not delete or rebuild it from this repository.
 
 ## Coxeter Candidates
@@ -131,8 +131,8 @@ cache remains untouched after the diagnosis; do not delete or rebuild it from th
 - Expected risk: low to medium; matrix extensionality and characteristic assumptions need scratch
   validation.
 - Validation: the standard matrices, all three bracket relations, nilpotence of `e` and `f`, and
-  nilpotence of `ad e` compile in the isolated probe over a generic commutative ring. The proof
-  emits only non-fatal tactic/linter warnings.
+  nilpotence of `ad e` compile in the isolated probe over a generic commutative ring. The probe is
+  warning-free after the final tactic cleanup.
 
 ### N2. Nilpotent Does Not Mean ad-Nilpotent Conversely
 
