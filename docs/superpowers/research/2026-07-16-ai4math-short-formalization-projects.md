@@ -30,11 +30,13 @@ For every candidate:
 ### Current Environment Log
 
 The first scratch probe imports the exact Coxeter and Lie modules listed below, but the initial
-`lake env lean` run failed before elaboration because the repository's hard-linked shared Mathlib
-`.olean` files carried an incompatible Lean header. `lake cache get` downloaded the Mathlib v4.28
-build metadata and a targeted Mathlib build was attempted; the import path still resolves to the
-old shared artifact. Until that artifact-path issue is repaired, the projects remain `candidate`,
-not `validated`. This is an environment failure, not evidence that any theorem statement compiles.
+`lake env lean` run failed before elaboration because `lean/.lake/packages` is a symlink to
+`/Users/hoxide/mycodes/lean-shared/.lake/packages`. The shared Mathlib `.olean` header is explicitly
+Lean 4.30.0, while the project toolchain and Langlands artifacts are Lean 4.28.0. A targeted build
+then mixed 4.28 and 4.30 artifacts in the shared directory. `lake cache get` does not clear that
+mixture. Until an isolated `/tmp` Lake environment is built from the v4.28 manifest, these projects
+remain `candidate`, not `validated`. This is an environment failure, not evidence that any theorem
+statement compiles; do not delete or rebuild the shared cache from this repository.
 
 ## Coxeter Candidates
 
