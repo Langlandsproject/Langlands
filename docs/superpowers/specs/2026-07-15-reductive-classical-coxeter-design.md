@@ -57,6 +57,31 @@ it is therefore defined only after choosing the data that determine the simple r
 Root-data nodes may use abstract Coxeter nodes. Abstract Coxeter nodes must not use Weyl-group or
 reductive-group nodes.
 
+## Published DAG quality
+
+The public site at `jiajunma.github.io/Langlands` is part of the acceptance surface. A successful
+publish is insufficient if the dependency graph is technically valid but visually misleading.
+The deployed snapshot inspected on 2026-07-15 has 153 nodes across 10 topics. Its
+`linear_algebraic_groups` subgraph has 46 nodes and 78 edges, while
+`classical_and_exceptional_groups` has only two broad topic stubs. The topic overview also contains
+opposed aggregate edges such as `descent_and_forms -> root_data_and_duality` and
+`root_data_and_duality -> descent_and_forms`; these make the overview appear cyclic even when the
+underlying node graph is acyclic.
+
+The refactor must therefore satisfy visual as well as structural invariants:
+
+- abstract topics point toward applications, never back from foundations to examples;
+- broad survey nodes do not become dependency hubs when atomic definition nodes are available;
+- cross-topic edges express genuine mathematical prerequisites, not shared subject membership;
+- each expanded topic remains readable at the configured 120 visible-node and 80 expansion caps;
+- boundary edges are inspected for crossings, duplicated conceptual dependencies, and apparent
+  topic-level cycles;
+- desktop and mobile render checks show usable labels, navigation, zoom, and node-detail dialogs.
+
+After publishing locally, compare `graph_topics.json` and the affected topic subgraph JSON files
+with the deployed snapshot. Record node counts, edge counts, boundary-edge counts, and any opposed
+topic-edge pairs before accepting the change.
+
 ## Mathlib state
 
 Mathlib v4.28.0 has four files under `Mathlib.GroupTheory.Coxeter`: `Matrix`, `Basic`, `Length`,
@@ -76,5 +101,6 @@ word control.
 Every new or edited node uses the current mdblueprint verification keys (`definition` for
 definitions/topics and `statement`/`proof` for propositions and theorems), explicit topic fields,
 source spans where available, and preferred KaTeX delimiters. The static checker and publisher
-must pass. Lean work uses file-level diagnostics; a full `lake build` is reserved for an explicit
-checkpoint.
+must pass. `render_check` must pass, and the affected published DAG views must also pass the visual
+and graph-metric review above. Lean work uses file-level diagnostics; a full `lake build` is
+reserved for an explicit checkpoint.

@@ -29,6 +29,8 @@
       abstract definitions; remove its dependency on Weyl groups.
 - [ ] Run the mdblueprint checker and require `0 error(s)`.
 - [ ] Publish to `/tmp/langlands-mdblueprint-site` and inspect the Coxeter topic DAG.
+- [ ] Compare topic/node/edge/boundary-edge counts with the deployed `graph_topics.json` and
+      affected topic subgraphs; investigate every opposed topic-edge pair involving Coxeter theory.
 
 ### Task 2: Repair the reductive definition cluster
 
@@ -79,6 +81,8 @@
 - [ ] Connect each group to its complex through its based Weyl group, not directly through its
       matrix realization.
 - [ ] Run static and browser render checks on the new pages.
+- [ ] Inspect the public-style DAG at desktop and mobile widths: labels, edge crossings, zoom,
+      breadcrumbs, fallback behavior, and node-detail dialogs must remain usable.
 
 ### Task 5: Add the minimal Lean Coxeter layer
 
@@ -109,3 +113,21 @@
       Coxeter realizations.
 - [ ] Create one issue cluster for classical group definitions and one for their Coxeter complexes.
 - [ ] Make every `Blocked by` relation mirror the mathematical dependency graph.
+
+### Task 7: Audit the deployed DAG presentation
+
+**Files:**
+- Inspect: `/tmp/langlands-mdblueprint-site/graph_topics.json`
+- Inspect: `/tmp/langlands-mdblueprint-site/subgraphs/topics/coxeter_theory.json`
+- Inspect: `/tmp/langlands-mdblueprint-site/subgraphs/topics/root_data_and_duality.json`
+- Inspect: `/tmp/langlands-mdblueprint-site/subgraphs/topics/classical_and_exceptional_groups.json`
+
+- [ ] Record topic, node, internal-edge, and boundary-edge counts before and after the refactor.
+- [ ] Detect pairs of aggregate topic edges in opposite directions and remove dependencies that
+      encode subject association rather than logical prerequisite.
+- [ ] Confirm no expanded affected topic exceeds the configured 120 visible-node or 80 expansion
+      cap; split a topic only along a genuine mathematical boundary.
+- [ ] Run `render_check` against the locally published site.
+- [ ] Inspect desktop and mobile graph views for clipped labels, excessive crossings, unusable zoom,
+      broken breadcrumbs, and inaccessible node-detail dialogs.
+- [ ] Compare the final local graph JSON with `https://jiajunma.github.io/Langlands/` before deploy.
