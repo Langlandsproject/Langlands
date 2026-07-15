@@ -82,13 +82,14 @@ remains untouched after the diagnosis; do not delete or rebuild it from this rep
   preserves `wordProd`.
 - Mathlib start: `CoxeterSystem.wordProd_append`, `CoxeterSystem.wordProd_braidWord_eq`,
   `CoxeterSystem.braidWord`.
-- Required deliverable: one inductive relation and one product-invariance theorem.
-- Stretch: reflexive-symmetric-transitive closure and product invariance for the closure.
+- Required deliverable: one contextual inductive relation, its reflexive-symmetric-transitive
+  closure, and product-invariance theorems for both the one-step relation and the closure.
+- Stretch: small rank-two examples using `I₂ₘ`.
 - Explicit exclusion: Matsumoto's theorem and any converse.
 - Expected risk: low to medium; orientation and symmetry must be stated correctly. Without the
   contextual relation and its closure this is too shallow for a standalone three-day project.
-- Validation: the contextual inductive relation and its `wordProd` invariance proof compile using
-  `wordProd_append` and `wordProd_braidWord_eq`.
+- Validation: the contextual inductive relation, `Relation.EqvGen` closure, and both product
+  invariance proofs compile using `wordProd_append` and `wordProd_braidWord_eq`.
 
 ### C4. Executable Finite Coxeter Matrix Tests
 
