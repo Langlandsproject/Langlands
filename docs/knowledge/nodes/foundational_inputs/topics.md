@@ -2,7 +2,7 @@
 
 This catalog lists topic-level nodes under the `foundational_inputs` mathematical category. It is for human planning and does not create DAG edges.
 
-## Topic Nodes
+## Core Nodes
 
 - [[node:foundational_inputs.affine_schemes|Affine Schemes]]
 - [[node:foundational_inputs.algebraic_k_theory_and_k2|Algebraic K-Theory and K2]]
@@ -12,6 +12,7 @@ This catalog lists topic-level nodes under the `foundational_inputs` mathematica
 - [[node:foundational_inputs.global_fields_adeles_and_reciprocity_symbols|Global Fields, Adeles, and Reciprocity Symbols]]
 - [[node:foundational_inputs.hopf_algebras|Hopf Algebras]]
 - [[node:foundational_inputs.local_fields|Local Fields]]
+- [[node:foundational_inputs.quantum_group_definition|Quantum Group (Formal-Deformation Convention)]]
 
 ## Details To Discuss
 
