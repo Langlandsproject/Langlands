@@ -7,6 +7,7 @@ primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality
 uses:
+- root_data_and_duality.root_systems
 - root_data_and_duality.roots_coroots_and_root_subgroups
 verification:
   definition: accepted

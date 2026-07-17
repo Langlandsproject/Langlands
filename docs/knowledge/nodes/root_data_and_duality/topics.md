@@ -2,7 +2,7 @@
 
 This catalog lists topic-level nodes under the `root_data_and_duality` mathematical category. It is for human planning and does not create DAG edges.
 
-## Topic Nodes
+## Core Nodes
 
 - [[node:root_data_and_duality.automorphisms_of_root_data|Automorphisms of Root Data]]
 - [[node:root_data_and_duality.based_root_data|Based Root Data]]
