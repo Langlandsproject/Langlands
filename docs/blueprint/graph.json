@@ -265,6 +265,30 @@
       "primary_topic": "affine_group_schemes"
     },
     {
+      "id": "affine_group_schemes.special_linear_group_scheme",
+      "title": "Special Linear Group Scheme SL_n",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Special Linear Group Scheme SL_n",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.special_orthogonal_group_scheme",
+      "title": "Special Orthogonal Group Scheme SO_n",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Special Orthogonal Group Scheme SO_n",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.symplectic_group_scheme",
+      "title": "Symplectic Group Scheme Sp_{2n}",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Symplectic Group Scheme Sp_{2n}",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
       "id": "affine_group_schemes.trivial_group_scheme",
       "title": "Trivial Group Scheme over a Base",
       "kind": "definition",
@@ -1361,6 +1385,14 @@
       "primary_topic": "root_data_and_duality"
     },
     {
+      "id": "root_data_and_duality.chevalley_group_construction",
+      "title": "Chevalley Group Construction from a Root Datum",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Chevalley Group Construction from a Root Datum",
+      "primary_topic": "root_data_and_duality"
+    },
+    {
       "id": "root_data_and_duality.chevalley_isomorphism_theorem",
       "title": "Chevalley Isomorphism Theorem",
       "kind": "theorem",
@@ -1829,6 +1861,50 @@
     {
       "source": "foundational_inputs.affine_schemes",
       "target": "affine_group_schemes.spec_representability_via_global_sections"
+    },
+    {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "affine_group_schemes.special_linear_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.multiplicative_group_scheme",
+      "target": "affine_group_schemes.special_linear_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.special_linear_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.special_linear_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.special_linear_group_scheme",
+      "target": "affine_group_schemes.special_orthogonal_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "affine_group_schemes.special_orthogonal_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.special_orthogonal_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.special_orthogonal_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "affine_group_schemes.symplectic_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.symplectic_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.symplectic_group_scheme"
     },
     {
       "source": "affine_group_schemes.algebraic_group_definition",
@@ -3065,6 +3141,38 @@
     {
       "source": "root_data_and_duality.classification_of_split_reductive_groups",
       "target": "root_data_and_duality.chevalley_existence_theorem"
+    },
+    {
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.chevalley_group_construction"
+    },
+    {
+      "source": "root_data_and_duality.based_root_data",
+      "target": "root_data_and_duality.chevalley_group_construction"
+    },
+    {
+      "source": "root_data_and_duality.pinnings",
+      "target": "root_data_and_duality.chevalley_group_construction"
+    },
+    {
+      "source": "root_data_and_duality.chevalley_existence_theorem",
+      "target": "root_data_and_duality.chevalley_group_construction"
+    },
+    {
+      "source": "root_data_and_duality.chevalley_isomorphism_theorem",
+      "target": "root_data_and_duality.chevalley_group_construction"
+    },
+    {
+      "source": "reductive_structure.algebraic_tori",
+      "target": "root_data_and_duality.chevalley_group_construction"
+    },
+    {
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "root_data_and_duality.chevalley_group_construction"
+    },
+    {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "root_data_and_duality.chevalley_group_construction"
     },
     {
       "source": "root_data_and_duality.root_datum_from_reductive_group",

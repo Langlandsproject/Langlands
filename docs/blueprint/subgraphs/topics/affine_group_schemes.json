@@ -6,280 +6,1409 @@
       "title": "Additive Group Scheme 𝔾_a",
       "kind": "definition",
       "status": "admitted",
-      "label": "Additive Group Scheme 𝔾_a",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebraic_group_definition",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Examples.Ga"
+        ],
+        "declarations": [
+          "Polynomial.gaAntipode_X",
+          "Polynomial.gaComul_X",
+          "Polynomial.gaCounit_X - Polynomial.gaComul - Polynomial.gaCounit - Polynomial.gaAntipode - Polynomial.instBialgebra - Polynomial.instHopfAlgebra - Langlands.AlgebraicGeometry.Examples.additiveGroup - Langlands.AlgebraicGeometry.Examples.additiveGroup.instGrpObj"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the construction stated over an arbitrary base scheme \\(S\\)?",
+        "verdict": "Yes. The construction is functorial in \\(S\\); a fixed base ring is a special case obtained by setting \\(S = \\operatorname{Spec} R\\)."
+      },
+      "tags": [
+        "example",
+        "definition",
+        "additive-group",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.additive_group_scheme_points",
       "title": "Points of 𝔾_a Are the Additive Group of R",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Points of 𝔾_a Are the Additive Group of R",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.additive_group_scheme",
+        "affine_group_schemes.points_functor_definition"
+      ],
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does the formula apply to arbitrary commutative \\(k\\)-algebras \\(R\\)?",
+        "verdict": "Yes. The formula \\(\\mathbb{G}_a(R) = (R, +)\\) is natural in any commutative algebra \\(R\\) over the base."
+      },
+      "tags": [
+        "functor-of-points",
+        "additive-group",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.affine_algebraic_groups",
       "title": "Affine Algebraic Groups",
       "kind": "topic",
       "status": "admitted",
-      "label": "Affine Algebraic Groups",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.coordinate_rings_and_hopf_algebras"
+      ],
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is this stated for affine group schemes over a base scheme, not just over a field?",
+        "verdict": "Yes. The constructions and theorems are stated over an arbitrary base; the field case is the special case `S = Spec k`."
+      },
+      "tags": [
+        "affine-algebraic-groups",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.affine_group_scheme_definition",
       "title": "Affine Group Scheme over a Base",
       "kind": "definition",
       "status": "admitted",
-      "label": "Affine Group Scheme over a Base",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.affine_algebraic_groups",
+        "foundational_inputs.affine_schemes"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.instIsAffineGroupScheme - Langlands.AlgebraicGeometry.IsAffineGroupScheme"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is this definition stated for an arbitrary base scheme \\(S\\)?",
+        "verdict": "Yes. The base \\(S\\) is an arbitrary scheme; specialization to \\(S = \\operatorname{Spec} k\\) or \\(S = \\operatorname{Spec} O_F\\) is left to consumers."
+      },
+      "tags": [
+        "affine-group-scheme",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.algebra_hom_composed_with_antipode_is_algebra_hom",
       "title": "Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Composition with the Antipode Is an Algebra Hom for Commutat",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.antipode_multiplicativity_commutative_hopf"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.HopfObjectBridge"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.HopfAntipode.algHomCompAntipode_apply - Langlands.AlgebraicGeometry.HopfAntipode.algHomCompAntipode"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is this node aligned with the Lean result currently used for affine group coordinate rings?",
+        "verdict": "Yes. The formalized project theorem assumes the Hopf algebra A is commutative and the target B is commutative; the more general noncommutative-source variant is deferred to the general antipode anti-multiplicativity node."
+      },
+      "tags": [
+        "antipode",
+        "algebra-hom",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.algebra_hom_convolution",
       "title": "Convolution of Algebra Homomorphisms",
       "kind": "definition",
       "status": "admitted",
-      "label": "Convolution of Algebra Homomorphisms",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+        "foundational_inputs.hopf_algebras",
+        "foundational_inputs.commutative_algebra"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.HopfConvolution"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.HopfConvolution.convLinear",
+          "Langlands.AlgebraicGeometry.HopfConvolution.convLinear_apply"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the definition stated at the right level — bialgebra source, commutative target — to support the group-structure construction?",
+        "verdict": "Yes. The bialgebra structure on \\(A\\) provides comultiplication; the commutativity of \\(B\\) is what makes the convolution of two algebra homomorphisms again an algebra homomorphism."
+      },
+      "tags": [
+        "convolution",
+        "hopf-algebra",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.algebra_homs_form_group_under_convolution",
       "title": "Algebra Homomorphisms Form a Group Under Convolution",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Algebra Homomorphisms Form a Group Under Convolution",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom",
+        "affine_group_schemes.algebra_hom_composed_with_antipode_is_algebra_hom"
+      ],
+      "lean": {
+        "repository": "langlands",
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.AlgHomGroup"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.AlgHomGroup.instGroup",
+          "Langlands.AlgebraicGeometry.AlgHomGroup.convAlg_toConv",
+          "Langlands.AlgebraicGeometry.AlgHomGroup.convOneAlg",
+          "Langlands.AlgebraicGeometry.AlgHomGroup.convOneAlg_apply",
+          "Langlands.AlgebraicGeometry.AlgHomGroup.convOneAlg_toLinearMap",
+          "Langlands.AlgebraicGeometry.AlgHomGroup.inv_def",
+          "Langlands.AlgebraicGeometry.AlgHomGroup.mul_def",
+          "Langlands.AlgebraicGeometry.AlgHomGroup.one_def",
+          "Langlands.AlgebraicGeometry.AlgHomGroup.toConv_convOneAlg"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the statement at the right level — Hopf source, commutative target — and is the group commutative when the bialgebra is cocommutative?",
+        "verdict": "Yes. The Hopf hypothesis is essential for inverses; commutativity of B is essential for the convolution to land in algebra homs. The convolution group is commutative iff A is cocommutative (Δ is symmetric)."
+      },
+      "tags": [
+        "convolution",
+        "hopf-algebra",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.algebraic_group_definition",
       "title": "Algebraic Group over a Base",
       "kind": "definition",
       "status": "admitted",
-      "label": "Algebraic Group over a Base",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.affine_group_scheme_definition"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.instIsAlgebraicGroup - Langlands.AlgebraicGeometry.IsAlgebraicGroup"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does the definition follow the modern Milne / SGA 3 convention without smoothness?",
+        "verdict": "Yes. Smoothness is intentionally not part of the definition; \\(\\mu_n\\) and \\(\\alpha_p\\) in characteristic \\(p\\) are algebraic groups but not smooth, and we want to admit them as instances."
+      },
+      "tags": [
+        "algebraic-group",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.antipode_anti_multiplicativity",
       "title": "Antipode of a Hopf Algebra Is Anti-Multiplicative",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Antipode of a Hopf Algebra Is Anti-Multiplicative",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "foundational_inputs.hopf_algebras",
+        "affine_group_schemes.coordinate_rings_and_hopf_algebras"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.HopfObjectBridge"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.HopfAntipode.antipode_anti_multiplicativity_commutative - Langlands.AlgebraicGeometry.HopfAntipode.antipode_anti_multiplicativity"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the lemma stated for arbitrary Hopf algebras (no commutativity assumption)?",
+        "verdict": "Yes. Anti-multiplicativity holds for every Hopf algebra; the Lean wrapper delegates to Mathlib's ring-theoretic theorem."
+      },
+      "tags": [
+        "antipode",
+        "hopf-algebra",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.antipode_multiplicativity_commutative_hopf",
       "title": "Antipode of a Commutative Hopf Algebra Is Multiplicative",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Antipode of a Commutative Hopf Algebra Is Multiplicative",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "foundational_inputs.hopf_algebras",
+        "affine_group_schemes.multiplication_is_coalgebra_hom"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.HopfObjectBridge"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.HopfAntipode.antipode_mul_of_commutative",
+          "Langlands.AlgebraicGeometry.HopfAntipode.convMul_mul_convCompAntipode",
+          "Langlands.AlgebraicGeometry.HopfAntipode.convCompAntipode_mul_convMul"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the hypothesis 'A is a commutative Hopf algebra' the right level — does the statement fail without commutativity?",
+        "verdict": "Yes. Without commutativity of A, the antipode is only anti-multiplicative (S(ab) = S(b)S(a)), not multiplicative. Commutativity of A collapses anti-mult to mult. The direct proof below uses commutativity in exactly one Sweedler step."
+      },
+      "tags": [
+        "antipode",
+        "hopf-algebra",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.base_change",
       "title": "Base Change",
       "kind": "topic",
       "status": "admitted",
-      "label": "Base Change",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "foundational_inputs.fields_and_field_extensions",
+        "affine_group_schemes.affine_algebraic_groups"
+      ],
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does this treatment of base change apply to arbitrary morphisms of base schemes, not just field extensions?",
+        "verdict": "Yes. The pullback construction works for any morphism `f : T → S`, with the field-extension case being a special case."
+      },
+      "tags": [
+        "base-change",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.base_change_preserves_algebraic_group",
       "title": "Base Change Preserves Algebraic Group Structure",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Base Change Preserves Algebraic Group Structure",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebraic_group_definition",
+        "affine_group_schemes.base_change"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Examples.Trivial"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.isAlgebraicGroup_pullback"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the statement formulated for arbitrary base change morphisms \\(f : T \\to S\\)?",
+        "verdict": "Yes. No assumption on \\(f\\) beyond being a morphism of schemes; the proof composes pullback-stability lemmas for each constituent property."
+      },
+      "tags": [
+        "base-change",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.comodule_definition",
       "title": "Comodule over a Coalgebra",
       "kind": "definition",
       "status": "admitted",
-      "label": "Comodule over a Coalgebra",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+        "foundational_inputs.hopf_algebras"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Comodule"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.Comodule",
+          "Langlands.AlgebraicGeometry.Comodule.Hom"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the definition stated over an arbitrary commutative semiring?",
+        "verdict": "Yes. The structure makes sense over any commutative semiring \\(R\\); specialization to a field \\(k\\) is left to consumers."
+      },
+      "tags": [
+        "comodule",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom",
       "title": "Convolution of Algebra Homomorphisms Is an Algebra Homomorphism",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Convolution of Algebra Homomorphisms Is an Algebra Homomorph",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebra_hom_convolution"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.HopfConvolution"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.HopfConvolution.convAlg",
+          "Langlands.AlgebraicGeometry.HopfConvolution.convAlg_toLinearMap",
+          "Langlands.AlgebraicGeometry.HopfConvolution.convAlg_apply"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the hypothesis 'B commutative' really essential?",
+        "verdict": "Yes. For non-commutative B, the convolution of two algebra homs is only a linear map, not generally an algebra hom; the proof uses commutativity of B to interchange middle factors. The hypothesis 'A is a bialgebra' is also essential — the algebra-hom property of Δ is what makes f * g respect multiplication."
+      },
+      "tags": [
+        "convolution",
+        "hopf-algebra",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
       "title": "Coordinate Hopf Algebra of an Affine Group Scheme",
       "kind": "definition",
       "status": "admitted",
-      "label": "Coordinate Hopf Algebra of an Affine Group Scheme",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.affine_group_scheme_definition",
+        "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+        "foundational_inputs.hopf_algebras"
+      ],
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the construction stated for affine group schemes over an arbitrary base ring \\(R\\)?",
+        "verdict": "Yes. \\(R\\) is any commutative ring; specialization to a field is left to consumers."
+      },
+      "tags": [
+        "coordinate-ring",
+        "hopf-algebra",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
       "title": "Coordinate Rings and Hopf Algebras",
       "kind": "topic",
       "status": "admitted",
-      "label": "Coordinate Rings and Hopf Algebras",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "foundational_inputs.commutative_algebra",
+        "foundational_inputs.affine_schemes",
+        "foundational_inputs.hopf_algebras"
+      ],
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does the equivalence hold over an arbitrary commutative base ring, not just a field?",
+        "verdict": "Yes. The Spec/Γ duality is stated over any commutative base ring `R`; restricting to a field is a special case."
+      },
+      "tags": [
+        "coordinate-rings",
+        "hopf-algebras",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.faithful_linear_representation_definition",
       "title": "Faithful Linear Representation",
       "kind": "definition",
       "status": "admitted",
-      "label": "Faithful Linear Representation",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebraic_group_definition"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.FaithfulRepresentation"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.FaithfulLinearRepresentation",
+          "Langlands.AlgebraicGeometry.GeneralLinearGroupSchemeModel"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does the definition allow an arbitrary finite-dimensional representation space \\(V\\) over the base field?",
+        "verdict": "Yes. \\(V\\) is any finite-dimensional \\(k\\)-vector space; the target group scheme is a model of \\(\\operatorname{GL}(V)\\)."
+      },
+      "tags": [
+        "representation",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.finite_dim_subcomodule_lemma",
       "title": "Finite-Dimensional Subspace in a Sub-Comodule",
       "kind": "lemma",
       "status": "admitted",
-      "label": "Finite-Dimensional Subspace in a Sub-Comodule",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.comodule_definition",
+        "affine_group_schemes.regular_representation_example"
+      ],
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the lemma stated with minimal hypotheses?",
+        "verdict": "Yes. \\(A\\) need only be a coalgebra over \\(k\\); finite-generation of \\(A\\) as an algebra is not used here. The corollary on regular representations uses finite generation."
+      },
+      "tags": [
+        "comodule",
+        "lemma",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.general_linear_group_scheme",
       "title": "General Linear Group Scheme GL_n",
       "kind": "definition",
       "status": "admitted",
-      "label": "General Linear Group Scheme GL_n",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebraic_group_definition",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Examples.GLn"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.Examples.GLn.universalMatrix",
+          "Langlands.AlgebraicGeometry.Examples.GLn.det",
+          "Langlands.AlgebraicGeometry.Examples.GLn.coordRing",
+          "Langlands.AlgebraicGeometry.Examples.GLn.over"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the construction stated over an arbitrary base scheme \\(S\\) and arbitrary positive integer \\(n\\)?",
+        "verdict": "Yes. \\(S\\) is any scheme; \\(n\\) is any positive integer (or any nonempty finite index set)."
+      },
+      "tags": [
+        "example",
+        "definition",
+        "general-linear-group",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.general_linear_group_scheme_points",
       "title": "Points of GL_n Are Invertible n×n Matrices over R",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Points of GL_n Are Invertible n×n Matrices over R",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.general_linear_group_scheme",
+        "affine_group_schemes.points_functor_definition"
+      ],
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does the formula hold for arbitrary commutative \\(k\\)-algebras \\(R\\)?",
+        "verdict": "Yes. The formula \\(\\operatorname{GL}_n(R) = \\operatorname{GL}_n(R)\\) (invertible matrices over \\(R\\)) is natural in any commutative algebra \\(R\\) over the base."
+      },
+      "tags": [
+        "functor-of-points",
+        "general-linear-group",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.hopf_spec_essential_image_affine",
       "title": "Essential Image of Spec Is Affine Group Schemes",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Essential Image of Spec Is Affine Group Schemes",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.hopf_spec_functor",
+        "affine_group_schemes.affine_group_scheme_definition"
+      ],
+      "verification": {
+        "statement": "accepted"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the essential image characterized intrinsically (without finite-type or smoothness)?",
+        "verdict": "Yes. The characterization is geometric: a group scheme \\(G\\) is in the essential image iff its underlying scheme is affine. No finite type or smoothness condition."
+      },
+      "tags": [
+        "hopf-spec",
+        "equivalence",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.hopf_spec_fully_faithful",
       "title": "Spec Functor on Hopf Algebras Is Fully Faithful",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Spec Functor on Hopf Algebras Is Fully Faithful",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.hopf_spec_functor"
+      ],
+      "verification": {
+        "statement": "accepted"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the statement formulated for an arbitrary commutative base ring \\(R\\)?",
+        "verdict": "Yes. The full-faithfulness is a consequence of \\(\\operatorname{Spec}\\) being fully faithful on \\(\\mathsf{CommRingCat}\\) and of \\(\\operatorname{mapGrp}\\) reflecting full-faithfulness."
+      },
+      "tags": [
+        "hopf-spec",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.hopf_spec_functor",
       "title": "Spec Functor on Hopf Algebras",
       "kind": "definition",
       "status": "admitted",
-      "label": "Spec Functor on Hopf Algebras",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+        "affine_group_schemes.hopf_spec_grpobj_via_yoneda",
+        "foundational_inputs.affine_schemes",
+        "foundational_inputs.hopf_algebras"
+      ],
+      "lean": {
+        "repository": "langlands",
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.HopfSpec",
+          "LanglandsLean.AlgebraicGeometry.HopfSpecFunctor"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.algSpec",
+          "Langlands.AlgebraicGeometry.hopfSpec",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.algHomToHomOverGrp",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.algSpec",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.gammaOver",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.homOverGrpToAlgHom",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.hopfSpec",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.hopfSpecGrpObjFromGrp",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsPresheafGrp",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsPresheafGrpMap",
+          "Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsRepresentabilityGrp"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the functor defined for an arbitrary commutative base ring \\(R\\), not only a field?",
+        "verdict": "Yes. The construction is over any \\(R \\in \\mathsf{CommRingCat}\\); restricting to a field is a special case."
+      },
+      "tags": [
+        "hopf-spec",
+        "functor",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.hopf_spec_grpobj_via_yoneda",
       "title": "Group Object Structure on Spec A via Yoneda",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Group Object Structure on Spec A via Yoneda",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebra_homs_form_group_under_convolution",
+        "affine_group_schemes.spec_representability_via_global_sections",
+        "affine_group_schemes.affine_group_scheme_definition"
+      ],
+      "lean": {
+        "repository": "langlands",
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.pointsPresheaf",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.hopfSpecGrpObj",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.specObjOver",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.algHomCompAntipode_postcomp",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.convAlg_postcomp",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.convOneAlg_postcomp",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.gammaAlgHom",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.gammaAlgebra",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.overGammaMap",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.pointsObj"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the construction stated for an arbitrary commutative base ring R?",
+        "verdict": "Yes. The Yoneda + convolution argument works over any commutative R; specialization to a field is a special case."
+      },
+      "tags": [
+        "hopf-spec",
+        "yoneda",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.multiplication_is_coalgebra_hom",
       "title": "Multiplication of a Commutative Bialgebra Is a Coalgebra Hom",
       "kind": "lemma",
       "status": "admitted",
-      "label": "Multiplication of a Commutative Bialgebra Is a Coalgebra Hom",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "foundational_inputs.hopf_algebras"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.HopfObjectBridge"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.HopfAntipode.convAntipode",
+          "Langlands.AlgebraicGeometry.HopfAntipode.convId",
+          "Langlands.AlgebraicGeometry.HopfAntipode.convId_mul_convAntipode",
+          "Langlands.AlgebraicGeometry.HopfAntipode.convAntipode_mul_convId",
+          "Langlands.AlgebraicGeometry.HopfAntipode.convMul_mul_convMulCompSSTensor",
+          "Langlands.AlgebraicGeometry.HopfAntipode.mul_map_twist_eq_lTensor_smul_lTensor - Langlands.AlgebraicGeometry.HopfAntipode.mulCoalgHom"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does this require commutativity of A?",
+        "verdict": "No — this is a pure bialgebra fact (counit and comul are algebra homomorphisms, by definition of bialgebra). The commutativity of A is not used in this lemma, only in downstream uses like antipode multiplicativity."
+      },
+      "tags": [
+        "bialgebra",
+        "coalgebra",
+        "lemma",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.multiplicative_group_scheme",
       "title": "Multiplicative Group Scheme 𝔾_m",
       "kind": "definition",
       "status": "admitted",
-      "label": "Multiplicative Group Scheme 𝔾_m",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebraic_group_definition",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Examples.Gm"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.Examples.multiplicativeGroup.hopfAlg - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup.instGrpObj"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the construction stated over an arbitrary base scheme \\(S\\)?",
+        "verdict": "Yes. The construction is functorial in \\(S\\); a fixed base ring is the special case \\(S = \\operatorname{Spec} R\\)."
+      },
+      "tags": [
+        "example",
+        "definition",
+        "multiplicative-group",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.multiplicative_group_scheme_points",
       "title": "Points of 𝔾_m Are the Units of R",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Points of 𝔾_m Are the Units of R",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.multiplicative_group_scheme",
+        "affine_group_schemes.points_functor_definition"
+      ],
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does the formula hold for arbitrary commutative \\(k\\)-algebras \\(R\\)?",
+        "verdict": "Yes. The formula \\(\\mathbb{G}_m(R) = R^\\times\\) is natural in any commutative algebra \\(R\\) over the base."
+      },
+      "tags": [
+        "functor-of-points",
+        "multiplicative-group",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.points_form_group",
       "title": "R-Points of a Group Scheme Form a Group",
       "kind": "theorem",
       "status": "admitted",
-      "label": "R-Points of a Group Scheme Form a Group",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.points_functor_definition"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Points"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.points.instGroup",
+          "Langlands.AlgebraicGeometry.points.map_is_group_hom"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the statement at the right level: arbitrary \\(R\\), arbitrary group scheme, abstract group structure?",
+        "verdict": "Yes. The result is the categorical consequence of \\(G\\) being a group object; \\(R\\) and \\(G\\) are unconstrained beyond the standing assumptions."
+      },
+      "tags": [
+        "functor-of-points",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.points_functor_definition",
       "title": "Functor of Points of a Group Scheme",
       "kind": "definition",
       "status": "admitted",
-      "label": "Functor of Points of a Group Scheme",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.affine_group_scheme_definition"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Points"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.specOver",
+          "Langlands.AlgebraicGeometry.specOverHom",
+          "Langlands.AlgebraicGeometry.points",
+          "Langlands.AlgebraicGeometry.points.map"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the points functor defined for arbitrary \\(k\\)-algebras \\(R\\), not only \\(R = k\\)?",
+        "verdict": "Yes. \\(R\\) is any commutative \\(k\\)-algebra; the \\(k\\)-points are the special case \\(R = k\\)."
+      },
+      "tags": [
+        "functor-of-points",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.regular_representation_example",
       "title": "Regular Representation as a Comodule",
       "kind": "example",
       "status": "admitted",
-      "label": "Regular Representation as a Comodule",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.comodule_definition",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Comodule"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.regularComodule"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the example stated over an arbitrary base field?",
+        "verdict": "Yes. The construction works over any commutative base ring; only the field case is used by the embedding argument."
+      },
+      "tags": [
+        "example",
+        "representation",
+        "comodule",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.representation_equals_comodule",
       "title": "G-Representations Are A-Comodules",
       "kind": "theorem",
       "status": "admitted",
-      "label": "G-Representations Are A-Comodules",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.comodule_definition",
+        "affine_group_schemes.points_functor_definition",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "verification": {
+        "statement": "accepted"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the equivalence stated for arbitrary \\(V\\), not only finite-dimensional?",
+        "verdict": "Yes. The equivalence holds for arbitrary \\(k\\)-vector spaces \\(V\\); the finite-dimensional case is the special instance used by the embedding theorem."
+      },
+      "tags": [
+        "representation",
+        "comodule",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.roots_of_unity_group_scheme",
       "title": "Roots of Unity Group Scheme μ_n",
       "kind": "definition",
       "status": "admitted",
-      "label": "Roots of Unity Group Scheme μ_n",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebraic_group_definition",
+        "affine_group_schemes.multiplicative_group_scheme",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Examples.MuN"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.Examples.muN.hopfAlg - Langlands.AlgebraicGeometry.Examples.muN - Langlands.AlgebraicGeometry.Examples.muN.instGrpObj"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the construction stated over an arbitrary base scheme \\(S\\) and arbitrary positive integer \\(n\\)?",
+        "verdict": "Yes. \\(S\\) is any scheme; \\(n\\) is any positive integer (for \\(n = 0\\) we recover \\(\\mathbb{G}_m\\))."
+      },
+      "tags": [
+        "example",
+        "definition",
+        "roots-of-unity",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.spec_representability_via_global_sections",
       "title": "Hom Into Spec via Global Sections (Spec ⊣ Γ Adjunction)",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Hom Into Spec via Global Sections (Spec ⊣ Γ Adjunction)",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+        "foundational_inputs.affine_schemes"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.AlgHomPointsPresheaf"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.specRepresentability",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.homOverToAlgHom",
+          "Langlands.AlgebraicGeometry.AlgHomPointsPresheaf.algHomToHomOver"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does the statement apply to arbitrary schemes T over Spec R, not only affine T?",
+        "verdict": "Yes. This is the crux: the bijection holds for every T (not necessarily affine), because the target is affine. The bijection is natural in T."
+      },
+      "tags": [
+        "spec",
+        "yoneda",
+        "adjunction",
+        "theorem",
+        "linear-algebraic-groups"
+      ]
+    },
+    {
+      "id": "affine_group_schemes.special_linear_group_scheme",
+      "title": "Special Linear Group Scheme SL_n",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes",
+        "classical_and_exceptional_groups"
+      ],
+      "uses": [
+        "affine_group_schemes.general_linear_group_scheme",
+        "affine_group_schemes.multiplicative_group_scheme",
+        "affine_group_schemes.affine_group_scheme_definition",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "source": {
+        "spans": [
+          {
+            "artifact": "springer-linear-algebraic-groups",
+            "locator": "Section 2.1",
+            "format": "section",
+            "note": "SL_n as the kernel of the determinant character on GL_n."
+          },
+          {
+            "artifact": "demazure-gabriel-groupes-algebriques",
+            "locator": "Chapter II, §1",
+            "format": "section",
+            "note": "SL_n as a closed subgroup scheme of GL_n via the determinant."
+          }
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is SL_n defined as a group scheme over an arbitrary base, not just over a field?",
+        "verdict": "Yes. The determinant is a morphism of group schemes over any base, so SL_n = ker(det) is a flat closed subgroup scheme of GL_n over Z, hence over any base scheme."
+      },
+      "tags": [
+        "classical-groups",
+        "special-linear",
+        "group-scheme",
+        "determinant",
+        "affine-group-scheme"
+      ]
+    },
+    {
+      "id": "affine_group_schemes.special_orthogonal_group_scheme",
+      "title": "Special Orthogonal Group Scheme SO_n",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes",
+        "classical_and_exceptional_groups"
+      ],
+      "uses": [
+        "affine_group_schemes.special_linear_group_scheme",
+        "affine_group_schemes.general_linear_group_scheme",
+        "affine_group_schemes.affine_group_scheme_definition",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "source": {
+        "spans": [
+          {
+            "artifact": "springer-linear-algebraic-groups",
+            "locator": "Section 2.2",
+            "format": "section",
+            "note": "Orthogonal and special orthogonal groups as group schemes preserving a quadratic form."
+          },
+          {
+            "artifact": "chevalley-algebraic-groups",
+            "locator": "Chapter II",
+            "format": "chapter",
+            "note": "Classical groups as algebraic groups."
+          }
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is SO_n defined for quadratic forms over an arbitrary base ring, including in characteristic 2?",
+        "verdict": "Mostly yes. In characteristic not 2, SO_n = ker(det: O_n -> {±1}) is smooth. In characteristic 2, the orthogonal group requires a separate theory via quadratic forms (not symmetric bilinear forms, which degenerate). The Zariski-closure definition still gives a group scheme but smoothness requires the form to be non-degenerate in the relevant sense."
+      },
+      "tags": [
+        "classical-groups",
+        "orthogonal",
+        "special-orthogonal",
+        "group-scheme",
+        "affine-group-scheme",
+        "type-B",
+        "type-D"
+      ]
+    },
+    {
+      "id": "affine_group_schemes.symplectic_group_scheme",
+      "title": "Symplectic Group Scheme Sp_{2n}",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes",
+        "classical_and_exceptional_groups"
+      ],
+      "uses": [
+        "affine_group_schemes.general_linear_group_scheme",
+        "affine_group_schemes.affine_group_scheme_definition",
+        "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
+      ],
+      "source": {
+        "spans": [
+          {
+            "artifact": "springer-linear-algebraic-groups",
+            "locator": "Section 2.1",
+            "format": "section",
+            "note": "Sp_{2n} as the isometry group of a standard symplectic form."
+          }
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "not_applicable"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is Sp_{2n} defined as a flat affine group scheme over Z, not just over a field?",
+        "verdict": "Yes. The symplectic form J is defined over Z and the condition g^T J g = J is a closed subscheme condition, giving a smooth group scheme over Z."
+      },
+      "tags": [
+        "classical-groups",
+        "symplectic",
+        "group-scheme",
+        "affine-group-scheme",
+        "type-C"
+      ]
     },
     {
       "id": "affine_group_schemes.trivial_group_scheme",
       "title": "Trivial Group Scheme over a Base",
       "kind": "definition",
       "status": "admitted",
-      "label": "Trivial Group Scheme over a Base",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.algebraic_group_definition"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Examples.Trivial"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.schemeOverSelf_hom",
+          "Langlands.AlgebraicGeometry.trivialIsAffineHom",
+          "Langlands.AlgebraicGeometry.trivialLocallyOfFiniteType - Langlands.AlgebraicGeometry.schemeOverSelf - Langlands.AlgebraicGeometry.trivialGrpObj"
+        ]
+      },
+      "verification": {
+        "definition": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Is the trivial group scheme defined over an arbitrary base \\(S\\)?",
+        "verdict": "Yes. The construction is functorial in \\(S\\) and does not depend on \\(S\\) being affine, of finite type, or over a field."
+      },
+      "tags": [
+        "example",
+        "definition",
+        "linear-algebraic-groups"
+      ]
     },
     {
       "id": "affine_group_schemes.trivial_representation_example",
       "title": "Trivial Representation as a Comodule",
       "kind": "example",
       "status": "admitted",
-      "label": "Trivial Representation as a Comodule",
-      "primary_topic": "affine_group_schemes"
+      "primary_topic": "affine_group_schemes",
+      "topics": [
+        "affine_group_schemes"
+      ],
+      "uses": [
+        "affine_group_schemes.comodule_definition"
+      ],
+      "lean": {
+        "modules": [
+          "LanglandsLean.AlgebraicGeometry.Comodule"
+        ],
+        "declarations": [
+          "Langlands.AlgebraicGeometry.trivialCoaction_apply - Langlands.AlgebraicGeometry.trivialCoaction - Langlands.AlgebraicGeometry.trivialComodule"
+        ]
+      },
+      "verification": {
+        "statement": "accepted",
+        "proof": "accepted",
+        "alignment": "aligned"
+      },
+      "generality": {
+        "reviewed": true,
+        "prompt": "Does the trivial comodule construction require a Hopf algebra?",
+        "verdict": "No. A bialgebra is enough: the coaction uses the group-like element \\(1\\), and the axioms use \\(\\Delta(1)=1\\otimes 1\\) and \\(\\varepsilon(1)=1\\)."
+      },
+      "tags": [
+        "example",
+        "representation",
+        "comodule",
+        "linear-algebraic-groups"
+      ]
     }
   ],
   "internal_edges": [
@@ -484,6 +1613,50 @@
       "target": "affine_group_schemes.spec_representability_via_global_sections"
     },
     {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "affine_group_schemes.special_linear_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.multiplicative_group_scheme",
+      "target": "affine_group_schemes.special_linear_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.special_linear_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.special_linear_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.special_linear_group_scheme",
+      "target": "affine_group_schemes.special_orthogonal_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "affine_group_schemes.special_orthogonal_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.special_orthogonal_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.special_orthogonal_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "affine_group_schemes.symplectic_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.symplectic_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.symplectic_group_scheme"
+    },
+    {
       "source": "affine_group_schemes.algebraic_group_definition",
       "target": "affine_group_schemes.trivial_group_scheme"
     },
@@ -664,6 +1837,14 @@
     {
       "source": "affine_group_schemes.algebraic_group_definition",
       "target": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
+    },
+    {
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "root_data_and_duality.chevalley_group_construction"
+    },
+    {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "root_data_and_duality.chevalley_group_construction"
     }
   ]
 }

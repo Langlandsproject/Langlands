@@ -3,16 +3,16 @@
     {
       "id": "affine_group_schemes",
       "label": "Affine Group Schemes",
-      "node_count": 35,
+      "node_count": 38,
       "kind_counts": {
-        "definition": 13,
+        "definition": 16,
         "theorem": 15,
         "topic": 3,
         "lemma": 2,
         "example": 2
       },
       "status_counts": {
-        "admitted": 35
+        "admitted": 38
       }
     },
     {
@@ -123,14 +123,14 @@
     {
       "id": "root_data_and_duality",
       "label": "Root Data And Duality",
-      "node_count": 34,
+      "node_count": 35,
       "kind_counts": {
         "theorem": 12,
         "topic": 21,
-        "definition": 1
+        "definition": 2
       },
       "status_counts": {
-        "admitted": 34
+        "admitted": 35
       }
     }
   ],
@@ -150,6 +150,10 @@
     {
       "source": "affine_group_schemes",
       "target": "reductive_structure"
+    },
+    {
+      "source": "affine_group_schemes",
+      "target": "root_data_and_duality"
     },
     {
       "source": "buildings_and_parahorics",
