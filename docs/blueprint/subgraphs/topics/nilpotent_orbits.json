@@ -8,18 +8,13 @@
     "descendant_node_count": 10
   },
   "counts": {
-    "internal_nodes": 10,
-    "inlined_nodes": 0,
-    "descendant_nodes": 10,
-    "child_topics": 0,
-    "inlined_child_topics": 0,
-    "non_proof_plan_nodes": 10,
-    "proof_plan_nodes": 0,
-    "selected_proof_plan_nodes": 0,
-    "boundary_topics": 5,
-    "proof_plan_attachments": 0,
-    "visible_nodes_without_proof_plans": 16,
-    "visible_nodes_with_selected_proof_plans": 16
+    "total": 10,
+    "by_kind": {
+      "topic": 10
+    },
+    "by_status": {
+      "admitted": 10
+    }
   },
   "nodes": [
     {
@@ -27,225 +22,174 @@
       "title": "Adjoint Action",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_adjoint_action.html",
-      "payload": "node_payloads/nilpotent_orbits_adjoint_action.json"
+      "label": "Adjoint Action",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.bala_carter_classification",
       "title": "Bala-Carter Classification",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_bala_carter_classification.html",
-      "payload": "node_payloads/nilpotent_orbits_bala_carter_classification.json"
+      "label": "Bala-Carter Classification",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.jacobson_morozov_theorem",
       "title": "Jacobson-Morozov Theorem",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_jacobson_morozov_theorem.html",
-      "payload": "node_payloads/nilpotent_orbits_jacobson_morozov_theorem.json"
+      "label": "Jacobson-Morozov Theorem",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.lie_algebras_of_reductive_groups",
       "title": "Lie Algebras of Reductive Groups",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_lie_algebras_of_reductive_groups.html",
-      "payload": "node_payloads/nilpotent_orbits_lie_algebras_of_reductive_groups.json"
+      "label": "Lie Algebras of Reductive Groups",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.nilpotent_cone",
       "title": "Nilpotent Cone",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_nilpotent_cone.html",
-      "payload": "node_payloads/nilpotent_orbits_nilpotent_cone.json"
+      "label": "Nilpotent Cone",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.nilpotent_elements",
       "title": "Nilpotent Elements",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_nilpotent_elements.html",
-      "payload": "node_payloads/nilpotent_orbits_nilpotent_elements.json"
+      "label": "Nilpotent Elements",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.nilpotent_orbits",
       "title": "Nilpotent Orbits",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_nilpotent_orbits.html",
-      "payload": "node_payloads/nilpotent_orbits_nilpotent_orbits.json"
+      "label": "Nilpotent Orbits",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.rational_nilpotent_orbits",
       "title": "Rational Nilpotent Orbits",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_rational_nilpotent_orbits.html",
-      "payload": "node_payloads/nilpotent_orbits_rational_nilpotent_orbits.json"
+      "label": "Rational Nilpotent Orbits",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.sl2_triples",
       "title": "SL2-Triples",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_sl2_triples.html",
-      "payload": "node_payloads/nilpotent_orbits_sl2_triples.json"
+      "label": "SL2-Triples",
+      "primary_topic": "nilpotent_orbits"
     },
     {
       "id": "nilpotent_orbits.weighted_dynkin_diagrams",
       "title": "Weighted Dynkin Diagrams",
       "kind": "topic",
       "status": "admitted",
-      "href": "nilpotent_orbits/nilpotent_orbits_weighted_dynkin_diagrams.html",
-      "payload": "node_payloads/nilpotent_orbits_weighted_dynkin_diagrams.json"
+      "label": "Weighted Dynkin Diagrams",
+      "primary_topic": "nilpotent_orbits"
     }
   ],
   "edges": [
     {
       "from": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "to": "nilpotent_orbits.adjoint_action",
-      "kind": "uses"
+      "to": "nilpotent_orbits.adjoint_action"
     },
     {
       "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.bala_carter_classification",
-      "kind": "uses"
+      "to": "nilpotent_orbits.bala_carter_classification"
     },
     {
       "from": "nilpotent_orbits.weighted_dynkin_diagrams",
-      "to": "nilpotent_orbits.bala_carter_classification",
-      "kind": "uses"
+      "to": "nilpotent_orbits.bala_carter_classification"
     },
     {
       "from": "nilpotent_orbits.sl2_triples",
-      "to": "nilpotent_orbits.jacobson_morozov_theorem",
-      "kind": "uses"
+      "to": "nilpotent_orbits.jacobson_morozov_theorem"
+    },
+    {
+      "from": "nilpotent_orbits.nilpotent_elements",
+      "to": "nilpotent_orbits.nilpotent_cone"
     },
     {
       "from": "nilpotent_orbits.adjoint_action",
-      "to": "nilpotent_orbits.nilpotent_cone",
-      "kind": "uses"
-    },
-    {
-      "from": "nilpotent_orbits.nilpotent_elements",
-      "to": "nilpotent_orbits.nilpotent_cone",
-      "kind": "uses"
+      "to": "nilpotent_orbits.nilpotent_cone"
     },
     {
       "from": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "to": "nilpotent_orbits.nilpotent_elements",
-      "kind": "uses"
+      "to": "nilpotent_orbits.nilpotent_elements"
     },
     {
       "from": "nilpotent_orbits.nilpotent_cone",
-      "to": "nilpotent_orbits.nilpotent_orbits",
-      "kind": "uses"
+      "to": "nilpotent_orbits.nilpotent_orbits"
     },
     {
       "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.rational_nilpotent_orbits",
-      "kind": "uses"
+      "to": "nilpotent_orbits.rational_nilpotent_orbits"
     },
     {
       "from": "nilpotent_orbits.nilpotent_elements",
-      "to": "nilpotent_orbits.sl2_triples",
-      "kind": "uses"
+      "to": "nilpotent_orbits.sl2_triples"
     },
     {
       "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.weighted_dynkin_diagrams",
-      "kind": "uses"
+      "to": "nilpotent_orbits.weighted_dynkin_diagrams"
     }
   ],
   "boundary_topics": [
-    {
-      "id": "buildings_and_parahorics",
-      "title": "Buildings And Parahorics",
-      "href": "buildings_and_parahorics/index.html",
-      "role": "dependent",
-      "node_count": 16
-    },
-    {
-      "id": "descent_and_forms",
-      "title": "Descent And Forms",
-      "href": "descent_and_forms/index.html",
-      "role": "dependency",
-      "node_count": 22
-    },
-    {
-      "id": "linear_algebraic_groups",
-      "title": "Linear Algebraic Groups",
-      "href": "linear_algebraic_groups/index.html",
-      "role": "dependency",
-      "node_count": 46
-    },
-    {
-      "id": "reductive_structure",
-      "title": "Reductive Structure",
-      "href": "reductive_structure/index.html",
-      "role": "dependency",
-      "node_count": 13
-    },
-    {
-      "id": "root_data_and_duality",
-      "title": "Root Data And Duality",
-      "href": "root_data_and_duality/index.html",
-      "role": "dependency",
-      "node_count": 21
-    }
+    "descent_and_forms",
+    "linear_algebraic_groups",
+    "reductive_structure",
+    "root_data_and_duality"
   ],
   "boundary_edges": [
     {
-      "from": "topic:descent_and_forms",
-      "to": "nilpotent_orbits.rational_nilpotent_orbits",
-      "kind": "boundary_dependency",
-      "topic": "descent_and_forms",
-      "count": 2
-    },
-    {
-      "from": "topic:linear_algebraic_groups",
-      "to": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "kind": "boundary_dependency",
-      "topic": "linear_algebraic_groups",
-      "count": 1
-    },
-    {
-      "from": "topic:reductive_structure",
+      "from": "reductive_structure.reductive_groups",
       "to": "nilpotent_orbits.adjoint_action",
-      "kind": "boundary_dependency",
-      "topic": "reductive_structure",
-      "count": 1
+      "from_topic": "reductive_structure"
     },
     {
-      "from": "topic:reductive_structure",
+      "from": "reductive_structure.parabolic_subgroups",
       "to": "nilpotent_orbits.bala_carter_classification",
-      "kind": "boundary_dependency",
-      "topic": "reductive_structure",
-      "count": 2
+      "from_topic": "reductive_structure"
     },
     {
-      "from": "topic:reductive_structure",
+      "from": "reductive_structure.levi_subgroups_and_unipotent_radicals",
+      "to": "nilpotent_orbits.bala_carter_classification",
+      "from_topic": "reductive_structure"
+    },
+    {
+      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
       "to": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "kind": "boundary_dependency",
-      "topic": "reductive_structure",
-      "count": 1
+      "from_topic": "linear_algebraic_groups"
     },
     {
-      "from": "topic:root_data_and_duality",
+      "from": "reductive_structure.reductive_groups",
+      "to": "nilpotent_orbits.lie_algebras_of_reductive_groups",
+      "from_topic": "reductive_structure"
+    },
+    {
+      "from": "descent_and_forms.rational_forms_of_reductive_groups",
+      "to": "nilpotent_orbits.rational_nilpotent_orbits",
+      "from_topic": "descent_and_forms"
+    },
+    {
+      "from": "descent_and_forms.galois_cohomology",
+      "to": "nilpotent_orbits.rational_nilpotent_orbits",
+      "from_topic": "linear_algebraic_groups"
+    },
+    {
+      "from": "root_data_and_duality.root_systems",
       "to": "nilpotent_orbits.weighted_dynkin_diagrams",
-      "kind": "boundary_dependency",
-      "topic": "root_data_and_duality",
-      "count": 1
-    },
-    {
-      "from": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "to": "topic:buildings_and_parahorics",
-      "kind": "boundary_dependent",
-      "topic": "buildings_and_parahorics",
-      "count": 1
+      "from_topic": "root_data_and_duality"
     }
   ],
   "keywords": [

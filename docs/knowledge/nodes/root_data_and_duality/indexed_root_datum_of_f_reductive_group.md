@@ -3,7 +3,7 @@ id: root_data_and_duality.indexed_root_datum_of_f_reductive_group
 title: Indexed Root Datum of an F-Reductive Group
 kind: definition
 status: admitted
-primary_topic: root_data_and_duality
+primary_topic: descent_and_forms
 topics:
 - root_data_and_duality
 - reductive_structure

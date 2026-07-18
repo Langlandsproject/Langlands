@@ -8,18 +8,13 @@
     "descendant_node_count": 16
   },
   "counts": {
-    "internal_nodes": 16,
-    "inlined_nodes": 0,
-    "descendant_nodes": 16,
-    "child_topics": 0,
-    "inlined_child_topics": 0,
-    "non_proof_plan_nodes": 16,
-    "proof_plan_nodes": 0,
-    "selected_proof_plan_nodes": 0,
-    "boundary_topics": 7,
-    "proof_plan_attachments": 0,
-    "visible_nodes_without_proof_plans": 24,
-    "visible_nodes_with_selected_proof_plans": 24
+    "total": 16,
+    "by_kind": {
+      "topic": 16
+    },
+    "by_status": {
+      "admitted": 16
+    }
   },
   "nodes": [
     {
@@ -27,392 +22,296 @@
       "title": "Affine Root Systems",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_affine_root_systems.html",
-      "payload": "node_payloads/buildings_and_parahorics_affine_root_systems.json"
+      "label": "Affine Root Systems",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.affine_weyl_groups",
       "title": "Affine Weyl Groups",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_affine_weyl_groups.html",
-      "payload": "node_payloads/buildings_and_parahorics_affine_weyl_groups.json"
+      "label": "Affine Weyl Groups",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.bn_pairs_and_tits_systems",
       "title": "BN-Pairs and Tits Systems",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_bn_pairs_and_tits_systems.html",
-      "payload": "node_payloads/buildings_and_parahorics_bn_pairs_and_tits_systems.json"
+      "label": "BN-Pairs and Tits Systems",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.bruhat_tits_apartments",
       "title": "Bruhat-Tits Apartments",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_bruhat_tits_apartments.html",
-      "payload": "node_payloads/buildings_and_parahorics_bruhat_tits_apartments.json"
+      "label": "Bruhat-Tits Apartments",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.bruhat_tits_buildings",
       "title": "Bruhat-Tits Buildings",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_bruhat_tits_buildings.html",
-      "payload": "node_payloads/buildings_and_parahorics_bruhat_tits_buildings.json"
+      "label": "Bruhat-Tits Buildings",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.coxeter_complexes",
       "title": "Coxeter Complexes",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_coxeter_complexes.html",
-      "payload": "node_payloads/buildings_and_parahorics_coxeter_complexes.json"
+      "label": "Coxeter Complexes",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.facets_in_bruhat_tits_buildings",
       "title": "Facets in Bruhat-Tits Buildings",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_facets_in_bruhat_tits_buildings.html",
-      "payload": "node_payloads/buildings_and_parahorics_facets_in_bruhat_tits_buildings.json"
+      "label": "Facets in Bruhat-Tits Buildings",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.moy_prasad_filtrations",
       "title": "Moy-Prasad Filtrations",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_moy_prasad_filtrations.html",
-      "payload": "node_payloads/buildings_and_parahorics_moy_prasad_filtrations.json"
+      "label": "Moy-Prasad Filtrations",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.parahoric_group_schemes",
       "title": "Parahoric Group Schemes",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_parahoric_group_schemes.html",
-      "payload": "node_payloads/buildings_and_parahorics_parahoric_group_schemes.json"
+      "label": "Parahoric Group Schemes",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.parahoric_subgroups",
       "title": "Parahoric Subgroups",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_parahoric_subgroups.html",
-      "payload": "node_payloads/buildings_and_parahorics_parahoric_subgroups.json"
+      "label": "Parahoric Subgroups",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.reductive_groups_over_local_fields",
       "title": "Reductive Groups over Local Fields",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_reductive_groups_over_local_fields.html",
-      "payload": "node_payloads/buildings_and_parahorics_reductive_groups_over_local_fields.json"
+      "label": "Reductive Groups over Local Fields",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.reductive_quotients_of_parahoric_group_schemes",
       "title": "Reductive Quotients of Parahoric Group Schemes",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_reductive_quotients_of_parahoric_group_schemes.html",
-      "payload": "node_payloads/buildings_and_parahorics_reductive_quotients_of_parahoric_group_schemes.json"
+      "label": "Reductive Quotients of Parahoric Group Schemes",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
       "title": "Smooth Affine Group Schemes over Valuation Rings",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_smooth_affine_group_schemes_over_valuation_rings.html",
-      "payload": "node_payloads/buildings_and_parahorics_smooth_affine_group_schemes_over_valuation_rings.json"
+      "label": "Smooth Affine Group Schemes over Valuation Rings",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.spherical_buildings",
       "title": "Spherical Buildings",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_spherical_buildings.html",
-      "payload": "node_payloads/buildings_and_parahorics_spherical_buildings.json"
+      "label": "Spherical Buildings",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.tits_buildings",
       "title": "Tits Buildings",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_tits_buildings.html",
-      "payload": "node_payloads/buildings_and_parahorics_tits_buildings.json"
+      "label": "Tits Buildings",
+      "primary_topic": "buildings_and_parahorics"
     },
     {
       "id": "buildings_and_parahorics.valued_root_data",
       "title": "Valued Root Data",
       "kind": "topic",
       "status": "admitted",
-      "href": "buildings_and_parahorics/buildings_and_parahorics_valued_root_data.html",
-      "payload": "node_payloads/buildings_and_parahorics_valued_root_data.json"
+      "label": "Valued Root Data",
+      "primary_topic": "buildings_and_parahorics"
     }
   ],
   "edges": [
     {
       "from": "buildings_and_parahorics.valued_root_data",
-      "to": "buildings_and_parahorics.affine_root_systems",
-      "kind": "uses"
+      "to": "buildings_and_parahorics.affine_root_systems"
     },
     {
       "from": "buildings_and_parahorics.affine_root_systems",
-      "to": "buildings_and_parahorics.affine_weyl_groups",
-      "kind": "uses"
+      "to": "buildings_and_parahorics.affine_weyl_groups"
     },
     {
       "from": "buildings_and_parahorics.coxeter_complexes",
-      "to": "buildings_and_parahorics.bn_pairs_and_tits_systems",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.affine_weyl_groups",
-      "to": "buildings_and_parahorics.bruhat_tits_apartments",
-      "kind": "uses"
+      "to": "buildings_and_parahorics.bn_pairs_and_tits_systems"
     },
     {
       "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "to": "buildings_and_parahorics.bruhat_tits_apartments",
-      "kind": "uses"
+      "to": "buildings_and_parahorics.bruhat_tits_apartments"
     },
     {
       "from": "buildings_and_parahorics.valued_root_data",
-      "to": "buildings_and_parahorics.bruhat_tits_apartments",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.bn_pairs_and_tits_systems",
-      "to": "buildings_and_parahorics.bruhat_tits_buildings",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.bruhat_tits_apartments",
-      "to": "buildings_and_parahorics.bruhat_tits_buildings",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.bruhat_tits_buildings",
-      "to": "buildings_and_parahorics.facets_in_bruhat_tits_buildings",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.parahoric_subgroups",
-      "to": "buildings_and_parahorics.moy_prasad_filtrations",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.parahoric_subgroups",
-      "to": "buildings_and_parahorics.parahoric_group_schemes",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
-      "to": "buildings_and_parahorics.parahoric_group_schemes",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.facets_in_bruhat_tits_buildings",
-      "to": "buildings_and_parahorics.parahoric_subgroups",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "to": "buildings_and_parahorics.parahoric_subgroups",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.parahoric_group_schemes",
-      "to": "buildings_and_parahorics.reductive_quotients_of_parahoric_group_schemes",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.bn_pairs_and_tits_systems",
-      "to": "buildings_and_parahorics.spherical_buildings",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.spherical_buildings",
-      "to": "buildings_and_parahorics.tits_buildings",
-      "kind": "uses"
-    },
-    {
-      "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "to": "buildings_and_parahorics.valued_root_data",
-      "kind": "uses"
-    }
-  ],
-  "boundary_topics": [
-    {
-      "id": "bd_covers",
-      "title": "Bd Covers",
-      "href": "bd_covers/index.html",
-      "role": "dependent",
-      "node_count": 6
-    },
-    {
-      "id": "foundational_inputs",
-      "title": "Foundational Inputs",
-      "href": "foundational_inputs/index.html",
-      "role": "dependency",
-      "node_count": 8
-    },
-    {
-      "id": "kottwitz_structures",
-      "title": "Kottwitz Structures",
-      "href": "kottwitz_structures/index.html",
-      "role": "dependent",
-      "node_count": 9
-    },
-    {
-      "id": "linear_algebraic_groups",
-      "title": "Linear Algebraic Groups",
-      "href": "linear_algebraic_groups/index.html",
-      "role": "dependency",
-      "node_count": 46
-    },
-    {
-      "id": "nilpotent_orbits",
-      "title": "Nilpotent Orbits",
-      "href": "nilpotent_orbits/index.html",
-      "role": "dependency",
-      "node_count": 10
-    },
-    {
-      "id": "reductive_structure",
-      "title": "Reductive Structure",
-      "href": "reductive_structure/index.html",
-      "role": "dependency",
-      "node_count": 13
-    },
-    {
-      "id": "root_data_and_duality",
-      "title": "Root Data And Duality",
-      "href": "root_data_and_duality/index.html",
-      "role": "dependency",
-      "node_count": 21
-    }
-  ],
-  "boundary_edges": [
-    {
-      "from": "topic:foundational_inputs",
-      "to": "buildings_and_parahorics.bruhat_tits_apartments",
-      "kind": "boundary_dependency",
-      "topic": "foundational_inputs",
-      "count": 1
-    },
-    {
-      "from": "topic:foundational_inputs",
-      "to": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "kind": "boundary_dependency",
-      "topic": "foundational_inputs",
-      "count": 1
-    },
-    {
-      "from": "topic:foundational_inputs",
-      "to": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
-      "kind": "boundary_dependency",
-      "topic": "foundational_inputs",
-      "count": 1
-    },
-    {
-      "from": "topic:foundational_inputs",
-      "to": "buildings_and_parahorics.valued_root_data",
-      "kind": "boundary_dependency",
-      "topic": "foundational_inputs",
-      "count": 1
-    },
-    {
-      "from": "topic:linear_algebraic_groups",
-      "to": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
-      "kind": "boundary_dependency",
-      "topic": "linear_algebraic_groups",
-      "count": 2
-    },
-    {
-      "from": "topic:nilpotent_orbits",
-      "to": "buildings_and_parahorics.moy_prasad_filtrations",
-      "kind": "boundary_dependency",
-      "topic": "nilpotent_orbits",
-      "count": 1
-    },
-    {
-      "from": "topic:reductive_structure",
-      "to": "buildings_and_parahorics.bn_pairs_and_tits_systems",
-      "kind": "boundary_dependency",
-      "topic": "reductive_structure",
-      "count": 1
-    },
-    {
-      "from": "topic:reductive_structure",
-      "to": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "kind": "boundary_dependency",
-      "topic": "reductive_structure",
-      "count": 1
-    },
-    {
-      "from": "topic:reductive_structure",
-      "to": "buildings_and_parahorics.tits_buildings",
-      "kind": "boundary_dependency",
-      "topic": "reductive_structure",
-      "count": 2
-    },
-    {
-      "from": "topic:root_data_and_duality",
-      "to": "buildings_and_parahorics.affine_root_systems",
-      "kind": "boundary_dependency",
-      "topic": "root_data_and_duality",
-      "count": 1
-    },
-    {
-      "from": "topic:root_data_and_duality",
-      "to": "buildings_and_parahorics.affine_weyl_groups",
-      "kind": "boundary_dependency",
-      "topic": "root_data_and_duality",
-      "count": 1
-    },
-    {
-      "from": "topic:root_data_and_duality",
-      "to": "buildings_and_parahorics.coxeter_complexes",
-      "kind": "boundary_dependency",
-      "topic": "root_data_and_duality",
-      "count": 1
-    },
-    {
-      "from": "topic:root_data_and_duality",
-      "to": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "kind": "boundary_dependency",
-      "topic": "root_data_and_duality",
-      "count": 1
-    },
-    {
-      "from": "topic:root_data_and_duality",
-      "to": "buildings_and_parahorics.valued_root_data",
-      "kind": "boundary_dependency",
-      "topic": "root_data_and_duality",
-      "count": 2
-    },
-    {
-      "from": "buildings_and_parahorics.parahoric_subgroups",
-      "to": "topic:bd_covers",
-      "kind": "boundary_dependent",
-      "topic": "bd_covers",
-      "count": 1
+      "to": "buildings_and_parahorics.bruhat_tits_apartments"
     },
     {
       "from": "buildings_and_parahorics.affine_weyl_groups",
-      "to": "topic:kottwitz_structures",
-      "kind": "boundary_dependent",
-      "topic": "kottwitz_structures",
-      "count": 1
+      "to": "buildings_and_parahorics.bruhat_tits_apartments"
+    },
+    {
+      "from": "buildings_and_parahorics.bruhat_tits_apartments",
+      "to": "buildings_and_parahorics.bruhat_tits_buildings"
+    },
+    {
+      "from": "buildings_and_parahorics.bn_pairs_and_tits_systems",
+      "to": "buildings_and_parahorics.bruhat_tits_buildings"
+    },
+    {
+      "from": "buildings_and_parahorics.bruhat_tits_buildings",
+      "to": "buildings_and_parahorics.facets_in_bruhat_tits_buildings"
+    },
+    {
+      "from": "buildings_and_parahorics.parahoric_subgroups",
+      "to": "buildings_and_parahorics.moy_prasad_filtrations"
+    },
+    {
+      "from": "buildings_and_parahorics.parahoric_subgroups",
+      "to": "buildings_and_parahorics.parahoric_group_schemes"
+    },
+    {
+      "from": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
+      "to": "buildings_and_parahorics.parahoric_group_schemes"
+    },
+    {
+      "from": "buildings_and_parahorics.facets_in_bruhat_tits_buildings",
+      "to": "buildings_and_parahorics.parahoric_subgroups"
     },
     {
       "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "to": "topic:kottwitz_structures",
-      "kind": "boundary_dependent",
-      "topic": "kottwitz_structures",
-      "count": 1
+      "to": "buildings_and_parahorics.parahoric_subgroups"
+    },
+    {
+      "from": "buildings_and_parahorics.parahoric_group_schemes",
+      "to": "buildings_and_parahorics.reductive_quotients_of_parahoric_group_schemes"
+    },
+    {
+      "from": "buildings_and_parahorics.bn_pairs_and_tits_systems",
+      "to": "buildings_and_parahorics.spherical_buildings"
+    },
+    {
+      "from": "buildings_and_parahorics.spherical_buildings",
+      "to": "buildings_and_parahorics.tits_buildings"
+    },
+    {
+      "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
+      "to": "buildings_and_parahorics.valued_root_data"
+    }
+  ],
+  "boundary_topics": [
+    "affine_group_schemes",
+    "foundational_inputs",
+    "linear_algebraic_groups",
+    "reductive_structure",
+    "root_data_and_duality"
+  ],
+  "boundary_edges": [
+    {
+      "from": "root_data_and_duality.root_systems",
+      "to": "buildings_and_parahorics.affine_root_systems",
+      "from_topic": "root_data_and_duality"
+    },
+    {
+      "from": "root_data_and_duality.coxeter_systems_and_bruhat_order",
+      "to": "buildings_and_parahorics.affine_weyl_groups",
+      "from_topic": "root_data_and_duality"
+    },
+    {
+      "from": "reductive_structure.parabolic_subgroups",
+      "to": "buildings_and_parahorics.bn_pairs_and_tits_systems",
+      "from_topic": "reductive_structure"
+    },
+    {
+      "from": "foundational_inputs.local_fields",
+      "to": "buildings_and_parahorics.bruhat_tits_apartments",
+      "from_topic": "foundational_inputs"
+    },
+    {
+      "from": "root_data_and_duality.coxeter_systems_and_bruhat_order",
+      "to": "buildings_and_parahorics.coxeter_complexes",
+      "from_topic": "root_data_and_duality"
+    },
+    {
+      "from": "reductive_structure.reductive_groups",
+      "to": "buildings_and_parahorics.moy_prasad_filtrations",
+      "from_topic": "reductive_structure"
+    },
+    {
+      "from": "foundational_inputs.local_fields",
+      "to": "buildings_and_parahorics.reductive_groups_over_local_fields",
+      "from_topic": "foundational_inputs"
+    },
+    {
+      "from": "reductive_structure.reductive_groups",
+      "to": "buildings_and_parahorics.reductive_groups_over_local_fields",
+      "from_topic": "reductive_structure"
+    },
+    {
+      "from": "root_data_and_duality.galois_action_on_root_data",
+      "to": "buildings_and_parahorics.reductive_groups_over_local_fields",
+      "from_topic": "root_data_and_duality"
+    },
+    {
+      "from": "linear_algebraic_groups.affine_algebraic_groups",
+      "to": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
+      "from_topic": "affine_group_schemes"
+    },
+    {
+      "from": "foundational_inputs.local_fields",
+      "to": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
+      "from_topic": "foundational_inputs"
+    },
+    {
+      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
+      "to": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
+      "from_topic": "linear_algebraic_groups"
+    },
+    {
+      "from": "reductive_structure.reductive_groups",
+      "to": "buildings_and_parahorics.tits_buildings",
+      "from_topic": "reductive_structure"
+    },
+    {
+      "from": "reductive_structure.parabolic_subgroups",
+      "to": "buildings_and_parahorics.tits_buildings",
+      "from_topic": "reductive_structure"
+    },
+    {
+      "from": "foundational_inputs.local_fields",
+      "to": "buildings_and_parahorics.valued_root_data",
+      "from_topic": "foundational_inputs"
+    },
+    {
+      "from": "root_data_and_duality.root_data",
+      "to": "buildings_and_parahorics.valued_root_data",
+      "from_topic": "root_data_and_duality"
+    },
+    {
+      "from": "root_data_and_duality.galois_action_on_root_data",
+      "to": "buildings_and_parahorics.valued_root_data",
+      "from_topic": "root_data_and_duality"
     }
   ],
   "keywords": [

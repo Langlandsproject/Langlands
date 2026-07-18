@@ -3,7 +3,7 @@ id: descent_and_forms.nonabelian_h1
 title: Nonabelian H1
 kind: topic
 status: admitted
-primary_topic: descent_and_forms
+primary_topic: linear_algebraic_groups
 topics:
 - descent_and_forms
 uses:

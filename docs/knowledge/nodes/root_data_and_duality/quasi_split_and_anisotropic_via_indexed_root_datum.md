@@ -3,7 +3,7 @@ id: root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum
 title: Quasi-Split and Anisotropic Groups via the Indexed Root Datum
 kind: theorem
 status: admitted
-primary_topic: root_data_and_duality
+primary_topic: descent_and_forms
 topics:
 - root_data_and_duality
 - reductive_structure
