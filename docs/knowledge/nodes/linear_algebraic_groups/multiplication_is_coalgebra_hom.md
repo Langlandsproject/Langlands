@@ -3,9 +3,9 @@ id: linear_algebraic_groups.multiplication_is_coalgebra_hom
 title: Multiplication of a Commutative Bialgebra Is a Coalgebra Hom
 kind: lemma
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - foundational_inputs.hopf_algebras
 lean:

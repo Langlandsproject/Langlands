@@ -3,9 +3,9 @@ id: linear_algebraic_groups.representation_equals_comodule
 title: G-Representations Are A-Comodules
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.comodule_definition
 - linear_algebraic_groups.points_functor_definition

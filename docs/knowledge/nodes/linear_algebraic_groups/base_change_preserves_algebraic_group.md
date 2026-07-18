@@ -3,9 +3,9 @@ id: linear_algebraic_groups.base_change_preserves_algebraic_group
 title: Base Change Preserves Algebraic Group Structure
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.algebraic_group_definition
 - linear_algebraic_groups.base_change

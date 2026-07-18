@@ -3,9 +3,9 @@ id: linear_algebraic_groups.hopf_spec_essential_image_affine
 title: Essential Image of Spec Is Affine Group Schemes
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.hopf_spec_functor
 - linear_algebraic_groups.affine_group_scheme_definition

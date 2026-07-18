@@ -3,9 +3,9 @@ id: linear_algebraic_groups.algebra_hom_convolution
 title: Convolution of Algebra Homomorphisms
 kind: definition
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.coordinate_rings_and_hopf_algebras
 - foundational_inputs.hopf_algebras

@@ -3,9 +3,9 @@ id: linear_algebraic_groups.hopf_spec_grpobj_via_yoneda
 title: Group Object Structure on Spec A via Yoneda
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.algebra_homs_form_group_under_convolution
 - linear_algebraic_groups.spec_representability_via_global_sections

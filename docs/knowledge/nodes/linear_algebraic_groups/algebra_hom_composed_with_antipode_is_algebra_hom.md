@@ -3,9 +3,9 @@ id: linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom
 title: Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.antipode_multiplicativity_commutative_hopf
 lean:

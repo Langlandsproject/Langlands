@@ -3,9 +3,9 @@ id: linear_algebraic_groups.general_linear_group_scheme_points
 title: Points of GL_n Are Invertible n×n Matrices over R
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.general_linear_group_scheme
 - linear_algebraic_groups.points_functor_definition

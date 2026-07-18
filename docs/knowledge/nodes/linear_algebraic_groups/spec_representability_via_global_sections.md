@@ -3,9 +3,9 @@ id: linear_algebraic_groups.spec_representability_via_global_sections
 title: Hom Into Spec via Global Sections (Spec ⊣ Γ Adjunction)
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.coordinate_rings_and_hopf_algebras
 - foundational_inputs.affine_schemes

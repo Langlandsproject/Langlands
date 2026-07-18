@@ -101,17 +101,15 @@
       "title": "Linear Algebraic Groups",
       "depth": 1,
       "parent": null,
-      "node_count": 46,
-      "direct_node_count": 46,
+      "node_count": 21,
+      "direct_node_count": 21,
       "kind_counts": {
-        "definition": 14,
-        "example": 1,
-        "lemma": 2,
-        "theorem": 18,
-        "topic": 11
+        "theorem": 10,
+        "topic": 8,
+        "definition": 3
       },
       "status_counts": {
-        "admitted": 45,
+        "admitted": 20,
         "needs_definition_review": 1
       },
       "href": "linear_algebraic_groups/index.html",
@@ -138,13 +136,14 @@
       "title": "Reductive Structure",
       "depth": 1,
       "parent": null,
-      "node_count": 13,
-      "direct_node_count": 13,
+      "node_count": 14,
+      "direct_node_count": 14,
       "kind_counts": {
-        "topic": 13
+        "topic": 13,
+        "theorem": 1
       },
       "status_counts": {
-        "admitted": 13
+        "admitted": 14
       },
       "href": "reductive_structure/index.html",
       "children": []
@@ -164,9 +163,54 @@
       },
       "href": "root_data_and_duality/index.html",
       "children": []
+    },
+    {
+      "id": "affine_group_schemes",
+      "title": "Affine Group Schemes",
+      "depth": 1,
+      "parent": null,
+      "node_count": 35,
+      "direct_node_count": 35,
+      "kind_counts": {
+        "definition": 13,
+        "theorem": 15,
+        "topic": 3,
+        "lemma": 2,
+        "example": 2
+      },
+      "status_counts": {
+        "admitted": 35
+      },
+      "href": "affine_group_schemes/index.html",
+      "children": []
     }
   ],
   "edges": [
+    {
+      "from": "affine_group_schemes",
+      "to": "bd_covers",
+      "count": 1
+    },
+    {
+      "from": "affine_group_schemes",
+      "to": "buildings_and_parahorics",
+      "count": 1
+    },
+    {
+      "from": "affine_group_schemes",
+      "to": "descent_and_forms",
+      "count": 2
+    },
+    {
+      "from": "affine_group_schemes",
+      "to": "linear_algebraic_groups",
+      "count": 23
+    },
+    {
+      "from": "affine_group_schemes",
+      "to": "reductive_structure",
+      "count": 1
+    },
     {
       "from": "buildings_and_parahorics",
       "to": "bd_covers",
@@ -181,6 +225,11 @@
       "from": "descent_and_forms",
       "to": "nilpotent_orbits",
       "count": 2
+    },
+    {
+      "from": "foundational_inputs",
+      "to": "affine_group_schemes",
+      "count": 15
     },
     {
       "from": "foundational_inputs",
@@ -205,7 +254,7 @@
     {
       "from": "foundational_inputs",
       "to": "linear_algebraic_groups",
-      "count": 19
+      "count": 4
     },
     {
       "from": "foundational_inputs",
@@ -219,13 +268,8 @@
     },
     {
       "from": "linear_algebraic_groups",
-      "to": "bd_covers",
-      "count": 1
-    },
-    {
-      "from": "linear_algebraic_groups",
       "to": "buildings_and_parahorics",
-      "count": 2
+      "count": 1
     },
     {
       "from": "linear_algebraic_groups",
@@ -235,7 +279,7 @@
     {
       "from": "linear_algebraic_groups",
       "to": "descent_and_forms",
-      "count": 7
+      "count": 5
     },
     {
       "from": "linear_algebraic_groups",
@@ -245,7 +289,7 @@
     {
       "from": "linear_algebraic_groups",
       "to": "reductive_structure",
-      "count": 5
+      "count": 6
     },
     {
       "from": "reductive_structure",

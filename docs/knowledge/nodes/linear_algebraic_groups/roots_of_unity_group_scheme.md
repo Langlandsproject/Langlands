@@ -3,9 +3,9 @@ id: linear_algebraic_groups.roots_of_unity_group_scheme
 title: Roots of Unity Group Scheme μ_n
 kind: definition
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.algebraic_group_definition
 - linear_algebraic_groups.multiplicative_group_scheme

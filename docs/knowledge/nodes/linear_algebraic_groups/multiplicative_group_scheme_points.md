@@ -3,9 +3,9 @@ id: linear_algebraic_groups.multiplicative_group_scheme_points
 title: Points of 𝔾_m Are the Units of R
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.multiplicative_group_scheme
 - linear_algebraic_groups.points_functor_definition

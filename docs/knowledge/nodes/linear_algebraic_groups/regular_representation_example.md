@@ -3,9 +3,9 @@ id: linear_algebraic_groups.regular_representation_example
 title: Regular Representation as a Comodule
 kind: example
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.comodule_definition
 - linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme

@@ -3,9 +3,9 @@ id: linear_algebraic_groups.points_form_group
 title: R-Points of a Group Scheme Form a Group
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.points_functor_definition
 lean:

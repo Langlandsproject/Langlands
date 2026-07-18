@@ -3,9 +3,9 @@ id: linear_algebraic_groups.affine_group_scheme_definition
 title: Affine Group Scheme over a Base
 kind: definition
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.affine_algebraic_groups
 - foundational_inputs.affine_schemes

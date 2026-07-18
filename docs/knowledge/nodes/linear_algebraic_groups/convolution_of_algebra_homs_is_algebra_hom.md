@@ -3,9 +3,9 @@ id: linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
 title: Convolution of Algebra Homomorphisms Is an Algebra Homomorphism
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.algebra_hom_convolution
 lean:

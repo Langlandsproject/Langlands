@@ -3,9 +3,9 @@ id: linear_algebraic_groups.base_change
 title: Base Change
 kind: topic
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - foundational_inputs.fields_and_field_extensions
 - linear_algebraic_groups.affine_algebraic_groups

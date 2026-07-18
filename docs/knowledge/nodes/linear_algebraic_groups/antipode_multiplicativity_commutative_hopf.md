@@ -3,9 +3,9 @@ id: linear_algebraic_groups.antipode_multiplicativity_commutative_hopf
 title: Antipode of a Commutative Hopf Algebra Is Multiplicative
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - foundational_inputs.hopf_algebras
 - linear_algebraic_groups.multiplication_is_coalgebra_hom

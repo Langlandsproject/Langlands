@@ -3,9 +3,9 @@ id: linear_algebraic_groups.algebra_homs_form_group_under_convolution
 title: Algebra Homomorphisms Form a Group Under Convolution
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
 - linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom

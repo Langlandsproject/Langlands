@@ -3,12 +3,11 @@ id: linear_algebraic_groups.additive_group_scheme
 title: Additive Group Scheme 𝔾_a
 kind: definition
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.algebraic_group_definition
-- linear_algebraic_groups.basic_examples
 - linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme
 lean:
   modules:

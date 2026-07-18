@@ -3,12 +3,11 @@ id: linear_algebraic_groups.general_linear_group_scheme
 title: General Linear Group Scheme GL_n
 kind: definition
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.algebraic_group_definition
-- linear_algebraic_groups.basic_examples
 - linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme
 lean:
   modules:

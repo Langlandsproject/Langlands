@@ -3649,6 +3649,83 @@
         "root_data_and_duality.coxeter_systems_and_bruhat_order",
         "root_data_and_duality.root_systems"
       ]
+    },
+    {
+      "id": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "title": "Algebraic Group Actions, Orbits, and Stabilizers",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Algebraic Group Actions, Orbits, and Stabilizers"
+    },
+    {
+      "id": "linear_algebraic_groups.closed_image_of_homomorphism",
+      "title": "Image of an Algebraic Group Homomorphism Is Closed",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Image of an Algebraic Group Homomorphism Is Closed"
+    },
+    {
+      "id": "linear_algebraic_groups.identity_component_normal_finite_index",
+      "title": "Identity Component Is Closed Normal of Finite Index",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Identity Component Is Closed Normal of Finite Index"
+    },
+    {
+      "id": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group",
+      "title": "Jordan Decomposition in a Linear Algebraic Group",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Jordan Decomposition in a Linear Algebraic Group"
+    },
+    {
+      "id": "linear_algebraic_groups.lie_algebra_of_algebraic_group",
+      "title": "Lie Algebra of an Algebraic Group",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Lie Algebra of an Algebraic Group"
+    },
+    {
+      "id": "linear_algebraic_groups.linearization_of_affine_g_varieties",
+      "title": "Affine G-Varieties Embed Equivariantly in Representations",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Affine G-Varieties Embed Equivariantly in Representations"
+    },
+    {
+      "id": "linear_algebraic_groups.orbits_are_locally_closed",
+      "title": "Orbits of Algebraic Group Actions Are Locally Closed",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Orbits of Algebraic Group Actions Are Locally Closed"
+    },
+    {
+      "id": "linear_algebraic_groups.quotient_by_closed_subgroup_exists",
+      "title": "Quotient by a Closed Subgroup Exists",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Quotient by a Closed Subgroup Exists"
+    },
+    {
+      "id": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups",
+      "title": "Connected Subgroups Generate a Closed Connected Subgroup",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Connected Subgroups Generate a Closed Connected Subgroup"
+    },
+    {
+      "id": "linear_algebraic_groups.trivial_representation_example",
+      "title": "Trivial Representation as a Comodule",
+      "kind": "example",
+      "status": "admitted",
+      "label": "Trivial Representation as a Comodule"
+    },
+    {
+      "id": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable",
+      "title": "Unipotent Subgroups Are Triangularizable",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Unipotent Subgroups Are Triangularizable"
     }
   ],
   "edges": [
@@ -4185,10 +4262,6 @@
       "to": "linear_algebraic_groups.additive_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.basic_examples",
-      "to": "linear_algebraic_groups.additive_group_scheme"
-    },
-    {
       "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
       "to": "linear_algebraic_groups.additive_group_scheme"
     },
@@ -4401,10 +4474,6 @@
       "to": "linear_algebraic_groups.general_linear_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.basic_examples",
-      "to": "linear_algebraic_groups.general_linear_group_scheme"
-    },
-    {
       "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
       "to": "linear_algebraic_groups.general_linear_group_scheme"
     },
@@ -4490,10 +4559,6 @@
     },
     {
       "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme"
-    },
-    {
-      "from": "linear_algebraic_groups.basic_examples",
       "to": "linear_algebraic_groups.multiplicative_group_scheme"
     },
     {
@@ -4879,6 +4944,106 @@
     {
       "from": "reductive_structure.reductive_groups",
       "to": "buildings_and_parahorics.moy_prasad_filtrations"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_definition",
+      "to": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_definition",
+      "to": "linear_algebraic_groups.closed_image_of_homomorphism"
+    },
+    {
+      "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
+      "to": "linear_algebraic_groups.closed_image_of_homomorphism"
+    },
+    {
+      "from": "linear_algebraic_groups.kernels_images_and_quotients",
+      "to": "linear_algebraic_groups.closed_image_of_homomorphism"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_definition",
+      "to": "linear_algebraic_groups.identity_component_normal_finite_index"
+    },
+    {
+      "from": "linear_algebraic_groups.connected_components",
+      "to": "linear_algebraic_groups.identity_component_normal_finite_index"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_definition",
+      "to": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group"
+    },
+    {
+      "from": "linear_algebraic_groups.embedding_theorem",
+      "to": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_definition",
+      "to": "linear_algebraic_groups.lie_algebra_of_algebraic_group"
+    },
+    {
+      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
+      "to": "linear_algebraic_groups.lie_algebra_of_algebraic_group"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties"
+    },
+    {
+      "from": "linear_algebraic_groups.embedding_theorem",
+      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties"
+    },
+    {
+      "from": "linear_algebraic_groups.representation_equals_comodule",
+      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "to": "linear_algebraic_groups.orbits_are_locally_closed"
+    },
+    {
+      "from": "linear_algebraic_groups.closed_image_of_homomorphism",
+      "to": "linear_algebraic_groups.orbits_are_locally_closed"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_definition",
+      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
+    },
+    {
+      "from": "linear_algebraic_groups.kernels_images_and_quotients",
+      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_definition",
+      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
+    },
+    {
+      "from": "linear_algebraic_groups.connected_components",
+      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
+    },
+    {
+      "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
+      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
+    },
+    {
+      "from": "linear_algebraic_groups.comodule_definition",
+      "to": "linear_algebraic_groups.trivial_representation_example"
+    },
+    {
+      "from": "linear_algebraic_groups.algebraic_group_definition",
+      "to": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
+    },
+    {
+      "from": "linear_algebraic_groups.embedding_theorem",
+      "to": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
+    },
+    {
+      "from": "reductive_structure.unipotent_groups",
+      "to": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
     }
   ]
 }

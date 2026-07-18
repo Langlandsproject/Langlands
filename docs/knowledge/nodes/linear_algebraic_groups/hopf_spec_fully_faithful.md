@@ -3,9 +3,9 @@ id: linear_algebraic_groups.hopf_spec_fully_faithful
 title: Spec Functor on Hopf Algebras Is Fully Faithful
 kind: theorem
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.hopf_spec_functor
 verification:

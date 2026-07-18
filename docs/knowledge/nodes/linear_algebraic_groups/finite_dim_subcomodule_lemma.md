@@ -3,9 +3,9 @@ id: linear_algebraic_groups.finite_dim_subcomodule_lemma
 title: Finite-Dimensional Subspace in a Sub-Comodule
 kind: lemma
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: affine_group_schemes
 topics:
-- linear_algebraic_groups
+- affine_group_schemes
 uses:
 - linear_algebraic_groups.comodule_definition
 - linear_algebraic_groups.regular_representation_example
