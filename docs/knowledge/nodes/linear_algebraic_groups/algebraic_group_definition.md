@@ -12,6 +12,7 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup
   declarations:
+  - Langlands.AlgebraicGeometry.instIsAlgebraicGroup
     - Langlands.AlgebraicGeometry.IsAlgebraicGroup
 verification:
   definition: accepted

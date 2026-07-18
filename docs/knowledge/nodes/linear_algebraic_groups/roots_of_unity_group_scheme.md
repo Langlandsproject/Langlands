@@ -14,6 +14,7 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.Examples.MuN
   declarations:
+  - Langlands.AlgebraicGeometry.Examples.muN.hopfAlg
     - Langlands.AlgebraicGeometry.Examples.muN
     - Langlands.AlgebraicGeometry.Examples.muN.instGrpObj
 verification:

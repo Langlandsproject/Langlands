@@ -12,6 +12,9 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.Examples.Trivial
   declarations:
+  - Langlands.AlgebraicGeometry.schemeOverSelf_hom
+  - Langlands.AlgebraicGeometry.trivialIsAffineHom
+  - Langlands.AlgebraicGeometry.trivialLocallyOfFiniteType
     - Langlands.AlgebraicGeometry.schemeOverSelf
     - Langlands.AlgebraicGeometry.trivialGrpObj
 verification:

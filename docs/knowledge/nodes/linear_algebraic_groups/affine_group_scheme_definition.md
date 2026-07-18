@@ -13,6 +13,7 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup
   declarations:
+  - Langlands.AlgebraicGeometry.instIsAffineGroupScheme
     - Langlands.AlgebraicGeometry.IsAffineGroupScheme
 verification:
   definition: accepted

@@ -13,6 +13,9 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.Examples.Ga
   declarations:
+  - Polynomial.gaAntipode_X
+  - Polynomial.gaComul_X
+  - Polynomial.gaCounit_X
     - Polynomial.gaComul
     - Polynomial.gaCounit
     - Polynomial.gaAntipode

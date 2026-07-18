@@ -12,6 +12,12 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.HopfObjectBridge
   declarations:
+  - Langlands.AlgebraicGeometry.HopfAntipode.convAntipode
+  - Langlands.AlgebraicGeometry.HopfAntipode.convId
+  - Langlands.AlgebraicGeometry.HopfAntipode.convId_mul_convAntipode
+  - Langlands.AlgebraicGeometry.HopfAntipode.convAntipode_mul_convId
+  - Langlands.AlgebraicGeometry.HopfAntipode.convMul_mul_convMulCompSSTensor
+  - Langlands.AlgebraicGeometry.HopfAntipode.mul_map_twist_eq_lTensor_smul_lTensor
     - Langlands.AlgebraicGeometry.HopfAntipode.mulCoalgHom
 verification:
   statement: accepted

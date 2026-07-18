@@ -12,6 +12,7 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.Comodule
   declarations:
+  - Langlands.AlgebraicGeometry.trivialCoaction_apply
     - Langlands.AlgebraicGeometry.trivialCoaction
     - Langlands.AlgebraicGeometry.trivialComodule
 verification:

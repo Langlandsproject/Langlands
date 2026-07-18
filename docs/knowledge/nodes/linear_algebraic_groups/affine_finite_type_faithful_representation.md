@@ -16,6 +16,8 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.FaithfulRepresentation
   declarations:
+  - Langlands.AlgebraicGeometry.existsClosedImmersionToGeneralLinear
+  - Langlands.AlgebraicGeometry.existsClosedImmersionToGeneralLinear_of_hasFaithfulLinearRepresentation
     - Langlands.AlgebraicGeometry.HasFaithfulLinearRepresentation
 verification:
   statement: accepted

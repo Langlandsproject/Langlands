@@ -13,6 +13,7 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.HopfObjectBridge
   declarations:
+  - Langlands.AlgebraicGeometry.HopfAntipode.antipode_anti_multiplicativity_commutative
     - Langlands.AlgebraicGeometry.HopfAntipode.antipode_anti_multiplicativity
 verification:
   statement: accepted
