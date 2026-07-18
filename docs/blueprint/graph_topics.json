@@ -183,11 +183,6 @@
       "count": 2
     },
     {
-      "from": "descent_and_forms",
-      "to": "root_data_and_duality",
-      "count": 1
-    },
-    {
       "from": "foundational_inputs",
       "to": "bd_covers",
       "count": 4
@@ -253,11 +248,6 @@
       "count": 5
     },
     {
-      "from": "nilpotent_orbits",
-      "to": "buildings_and_parahorics",
-      "count": 1
-    },
-    {
       "from": "reductive_structure",
       "to": "bd_covers",
       "count": 1
@@ -265,7 +255,7 @@
     {
       "from": "reductive_structure",
       "to": "buildings_and_parahorics",
-      "count": 4
+      "count": 5
     },
     {
       "from": "reductive_structure",
