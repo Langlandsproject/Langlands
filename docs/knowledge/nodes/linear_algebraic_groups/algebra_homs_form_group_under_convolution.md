@@ -15,11 +15,6 @@ lean:
   - LanglandsLean.AlgebraicGeometry.AlgHomGroup
   declarations:
   - Langlands.AlgebraicGeometry.AlgHomGroup.instGroup
-  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_eq_via_toConv
-  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_inv_mul_cancel
-  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_mul_assoc
-  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_mul_one
-  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_one_mul
   - Langlands.AlgebraicGeometry.AlgHomGroup.convAlg_toConv
   - Langlands.AlgebraicGeometry.AlgHomGroup.convOneAlg
   - Langlands.AlgebraicGeometry.AlgHomGroup.convOneAlg_apply

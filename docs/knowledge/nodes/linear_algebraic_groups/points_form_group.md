@@ -13,6 +13,7 @@ lean:
     - LanglandsLean.AlgebraicGeometry.Points
   declarations:
     - Langlands.AlgebraicGeometry.points.instGroup
+    - Langlands.AlgebraicGeometry.points.map_is_group_hom
 verification:
   statement: accepted
   proof: accepted

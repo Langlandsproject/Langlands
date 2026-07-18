@@ -12,8 +12,10 @@ lean:
   modules:
     - LanglandsLean.AlgebraicGeometry.Points
   declarations:
-    - Langlands.AlgebraicGeometry.points
     - Langlands.AlgebraicGeometry.specOver
+    - Langlands.AlgebraicGeometry.specOverHom
+    - Langlands.AlgebraicGeometry.points
+    - Langlands.AlgebraicGeometry.points.map
 verification:
   definition: accepted
   proof: not_applicable

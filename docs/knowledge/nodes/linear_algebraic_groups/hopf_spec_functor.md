@@ -21,7 +21,6 @@ lean:
   - Langlands.AlgebraicGeometry.hopfSpec
   - Langlands.AlgebraicGeometry.HopfSpecFunctor.algHomToHomOverGrp
   - Langlands.AlgebraicGeometry.HopfSpecFunctor.algSpec
-  - Langlands.AlgebraicGeometry.HopfSpecFunctor.algSpec_obj_hom_eq
   - Langlands.AlgebraicGeometry.HopfSpecFunctor.gammaOver
   - Langlands.AlgebraicGeometry.HopfSpecFunctor.homOverGrpToAlgHom
   - Langlands.AlgebraicGeometry.HopfSpecFunctor.hopfSpec
