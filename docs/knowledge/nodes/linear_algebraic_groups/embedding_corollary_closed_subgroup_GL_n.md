@@ -24,7 +24,7 @@ tags:
 # Algebraic Groups Are Closed Subgroups of GL_n
 
 Let \(k\) be a field and \(G\) an
-[[node:linear_algebraic_groups.algebraic_group_definition|algebraic group]]
+[[node:affine_group_schemes.algebraic_group_definition|algebraic group]]
 over \(\operatorname{Spec} k\). There exist a positive integer \(n\) and
 a closed immersion of group schemes
 

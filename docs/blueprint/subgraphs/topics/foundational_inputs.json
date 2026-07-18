@@ -1,21 +1,5 @@
 {
-  "topic": {
-    "id": "foundational_inputs",
-    "title": "Foundational Inputs",
-    "href": "foundational_inputs/index.html",
-    "parent": null,
-    "node_count": 8,
-    "descendant_node_count": 8
-  },
-  "counts": {
-    "total": 8,
-    "by_kind": {
-      "topic": 8
-    },
-    "by_status": {
-      "admitted": 8
-    }
-  },
+  "topic": "foundational_inputs",
   "nodes": [
     {
       "id": "foundational_inputs.affine_schemes",
@@ -82,110 +66,144 @@
       "primary_topic": "foundational_inputs"
     }
   ],
-  "edges": [
+  "internal_edges": [
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "foundational_inputs.affine_schemes"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "foundational_inputs.affine_schemes"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "foundational_inputs.algebraic_k_theory_and_k2"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "foundational_inputs.algebraic_k_theory_and_k2"
     },
     {
-      "from": "foundational_inputs.fields_and_field_extensions",
-      "to": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
+      "source": "foundational_inputs.local_fields",
+      "target": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "foundational_inputs.hopf_algebras"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "foundational_inputs.hopf_algebras"
     },
     {
-      "from": "foundational_inputs.fields_and_field_extensions",
-      "to": "foundational_inputs.local_fields"
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "foundational_inputs.local_fields"
     }
   ],
-  "boundary_topics": [],
-  "boundary_edges": [],
-  "keywords": [
+  "boundary_edges": [
     {
-      "id": "adeles",
-      "title": "adeles",
-      "href": "keywords/adeles.html",
-      "count": 1
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.affine_group_scheme_definition"
     },
     {
-      "id": "affine-schemes",
-      "title": "affine-schemes",
-      "href": "keywords/affine-schemes.html",
-      "count": 1
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.algebra_hom_convolution"
     },
     {
-      "id": "combinatorics",
-      "title": "combinatorics",
-      "href": "keywords/combinatorics.html",
-      "count": 1
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "affine_group_schemes.algebra_hom_convolution"
     },
     {
-      "id": "commutative-algebra",
-      "title": "commutative-algebra",
-      "href": "keywords/commutative-algebra.html",
-      "count": 1
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.antipode_anti_multiplicativity"
     },
     {
-      "id": "external-background",
-      "title": "external-background",
-      "href": "keywords/external-background.html",
-      "count": 8
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.antipode_multiplicativity_commutative_hopf"
     },
     {
-      "id": "fields",
-      "title": "fields",
-      "href": "keywords/fields.html",
-      "count": 1
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "affine_group_schemes.base_change"
     },
     {
-      "id": "foundational-inputs",
-      "title": "foundational-inputs",
-      "href": "keywords/foundational-inputs.html",
-      "count": 8
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.comodule_definition"
     },
     {
-      "id": "global-fields",
-      "title": "global-fields",
-      "href": "keywords/global-fields.html",
-      "count": 1
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
     },
     {
-      "id": "hopf-algebras",
-      "title": "hopf-algebras",
-      "href": "keywords/hopf-algebras.html",
-      "count": 1
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "id": "k-theory",
-      "title": "k-theory",
-      "href": "keywords/k-theory.html",
-      "count": 1
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "id": "k2",
-      "title": "k2",
-      "href": "keywords/k2.html",
-      "count": 1
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "id": "local-fields",
-      "title": "local-fields",
-      "href": "keywords/local-fields.html",
-      "count": 1
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.hopf_spec_functor"
+    },
+    {
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.hopf_spec_functor"
+    },
+    {
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.multiplication_is_coalgebra_hom"
+    },
+    {
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.spec_representability_via_global_sections"
+    },
+    {
+      "source": "foundational_inputs.algebraic_k_theory_and_k2",
+      "target": "bd_covers.brylinski_deligne_k2_extensions"
+    },
+    {
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "bd_covers.central_extensions_of_algebraic_groups"
+    },
+    {
+      "source": "foundational_inputs.local_fields",
+      "target": "bd_covers.local_and_global_metaplectic_covers"
+    },
+    {
+      "source": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols",
+      "target": "bd_covers.local_and_global_metaplectic_covers"
+    },
+    {
+      "source": "foundational_inputs.local_fields",
+      "target": "buildings_and_parahorics.bruhat_tits_apartments"
+    },
+    {
+      "source": "foundational_inputs.local_fields",
+      "target": "buildings_and_parahorics.reductive_groups_over_local_fields"
+    },
+    {
+      "source": "foundational_inputs.local_fields",
+      "target": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
+    },
+    {
+      "source": "foundational_inputs.local_fields",
+      "target": "buildings_and_parahorics.valued_root_data"
+    },
+    {
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "descent_and_forms.galois_groups_and_descent_data"
+    },
+    {
+      "source": "foundational_inputs.local_fields",
+      "target": "kottwitz_structures.kottwitz_homomorphism"
+    },
+    {
+      "source": "foundational_inputs.local_fields",
+      "target": "kottwitz_structures.sigma_conjugacy_classes"
+    },
+    {
+      "source": "foundational_inputs.affine_schemes",
+      "target": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras"
+    },
+    {
+      "source": "foundational_inputs.basic_combinatorics",
+      "target": "root_data_and_duality.coxeter_systems_and_bruhat_order"
     }
-  ],
-  "proof_plan_attachments": [],
-  "child_topics": [],
-  "child_topic_nodes": [],
-  "inlined_child_topics": []
+  ]
 }

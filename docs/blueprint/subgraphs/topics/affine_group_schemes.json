@@ -1,40 +1,24 @@
 {
-  "topic": {
-    "id": "affine_group_schemes",
-    "title": "Affine Group Schemes"
-  },
-  "counts": {
-    "total": 35,
-    "by_kind": {
-      "definition": 13,
-      "theorem": 15,
-      "topic": 3,
-      "lemma": 2,
-      "example": 2
-    },
-    "by_status": {
-      "admitted": 35
-    }
-  },
+  "topic": "affine_group_schemes",
   "nodes": [
     {
-      "id": "linear_algebraic_groups.additive_group_scheme",
-      "title": "Additive Group Scheme \ud835\udd3e_a",
+      "id": "affine_group_schemes.additive_group_scheme",
+      "title": "Additive Group Scheme 𝔾_a",
       "kind": "definition",
       "status": "admitted",
-      "label": "Additive Group Scheme \ud835\udd3e_a",
+      "label": "Additive Group Scheme 𝔾_a",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.additive_group_scheme_points",
-      "title": "Points of \ud835\udd3e_a Are the Additive Group of R",
+      "id": "affine_group_schemes.additive_group_scheme_points",
+      "title": "Points of 𝔾_a Are the Additive Group of R",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Points of \ud835\udd3e_a Are the Additive Group of R",
+      "label": "Points of 𝔾_a Are the Additive Group of R",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.affine_algebraic_groups",
+      "id": "affine_group_schemes.affine_algebraic_groups",
       "title": "Affine Algebraic Groups",
       "kind": "topic",
       "status": "admitted",
@@ -42,7 +26,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.affine_group_scheme_definition",
+      "id": "affine_group_schemes.affine_group_scheme_definition",
       "title": "Affine Group Scheme over a Base",
       "kind": "definition",
       "status": "admitted",
@@ -50,15 +34,15 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom",
+      "id": "affine_group_schemes.algebra_hom_composed_with_antipode_is_algebra_hom",
       "title": "Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras",
+      "label": "Composition with the Antipode Is an Algebra Hom for Commutat",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.algebra_hom_convolution",
+      "id": "affine_group_schemes.algebra_hom_convolution",
       "title": "Convolution of Algebra Homomorphisms",
       "kind": "definition",
       "status": "admitted",
@@ -66,7 +50,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.algebra_homs_form_group_under_convolution",
+      "id": "affine_group_schemes.algebra_homs_form_group_under_convolution",
       "title": "Algebra Homomorphisms Form a Group Under Convolution",
       "kind": "theorem",
       "status": "admitted",
@@ -74,7 +58,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.algebraic_group_definition",
+      "id": "affine_group_schemes.algebraic_group_definition",
       "title": "Algebraic Group over a Base",
       "kind": "definition",
       "status": "admitted",
@@ -82,7 +66,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.antipode_anti_multiplicativity",
+      "id": "affine_group_schemes.antipode_anti_multiplicativity",
       "title": "Antipode of a Hopf Algebra Is Anti-Multiplicative",
       "kind": "theorem",
       "status": "admitted",
@@ -90,7 +74,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.antipode_multiplicativity_commutative_hopf",
+      "id": "affine_group_schemes.antipode_multiplicativity_commutative_hopf",
       "title": "Antipode of a Commutative Hopf Algebra Is Multiplicative",
       "kind": "theorem",
       "status": "admitted",
@@ -98,7 +82,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.base_change",
+      "id": "affine_group_schemes.base_change",
       "title": "Base Change",
       "kind": "topic",
       "status": "admitted",
@@ -106,7 +90,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.base_change_preserves_algebraic_group",
+      "id": "affine_group_schemes.base_change_preserves_algebraic_group",
       "title": "Base Change Preserves Algebraic Group Structure",
       "kind": "theorem",
       "status": "admitted",
@@ -114,7 +98,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.comodule_definition",
+      "id": "affine_group_schemes.comodule_definition",
       "title": "Comodule over a Coalgebra",
       "kind": "definition",
       "status": "admitted",
@@ -122,15 +106,15 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom",
+      "id": "affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom",
       "title": "Convolution of Algebra Homomorphisms Is an Algebra Homomorphism",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Convolution of Algebra Homomorphisms Is an Algebra Homomorphism",
+      "label": "Convolution of Algebra Homomorphisms Is an Algebra Homomorph",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
+      "id": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
       "title": "Coordinate Hopf Algebra of an Affine Group Scheme",
       "kind": "definition",
       "status": "admitted",
@@ -138,7 +122,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
+      "id": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
       "title": "Coordinate Rings and Hopf Algebras",
       "kind": "topic",
       "status": "admitted",
@@ -146,7 +130,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.faithful_linear_representation_definition",
+      "id": "affine_group_schemes.faithful_linear_representation_definition",
       "title": "Faithful Linear Representation",
       "kind": "definition",
       "status": "admitted",
@@ -154,7 +138,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.finite_dim_subcomodule_lemma",
+      "id": "affine_group_schemes.finite_dim_subcomodule_lemma",
       "title": "Finite-Dimensional Subspace in a Sub-Comodule",
       "kind": "lemma",
       "status": "admitted",
@@ -162,7 +146,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.general_linear_group_scheme",
+      "id": "affine_group_schemes.general_linear_group_scheme",
       "title": "General Linear Group Scheme GL_n",
       "kind": "definition",
       "status": "admitted",
@@ -170,15 +154,15 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.general_linear_group_scheme_points",
-      "title": "Points of GL_n Are Invertible n\u00d7n Matrices over R",
+      "id": "affine_group_schemes.general_linear_group_scheme_points",
+      "title": "Points of GL_n Are Invertible n×n Matrices over R",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Points of GL_n Are Invertible n\u00d7n Matrices over R",
+      "label": "Points of GL_n Are Invertible n×n Matrices over R",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.hopf_spec_essential_image_affine",
+      "id": "affine_group_schemes.hopf_spec_essential_image_affine",
       "title": "Essential Image of Spec Is Affine Group Schemes",
       "kind": "theorem",
       "status": "admitted",
@@ -186,7 +170,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.hopf_spec_fully_faithful",
+      "id": "affine_group_schemes.hopf_spec_fully_faithful",
       "title": "Spec Functor on Hopf Algebras Is Fully Faithful",
       "kind": "theorem",
       "status": "admitted",
@@ -194,7 +178,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.hopf_spec_functor",
+      "id": "affine_group_schemes.hopf_spec_functor",
       "title": "Spec Functor on Hopf Algebras",
       "kind": "definition",
       "status": "admitted",
@@ -202,7 +186,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda",
+      "id": "affine_group_schemes.hopf_spec_grpobj_via_yoneda",
       "title": "Group Object Structure on Spec A via Yoneda",
       "kind": "theorem",
       "status": "admitted",
@@ -210,7 +194,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.multiplication_is_coalgebra_hom",
+      "id": "affine_group_schemes.multiplication_is_coalgebra_hom",
       "title": "Multiplication of a Commutative Bialgebra Is a Coalgebra Hom",
       "kind": "lemma",
       "status": "admitted",
@@ -218,23 +202,23 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.multiplicative_group_scheme",
-      "title": "Multiplicative Group Scheme \ud835\udd3e_m",
+      "id": "affine_group_schemes.multiplicative_group_scheme",
+      "title": "Multiplicative Group Scheme 𝔾_m",
       "kind": "definition",
       "status": "admitted",
-      "label": "Multiplicative Group Scheme \ud835\udd3e_m",
+      "label": "Multiplicative Group Scheme 𝔾_m",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.multiplicative_group_scheme_points",
-      "title": "Points of \ud835\udd3e_m Are the Units of R",
+      "id": "affine_group_schemes.multiplicative_group_scheme_points",
+      "title": "Points of 𝔾_m Are the Units of R",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Points of \ud835\udd3e_m Are the Units of R",
+      "label": "Points of 𝔾_m Are the Units of R",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.points_form_group",
+      "id": "affine_group_schemes.points_form_group",
       "title": "R-Points of a Group Scheme Form a Group",
       "kind": "theorem",
       "status": "admitted",
@@ -242,7 +226,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.points_functor_definition",
+      "id": "affine_group_schemes.points_functor_definition",
       "title": "Functor of Points of a Group Scheme",
       "kind": "definition",
       "status": "admitted",
@@ -250,7 +234,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.regular_representation_example",
+      "id": "affine_group_schemes.regular_representation_example",
       "title": "Regular Representation as a Comodule",
       "kind": "example",
       "status": "admitted",
@@ -258,7 +242,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.representation_equals_comodule",
+      "id": "affine_group_schemes.representation_equals_comodule",
       "title": "G-Representations Are A-Comodules",
       "kind": "theorem",
       "status": "admitted",
@@ -266,23 +250,23 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.roots_of_unity_group_scheme",
-      "title": "Roots of Unity Group Scheme \u03bc_n",
+      "id": "affine_group_schemes.roots_of_unity_group_scheme",
+      "title": "Roots of Unity Group Scheme μ_n",
       "kind": "definition",
       "status": "admitted",
-      "label": "Roots of Unity Group Scheme \u03bc_n",
+      "label": "Roots of Unity Group Scheme μ_n",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.spec_representability_via_global_sections",
-      "title": "Hom Into Spec via Global Sections (Spec \u22a3 \u0393 Adjunction)",
+      "id": "affine_group_schemes.spec_representability_via_global_sections",
+      "title": "Hom Into Spec via Global Sections (Spec ⊣ Γ Adjunction)",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Hom Into Spec via Global Sections (Spec \u22a3 \u0393 Adjunction)",
+      "label": "Hom Into Spec via Global Sections (Spec ⊣ Γ Adjunction)",
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.trivial_group_scheme",
+      "id": "affine_group_schemes.trivial_group_scheme",
       "title": "Trivial Group Scheme over a Base",
       "kind": "definition",
       "status": "admitted",
@@ -290,7 +274,7 @@
       "primary_topic": "affine_group_schemes"
     },
     {
-      "id": "linear_algebraic_groups.trivial_representation_example",
+      "id": "affine_group_schemes.trivial_representation_example",
       "title": "Trivial Representation as a Comodule",
       "kind": "example",
       "status": "admitted",
@@ -298,299 +282,388 @@
       "primary_topic": "affine_group_schemes"
     }
   ],
-  "edges": [
+  "internal_edges": [
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.additive_group_scheme"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.additive_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.additive_group_scheme"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.additive_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.additive_group_scheme",
-      "to": "linear_algebraic_groups.additive_group_scheme_points"
+      "source": "affine_group_schemes.additive_group_scheme",
+      "target": "affine_group_schemes.additive_group_scheme_points"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.additive_group_scheme_points"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.additive_group_scheme_points"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.affine_algebraic_groups"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.affine_algebraic_groups"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "linear_algebraic_groups.affine_group_scheme_definition"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "affine_group_schemes.affine_group_scheme_definition"
     },
     {
-      "from": "linear_algebraic_groups.antipode_multiplicativity_commutative_hopf",
-      "to": "linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom"
+      "source": "affine_group_schemes.antipode_multiplicativity_commutative_hopf",
+      "target": "affine_group_schemes.algebra_hom_composed_with_antipode_is_algebra_hom"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.algebra_hom_convolution"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.algebra_hom_convolution"
     },
     {
-      "from": "linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom",
-      "to": "linear_algebraic_groups.algebra_homs_form_group_under_convolution"
+      "source": "affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom",
+      "target": "affine_group_schemes.algebra_homs_form_group_under_convolution"
     },
     {
-      "from": "linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom",
-      "to": "linear_algebraic_groups.algebra_homs_form_group_under_convolution"
+      "source": "affine_group_schemes.algebra_hom_composed_with_antipode_is_algebra_hom",
+      "target": "affine_group_schemes.algebra_homs_form_group_under_convolution"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.algebraic_group_definition"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.algebraic_group_definition"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.antipode_anti_multiplicativity"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.antipode_anti_multiplicativity"
     },
     {
-      "from": "linear_algebraic_groups.multiplication_is_coalgebra_hom",
-      "to": "linear_algebraic_groups.antipode_multiplicativity_commutative_hopf"
+      "source": "affine_group_schemes.multiplication_is_coalgebra_hom",
+      "target": "affine_group_schemes.antipode_multiplicativity_commutative_hopf"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "linear_algebraic_groups.base_change"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "affine_group_schemes.base_change"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.base_change_preserves_algebraic_group"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.base_change_preserves_algebraic_group"
     },
     {
-      "from": "linear_algebraic_groups.base_change",
-      "to": "linear_algebraic_groups.base_change_preserves_algebraic_group"
+      "source": "affine_group_schemes.base_change",
+      "target": "affine_group_schemes.base_change_preserves_algebraic_group"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.comodule_definition"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.comodule_definition"
     },
     {
-      "from": "linear_algebraic_groups.algebra_hom_convolution",
-      "to": "linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom"
+      "source": "affine_group_schemes.algebra_hom_convolution",
+      "target": "affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.faithful_linear_representation_definition"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.faithful_linear_representation_definition"
     },
     {
-      "from": "linear_algebraic_groups.comodule_definition",
-      "to": "linear_algebraic_groups.finite_dim_subcomodule_lemma"
+      "source": "affine_group_schemes.comodule_definition",
+      "target": "affine_group_schemes.finite_dim_subcomodule_lemma"
     },
     {
-      "from": "linear_algebraic_groups.regular_representation_example",
-      "to": "linear_algebraic_groups.finite_dim_subcomodule_lemma"
+      "source": "affine_group_schemes.regular_representation_example",
+      "target": "affine_group_schemes.finite_dim_subcomodule_lemma"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.general_linear_group_scheme"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.general_linear_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.general_linear_group_scheme"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.general_linear_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.general_linear_group_scheme",
-      "to": "linear_algebraic_groups.general_linear_group_scheme_points"
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "affine_group_schemes.general_linear_group_scheme_points"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.general_linear_group_scheme_points"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.general_linear_group_scheme_points"
     },
     {
-      "from": "linear_algebraic_groups.hopf_spec_functor",
-      "to": "linear_algebraic_groups.hopf_spec_essential_image_affine"
+      "source": "affine_group_schemes.hopf_spec_functor",
+      "target": "affine_group_schemes.hopf_spec_essential_image_affine"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.hopf_spec_essential_image_affine"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.hopf_spec_essential_image_affine"
     },
     {
-      "from": "linear_algebraic_groups.hopf_spec_functor",
-      "to": "linear_algebraic_groups.hopf_spec_fully_faithful"
+      "source": "affine_group_schemes.hopf_spec_functor",
+      "target": "affine_group_schemes.hopf_spec_fully_faithful"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.hopf_spec_functor"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.hopf_spec_functor"
     },
     {
-      "from": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda",
-      "to": "linear_algebraic_groups.hopf_spec_functor"
+      "source": "affine_group_schemes.hopf_spec_grpobj_via_yoneda",
+      "target": "affine_group_schemes.hopf_spec_functor"
     },
     {
-      "from": "linear_algebraic_groups.algebra_homs_form_group_under_convolution",
-      "to": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda"
+      "source": "affine_group_schemes.algebra_homs_form_group_under_convolution",
+      "target": "affine_group_schemes.hopf_spec_grpobj_via_yoneda"
     },
     {
-      "from": "linear_algebraic_groups.spec_representability_via_global_sections",
-      "to": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda"
+      "source": "affine_group_schemes.spec_representability_via_global_sections",
+      "target": "affine_group_schemes.hopf_spec_grpobj_via_yoneda"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.hopf_spec_grpobj_via_yoneda"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.multiplicative_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.multiplicative_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.multiplicative_group_scheme",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme_points"
+      "source": "affine_group_schemes.multiplicative_group_scheme",
+      "target": "affine_group_schemes.multiplicative_group_scheme_points"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme_points"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.multiplicative_group_scheme_points"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.points_form_group"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.points_form_group"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.points_functor_definition"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.points_functor_definition"
     },
     {
-      "from": "linear_algebraic_groups.comodule_definition",
-      "to": "linear_algebraic_groups.regular_representation_example"
+      "source": "affine_group_schemes.comodule_definition",
+      "target": "affine_group_schemes.regular_representation_example"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.regular_representation_example"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.regular_representation_example"
     },
     {
-      "from": "linear_algebraic_groups.comodule_definition",
-      "to": "linear_algebraic_groups.representation_equals_comodule"
+      "source": "affine_group_schemes.comodule_definition",
+      "target": "affine_group_schemes.representation_equals_comodule"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.representation_equals_comodule"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.representation_equals_comodule"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.representation_equals_comodule"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.representation_equals_comodule"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.roots_of_unity_group_scheme"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.roots_of_unity_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.multiplicative_group_scheme",
-      "to": "linear_algebraic_groups.roots_of_unity_group_scheme"
+      "source": "affine_group_schemes.multiplicative_group_scheme",
+      "target": "affine_group_schemes.roots_of_unity_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.roots_of_unity_group_scheme"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.roots_of_unity_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.spec_representability_via_global_sections"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.spec_representability_via_global_sections"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.trivial_group_scheme"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.trivial_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.comodule_definition",
-      "to": "linear_algebraic_groups.trivial_representation_example"
+      "source": "affine_group_schemes.comodule_definition",
+      "target": "affine_group_schemes.trivial_representation_example"
     }
-  ],
-  "boundary_topics": [
-    "foundational_inputs"
   ],
   "boundary_edges": [
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.affine_group_scheme_definition",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.affine_group_scheme_definition"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.algebra_hom_convolution",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.algebra_hom_convolution"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "linear_algebraic_groups.algebra_hom_convolution",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "affine_group_schemes.algebra_hom_convolution"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.antipode_anti_multiplicativity",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.antipode_anti_multiplicativity"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.antipode_multiplicativity_commutative_hopf",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.antipode_multiplicativity_commutative_hopf"
     },
     {
-      "from": "foundational_inputs.fields_and_field_extensions",
-      "to": "linear_algebraic_groups.base_change",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "affine_group_schemes.base_change"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.comodule_definition",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.comodule_definition"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.hopf_spec_functor",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.hopf_spec_functor"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.hopf_spec_functor",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.hopf_spec_functor"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.multiplication_is_coalgebra_hom",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.multiplication_is_coalgebra_hom"
     },
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.spec_representability_via_global_sections",
-      "from_topic": "foundational_inputs"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.spec_representability_via_global_sections"
+    },
+    {
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "bd_covers.central_extensions_of_algebraic_groups"
+    },
+    {
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
+    },
+    {
+      "source": "affine_group_schemes.base_change",
+      "target": "descent_and_forms.forms_of_algebraic_groups"
+    },
+    {
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "descent_and_forms.forms_of_algebraic_groups"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+    },
+    {
+      "source": "affine_group_schemes.faithful_linear_representation_definition",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+    },
+    {
+      "source": "affine_group_schemes.hopf_spec_essential_image_affine",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+    },
+    {
+      "source": "affine_group_schemes.finite_dim_subcomodule_lemma",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers"
+    },
+    {
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "linear_algebraic_groups.automorphism_groups"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.closed_image_of_homomorphism"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.embedding_theorem"
+    },
+    {
+      "source": "affine_group_schemes.faithful_linear_representation_definition",
+      "target": "linear_algebraic_groups.embedding_theorem"
+    },
+    {
+      "source": "affine_group_schemes.hopf_spec_essential_image_affine",
+      "target": "linear_algebraic_groups.embedding_theorem"
+    },
+    {
+      "source": "affine_group_schemes.representation_equals_comodule",
+      "target": "linear_algebraic_groups.embedding_theorem"
+    },
+    {
+      "source": "affine_group_schemes.finite_dim_subcomodule_lemma",
+      "target": "linear_algebraic_groups.embedding_theorem"
+    },
+    {
+      "source": "affine_group_schemes.regular_representation_example",
+      "target": "linear_algebraic_groups.embedding_theorem"
+    },
+    {
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "linear_algebraic_groups.gl_v_group_scheme"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.identity_component_normal_finite_index"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.lie_algebra_of_algebraic_group"
+    },
+    {
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "linear_algebraic_groups.linear_algebraic_groups"
+    },
+    {
+      "source": "affine_group_schemes.representation_equals_comodule",
+      "target": "linear_algebraic_groups.linearization_of_affine_g_varieties"
+    },
+    {
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "linear_algebraic_groups.morphisms_and_closed_subgroups"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
+    },
+    {
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
+    },
+    {
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
     }
-  ],
-  "keywords": [],
-  "proof_plan_attachments": [],
-  "child_topics": [],
-  "child_topic_nodes": [],
-  "inlined_child_topics": []
+  ]
 }

@@ -8,7 +8,7 @@ topics:
 - reductive_structure
 - reductive_structure
 uses:
-- linear_algebraic_groups.algebraic_group_definition
+- affine_group_schemes.algebraic_group_definition
 - linear_algebraic_groups.embedding_theorem
 - reductive_structure.unipotent_groups
 source:

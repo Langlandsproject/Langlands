@@ -1,6 +1,286 @@
 {
   "nodes": [
     {
+      "id": "affine_group_schemes.additive_group_scheme",
+      "title": "Additive Group Scheme 𝔾_a",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Additive Group Scheme 𝔾_a",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.additive_group_scheme_points",
+      "title": "Points of 𝔾_a Are the Additive Group of R",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Points of 𝔾_a Are the Additive Group of R",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.affine_algebraic_groups",
+      "title": "Affine Algebraic Groups",
+      "kind": "topic",
+      "status": "admitted",
+      "label": "Affine Algebraic Groups",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.affine_group_scheme_definition",
+      "title": "Affine Group Scheme over a Base",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Affine Group Scheme over a Base",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.algebra_hom_composed_with_antipode_is_algebra_hom",
+      "title": "Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Composition with the Antipode Is an Algebra Hom for Commutat",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.algebra_hom_convolution",
+      "title": "Convolution of Algebra Homomorphisms",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Convolution of Algebra Homomorphisms",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.algebra_homs_form_group_under_convolution",
+      "title": "Algebra Homomorphisms Form a Group Under Convolution",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Algebra Homomorphisms Form a Group Under Convolution",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.algebraic_group_definition",
+      "title": "Algebraic Group over a Base",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Algebraic Group over a Base",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.antipode_anti_multiplicativity",
+      "title": "Antipode of a Hopf Algebra Is Anti-Multiplicative",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Antipode of a Hopf Algebra Is Anti-Multiplicative",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.antipode_multiplicativity_commutative_hopf",
+      "title": "Antipode of a Commutative Hopf Algebra Is Multiplicative",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Antipode of a Commutative Hopf Algebra Is Multiplicative",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.base_change",
+      "title": "Base Change",
+      "kind": "topic",
+      "status": "admitted",
+      "label": "Base Change",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.base_change_preserves_algebraic_group",
+      "title": "Base Change Preserves Algebraic Group Structure",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Base Change Preserves Algebraic Group Structure",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.comodule_definition",
+      "title": "Comodule over a Coalgebra",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Comodule over a Coalgebra",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom",
+      "title": "Convolution of Algebra Homomorphisms Is an Algebra Homomorphism",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Convolution of Algebra Homomorphisms Is an Algebra Homomorph",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "title": "Coordinate Hopf Algebra of an Affine Group Scheme",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Coordinate Hopf Algebra of an Affine Group Scheme",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "title": "Coordinate Rings and Hopf Algebras",
+      "kind": "topic",
+      "status": "admitted",
+      "label": "Coordinate Rings and Hopf Algebras",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.faithful_linear_representation_definition",
+      "title": "Faithful Linear Representation",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Faithful Linear Representation",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.finite_dim_subcomodule_lemma",
+      "title": "Finite-Dimensional Subspace in a Sub-Comodule",
+      "kind": "lemma",
+      "status": "admitted",
+      "label": "Finite-Dimensional Subspace in a Sub-Comodule",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.general_linear_group_scheme",
+      "title": "General Linear Group Scheme GL_n",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "General Linear Group Scheme GL_n",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.general_linear_group_scheme_points",
+      "title": "Points of GL_n Are Invertible n×n Matrices over R",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Points of GL_n Are Invertible n×n Matrices over R",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.hopf_spec_essential_image_affine",
+      "title": "Essential Image of Spec Is Affine Group Schemes",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Essential Image of Spec Is Affine Group Schemes",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.hopf_spec_fully_faithful",
+      "title": "Spec Functor on Hopf Algebras Is Fully Faithful",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Spec Functor on Hopf Algebras Is Fully Faithful",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.hopf_spec_functor",
+      "title": "Spec Functor on Hopf Algebras",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Spec Functor on Hopf Algebras",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.hopf_spec_grpobj_via_yoneda",
+      "title": "Group Object Structure on Spec A via Yoneda",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Group Object Structure on Spec A via Yoneda",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.multiplication_is_coalgebra_hom",
+      "title": "Multiplication of a Commutative Bialgebra Is a Coalgebra Hom",
+      "kind": "lemma",
+      "status": "admitted",
+      "label": "Multiplication of a Commutative Bialgebra Is a Coalgebra Hom",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.multiplicative_group_scheme",
+      "title": "Multiplicative Group Scheme 𝔾_m",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Multiplicative Group Scheme 𝔾_m",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.multiplicative_group_scheme_points",
+      "title": "Points of 𝔾_m Are the Units of R",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Points of 𝔾_m Are the Units of R",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.points_form_group",
+      "title": "R-Points of a Group Scheme Form a Group",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "R-Points of a Group Scheme Form a Group",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.points_functor_definition",
+      "title": "Functor of Points of a Group Scheme",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Functor of Points of a Group Scheme",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.regular_representation_example",
+      "title": "Regular Representation as a Comodule",
+      "kind": "example",
+      "status": "admitted",
+      "label": "Regular Representation as a Comodule",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.representation_equals_comodule",
+      "title": "G-Representations Are A-Comodules",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "G-Representations Are A-Comodules",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.roots_of_unity_group_scheme",
+      "title": "Roots of Unity Group Scheme μ_n",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Roots of Unity Group Scheme μ_n",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.spec_representability_via_global_sections",
+      "title": "Hom Into Spec via Global Sections (Spec ⊣ Γ Adjunction)",
+      "kind": "theorem",
+      "status": "admitted",
+      "label": "Hom Into Spec via Global Sections (Spec ⊣ Γ Adjunction)",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.trivial_group_scheme",
+      "title": "Trivial Group Scheme over a Base",
+      "kind": "definition",
+      "status": "admitted",
+      "label": "Trivial Group Scheme over a Base",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
+      "id": "affine_group_schemes.trivial_representation_example",
+      "title": "Trivial Representation as a Comodule",
+      "kind": "example",
+      "status": "admitted",
+      "label": "Trivial Representation as a Comodule",
+      "primary_topic": "affine_group_schemes"
+    },
+    {
       "id": "bd_covers.brylinski_deligne_k2_extensions",
       "title": "Brylinski-Deligne K2-Extensions",
       "kind": "topic",
@@ -269,7 +549,7 @@
       "title": "Lang Theorem for Connected Algebraic Groups over Finite Fields",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Lang Theorem for Connected Algebraic Groups over Finite Fields",
+      "label": "Lang Theorem for Connected Algebraic Groups over Finite Fiel",
       "primary_topic": "descent_and_forms"
     },
     {
@@ -521,68 +801,12 @@
       "primary_topic": "kottwitz_structures"
     },
     {
-      "id": "linear_algebraic_groups.additive_group_scheme",
-      "title": "Additive Group Scheme \ud835\udd3e_a",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Additive Group Scheme \ud835\udd3e_a",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.additive_group_scheme_points",
-      "title": "Points of \ud835\udd3e_a Are the Additive Group of R",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Points of \ud835\udd3e_a Are the Additive Group of R",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.affine_algebraic_groups",
-      "title": "Affine Algebraic Groups",
-      "kind": "topic",
-      "status": "admitted",
-      "label": "Affine Algebraic Groups",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
       "id": "linear_algebraic_groups.affine_finite_type_faithful_representation",
       "title": "Affine Finite-Type Groups Have Faithful Finite-Dimensional Representations",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Affine Finite-Type Groups Have Faithful Finite-Dimensional Representations",
+      "label": "Affine Finite-Type Groups Have Faithful Finite-Dimensional R",
       "primary_topic": "linear_algebraic_groups"
-    },
-    {
-      "id": "linear_algebraic_groups.affine_group_scheme_definition",
-      "title": "Affine Group Scheme over a Base",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Affine Group Scheme over a Base",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom",
-      "title": "Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Composition with the Antipode Is an Algebra Hom for Commutative Hopf Algebras",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.algebra_hom_convolution",
-      "title": "Convolution of Algebra Homomorphisms",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Convolution of Algebra Homomorphisms",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.algebra_homs_form_group_under_convolution",
-      "title": "Algebra Homomorphisms Form a Group Under Convolution",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Algebra Homomorphisms Form a Group Under Convolution",
-      "primary_topic": "affine_group_schemes"
     },
     {
       "id": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
@@ -593,52 +817,12 @@
       "primary_topic": "linear_algebraic_groups"
     },
     {
-      "id": "linear_algebraic_groups.algebraic_group_definition",
-      "title": "Algebraic Group over a Base",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Algebraic Group over a Base",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.antipode_anti_multiplicativity",
-      "title": "Antipode of a Hopf Algebra Is Anti-Multiplicative",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Antipode of a Hopf Algebra Is Anti-Multiplicative",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.antipode_multiplicativity_commutative_hopf",
-      "title": "Antipode of a Commutative Hopf Algebra Is Multiplicative",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Antipode of a Commutative Hopf Algebra Is Multiplicative",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
       "id": "linear_algebraic_groups.automorphism_groups",
       "title": "Automorphism Groups",
       "kind": "topic",
       "status": "admitted",
       "label": "Automorphism Groups",
       "primary_topic": "linear_algebraic_groups"
-    },
-    {
-      "id": "linear_algebraic_groups.base_change",
-      "title": "Base Change",
-      "kind": "topic",
-      "status": "admitted",
-      "label": "Base Change",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.base_change_preserves_algebraic_group",
-      "title": "Base Change Preserves Algebraic Group Structure",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Base Change Preserves Algebraic Group Structure",
-      "primary_topic": "affine_group_schemes"
     },
     {
       "id": "linear_algebraic_groups.basic_examples",
@@ -657,14 +841,6 @@
       "primary_topic": "linear_algebraic_groups"
     },
     {
-      "id": "linear_algebraic_groups.comodule_definition",
-      "title": "Comodule over a Coalgebra",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Comodule over a Coalgebra",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
       "id": "linear_algebraic_groups.conjugacy_classes",
       "title": "Conjugacy Classes",
       "kind": "topic",
@@ -679,30 +855,6 @@
       "status": "admitted",
       "label": "Connected Components",
       "primary_topic": "linear_algebraic_groups"
-    },
-    {
-      "id": "linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom",
-      "title": "Convolution of Algebra Homomorphisms Is an Algebra Homomorphism",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Convolution of Algebra Homomorphisms Is an Algebra Homomorphism",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "title": "Coordinate Hopf Algebra of an Affine Group Scheme",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Coordinate Hopf Algebra of an Affine Group Scheme",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "title": "Coordinate Rings and Hopf Algebras",
-      "kind": "topic",
-      "status": "admitted",
-      "label": "Coordinate Rings and Hopf Algebras",
-      "primary_topic": "affine_group_schemes"
     },
     {
       "id": "linear_algebraic_groups.embedding_corollary_closed_subgroup_GL_n",
@@ -721,76 +873,12 @@
       "primary_topic": "linear_algebraic_groups"
     },
     {
-      "id": "linear_algebraic_groups.faithful_linear_representation_definition",
-      "title": "Faithful Linear Representation",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Faithful Linear Representation",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.finite_dim_subcomodule_lemma",
-      "title": "Finite-Dimensional Subspace in a Sub-Comodule",
-      "kind": "lemma",
-      "status": "admitted",
-      "label": "Finite-Dimensional Subspace in a Sub-Comodule",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.general_linear_group_scheme",
-      "title": "General Linear Group Scheme GL_n",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "General Linear Group Scheme GL_n",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.general_linear_group_scheme_points",
-      "title": "Points of GL_n Are Invertible n\u00d7n Matrices over R",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Points of GL_n Are Invertible n\u00d7n Matrices over R",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
       "id": "linear_algebraic_groups.gl_v_group_scheme",
       "title": "General Linear Group Scheme GL(V)",
       "kind": "definition",
       "status": "formalized",
       "label": "General Linear Group Scheme GL(V)",
       "primary_topic": "linear_algebraic_groups"
-    },
-    {
-      "id": "linear_algebraic_groups.hopf_spec_essential_image_affine",
-      "title": "Essential Image of Spec Is Affine Group Schemes",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Essential Image of Spec Is Affine Group Schemes",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.hopf_spec_fully_faithful",
-      "title": "Spec Functor on Hopf Algebras Is Fully Faithful",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Spec Functor on Hopf Algebras Is Fully Faithful",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.hopf_spec_functor",
-      "title": "Spec Functor on Hopf Algebras",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Spec Functor on Hopf Algebras",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda",
-      "title": "Group Object Structure on Spec A via Yoneda",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Group Object Structure on Spec A via Yoneda",
-      "primary_topic": "affine_group_schemes"
     },
     {
       "id": "linear_algebraic_groups.identity_component_normal_finite_index",
@@ -849,52 +937,12 @@
       "primary_topic": "linear_algebraic_groups"
     },
     {
-      "id": "linear_algebraic_groups.multiplication_is_coalgebra_hom",
-      "title": "Multiplication of a Commutative Bialgebra Is a Coalgebra Hom",
-      "kind": "lemma",
-      "status": "admitted",
-      "label": "Multiplication of a Commutative Bialgebra Is a Coalgebra Hom",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.multiplicative_group_scheme",
-      "title": "Multiplicative Group Scheme \ud835\udd3e_m",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Multiplicative Group Scheme \ud835\udd3e_m",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.multiplicative_group_scheme_points",
-      "title": "Points of \ud835\udd3e_m Are the Units of R",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Points of \ud835\udd3e_m Are the Units of R",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
       "id": "linear_algebraic_groups.orbits_are_locally_closed",
       "title": "Orbits of Algebraic Group Actions Are Locally Closed",
       "kind": "theorem",
       "status": "admitted",
       "label": "Orbits of Algebraic Group Actions Are Locally Closed",
       "primary_topic": "linear_algebraic_groups"
-    },
-    {
-      "id": "linear_algebraic_groups.points_form_group",
-      "title": "R-Points of a Group Scheme Form a Group",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "R-Points of a Group Scheme Form a Group",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.points_functor_definition",
-      "title": "Functor of Points of a Group Scheme",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Functor of Points of a Group Scheme",
-      "primary_topic": "affine_group_schemes"
     },
     {
       "id": "linear_algebraic_groups.quotient_by_closed_subgroup_exists",
@@ -905,30 +953,6 @@
       "primary_topic": "linear_algebraic_groups"
     },
     {
-      "id": "linear_algebraic_groups.regular_representation_example",
-      "title": "Regular Representation as a Comodule",
-      "kind": "example",
-      "status": "admitted",
-      "label": "Regular Representation as a Comodule",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.representation_equals_comodule",
-      "title": "G-Representations Are A-Comodules",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "G-Representations Are A-Comodules",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.roots_of_unity_group_scheme",
-      "title": "Roots of Unity Group Scheme \u03bc_n",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Roots of Unity Group Scheme \u03bc_n",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
       "id": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
       "title": "Smoothness, Tangent Spaces, and Lie Algebras",
       "kind": "topic",
@@ -937,36 +961,12 @@
       "primary_topic": "linear_algebraic_groups"
     },
     {
-      "id": "linear_algebraic_groups.spec_representability_via_global_sections",
-      "title": "Hom Into Spec via Global Sections (Spec \u22a3 \u0393 Adjunction)",
-      "kind": "theorem",
-      "status": "admitted",
-      "label": "Hom Into Spec via Global Sections (Spec \u22a3 \u0393 Adjunction)",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
       "id": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups",
       "title": "Connected Subgroups Generate a Closed Connected Subgroup",
       "kind": "theorem",
       "status": "admitted",
       "label": "Connected Subgroups Generate a Closed Connected Subgroup",
       "primary_topic": "linear_algebraic_groups"
-    },
-    {
-      "id": "linear_algebraic_groups.trivial_group_scheme",
-      "title": "Trivial Group Scheme over a Base",
-      "kind": "definition",
-      "status": "admitted",
-      "label": "Trivial Group Scheme over a Base",
-      "primary_topic": "affine_group_schemes"
-    },
-    {
-      "id": "linear_algebraic_groups.trivial_representation_example",
-      "title": "Trivial Representation as a Comodule",
-      "kind": "example",
-      "status": "admitted",
-      "label": "Trivial Representation as a Comodule",
-      "primary_topic": "affine_group_schemes"
     },
     {
       "id": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable",
@@ -1117,7 +1117,7 @@
       "title": "Commutative Algebraic Groups Split into Semisimple and Unipotent Parts",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Commutative Algebraic Groups Split into Semisimple and Unipotent Parts",
+      "label": "Commutative Algebraic Groups Split into Semisimple and Unipo",
       "primary_topic": "reductive_structure"
     },
     {
@@ -1133,7 +1133,7 @@
       "title": "Derived Group, Center, Adjoint Group, and Simply Connected Cover",
       "kind": "topic",
       "status": "admitted",
-      "label": "Derived Group, Center, Adjoint Group, and Simply Connected Cover",
+      "label": "Derived Group, Center, Adjoint Group, and Simply Connected C",
       "primary_topic": "reductive_structure"
     },
     {
@@ -1485,7 +1485,7 @@
       "title": "Quasi-Split and Anisotropic Groups via the Indexed Root Datum",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Quasi-Split and Anisotropic Groups via the Indexed Root Datum",
+      "label": "Quasi-Split and Anisotropic Groups via the Indexed Root Datu",
       "primary_topic": "descent_and_forms"
     },
     {
@@ -1571,1752 +1571,1752 @@
   ],
   "edges": [
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "bd_covers.brylinski_deligne_k2_extensions"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.additive_group_scheme"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "bd_covers.brylinski_deligne_k2_extensions"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.additive_group_scheme"
     },
     {
-      "from": "bd_covers.central_extensions_of_algebraic_groups",
-      "to": "bd_covers.brylinski_deligne_k2_extensions"
+      "source": "affine_group_schemes.additive_group_scheme",
+      "target": "affine_group_schemes.additive_group_scheme_points"
     },
     {
-      "from": "foundational_inputs.algebraic_k_theory_and_k2",
-      "to": "bd_covers.brylinski_deligne_k2_extensions"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.additive_group_scheme_points"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "bd_covers.central_extensions_of_algebraic_groups"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.affine_algebraic_groups"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "bd_covers.central_extensions_of_algebraic_groups"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "affine_group_schemes.affine_group_scheme_definition"
     },
     {
-      "from": "bd_covers.brylinski_deligne_k2_extensions",
-      "to": "bd_covers.dual_groups_for_covers"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.affine_group_scheme_definition"
     },
     {
-      "from": "root_data_and_duality.dual_root_data",
-      "to": "bd_covers.dual_groups_for_covers"
+      "source": "affine_group_schemes.antipode_multiplicativity_commutative_hopf",
+      "target": "affine_group_schemes.algebra_hom_composed_with_antipode_is_algebra_hom"
     },
     {
-      "from": "root_data_and_duality.langlands_dual_groups",
-      "to": "bd_covers.dual_groups_for_covers"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.algebra_hom_convolution"
     },
     {
-      "from": "bd_covers.dual_groups_for_covers",
-      "to": "bd_covers.l_groups_for_covers"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.algebra_hom_convolution"
     },
     {
-      "from": "root_data_and_duality.l_groups",
-      "to": "bd_covers.l_groups_for_covers"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "affine_group_schemes.algebra_hom_convolution"
     },
     {
-      "from": "bd_covers.brylinski_deligne_k2_extensions",
-      "to": "bd_covers.local_and_global_metaplectic_covers"
+      "source": "affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom",
+      "target": "affine_group_schemes.algebra_homs_form_group_under_convolution"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "bd_covers.local_and_global_metaplectic_covers"
+      "source": "affine_group_schemes.algebra_hom_composed_with_antipode_is_algebra_hom",
+      "target": "affine_group_schemes.algebra_homs_form_group_under_convolution"
     },
     {
-      "from": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols",
-      "to": "bd_covers.local_and_global_metaplectic_covers"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.algebraic_group_definition"
     },
     {
-      "from": "bd_covers.local_and_global_metaplectic_covers",
-      "to": "bd_covers.splittings_over_integral_and_parahoric_subgroups"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.antipode_anti_multiplicativity"
     },
     {
-      "from": "buildings_and_parahorics.parahoric_subgroups",
-      "to": "bd_covers.splittings_over_integral_and_parahoric_subgroups"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.antipode_anti_multiplicativity"
     },
     {
-      "from": "root_data_and_duality.root_systems",
-      "to": "buildings_and_parahorics.affine_root_systems"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.antipode_multiplicativity_commutative_hopf"
     },
     {
-      "from": "buildings_and_parahorics.valued_root_data",
-      "to": "buildings_and_parahorics.affine_root_systems"
+      "source": "affine_group_schemes.multiplication_is_coalgebra_hom",
+      "target": "affine_group_schemes.antipode_multiplicativity_commutative_hopf"
     },
     {
-      "from": "root_data_and_duality.coxeter_systems_and_bruhat_order",
-      "to": "buildings_and_parahorics.affine_weyl_groups"
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "affine_group_schemes.base_change"
     },
     {
-      "from": "buildings_and_parahorics.affine_root_systems",
-      "to": "buildings_and_parahorics.affine_weyl_groups"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "affine_group_schemes.base_change"
     },
     {
-      "from": "buildings_and_parahorics.coxeter_complexes",
-      "to": "buildings_and_parahorics.bn_pairs_and_tits_systems"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.base_change_preserves_algebraic_group"
     },
     {
-      "from": "reductive_structure.parabolic_subgroups",
-      "to": "buildings_and_parahorics.bn_pairs_and_tits_systems"
+      "source": "affine_group_schemes.base_change",
+      "target": "affine_group_schemes.base_change_preserves_algebraic_group"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "buildings_and_parahorics.bruhat_tits_apartments"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.comodule_definition"
     },
     {
-      "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "to": "buildings_and_parahorics.bruhat_tits_apartments"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.comodule_definition"
     },
     {
-      "from": "buildings_and_parahorics.valued_root_data",
-      "to": "buildings_and_parahorics.bruhat_tits_apartments"
+      "source": "affine_group_schemes.algebra_hom_convolution",
+      "target": "affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom"
     },
     {
-      "from": "buildings_and_parahorics.affine_weyl_groups",
-      "to": "buildings_and_parahorics.bruhat_tits_apartments"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
     },
     {
-      "from": "buildings_and_parahorics.bruhat_tits_apartments",
-      "to": "buildings_and_parahorics.bruhat_tits_buildings"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
     },
     {
-      "from": "buildings_and_parahorics.bn_pairs_and_tits_systems",
-      "to": "buildings_and_parahorics.bruhat_tits_buildings"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme"
     },
     {
-      "from": "root_data_and_duality.coxeter_systems_and_bruhat_order",
-      "to": "buildings_and_parahorics.coxeter_complexes"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "from": "buildings_and_parahorics.bruhat_tits_buildings",
-      "to": "buildings_and_parahorics.facets_in_bruhat_tits_buildings"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "from": "buildings_and_parahorics.parahoric_subgroups",
-      "to": "buildings_and_parahorics.moy_prasad_filtrations"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.coordinate_rings_and_hopf_algebras"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "buildings_and_parahorics.moy_prasad_filtrations"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.faithful_linear_representation_definition"
     },
     {
-      "from": "buildings_and_parahorics.parahoric_subgroups",
-      "to": "buildings_and_parahorics.parahoric_group_schemes"
+      "source": "affine_group_schemes.comodule_definition",
+      "target": "affine_group_schemes.finite_dim_subcomodule_lemma"
     },
     {
-      "from": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
-      "to": "buildings_and_parahorics.parahoric_group_schemes"
+      "source": "affine_group_schemes.regular_representation_example",
+      "target": "affine_group_schemes.finite_dim_subcomodule_lemma"
     },
     {
-      "from": "buildings_and_parahorics.facets_in_bruhat_tits_buildings",
-      "to": "buildings_and_parahorics.parahoric_subgroups"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.general_linear_group_scheme"
     },
     {
-      "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "to": "buildings_and_parahorics.parahoric_subgroups"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.general_linear_group_scheme"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "buildings_and_parahorics.reductive_groups_over_local_fields"
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "affine_group_schemes.general_linear_group_scheme_points"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "buildings_and_parahorics.reductive_groups_over_local_fields"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.general_linear_group_scheme_points"
     },
     {
-      "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "buildings_and_parahorics.reductive_groups_over_local_fields"
+      "source": "affine_group_schemes.hopf_spec_functor",
+      "target": "affine_group_schemes.hopf_spec_essential_image_affine"
     },
     {
-      "from": "buildings_and_parahorics.parahoric_group_schemes",
-      "to": "buildings_and_parahorics.reductive_quotients_of_parahoric_group_schemes"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.hopf_spec_essential_image_affine"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
+      "source": "affine_group_schemes.hopf_spec_functor",
+      "target": "affine_group_schemes.hopf_spec_fully_faithful"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.hopf_spec_functor"
     },
     {
-      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
-      "to": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
+      "source": "affine_group_schemes.hopf_spec_grpobj_via_yoneda",
+      "target": "affine_group_schemes.hopf_spec_functor"
     },
     {
-      "from": "buildings_and_parahorics.bn_pairs_and_tits_systems",
-      "to": "buildings_and_parahorics.spherical_buildings"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.hopf_spec_functor"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "buildings_and_parahorics.tits_buildings"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.hopf_spec_functor"
     },
     {
-      "from": "reductive_structure.parabolic_subgroups",
-      "to": "buildings_and_parahorics.tits_buildings"
+      "source": "affine_group_schemes.algebra_homs_form_group_under_convolution",
+      "target": "affine_group_schemes.hopf_spec_grpobj_via_yoneda"
     },
     {
-      "from": "buildings_and_parahorics.spherical_buildings",
-      "to": "buildings_and_parahorics.tits_buildings"
+      "source": "affine_group_schemes.spec_representability_via_global_sections",
+      "target": "affine_group_schemes.hopf_spec_grpobj_via_yoneda"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "buildings_and_parahorics.valued_root_data"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.hopf_spec_grpobj_via_yoneda"
     },
     {
-      "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "to": "buildings_and_parahorics.valued_root_data"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "affine_group_schemes.multiplication_is_coalgebra_hom"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "buildings_and_parahorics.valued_root_data"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.multiplicative_group_scheme"
     },
     {
-      "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "buildings_and_parahorics.valued_root_data"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.multiplicative_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.basic_examples",
-      "to": "classical_and_exceptional_groups.classical_groups"
+      "source": "affine_group_schemes.multiplicative_group_scheme",
+      "target": "affine_group_schemes.multiplicative_group_scheme_points"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "classical_and_exceptional_groups.classical_groups"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.multiplicative_group_scheme_points"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "classical_and_exceptional_groups.classical_groups"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.points_form_group"
     },
     {
-      "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "classical_and_exceptional_groups.classical_groups"
+      "source": "affine_group_schemes.affine_group_scheme_definition",
+      "target": "affine_group_schemes.points_functor_definition"
     },
     {
-      "from": "root_data_and_duality.root_systems",
-      "to": "classical_and_exceptional_groups.exceptional_groups"
+      "source": "affine_group_schemes.comodule_definition",
+      "target": "affine_group_schemes.regular_representation_example"
     },
     {
-      "from": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
-      "to": "classical_and_exceptional_groups.exceptional_groups"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.regular_representation_example"
     },
     {
-      "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "classical_and_exceptional_groups.exceptional_groups"
+      "source": "affine_group_schemes.comodule_definition",
+      "target": "affine_group_schemes.representation_equals_comodule"
     },
     {
-      "from": "descent_and_forms.nonabelian_h1",
-      "to": "descent_and_forms.cocycles_and_twisting"
+      "source": "affine_group_schemes.points_functor_definition",
+      "target": "affine_group_schemes.representation_equals_comodule"
     },
     {
-      "from": "descent_and_forms.torsors",
-      "to": "descent_and_forms.cocycles_and_twisting"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.representation_equals_comodule"
     },
     {
-      "from": "linear_algebraic_groups.automorphism_groups",
-      "to": "descent_and_forms.cocycles_and_twisting"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.roots_of_unity_group_scheme"
     },
     {
-      "from": "descent_and_forms.real_forms",
-      "to": "descent_and_forms.extended_groups_for_real_forms"
+      "source": "affine_group_schemes.multiplicative_group_scheme",
+      "target": "affine_group_schemes.roots_of_unity_group_scheme"
     },
     {
-      "from": "descent_and_forms.inner_forms",
-      "to": "descent_and_forms.extended_groups_for_real_forms"
+      "source": "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
+      "target": "affine_group_schemes.roots_of_unity_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.automorphism_groups",
-      "to": "descent_and_forms.extended_groups_for_real_forms"
+      "source": "affine_group_schemes.coordinate_rings_and_hopf_algebras",
+      "target": "affine_group_schemes.spec_representability_via_global_sections"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
-      "to": "descent_and_forms.f_subgroup_field_of_definition"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "affine_group_schemes.spec_representability_via_global_sections"
     },
     {
-      "from": "descent_and_forms.galois_groups_and_descent_data",
-      "to": "descent_and_forms.f_subgroup_field_of_definition"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "affine_group_schemes.trivial_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.identity_component_normal_finite_index",
-      "to": "descent_and_forms.f_subgroup_field_of_definition"
+      "source": "affine_group_schemes.comodule_definition",
+      "target": "affine_group_schemes.trivial_representation_example"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "descent_and_forms.f_subgroup_field_of_definition"
+      "source": "reductive_structure.reductive_groups",
+      "target": "bd_covers.brylinski_deligne_k2_extensions"
     },
     {
-      "from": "linear_algebraic_groups.closed_image_of_homomorphism",
-      "to": "descent_and_forms.f_subgroup_field_of_definition"
+      "source": "root_data_and_duality.root_data",
+      "target": "bd_covers.brylinski_deligne_k2_extensions"
     },
     {
-      "from": "linear_algebraic_groups.base_change",
-      "to": "descent_and_forms.forms_of_algebraic_groups"
+      "source": "bd_covers.central_extensions_of_algebraic_groups",
+      "target": "bd_covers.brylinski_deligne_k2_extensions"
     },
     {
-      "from": "descent_and_forms.forms_of_algebraic_objects",
-      "to": "descent_and_forms.forms_of_algebraic_groups"
+      "source": "foundational_inputs.algebraic_k_theory_and_k2",
+      "target": "bd_covers.brylinski_deligne_k2_extensions"
     },
     {
-      "from": "descent_and_forms.cocycles_and_twisting",
-      "to": "descent_and_forms.forms_of_algebraic_groups"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "bd_covers.central_extensions_of_algebraic_groups"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "descent_and_forms.forms_of_algebraic_groups"
+      "source": "foundational_inputs.hopf_algebras",
+      "target": "bd_covers.central_extensions_of_algebraic_groups"
     },
     {
-      "from": "descent_and_forms.galois_groups_and_descent_data",
-      "to": "descent_and_forms.forms_of_algebraic_objects"
+      "source": "bd_covers.brylinski_deligne_k2_extensions",
+      "target": "bd_covers.dual_groups_for_covers"
     },
     {
-      "from": "linear_algebraic_groups.automorphism_groups",
-      "to": "descent_and_forms.forms_of_algebraic_objects"
+      "source": "root_data_and_duality.dual_root_data",
+      "target": "bd_covers.dual_groups_for_covers"
     },
     {
-      "from": "descent_and_forms.galois_groups_and_descent_data",
-      "to": "descent_and_forms.galois_cohomology"
+      "source": "root_data_and_duality.langlands_dual_groups",
+      "target": "bd_covers.dual_groups_for_covers"
     },
     {
-      "from": "foundational_inputs.fields_and_field_extensions",
-      "to": "descent_and_forms.galois_groups_and_descent_data"
+      "source": "bd_covers.dual_groups_for_covers",
+      "target": "bd_covers.l_groups_for_covers"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_reductive_groups",
-      "to": "descent_and_forms.inner_forms"
+      "source": "root_data_and_duality.l_groups",
+      "target": "bd_covers.l_groups_for_covers"
     },
     {
-      "from": "descent_and_forms.rigid_inner_forms",
-      "to": "descent_and_forms.kaletha_refined_inner_forms"
+      "source": "bd_covers.brylinski_deligne_k2_extensions",
+      "target": "bd_covers.local_and_global_metaplectic_covers"
     },
     {
-      "from": "kottwitz_structures.kottwitz_map_on_b_of_g",
-      "to": "descent_and_forms.kaletha_refined_inner_forms"
+      "source": "foundational_inputs.local_fields",
+      "target": "bd_covers.local_and_global_metaplectic_covers"
     },
     {
-      "from": "kottwitz_structures.b_of_g",
-      "to": "descent_and_forms.kaletha_refined_inner_forms"
+      "source": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols",
+      "target": "bd_covers.local_and_global_metaplectic_covers"
     },
     {
-      "from": "descent_and_forms.galois_cohomology",
-      "to": "descent_and_forms.lang_theorem_finite_fields"
+      "source": "bd_covers.local_and_global_metaplectic_covers",
+      "target": "bd_covers.splittings_over_integral_and_parahoric_subgroups"
     },
     {
-      "from": "descent_and_forms.twisted_conjugacy_classes",
-      "to": "descent_and_forms.lang_theorem_finite_fields"
+      "source": "buildings_and_parahorics.parahoric_subgroups",
+      "target": "bd_covers.splittings_over_integral_and_parahoric_subgroups"
     },
     {
-      "from": "linear_algebraic_groups.lie_algebra_of_algebraic_group",
-      "to": "descent_and_forms.lang_theorem_finite_fields"
+      "source": "root_data_and_duality.root_systems",
+      "target": "buildings_and_parahorics.affine_root_systems"
     },
     {
-      "from": "linear_algebraic_groups.identity_component_normal_finite_index",
-      "to": "descent_and_forms.lang_theorem_finite_fields"
+      "source": "buildings_and_parahorics.valued_root_data",
+      "target": "buildings_and_parahorics.affine_root_systems"
     },
     {
-      "from": "descent_and_forms.galois_cohomology",
-      "to": "descent_and_forms.nonabelian_h1"
+      "source": "root_data_and_duality.coxeter_systems_and_bruhat_order",
+      "target": "buildings_and_parahorics.affine_weyl_groups"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_reductive_groups",
-      "to": "descent_and_forms.outer_forms"
+      "source": "buildings_and_parahorics.affine_root_systems",
+      "target": "buildings_and_parahorics.affine_weyl_groups"
     },
     {
-      "from": "descent_and_forms.inner_forms",
-      "to": "descent_and_forms.pure_inner_twists"
+      "source": "buildings_and_parahorics.coxeter_complexes",
+      "target": "buildings_and_parahorics.bn_pairs_and_tits_systems"
     },
     {
-      "from": "descent_and_forms.nonabelian_h1",
-      "to": "descent_and_forms.pure_inner_twists"
+      "source": "reductive_structure.parabolic_subgroups",
+      "target": "buildings_and_parahorics.bn_pairs_and_tits_systems"
     },
     {
-      "from": "descent_and_forms.cocycles_and_twisting",
-      "to": "descent_and_forms.pure_inner_twists"
+      "source": "foundational_inputs.local_fields",
+      "target": "buildings_and_parahorics.bruhat_tits_apartments"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_reductive_groups",
-      "to": "descent_and_forms.quasi_split_forms"
+      "source": "buildings_and_parahorics.reductive_groups_over_local_fields",
+      "target": "buildings_and_parahorics.bruhat_tits_apartments"
     },
     {
-      "from": "descent_and_forms.forms_of_algebraic_groups",
-      "to": "descent_and_forms.rational_forms_of_linear_algebraic_groups"
+      "source": "buildings_and_parahorics.valued_root_data",
+      "target": "buildings_and_parahorics.bruhat_tits_apartments"
     },
     {
-      "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "descent_and_forms.rational_forms_of_linear_algebraic_groups"
+      "source": "buildings_and_parahorics.affine_weyl_groups",
+      "target": "buildings_and_parahorics.bruhat_tits_apartments"
     },
     {
-      "from": "descent_and_forms.forms_of_algebraic_groups",
-      "to": "descent_and_forms.rational_forms_of_reductive_groups"
+      "source": "buildings_and_parahorics.bruhat_tits_apartments",
+      "target": "buildings_and_parahorics.bruhat_tits_buildings"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "descent_and_forms.rational_forms_of_reductive_groups"
+      "source": "buildings_and_parahorics.bn_pairs_and_tits_systems",
+      "target": "buildings_and_parahorics.bruhat_tits_buildings"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "descent_and_forms.rational_forms_of_reductive_groups"
+      "source": "root_data_and_duality.coxeter_systems_and_bruhat_order",
+      "target": "buildings_and_parahorics.coxeter_complexes"
     },
     {
-      "from": "descent_and_forms.galois_cohomology",
-      "to": "descent_and_forms.rational_forms_of_reductive_groups"
+      "source": "buildings_and_parahorics.bruhat_tits_buildings",
+      "target": "buildings_and_parahorics.facets_in_bruhat_tits_buildings"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_reductive_groups",
-      "to": "descent_and_forms.real_forms"
+      "source": "buildings_and_parahorics.parahoric_subgroups",
+      "target": "buildings_and_parahorics.moy_prasad_filtrations"
     },
     {
-      "from": "descent_and_forms.inner_forms",
-      "to": "descent_and_forms.real_forms"
+      "source": "reductive_structure.reductive_groups",
+      "target": "buildings_and_parahorics.moy_prasad_filtrations"
     },
     {
-      "from": "descent_and_forms.rigid_inner_twists",
-      "to": "descent_and_forms.rigid_inner_forms"
+      "source": "buildings_and_parahorics.parahoric_subgroups",
+      "target": "buildings_and_parahorics.parahoric_group_schemes"
     },
     {
-      "from": "descent_and_forms.inner_forms",
-      "to": "descent_and_forms.rigid_inner_forms"
+      "source": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings",
+      "target": "buildings_and_parahorics.parahoric_group_schemes"
     },
     {
-      "from": "descent_and_forms.pure_inner_twists",
-      "to": "descent_and_forms.rigid_inner_twists"
+      "source": "buildings_and_parahorics.facets_in_bruhat_tits_buildings",
+      "target": "buildings_and_parahorics.parahoric_subgroups"
     },
     {
-      "from": "descent_and_forms.galois_cohomology",
-      "to": "descent_and_forms.rigid_inner_twists"
+      "source": "buildings_and_parahorics.reductive_groups_over_local_fields",
+      "target": "buildings_and_parahorics.parahoric_subgroups"
     },
     {
-      "from": "kottwitz_structures.algebraic_fundamental_group",
-      "to": "descent_and_forms.rigid_inner_twists"
+      "source": "foundational_inputs.local_fields",
+      "target": "buildings_and_parahorics.reductive_groups_over_local_fields"
     },
     {
-      "from": "kottwitz_structures.kottwitz_homomorphism",
-      "to": "descent_and_forms.rigid_inner_twists"
+      "source": "reductive_structure.reductive_groups",
+      "target": "buildings_and_parahorics.reductive_groups_over_local_fields"
     },
     {
-      "from": "descent_and_forms.strong_real_forms",
-      "to": "descent_and_forms.strong_inner_forms"
+      "source": "root_data_and_duality.galois_action_on_root_data",
+      "target": "buildings_and_parahorics.reductive_groups_over_local_fields"
     },
     {
-      "from": "descent_and_forms.inner_forms",
-      "to": "descent_and_forms.strong_inner_forms"
+      "source": "buildings_and_parahorics.parahoric_group_schemes",
+      "target": "buildings_and_parahorics.reductive_quotients_of_parahoric_group_schemes"
     },
     {
-      "from": "descent_and_forms.extended_groups_for_real_forms",
-      "to": "descent_and_forms.strong_real_forms"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
     },
     {
-      "from": "descent_and_forms.real_forms",
-      "to": "descent_and_forms.strong_real_forms"
+      "source": "foundational_inputs.local_fields",
+      "target": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
     },
     {
-      "from": "descent_and_forms.nonabelian_h1",
-      "to": "descent_and_forms.torsors"
+      "source": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
+      "target": "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
     },
     {
-      "from": "descent_and_forms.galois_cohomology",
-      "to": "descent_and_forms.twisted_conjugacy_classes"
+      "source": "buildings_and_parahorics.bn_pairs_and_tits_systems",
+      "target": "buildings_and_parahorics.spherical_buildings"
     },
     {
-      "from": "linear_algebraic_groups.conjugacy_classes",
-      "to": "descent_and_forms.twisted_conjugacy_classes"
+      "source": "reductive_structure.reductive_groups",
+      "target": "buildings_and_parahorics.tits_buildings"
     },
     {
-      "from": "descent_and_forms.real_forms",
-      "to": "descent_and_forms.vogan_diagrams"
+      "source": "reductive_structure.parabolic_subgroups",
+      "target": "buildings_and_parahorics.tits_buildings"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "descent_and_forms.vogan_diagrams"
+      "source": "buildings_and_parahorics.spherical_buildings",
+      "target": "buildings_and_parahorics.tits_buildings"
     },
     {
-      "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "descent_and_forms.vogan_diagrams"
+      "source": "foundational_inputs.local_fields",
+      "target": "buildings_and_parahorics.valued_root_data"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "foundational_inputs.affine_schemes"
+      "source": "buildings_and_parahorics.reductive_groups_over_local_fields",
+      "target": "buildings_and_parahorics.valued_root_data"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "foundational_inputs.algebraic_k_theory_and_k2"
+      "source": "root_data_and_duality.root_data",
+      "target": "buildings_and_parahorics.valued_root_data"
     },
     {
-      "from": "foundational_inputs.fields_and_field_extensions",
-      "to": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
+      "source": "root_data_and_duality.galois_action_on_root_data",
+      "target": "buildings_and_parahorics.valued_root_data"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
+      "source": "linear_algebraic_groups.basic_examples",
+      "target": "classical_and_exceptional_groups.classical_groups"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "foundational_inputs.hopf_algebras"
+      "source": "reductive_structure.reductive_groups",
+      "target": "classical_and_exceptional_groups.classical_groups"
     },
     {
-      "from": "foundational_inputs.fields_and_field_extensions",
-      "to": "foundational_inputs.local_fields"
+      "source": "root_data_and_duality.root_data",
+      "target": "classical_and_exceptional_groups.classical_groups"
     },
     {
-      "from": "kottwitz_structures.b_of_g",
-      "to": "kottwitz_structures.admissible_sets"
+      "source": "root_data_and_duality.classification_of_split_reductive_groups",
+      "target": "classical_and_exceptional_groups.classical_groups"
     },
     {
-      "from": "buildings_and_parahorics.affine_weyl_groups",
-      "to": "kottwitz_structures.admissible_sets"
+      "source": "root_data_and_duality.root_systems",
+      "target": "classical_and_exceptional_groups.exceptional_groups"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "kottwitz_structures.algebraic_fundamental_group"
+      "source": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
+      "target": "classical_and_exceptional_groups.exceptional_groups"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "kottwitz_structures.algebraic_fundamental_group"
+      "source": "root_data_and_duality.classification_of_split_reductive_groups",
+      "target": "classical_and_exceptional_groups.exceptional_groups"
     },
     {
-      "from": "root_data_and_duality.fundamental_group_of_root_datum",
-      "to": "kottwitz_structures.algebraic_fundamental_group"
+      "source": "descent_and_forms.nonabelian_h1",
+      "target": "descent_and_forms.cocycles_and_twisting"
     },
     {
-      "from": "kottwitz_structures.sigma_conjugacy_classes",
-      "to": "kottwitz_structures.b_of_g"
+      "source": "descent_and_forms.torsors",
+      "target": "descent_and_forms.cocycles_and_twisting"
     },
     {
-      "from": "kottwitz_structures.kottwitz_homomorphism",
-      "to": "kottwitz_structures.b_of_g"
+      "source": "linear_algebraic_groups.automorphism_groups",
+      "target": "descent_and_forms.cocycles_and_twisting"
     },
     {
-      "from": "kottwitz_structures.algebraic_fundamental_group",
-      "to": "kottwitz_structures.b_of_g"
+      "source": "descent_and_forms.real_forms",
+      "target": "descent_and_forms.extended_groups_for_real_forms"
     },
     {
-      "from": "kottwitz_structures.newton_map",
-      "to": "kottwitz_structures.basic_sigma_conjugacy_classes"
+      "source": "descent_and_forms.inner_forms",
+      "target": "descent_and_forms.extended_groups_for_real_forms"
     },
     {
-      "from": "kottwitz_structures.kottwitz_map_on_b_of_g",
-      "to": "kottwitz_structures.basic_sigma_conjugacy_classes"
+      "source": "linear_algebraic_groups.automorphism_groups",
+      "target": "descent_and_forms.extended_groups_for_real_forms"
     },
     {
-      "from": "kottwitz_structures.b_of_g",
-      "to": "kottwitz_structures.isocrystals_with_g_structure"
+      "source": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
+      "target": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
-      "from": "kottwitz_structures.sigma_conjugacy_classes",
-      "to": "kottwitz_structures.isocrystals_with_g_structure"
+      "source": "descent_and_forms.galois_groups_and_descent_data",
+      "target": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
-      "from": "kottwitz_structures.algebraic_fundamental_group",
-      "to": "kottwitz_structures.kottwitz_homomorphism"
+      "source": "linear_algebraic_groups.identity_component_normal_finite_index",
+      "target": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
-      "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "kottwitz_structures.kottwitz_homomorphism"
+      "source": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "target": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "kottwitz_structures.kottwitz_homomorphism"
+      "source": "linear_algebraic_groups.closed_image_of_homomorphism",
+      "target": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
-      "from": "kottwitz_structures.b_of_g",
-      "to": "kottwitz_structures.kottwitz_map_on_b_of_g"
+      "source": "affine_group_schemes.base_change",
+      "target": "descent_and_forms.forms_of_algebraic_groups"
     },
     {
-      "from": "kottwitz_structures.algebraic_fundamental_group",
-      "to": "kottwitz_structures.kottwitz_map_on_b_of_g"
+      "source": "descent_and_forms.forms_of_algebraic_objects",
+      "target": "descent_and_forms.forms_of_algebraic_groups"
     },
     {
-      "from": "kottwitz_structures.b_of_g",
-      "to": "kottwitz_structures.newton_map"
+      "source": "descent_and_forms.cocycles_and_twisting",
+      "target": "descent_and_forms.forms_of_algebraic_groups"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "kottwitz_structures.newton_map"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "descent_and_forms.forms_of_algebraic_groups"
     },
     {
-      "from": "foundational_inputs.local_fields",
-      "to": "kottwitz_structures.sigma_conjugacy_classes"
+      "source": "descent_and_forms.galois_groups_and_descent_data",
+      "target": "descent_and_forms.forms_of_algebraic_objects"
     },
     {
-      "from": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "to": "kottwitz_structures.sigma_conjugacy_classes"
+      "source": "linear_algebraic_groups.automorphism_groups",
+      "target": "descent_and_forms.forms_of_algebraic_objects"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.additive_group_scheme"
+      "source": "descent_and_forms.galois_groups_and_descent_data",
+      "target": "descent_and_forms.galois_cohomology"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.additive_group_scheme"
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "descent_and_forms.galois_groups_and_descent_data"
     },
     {
-      "from": "linear_algebraic_groups.additive_group_scheme",
-      "to": "linear_algebraic_groups.additive_group_scheme_points"
+      "source": "descent_and_forms.rational_forms_of_reductive_groups",
+      "target": "descent_and_forms.inner_forms"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.additive_group_scheme_points"
+      "source": "descent_and_forms.rigid_inner_forms",
+      "target": "descent_and_forms.kaletha_refined_inner_forms"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.affine_algebraic_groups"
+      "source": "kottwitz_structures.kottwitz_map_on_b_of_g",
+      "target": "descent_and_forms.kaletha_refined_inner_forms"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+      "source": "kottwitz_structures.b_of_g",
+      "target": "descent_and_forms.kaletha_refined_inner_forms"
     },
     {
-      "from": "linear_algebraic_groups.faithful_linear_representation_definition",
-      "to": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+      "source": "descent_and_forms.galois_cohomology",
+      "target": "descent_and_forms.lang_theorem_finite_fields"
     },
     {
-      "from": "linear_algebraic_groups.hopf_spec_essential_image_affine",
-      "to": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+      "source": "descent_and_forms.twisted_conjugacy_classes",
+      "target": "descent_and_forms.lang_theorem_finite_fields"
     },
     {
-      "from": "linear_algebraic_groups.finite_dim_subcomodule_lemma",
-      "to": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+      "source": "linear_algebraic_groups.lie_algebra_of_algebraic_group",
+      "target": "descent_and_forms.lang_theorem_finite_fields"
     },
     {
-      "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.affine_finite_type_faithful_representation"
+      "source": "linear_algebraic_groups.identity_component_normal_finite_index",
+      "target": "descent_and_forms.lang_theorem_finite_fields"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "linear_algebraic_groups.affine_group_scheme_definition"
+      "source": "descent_and_forms.galois_cohomology",
+      "target": "descent_and_forms.nonabelian_h1"
     },
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.affine_group_scheme_definition"
+      "source": "descent_and_forms.rational_forms_of_reductive_groups",
+      "target": "descent_and_forms.outer_forms"
     },
     {
-      "from": "linear_algebraic_groups.antipode_multiplicativity_commutative_hopf",
-      "to": "linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom"
+      "source": "descent_and_forms.inner_forms",
+      "target": "descent_and_forms.pure_inner_twists"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.algebra_hom_convolution"
+      "source": "descent_and_forms.nonabelian_h1",
+      "target": "descent_and_forms.pure_inner_twists"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.algebra_hom_convolution"
+      "source": "descent_and_forms.cocycles_and_twisting",
+      "target": "descent_and_forms.pure_inner_twists"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "linear_algebraic_groups.algebra_hom_convolution"
+      "source": "descent_and_forms.rational_forms_of_reductive_groups",
+      "target": "descent_and_forms.quasi_split_forms"
     },
     {
-      "from": "linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom",
-      "to": "linear_algebraic_groups.algebra_homs_form_group_under_convolution"
+      "source": "descent_and_forms.forms_of_algebraic_groups",
+      "target": "descent_and_forms.rational_forms_of_linear_algebraic_groups"
     },
     {
-      "from": "linear_algebraic_groups.algebra_hom_composed_with_antipode_is_algebra_hom",
-      "to": "linear_algebraic_groups.algebra_homs_form_group_under_convolution"
+      "source": "linear_algebraic_groups.linear_algebraic_groups",
+      "target": "descent_and_forms.rational_forms_of_linear_algebraic_groups"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers"
+      "source": "descent_and_forms.forms_of_algebraic_groups",
+      "target": "descent_and_forms.rational_forms_of_reductive_groups"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.algebraic_group_definition"
+      "source": "reductive_structure.reductive_groups",
+      "target": "descent_and_forms.rational_forms_of_reductive_groups"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.antipode_anti_multiplicativity"
+      "source": "root_data_and_duality.root_data",
+      "target": "descent_and_forms.rational_forms_of_reductive_groups"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.antipode_anti_multiplicativity"
+      "source": "descent_and_forms.galois_cohomology",
+      "target": "descent_and_forms.rational_forms_of_reductive_groups"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.antipode_multiplicativity_commutative_hopf"
+      "source": "descent_and_forms.rational_forms_of_reductive_groups",
+      "target": "descent_and_forms.real_forms"
     },
     {
-      "from": "linear_algebraic_groups.multiplication_is_coalgebra_hom",
-      "to": "linear_algebraic_groups.antipode_multiplicativity_commutative_hopf"
+      "source": "descent_and_forms.inner_forms",
+      "target": "descent_and_forms.real_forms"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "linear_algebraic_groups.automorphism_groups"
+      "source": "descent_and_forms.rigid_inner_twists",
+      "target": "descent_and_forms.rigid_inner_forms"
     },
     {
-      "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.automorphism_groups"
+      "source": "descent_and_forms.inner_forms",
+      "target": "descent_and_forms.rigid_inner_forms"
     },
     {
-      "from": "foundational_inputs.fields_and_field_extensions",
-      "to": "linear_algebraic_groups.base_change"
+      "source": "descent_and_forms.pure_inner_twists",
+      "target": "descent_and_forms.rigid_inner_twists"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "linear_algebraic_groups.base_change"
+      "source": "descent_and_forms.galois_cohomology",
+      "target": "descent_and_forms.rigid_inner_twists"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.base_change_preserves_algebraic_group"
+      "source": "kottwitz_structures.algebraic_fundamental_group",
+      "target": "descent_and_forms.rigid_inner_twists"
     },
     {
-      "from": "linear_algebraic_groups.base_change",
-      "to": "linear_algebraic_groups.base_change_preserves_algebraic_group"
+      "source": "kottwitz_structures.kottwitz_homomorphism",
+      "target": "descent_and_forms.rigid_inner_twists"
     },
     {
-      "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "linear_algebraic_groups.basic_examples"
+      "source": "descent_and_forms.strong_real_forms",
+      "target": "descent_and_forms.strong_inner_forms"
     },
     {
-      "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.basic_examples"
+      "source": "descent_and_forms.inner_forms",
+      "target": "descent_and_forms.strong_inner_forms"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.closed_image_of_homomorphism"
+      "source": "descent_and_forms.extended_groups_for_real_forms",
+      "target": "descent_and_forms.strong_real_forms"
     },
     {
-      "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.closed_image_of_homomorphism"
+      "source": "descent_and_forms.real_forms",
+      "target": "descent_and_forms.strong_real_forms"
     },
     {
-      "from": "linear_algebraic_groups.kernels_images_and_quotients",
-      "to": "linear_algebraic_groups.closed_image_of_homomorphism"
+      "source": "descent_and_forms.nonabelian_h1",
+      "target": "descent_and_forms.torsors"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.comodule_definition"
+      "source": "descent_and_forms.galois_cohomology",
+      "target": "descent_and_forms.twisted_conjugacy_classes"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.comodule_definition"
+      "source": "linear_algebraic_groups.conjugacy_classes",
+      "target": "descent_and_forms.twisted_conjugacy_classes"
     },
     {
-      "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "linear_algebraic_groups.conjugacy_classes"
+      "source": "descent_and_forms.real_forms",
+      "target": "descent_and_forms.vogan_diagrams"
     },
     {
-      "from": "linear_algebraic_groups.automorphism_groups",
-      "to": "linear_algebraic_groups.conjugacy_classes"
+      "source": "root_data_and_duality.root_data",
+      "target": "descent_and_forms.vogan_diagrams"
     },
     {
-      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
-      "to": "linear_algebraic_groups.connected_components"
+      "source": "root_data_and_duality.galois_action_on_root_data",
+      "target": "descent_and_forms.vogan_diagrams"
     },
     {
-      "from": "linear_algebraic_groups.algebra_hom_convolution",
-      "to": "linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "foundational_inputs.affine_schemes"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "foundational_inputs.algebraic_k_theory_and_k2"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme"
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme"
+      "source": "foundational_inputs.local_fields",
+      "target": "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
     },
     {
-      "from": "foundational_inputs.commutative_algebra",
-      "to": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras"
+      "source": "foundational_inputs.commutative_algebra",
+      "target": "foundational_inputs.hopf_algebras"
     },
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras"
+      "source": "foundational_inputs.fields_and_field_extensions",
+      "target": "foundational_inputs.local_fields"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras"
+      "source": "kottwitz_structures.b_of_g",
+      "target": "kottwitz_structures.admissible_sets"
     },
     {
-      "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.embedding_corollary_closed_subgroup_GL_n"
+      "source": "buildings_and_parahorics.affine_weyl_groups",
+      "target": "kottwitz_structures.admissible_sets"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.embedding_theorem"
+      "source": "reductive_structure.reductive_groups",
+      "target": "kottwitz_structures.algebraic_fundamental_group"
     },
     {
-      "from": "linear_algebraic_groups.faithful_linear_representation_definition",
-      "to": "linear_algebraic_groups.embedding_theorem"
+      "source": "root_data_and_duality.root_data",
+      "target": "kottwitz_structures.algebraic_fundamental_group"
     },
     {
-      "from": "linear_algebraic_groups.hopf_spec_essential_image_affine",
-      "to": "linear_algebraic_groups.embedding_theorem"
+      "source": "root_data_and_duality.fundamental_group_of_root_datum",
+      "target": "kottwitz_structures.algebraic_fundamental_group"
     },
     {
-      "from": "linear_algebraic_groups.representation_equals_comodule",
-      "to": "linear_algebraic_groups.embedding_theorem"
+      "source": "kottwitz_structures.sigma_conjugacy_classes",
+      "target": "kottwitz_structures.b_of_g"
     },
     {
-      "from": "linear_algebraic_groups.finite_dim_subcomodule_lemma",
-      "to": "linear_algebraic_groups.embedding_theorem"
+      "source": "kottwitz_structures.kottwitz_homomorphism",
+      "target": "kottwitz_structures.b_of_g"
     },
     {
-      "from": "linear_algebraic_groups.regular_representation_example",
-      "to": "linear_algebraic_groups.embedding_theorem"
+      "source": "kottwitz_structures.algebraic_fundamental_group",
+      "target": "kottwitz_structures.b_of_g"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.faithful_linear_representation_definition"
+      "source": "kottwitz_structures.newton_map",
+      "target": "kottwitz_structures.basic_sigma_conjugacy_classes"
     },
     {
-      "from": "linear_algebraic_groups.comodule_definition",
-      "to": "linear_algebraic_groups.finite_dim_subcomodule_lemma"
+      "source": "kottwitz_structures.kottwitz_map_on_b_of_g",
+      "target": "kottwitz_structures.basic_sigma_conjugacy_classes"
     },
     {
-      "from": "linear_algebraic_groups.regular_representation_example",
-      "to": "linear_algebraic_groups.finite_dim_subcomodule_lemma"
+      "source": "kottwitz_structures.b_of_g",
+      "target": "kottwitz_structures.isocrystals_with_g_structure"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.general_linear_group_scheme"
+      "source": "kottwitz_structures.sigma_conjugacy_classes",
+      "target": "kottwitz_structures.isocrystals_with_g_structure"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.general_linear_group_scheme"
+      "source": "kottwitz_structures.algebraic_fundamental_group",
+      "target": "kottwitz_structures.kottwitz_homomorphism"
     },
     {
-      "from": "linear_algebraic_groups.general_linear_group_scheme",
-      "to": "linear_algebraic_groups.general_linear_group_scheme_points"
+      "source": "root_data_and_duality.galois_action_on_root_data",
+      "target": "kottwitz_structures.kottwitz_homomorphism"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.general_linear_group_scheme_points"
+      "source": "foundational_inputs.local_fields",
+      "target": "kottwitz_structures.kottwitz_homomorphism"
     },
     {
-      "from": "linear_algebraic_groups.general_linear_group_scheme",
-      "to": "linear_algebraic_groups.gl_v_group_scheme"
+      "source": "kottwitz_structures.b_of_g",
+      "target": "kottwitz_structures.kottwitz_map_on_b_of_g"
     },
     {
-      "from": "linear_algebraic_groups.hopf_spec_functor",
-      "to": "linear_algebraic_groups.hopf_spec_essential_image_affine"
+      "source": "kottwitz_structures.algebraic_fundamental_group",
+      "target": "kottwitz_structures.kottwitz_map_on_b_of_g"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.hopf_spec_essential_image_affine"
+      "source": "kottwitz_structures.b_of_g",
+      "target": "kottwitz_structures.newton_map"
     },
     {
-      "from": "linear_algebraic_groups.hopf_spec_functor",
-      "to": "linear_algebraic_groups.hopf_spec_fully_faithful"
+      "source": "root_data_and_duality.root_data",
+      "target": "kottwitz_structures.newton_map"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.hopf_spec_functor"
+      "source": "foundational_inputs.local_fields",
+      "target": "kottwitz_structures.sigma_conjugacy_classes"
     },
     {
-      "from": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda",
-      "to": "linear_algebraic_groups.hopf_spec_functor"
+      "source": "buildings_and_parahorics.reductive_groups_over_local_fields",
+      "target": "kottwitz_structures.sigma_conjugacy_classes"
     },
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.hopf_spec_functor"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.hopf_spec_functor"
+      "source": "affine_group_schemes.faithful_linear_representation_definition",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
     },
     {
-      "from": "linear_algebraic_groups.algebra_homs_form_group_under_convolution",
-      "to": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda"
+      "source": "affine_group_schemes.hopf_spec_essential_image_affine",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
     },
     {
-      "from": "linear_algebraic_groups.spec_representability_via_global_sections",
-      "to": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda"
+      "source": "affine_group_schemes.finite_dim_subcomodule_lemma",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.hopf_spec_grpobj_via_yoneda"
+      "source": "linear_algebraic_groups.embedding_theorem",
+      "target": "linear_algebraic_groups.affine_finite_type_faithful_representation"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.identity_component_normal_finite_index"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers"
     },
     {
-      "from": "linear_algebraic_groups.connected_components",
-      "to": "linear_algebraic_groups.identity_component_normal_finite_index"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "linear_algebraic_groups.automorphism_groups"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group"
+      "source": "linear_algebraic_groups.morphisms_and_closed_subgroups",
+      "target": "linear_algebraic_groups.automorphism_groups"
     },
     {
-      "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group"
+      "source": "linear_algebraic_groups.linear_algebraic_groups",
+      "target": "linear_algebraic_groups.basic_examples"
     },
     {
-      "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.kernels_images_and_quotients"
+      "source": "linear_algebraic_groups.morphisms_and_closed_subgroups",
+      "target": "linear_algebraic_groups.basic_examples"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.lie_algebra_of_algebraic_group"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.closed_image_of_homomorphism"
     },
     {
-      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
-      "to": "linear_algebraic_groups.lie_algebra_of_algebraic_group"
+      "source": "linear_algebraic_groups.morphisms_and_closed_subgroups",
+      "target": "linear_algebraic_groups.closed_image_of_homomorphism"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "linear_algebraic_groups.linear_algebraic_groups"
+      "source": "linear_algebraic_groups.kernels_images_and_quotients",
+      "target": "linear_algebraic_groups.closed_image_of_homomorphism"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties"
+      "source": "linear_algebraic_groups.linear_algebraic_groups",
+      "target": "linear_algebraic_groups.conjugacy_classes"
     },
     {
-      "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties"
+      "source": "linear_algebraic_groups.automorphism_groups",
+      "target": "linear_algebraic_groups.conjugacy_classes"
     },
     {
-      "from": "linear_algebraic_groups.representation_equals_comodule",
-      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties"
+      "source": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
+      "target": "linear_algebraic_groups.connected_components"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "linear_algebraic_groups.morphisms_and_closed_subgroups"
+      "source": "linear_algebraic_groups.embedding_theorem",
+      "target": "linear_algebraic_groups.embedding_corollary_closed_subgroup_GL_n"
     },
     {
-      "from": "foundational_inputs.hopf_algebras",
-      "to": "linear_algebraic_groups.multiplication_is_coalgebra_hom"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.embedding_theorem"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme"
+      "source": "affine_group_schemes.faithful_linear_representation_definition",
+      "target": "linear_algebraic_groups.embedding_theorem"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme"
+      "source": "affine_group_schemes.hopf_spec_essential_image_affine",
+      "target": "linear_algebraic_groups.embedding_theorem"
     },
     {
-      "from": "linear_algebraic_groups.multiplicative_group_scheme",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme_points"
+      "source": "affine_group_schemes.representation_equals_comodule",
+      "target": "linear_algebraic_groups.embedding_theorem"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.multiplicative_group_scheme_points"
+      "source": "affine_group_schemes.finite_dim_subcomodule_lemma",
+      "target": "linear_algebraic_groups.embedding_theorem"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "linear_algebraic_groups.orbits_are_locally_closed"
+      "source": "affine_group_schemes.regular_representation_example",
+      "target": "linear_algebraic_groups.embedding_theorem"
     },
     {
-      "from": "linear_algebraic_groups.closed_image_of_homomorphism",
-      "to": "linear_algebraic_groups.orbits_are_locally_closed"
+      "source": "affine_group_schemes.general_linear_group_scheme",
+      "target": "linear_algebraic_groups.gl_v_group_scheme"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.points_form_group"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.identity_component_normal_finite_index"
     },
     {
-      "from": "linear_algebraic_groups.affine_group_scheme_definition",
-      "to": "linear_algebraic_groups.points_functor_definition"
+      "source": "linear_algebraic_groups.connected_components",
+      "target": "linear_algebraic_groups.identity_component_normal_finite_index"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
+      "source": "linear_algebraic_groups.embedding_theorem",
+      "target": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group"
     },
     {
-      "from": "linear_algebraic_groups.kernels_images_and_quotients",
-      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
+      "source": "linear_algebraic_groups.morphisms_and_closed_subgroups",
+      "target": "linear_algebraic_groups.kernels_images_and_quotients"
     },
     {
-      "from": "linear_algebraic_groups.comodule_definition",
-      "to": "linear_algebraic_groups.regular_representation_example"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.lie_algebra_of_algebraic_group"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.regular_representation_example"
+      "source": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
+      "target": "linear_algebraic_groups.lie_algebra_of_algebraic_group"
     },
     {
-      "from": "linear_algebraic_groups.comodule_definition",
-      "to": "linear_algebraic_groups.representation_equals_comodule"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "linear_algebraic_groups.linear_algebraic_groups"
     },
     {
-      "from": "linear_algebraic_groups.points_functor_definition",
-      "to": "linear_algebraic_groups.representation_equals_comodule"
+      "source": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "target": "linear_algebraic_groups.linearization_of_affine_g_varieties"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.representation_equals_comodule"
+      "source": "linear_algebraic_groups.embedding_theorem",
+      "target": "linear_algebraic_groups.linearization_of_affine_g_varieties"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.roots_of_unity_group_scheme"
+      "source": "affine_group_schemes.representation_equals_comodule",
+      "target": "linear_algebraic_groups.linearization_of_affine_g_varieties"
     },
     {
-      "from": "linear_algebraic_groups.multiplicative_group_scheme",
-      "to": "linear_algebraic_groups.roots_of_unity_group_scheme"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "linear_algebraic_groups.morphisms_and_closed_subgroups"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme",
-      "to": "linear_algebraic_groups.roots_of_unity_group_scheme"
+      "source": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "target": "linear_algebraic_groups.orbits_are_locally_closed"
     },
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras"
+      "source": "linear_algebraic_groups.closed_image_of_homomorphism",
+      "target": "linear_algebraic_groups.orbits_are_locally_closed"
     },
     {
-      "from": "linear_algebraic_groups.affine_algebraic_groups",
-      "to": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
     },
     {
-      "from": "linear_algebraic_groups.coordinate_rings_and_hopf_algebras",
-      "to": "linear_algebraic_groups.spec_representability_via_global_sections"
+      "source": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "target": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
     },
     {
-      "from": "foundational_inputs.affine_schemes",
-      "to": "linear_algebraic_groups.spec_representability_via_global_sections"
+      "source": "linear_algebraic_groups.kernels_images_and_quotients",
+      "target": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
+      "source": "foundational_inputs.affine_schemes",
+      "target": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras"
     },
     {
-      "from": "linear_algebraic_groups.connected_components",
-      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
+      "source": "affine_group_schemes.affine_algebraic_groups",
+      "target": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras"
     },
     {
-      "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.trivial_group_scheme"
+      "source": "linear_algebraic_groups.connected_components",
+      "target": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
     },
     {
-      "from": "linear_algebraic_groups.comodule_definition",
-      "to": "linear_algebraic_groups.trivial_representation_example"
+      "source": "linear_algebraic_groups.morphisms_and_closed_subgroups",
+      "target": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_definition",
-      "to": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
+      "source": "affine_group_schemes.algebraic_group_definition",
+      "target": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
     },
     {
-      "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
+      "source": "linear_algebraic_groups.embedding_theorem",
+      "target": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
     },
     {
-      "from": "reductive_structure.unipotent_groups",
-      "to": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
+      "source": "reductive_structure.unipotent_groups",
+      "target": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "nilpotent_orbits.adjoint_action"
+      "source": "reductive_structure.reductive_groups",
+      "target": "nilpotent_orbits.adjoint_action"
     },
     {
-      "from": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "to": "nilpotent_orbits.adjoint_action"
+      "source": "nilpotent_orbits.lie_algebras_of_reductive_groups",
+      "target": "nilpotent_orbits.adjoint_action"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.bala_carter_classification"
+      "source": "nilpotent_orbits.nilpotent_orbits",
+      "target": "nilpotent_orbits.bala_carter_classification"
     },
     {
-      "from": "reductive_structure.parabolic_subgroups",
-      "to": "nilpotent_orbits.bala_carter_classification"
+      "source": "reductive_structure.parabolic_subgroups",
+      "target": "nilpotent_orbits.bala_carter_classification"
     },
     {
-      "from": "reductive_structure.levi_subgroups_and_unipotent_radicals",
-      "to": "nilpotent_orbits.bala_carter_classification"
+      "source": "reductive_structure.levi_subgroups_and_unipotent_radicals",
+      "target": "nilpotent_orbits.bala_carter_classification"
     },
     {
-      "from": "nilpotent_orbits.weighted_dynkin_diagrams",
-      "to": "nilpotent_orbits.bala_carter_classification"
+      "source": "nilpotent_orbits.weighted_dynkin_diagrams",
+      "target": "nilpotent_orbits.bala_carter_classification"
     },
     {
-      "from": "nilpotent_orbits.sl2_triples",
-      "to": "nilpotent_orbits.jacobson_morozov_theorem"
+      "source": "nilpotent_orbits.sl2_triples",
+      "target": "nilpotent_orbits.jacobson_morozov_theorem"
     },
     {
-      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
-      "to": "nilpotent_orbits.lie_algebras_of_reductive_groups"
+      "source": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
+      "target": "nilpotent_orbits.lie_algebras_of_reductive_groups"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "nilpotent_orbits.lie_algebras_of_reductive_groups"
+      "source": "reductive_structure.reductive_groups",
+      "target": "nilpotent_orbits.lie_algebras_of_reductive_groups"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_elements",
-      "to": "nilpotent_orbits.nilpotent_cone"
+      "source": "nilpotent_orbits.nilpotent_elements",
+      "target": "nilpotent_orbits.nilpotent_cone"
     },
     {
-      "from": "nilpotent_orbits.adjoint_action",
-      "to": "nilpotent_orbits.nilpotent_cone"
+      "source": "nilpotent_orbits.adjoint_action",
+      "target": "nilpotent_orbits.nilpotent_cone"
     },
     {
-      "from": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "to": "nilpotent_orbits.nilpotent_elements"
+      "source": "nilpotent_orbits.lie_algebras_of_reductive_groups",
+      "target": "nilpotent_orbits.nilpotent_elements"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_cone",
-      "to": "nilpotent_orbits.nilpotent_orbits"
+      "source": "nilpotent_orbits.nilpotent_cone",
+      "target": "nilpotent_orbits.nilpotent_orbits"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.rational_nilpotent_orbits"
+      "source": "nilpotent_orbits.nilpotent_orbits",
+      "target": "nilpotent_orbits.rational_nilpotent_orbits"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_reductive_groups",
-      "to": "nilpotent_orbits.rational_nilpotent_orbits"
+      "source": "descent_and_forms.rational_forms_of_reductive_groups",
+      "target": "nilpotent_orbits.rational_nilpotent_orbits"
     },
     {
-      "from": "descent_and_forms.galois_cohomology",
-      "to": "nilpotent_orbits.rational_nilpotent_orbits"
+      "source": "descent_and_forms.galois_cohomology",
+      "target": "nilpotent_orbits.rational_nilpotent_orbits"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_elements",
-      "to": "nilpotent_orbits.sl2_triples"
+      "source": "nilpotent_orbits.nilpotent_elements",
+      "target": "nilpotent_orbits.sl2_triples"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.weighted_dynkin_diagrams"
+      "source": "nilpotent_orbits.nilpotent_orbits",
+      "target": "nilpotent_orbits.weighted_dynkin_diagrams"
     },
     {
-      "from": "root_data_and_duality.root_systems",
-      "to": "nilpotent_orbits.weighted_dynkin_diagrams"
+      "source": "root_data_and_duality.root_systems",
+      "target": "nilpotent_orbits.weighted_dynkin_diagrams"
     },
     {
-      "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "reductive_structure.algebraic_tori"
+      "source": "linear_algebraic_groups.linear_algebraic_groups",
+      "target": "reductive_structure.algebraic_tori"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "reductive_structure.borel_fixed_point_theorem"
+      "source": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "target": "reductive_structure.borel_fixed_point_theorem"
     },
     {
-      "from": "linear_algebraic_groups.orbits_are_locally_closed",
-      "to": "reductive_structure.borel_fixed_point_theorem"
+      "source": "linear_algebraic_groups.orbits_are_locally_closed",
+      "target": "reductive_structure.borel_fixed_point_theorem"
     },
     {
-      "from": "reductive_structure.solvable_groups",
-      "to": "reductive_structure.borel_fixed_point_theorem"
+      "source": "reductive_structure.solvable_groups",
+      "target": "reductive_structure.borel_fixed_point_theorem"
     },
     {
-      "from": "reductive_structure.algebraic_tori",
-      "to": "reductive_structure.borel_subgroups"
+      "source": "reductive_structure.algebraic_tori",
+      "target": "reductive_structure.borel_subgroups"
     },
     {
-      "from": "reductive_structure.solvable_groups",
-      "to": "reductive_structure.borel_subgroups"
+      "source": "reductive_structure.solvable_groups",
+      "target": "reductive_structure.borel_subgroups"
     },
     {
-      "from": "linear_algebraic_groups.connected_components",
-      "to": "reductive_structure.borel_subgroups"
+      "source": "linear_algebraic_groups.connected_components",
+      "target": "reductive_structure.borel_subgroups"
     },
     {
-      "from": "reductive_structure.borel_subgroups",
-      "to": "reductive_structure.borel_subgroups_conjugacy_and_parabolics"
+      "source": "reductive_structure.borel_subgroups",
+      "target": "reductive_structure.borel_subgroups_conjugacy_and_parabolics"
     },
     {
-      "from": "reductive_structure.parabolic_subgroups",
-      "to": "reductive_structure.borel_subgroups_conjugacy_and_parabolics"
+      "source": "reductive_structure.parabolic_subgroups",
+      "target": "reductive_structure.borel_subgroups_conjugacy_and_parabolics"
     },
     {
-      "from": "reductive_structure.borel_fixed_point_theorem",
-      "to": "reductive_structure.borel_subgroups_conjugacy_and_parabolics"
+      "source": "reductive_structure.borel_fixed_point_theorem",
+      "target": "reductive_structure.borel_subgroups_conjugacy_and_parabolics"
     },
     {
-      "from": "reductive_structure.maximal_tori_are_conjugate",
-      "to": "reductive_structure.cartan_subgroups_from_maximal_tori"
+      "source": "reductive_structure.maximal_tori_are_conjugate",
+      "target": "reductive_structure.cartan_subgroups_from_maximal_tori"
     },
     {
-      "from": "reductive_structure.maximal_tori",
-      "to": "reductive_structure.cartan_subgroups_from_maximal_tori"
+      "source": "reductive_structure.maximal_tori",
+      "target": "reductive_structure.cartan_subgroups_from_maximal_tori"
     },
     {
-      "from": "reductive_structure.solvable_groups",
-      "to": "reductive_structure.cartan_subgroups_from_maximal_tori"
+      "source": "reductive_structure.solvable_groups",
+      "target": "reductive_structure.cartan_subgroups_from_maximal_tori"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "reductive_structure.central_isogenies"
+      "source": "reductive_structure.reductive_groups",
+      "target": "reductive_structure.central_isogenies"
     },
     {
-      "from": "reductive_structure.algebraic_tori",
-      "to": "reductive_structure.character_and_cocharacter_lattices"
+      "source": "reductive_structure.algebraic_tori",
+      "target": "reductive_structure.character_and_cocharacter_lattices"
     },
     {
-      "from": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group",
-      "to": "reductive_structure.commutative_group_semisimple_unipotent_decomposition"
+      "source": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group",
+      "target": "reductive_structure.commutative_group_semisimple_unipotent_decomposition"
     },
     {
-      "from": "reductive_structure.unipotent_groups",
-      "to": "reductive_structure.commutative_group_semisimple_unipotent_decomposition"
+      "source": "reductive_structure.unipotent_groups",
+      "target": "reductive_structure.commutative_group_semisimple_unipotent_decomposition"
     },
     {
-      "from": "reductive_structure.diagonalizable_groups",
-      "to": "reductive_structure.commutative_group_semisimple_unipotent_decomposition"
+      "source": "reductive_structure.diagonalizable_groups",
+      "target": "reductive_structure.commutative_group_semisimple_unipotent_decomposition"
     },
     {
-      "from": "reductive_structure.solvable_groups",
-      "to": "reductive_structure.connected_solvable_group_structure"
+      "source": "reductive_structure.solvable_groups",
+      "target": "reductive_structure.connected_solvable_group_structure"
     },
     {
-      "from": "reductive_structure.unipotent_groups",
-      "to": "reductive_structure.connected_solvable_group_structure"
+      "source": "reductive_structure.unipotent_groups",
+      "target": "reductive_structure.connected_solvable_group_structure"
     },
     {
-      "from": "reductive_structure.algebraic_tori",
-      "to": "reductive_structure.connected_solvable_group_structure"
+      "source": "reductive_structure.algebraic_tori",
+      "target": "reductive_structure.connected_solvable_group_structure"
     },
     {
-      "from": "reductive_structure.lie_kolchin_theorem",
-      "to": "reductive_structure.connected_solvable_group_structure"
+      "source": "reductive_structure.lie_kolchin_theorem",
+      "target": "reductive_structure.connected_solvable_group_structure"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "reductive_structure.derived_group_center_adjoint_sc_cover"
+      "source": "reductive_structure.reductive_groups",
+      "target": "reductive_structure.derived_group_center_adjoint_sc_cover"
     },
     {
-      "from": "reductive_structure.central_isogenies",
-      "to": "reductive_structure.derived_group_center_adjoint_sc_cover"
+      "source": "reductive_structure.central_isogenies",
+      "target": "reductive_structure.derived_group_center_adjoint_sc_cover"
     },
     {
-      "from": "reductive_structure.diagonalizable_groups",
-      "to": "reductive_structure.diagonalizable_group_characterization"
+      "source": "reductive_structure.diagonalizable_groups",
+      "target": "reductive_structure.diagonalizable_group_characterization"
     },
     {
-      "from": "reductive_structure.character_and_cocharacter_lattices",
-      "to": "reductive_structure.diagonalizable_group_characterization"
+      "source": "reductive_structure.character_and_cocharacter_lattices",
+      "target": "reductive_structure.diagonalizable_group_characterization"
     },
     {
-      "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "reductive_structure.diagonalizable_groups"
+      "source": "linear_algebraic_groups.linear_algebraic_groups",
+      "target": "reductive_structure.diagonalizable_groups"
     },
     {
-      "from": "reductive_structure.character_and_cocharacter_lattices",
-      "to": "reductive_structure.diagonalizable_groups"
+      "source": "reductive_structure.character_and_cocharacter_lattices",
+      "target": "reductive_structure.diagonalizable_groups"
     },
     {
-      "from": "reductive_structure.diagonalizable_group_characterization",
-      "to": "reductive_structure.diagonalizable_groups_antiequivalence"
+      "source": "reductive_structure.diagonalizable_group_characterization",
+      "target": "reductive_structure.diagonalizable_groups_antiequivalence"
     },
     {
-      "from": "reductive_structure.character_and_cocharacter_lattices",
-      "to": "reductive_structure.diagonalizable_groups_antiequivalence"
+      "source": "reductive_structure.character_and_cocharacter_lattices",
+      "target": "reductive_structure.diagonalizable_groups_antiequivalence"
     },
     {
-      "from": "reductive_structure.algebraic_tori",
-      "to": "reductive_structure.diagonalizable_groups_antiequivalence"
+      "source": "reductive_structure.algebraic_tori",
+      "target": "reductive_structure.diagonalizable_groups_antiequivalence"
     },
     {
-      "from": "reductive_structure.lie_kolchin_theorem",
-      "to": "reductive_structure.f_split_solvable_fixed_point_theorem"
+      "source": "reductive_structure.lie_kolchin_theorem",
+      "target": "reductive_structure.f_split_solvable_fixed_point_theorem"
     },
     {
-      "from": "reductive_structure.connected_solvable_group_structure",
-      "to": "reductive_structure.f_split_solvable_fixed_point_theorem"
+      "source": "reductive_structure.connected_solvable_group_structure",
+      "target": "reductive_structure.f_split_solvable_fixed_point_theorem"
     },
     {
-      "from": "reductive_structure.borel_fixed_point_theorem",
-      "to": "reductive_structure.f_split_solvable_fixed_point_theorem"
+      "source": "reductive_structure.borel_fixed_point_theorem",
+      "target": "reductive_structure.f_split_solvable_fixed_point_theorem"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
-      "to": "reductive_structure.f_split_solvable_fixed_point_theorem"
+      "source": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
+      "target": "reductive_structure.f_split_solvable_fixed_point_theorem"
     },
     {
-      "from": "reductive_structure.diagonalizable_groups_antiequivalence",
-      "to": "reductive_structure.f_tori_galois_module_classification"
+      "source": "reductive_structure.diagonalizable_groups_antiequivalence",
+      "target": "reductive_structure.f_tori_galois_module_classification"
     },
     {
-      "from": "reductive_structure.character_and_cocharacter_lattices",
-      "to": "reductive_structure.f_tori_galois_module_classification"
+      "source": "reductive_structure.character_and_cocharacter_lattices",
+      "target": "reductive_structure.f_tori_galois_module_classification"
     },
     {
-      "from": "descent_and_forms.galois_groups_and_descent_data",
-      "to": "reductive_structure.f_tori_galois_module_classification"
+      "source": "descent_and_forms.galois_groups_and_descent_data",
+      "target": "reductive_structure.f_tori_galois_module_classification"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
-      "to": "reductive_structure.f_tori_galois_module_classification"
+      "source": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
+      "target": "reductive_structure.f_tori_galois_module_classification"
     },
     {
-      "from": "reductive_structure.levi_subgroups_and_unipotent_radicals",
-      "to": "reductive_structure.levi_decomposition_of_parabolics"
+      "source": "reductive_structure.levi_subgroups_and_unipotent_radicals",
+      "target": "reductive_structure.levi_decomposition_of_parabolics"
     },
     {
-      "from": "reductive_structure.standard_parabolic_classification",
-      "to": "reductive_structure.levi_decomposition_of_parabolics"
+      "source": "reductive_structure.standard_parabolic_classification",
+      "target": "reductive_structure.levi_decomposition_of_parabolics"
     },
     {
-      "from": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "to": "reductive_structure.levi_decomposition_of_parabolics"
+      "source": "root_data_and_duality.root_subgroups_generate_reductive_group",
+      "target": "reductive_structure.levi_decomposition_of_parabolics"
     },
     {
-      "from": "reductive_structure.parabolic_subgroups",
-      "to": "reductive_structure.levi_subgroups_and_unipotent_radicals"
+      "source": "reductive_structure.parabolic_subgroups",
+      "target": "reductive_structure.levi_subgroups_and_unipotent_radicals"
     },
     {
-      "from": "reductive_structure.unipotent_groups",
-      "to": "reductive_structure.levi_subgroups_and_unipotent_radicals"
+      "source": "reductive_structure.unipotent_groups",
+      "target": "reductive_structure.levi_subgroups_and_unipotent_radicals"
     },
     {
-      "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "reductive_structure.lie_kolchin_theorem"
+      "source": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+      "target": "reductive_structure.lie_kolchin_theorem"
     },
     {
-      "from": "reductive_structure.borel_fixed_point_theorem",
-      "to": "reductive_structure.lie_kolchin_theorem"
+      "source": "reductive_structure.borel_fixed_point_theorem",
+      "target": "reductive_structure.lie_kolchin_theorem"
     },
     {
-      "from": "reductive_structure.solvable_groups",
-      "to": "reductive_structure.lie_kolchin_theorem"
+      "source": "reductive_structure.solvable_groups",
+      "target": "reductive_structure.lie_kolchin_theorem"
     },
     {
-      "from": "reductive_structure.maximal_f_tori_exist",
-      "to": "reductive_structure.maximal_f_split_tori_are_conjugate"
+      "source": "reductive_structure.maximal_f_tori_exist",
+      "target": "reductive_structure.maximal_f_split_tori_are_conjugate"
     },
     {
-      "from": "reductive_structure.f_tori_galois_module_classification",
-      "to": "reductive_structure.maximal_f_split_tori_are_conjugate"
+      "source": "reductive_structure.f_tori_galois_module_classification",
+      "target": "reductive_structure.maximal_f_split_tori_are_conjugate"
     },
     {
-      "from": "reductive_structure.f_split_solvable_fixed_point_theorem",
-      "to": "reductive_structure.maximal_f_split_tori_are_conjugate"
+      "source": "reductive_structure.f_split_solvable_fixed_point_theorem",
+      "target": "reductive_structure.maximal_f_split_tori_are_conjugate"
     },
     {
-      "from": "reductive_structure.parabolic_subgroups",
-      "to": "reductive_structure.maximal_f_split_tori_are_conjugate"
+      "source": "reductive_structure.parabolic_subgroups",
+      "target": "reductive_structure.maximal_f_split_tori_are_conjugate"
     },
     {
-      "from": "reductive_structure.maximal_tori_are_conjugate",
-      "to": "reductive_structure.maximal_f_tori_exist"
+      "source": "reductive_structure.maximal_tori_are_conjugate",
+      "target": "reductive_structure.maximal_f_tori_exist"
     },
     {
-      "from": "reductive_structure.f_tori_galois_module_classification",
-      "to": "reductive_structure.maximal_f_tori_exist"
+      "source": "reductive_structure.f_tori_galois_module_classification",
+      "target": "reductive_structure.maximal_f_tori_exist"
     },
     {
-      "from": "reductive_structure.cartan_subgroups_from_maximal_tori",
-      "to": "reductive_structure.maximal_f_tori_exist"
+      "source": "reductive_structure.cartan_subgroups_from_maximal_tori",
+      "target": "reductive_structure.maximal_f_tori_exist"
     },
     {
-      "from": "descent_and_forms.f_subgroup_field_of_definition",
-      "to": "reductive_structure.maximal_f_tori_exist"
+      "source": "descent_and_forms.f_subgroup_field_of_definition",
+      "target": "reductive_structure.maximal_f_tori_exist"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "reductive_structure.maximal_tori"
+      "source": "reductive_structure.reductive_groups",
+      "target": "reductive_structure.maximal_tori"
     },
     {
-      "from": "reductive_structure.algebraic_tori",
-      "to": "reductive_structure.maximal_tori"
+      "source": "reductive_structure.algebraic_tori",
+      "target": "reductive_structure.maximal_tori"
     },
     {
-      "from": "reductive_structure.maximal_tori",
-      "to": "reductive_structure.maximal_tori_are_conjugate"
+      "source": "reductive_structure.maximal_tori",
+      "target": "reductive_structure.maximal_tori_are_conjugate"
     },
     {
-      "from": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
-      "to": "reductive_structure.maximal_tori_are_conjugate"
+      "source": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
+      "target": "reductive_structure.maximal_tori_are_conjugate"
     },
     {
-      "from": "reductive_structure.connected_solvable_group_structure",
-      "to": "reductive_structure.maximal_tori_are_conjugate"
+      "source": "reductive_structure.connected_solvable_group_structure",
+      "target": "reductive_structure.maximal_tori_are_conjugate"
     },
     {
-      "from": "reductive_structure.levi_decomposition_of_parabolics",
-      "to": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
+      "source": "reductive_structure.levi_decomposition_of_parabolics",
+      "target": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
     },
     {
-      "from": "reductive_structure.maximal_f_split_tori_are_conjugate",
-      "to": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
+      "source": "reductive_structure.maximal_f_split_tori_are_conjugate",
+      "target": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
+      "source": "reductive_structure.reductive_groups",
+      "target": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
     },
     {
-      "from": "descent_and_forms.f_subgroup_field_of_definition",
-      "to": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
+      "source": "descent_and_forms.f_subgroup_field_of_definition",
+      "target": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
     },
     {
-      "from": "reductive_structure.borel_subgroups",
-      "to": "reductive_structure.parabolic_subgroups"
+      "source": "reductive_structure.borel_subgroups",
+      "target": "reductive_structure.parabolic_subgroups"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "reductive_structure.reductive_group_radical_and_derived_group"
+      "source": "reductive_structure.reductive_groups",
+      "target": "reductive_structure.reductive_group_radical_and_derived_group"
     },
     {
-      "from": "reductive_structure.algebraic_tori",
-      "to": "reductive_structure.reductive_group_radical_and_derived_group"
+      "source": "reductive_structure.algebraic_tori",
+      "target": "reductive_structure.reductive_group_radical_and_derived_group"
     },
     {
-      "from": "reductive_structure.semisimple_groups",
-      "to": "reductive_structure.reductive_group_radical_and_derived_group"
+      "source": "reductive_structure.semisimple_groups",
+      "target": "reductive_structure.reductive_group_radical_and_derived_group"
     },
     {
-      "from": "reductive_structure.algebraic_tori",
-      "to": "reductive_structure.reductive_groups"
+      "source": "reductive_structure.algebraic_tori",
+      "target": "reductive_structure.reductive_groups"
     },
     {
-      "from": "reductive_structure.unipotent_groups",
-      "to": "reductive_structure.reductive_groups"
+      "source": "reductive_structure.unipotent_groups",
+      "target": "reductive_structure.reductive_groups"
     },
     {
-      "from": "reductive_structure.solvable_groups",
-      "to": "reductive_structure.reductive_groups"
+      "source": "reductive_structure.solvable_groups",
+      "target": "reductive_structure.reductive_groups"
     },
     {
-      "from": "reductive_structure.levi_subgroups_and_unipotent_radicals",
-      "to": "reductive_structure.reductive_groups"
+      "source": "reductive_structure.levi_subgroups_and_unipotent_radicals",
+      "target": "reductive_structure.reductive_groups"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "reductive_structure.semisimple_groups"
+      "source": "reductive_structure.reductive_groups",
+      "target": "reductive_structure.semisimple_groups"
     },
     {
-      "from": "reductive_structure.unipotent_groups",
-      "to": "reductive_structure.solvable_groups"
+      "source": "reductive_structure.unipotent_groups",
+      "target": "reductive_structure.solvable_groups"
     },
     {
-      "from": "linear_algebraic_groups.connected_components",
-      "to": "reductive_structure.solvable_groups"
+      "source": "linear_algebraic_groups.connected_components",
+      "target": "reductive_structure.solvable_groups"
     },
     {
-      "from": "reductive_structure.parabolic_subgroups",
-      "to": "reductive_structure.standard_parabolic_classification"
+      "source": "reductive_structure.parabolic_subgroups",
+      "target": "reductive_structure.standard_parabolic_classification"
     },
     {
-      "from": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
-      "to": "reductive_structure.standard_parabolic_classification"
+      "source": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
+      "target": "reductive_structure.standard_parabolic_classification"
     },
     {
-      "from": "root_data_and_duality.bruhat_decomposition",
-      "to": "reductive_structure.standard_parabolic_classification"
+      "source": "root_data_and_duality.bruhat_decomposition",
+      "target": "reductive_structure.standard_parabolic_classification"
     },
     {
-      "from": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "to": "reductive_structure.standard_parabolic_classification"
+      "source": "root_data_and_duality.weyl_group_generated_by_reflections",
+      "target": "reductive_structure.standard_parabolic_classification"
     },
     {
-      "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "reductive_structure.unipotent_groups"
+      "source": "linear_algebraic_groups.linear_algebraic_groups",
+      "target": "reductive_structure.unipotent_groups"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.automorphisms_of_root_data"
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.automorphisms_of_root_data"
     },
     {
-      "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.automorphisms_of_root_data"
+      "source": "root_data_and_duality.based_root_data",
+      "target": "root_data_and_duality.automorphisms_of_root_data"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.based_root_data"
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.based_root_data"
     },
     {
-      "from": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "to": "root_data_and_duality.bruhat_decomposition"
+      "source": "root_data_and_duality.weyl_group_generated_by_reflections",
+      "target": "root_data_and_duality.bruhat_decomposition"
     },
     {
-      "from": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "to": "root_data_and_duality.bruhat_decomposition"
+      "source": "root_data_and_duality.root_subgroups_generate_reductive_group",
+      "target": "root_data_and_duality.bruhat_decomposition"
     },
     {
-      "from": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
-      "to": "root_data_and_duality.bruhat_decomposition"
+      "source": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
+      "target": "root_data_and_duality.bruhat_decomposition"
     },
     {
-      "from": "root_data_and_duality.bruhat_decomposition",
-      "to": "root_data_and_duality.bruhat_order_closure_relations"
+      "source": "root_data_and_duality.bruhat_decomposition",
+      "target": "root_data_and_duality.bruhat_order_closure_relations"
     },
     {
-      "from": "root_data_and_duality.coxeter_systems_and_bruhat_order",
-      "to": "root_data_and_duality.bruhat_order_closure_relations"
+      "source": "root_data_and_duality.coxeter_systems_and_bruhat_order",
+      "target": "root_data_and_duality.bruhat_order_closure_relations"
     },
     {
-      "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams"
+      "source": "root_data_and_duality.root_systems",
+      "target": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams"
     },
     {
-      "from": "root_data_and_duality.fundamental_group_of_root_datum",
-      "to": "root_data_and_duality.centers_and_dual_centers"
+      "source": "root_data_and_duality.fundamental_group_of_root_datum",
+      "target": "root_data_and_duality.centers_and_dual_centers"
     },
     {
-      "from": "root_data_and_duality.dual_root_data",
-      "to": "root_data_and_duality.centers_and_dual_centers"
+      "source": "root_data_and_duality.dual_root_data",
+      "target": "root_data_and_duality.centers_and_dual_centers"
     },
     {
-      "from": "reductive_structure.central_isogenies",
-      "to": "root_data_and_duality.central_isogenies_and_duality"
+      "source": "reductive_structure.central_isogenies",
+      "target": "root_data_and_duality.central_isogenies_and_duality"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.central_isogenies_and_duality"
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.central_isogenies_and_duality"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.chevalley_existence_theorem"
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
-      "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.chevalley_existence_theorem"
+      "source": "root_data_and_duality.based_root_data",
+      "target": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
-      "from": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "to": "root_data_and_duality.chevalley_existence_theorem"
+      "source": "root_data_and_duality.chevalley_isomorphism_theorem",
+      "target": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
-      "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "root_data_and_duality.chevalley_existence_theorem"
+      "source": "root_data_and_duality.classification_of_split_reductive_groups",
+      "target": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
-      "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.root_datum_from_reductive_group",
+      "target": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.root_subgroups_generate_reductive_group",
+      "target": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.bruhat_decomposition",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.bruhat_decomposition",
+      "target": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.based_root_data",
+      "target": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.classification_of_split_reductive_groups",
+      "target": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.classification_of_split_reductive_groups"
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.classification_of_split_reductive_groups"
     },
     {
-      "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.classification_of_split_reductive_groups"
+      "source": "root_data_and_duality.based_root_data",
+      "target": "root_data_and_duality.classification_of_split_reductive_groups"
     },
     {
-      "from": "root_data_and_duality.pinnings",
-      "to": "root_data_and_duality.classification_of_split_reductive_groups"
+      "source": "root_data_and_duality.pinnings",
+      "target": "root_data_and_duality.classification_of_split_reductive_groups"
     },
     {
-      "from": "foundational_inputs.basic_combinatorics",
-      "to": "root_data_and_duality.coxeter_systems_and_bruhat_order"
+      "source": "foundational_inputs.basic_combinatorics",
+      "target": "root_data_and_duality.coxeter_systems_and_bruhat_order"
     },
     {
-      "from": "root_data_and_duality.weyl_groups",
-      "to": "root_data_and_duality.coxeter_systems_and_bruhat_order"
+      "source": "root_data_and_duality.weyl_groups",
+      "target": "root_data_and_duality.coxeter_systems_and_bruhat_order"
     },
     {
-      "from": "root_data_and_duality.dual_root_data",
-      "to": "root_data_and_duality.dual_reductive_groups"
+      "source": "root_data_and_duality.dual_root_data",
+      "target": "root_data_and_duality.dual_reductive_groups"
     },
     {
-      "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "root_data_and_duality.dual_reductive_groups"
+      "source": "root_data_and_duality.classification_of_split_reductive_groups",
+      "target": "root_data_and_duality.dual_reductive_groups"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.dual_root_data"
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.dual_root_data"
     },
     {
-      "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.dual_root_systems"
+      "source": "root_data_and_duality.root_systems",
+      "target": "root_data_and_duality.dual_root_systems"
     },
     {
-      "from": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "to": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.chevalley_isomorphism_theorem",
+      "target": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
-      "to": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
+      "target": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.pinnings",
-      "to": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.pinnings",
+      "target": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
+      "source": "root_data_and_duality.classification_of_split_reductive_groups",
+      "target": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.fundamental_group_of_root_datum"
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.fundamental_group_of_root_datum"
     },
     {
-      "from": "root_data_and_duality.automorphisms_of_root_data",
-      "to": "root_data_and_duality.galois_action_on_root_data"
+      "source": "root_data_and_duality.automorphisms_of_root_data",
+      "target": "root_data_and_duality.galois_action_on_root_data"
     },
     {
-      "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
+      "source": "root_data_and_duality.root_datum_from_reductive_group",
+      "target": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
     },
     {
-      "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
+      "source": "root_data_and_duality.galois_action_on_root_data",
+      "target": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
     },
     {
-      "from": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
-      "to": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
+      "source": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
+      "target": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
     },
     {
-      "from": "descent_and_forms.rational_forms_of_reductive_groups",
-      "to": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
+      "source": "descent_and_forms.rational_forms_of_reductive_groups",
+      "target": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
     },
     {
-      "from": "root_data_and_duality.langlands_dual_groups",
-      "to": "root_data_and_duality.l_groups"
+      "source": "root_data_and_duality.langlands_dual_groups",
+      "target": "root_data_and_duality.l_groups"
     },
     {
-      "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "root_data_and_duality.l_groups"
+      "source": "root_data_and_duality.galois_action_on_root_data",
+      "target": "root_data_and_duality.l_groups"
     },
     {
-      "from": "root_data_and_duality.l_groups",
-      "to": "root_data_and_duality.l_morphisms"
+      "source": "root_data_and_duality.l_groups",
+      "target": "root_data_and_duality.l_morphisms"
     },
     {
-      "from": "root_data_and_duality.dual_reductive_groups",
-      "to": "root_data_and_duality.l_morphisms"
+      "source": "root_data_and_duality.dual_reductive_groups",
+      "target": "root_data_and_duality.l_morphisms"
     },
     {
-      "from": "root_data_and_duality.pinned_dual_groups",
-      "to": "root_data_and_duality.langlands_dual_groups"
+      "source": "root_data_and_duality.pinned_dual_groups",
+      "target": "root_data_and_duality.langlands_dual_groups"
     },
     {
-      "from": "root_data_and_duality.dual_reductive_groups",
-      "to": "root_data_and_duality.pinned_dual_groups"
+      "source": "root_data_and_duality.dual_reductive_groups",
+      "target": "root_data_and_duality.pinned_dual_groups"
     },
     {
-      "from": "root_data_and_duality.pinnings",
-      "to": "root_data_and_duality.pinned_dual_groups"
+      "source": "root_data_and_duality.pinnings",
+      "target": "root_data_and_duality.pinned_dual_groups"
     },
     {
-      "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.pinnings"
+      "source": "root_data_and_duality.based_root_data",
+      "target": "root_data_and_duality.pinnings"
     },
     {
-      "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.pinnings"
+      "source": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "target": "root_data_and_duality.pinnings"
     },
     {
-      "from": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
-      "to": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
+      "source": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
+      "target": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
     },
     {
-      "from": "descent_and_forms.quasi_split_forms",
-      "to": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
+      "source": "descent_and_forms.quasi_split_forms",
+      "target": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
     },
     {
-      "from": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
-      "to": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
+      "source": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
+      "target": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
     },
     {
-      "from": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
-      "to": "root_data_and_duality.rational_bruhat_decomposition"
+      "source": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
+      "target": "root_data_and_duality.rational_bruhat_decomposition"
     },
     {
-      "from": "root_data_and_duality.relative_weyl_group_generated_by_reflections",
-      "to": "root_data_and_duality.rational_bruhat_decomposition"
+      "source": "root_data_and_duality.relative_weyl_group_generated_by_reflections",
+      "target": "root_data_and_duality.rational_bruhat_decomposition"
     },
     {
-      "from": "root_data_and_duality.bruhat_decomposition",
-      "to": "root_data_and_duality.rational_bruhat_decomposition"
+      "source": "root_data_and_duality.bruhat_decomposition",
+      "target": "root_data_and_duality.rational_bruhat_decomposition"
     },
     {
-      "from": "reductive_structure.maximal_f_split_tori_are_conjugate",
-      "to": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
+      "source": "reductive_structure.maximal_f_split_tori_are_conjugate",
+      "target": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
+      "source": "reductive_structure.reductive_groups",
+      "target": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
     },
     {
-      "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
+      "source": "root_data_and_duality.root_datum_from_reductive_group",
+      "target": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
     },
     {
-      "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
+      "source": "root_data_and_duality.galois_action_on_root_data",
+      "target": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
     },
     {
-      "from": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
-      "to": "root_data_and_duality.relative_weyl_group_generated_by_reflections"
+      "source": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
+      "target": "root_data_and_duality.relative_weyl_group_generated_by_reflections"
     },
     {
-      "from": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "to": "root_data_and_duality.relative_weyl_group_generated_by_reflections"
+      "source": "root_data_and_duality.weyl_group_generated_by_reflections",
+      "target": "root_data_and_duality.relative_weyl_group_generated_by_reflections"
     },
     {
-      "from": "reductive_structure.maximal_f_split_tori_are_conjugate",
-      "to": "root_data_and_duality.relative_weyl_group_generated_by_reflections"
+      "source": "reductive_structure.maximal_f_split_tori_are_conjugate",
+      "target": "root_data_and_duality.relative_weyl_group_generated_by_reflections"
     },
     {
-      "from": "reductive_structure.character_and_cocharacter_lattices",
-      "to": "root_data_and_duality.root_data"
+      "source": "reductive_structure.character_and_cocharacter_lattices",
+      "target": "root_data_and_duality.root_data"
     },
     {
-      "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.root_data"
+      "source": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "target": "root_data_and_duality.root_data"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "root_data_and_duality.root_datum_from_reductive_group"
+      "source": "reductive_structure.reductive_groups",
+      "target": "root_data_and_duality.root_datum_from_reductive_group"
     },
     {
-      "from": "reductive_structure.maximal_tori_are_conjugate",
-      "to": "root_data_and_duality.root_datum_from_reductive_group"
+      "source": "reductive_structure.maximal_tori_are_conjugate",
+      "target": "root_data_and_duality.root_datum_from_reductive_group"
     },
     {
-      "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.root_datum_from_reductive_group"
+      "source": "root_data_and_duality.root_data",
+      "target": "root_data_and_duality.root_datum_from_reductive_group"
     },
     {
-      "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.root_datum_from_reductive_group"
+      "source": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "target": "root_data_and_duality.root_datum_from_reductive_group"
     },
     {
-      "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.root_subgroups_generate_reductive_group"
+      "source": "root_data_and_duality.root_datum_from_reductive_group",
+      "target": "root_data_and_duality.root_subgroups_generate_reductive_group"
     },
     {
-      "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.root_subgroups_generate_reductive_group"
+      "source": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "target": "root_data_and_duality.root_subgroups_generate_reductive_group"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "root_data_and_duality.root_subgroups_generate_reductive_group"
+      "source": "reductive_structure.reductive_groups",
+      "target": "root_data_and_duality.root_subgroups_generate_reductive_group"
     },
     {
-      "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.root_systems"
+      "source": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "target": "root_data_and_duality.root_systems"
     },
     {
-      "from": "root_data_and_duality.weyl_groups",
-      "to": "root_data_and_duality.root_systems"
+      "source": "root_data_and_duality.weyl_groups",
+      "target": "root_data_and_duality.root_systems"
     },
     {
-      "from": "reductive_structure.reductive_groups",
-      "to": "root_data_and_duality.roots_coroots_and_root_subgroups"
+      "source": "reductive_structure.reductive_groups",
+      "target": "root_data_and_duality.roots_coroots_and_root_subgroups"
     },
     {
-      "from": "reductive_structure.maximal_tori",
-      "to": "root_data_and_duality.roots_coroots_and_root_subgroups"
+      "source": "reductive_structure.maximal_tori",
+      "target": "root_data_and_duality.roots_coroots_and_root_subgroups"
     },
     {
-      "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.weyl_group_generated_by_reflections"
+      "source": "root_data_and_duality.root_datum_from_reductive_group",
+      "target": "root_data_and_duality.weyl_group_generated_by_reflections"
     },
     {
-      "from": "root_data_and_duality.weyl_groups",
-      "to": "root_data_and_duality.weyl_group_generated_by_reflections"
+      "source": "root_data_and_duality.weyl_groups",
+      "target": "root_data_and_duality.weyl_group_generated_by_reflections"
     },
     {
-      "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.weyl_group_generated_by_reflections"
+      "source": "root_data_and_duality.root_systems",
+      "target": "root_data_and_duality.weyl_group_generated_by_reflections"
     },
     {
-      "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.weyl_groups"
+      "source": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "target": "root_data_and_duality.weyl_groups"
     }
   ]
 }

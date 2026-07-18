@@ -7,7 +7,7 @@ primary_topic: linear_algebraic_groups
 topics:
 - linear_algebraic_groups
 uses:
-- linear_algebraic_groups.algebraic_group_definition
+- affine_group_schemes.algebraic_group_definition
 - linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras
 source:
   spans:

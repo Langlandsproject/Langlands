@@ -8,7 +8,7 @@ topics:
 - linear_algebraic_groups
 uses:
 - foundational_inputs.affine_schemes
-- linear_algebraic_groups.affine_algebraic_groups
+- affine_group_schemes.affine_algebraic_groups
 verification:
   definition: accepted
   proof: not_applicable
@@ -118,4 +118,4 @@ For \(\operatorname{GL}_n\): all coincide and equal \(n^2\).
 ## Prerequisite Topics
 
 - [[node:foundational_inputs.affine_schemes|Affine Schemes]]
-- [[node:linear_algebraic_groups.affine_algebraic_groups|Affine Algebraic Groups]]
+- [[node:affine_group_schemes.affine_algebraic_groups|Affine Algebraic Groups]]

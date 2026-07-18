@@ -7,7 +7,7 @@ primary_topic: linear_algebraic_groups
 topics:
 - linear_algebraic_groups
 uses:
-- linear_algebraic_groups.general_linear_group_scheme
+- affine_group_schemes.general_linear_group_scheme
 lean:
   declarations:
   - Langlands.AlgebraicGeometry.Examples.GLV

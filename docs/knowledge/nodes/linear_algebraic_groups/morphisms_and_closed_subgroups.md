@@ -7,7 +7,7 @@ primary_topic: linear_algebraic_groups
 topics:
 - linear_algebraic_groups
 uses:
-- linear_algebraic_groups.affine_algebraic_groups
+- affine_group_schemes.affine_algebraic_groups
 verification:
   definition: accepted
   proof: not_applicable
@@ -99,4 +99,4 @@ group over a field embeds as a closed subgroup of \(\operatorname{GL}_n\)]]).
 
 ## Prerequisite Topics
 
-- [[node:linear_algebraic_groups.affine_algebraic_groups|Affine Algebraic Groups]]
+- [[node:affine_group_schemes.affine_algebraic_groups|Affine Algebraic Groups]]

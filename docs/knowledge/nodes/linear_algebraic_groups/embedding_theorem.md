@@ -7,12 +7,12 @@ primary_topic: linear_algebraic_groups
 topics:
 - linear_algebraic_groups
 uses:
-- linear_algebraic_groups.algebraic_group_definition
-- linear_algebraic_groups.faithful_linear_representation_definition
-- linear_algebraic_groups.hopf_spec_essential_image_affine
-- linear_algebraic_groups.representation_equals_comodule
-- linear_algebraic_groups.finite_dim_subcomodule_lemma
-- linear_algebraic_groups.regular_representation_example
+- affine_group_schemes.algebraic_group_definition
+- affine_group_schemes.faithful_linear_representation_definition
+- affine_group_schemes.hopf_spec_essential_image_affine
+- affine_group_schemes.representation_equals_comodule
+- affine_group_schemes.finite_dim_subcomodule_lemma
+- affine_group_schemes.regular_representation_example
 verification:
   statement: accepted
   proof: accepted
@@ -29,9 +29,9 @@ tags:
 # Embedding Theorem for Algebraic Groups
 
 Let \(k\) be a field and \(G\) an
-[[node:linear_algebraic_groups.algebraic_group_definition|algebraic group]]
+[[node:affine_group_schemes.algebraic_group_definition|algebraic group]]
 over \(\operatorname{Spec} k\). Then \(G\) admits a
-[[node:linear_algebraic_groups.faithful_linear_representation_definition|faithful finite-dimensional representation]];
+[[node:affine_group_schemes.faithful_linear_representation_definition|faithful finite-dimensional representation]];
 equivalently, \(G\) is isomorphic to a closed subgroup scheme of some
 \(\operatorname{GL}_n\). This proves
 [[node:linear_algebraic_groups.affine_finite_type_faithful_representation|the statement-form embedding theorem]].
@@ -39,7 +39,7 @@ equivalently, \(G\) is isomorphic to a closed subgroup scheme of some
 *Proof.*  
 
 *Step 1: replace \(G\) with a Hopf algebra.* By
-[[node:linear_algebraic_groups.hopf_spec_essential_image_affine|the essential-image characterization of Spec]],
+[[node:affine_group_schemes.hopf_spec_essential_image_affine|the essential-image characterization of Spec]],
 \(G\) is isomorphic to \(\operatorname{Spec} A\) for some commutative
 Hopf \(k\)-algebra \(A\). Locally of finite type plus affine plus base
 \(\operatorname{Spec} k\) implies \(A\) is finitely generated as a
@@ -48,15 +48,15 @@ Hopf \(k\)-algebra \(A\). Locally of finite type plus affine plus base
 *Step 2: find an algebra-generating sub-comodule of the regular representation.*
 Choose a finite set \(a_1, \dots, a_m\) of \(k\)-algebra generators of
 \(A\). By the corollary to
-[[node:linear_algebraic_groups.finite_dim_subcomodule_lemma|the finite-generation lemma]],
+[[node:affine_group_schemes.finite_dim_subcomodule_lemma|the finite-generation lemma]],
 there is a finite-dimensional sub-comodule
 \(W \subseteq A\) of the
-[[node:linear_algebraic_groups.regular_representation_example|regular representation]]
+[[node:affine_group_schemes.regular_representation_example|regular representation]]
 containing each \(a_i\). In particular, \(W\) generates \(A\) as a
 \(k\)-algebra.
 
 *Step 3: convert the comodule into a representation.* By
-[[node:linear_algebraic_groups.representation_equals_comodule|the equivalence of representations and comodules]],
+[[node:affine_group_schemes.representation_equals_comodule|the equivalence of representations and comodules]],
 the comodule structure \(\Delta|_W : W \to W \otimes_k A\) corresponds
 to a morphism of group schemes
 
