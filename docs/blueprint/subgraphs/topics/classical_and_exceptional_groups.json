@@ -1,52 +1,89 @@
 {
-  "topic": "classical_and_exceptional_groups",
+  "topic": {
+    "id": "classical_and_exceptional_groups",
+    "title": "Classical And Exceptional Groups",
+    "href": "classical_and_exceptional_groups/index.html",
+    "parent": null,
+    "node_count": 2,
+    "descendant_node_count": 2
+  },
+  "counts": {
+    "nodes": 2,
+    "edges": 0,
+    "boundary_edges": 4
+  },
   "nodes": [
     {
       "id": "classical_and_exceptional_groups.classical_groups",
       "title": "Classical Groups",
       "kind": "topic",
       "status": "admitted",
-      "label": "Classical Groups",
-      "primary_topic": "classical_and_exceptional_groups"
+      "href": "classical_and_exceptional_groups/classical_and_exceptional_groups_classical_groups.html",
+      "payload": "node_payloads/classical_and_exceptional_groups_classical_groups.json"
     },
     {
       "id": "classical_and_exceptional_groups.exceptional_groups",
       "title": "Exceptional Groups",
       "kind": "topic",
       "status": "admitted",
-      "label": "Exceptional Groups",
-      "primary_topic": "classical_and_exceptional_groups"
+      "href": "classical_and_exceptional_groups/classical_and_exceptional_groups_exceptional_groups.html",
+      "payload": "node_payloads/classical_and_exceptional_groups_exceptional_groups.json"
     }
   ],
-  "internal_edges": [],
+  "edges": [],
+  "boundary_topics": [
+    {
+      "id": "linear_algebraic_groups",
+      "title": "Linear Algebraic Groups",
+      "href": "linear_algebraic_groups/index.html",
+      "node_count": 30
+    },
+    {
+      "id": "reductive_structure",
+      "title": "Reductive Structure",
+      "href": "reductive_structure/index.html",
+      "node_count": 28
+    },
+    {
+      "id": "root_data_and_duality",
+      "title": "Root Data And Duality",
+      "href": "root_data_and_duality/index.html",
+      "node_count": 34
+    }
+  ],
   "boundary_edges": [
     {
-      "source": "linear_algebraic_groups.basic_examples",
-      "target": "classical_and_exceptional_groups.classical_groups"
+      "from": "topic:root_data_and_duality",
+      "to": "classical_and_exceptional_groups.exceptional_groups",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 3
     },
     {
-      "source": "reductive_structure.reductive_groups",
-      "target": "classical_and_exceptional_groups.classical_groups"
+      "from": "topic:linear_algebraic_groups",
+      "to": "classical_and_exceptional_groups.classical_groups",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 1
     },
     {
-      "source": "root_data_and_duality.root_data",
-      "target": "classical_and_exceptional_groups.classical_groups"
+      "from": "topic:reductive_structure",
+      "to": "classical_and_exceptional_groups.classical_groups",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 1
     },
     {
-      "source": "root_data_and_duality.classification_of_split_reductive_groups",
-      "target": "classical_and_exceptional_groups.classical_groups"
-    },
-    {
-      "source": "root_data_and_duality.root_systems",
-      "target": "classical_and_exceptional_groups.exceptional_groups"
-    },
-    {
-      "source": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
-      "target": "classical_and_exceptional_groups.exceptional_groups"
-    },
-    {
-      "source": "root_data_and_duality.classification_of_split_reductive_groups",
-      "target": "classical_and_exceptional_groups.exceptional_groups"
+      "from": "topic:root_data_and_duality",
+      "to": "classical_and_exceptional_groups.classical_groups",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 2
     }
-  ]
+  ],
+  "keywords": [],
+  "proof_plan_attachments": [],
+  "child_topics": [],
+  "child_topic_nodes": [],
+  "inlined_child_topics": []
 }

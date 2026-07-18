@@ -1,349 +1,413 @@
 {
-  "topic": "descent_and_forms",
+  "topic": {
+    "id": "descent_and_forms",
+    "title": "Descent And Forms",
+    "href": "descent_and_forms/index.html",
+    "parent": null,
+    "node_count": 18,
+    "descendant_node_count": 18
+  },
+  "counts": {
+    "nodes": 18,
+    "edges": 22,
+    "boundary_edges": 15
+  },
   "nodes": [
     {
       "id": "descent_and_forms.extended_groups_for_real_forms",
       "title": "Extended Groups for Real Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Extended Groups for Real Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_extended_groups_for_real_forms.html",
+      "payload": "node_payloads/descent_and_forms_extended_groups_for_real_forms.json"
     },
     {
       "id": "descent_and_forms.inner_forms",
       "title": "Inner Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Inner Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_inner_forms.html",
+      "payload": "node_payloads/descent_and_forms_inner_forms.json"
     },
     {
       "id": "descent_and_forms.kaletha_refined_inner_forms",
       "title": "Kaletha Refined Inner Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Kaletha Refined Inner Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_kaletha_refined_inner_forms.html",
+      "payload": "node_payloads/descent_and_forms_kaletha_refined_inner_forms.json"
     },
     {
       "id": "descent_and_forms.lang_theorem_finite_fields",
       "title": "Lang Theorem for Connected Algebraic Groups over Finite Fields",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Lang Theorem for Connected Algebraic Groups over Finite Fiel",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_lang_theorem_finite_fields.html"
     },
     {
       "id": "descent_and_forms.outer_forms",
       "title": "Outer Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Outer Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_outer_forms.html",
+      "payload": "node_payloads/descent_and_forms_outer_forms.json"
     },
     {
       "id": "descent_and_forms.pure_inner_twists",
       "title": "Pure Inner Twists",
       "kind": "topic",
       "status": "admitted",
-      "label": "Pure Inner Twists",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_pure_inner_twists.html",
+      "payload": "node_payloads/descent_and_forms_pure_inner_twists.json"
     },
     {
       "id": "descent_and_forms.quasi_split_forms",
       "title": "Quasi-Split Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Quasi-Split Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_quasi_split_forms.html",
+      "payload": "node_payloads/descent_and_forms_quasi_split_forms.json"
     },
     {
       "id": "descent_and_forms.rational_forms_of_reductive_groups",
       "title": "Rational Forms of Reductive Groups",
       "kind": "topic",
       "status": "admitted",
-      "label": "Rational Forms of Reductive Groups",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_rational_forms_of_reductive_groups.html",
+      "payload": "node_payloads/descent_and_forms_rational_forms_of_reductive_groups.json"
     },
     {
       "id": "descent_and_forms.real_forms",
       "title": "Real Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Real Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_real_forms.html",
+      "payload": "node_payloads/descent_and_forms_real_forms.json"
     },
     {
       "id": "descent_and_forms.rigid_inner_forms",
       "title": "Rigid Inner Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Rigid Inner Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_rigid_inner_forms.html",
+      "payload": "node_payloads/descent_and_forms_rigid_inner_forms.json"
     },
     {
       "id": "descent_and_forms.rigid_inner_twists",
       "title": "Rigid Inner Twists",
       "kind": "topic",
       "status": "admitted",
-      "label": "Rigid Inner Twists",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_rigid_inner_twists.html",
+      "payload": "node_payloads/descent_and_forms_rigid_inner_twists.json"
     },
     {
       "id": "descent_and_forms.strong_inner_forms",
       "title": "Strong Inner Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Strong Inner Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_strong_inner_forms.html",
+      "payload": "node_payloads/descent_and_forms_strong_inner_forms.json"
     },
     {
       "id": "descent_and_forms.strong_real_forms",
       "title": "Strong Real Forms",
       "kind": "topic",
       "status": "admitted",
-      "label": "Strong Real Forms",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_strong_real_forms.html",
+      "payload": "node_payloads/descent_and_forms_strong_real_forms.json"
     },
     {
       "id": "descent_and_forms.twisted_conjugacy_classes",
       "title": "Twisted Conjugacy Classes",
       "kind": "topic",
       "status": "admitted",
-      "label": "Twisted Conjugacy Classes",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_twisted_conjugacy_classes.html",
+      "payload": "node_payloads/descent_and_forms_twisted_conjugacy_classes.json"
     },
     {
       "id": "descent_and_forms.vogan_diagrams",
       "title": "Vogan Diagrams",
       "kind": "topic",
       "status": "admitted",
-      "label": "Vogan Diagrams",
-      "primary_topic": "descent_and_forms"
+      "href": "descent_and_forms/descent_and_forms_vogan_diagrams.html",
+      "payload": "node_payloads/descent_and_forms_vogan_diagrams.json"
     },
     {
       "id": "root_data_and_duality.f_split_chevalley_isomorphism_theorem",
       "title": "Chevalley Isomorphism Theorem for F-Split Groups",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Chevalley Isomorphism Theorem for F-Split Groups",
-      "primary_topic": "descent_and_forms"
+      "href": "root_data_and_duality/root_data_and_duality_f_split_chevalley_isomorphism_theorem.html"
     },
     {
       "id": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
       "title": "Indexed Root Datum of an F-Reductive Group",
       "kind": "definition",
       "status": "admitted",
-      "label": "Indexed Root Datum of an F-Reductive Group",
-      "primary_topic": "descent_and_forms"
+      "href": "root_data_and_duality/root_data_and_duality_indexed_root_datum_of_f_reductive_group.html"
     },
     {
       "id": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum",
       "title": "Quasi-Split and Anisotropic Groups via the Indexed Root Datum",
       "kind": "theorem",
       "status": "admitted",
-      "label": "Quasi-Split and Anisotropic Groups via the Indexed Root Datu",
-      "primary_topic": "descent_and_forms"
+      "href": "root_data_and_duality/root_data_and_duality_quasi_split_and_anisotropic_via_indexed_root_datum.html"
     }
   ],
-  "internal_edges": [
+  "edges": [
     {
-      "source": "descent_and_forms.real_forms",
-      "target": "descent_and_forms.extended_groups_for_real_forms"
+      "from": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
+      "to": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.inner_forms",
-      "target": "descent_and_forms.extended_groups_for_real_forms"
+      "from": "descent_and_forms.quasi_split_forms",
+      "to": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.rational_forms_of_reductive_groups",
-      "target": "descent_and_forms.inner_forms"
+      "from": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
+      "to": "root_data_and_duality.f_split_chevalley_isomorphism_theorem",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.rigid_inner_forms",
-      "target": "descent_and_forms.kaletha_refined_inner_forms"
+      "from": "descent_and_forms.rational_forms_of_reductive_groups",
+      "to": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.twisted_conjugacy_classes",
-      "target": "descent_and_forms.lang_theorem_finite_fields"
+      "from": "descent_and_forms.pure_inner_twists",
+      "to": "descent_and_forms.rigid_inner_twists",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.rational_forms_of_reductive_groups",
-      "target": "descent_and_forms.outer_forms"
+      "from": "descent_and_forms.rational_forms_of_reductive_groups",
+      "to": "descent_and_forms.real_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.inner_forms",
-      "target": "descent_and_forms.pure_inner_twists"
+      "from": "descent_and_forms.inner_forms",
+      "to": "descent_and_forms.real_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.rational_forms_of_reductive_groups",
-      "target": "descent_and_forms.quasi_split_forms"
+      "from": "descent_and_forms.twisted_conjugacy_classes",
+      "to": "descent_and_forms.lang_theorem_finite_fields",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.rational_forms_of_reductive_groups",
-      "target": "descent_and_forms.real_forms"
+      "from": "descent_and_forms.rational_forms_of_reductive_groups",
+      "to": "descent_and_forms.outer_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.inner_forms",
-      "target": "descent_and_forms.real_forms"
+      "from": "descent_and_forms.strong_real_forms",
+      "to": "descent_and_forms.strong_inner_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.rigid_inner_twists",
-      "target": "descent_and_forms.rigid_inner_forms"
+      "from": "descent_and_forms.inner_forms",
+      "to": "descent_and_forms.strong_inner_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.inner_forms",
-      "target": "descent_and_forms.rigid_inner_forms"
+      "from": "descent_and_forms.rational_forms_of_reductive_groups",
+      "to": "descent_and_forms.inner_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.pure_inner_twists",
-      "target": "descent_and_forms.rigid_inner_twists"
+      "from": "descent_and_forms.rational_forms_of_reductive_groups",
+      "to": "descent_and_forms.quasi_split_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.strong_real_forms",
-      "target": "descent_and_forms.strong_inner_forms"
+      "from": "descent_and_forms.rigid_inner_twists",
+      "to": "descent_and_forms.rigid_inner_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.inner_forms",
-      "target": "descent_and_forms.strong_inner_forms"
+      "from": "descent_and_forms.inner_forms",
+      "to": "descent_and_forms.rigid_inner_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.extended_groups_for_real_forms",
-      "target": "descent_and_forms.strong_real_forms"
+      "from": "descent_and_forms.inner_forms",
+      "to": "descent_and_forms.pure_inner_twists",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.real_forms",
-      "target": "descent_and_forms.strong_real_forms"
+      "from": "descent_and_forms.rigid_inner_forms",
+      "to": "descent_and_forms.kaletha_refined_inner_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.real_forms",
-      "target": "descent_and_forms.vogan_diagrams"
+      "from": "descent_and_forms.real_forms",
+      "to": "descent_and_forms.vogan_diagrams",
+      "kind": "uses"
     },
     {
-      "source": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
-      "target": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
+      "from": "descent_and_forms.extended_groups_for_real_forms",
+      "to": "descent_and_forms.strong_real_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.rational_forms_of_reductive_groups",
-      "target": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
+      "from": "descent_and_forms.real_forms",
+      "to": "descent_and_forms.strong_real_forms",
+      "kind": "uses"
     },
     {
-      "source": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
-      "target": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
+      "from": "descent_and_forms.real_forms",
+      "to": "descent_and_forms.extended_groups_for_real_forms",
+      "kind": "uses"
     },
     {
-      "source": "descent_and_forms.quasi_split_forms",
-      "target": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
+      "from": "descent_and_forms.inner_forms",
+      "to": "descent_and_forms.extended_groups_for_real_forms",
+      "kind": "uses"
+    }
+  ],
+  "boundary_topics": [
+    {
+      "id": "kottwitz_structures",
+      "title": "Kottwitz Structures",
+      "href": "kottwitz_structures/index.html",
+      "node_count": 9
+    },
+    {
+      "id": "linear_algebraic_groups",
+      "title": "Linear Algebraic Groups",
+      "href": "linear_algebraic_groups/index.html",
+      "node_count": 30
+    },
+    {
+      "id": "nilpotent_orbits",
+      "title": "Nilpotent Orbits",
+      "href": "nilpotent_orbits/index.html",
+      "node_count": 10
+    },
+    {
+      "id": "reductive_structure",
+      "title": "Reductive Structure",
+      "href": "reductive_structure/index.html",
+      "node_count": 28
+    },
+    {
+      "id": "root_data_and_duality",
+      "title": "Root Data And Duality",
+      "href": "root_data_and_duality/index.html",
+      "node_count": 34
     }
   ],
   "boundary_edges": [
     {
-      "source": "linear_algebraic_groups.automorphism_groups",
-      "target": "descent_and_forms.extended_groups_for_real_forms"
+      "from": "topic:root_data_and_duality",
+      "to": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 1
     },
     {
-      "source": "kottwitz_structures.kottwitz_map_on_b_of_g",
-      "target": "descent_and_forms.kaletha_refined_inner_forms"
+      "from": "topic:root_data_and_duality",
+      "to": "root_data_and_duality.f_split_chevalley_isomorphism_theorem",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 3
     },
     {
-      "source": "kottwitz_structures.b_of_g",
-      "target": "descent_and_forms.kaletha_refined_inner_forms"
+      "from": "topic:root_data_and_duality",
+      "to": "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 3
     },
     {
-      "source": "descent_and_forms.galois_cohomology",
-      "target": "descent_and_forms.lang_theorem_finite_fields"
+      "from": "descent_and_forms.rational_forms_of_reductive_groups",
+      "to": "topic:nilpotent_orbits",
+      "kind": "boundary_dependent",
+      "topic": "nilpotent_orbits",
+      "count": 1
     },
     {
-      "source": "linear_algebraic_groups.lie_algebra_of_algebraic_group",
-      "target": "descent_and_forms.lang_theorem_finite_fields"
+      "from": "topic:linear_algebraic_groups",
+      "to": "descent_and_forms.rigid_inner_twists",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 1
     },
     {
-      "source": "linear_algebraic_groups.identity_component_normal_finite_index",
-      "target": "descent_and_forms.lang_theorem_finite_fields"
+      "from": "topic:kottwitz_structures",
+      "to": "descent_and_forms.rigid_inner_twists",
+      "kind": "boundary_dependency",
+      "topic": "kottwitz_structures",
+      "count": 2
     },
     {
-      "source": "descent_and_forms.nonabelian_h1",
-      "target": "descent_and_forms.pure_inner_twists"
+      "from": "topic:linear_algebraic_groups",
+      "to": "descent_and_forms.lang_theorem_finite_fields",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 3
     },
     {
-      "source": "descent_and_forms.cocycles_and_twisting",
-      "target": "descent_and_forms.pure_inner_twists"
+      "from": "topic:linear_algebraic_groups",
+      "to": "descent_and_forms.pure_inner_twists",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 2
     },
     {
-      "source": "descent_and_forms.forms_of_algebraic_groups",
-      "target": "descent_and_forms.rational_forms_of_reductive_groups"
+      "from": "topic:linear_algebraic_groups",
+      "to": "descent_and_forms.rational_forms_of_reductive_groups",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 2
     },
     {
-      "source": "reductive_structure.reductive_groups",
-      "target": "descent_and_forms.rational_forms_of_reductive_groups"
+      "from": "topic:reductive_structure",
+      "to": "descent_and_forms.rational_forms_of_reductive_groups",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 1
     },
     {
-      "source": "root_data_and_duality.root_data",
-      "target": "descent_and_forms.rational_forms_of_reductive_groups"
+      "from": "topic:root_data_and_duality",
+      "to": "descent_and_forms.rational_forms_of_reductive_groups",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 1
     },
     {
-      "source": "descent_and_forms.galois_cohomology",
-      "target": "descent_and_forms.rational_forms_of_reductive_groups"
+      "from": "topic:kottwitz_structures",
+      "to": "descent_and_forms.kaletha_refined_inner_forms",
+      "kind": "boundary_dependency",
+      "topic": "kottwitz_structures",
+      "count": 2
     },
     {
-      "source": "descent_and_forms.galois_cohomology",
-      "target": "descent_and_forms.rigid_inner_twists"
+      "from": "topic:root_data_and_duality",
+      "to": "descent_and_forms.vogan_diagrams",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 2
     },
     {
-      "source": "kottwitz_structures.algebraic_fundamental_group",
-      "target": "descent_and_forms.rigid_inner_twists"
+      "from": "topic:linear_algebraic_groups",
+      "to": "descent_and_forms.twisted_conjugacy_classes",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 2
     },
     {
-      "source": "kottwitz_structures.kottwitz_homomorphism",
-      "target": "descent_and_forms.rigid_inner_twists"
-    },
-    {
-      "source": "descent_and_forms.galois_cohomology",
-      "target": "descent_and_forms.twisted_conjugacy_classes"
-    },
-    {
-      "source": "linear_algebraic_groups.conjugacy_classes",
-      "target": "descent_and_forms.twisted_conjugacy_classes"
-    },
-    {
-      "source": "root_data_and_duality.root_data",
-      "target": "descent_and_forms.vogan_diagrams"
-    },
-    {
-      "source": "root_data_and_duality.galois_action_on_root_data",
-      "target": "descent_and_forms.vogan_diagrams"
-    },
-    {
-      "source": "descent_and_forms.rational_forms_of_reductive_groups",
-      "target": "nilpotent_orbits.rational_nilpotent_orbits"
-    },
-    {
-      "source": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "target": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
-    },
-    {
-      "source": "root_data_and_duality.pinnings",
-      "target": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
-    },
-    {
-      "source": "root_data_and_duality.classification_of_split_reductive_groups",
-      "target": "root_data_and_duality.f_split_chevalley_isomorphism_theorem"
-    },
-    {
-      "source": "root_data_and_duality.root_datum_from_reductive_group",
-      "target": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
-    },
-    {
-      "source": "root_data_and_duality.galois_action_on_root_data",
-      "target": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
-    },
-    {
-      "source": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
-      "target": "root_data_and_duality.indexed_root_datum_of_f_reductive_group"
-    },
-    {
-      "source": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
-      "target": "root_data_and_duality.quasi_split_and_anisotropic_via_indexed_root_datum"
+      "from": "topic:linear_algebraic_groups",
+      "to": "descent_and_forms.extended_groups_for_real_forms",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 1
     }
-  ]
+  ],
+  "keywords": [],
+  "proof_plan_attachments": [],
+  "child_topics": [],
+  "child_topic_nodes": [],
+  "inlined_child_topics": []
 }

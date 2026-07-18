@@ -1,181 +1,274 @@
 {
-  "topic": "kottwitz_structures",
+  "topic": {
+    "id": "kottwitz_structures",
+    "title": "Kottwitz Structures",
+    "href": "kottwitz_structures/index.html",
+    "parent": null,
+    "node_count": 9,
+    "descendant_node_count": 9
+  },
+  "counts": {
+    "nodes": 9,
+    "edges": 12,
+    "boundary_edges": 12
+  },
   "nodes": [
     {
       "id": "kottwitz_structures.admissible_sets",
       "title": "Admissible Sets",
       "kind": "topic",
       "status": "admitted",
-      "label": "Admissible Sets",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_admissible_sets.html",
+      "payload": "node_payloads/kottwitz_structures_admissible_sets.json"
     },
     {
       "id": "kottwitz_structures.algebraic_fundamental_group",
       "title": "Algebraic Fundamental Group",
       "kind": "topic",
       "status": "admitted",
-      "label": "Algebraic Fundamental Group",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_algebraic_fundamental_group.html",
+      "payload": "node_payloads/kottwitz_structures_algebraic_fundamental_group.json"
     },
     {
       "id": "kottwitz_structures.b_of_g",
       "title": "B(G)",
       "kind": "topic",
       "status": "admitted",
-      "label": "B(G)",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_b_of_g.html",
+      "payload": "node_payloads/kottwitz_structures_b_of_g.json"
     },
     {
       "id": "kottwitz_structures.basic_sigma_conjugacy_classes",
       "title": "Basic Sigma-Conjugacy Classes",
       "kind": "topic",
       "status": "admitted",
-      "label": "Basic Sigma-Conjugacy Classes",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_basic_sigma_conjugacy_classes.html",
+      "payload": "node_payloads/kottwitz_structures_basic_sigma_conjugacy_classes.json"
     },
     {
       "id": "kottwitz_structures.isocrystals_with_g_structure",
       "title": "Isocrystals with G-Structure",
       "kind": "topic",
       "status": "admitted",
-      "label": "Isocrystals with G-Structure",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_isocrystals_with_g_structure.html",
+      "payload": "node_payloads/kottwitz_structures_isocrystals_with_g_structure.json"
     },
     {
       "id": "kottwitz_structures.kottwitz_homomorphism",
       "title": "Kottwitz Homomorphism",
       "kind": "topic",
       "status": "admitted",
-      "label": "Kottwitz Homomorphism",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_kottwitz_homomorphism.html",
+      "payload": "node_payloads/kottwitz_structures_kottwitz_homomorphism.json"
     },
     {
       "id": "kottwitz_structures.kottwitz_map_on_b_of_g",
       "title": "Kottwitz Map on B(G)",
       "kind": "topic",
       "status": "admitted",
-      "label": "Kottwitz Map on B(G)",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_kottwitz_map_on_b_of_g.html",
+      "payload": "node_payloads/kottwitz_structures_kottwitz_map_on_b_of_g.json"
     },
     {
       "id": "kottwitz_structures.newton_map",
       "title": "Newton Map",
       "kind": "topic",
       "status": "admitted",
-      "label": "Newton Map",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_newton_map.html",
+      "payload": "node_payloads/kottwitz_structures_newton_map.json"
     },
     {
       "id": "kottwitz_structures.sigma_conjugacy_classes",
       "title": "Sigma-Conjugacy Classes",
       "kind": "topic",
       "status": "admitted",
-      "label": "Sigma-Conjugacy Classes",
-      "primary_topic": "kottwitz_structures"
+      "href": "kottwitz_structures/kottwitz_structures_sigma_conjugacy_classes.html",
+      "payload": "node_payloads/kottwitz_structures_sigma_conjugacy_classes.json"
     }
   ],
-  "internal_edges": [
+  "edges": [
     {
-      "source": "kottwitz_structures.b_of_g",
-      "target": "kottwitz_structures.admissible_sets"
+      "from": "kottwitz_structures.b_of_g",
+      "to": "kottwitz_structures.newton_map",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.sigma_conjugacy_classes",
-      "target": "kottwitz_structures.b_of_g"
+      "from": "kottwitz_structures.newton_map",
+      "to": "kottwitz_structures.basic_sigma_conjugacy_classes",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.kottwitz_homomorphism",
-      "target": "kottwitz_structures.b_of_g"
+      "from": "kottwitz_structures.kottwitz_map_on_b_of_g",
+      "to": "kottwitz_structures.basic_sigma_conjugacy_classes",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.algebraic_fundamental_group",
-      "target": "kottwitz_structures.b_of_g"
+      "from": "kottwitz_structures.b_of_g",
+      "to": "kottwitz_structures.admissible_sets",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.newton_map",
-      "target": "kottwitz_structures.basic_sigma_conjugacy_classes"
+      "from": "kottwitz_structures.algebraic_fundamental_group",
+      "to": "kottwitz_structures.kottwitz_homomorphism",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.kottwitz_map_on_b_of_g",
-      "target": "kottwitz_structures.basic_sigma_conjugacy_classes"
+      "from": "kottwitz_structures.sigma_conjugacy_classes",
+      "to": "kottwitz_structures.b_of_g",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.b_of_g",
-      "target": "kottwitz_structures.isocrystals_with_g_structure"
+      "from": "kottwitz_structures.kottwitz_homomorphism",
+      "to": "kottwitz_structures.b_of_g",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.sigma_conjugacy_classes",
-      "target": "kottwitz_structures.isocrystals_with_g_structure"
+      "from": "kottwitz_structures.algebraic_fundamental_group",
+      "to": "kottwitz_structures.b_of_g",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.algebraic_fundamental_group",
-      "target": "kottwitz_structures.kottwitz_homomorphism"
+      "from": "kottwitz_structures.b_of_g",
+      "to": "kottwitz_structures.isocrystals_with_g_structure",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.b_of_g",
-      "target": "kottwitz_structures.kottwitz_map_on_b_of_g"
+      "from": "kottwitz_structures.sigma_conjugacy_classes",
+      "to": "kottwitz_structures.isocrystals_with_g_structure",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.algebraic_fundamental_group",
-      "target": "kottwitz_structures.kottwitz_map_on_b_of_g"
+      "from": "kottwitz_structures.b_of_g",
+      "to": "kottwitz_structures.kottwitz_map_on_b_of_g",
+      "kind": "uses"
     },
     {
-      "source": "kottwitz_structures.b_of_g",
-      "target": "kottwitz_structures.newton_map"
+      "from": "kottwitz_structures.algebraic_fundamental_group",
+      "to": "kottwitz_structures.kottwitz_map_on_b_of_g",
+      "kind": "uses"
+    }
+  ],
+  "boundary_topics": [
+    {
+      "id": "buildings_and_parahorics",
+      "title": "Buildings And Parahorics",
+      "href": "buildings_and_parahorics/index.html",
+      "node_count": 16
+    },
+    {
+      "id": "descent_and_forms",
+      "title": "Descent And Forms",
+      "href": "descent_and_forms/index.html",
+      "node_count": 18
+    },
+    {
+      "id": "foundational_inputs",
+      "title": "Foundational Inputs",
+      "href": "foundational_inputs/index.html",
+      "node_count": 8
+    },
+    {
+      "id": "reductive_structure",
+      "title": "Reductive Structure",
+      "href": "reductive_structure/index.html",
+      "node_count": 28
+    },
+    {
+      "id": "root_data_and_duality",
+      "title": "Root Data And Duality",
+      "href": "root_data_and_duality/index.html",
+      "node_count": 34
     }
   ],
   "boundary_edges": [
     {
-      "source": "kottwitz_structures.kottwitz_map_on_b_of_g",
-      "target": "descent_and_forms.kaletha_refined_inner_forms"
+      "from": "kottwitz_structures.algebraic_fundamental_group",
+      "to": "topic:descent_and_forms",
+      "kind": "boundary_dependent",
+      "topic": "descent_and_forms",
+      "count": 1
     },
     {
-      "source": "kottwitz_structures.b_of_g",
-      "target": "descent_and_forms.kaletha_refined_inner_forms"
+      "from": "kottwitz_structures.kottwitz_homomorphism",
+      "to": "topic:descent_and_forms",
+      "kind": "boundary_dependent",
+      "topic": "descent_and_forms",
+      "count": 1
     },
     {
-      "source": "kottwitz_structures.algebraic_fundamental_group",
-      "target": "descent_and_forms.rigid_inner_twists"
+      "from": "kottwitz_structures.kottwitz_map_on_b_of_g",
+      "to": "topic:descent_and_forms",
+      "kind": "boundary_dependent",
+      "topic": "descent_and_forms",
+      "count": 1
     },
     {
-      "source": "kottwitz_structures.kottwitz_homomorphism",
-      "target": "descent_and_forms.rigid_inner_twists"
+      "from": "kottwitz_structures.b_of_g",
+      "to": "topic:descent_and_forms",
+      "kind": "boundary_dependent",
+      "topic": "descent_and_forms",
+      "count": 1
     },
     {
-      "source": "buildings_and_parahorics.affine_weyl_groups",
-      "target": "kottwitz_structures.admissible_sets"
+      "from": "topic:root_data_and_duality",
+      "to": "kottwitz_structures.newton_map",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 1
     },
     {
-      "source": "reductive_structure.reductive_groups",
-      "target": "kottwitz_structures.algebraic_fundamental_group"
+      "from": "topic:reductive_structure",
+      "to": "kottwitz_structures.algebraic_fundamental_group",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 1
     },
     {
-      "source": "root_data_and_duality.root_data",
-      "target": "kottwitz_structures.algebraic_fundamental_group"
+      "from": "topic:root_data_and_duality",
+      "to": "kottwitz_structures.algebraic_fundamental_group",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 2
     },
     {
-      "source": "root_data_and_duality.fundamental_group_of_root_datum",
-      "target": "kottwitz_structures.algebraic_fundamental_group"
+      "from": "topic:buildings_and_parahorics",
+      "to": "kottwitz_structures.admissible_sets",
+      "kind": "boundary_dependency",
+      "topic": "buildings_and_parahorics",
+      "count": 1
     },
     {
-      "source": "root_data_and_duality.galois_action_on_root_data",
-      "target": "kottwitz_structures.kottwitz_homomorphism"
+      "from": "topic:root_data_and_duality",
+      "to": "kottwitz_structures.kottwitz_homomorphism",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 1
     },
     {
-      "source": "foundational_inputs.local_fields",
-      "target": "kottwitz_structures.kottwitz_homomorphism"
+      "from": "topic:foundational_inputs",
+      "to": "kottwitz_structures.kottwitz_homomorphism",
+      "kind": "boundary_dependency",
+      "topic": "foundational_inputs",
+      "count": 1
     },
     {
-      "source": "root_data_and_duality.root_data",
-      "target": "kottwitz_structures.newton_map"
+      "from": "topic:foundational_inputs",
+      "to": "kottwitz_structures.sigma_conjugacy_classes",
+      "kind": "boundary_dependency",
+      "topic": "foundational_inputs",
+      "count": 1
     },
     {
-      "source": "foundational_inputs.local_fields",
-      "target": "kottwitz_structures.sigma_conjugacy_classes"
-    },
-    {
-      "source": "buildings_and_parahorics.reductive_groups_over_local_fields",
-      "target": "kottwitz_structures.sigma_conjugacy_classes"
+      "from": "topic:buildings_and_parahorics",
+      "to": "kottwitz_structures.sigma_conjugacy_classes",
+      "kind": "boundary_dependency",
+      "topic": "buildings_and_parahorics",
+      "count": 1
     }
-  ]
+  ],
+  "keywords": [],
+  "proof_plan_attachments": [],
+  "child_topics": [],
+  "child_topic_nodes": [],
+  "inlined_child_topics": []
 }
