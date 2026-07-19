@@ -1,226 +1,685 @@
 {
   "topic": {
     "id": "reductive_structure",
-    "title": "Reductive Structure",
-    "href": "reductive_structure/index.html",
+    "title": "Reductive Group Structure",
+    "href": "blueprint/reductive_structure/index.html",
     "parent": null,
     "node_count": 28,
     "descendant_node_count": 28
   },
-  "counts": {
-    "nodes": 28,
-    "edges": 57,
-    "boundary_edges": 34
-  },
   "nodes": [
     {
-      "id": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable",
-      "title": "Unipotent Subgroups Are Triangularizable",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "linear_algebraic_groups/linear_algebraic_groups_unipotent_subgroups_are_triangularizable.html"
-    },
-    {
-      "id": "reductive_structure.algebraic_tori",
-      "title": "Algebraic Tori",
+      "id": "reductive_structure.reductive_groups",
+      "title": "Reductive Groups",
       "kind": "topic",
       "status": "admitted",
-      "href": "reductive_structure/reductive_structure_algebraic_tori.html",
-      "payload": "node_payloads/reductive_structure_algebraic_tori.json"
-    },
-    {
-      "id": "reductive_structure.borel_fixed_point_theorem",
-      "title": "Borel Fixed Point Theorem",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_borel_fixed_point_theorem.html"
-    },
-    {
-      "id": "reductive_structure.borel_subgroups",
-      "title": "Borel Subgroups",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_borel_subgroups.html",
-      "payload": "node_payloads/reductive_structure_borel_subgroups.json"
-    },
-    {
-      "id": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
-      "title": "Borel Subgroups Are Conjugate and Control Parabolics",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_borel_subgroups_conjugacy_and_parabolics.html"
-    },
-    {
-      "id": "reductive_structure.cartan_subgroups_from_maximal_tori",
-      "title": "Cartan Subgroups from Maximal Tori",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_cartan_subgroups_from_maximal_tori.html"
-    },
-    {
-      "id": "reductive_structure.central_isogenies",
-      "title": "Central Isogenies",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_central_isogenies.html",
-      "payload": "node_payloads/reductive_structure_central_isogenies.json"
-    },
-    {
-      "id": "reductive_structure.character_and_cocharacter_lattices",
-      "title": "Character and Cocharacter Lattices",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_character_and_cocharacter_lattices.html",
-      "payload": "node_payloads/reductive_structure_character_and_cocharacter_lattices.json"
-    },
-    {
-      "id": "reductive_structure.commutative_group_semisimple_unipotent_decomposition",
-      "title": "Commutative Algebraic Groups Split into Semisimple and Unipotent Parts",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_commutative_group_semisimple_unipotent_decomposition.html"
-    },
-    {
-      "id": "reductive_structure.connected_solvable_group_structure",
-      "title": "Structure of Connected Solvable Algebraic Groups",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_connected_solvable_group_structure.html"
-    },
-    {
-      "id": "reductive_structure.derived_group_center_adjoint_sc_cover",
-      "title": "Derived Group, Center, Adjoint Group, and Simply Connected Cover",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_derived_group_center_adjoint_sc_cover.html",
-      "payload": "node_payloads/reductive_structure_derived_group_center_adjoint_sc_cover.json"
-    },
-    {
-      "id": "reductive_structure.diagonalizable_group_characterization",
-      "title": "Characterization of Diagonalizable Groups",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_diagonalizable_group_characterization.html"
-    },
-    {
-      "id": "reductive_structure.diagonalizable_groups",
-      "title": "Diagonalizable Groups",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_diagonalizable_groups.html",
-      "payload": "node_payloads/reductive_structure_diagonalizable_groups.json"
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "reductive-groups",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.algebraic_tori",
+        "reductive_structure.unipotent_groups",
+        "reductive_structure.solvable_groups",
+        "reductive_structure.levi_subgroups_and_unipotent_radicals"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_reductive_groups.html",
+      "payload": {}
     },
     {
       "id": "reductive_structure.diagonalizable_groups_antiequivalence",
       "title": "Diagonalizable Groups Are Dual to Character Groups",
       "kind": "theorem",
       "status": "admitted",
-      "href": "reductive_structure/reductive_structure_diagonalizable_groups_antiequivalence.html"
-    },
-    {
-      "id": "reductive_structure.f_split_solvable_fixed_point_theorem",
-      "title": "Fixed Point Theorem for F-Split Solvable Groups",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_f_split_solvable_fixed_point_theorem.html"
-    },
-    {
-      "id": "reductive_structure.f_tori_galois_module_classification",
-      "title": "F-Tori Are Classified by Galois Modules",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_f_tori_galois_module_classification.html"
-    },
-    {
-      "id": "reductive_structure.levi_subgroups_and_unipotent_radicals",
-      "title": "Levi Subgroups and Unipotent Radicals",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_levi_subgroups_and_unipotent_radicals.html",
-      "payload": "node_payloads/reductive_structure_levi_subgroups_and_unipotent_radicals.json"
-    },
-    {
-      "id": "reductive_structure.lie_kolchin_theorem",
-      "title": "Lie-Kolchin Theorem",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_lie_kolchin_theorem.html"
-    },
-    {
-      "id": "reductive_structure.maximal_f_split_tori_are_conjugate",
-      "title": "Maximal F-Split Tori Are G(F)-Conjugate",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_maximal_f_split_tori_are_conjugate.html"
-    },
-    {
-      "id": "reductive_structure.maximal_f_tori_exist",
-      "title": "Maximal F-Tori Exist in Connected F-Groups",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_maximal_f_tori_exist.html"
-    },
-    {
-      "id": "reductive_structure.maximal_tori",
-      "title": "Maximal Tori",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_maximal_tori.html",
-      "payload": "node_payloads/reductive_structure_maximal_tori.json"
-    },
-    {
-      "id": "reductive_structure.maximal_tori_are_conjugate",
-      "title": "Maximal Tori Are Conjugate",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_maximal_tori_are_conjugate.html"
-    },
-    {
-      "id": "reductive_structure.parabolic_subgroups",
-      "title": "Parabolic Subgroups",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_parabolic_subgroups.html",
-      "payload": "node_payloads/reductive_structure_parabolic_subgroups.json"
-    },
-    {
-      "id": "reductive_structure.reductive_group_radical_and_derived_group",
-      "title": "Radical and Derived Group of a Reductive Group",
-      "kind": "theorem",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_reductive_group_radical_and_derived_group.html"
-    },
-    {
-      "id": "reductive_structure.reductive_groups",
-      "title": "Reductive Groups",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_reductive_groups.html",
-      "payload": "node_payloads/reductive_structure_reductive_groups.json"
-    },
-    {
-      "id": "reductive_structure.semisimple_groups",
-      "title": "Semisimple Groups",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "reductive_structure/reductive_structure_semisimple_groups.html",
-      "payload": "node_payloads/reductive_structure_semisimple_groups.json"
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "root_data_and_duality"
+      ],
+      "tags": [
+        "springer",
+        "diagonalizable-group",
+        "character-lattice",
+        "torus",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.diagonalizable_group_characterization",
+        "reductive_structure.character_and_cocharacter_lattices",
+        "reductive_structure.algebraic_tori"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_diagonalizable_groups_antiequivalence.html",
+      "payload": {}
     },
     {
       "id": "reductive_structure.solvable_groups",
       "title": "Solvable Groups",
       "kind": "topic",
       "status": "admitted",
-      "href": "reductive_structure/reductive_structure_solvable_groups.html",
-      "payload": "node_payloads/reductive_structure_solvable_groups.json"
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "solvable-groups",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.unipotent_groups",
+        "linear_algebraic_groups.connected_components"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_solvable_groups.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.derived_group_center_adjoint_sc_cover",
+      "title": "Derived Group, Center, Adjoint Group, and Simply Connected Cover",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "derived-group",
+        "center",
+        "adjoint-group",
+        "simply-connected-cover",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.reductive_groups",
+        "reductive_structure.central_isogenies"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_derived_group_center_adjoint_sc_cover.html",
+      "payload": {}
     },
     {
       "id": "reductive_structure.unipotent_groups",
       "title": "Unipotent Groups",
       "kind": "topic",
       "status": "admitted",
-      "href": "reductive_structure/reductive_structure_unipotent_groups.html",
-      "payload": "node_payloads/reductive_structure_unipotent_groups.json"
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "unipotent-groups",
+        "reductive-structure"
+      ],
+      "uses": [
+        "linear_algebraic_groups.linear_algebraic_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_unipotent_groups.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.maximal_tori",
+      "title": "Maximal Tori",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "maximal-tori",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.reductive_groups",
+        "reductive_structure.algebraic_tori"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_maximal_tori.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.diagonalizable_group_characterization",
+      "title": "Characterization of Diagonalizable Groups",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "springer",
+        "diagonalizable-group",
+        "character",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.diagonalizable_groups",
+        "reductive_structure.character_and_cocharacter_lattices"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_diagonalizable_group_characterization.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.borel_fixed_point_theorem",
+      "title": "Borel Fixed Point Theorem",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "springer",
+        "borel",
+        "fixed-point",
+        "solvable-group",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+        "linear_algebraic_groups.orbits_are_locally_closed",
+        "reductive_structure.solvable_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_borel_fixed_point_theorem.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.diagonalizable_groups",
+      "title": "Diagonalizable Groups",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "diagonalizable-groups",
+        "reductive-structure"
+      ],
+      "uses": [
+        "linear_algebraic_groups.linear_algebraic_groups",
+        "reductive_structure.character_and_cocharacter_lattices"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_diagonalizable_groups.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.maximal_tori_are_conjugate",
+      "title": "Maximal Tori Are Conjugate",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "springer",
+        "maximal-torus",
+        "conjugacy",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.maximal_tori",
+        "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
+        "reductive_structure.connected_solvable_group_structure"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_maximal_tori_are_conjugate.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.central_isogenies",
+      "title": "Central Isogenies",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "central-isogenies",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.reductive_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_central_isogenies.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.levi_subgroups_and_unipotent_radicals",
+      "title": "Levi Subgroups and Unipotent Radicals",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "levi-subgroups",
+        "unipotent-radicals",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.parabolic_subgroups",
+        "reductive_structure.unipotent_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_levi_subgroups_and_unipotent_radicals.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.parabolic_subgroups",
+      "title": "Parabolic Subgroups",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "parabolic-subgroups",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.borel_subgroups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_parabolic_subgroups.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.reductive_group_radical_and_derived_group",
+      "title": "Radical and Derived Group of a Reductive Group",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "springer",
+        "reductive-group",
+        "radical",
+        "derived-group",
+        "semisimple",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.reductive_groups",
+        "reductive_structure.algebraic_tori",
+        "reductive_structure.semisimple_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_reductive_group_radical_and_derived_group.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.maximal_f_tori_exist",
+      "title": "Maximal F-Tori Exist in Connected F-Groups",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "descent_and_forms"
+      ],
+      "tags": [
+        "springer",
+        "f-torus",
+        "maximal-torus",
+        "cartan-subgroup",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.maximal_tori_are_conjugate",
+        "reductive_structure.f_tori_galois_module_classification",
+        "reductive_structure.cartan_subgroups_from_maximal_tori",
+        "descent_and_forms.f_subgroup_field_of_definition"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_maximal_f_tori_exist.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.character_and_cocharacter_lattices",
+      "title": "Character and Cocharacter Lattices",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "characters",
+        "cocharacters",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.algebraic_tori"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_character_and_cocharacter_lattices.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
+      "title": "Borel Subgroups Are Conjugate and Control Parabolics",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "springer",
+        "borel",
+        "parabolic",
+        "conjugacy",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.borel_subgroups",
+        "reductive_structure.parabolic_subgroups",
+        "reductive_structure.borel_fixed_point_theorem"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_borel_subgroups_conjugacy_and_parabolics.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.maximal_f_split_tori_are_conjugate",
+      "title": "Maximal F-Split Tori Are G(F)-Conjugate",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "descent_and_forms"
+      ],
+      "tags": [
+        "springer",
+        "f-split-torus",
+        "conjugacy",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.maximal_f_tori_exist",
+        "reductive_structure.f_tori_galois_module_classification",
+        "reductive_structure.f_split_solvable_fixed_point_theorem",
+        "reductive_structure.parabolic_subgroups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_maximal_f_split_tori_are_conjugate.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.semisimple_groups",
+      "title": "Semisimple Groups",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "semisimple-groups",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.reductive_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_semisimple_groups.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.connected_solvable_group_structure",
+      "title": "Structure of Connected Solvable Algebraic Groups",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "springer",
+        "solvable-group",
+        "unipotent-radical",
+        "torus",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.solvable_groups",
+        "reductive_structure.unipotent_groups",
+        "reductive_structure.algebraic_tori",
+        "reductive_structure.lie_kolchin_theorem"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_connected_solvable_group_structure.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.f_tori_galois_module_classification",
+      "title": "F-Tori Are Classified by Galois Modules",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "descent_and_forms"
+      ],
+      "tags": [
+        "springer",
+        "torus",
+        "galois-module",
+        "f-group",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.diagonalizable_groups_antiequivalence",
+        "reductive_structure.character_and_cocharacter_lattices",
+        "descent_and_forms.galois_groups_and_descent_data",
+        "descent_and_forms.rational_forms_of_linear_algebraic_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_f_tori_galois_module_classification.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.borel_subgroups",
+      "title": "Borel Subgroups",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "borel-subgroups",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.algebraic_tori",
+        "reductive_structure.solvable_groups",
+        "linear_algebraic_groups.connected_components"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_borel_subgroups.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.commutative_group_semisimple_unipotent_decomposition",
+      "title": "Commutative Algebraic Groups Split into Semisimple and Unipotent Parts",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "linear_algebraic_groups"
+      ],
+      "tags": [
+        "springer",
+        "commutative-group",
+        "semisimple",
+        "unipotent",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "linear_algebraic_groups.jordan_decomposition_in_algebraic_group",
+        "reductive_structure.unipotent_groups",
+        "reductive_structure.diagonalizable_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_commutative_group_semisimple_unipotent_decomposition.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.lie_kolchin_theorem",
+      "title": "Lie-Kolchin Theorem",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "linear_algebraic_groups"
+      ],
+      "tags": [
+        "springer",
+        "lie-kolchin",
+        "solvable-group",
+        "triangularization",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
+        "reductive_structure.borel_fixed_point_theorem",
+        "reductive_structure.solvable_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_lie_kolchin_theorem.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.f_split_solvable_fixed_point_theorem",
+      "title": "Fixed Point Theorem for F-Split Solvable Groups",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "descent_and_forms"
+      ],
+      "tags": [
+        "springer",
+        "f-split",
+        "solvable-group",
+        "fixed-point",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.lie_kolchin_theorem",
+        "reductive_structure.connected_solvable_group_structure",
+        "reductive_structure.borel_fixed_point_theorem",
+        "descent_and_forms.rational_forms_of_linear_algebraic_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_f_split_solvable_fixed_point_theorem.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.cartan_subgroups_from_maximal_tori",
+      "title": "Cartan Subgroups from Maximal Tori",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "springer",
+        "cartan-subgroup",
+        "maximal-torus",
+        "theorem",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.maximal_tori_are_conjugate",
+        "reductive_structure.maximal_tori",
+        "reductive_structure.solvable_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_cartan_subgroups_from_maximal_tori.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.algebraic_tori",
+      "title": "Algebraic Tori",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure"
+      ],
+      "tags": [
+        "tori",
+        "reductive-structure"
+      ],
+      "uses": [
+        "linear_algebraic_groups.linear_algebraic_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_algebraic_tori.html",
+      "payload": {}
+    },
+    {
+      "id": "linear_algebraic_groups.unipotent_subgroups_are_triangularizable",
+      "title": "Unipotent Subgroups Are Triangularizable",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "reductive_structure"
+      ],
+      "tags": [
+        "springer",
+        "unipotent",
+        "triangularization",
+        "theorem",
+        "linear-algebraic-groups"
+      ],
+      "uses": [
+        "affine_group_schemes.algebraic_group_definition",
+        "linear_algebraic_groups.embedding_theorem",
+        "reductive_structure.unipotent_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_linear_algebraic_groups_unipotent_subgroups_are_triangularizable.html",
+      "payload": {}
     }
   ],
   "edges": [
@@ -512,57 +971,51 @@
   ],
   "boundary_topics": [
     {
-      "id": "affine_group_schemes",
-      "title": "Affine Group Schemes",
-      "href": "affine_group_schemes/index.html",
-      "node_count": 38
-    },
-    {
       "id": "bd_covers",
-      "title": "Bd Covers",
-      "href": "bd_covers/index.html",
+      "title": "Brylinski-Deligne and Metaplectic Covers",
+      "href": "blueprint/bd_covers/index.html",
       "node_count": 6
     },
     {
       "id": "buildings_and_parahorics",
-      "title": "Buildings And Parahorics",
-      "href": "buildings_and_parahorics/index.html",
+      "title": "Buildings and Parahorics",
+      "href": "blueprint/buildings_and_parahorics/index.html",
       "node_count": 16
     },
     {
       "id": "classical_and_exceptional_groups",
-      "title": "Classical And Exceptional Groups",
-      "href": "classical_and_exceptional_groups/index.html",
+      "title": "Classical and Exceptional Groups",
+      "href": "blueprint/classical_and_exceptional_groups/index.html",
       "node_count": 2
     },
     {
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
-      "href": "conjugacy_classes/index.html",
+      "href": "blueprint/conjugacy_classes/index.html",
       "node_count": 20
     },
     {
       "id": "descent_and_forms",
-      "title": "Descent And Forms",
-      "href": "descent_and_forms/index.html",
+      "title": "Galois Descent, Cohomology, and Forms",
+      "href": "blueprint/descent_and_forms/index.html",
       "node_count": 18
     },
     {
       "id": "kottwitz_structures",
       "title": "Kottwitz Structures",
-      "href": "kottwitz_structures/index.html",
+      "href": "blueprint/kottwitz_structures/index.html",
       "node_count": 9
     },
     {
       "id": "linear_algebraic_groups",
       "title": "Linear Algebraic Groups",
-      "href": "linear_algebraic_groups/index.html",
+      "href": "blueprint/linear_algebraic_groups/index.html",
       "node_count": 30
     },
     {
       "id": "root_data_and_duality",
-      "title": "Root Data And Duality",
-      "href": "root_data_and_duality/index.html",
+      "title": "Root Data and Duality",
+      "href": "blueprint/root_data_and_duality/index.html",
       "node_count": 41
     }
   ],
@@ -598,7 +1051,7 @@
     {
       "from": "reductive_structure.levi_subgroups_and_unipotent_radicals",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 1
     },
@@ -612,14 +1065,14 @@
     {
       "from": "reductive_structure.maximal_f_split_tori_are_conjugate",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 3
     },
     {
       "from": "reductive_structure.reductive_groups",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 5
     },
@@ -668,98 +1121,98 @@
     {
       "from": "reductive_structure.parabolic_subgroups",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 1
     },
     {
       "from": "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 2
     },
     {
       "from": "reductive_structure.reductive_groups",
       "to": "topic:classical_and_exceptional_groups",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "classical_and_exceptional_groups",
       "count": 1
     },
     {
       "from": "reductive_structure.central_isogenies",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 1
     },
     {
       "from": "reductive_structure.character_and_cocharacter_lattices",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 1
     },
     {
       "from": "reductive_structure.maximal_tori",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 1
     },
     {
       "from": "reductive_structure.algebraic_tori",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 1
     },
     {
       "from": "reductive_structure.maximal_tori_are_conjugate",
       "to": "topic:root_data_and_duality",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 1
     },
     {
       "from": "reductive_structure.reductive_groups",
       "to": "topic:bd_covers",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "bd_covers",
       "count": 1
     },
     {
       "from": "reductive_structure.maximal_tori",
       "to": "topic:conjugacy_classes",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "conjugacy_classes",
       "count": 3
     },
     {
       "from": "reductive_structure.reductive_groups",
       "to": "topic:conjugacy_classes",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "conjugacy_classes",
       "count": 7
     },
     {
       "from": "reductive_structure.borel_subgroups",
       "to": "topic:conjugacy_classes",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "conjugacy_classes",
       "count": 1
     },
     {
       "from": "reductive_structure.parabolic_subgroups",
       "to": "topic:conjugacy_classes",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "conjugacy_classes",
       "count": 1
     },
     {
       "from": "reductive_structure.levi_subgroups_and_unipotent_radicals",
       "to": "topic:conjugacy_classes",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "conjugacy_classes",
       "count": 1
     },
@@ -780,28 +1233,28 @@
     {
       "from": "reductive_structure.reductive_groups",
       "to": "topic:descent_and_forms",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "descent_and_forms",
       "count": 1
     },
     {
       "from": "reductive_structure.reductive_groups",
       "to": "topic:buildings_and_parahorics",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "buildings_and_parahorics",
       "count": 3
     },
     {
       "from": "reductive_structure.parabolic_subgroups",
       "to": "topic:buildings_and_parahorics",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "buildings_and_parahorics",
       "count": 2
     },
     {
       "from": "reductive_structure.reductive_groups",
       "to": "topic:kottwitz_structures",
-      "kind": "boundary_dependent",
+      "kind": "boundary_dependency",
       "topic": "kottwitz_structures",
       "count": 1
     }

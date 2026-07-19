@@ -1,92 +1,84 @@
 {
   "topics": [
     {
-      "id": "bd_covers",
-      "title": "Bd Covers",
-      "depth": 1,
-      "parent": null,
-      "node_count": 6,
-      "href": "bd_covers/index.html"
-    },
-    {
-      "id": "buildings_and_parahorics",
-      "title": "Buildings And Parahorics",
-      "depth": 1,
-      "parent": null,
-      "node_count": 16,
-      "href": "buildings_and_parahorics/index.html"
-    },
-    {
-      "id": "classical_and_exceptional_groups",
-      "title": "Classical And Exceptional Groups",
-      "depth": 1,
-      "parent": null,
-      "node_count": 2,
-      "href": "classical_and_exceptional_groups/index.html"
-    },
-    {
-      "id": "descent_and_forms",
-      "title": "Descent And Forms",
-      "depth": 1,
-      "parent": null,
-      "node_count": 18,
-      "href": "descent_and_forms/index.html"
-    },
-    {
       "id": "foundational_inputs",
       "title": "Foundational Inputs",
-      "depth": 1,
+      "href": "blueprint/foundational_inputs/index.html",
       "parent": null,
       "node_count": 8,
-      "href": "foundational_inputs/index.html"
-    },
-    {
-      "id": "kottwitz_structures",
-      "title": "Kottwitz Structures",
-      "depth": 1,
-      "parent": null,
-      "node_count": 9,
-      "href": "kottwitz_structures/index.html"
+      "descendant_node_count": 8
     },
     {
       "id": "linear_algebraic_groups",
       "title": "Linear Algebraic Groups",
-      "depth": 1,
+      "href": "blueprint/linear_algebraic_groups/index.html",
       "parent": null,
       "node_count": 30,
-      "href": "linear_algebraic_groups/index.html"
+      "descendant_node_count": 30
+    },
+    {
+      "id": "descent_and_forms",
+      "title": "Galois Descent, Cohomology, and Forms",
+      "href": "blueprint/descent_and_forms/index.html",
+      "parent": null,
+      "node_count": 18,
+      "descendant_node_count": 18
+    },
+    {
+      "id": "reductive_structure",
+      "title": "Reductive Group Structure",
+      "href": "blueprint/reductive_structure/index.html",
+      "parent": null,
+      "node_count": 28,
+      "descendant_node_count": 28
+    },
+    {
+      "id": "root_data_and_duality",
+      "title": "Root Data and Duality",
+      "href": "blueprint/root_data_and_duality/index.html",
+      "parent": null,
+      "node_count": 41,
+      "descendant_node_count": 41
+    },
+    {
+      "id": "classical_and_exceptional_groups",
+      "title": "Classical and Exceptional Groups",
+      "href": "blueprint/classical_and_exceptional_groups/index.html",
+      "parent": null,
+      "node_count": 2,
+      "descendant_node_count": 2
+    },
+    {
+      "id": "buildings_and_parahorics",
+      "title": "Buildings and Parahorics",
+      "href": "blueprint/buildings_and_parahorics/index.html",
+      "parent": null,
+      "node_count": 16,
+      "descendant_node_count": 16
+    },
+    {
+      "id": "kottwitz_structures",
+      "title": "Kottwitz Structures",
+      "href": "blueprint/kottwitz_structures/index.html",
+      "parent": null,
+      "node_count": 9,
+      "descendant_node_count": 9
     },
     {
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
-      "depth": 1,
+      "href": "blueprint/conjugacy_classes/index.html",
       "parent": null,
       "node_count": 20,
-      "href": "conjugacy_classes/index.html"
+      "descendant_node_count": 20
     },
     {
-      "id": "reductive_structure",
-      "title": "Reductive Structure",
-      "depth": 1,
+      "id": "bd_covers",
+      "title": "Brylinski-Deligne and Metaplectic Covers",
+      "href": "blueprint/bd_covers/index.html",
       "parent": null,
-      "node_count": 28,
-      "href": "reductive_structure/index.html"
-    },
-    {
-      "id": "root_data_and_duality",
-      "title": "Root Data And Duality",
-      "depth": 1,
-      "parent": null,
-      "node_count": 41,
-      "href": "root_data_and_duality/index.html"
-    },
-    {
-      "id": "affine_group_schemes",
-      "title": "Affine Group Schemes",
-      "depth": 1,
-      "parent": null,
-      "node_count": 38,
-      "href": "affine_group_schemes/index.html"
+      "node_count": 6,
+      "descendant_node_count": 6
     }
   ],
   "edges": [

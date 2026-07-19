@@ -1,65 +1,146 @@
 {
   "topic": {
     "id": "bd_covers",
-    "title": "Bd Covers",
-    "href": "bd_covers/index.html",
+    "title": "Brylinski-Deligne and Metaplectic Covers",
+    "href": "blueprint/bd_covers/index.html",
     "parent": null,
     "node_count": 6,
     "descendant_node_count": 6
   },
-  "counts": {
-    "nodes": 6,
-    "edges": 5,
-    "boundary_edges": 9
-  },
   "nodes": [
     {
-      "id": "bd_covers.brylinski_deligne_k2_extensions",
-      "title": "Brylinski-Deligne K2-Extensions",
+      "id": "bd_covers.splittings_over_integral_and_parahoric_subgroups",
+      "title": "Splittings over Integral and Parahoric Subgroups",
       "kind": "topic",
       "status": "admitted",
-      "href": "bd_covers/bd_covers_brylinski_deligne_k2_extensions.html",
-      "payload": "node_payloads/bd_covers_brylinski_deligne_k2_extensions.json"
-    },
-    {
-      "id": "bd_covers.central_extensions_of_algebraic_groups",
-      "title": "Central Extensions of Algebraic Groups",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "bd_covers/bd_covers_central_extensions_of_algebraic_groups.html",
-      "payload": "node_payloads/bd_covers_central_extensions_of_algebraic_groups.json"
-    },
-    {
-      "id": "bd_covers.dual_groups_for_covers",
-      "title": "Dual Groups for Covers",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "bd_covers/bd_covers_dual_groups_for_covers.html",
-      "payload": "node_payloads/bd_covers_dual_groups_for_covers.json"
-    },
-    {
-      "id": "bd_covers.l_groups_for_covers",
-      "title": "L-Groups for Covers",
-      "kind": "topic",
-      "status": "admitted",
-      "href": "bd_covers/bd_covers_l_groups_for_covers.html",
-      "payload": "node_payloads/bd_covers_l_groups_for_covers.json"
+      "primary_topic": "bd_covers",
+      "topics": [
+        "bd_covers"
+      ],
+      "tags": [
+        "splittings",
+        "parahoric-subgroups",
+        "bd-covers"
+      ],
+      "uses": [
+        "bd_covers.local_and_global_metaplectic_covers",
+        "buildings_and_parahorics.parahoric_subgroups"
+      ],
+      "used_by": [],
+      "href": "blueprint/bd_covers/bd_covers_splittings_over_integral_and_parahoric_subgroups.html",
+      "payload": {}
     },
     {
       "id": "bd_covers.local_and_global_metaplectic_covers",
       "title": "Local and Global Metaplectic Covers",
       "kind": "topic",
       "status": "admitted",
-      "href": "bd_covers/bd_covers_local_and_global_metaplectic_covers.html",
-      "payload": "node_payloads/bd_covers_local_and_global_metaplectic_covers.json"
+      "primary_topic": "bd_covers",
+      "topics": [
+        "bd_covers"
+      ],
+      "tags": [
+        "metaplectic-covers",
+        "bd-covers"
+      ],
+      "uses": [
+        "bd_covers.brylinski_deligne_k2_extensions",
+        "foundational_inputs.local_fields",
+        "foundational_inputs.global_fields_adeles_and_reciprocity_symbols"
+      ],
+      "used_by": [],
+      "href": "blueprint/bd_covers/bd_covers_local_and_global_metaplectic_covers.html",
+      "payload": {}
     },
     {
-      "id": "bd_covers.splittings_over_integral_and_parahoric_subgroups",
-      "title": "Splittings over Integral and Parahoric Subgroups",
+      "id": "bd_covers.central_extensions_of_algebraic_groups",
+      "title": "Central Extensions of Algebraic Groups",
       "kind": "topic",
       "status": "admitted",
-      "href": "bd_covers/bd_covers_splittings_over_integral_and_parahoric_subgroups.html",
-      "payload": "node_payloads/bd_covers_splittings_over_integral_and_parahoric_subgroups.json"
+      "primary_topic": "bd_covers",
+      "topics": [
+        "bd_covers"
+      ],
+      "tags": [
+        "central-extensions",
+        "bd-covers"
+      ],
+      "uses": [
+        "affine_group_schemes.affine_algebraic_groups",
+        "foundational_inputs.hopf_algebras"
+      ],
+      "used_by": [],
+      "href": "blueprint/bd_covers/bd_covers_central_extensions_of_algebraic_groups.html",
+      "payload": {}
+    },
+    {
+      "id": "bd_covers.brylinski_deligne_k2_extensions",
+      "title": "Brylinski-Deligne K2-Extensions",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "bd_covers",
+      "topics": [
+        "bd_covers"
+      ],
+      "tags": [
+        "brylinski-deligne",
+        "k2",
+        "bd-covers"
+      ],
+      "uses": [
+        "reductive_structure.reductive_groups",
+        "root_data_and_duality.root_data",
+        "bd_covers.central_extensions_of_algebraic_groups",
+        "foundational_inputs.algebraic_k_theory_and_k2"
+      ],
+      "used_by": [],
+      "href": "blueprint/bd_covers/bd_covers_brylinski_deligne_k2_extensions.html",
+      "payload": {}
+    },
+    {
+      "id": "bd_covers.dual_groups_for_covers",
+      "title": "Dual Groups for Covers",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "bd_covers",
+      "topics": [
+        "bd_covers"
+      ],
+      "tags": [
+        "dual-groups",
+        "covers",
+        "bd-covers"
+      ],
+      "uses": [
+        "bd_covers.brylinski_deligne_k2_extensions",
+        "root_data_and_duality.dual_root_data",
+        "root_data_and_duality.langlands_dual_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/bd_covers/bd_covers_dual_groups_for_covers.html",
+      "payload": {}
+    },
+    {
+      "id": "bd_covers.l_groups_for_covers",
+      "title": "L-Groups for Covers",
+      "kind": "topic",
+      "status": "admitted",
+      "primary_topic": "bd_covers",
+      "topics": [
+        "bd_covers"
+      ],
+      "tags": [
+        "l-groups",
+        "covers",
+        "bd-covers"
+      ],
+      "uses": [
+        "bd_covers.dual_groups_for_covers",
+        "root_data_and_duality.l_groups"
+      ],
+      "used_by": [],
+      "href": "blueprint/bd_covers/bd_covers_l_groups_for_covers.html",
+      "payload": {}
     }
   ],
   "edges": [
@@ -91,33 +172,27 @@
   ],
   "boundary_topics": [
     {
-      "id": "affine_group_schemes",
-      "title": "Affine Group Schemes",
-      "href": "affine_group_schemes/index.html",
-      "node_count": 38
-    },
-    {
       "id": "buildings_and_parahorics",
-      "title": "Buildings And Parahorics",
-      "href": "buildings_and_parahorics/index.html",
+      "title": "Buildings and Parahorics",
+      "href": "blueprint/buildings_and_parahorics/index.html",
       "node_count": 16
     },
     {
       "id": "foundational_inputs",
       "title": "Foundational Inputs",
-      "href": "foundational_inputs/index.html",
+      "href": "blueprint/foundational_inputs/index.html",
       "node_count": 8
     },
     {
       "id": "reductive_structure",
-      "title": "Reductive Structure",
-      "href": "reductive_structure/index.html",
+      "title": "Reductive Group Structure",
+      "href": "blueprint/reductive_structure/index.html",
       "node_count": 28
     },
     {
       "id": "root_data_and_duality",
-      "title": "Root Data And Duality",
-      "href": "root_data_and_duality/index.html",
+      "title": "Root Data and Duality",
+      "href": "blueprint/root_data_and_duality/index.html",
       "node_count": 41
     }
   ],
