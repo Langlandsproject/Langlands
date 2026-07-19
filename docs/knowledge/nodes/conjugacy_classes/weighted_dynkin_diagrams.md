@@ -1,26 +1,27 @@
 ---
-id: nilpotent_orbits.weighted_dynkin_diagrams
+id: conjugacy_classes.weighted_dynkin_diagrams
 title: Weighted Dynkin Diagrams
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
-- nilpotent_orbits.nilpotent_orbits
+- conjugacy_classes.nilpotent_orbits
 - root_data_and_duality.root_systems
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Are weighted Dynkin diagrams treated as a type-independent invariant of nilpotent orbits across all simple Lie types?"
-  verdict: "Yes. The labels in {0,1,2} on simple-root vertices give a uniform invariant; the constraints differ by type but the construction is general."
+  prompt: Are weighted Dynkin diagrams treated as a type-independent invariant of
+    nilpotent orbits across all simple Lie types?
+  verdict: Yes. The labels in {0,1,2} on simple-root vertices give a uniform invariant;
+    the constraints differ by type but the construction is general.
 tags:
 - weighted-dynkin-diagrams
 - nilpotent-orbits
 ---
-
 # Weighted Dynkin Diagrams
 
 A **weighted Dynkin diagram** is a labelling of the simple roots of a

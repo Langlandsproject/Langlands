@@ -57,12 +57,12 @@
       "href": "linear_algebraic_groups/index.html"
     },
     {
-      "id": "nilpotent_orbits",
-      "title": "Nilpotent Orbits",
+      "id": "conjugacy_classes",
+      "title": "Conjugacy Classes",
       "depth": 1,
       "parent": null,
-      "node_count": 10,
-      "href": "nilpotent_orbits/index.html"
+      "node_count": 15,
+      "href": "conjugacy_classes/index.html"
     },
     {
       "id": "reductive_structure",
@@ -102,6 +102,11 @@
     },
     {
       "from": "affine_group_schemes",
+      "to": "conjugacy_classes",
+      "count": 2
+    },
+    {
+      "from": "affine_group_schemes",
       "to": "linear_algebraic_groups",
       "count": 25
     },
@@ -127,7 +132,7 @@
     },
     {
       "from": "descent_and_forms",
-      "to": "nilpotent_orbits",
+      "to": "conjugacy_classes",
       "count": 1
     },
     {
@@ -177,13 +182,13 @@
     },
     {
       "from": "linear_algebraic_groups",
-      "to": "descent_and_forms",
-      "count": 11
+      "to": "conjugacy_classes",
+      "count": 2
     },
     {
       "from": "linear_algebraic_groups",
-      "to": "nilpotent_orbits",
-      "count": 2
+      "to": "descent_and_forms",
+      "count": 11
     },
     {
       "from": "linear_algebraic_groups",
@@ -212,6 +217,11 @@
     },
     {
       "from": "reductive_structure",
+      "to": "conjugacy_classes",
+      "count": 11
+    },
+    {
+      "from": "reductive_structure",
       "to": "descent_and_forms",
       "count": 1
     },
@@ -219,11 +229,6 @@
       "from": "reductive_structure",
       "to": "kottwitz_structures",
       "count": 1
-    },
-    {
-      "from": "reductive_structure",
-      "to": "nilpotent_orbits",
-      "count": 4
     },
     {
       "from": "reductive_structure",
@@ -247,6 +252,11 @@
     },
     {
       "from": "root_data_and_duality",
+      "to": "conjugacy_classes",
+      "count": 1
+    },
+    {
+      "from": "root_data_and_duality",
       "to": "descent_and_forms",
       "count": 10
     },
@@ -254,11 +264,6 @@
       "from": "root_data_and_duality",
       "to": "kottwitz_structures",
       "count": 4
-    },
-    {
-      "from": "root_data_and_duality",
-      "to": "nilpotent_orbits",
-      "count": 1
     }
   ]
 }

@@ -97,7 +97,7 @@ non-compact quotients.
 
 - `Mathlib.LinearAlgebra.RootSystem.*` — root systems and character
   lattices abstractly.
-- The project has [[node:linear_algebraic_groups.multiplicative_group_scheme|\(\mathbb{G}_m\)]]
+- The project has [[node:affine_group_schemes.multiplicative_group_scheme|\(\mathbb{G}_m\)]]
   formalised; products give split tori \(\mathbb{G}_m^r\). General
   (non-split) tori require étale descent infrastructure.
 

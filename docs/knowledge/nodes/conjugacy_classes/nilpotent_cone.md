@@ -1,26 +1,28 @@
 ---
-id: nilpotent_orbits.nilpotent_cone
+id: conjugacy_classes.nilpotent_cone
 title: Nilpotent Cone
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
-- nilpotent_orbits.nilpotent_elements
-- nilpotent_orbits.adjoint_action
+- conjugacy_classes.nilpotent_elements
+- conjugacy_classes.adjoint_action
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Is the nilpotent cone treated as a closed subvariety of any reductive Lie algebra, not just classical types?"
-  verdict: "Yes. The nilpotent cone is intrinsic to any semisimple/reductive Lie algebra over a field of good characteristic; the Springer resolution and Kostant's theorem are uniform statements."
+  prompt: Is the nilpotent cone treated as a closed subvariety of any reductive Lie
+    algebra, not just classical types?
+  verdict: Yes. The nilpotent cone is intrinsic to any semisimple/reductive Lie algebra
+    over a field of good characteristic; the Springer resolution and Kostant's theorem
+    are uniform statements.
 tags:
 - nilpotent-cone
 - nilpotent-orbits
 ---
-
 # Nilpotent Cone
 
 The **nilpotent cone** \(\mathcal{N} \subseteq \mathfrak{g}\) is the

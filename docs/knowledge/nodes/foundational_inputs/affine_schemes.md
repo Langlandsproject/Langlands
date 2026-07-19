@@ -62,7 +62,7 @@ is an isomorphism iff \(X\) is affine.
 - Group schemes that are affine over a base ring are exactly Hopf
   algebras (see
   [[node:foundational_inputs.hopf_algebras|Hopf algebras]]
-  and [[node:linear_algebraic_groups.coordinate_rings_and_hopf_algebras|coordinate
+  and [[node:affine_group_schemes.coordinate_rings_and_hopf_algebras|coordinate
   rings and Hopf algebras]]).
 
 ## Basic examples
@@ -108,7 +108,7 @@ are formalised in this project.
 - `Mathlib.CategoryTheory.Comma.Over` — Over-categories for "over a
   base".
 
-In this project, [[node:linear_algebraic_groups.hopf_spec_functor|`hopfSpec`]]
+In this project, [[node:affine_group_schemes.hopf_spec_functor|`hopfSpec`]]
 is the lift of `Spec` to Hopf algebras, producing affine group schemes.
 
 ## Prerequisite Topics

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rational Nilpotent Orbits — Reductive Linear Algebraic Groups Knowledge DAG</title>
+  <title>Conjugacy Classes — Reductive Linear Algebraic Groups Knowledge DAG</title>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex@0.16.46/dist/katex.min.css"
         integrity="sha384-hW6ZmmePRD2f/9cuxGE6C9faGprtIBOme5OLUiEjtRKMTN67tY23ur9eAi21H8De"
@@ -64,7 +64,7 @@
         </li>
       
         <li class="topic-leaf topic-active">
-          <a href="../nilpotent_orbits/index.html">Nilpotent Orbits</a>
+          <a href="../conjugacy_classes/index.html">Conjugacy Classes</a>
         </li>
       
         <li class="topic-leaf">
@@ -448,17 +448,17 @@
   </nav>
   <main>
     
-<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-rational_nilpotent_orbits">
+<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-nilpotent_orbits">
   <header class="topic_thmheading thm-heading">
     <span class="topic_thmcaption thm-caption">Topic</span>
-    <span class="topic_thmtitle thm-title">Rational Nilpotent Orbits</span>
+    <span class="topic_thmtitle thm-title">Conjugacy Classes</span>
     <div class="thm_header_extras">
       
       <span class="badge kind-topic">topic</span>
       <span class="badge status-admitted">admitted</span>
     </div>
     <div class="thm_header_hidden_extras">
-      <a class="permalink" href="#node-nilpotent_orbits-2e-rational_nilpotent_orbits">#</a>
+      <a class="permalink" href="#node-nilpotent_orbits-2e-nilpotent_orbits">#</a>
       
       <button class="modal-trigger" type="button" data-modal-target="uses-modal">Uses</button>
       
@@ -472,11 +472,7 @@
       <header><h1>Uses</h1><button class="closebtn" type="button">x</button></header>
       <ul class="uses">
         
-        <li><a href="nilpotent_orbits_nilpotent_orbits.html">Nilpotent Orbits</a></li>
-        
-        <li><a href="../descent_and_forms/descent_and_forms_rational_forms_of_reductive_groups.html">Rational Forms of Reductive Groups</a></li>
-        
-        <li><a href="../descent_and_forms/descent_and_forms_galois_cohomology.html">Galois Cohomology</a></li>
+        <li><a href="conjugacy_classes_nilpotent_cone.html">Nilpotent Cone</a></li>
         
       </ul>
     </div>
@@ -486,99 +482,116 @@
   
 
   <div class="topic_thmcontent thm-content body">
-    <h1>Rational Nilpotent Orbits</h1>
-<p>When the base field \(k\) is not algebraically closed, a <strong>geometric</strong>
-nilpotent orbit \(\mathcal{O} \subseteq \mathfrak{g}_{\bar k}\) may
-break up into multiple <strong>rational</strong> (= \(G(k)\)) orbits. The
-classification of rational orbits is a finer invariant requiring
-Galois cohomology.</p>
-<h2>Setup</h2>
-<p>Let \(G\) be a connected reductive group over a field \(k\),
-\(\mathfrak{g} = \operatorname{Lie}(G)\), and consider the action of
-\(G(k)\) on the nilpotent cone \(\mathcal{N}(k) = \mathcal{N} \cap \mathfrak{g}(k)\).</p>
-<p>A <strong>geometric orbit</strong> is a \(G(\bar k)\)-orbit in \(\mathcal{N}(\bar k)\),
-defined over \(k\) iff fixed by Galois.</p>
-<p>A <strong>rational orbit</strong> is a \(G(k)\)-orbit in \(\mathcal{N}(k)\).</p>
-<p>A single geometric orbit defined over \(k\) may contain multiple
-rational orbits.</p>
-<h2>Classification</h2>
-<p><strong>Theorem.</strong> For \(X \in \mathcal{N}(k)\) and geometric orbit
-\(\mathcal{O} = G(\bar k) \cdot X\), the set of rational orbits inside
-\(\mathcal{O}(k) = \mathcal{O} \cap \mathfrak{g}(k)\) is in bijection
-with
-\[
-\ker\Big(H^1(k, Z_G(X)) \to H^1(k, G)\Big).
-\]</p>
-<p>In particular, if \(H^1(k, G) = 1\) (e.g.\ \(k\) finite, by Lang's
-theorem), rational orbits inside \(\mathcal{O}\) are parametrised by
-\(H^1(k, Z_G(X))\).</p>
+    <h1>Conjugacy Classes</h1>
+<p>A <strong>nilpotent orbit</strong> in a reductive Lie algebra \(\mathfrak{g}\) is an
+adjoint orbit of nilpotent elements. The set of nilpotent orbits is
+finite, partially ordered, and stratifies the nilpotent cone — making
+it one of the basic combinatorial invariants of \(\mathfrak{g}\).</p>
+<h2>Definition</h2>
+<p>Let \(G\) be a connected reductive algebraic group over an
+algebraically closed field \(k\) of characteristic zero (or "good"
+characteristic for the type of \(G\)), with Lie algebra
+\(\mathfrak{g} = \operatorname{Lie}(G)\). An element
+\(X \in \mathfrak{g}\) is <strong>nilpotent</strong> if \(\operatorname{ad}(X)\) is
+nilpotent, equivalently if \(X\) lies in the <strong>nilpotent cone</strong>
+\(\mathcal{N} \subseteq \mathfrak{g}\).</p>
+<p>A <strong>nilpotent orbit</strong> is an orbit
+\(\mathcal{O} = G \cdot X \subseteq \mathfrak{g}\) for the adjoint
+action, where \(X \in \mathcal{N}\).</p>
+<h2>Finiteness</h2>
+<p><strong>Theorem.</strong> There are only finitely many nilpotent orbits in
+\(\mathfrak{g}\).</p>
+<p>The proof uses the <strong>Jacobson–Morozov theorem</strong>: every nilpotent
+element \(X \ne 0\) extends to an \(\mathfrak{sl}_2\)-triple
+\((X, H, Y)\), and \(\mathfrak{sl}_2\)-triples are classified up to
+\(G\)-conjugacy by a finite combinatorial datum (a <strong>weighted Dynkin
+diagram</strong>).</p>
 <h2>Examples</h2>
-<h3>\(k = \mathbb{F}_q\) finite</h3>
-<p>Lang's theorem: \(H^1(\mathbb{F}_q, G) = 1\). So:
-\[
-\#\{\text{rational orbits inside } \mathcal{O}\} \;=\; \#H^1(\mathbb{F}_q, Z_G(X)).
+<h3>\(\mathfrak{gl}_n\) and \(\mathfrak{sl}_n\)</h3>
+<p>Nilpotent orbits in \(\mathfrak{gl}_n\) are in bijection with
+<strong>partitions of \(n\)</strong>, via Jordan canonical form. A nilpotent
+\(n \times n\) matrix is conjugate to a sum of Jordan blocks; the
+partition records the block sizes.</p>
+<p>For \(\mathfrak{sl}_n\) the bijection is the same (the trace-zero
+condition is automatic for nilpotent matrices).</p>
+<h3>Classical types</h3>
+<p>For \(\mathfrak{so}_{2n+1}\), \(\mathfrak{sp}_{2n}\), \(\mathfrak{so}_{2n}\):
+nilpotent orbits are classified by partitions satisfying parity
+constraints:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Partitions of \(n\) (or \(2n+1\)) with constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(\mathfrak{sp}_{2n}\)</td>
+<td>odd parts have even multiplicity</td>
+</tr>
+<tr>
+<td>\(\mathfrak{so}_{2n+1}\)</td>
+<td>even parts have even multiplicity</td>
+</tr>
+<tr>
+<td>\(\mathfrak{so}_{2n}\)</td>
+<td>even parts have even multiplicity (very even ones split into two)</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptional types</h3>
+<p>For \(E_8, E_7, E_6, F_4, G_2\) the classification is via the
+Bala-Carter labels; there is no partition shortcut.</p>
+<h2>The closure order</h2>
+<p>Nilpotent orbits are partially ordered by
+\(\mathcal{O}_1 \le \mathcal{O}_2 \iff \mathcal{O}_1 \subseteq \overline{\mathcal{O}_2}\)
+(closure in the Zariski topology). The poset has:</p>
+<ul>
+<li>a <strong>minimum</strong>: the zero orbit \(\{0\}\);</li>
+<li>a <strong>maximum</strong>: the <strong>principal</strong> (= regular) nilpotent orbit, of
+  dimension \(\dim \mathfrak{g} - \operatorname{rank} \mathfrak{g}\).</li>
+</ul>
+<p>For \(\mathfrak{gl}_n\), the partition order on orbits is the
+<strong>dominance order</strong> on partitions.</p>
+<h2>Springer theory</h2>
+<p>The <strong>Springer resolution</strong>
+\(\mu : \tilde{\mathcal{N}} \to \mathcal{N}\) (with
+\(\tilde{\mathcal{N}}\) the cotangent bundle of the flag variety
+\(G/B\)) realises the nilpotent cone as the image of a smooth
+projective variety. The fibres are the <strong>Springer fibres</strong>
+\(\mathcal{B}_X = \mu^{-1}(X)\), and their cohomology carries a
+\(W\)-action (the <strong>Springer representation</strong>), giving a fundamental
+bijection:</p>
+<p>\[
+\{\text{nilpotent orbits in } \mathfrak{g}\} \;\hookrightarrow\; \widehat{W}
 \]</p>
-<p>For nilpotent \(X\) in a finite reductive Lie algebra, the centraliser
-\(Z_G(X)\) is typically a unipotent extension of a smaller reductive
-group; explicit computations give a count of "Springer points" in the
-fibre.</p>
-<h3>\(k = \mathbb{R}\)</h3>
-<p>Real nilpotent orbits decompose as follows: a complex orbit
-\(\mathcal{O}_\mathbb{C} \subseteq \mathfrak{g}_\mathbb{C}\) defined
-over \(\mathbb{R}\) (\(= \mathfrak{g}\otimes\mathbb{C}\)) splits into
-real orbits parametrised by \(H^1(\mathbb{R}, Z_G(X))\); since
-\(\mathrm{Gal}(\mathbb{C}/\mathbb{R}) = \mathbb{Z}/2\), this is a
-sum of \((\mathbb{Z}/2)^k\) for some \(k\).</p>
-<p>For \(\mathfrak{sl}_n(\mathbb{R})\): a partition \(\lambda\) gives a
-geometric orbit, but the rational orbits are labelled by <strong>signed
-Young diagrams</strong> (real signature data).</p>
-<p>For \(\mathfrak{u}(p, q)\): rational orbits classified by signed Young
-diagrams compatible with the signature \((p, q)\).</p>
-<h3>\(k\) a \(p\)-adic field</h3>
-<p>\(H^1(F, T)\) for \(T\) the centraliser of a regular nilpotent is
-computable via local Tate duality; the result is the <strong>abelianised
-Galois cohomology</strong> of the centraliser, computable from the root
-datum.</p>
-<p>For \(\mathrm{SL}_2(\mathbb{Q}_p)\): the regular nilpotent orbit
-splits into two rational orbits, parametrised by \(\mathbb{Q}_p^\times / (\mathbb{Q}_p^\times)^2\)
-(modulo squares — a group of order 4 for \(p\) odd).</p>
-<h2>Connection to Galois cohomology</h2>
-<p>The bijection rests on the fundamental fact:
-\[
-G(\bar k) \cdot X \;\cong\; G/Z_G(X)
-\]
-(as varieties), so rational points are computed by:
-\[
-(G/Z_G(X))(k) \;\to\; H^1(k, Z_G(X)) \;\to\; H^1(k, G),
-\]
-the exact sequence of pointed sets associated to
-\(1 \to Z_G(X) \to G \to G/Z_G(X) \to 1\).</p>
+<p>(the <strong>Springer correspondence</strong>, when refined by the component group
+of the stabiliser \(Z_G(X)\)).</p>
 <h2>Role in Langlands</h2>
 <ul>
-<li><strong>Local Langlands</strong>: nilpotent orbits in the dual Lie algebra
-  \(\mathrm{Lie}(\hat G)\), but the relevant orbits are typically
-  <strong>rational</strong> orbits over an appropriate field (\(\mathbb{C}\) or
-  \(\bar{\mathbb{Q}}_\ell\) in arithmetic context).</li>
-<li><strong>Endoscopy</strong>: transfer of nilpotent orbits between inner forms
-  involves identifying rational orbits with the same Newton/Bala-Carter
-  data but in different forms.</li>
-<li><strong>Wavefront set</strong>: a \(p\)-adic representation's wavefront set is a
-  union of rational orbits in \(\mathfrak{g}(\bar F)\).</li>
+<li><strong>Local Langlands at the unipotent block</strong> (Lusztig, Kazhdan-Lusztig)
+  is organised by nilpotent orbits in the dual Lie algebra
+  \(\operatorname{Lie}(\hat G)\).</li>
+<li><strong>Wavefront sets</strong> and <strong>Whittaker support</strong> of admissible
+  representations are tracked by their associated nilpotent orbit.</li>
+<li><strong>Endoscopy</strong> transfers nilpotent orbits between groups via the
+  Langlands–Shelstad transfer map.</li>
+<li><strong>Bala-Carter classification</strong> is the type-independent way to label
+  orbits in the dual Lie algebra appearing in L-parameters.</li>
 </ul>
 <h2>References</h2>
 <ul>
-<li>Collingwood–McGovern, <em>Nilpotent Orbits in Semisimple Lie Algebras</em>
-  (1993), §9 (real and \(p\)-adic).</li>
-<li>Bhargava–Gross, <em>The arithmetic invariant theory of certain
-  nilpotent orbits</em> (Galois lifts paper, 2014).</li>
-<li>Reeder–Yu, <em>Epipelagic representations and invariant theory</em>
-  (J.\ Amer.\ Math.\ Soc.\ 2014).</li>
+<li>Collingwood–McGovern, <em>Conjugacy Classes in Semisimple Lie Algebras</em>
+  (1993).</li>
+<li>Carter, <em>Finite Groups of Lie Type</em> (1985), Ch. 5.</li>
+<li>Jantzen, <em>Conjugacy Classes in Representation Theory</em> (2004).</li>
+<li>Springer, <em>Trigonometric sums, Green functions of finite groups of
+  Lie type and representations of Weyl groups</em> (Inventiones 1976).</li>
 </ul>
 <h2>Prerequisite Topics</h2>
 <ul>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.nilpotent_orbits" href="nilpotent_orbits_nilpotent_orbits.html">Nilpotent Orbits</a></li>
-<li><a class="node-ref" data-node-id="descent_and_forms.rational_forms_of_reductive_groups" href="../descent_and_forms/descent_and_forms_rational_forms_of_reductive_groups.html">Rational Forms of Reductive Groups</a></li>
-<li><a class="node-ref" data-node-id="descent_and_forms.galois_cohomology" href="../descent_and_forms/descent_and_forms_galois_cohomology.html">Galois Cohomology</a></li>
+<li><a class="node-ref" data-node-id="conjugacy_classes.nilpotent_cone" href="conjugacy_classes_nilpotent_cone.html">Nilpotent Cone</a></li>
 </ul>
     
   </div>
@@ -586,12 +599,25 @@ the exact sequence of pointed sets associated to
   
 
   
+  <section class="deps deps-used-by">
+    <h2>Used by</h2>
+    <ul>
+      
+      <li><a href="conjugacy_classes_bala_carter_classification.html">Bala-Carter Classification</a></li>
+      
+      <li><a href="conjugacy_classes_rational_nilpotent_orbits.html">Rational Conjugacy Classes</a></li>
+      
+      <li><a href="conjugacy_classes_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a></li>
+      
+    </ul>
+  </section>
+  
 
   
 
   
   <footer class="tags">
-    <span class="tag">rational-nilpotent-orbits</span><span class="tag">nilpotent-orbits</span>
+    <span class="tag">nilpotent-orbits</span>
   </footer>
   
 </article>

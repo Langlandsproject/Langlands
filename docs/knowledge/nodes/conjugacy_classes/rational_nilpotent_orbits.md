@@ -1,13 +1,13 @@
 ---
-id: nilpotent_orbits.rational_nilpotent_orbits
+id: conjugacy_classes.rational_nilpotent_orbits
 title: Rational Nilpotent Orbits
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
-- nilpotent_orbits.nilpotent_orbits
+- conjugacy_classes.nilpotent_orbits
 - descent_and_forms.rational_forms_of_reductive_groups
 - descent_and_forms.galois_cohomology
 verification:
@@ -15,13 +15,15 @@ verification:
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Are rational nilpotent orbits treated for arbitrary fields, with the cohomological refinement of the orbit set?"
-  verdict: "Yes. Rational orbits are the G(k)-orbits inside a geometric orbit; they are classified by Galois cohomology of the stabiliser, applicable over any field k."
+  prompt: Are rational nilpotent orbits treated for arbitrary fields, with the cohomological
+    refinement of the orbit set?
+  verdict: Yes. Rational orbits are the G(k)-orbits inside a geometric orbit; they
+    are classified by Galois cohomology of the stabiliser, applicable over any field
+    k.
 tags:
 - rational-nilpotent-orbits
 - nilpotent-orbits
 ---
-
 # Rational Nilpotent Orbits
 
 When the base field \(k\) is not algebraically closed, a **geometric**

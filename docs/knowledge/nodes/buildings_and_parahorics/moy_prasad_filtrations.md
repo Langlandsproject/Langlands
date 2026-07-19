@@ -157,4 +157,4 @@ infrastructure.
 ## Prerequisite Topics
 
 - [[node:buildings_and_parahorics.parahoric_subgroups|Parahoric Subgroups]]
-- [[node:nilpotent_orbits.lie_algebras_of_reductive_groups|Lie Algebras of Reductive Groups]]
+- [[node:conjugacy_classes.lie_algebras_of_reductive_groups|Lie Algebras of Reductive Groups]]

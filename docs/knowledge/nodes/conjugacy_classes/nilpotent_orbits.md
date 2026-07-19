@@ -1,24 +1,26 @@
 ---
-id: nilpotent_orbits.nilpotent_orbits
+id: conjugacy_classes.nilpotent_orbits
 title: Nilpotent Orbits
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
-- nilpotent_orbits.nilpotent_cone
+- conjugacy_classes.nilpotent_cone
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Are nilpotent orbits treated for reductive groups in general, with classical types as examples rather than the only case?"
-  verdict: "Yes. Nilpotent orbits are defined for any reductive group over a field of good characteristic; the partition classification for classical groups is recovered as a corollary of the Bala-Carter classification."
+  prompt: Are nilpotent orbits treated for reductive groups in general, with classical
+    types as examples rather than the only case?
+  verdict: Yes. Nilpotent orbits are defined for any reductive group over a field
+    of good characteristic; the partition classification for classical groups is recovered
+    as a corollary of the Bala-Carter classification.
 tags:
 - nilpotent-orbits
 ---
-
 # Nilpotent Orbits
 
 A **nilpotent orbit** in a reductive Lie algebra \(\mathfrak{g}\) is an

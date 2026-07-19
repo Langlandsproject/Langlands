@@ -65,7 +65,7 @@ morphisms.
   action — see [[node:root_data_and_duality.based_root_data|root data]].
 - **Unipotent conjugacy classes.** Far richer; for classical groups
   there is a combinatorial classification by partitions. See
-  [[node:nilpotent_orbits.bala_carter_classification|nilpotent orbits]].
+  [[node:conjugacy_classes.bala_carter_classification|nilpotent orbits]].
 - **General conjugacy classes.** Determined by a pair (semisimple
   class, unipotent class in the centraliser), via Jordan decomposition.
 

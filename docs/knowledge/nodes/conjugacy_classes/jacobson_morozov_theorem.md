@@ -1,25 +1,27 @@
 ---
-id: nilpotent_orbits.jacobson_morozov_theorem
+id: conjugacy_classes.jacobson_morozov_theorem
 title: Jacobson-Morozov Theorem
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
-- nilpotent_orbits.sl2_triples
+- conjugacy_classes.sl2_triples
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Is the Jacobson-Morozov theorem treated uniformly in good characteristic, not just characteristic zero?"
-  verdict: "Yes. The theorem holds in characteristic zero (classical Jacobson-Morozov) and in good positive characteristic (Pommerening); a clean characteristic-independent statement is standard in modern references."
+  prompt: Is the Jacobson-Morozov theorem treated uniformly in good characteristic,
+    not just characteristic zero?
+  verdict: Yes. The theorem holds in characteristic zero (classical Jacobson-Morozov)
+    and in good positive characteristic (Pommerening); a clean characteristic-independent
+    statement is standard in modern references.
 tags:
 - jacobson-morozov
 - nilpotent-orbits
 ---
-
 # Jacobson-Morozov Theorem
 
 The **Jacobson-Morozov theorem** asserts that every nonzero nilpotent

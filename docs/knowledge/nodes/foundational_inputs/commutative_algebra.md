@@ -91,7 +91,7 @@ For \(R \to R'\) a ring map and \(A\) an \(R\)-algebra,
 Spec: \(\operatorname{Spec}(A \otimes_R R') = \operatorname{Spec} A \times_{\operatorname{Spec} R} \operatorname{Spec} R'\).
 
 This is the algebraic shadow of the
-[[node:linear_algebraic_groups.base_change|base change]] of schemes.
+[[node:affine_group_schemes.base_change|base change]] of schemes.
 
 ## Mathlib
 

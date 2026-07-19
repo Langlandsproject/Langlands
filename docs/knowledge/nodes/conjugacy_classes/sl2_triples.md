@@ -1,25 +1,25 @@
 ---
-id: nilpotent_orbits.sl2_triples
+id: conjugacy_classes.sl2_triples
 title: SL2-Triples
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
-- nilpotent_orbits.nilpotent_elements
+- conjugacy_classes.nilpotent_elements
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Are SL_2-triples treated for arbitrary semisimple Lie algebras in good characteristic?"
-  verdict: "Yes. The Jacobson-Morozov theorem holds for semisimple Lie algebras in characteristic zero and in good positive characteristic; the formalism is type-independent."
+  prompt: Are SL_2-triples treated for arbitrary semisimple Lie algebras in good characteristic?
+  verdict: Yes. The Jacobson-Morozov theorem holds for semisimple Lie algebras in
+    characteristic zero and in good positive characteristic; the formalism is type-independent.
 tags:
 - sl2-triples
 - nilpotent-orbits
 ---
-
 # SL2-Triples
 
 An **\(\mathfrak{sl}_2\)-triple** in a Lie algebra is a triple

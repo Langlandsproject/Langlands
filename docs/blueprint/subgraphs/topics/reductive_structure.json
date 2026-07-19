@@ -10,7 +10,7 @@
   "counts": {
     "nodes": 28,
     "edges": 57,
-    "boundary_edges": 32
+    "boundary_edges": 34
   },
   "nodes": [
     {
@@ -515,7 +515,7 @@
       "id": "affine_group_schemes",
       "title": "Affine Group Schemes",
       "href": "affine_group_schemes/index.html",
-      "node_count": 0
+      "node_count": 38
     },
     {
       "id": "bd_covers",
@@ -536,6 +536,12 @@
       "node_count": 2
     },
     {
+      "id": "conjugacy_classes",
+      "title": "Conjugacy Classes",
+      "href": "conjugacy_classes/index.html",
+      "node_count": 15
+    },
+    {
       "id": "descent_and_forms",
       "title": "Descent And Forms",
       "href": "descent_and_forms/index.html",
@@ -554,16 +560,10 @@
       "node_count": 30
     },
     {
-      "id": "nilpotent_orbits",
-      "title": "Nilpotent Orbits",
-      "href": "nilpotent_orbits/index.html",
-      "node_count": 10
-    },
-    {
       "id": "root_data_and_duality",
       "title": "Root Data And Duality",
       "href": "root_data_and_duality/index.html",
-      "node_count": 34
+      "node_count": 35
     }
   ],
   "boundary_edges": [
@@ -729,25 +729,39 @@
       "count": 1
     },
     {
-      "from": "reductive_structure.parabolic_subgroups",
-      "to": "topic:nilpotent_orbits",
+      "from": "reductive_structure.reductive_groups",
+      "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
-      "topic": "nilpotent_orbits",
+      "topic": "conjugacy_classes",
+      "count": 7
+    },
+    {
+      "from": "reductive_structure.maximal_tori",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
+      "count": 1
+    },
+    {
+      "from": "reductive_structure.borel_subgroups",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
+      "count": 1
+    },
+    {
+      "from": "reductive_structure.parabolic_subgroups",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
       "count": 1
     },
     {
       "from": "reductive_structure.levi_subgroups_and_unipotent_radicals",
-      "to": "topic:nilpotent_orbits",
+      "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
-      "topic": "nilpotent_orbits",
+      "topic": "conjugacy_classes",
       "count": 1
-    },
-    {
-      "from": "reductive_structure.reductive_groups",
-      "to": "topic:nilpotent_orbits",
-      "kind": "boundary_dependent",
-      "topic": "nilpotent_orbits",
-      "count": 2
     },
     {
       "from": "topic:affine_group_schemes",

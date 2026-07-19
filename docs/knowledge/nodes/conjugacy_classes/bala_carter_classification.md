@@ -1,28 +1,30 @@
 ---
-id: nilpotent_orbits.bala_carter_classification
+id: conjugacy_classes.bala_carter_classification
 title: Bala-Carter Classification
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
-- nilpotent_orbits.nilpotent_orbits
+- conjugacy_classes.nilpotent_orbits
 - reductive_structure.parabolic_subgroups
 - reductive_structure.levi_subgroups_and_unipotent_radicals
-- nilpotent_orbits.weighted_dynkin_diagrams
+- conjugacy_classes.weighted_dynkin_diagrams
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Does the classification work uniformly for all simple Lie algebras, classical and exceptional?"
-  verdict: "Yes. Bala-Carter is the unified classification of nilpotent orbits across the entire Dynkin diagram zoo; specialisations to classical types recover the partition classification, but the framework is type-independent."
+  prompt: Does the classification work uniformly for all simple Lie algebras, classical
+    and exceptional?
+  verdict: Yes. Bala-Carter is the unified classification of nilpotent orbits across
+    the entire Dynkin diagram zoo; specialisations to classical types recover the
+    partition classification, but the framework is type-independent.
 tags:
 - bala-carter
 - nilpotent-orbits
 ---
-
 # Bala-Carter Classification
 
 The **Bala-Carter classification** is the type-independent

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bala-Carter Classification — Reductive Linear Algebraic Groups Knowledge DAG</title>
+  <title>Lie Algebras of Reductive Groups — Reductive Linear Algebraic Groups Knowledge DAG</title>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex@0.16.46/dist/katex.min.css"
         integrity="sha384-hW6ZmmePRD2f/9cuxGE6C9faGprtIBOme5OLUiEjtRKMTN67tY23ur9eAi21H8De"
@@ -64,7 +64,7 @@
         </li>
       
         <li class="topic-leaf topic-active">
-          <a href="../nilpotent_orbits/index.html">Nilpotent Orbits</a>
+          <a href="../conjugacy_classes/index.html">Conjugacy Classes</a>
         </li>
       
         <li class="topic-leaf">
@@ -448,17 +448,17 @@
   </nav>
   <main>
     
-<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-bala_carter_classification">
+<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-lie_algebras_of_reductive_groups">
   <header class="topic_thmheading thm-heading">
     <span class="topic_thmcaption thm-caption">Topic</span>
-    <span class="topic_thmtitle thm-title">Bala-Carter Classification</span>
+    <span class="topic_thmtitle thm-title">Lie Algebras of Reductive Groups</span>
     <div class="thm_header_extras">
       
       <span class="badge kind-topic">topic</span>
       <span class="badge status-admitted">admitted</span>
     </div>
     <div class="thm_header_hidden_extras">
-      <a class="permalink" href="#node-nilpotent_orbits-2e-bala_carter_classification">#</a>
+      <a class="permalink" href="#node-nilpotent_orbits-2e-lie_algebras_of_reductive_groups">#</a>
       
       <button class="modal-trigger" type="button" data-modal-target="uses-modal">Uses</button>
       
@@ -472,13 +472,9 @@
       <header><h1>Uses</h1><button class="closebtn" type="button">x</button></header>
       <ul class="uses">
         
-        <li><a href="nilpotent_orbits_nilpotent_orbits.html">Nilpotent Orbits</a></li>
+        <li><a href="../linear_algebraic_groups/linear_algebraic_groups_smoothness_tangent_spaces_lie_algebras.html">Smoothness, Tangent Spaces, and Lie Algebras</a></li>
         
-        <li><a href="../reductive_structure/reductive_structure_parabolic_subgroups.html">Parabolic Subgroups</a></li>
-        
-        <li><a href="../reductive_structure/reductive_structure_levi_subgroups_and_unipotent_radicals.html">Levi Subgroups and Unipotent Radicals</a></li>
-        
-        <li><a href="nilpotent_orbits_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a></li>
+        <li><a href="../reductive_structure/reductive_structure_reductive_groups.html">Reductive Groups</a></li>
         
       </ul>
     </div>
@@ -488,100 +484,118 @@
   
 
   <div class="topic_thmcontent thm-content body">
-    <h1>Bala-Carter Classification</h1>
-<p>The <strong>Bala-Carter classification</strong> is the type-independent
-classification of <strong>nilpotent conjugacy classes</strong> (orbits) in a complex
-(or, over an algebraically closed field of good characteristic) simple
-Lie algebra \(\mathfrak{g}\). It assigns to each nilpotent orbit a
-labeled subdiagram of the Dynkin diagram.</p>
-<h2>The classification</h2>
-<p><strong>Theorem (Bala–Carter).</strong> Nilpotent \(G\)-orbits in
-\(\mathfrak{g}\) are in canonical bijection with pairs
-\((\mathfrak{l}, \mathcal{O}_{\mathfrak{l}})\) where:</p>
+    <h1>Lie Algebras of Reductive Groups</h1>
+<p>The <strong>Lie algebra</strong> \(\mathfrak{g} = \operatorname{Lie}(G)\) of a
+reductive algebraic group \(G\) is the tangent space at the identity,
+equipped with the Lie bracket from the group structure. It encodes the
+infinitesimal symmetries of \(G\) and is the natural setting for the
+representation theory, the Killing form, root data, and nilpotent
+orbit theory.</p>
+<h2>Definition</h2>
+<p>For an algebraic group \(G\) over a field \(k\):
+\[
+\operatorname{Lie}(G) \;:=\; T_e G \;=\; \ker(G(k[\varepsilon]/\varepsilon^2) \to G(k)),
+\]
+the tangent space at the identity \(e\). The Lie bracket
+\([X, Y]\) is induced from the group commutator
+\((g, h) \mapsto ghg^{-1}h^{-1}\).</p>
+<p>For smooth \(G\): \(\dim \operatorname{Lie}(G) = \dim G\).</p>
+<h2>Structure for reductive \(G\)</h2>
+<p>If \(G\) is a connected reductive algebraic group over an algebraically
+closed field \(k\) of characteristic 0 (or good characteristic), then
+\(\mathfrak{g}\) is a <strong>reductive Lie algebra</strong>:</p>
 <ul>
-<li>\(\mathfrak{l} \subseteq \mathfrak{g}\) is a <strong>Levi subalgebra</strong> of
-  some parabolic of \(\mathfrak{g}\), taken up to \(G\)-conjugacy;</li>
-<li>\(\mathcal{O}_{\mathfrak{l}}\) is a <strong>distinguished</strong> nilpotent orbit
-  in the derived subalgebra \([\mathfrak{l}, \mathfrak{l}]\)
-  (one whose centraliser in the corresponding group contains no
-  non-trivial torus).</li>
+<li>\(\mathfrak{g} = \mathfrak{z} \oplus [\mathfrak{g}, \mathfrak{g}]\),
+  with \(\mathfrak{z} = \operatorname{Lie}(Z(G)^\circ)\) abelian and
+  \([\mathfrak{g}, \mathfrak{g}] = \operatorname{Lie}(G_{\mathrm{der}})\)
+  semisimple.</li>
+<li><strong>Killing form</strong> \(\kappa(X, Y) = \mathrm{tr}(\operatorname{ad}\,X \circ \operatorname{ad}\,Y)\)
+  is non-degenerate on \([\mathfrak{g}, \mathfrak{g}]\).</li>
 </ul>
-<p>A distinguished orbit, in turn, is labelled by a <strong>weighted Dynkin
-diagram</strong> of \(\mathfrak{l}\) with weights in \(\{0, 2\}\).</p>
+<h2>Root space decomposition</h2>
+<p>For \(T \subseteq G\) a maximal torus and
+\(\mathfrak{t} = \operatorname{Lie}(T)\):
+\[
+\mathfrak{g} \;=\; \mathfrak{t} \;\oplus\; \bigoplus_{\alpha \in \Phi} \mathfrak{g}_\alpha,
+\]
+where \(\mathfrak{g}_\alpha\) is the 1-dimensional <strong>root space</strong>:
+\(\mathfrak{g}_\alpha = \{X \in \mathfrak{g} : [H, X] = \alpha(H) X \text{ for all } H \in \mathfrak{t}\}\).</p>
+<p>The root spaces \(\mathfrak{g}_\alpha\) are 1-dimensional in characteristic
+0 (a key part of the root datum classification); in positive
+characteristic they remain 1-dimensional in good characteristic.</p>
 <h2>Examples</h2>
 <h3>\(\mathfrak{gl}_n\) and \(\mathfrak{sl}_n\)</h3>
-<p>For \(\operatorname{GL}_n\) (and \(\operatorname{SL}_n\)), nilpotent
-orbits are classified by <strong>partitions of \(n\)</strong> (the Jordan canonical
-form). The Bala-Carter Levi is the standard Levi corresponding to the
-partition, and the distinguished orbit is the principal nilpotent
-(regular Jordan block) in that Levi.</p>
-<table>
-<thead>
-<tr>
-<th>Partition</th>
-<th>Levi</th>
-<th>Distinguished orbit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\((n)\)</td>
-<td>\(\mathfrak{gl}_n\) itself</td>
-<td>principal</td>
-</tr>
-<tr>
-<td>\((n-1, 1)\)</td>
-<td>\(\mathfrak{gl}_{n-1}\)</td>
-<td>principal in \(\mathfrak{gl}_{n-1}\)</td>
-</tr>
-<tr>
-<td>\((1^n)\)</td>
-<td>\(\mathfrak{t} = \mathfrak{gl}_1^n\)</td>
-<td>zero</td>
-</tr>
-</tbody>
-</table>
-<h3>Exceptional groups</h3>
-<p>For \(E_8\) there are 70 nilpotent orbits; for \(E_7\) there are 45;
-for \(E_6\) there are 21; for \(F_4\) there are 16; for \(G_2\) there
-are 5. The Bala–Carter labels are the standard way to refer to them.</p>
-<h2>Distinguished orbits and weighted Dynkin diagrams</h2>
-<p>A nilpotent element \(e \in \mathfrak{g}\) is <strong>distinguished</strong> if the
-identity component of the centraliser \(Z_G(e)^\circ\) is unipotent
-(equivalently, contains no non-trivial torus). For each nilpotent
-orbit, the <strong>weighted Dynkin diagram</strong>
-(<a class="node-ref" data-node-id="nilpotent_orbits.weighted_dynkin_diagrams" href="nilpotent_orbits_weighted_dynkin_diagrams.html">see node</a>) is
-obtained from a Jacobson–Morozov \(\mathfrak{sl}_2\)-triple
-\((e, h, f)\) by recording the values \(\alpha_i(h)\) for each simple
-root \(\alpha_i\). The weights are in \(\{0, 1, 2\}\), and for
-distinguished orbits they are in \(\{0, 2\}\).</p>
-<h2>Why this matters for Langlands</h2>
 <ul>
-<li><strong>Jacobson-Morozov theorem</strong> sets up the correspondence between
-  nilpotent orbits and \(\mathfrak{sl}_2\)-triples.</li>
-<li><strong>Springer correspondence</strong> relates nilpotent orbits to
-  representations of the Weyl group, with components of the Springer
-  fibre over each orbit indexed by \(W\)-representations.</li>
-<li><strong>Local Langlands</strong>: the local Langlands correspondence at the
-  unipotent block involves the parametrisation of nilpotent orbits in
-  the dual Lie algebra and the Springer correspondence on each side.</li>
-<li><strong>Lusztig's classification</strong> of unipotent representations of finite
-  groups of Lie type is organised by Bala–Carter labels.</li>
+<li>\(\mathfrak{gl}_n = M_n(k)\), all \(n \times n\) matrices, with bracket
+  \([X, Y] = XY - YX\).</li>
+<li>\(\mathfrak{sl}_n = \{X \in M_n : \mathrm{tr}\,X = 0\}\), the
+  trace-zero matrices.</li>
+<li>\(\mathfrak{gl}_n = \mathfrak{sl}_n \oplus k \cdot I\); \(\mathfrak{sl}_n\)
+  semisimple, \(kI\) the abelian centre.</li>
 </ul>
+<h3>\(\mathfrak{so}_n\)</h3>
+<p>\(\mathfrak{so}_n = \{X \in M_n : X + X^T = 0\}\), skew-symmetric
+matrices. Dimension \(\binom{n}{2}\).</p>
+<h3>\(\mathfrak{sp}_{2n}\)</h3>
+<p>\(\mathfrak{sp}_{2n} = \{X : X^T J + J X = 0\}\), with \(J\) the
+standard symplectic form. Dimension \(n(2n+1)\).</p>
+<h3>Exceptional Lie algebras</h3>
+<ul>
+<li>\(G_2\): 14-dim (derivations of octonions);</li>
+<li>\(F_4\): 52-dim (derivations of \(H_3(\mathbb{O})\));</li>
+<li>\(E_6\): 78-dim, \(E_7\): 133-dim, \(E_8\): 248-dim.</li>
+</ul>
+<h2>The exponential map</h2>
+<p>In characteristic 0: \(\exp : \mathfrak{g} \to G\) is defined and
+gives a local diffeomorphism near 0/identity. Restricted to nilpotent
+elements:
+\[
+\exp : \mathcal{N} \;\xrightarrow{\sim}\; \mathcal{U},
+\]
+a bijection (in fact, an isomorphism of varieties) between the
+nilpotent cone and the unipotent variety. This is the <strong>Springer
+isomorphism</strong>.</p>
+<p>In positive characteristic: \(\exp\) is not well-defined globally, but
+in <strong>good characteristic</strong> the Springer isomorphism still holds (as a
+variety isomorphism that may not literally be the exponential).</p>
+<h2>Adjoint representation</h2>
+<p>\(G\) acts on \(\mathfrak{g}\) by conjugation:
+\(\operatorname{Ad}(g)(X) = g X g^{-1}\) (in matrix terms). This is
+the <strong>adjoint representation</strong>, a homomorphism
+\(\operatorname{Ad} : G \to \mathrm{GL}(\mathfrak{g})\), with image
+the <strong>adjoint group</strong> \(G_{\mathrm{ad}} = G/Z(G)\) and kernel \(Z(G)\).</p>
+<p>The induced map on Lie algebras is \(\mathrm{ad} : \mathfrak{g} \to \operatorname{End}(\mathfrak{g})\),
+\(X \mapsto [X, -]\).</p>
+<h2>Killing form and invariants</h2>
+<p>The <strong>Killing form</strong> \(\kappa : \mathfrak{g} \otimes \mathfrak{g} \to k\):
+\[
+\kappa(X, Y) \;:=\; \mathrm{tr}_{\mathfrak{g}}(\mathrm{ad}\, X \circ \mathrm{ad}\, Y).
+\]</p>
+<p>Properties:
+- Symmetric, \(G\)-invariant, bilinear;
+- Non-degenerate on a semisimple Lie algebra (Cartan's criterion);
+- Restricts to a positive-definite form on a compact real form;
+- Gives the basic invariant theory of \(G\) acting on \(\mathfrak{g}\).</p>
+<h2>Mathlib status</h2>
+<p><code>Mathlib.Algebra.Lie.*</code> has:
+- Lie algebras (general, semisimple, nilpotent, solvable);
+- Killing form;
+- Root systems via <code>Mathlib.LinearAlgebra.RootSystem</code>.</p>
+<p>The Lie algebra of a specific algebraic group (e.g.\
+\(\operatorname{Lie}(\mathrm{GL}_n)\)) is not yet directly formalised
+as such; the path goes via formal group schemes.</p>
 <h2>References</h2>
 <ul>
-<li>Bala–Carter, <em>Classes of unipotent elements in simple algebraic
-  groups I, II</em> (Math. Proc. Cambridge Philos. Soc., 1976).</li>
-<li>Collingwood–McGovern, <em>Nilpotent Orbits in Semisimple Lie Algebras</em>
-  (1993).</li>
-<li>Carter, <em>Finite Groups of Lie Type</em> (1985).</li>
+<li>Humphreys, <em>Introduction to Lie Algebras and Representation Theory</em>
+  (1972).</li>
+<li>Bourbaki, <em>Groupes et Algèbres de Lie</em> I–III, VII–VIII.</li>
+<li>Borel, <em>Linear Algebraic Groups</em> (1991), §3.</li>
+<li>Milne, <em>Reductive Groups</em> (notes), §3.</li>
 </ul>
 <h2>Prerequisite Topics</h2>
 <ul>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.nilpotent_orbits" href="nilpotent_orbits_nilpotent_orbits.html">Nilpotent Orbits</a></li>
-<li><a class="node-ref" data-node-id="reductive_structure.parabolic_subgroups" href="../reductive_structure/reductive_structure_parabolic_subgroups.html">Parabolic Subgroups</a></li>
-<li><a class="node-ref" data-node-id="reductive_structure.levi_subgroups_and_unipotent_radicals" href="../reductive_structure/reductive_structure_levi_subgroups_and_unipotent_radicals.html">Levi Subgroups and Unipotent Radicals</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.weighted_dynkin_diagrams" href="nilpotent_orbits_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a></li>
+<li><a class="node-ref" data-node-id="linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras" href="../linear_algebraic_groups/linear_algebraic_groups_smoothness_tangent_spaces_lie_algebras.html">Smoothness, Tangent Spaces, and Lie Algebras</a></li>
+<li><a class="node-ref" data-node-id="reductive_structure.reductive_groups" href="../reductive_structure/reductive_structure_reductive_groups.html">Reductive Groups</a></li>
 </ul>
     
   </div>
@@ -589,12 +603,25 @@ distinguished orbits they are in \(\{0, 2\}\).</p>
   
 
   
+  <section class="deps deps-used-by">
+    <h2>Used by</h2>
+    <ul>
+      
+      <li><a href="../buildings_and_parahorics/buildings_and_parahorics_moy_prasad_filtrations.html">Moy-Prasad Filtrations</a></li>
+      
+      <li><a href="conjugacy_classes_adjoint_action.html">Adjoint Action</a></li>
+      
+      <li><a href="conjugacy_classes_nilpotent_elements.html">Nilpotent Elements</a></li>
+      
+    </ul>
+  </section>
+  
 
   
 
   
   <footer class="tags">
-    <span class="tag">bala-carter</span><span class="tag">nilpotent-orbits</span>
+    <span class="tag">lie-algebras</span><span class="tag">reductive-groups</span><span class="tag">nilpotent-orbits</span>
   </footer>
   
 </article>

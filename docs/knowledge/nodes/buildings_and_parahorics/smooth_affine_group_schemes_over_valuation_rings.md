@@ -7,7 +7,7 @@ primary_topic: buildings_and_parahorics
 topics:
 - buildings_and_parahorics
 uses:
-- linear_algebraic_groups.affine_algebraic_groups
+- affine_group_schemes.affine_algebraic_groups
 - foundational_inputs.local_fields
 - linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras
 verification:
@@ -154,6 +154,6 @@ specialising to various reductive / non-reductive integral models.
 
 ## Prerequisite Topics
 
-- [[node:linear_algebraic_groups.affine_algebraic_groups|Affine Algebraic Groups]]
+- [[node:affine_group_schemes.affine_algebraic_groups|Affine Algebraic Groups]]
 - [[node:foundational_inputs.local_fields|Local Fields]]
 - [[node:linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras|Smoothness, Tangent Spaces, and Lie Algebras]]

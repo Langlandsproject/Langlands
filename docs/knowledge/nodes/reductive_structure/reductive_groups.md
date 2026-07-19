@@ -119,7 +119,7 @@ Reductive groups are the natural setting for:
 - `Mathlib.AlgebraicGeometry.GroupScheme.*` provides group schemes
   abstractly.
 - Reductive groups specifically are **not yet formalised** in Mathlib;
-  this project's [[node:linear_algebraic_groups.affine_algebraic_groups|affine algebraic groups]]
+  this project's [[node:affine_group_schemes.affine_algebraic_groups|affine algebraic groups]]
   node provides the starting point.
 
 ## References

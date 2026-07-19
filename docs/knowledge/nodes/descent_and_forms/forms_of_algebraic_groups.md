@@ -7,10 +7,10 @@ primary_topic: linear_algebraic_groups
 topics:
 - descent_and_forms
 uses:
-- linear_algebraic_groups.base_change
+- affine_group_schemes.base_change
 - descent_and_forms.forms_of_algebraic_objects
 - descent_and_forms.cocycles_and_twisting
-- linear_algebraic_groups.affine_algebraic_groups
+- affine_group_schemes.affine_algebraic_groups
 verification:
   definition: accepted
   proof: not_applicable
@@ -118,7 +118,7 @@ Langlands correspondence with character-theoretic precision.
 
 ## Prerequisite Topics
 
-- [[node:linear_algebraic_groups.base_change|Base Change]]
+- [[node:affine_group_schemes.base_change|Base Change]]
 - [[node:descent_and_forms.forms_of_algebraic_objects|Forms of Algebraic Objects]]
 - [[node:descent_and_forms.cocycles_and_twisting|Cocycles and Twisting]]
-- [[node:linear_algebraic_groups.affine_algebraic_groups|Affine Algebraic Groups]]
+- [[node:affine_group_schemes.affine_algebraic_groups|Affine Algebraic Groups]]

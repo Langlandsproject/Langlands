@@ -94,7 +94,7 @@
       "id": "affine_group_schemes",
       "title": "Affine Group Schemes",
       "href": "affine_group_schemes/index.html",
-      "node_count": 0
+      "node_count": 38
     },
     {
       "id": "buildings_and_parahorics",
@@ -118,7 +118,7 @@
       "id": "root_data_and_duality",
       "title": "Root Data And Duality",
       "href": "root_data_and_duality/index.html",
-      "node_count": 34
+      "node_count": 35
     }
   ],
   "boundary_edges": [

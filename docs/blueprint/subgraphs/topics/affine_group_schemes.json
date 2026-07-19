@@ -10,7 +10,7 @@
   "counts": {
     "nodes": 38,
     "edges": 63,
-    "boundary_edges": 25
+    "boundary_edges": 27
   },
   "nodes": [
     {
@@ -645,6 +645,12 @@
       "node_count": 16
     },
     {
+      "id": "conjugacy_classes",
+      "title": "Conjugacy Classes",
+      "href": "conjugacy_classes/index.html",
+      "node_count": 15
+    },
+    {
       "id": "foundational_inputs",
       "title": "Foundational Inputs",
       "href": "foundational_inputs/index.html",
@@ -666,7 +672,7 @@
       "id": "root_data_and_duality",
       "title": "Root Data And Duality",
       "href": "root_data_and_duality/index.html",
-      "node_count": 34
+      "node_count": 35
     }
   ],
   "boundary_edges": [
@@ -689,6 +695,20 @@
       "to": "topic:bd_covers",
       "kind": "boundary_dependent",
       "topic": "bd_covers",
+      "count": 1
+    },
+    {
+      "from": "affine_group_schemes.affine_group_scheme_definition",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
+      "count": 1
+    },
+    {
+      "from": "affine_group_schemes.affine_algebraic_groups",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
       "count": 1
     },
     {

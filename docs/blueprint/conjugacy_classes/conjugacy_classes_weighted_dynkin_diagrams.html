@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>nilpotent_orbits — Reductive Linear Algebraic Groups Knowledge DAG</title>
+  <title>Weighted Dynkin Diagrams — Reductive Linear Algebraic Groups Knowledge DAG</title>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex@0.16.46/dist/katex.min.css"
         integrity="sha384-hW6ZmmePRD2f/9cuxGE6C9faGprtIBOme5OLUiEjtRKMTN67tY23ur9eAi21H8De"
@@ -64,7 +64,7 @@
         </li>
       
         <li class="topic-leaf topic-active">
-          <a href="../nilpotent_orbits/index.html">Nilpotent Orbits</a>
+          <a href="../conjugacy_classes/index.html">Conjugacy Classes</a>
         </li>
       
         <li class="topic-leaf">
@@ -448,125 +448,182 @@
   </nav>
   <main>
     
-<h1>Nilpotent Orbits</h1>
+<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-weighted_dynkin_diagrams">
+  <header class="topic_thmheading thm-heading">
+    <span class="topic_thmcaption thm-caption">Topic</span>
+    <span class="topic_thmtitle thm-title">Weighted Dynkin Diagrams</span>
+    <div class="thm_header_extras">
+      
+      <span class="badge kind-topic">topic</span>
+      <span class="badge status-admitted">admitted</span>
+    </div>
+    <div class="thm_header_hidden_extras">
+      <a class="permalink" href="#node-nilpotent_orbits-2e-weighted_dynkin_diagrams">#</a>
+      
+      <button class="modal-trigger" type="button" data-modal-target="uses-modal">Uses</button>
+      
+      
+    </div>
+  </header>
 
-<div class="topic-meta">
-  <div class="topic-stats">
-    <span class="topic-node-count">10 nodes</span>
-    
-    <span class="badge status-admitted">10 admitted</span>
-    
+  
+  <div class="modal-container" id="uses-modal" hidden>
+    <div class="modal-content">
+      <header><h1>Uses</h1><button class="closebtn" type="button">x</button></header>
+      <ul class="uses">
+        
+        <li><a href="conjugacy_classes_nilpotent_orbits.html">Conjugacy Classes</a></li>
+        
+        <li><a href="../root_data_and_duality/root_data_and_duality_root_systems.html">Root Systems</a></li>
+        
+      </ul>
+    </div>
   </div>
   
-</div>
 
+  
 
-<div class="topic-catalog">
-  <h1>Nilpotent Orbits</h1>
-<p>This catalog lists topic-level nodes under the <code>nilpotent_orbits</code> mathematical category. It is for human planning and does not create DAG edges.</p>
-<h2>Topic Nodes</h2>
+  <div class="topic_thmcontent thm-content body">
+    <h1>Weighted Dynkin Diagrams</h1>
+<p>A <strong>weighted Dynkin diagram</strong> is a labelling of the simple roots of a
+reductive Lie algebra by weights in \(\{0, 1, 2\}\), serving as the
+canonical combinatorial invariant of a nilpotent orbit (or more
+precisely, of an \(\mathfrak{sl}_2\)-triple) up to \(G\)-conjugacy.</p>
+<h2>Construction</h2>
+<p>Let \(\mathfrak{g}\) be a complex semisimple Lie algebra (or reductive
+over a field of good characteristic) with fixed Cartan subalgebra
+\(\mathfrak{h}\) and simple roots \(\Delta = \{\alpha_1, \dots, \alpha_r\}\).
+Given a nonzero nilpotent \(X \in \mathfrak{g}\), the <strong>Jacobson–Morozov
+theorem</strong> produces an \(\mathfrak{sl}_2\)-triple \((X, H, Y)\) with
+\(H \in \mathfrak{g}\) semisimple.</p>
+<p>\(H\) can be \(G\)-conjugated into the <strong>dominant chamber</strong> of
+\(\mathfrak{h}\). The <strong>weighted Dynkin diagram</strong> of \(X\) is the
+labelling
+\[
+\alpha_i \;\longmapsto\; d_i := \alpha_i(H) \in \{0, 1, 2\}.
+\]</p>
+<p><strong>Theorem (Dynkin, Kostant).</strong> The map
+\[
+\{\text{nilpotent } G\text{-orbits in } \mathfrak{g}\} \;\longrightarrow\;
+\{\text{weighted Dynkin diagrams on } \Delta\}
+\]
+is <strong>injective</strong>, with image characterised by combinatorial conditions
+on each Dynkin type. In particular, weighted Dynkin diagrams classify
+nilpotent orbits.</p>
+<h2>Why the weights are in {0, 1, 2}</h2>
+<p>For an \(\mathfrak{sl}_2\)-triple \((X, H, Y)\) inside a complex
+semisimple Lie algebra, all eigenvalues of \(\operatorname{ad}(H)\) on
+\(\mathfrak{g}\) are integers (\(\mathfrak{sl}_2\)-representation
+theory). The fact that the simple-root values are in \(\{0, 1, 2\}\)
+specifically uses that the dominant representative of \(H\) acts on
+the simple-root spaces \(\mathfrak{g}_{\alpha_i}\) by an eigenvalue
+\(\alpha_i(H) \ge 0\), and the height-grading bound for nilpotent
+elements gives the upper bound \(2\).</p>
+<h2>Distinguished orbits</h2>
+<p>A weighted Dynkin diagram with all weights in \(\{0, 2\}\)
+corresponds to a <strong>distinguished</strong> nilpotent orbit (an orbit whose
+stabiliser \(Z_G(X)^\circ\) is unipotent).</p>
+<p><strong>Theorem (Bala-Carter).</strong> Every nilpotent orbit \(\mathcal{O}\) in
+\(\mathfrak{g}\) is induced from a distinguished orbit in a Levi
+subalgebra \(\mathfrak{l}\). The weighted Dynkin diagram of
+\(\mathcal{O}\) restricts on \(\mathfrak{l}\) to the (\(\{0,2\}\))
+diagram of the distinguished orbit, and is zero on simple roots
+outside \(\mathfrak{l}\).</p>
+<p>This reduces the classification to listing distinguished orbits in
+each Levi.</p>
+<h2>Examples</h2>
+<h3>\(\mathfrak{sl}_3\) (type \(A_2\))</h3>
+<p>Three nilpotent orbits:</p>
+<table>
+<thead>
+<tr>
+<th>Orbit</th>
+<th>Partition</th>
+<th>Weighted Dynkin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(\{0\}\)</td>
+<td>\((1, 1, 1)\)</td>
+<td>\(0 - 0\)</td>
+</tr>
+<tr>
+<td>subregular</td>
+<td>\((2, 1)\)</td>
+<td>\(1 - 1\)</td>
+</tr>
+<tr>
+<td>principal</td>
+<td>\((3)\)</td>
+<td>\(2 - 2\)</td>
+</tr>
+</tbody>
+</table>
+<h3>\(G_2\)</h3>
+<p>Five nilpotent orbits with weighted Dynkin diagrams
+\(0 - 0\), \(0 - 1\), \(1 - 0\), \(0 - 2\), \(2 - 2\) (labels on
+short root then long root).</p>
+<p>The diagram \(0 - 1\) corresponds to the <strong>minimal</strong> nilpotent orbit;
+\(2 - 2\) is the <strong>principal</strong>.</p>
+<h2>The Dynkin-Kostant labelling vs. Bala-Carter</h2>
+<p>Both are bijections from nilpotent orbits to combinatorial data, but
+the encodings differ:</p>
 <ul>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.adjoint_action" href="nilpotent_orbits_adjoint_action.html">Adjoint Action</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.bala_carter_classification" href="nilpotent_orbits_bala_carter_classification.html">Bala-Carter Classification</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.jacobson_morozov_theorem" href="nilpotent_orbits_jacobson_morozov_theorem.html">Jacobson-Morozov Theorem</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.lie_algebras_of_reductive_groups" href="nilpotent_orbits_lie_algebras_of_reductive_groups.html">Lie Algebras of Reductive Groups</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.nilpotent_cone" href="nilpotent_orbits_nilpotent_cone.html">Nilpotent Cone</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.nilpotent_elements" href="nilpotent_orbits_nilpotent_elements.html">Nilpotent Elements</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.nilpotent_orbits" href="nilpotent_orbits_nilpotent_orbits.html">Nilpotent Orbits</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.rational_nilpotent_orbits" href="nilpotent_orbits_rational_nilpotent_orbits.html">Rational Nilpotent Orbits</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.sl2_triples" href="nilpotent_orbits_sl2_triples.html">SL2-Triples</a></li>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.weighted_dynkin_diagrams" href="nilpotent_orbits_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a></li>
+<li><strong>Dynkin-Kostant</strong> = weighted diagram on the full Dynkin diagram of
+  \(\mathfrak{g}\).</li>
+<li><strong>Bala-Carter</strong> = pair (Levi Dynkin subdiagram, distinguished orbit
+  in that Levi).</li>
 </ul>
-<h2>Details To Discuss</h2>
+<p>A Bala-Carter label of the form "Levi type, distinguished decoration"
+(e.g.\ \(A_2 + A_1\), \(D_4(a_1)\), \(E_6(a_3)\)) corresponds to a
+unique weighted Dynkin diagram and vice versa.</p>
+<h2>Role for Langlands</h2>
 <ul>
-<li>Refine this list as the category is expanded.</li>
+<li><strong>Arthur parameters</strong> include an \(\mathfrak{sl}_2\)-factor in
+  \(\hat G \times W_F \times \mathrm{SL}_2(\mathbb{C})\), whose
+  associated nilpotent orbit determines the <strong>Arthur SL_2</strong> type;
+  weighted Dynkin diagrams are the natural labels.</li>
+<li><strong>Endoscopic transfer</strong> of nilpotent orbits is described in terms of
+  weighted Dynkin diagrams.</li>
 </ul>
-</div>
+<h2>References</h2>
+<ul>
+<li>Collingwood–McGovern, <em>Conjugacy Classes in Semisimple Lie Algebras</em>
+  (1993), Ch. 3.</li>
+<li>Carter, <em>Finite Groups of Lie Type</em> (1985), §5.7.</li>
+<li>Bala-Carter, <em>Classes of unipotent elements in simple algebraic
+  groups</em> (Math. Proc. Camb. Phil. Soc. 1976).</li>
+</ul>
+<h2>Prerequisite Topics</h2>
+<ul>
+<li><a class="node-ref" data-node-id="conjugacy_classes.nilpotent_orbits" href="conjugacy_classes_nilpotent_orbits.html">Conjugacy Classes</a></li>
+<li><a class="node-ref" data-node-id="root_data_and_duality.root_systems" href="../root_data_and_duality/root_data_and_duality_root_systems.html">Root Systems</a></li>
+</ul>
+    
+  </div>
 
+  
 
-<div class="blueprint-node-list">
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_adjoint_action.html">Adjoint Action</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
+  <section class="deps deps-used-by">
+    <h2>Used by</h2>
+    <ul>
+      
+      <li><a href="conjugacy_classes_bala_carter_classification.html">Bala-Carter Classification</a></li>
+      
+    </ul>
+  </section>
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_bala_carter_classification.html">Bala-Carter Classification</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
+
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_jacobson_morozov_theorem.html">Jacobson-Morozov Theorem</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
+
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_lie_algebras_of_reductive_groups.html">Lie Algebras of Reductive Groups</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
+  <footer class="tags">
+    <span class="tag">weighted-dynkin-diagrams</span><span class="tag">nilpotent-orbits</span>
+  </footer>
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_nilpotent_cone.html">Nilpotent Cone</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_nilpotent_elements.html">Nilpotent Elements</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_nilpotent_orbits.html">Nilpotent Orbits</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_rational_nilpotent_orbits.html">Rational Nilpotent Orbits</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_sl2_triples.html">SL2-Triples</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="nilpotent_orbits_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-</div>
+</article>
 
   </main>
   <script src="../graph.js"></script>

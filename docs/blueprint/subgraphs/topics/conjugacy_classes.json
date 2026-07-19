@@ -1,0 +1,356 @@
+{
+  "topic": {
+    "id": "conjugacy_classes",
+    "title": "Conjugacy Classes",
+    "href": "conjugacy_classes/index.html",
+    "parent": null,
+    "node_count": 15,
+    "descendant_node_count": 15
+  },
+  "counts": {
+    "nodes": 15,
+    "edges": 19,
+    "boundary_edges": 14
+  },
+  "nodes": [
+    {
+      "id": "conjugacy_classes.adjoint_action",
+      "title": "Adjoint Action",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_adjoint_action.html"
+    },
+    {
+      "id": "conjugacy_classes.bala_carter_classification",
+      "title": "Bala-Carter Classification",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_bala_carter_classification.html"
+    },
+    {
+      "id": "conjugacy_classes.jacobson_morozov_theorem",
+      "title": "Jacobson-Morozov Theorem",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_jacobson_morozov_theorem.html"
+    },
+    {
+      "id": "conjugacy_classes.jordan_decomposition",
+      "title": "Jordan Decomposition in Algebraic Groups",
+      "kind": "theorem",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_jordan_decomposition.html"
+    },
+    {
+      "id": "conjugacy_classes.lie_algebras_of_reductive_groups",
+      "title": "Lie Algebras of Reductive Groups",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_lie_algebras_of_reductive_groups.html"
+    },
+    {
+      "id": "conjugacy_classes.nilpotent_cone",
+      "title": "Nilpotent Cone",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_nilpotent_cone.html"
+    },
+    {
+      "id": "conjugacy_classes.nilpotent_elements",
+      "title": "Nilpotent Elements",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_nilpotent_elements.html"
+    },
+    {
+      "id": "conjugacy_classes.nilpotent_orbits",
+      "title": "Nilpotent Orbits",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_nilpotent_orbits.html"
+    },
+    {
+      "id": "conjugacy_classes.rational_nilpotent_orbits",
+      "title": "Rational Nilpotent Orbits",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_rational_nilpotent_orbits.html"
+    },
+    {
+      "id": "conjugacy_classes.semisimple_conjugacy_classes",
+      "title": "Semisimple Conjugacy Classes",
+      "kind": "definition",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_semisimple_conjugacy_classes.html"
+    },
+    {
+      "id": "conjugacy_classes.sl2_triples",
+      "title": "SL2-Triples",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_sl2_triples.html"
+    },
+    {
+      "id": "conjugacy_classes.springer_correspondence",
+      "title": "Springer Correspondence",
+      "kind": "theorem",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_springer_correspondence.html"
+    },
+    {
+      "id": "conjugacy_classes.unipotent_elements",
+      "title": "Unipotent Elements and the Unipotent Variety",
+      "kind": "definition",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_unipotent_elements.html"
+    },
+    {
+      "id": "conjugacy_classes.unipotent_orbits",
+      "title": "Unipotent Orbits",
+      "kind": "definition",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_unipotent_orbits.html"
+    },
+    {
+      "id": "conjugacy_classes.weighted_dynkin_diagrams",
+      "title": "Weighted Dynkin Diagrams",
+      "kind": "topic",
+      "status": "admitted",
+      "href": "conjugacy_classes/conjugacy_classes_weighted_dynkin_diagrams.html"
+    }
+  ],
+  "edges": [
+    {
+      "from": "conjugacy_classes.nilpotent_elements",
+      "to": "conjugacy_classes.nilpotent_cone",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.adjoint_action",
+      "to": "conjugacy_classes.nilpotent_cone",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.jordan_decomposition",
+      "to": "conjugacy_classes.unipotent_elements",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.jordan_decomposition",
+      "to": "conjugacy_classes.semisimple_conjugacy_classes",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_elements",
+      "to": "conjugacy_classes.sl2_triples",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.sl2_triples",
+      "to": "conjugacy_classes.jacobson_morozov_theorem",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.unipotent_orbits",
+      "to": "conjugacy_classes.springer_correspondence",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.springer_correspondence",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_cone",
+      "to": "conjugacy_classes.springer_correspondence",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_cone",
+      "to": "conjugacy_classes.nilpotent_orbits",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.bala_carter_classification",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.weighted_dynkin_diagrams",
+      "to": "conjugacy_classes.bala_carter_classification",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.unipotent_elements",
+      "to": "conjugacy_classes.unipotent_orbits",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.jordan_decomposition",
+      "to": "conjugacy_classes.unipotent_orbits",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.unipotent_orbits",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.lie_algebras_of_reductive_groups",
+      "to": "conjugacy_classes.adjoint_action",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.weighted_dynkin_diagrams",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.rational_nilpotent_orbits",
+      "kind": "uses"
+    },
+    {
+      "from": "conjugacy_classes.lie_algebras_of_reductive_groups",
+      "to": "conjugacy_classes.nilpotent_elements",
+      "kind": "uses"
+    }
+  ],
+  "boundary_topics": [
+    {
+      "id": "affine_group_schemes",
+      "title": "Affine Group Schemes",
+      "href": "affine_group_schemes/index.html",
+      "node_count": 38
+    },
+    {
+      "id": "descent_and_forms",
+      "title": "Descent And Forms",
+      "href": "descent_and_forms/index.html",
+      "node_count": 18
+    },
+    {
+      "id": "linear_algebraic_groups",
+      "title": "Linear Algebraic Groups",
+      "href": "linear_algebraic_groups/index.html",
+      "node_count": 30
+    },
+    {
+      "id": "reductive_structure",
+      "title": "Reductive Structure",
+      "href": "reductive_structure/index.html",
+      "node_count": 28
+    },
+    {
+      "id": "root_data_and_duality",
+      "title": "Root Data And Duality",
+      "href": "root_data_and_duality/index.html",
+      "node_count": 35
+    }
+  ],
+  "boundary_edges": [
+    {
+      "from": "topic:reductive_structure",
+      "to": "conjugacy_classes.unipotent_elements",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 1
+    },
+    {
+      "from": "topic:affine_group_schemes",
+      "to": "conjugacy_classes.unipotent_elements",
+      "kind": "boundary_dependency",
+      "topic": "affine_group_schemes",
+      "count": 1
+    },
+    {
+      "from": "topic:affine_group_schemes",
+      "to": "conjugacy_classes.jordan_decomposition",
+      "kind": "boundary_dependency",
+      "topic": "affine_group_schemes",
+      "count": 1
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "conjugacy_classes.jordan_decomposition",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 1
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "conjugacy_classes.semisimple_conjugacy_classes",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 2
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "conjugacy_classes.springer_correspondence",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 2
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "conjugacy_classes.bala_carter_classification",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 2
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "conjugacy_classes.unipotent_orbits",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 1
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "conjugacy_classes.adjoint_action",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 1
+    },
+    {
+      "from": "topic:root_data_and_duality",
+      "to": "conjugacy_classes.weighted_dynkin_diagrams",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 1
+    },
+    {
+      "from": "topic:linear_algebraic_groups",
+      "to": "conjugacy_classes.lie_algebras_of_reductive_groups",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 1
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "conjugacy_classes.lie_algebras_of_reductive_groups",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 1
+    },
+    {
+      "from": "topic:descent_and_forms",
+      "to": "conjugacy_classes.rational_nilpotent_orbits",
+      "kind": "boundary_dependency",
+      "topic": "descent_and_forms",
+      "count": 1
+    },
+    {
+      "from": "topic:linear_algebraic_groups",
+      "to": "conjugacy_classes.rational_nilpotent_orbits",
+      "kind": "boundary_dependency",
+      "topic": "linear_algebraic_groups",
+      "count": 1
+    }
+  ],
+  "keywords": [],
+  "proof_plan_attachments": [],
+  "child_topics": [],
+  "child_topic_nodes": [],
+  "inlined_child_topics": []
+}

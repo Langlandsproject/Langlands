@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jacobson-Morozov Theorem — Reductive Linear Algebraic Groups Knowledge DAG</title>
+  <title>Bala-Carter Classification — Reductive Linear Algebraic Groups Knowledge DAG</title>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex@0.16.46/dist/katex.min.css"
         integrity="sha384-hW6ZmmePRD2f/9cuxGE6C9faGprtIBOme5OLUiEjtRKMTN67tY23ur9eAi21H8De"
@@ -64,7 +64,7 @@
         </li>
       
         <li class="topic-leaf topic-active">
-          <a href="../nilpotent_orbits/index.html">Nilpotent Orbits</a>
+          <a href="../conjugacy_classes/index.html">Conjugacy Classes</a>
         </li>
       
         <li class="topic-leaf">
@@ -448,17 +448,17 @@
   </nav>
   <main>
     
-<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-jacobson_morozov_theorem">
+<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-bala_carter_classification">
   <header class="topic_thmheading thm-heading">
     <span class="topic_thmcaption thm-caption">Topic</span>
-    <span class="topic_thmtitle thm-title">Jacobson-Morozov Theorem</span>
+    <span class="topic_thmtitle thm-title">Bala-Carter Classification</span>
     <div class="thm_header_extras">
       
       <span class="badge kind-topic">topic</span>
       <span class="badge status-admitted">admitted</span>
     </div>
     <div class="thm_header_hidden_extras">
-      <a class="permalink" href="#node-nilpotent_orbits-2e-jacobson_morozov_theorem">#</a>
+      <a class="permalink" href="#node-nilpotent_orbits-2e-bala_carter_classification">#</a>
       
       <button class="modal-trigger" type="button" data-modal-target="uses-modal">Uses</button>
       
@@ -472,7 +472,13 @@
       <header><h1>Uses</h1><button class="closebtn" type="button">x</button></header>
       <ul class="uses">
         
-        <li><a href="nilpotent_orbits_sl2_triples.html">SL2-Triples</a></li>
+        <li><a href="conjugacy_classes_nilpotent_orbits.html">Conjugacy Classes</a></li>
+        
+        <li><a href="../reductive_structure/reductive_structure_parabolic_subgroups.html">Parabolic Subgroups</a></li>
+        
+        <li><a href="../reductive_structure/reductive_structure_levi_subgroups_and_unipotent_radicals.html">Levi Subgroups and Unipotent Radicals</a></li>
+        
+        <li><a href="conjugacy_classes_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a></li>
         
       </ul>
     </div>
@@ -482,106 +488,101 @@
   
 
   <div class="topic_thmcontent thm-content body">
-    <h1>Jacobson-Morozov Theorem</h1>
-<p>The <strong>Jacobson-Morozov theorem</strong> asserts that every nonzero nilpotent
-element in a semisimple Lie algebra extends to an
-\(\mathfrak{sl}_2\)-triple. This is the foundational existence
-statement underlying the entire classification of nilpotent orbits.</p>
-<h2>Statement</h2>
-<p><strong>Theorem (Jacobson-Morozov).</strong> Let \(\mathfrak{g}\) be a
-finite-dimensional semisimple Lie algebra over a field \(k\) of
-characteristic 0 (or of good characteristic for the type of
-\(\mathfrak{g}\)). For every nonzero nilpotent element
-\(e \in \mathfrak{g}\), there exist \(h, f \in \mathfrak{g}\) such
-that \((e, h, f)\) is an \(\mathfrak{sl}_2\)-triple:
-\[
-[h, e] = 2e, \qquad [h, f] = -2f, \qquad [e, f] = h.
-\]</p>
-<p>Furthermore, the extension is <strong>unique up to \(Z_G(e)^\circ\)-conjugacy</strong>:
-any two \(\mathfrak{sl}_2\)-triples extending the same \(e\) differ by
-conjugation by an element of \(Z_G(e)^\circ\).</p>
-    
-    <details class="proof-details">
-      <summary>Proof</summary>
-      <div class="proof-body">
-        <p>sketch</p>
-<p>The key idea: extend the action of \(e\) (a nilpotent element) to a
-representation of \(\mathfrak{sl}_2\) on \(\mathfrak{g}\) by adjointly
-acting.</p>
-<ol>
-<li><strong>Construct \(h\).</strong> Use \(e\) and a Lie-theoretic argument:
-   \(\mathrm{im}(\mathrm{ad}\, e) \cap \mathrm{ker}(\mathrm{ad}\, e) \supseteq \{0\}\)
-   when \(\mathfrak{g}\) is "non-degenerate enough" (the Killing form
-   condition). Specifically, find \(h\) with
-   \([h, e] = 2e\) using semisimplicity of \(\mathrm{ad}(h)\).</li>
-<li><strong>Construct \(f\).</strong> Solve the equation \([e, f] = h\) using the
-   surjectivity of \(\mathrm{ad}\, e\) restricted to suitable weight
-   spaces.</li>
-<li><strong>Verify \([h, f] = -2f\).</strong> Automatic from the construction.</li>
-</ol>
-<p>The "non-degenerate enough" condition is automatic in characteristic
-0 (Killing form non-degenerate); in positive characteristic, "good"
-means: not a torsion prime for \(\mathfrak{g}\) (e.g.\ \(p \ne 2\) for
-\(B_n, C_n, D_n\); \(p \ne 2, 3\) for exceptional types; with
-specific exceptions for \(G_2, F_4, E_6, E_7, E_8\)).</p>
-<h2>Failure in bad characteristic</h2>
-<p>In bad characteristic (e.g.\ \(p = 2\) for \(\mathrm{SO}_n\), \(p = 3\)
-for \(G_2\)): the theorem can fail. Specific nilpotents may not
-embed in any \(\mathfrak{sl}_2\)-triple, or extensions may not be
-unique.</p>
-<p>The remedy is the <strong>Premet</strong> correspondence: replacing
-\(\mathfrak{sl}_2\)-triples with "associated cocharacters" — the
-extension still works.</p>
-<h2>Consequences</h2>
-<h3>Bijection of orbits with triples</h3>
-<p>\(G\)-conjugacy classes of nonzero nilpotents = \(G\)-conjugacy
-classes of \(\mathfrak{sl}_2\)-triples (Kostant).</p>
-<h3>Weighted Dynkin diagrams</h3>
-<p>Each triple gives a labelling of the simple roots by \(\alpha_i(h) \in \{0, 1, 2\}\)
-— the <strong>weighted Dynkin diagram</strong>. Injective on orbits;
-characterising image is the Bala-Carter analysis.</p>
-<h3>Finiteness of nilpotent orbits</h3>
-<p>Because there are finitely many weighted Dynkin diagrams, there are
-finitely many nilpotent orbits.</p>
+    <h1>Bala-Carter Classification</h1>
+<p>The <strong>Bala-Carter classification</strong> is the type-independent
+classification of <strong>nilpotent conjugacy classes</strong> (orbits) in a complex
+(or, over an algebraically closed field of good characteristic) simple
+Lie algebra \(\mathfrak{g}\). It assigns to each nilpotent orbit a
+labeled subdiagram of the Dynkin diagram.</p>
+<h2>The classification</h2>
+<p><strong>Theorem (Bala–Carter).</strong> Nilpotent \(G\)-orbits in
+\(\mathfrak{g}\) are in canonical bijection with pairs
+\((\mathfrak{l}, \mathcal{O}_{\mathfrak{l}})\) where:</p>
+<ul>
+<li>\(\mathfrak{l} \subseteq \mathfrak{g}\) is a <strong>Levi subalgebra</strong> of
+  some parabolic of \(\mathfrak{g}\), taken up to \(G\)-conjugacy;</li>
+<li>\(\mathcal{O}_{\mathfrak{l}}\) is a <strong>distinguished</strong> nilpotent orbit
+  in the derived subalgebra \([\mathfrak{l}, \mathfrak{l}]\)
+  (one whose centraliser in the corresponding group contains no
+  non-trivial torus).</li>
+</ul>
+<p>A distinguished orbit, in turn, is labelled by a <strong>weighted Dynkin
+diagram</strong> of \(\mathfrak{l}\) with weights in \(\{0, 2\}\).</p>
 <h2>Examples</h2>
-<h3>\(\mathfrak{sl}_2\)</h3>
-<p>For \(e = E_{12}\): \(h = E_{11} - E_{22}\), \(f = E_{21}\). The
-unique triple (no centraliser).</p>
-<h3>\(\mathfrak{sl}_3\)</h3>
-<p>For \(e = E_{12} + E_{23}\) (regular nilpotent): the unique extension
-gives \(h = 2 E_{11} - 2 E_{33}\), \(f\) determined up to scale by
-\([e, f] = h\). Centraliser \(Z_G(e)^\circ\) is trivial (regular
-implies abelian centraliser, here just centre).</p>
-<h3>Subregular nilpotent in \(E_8\)</h3>
-<p>\(e\) is a non-trivial sum of simple-root vectors; the triple's
-\(h\)-weights give a specific weighted Dynkin label that distinguishes
-the subregular orbit from neighbouring orbits in the closure order.</p>
-<h2>Constructive aspects</h2>
-<p>The proof gives an algorithm: given \(e\), one can compute \(h\) and
-\(f\) by solving linear equations in \(\mathfrak{g}\). This is the
-basis of computer-algebra implementations (LiE, GAP, Magma) of
-nilpotent-orbit classification.</p>
-<h2>Mathlib</h2>
-<p>Not formalised. Depends on full Lie algebra and reductive group
-infrastructure.</p>
+<h3>\(\mathfrak{gl}_n\) and \(\mathfrak{sl}_n\)</h3>
+<p>For \(\operatorname{GL}_n\) (and \(\operatorname{SL}_n\)), nilpotent
+orbits are classified by <strong>partitions of \(n\)</strong> (the Jordan canonical
+form). The Bala-Carter Levi is the standard Levi corresponding to the
+partition, and the distinguished orbit is the principal nilpotent
+(regular Jordan block) in that Levi.</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Levi</th>
+<th>Distinguished orbit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\((n)\)</td>
+<td>\(\mathfrak{gl}_n\) itself</td>
+<td>principal</td>
+</tr>
+<tr>
+<td>\((n-1, 1)\)</td>
+<td>\(\mathfrak{gl}_{n-1}\)</td>
+<td>principal in \(\mathfrak{gl}_{n-1}\)</td>
+</tr>
+<tr>
+<td>\((1^n)\)</td>
+<td>\(\mathfrak{t} = \mathfrak{gl}_1^n\)</td>
+<td>zero</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptional groups</h3>
+<p>For \(E_8\) there are 70 nilpotent orbits; for \(E_7\) there are 45;
+for \(E_6\) there are 21; for \(F_4\) there are 16; for \(G_2\) there
+are 5. The Bala–Carter labels are the standard way to refer to them.</p>
+<h2>Distinguished orbits and weighted Dynkin diagrams</h2>
+<p>A nilpotent element \(e \in \mathfrak{g}\) is <strong>distinguished</strong> if the
+identity component of the centraliser \(Z_G(e)^\circ\) is unipotent
+(equivalently, contains no non-trivial torus). For each nilpotent
+orbit, the <strong>weighted Dynkin diagram</strong>
+(<a class="node-ref" data-node-id="conjugacy_classes.weighted_dynkin_diagrams" href="conjugacy_classes_weighted_dynkin_diagrams.html">see node</a>) is
+obtained from a Jacobson–Morozov \(\mathfrak{sl}_2\)-triple
+\((e, h, f)\) by recording the values \(\alpha_i(h)\) for each simple
+root \(\alpha_i\). The weights are in \(\{0, 1, 2\}\), and for
+distinguished orbits they are in \(\{0, 2\}\).</p>
+<h2>Why this matters for Langlands</h2>
+<ul>
+<li><strong>Jacobson-Morozov theorem</strong> sets up the correspondence between
+  nilpotent orbits and \(\mathfrak{sl}_2\)-triples.</li>
+<li><strong>Springer correspondence</strong> relates nilpotent orbits to
+  representations of the Weyl group, with components of the Springer
+  fibre over each orbit indexed by \(W\)-representations.</li>
+<li><strong>Local Langlands</strong>: the local Langlands correspondence at the
+  unipotent block involves the parametrisation of nilpotent orbits in
+  the dual Lie algebra and the Springer correspondence on each side.</li>
+<li><strong>Lusztig's classification</strong> of unipotent representations of finite
+  groups of Lie type is organised by Bala–Carter labels.</li>
+</ul>
 <h2>References</h2>
 <ul>
-<li>Jacobson, <em>Completely reducible Lie algebras of linear
-  transformations</em> (Proc.\ AMS 1951).</li>
-<li>Morozov, <em>On a nilpotent element in a semisimple Lie algebra</em>
-  (Doklady 1942).</li>
-<li>Bourbaki, <em>Groupes et algèbres de Lie</em>, Ch. VIII.</li>
-<li>Collingwood–McGovern, <em>Nilpotent Orbits in Semisimple Lie Algebras</em>
-  (1993), §3.3.</li>
-<li>Premet, <em>Nilpotent commuting varieties of reductive Lie algebras</em>
-  (Invent.\ Math.\ 2003).</li>
+<li>Bala–Carter, <em>Classes of unipotent elements in simple algebraic
+  groups I, II</em> (Math. Proc. Cambridge Philos. Soc., 1976).</li>
+<li>Collingwood–McGovern, <em>Conjugacy Classes in Semisimple Lie Algebras</em>
+  (1993).</li>
+<li>Carter, <em>Finite Groups of Lie Type</em> (1985).</li>
 </ul>
 <h2>Prerequisite Topics</h2>
 <ul>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.sl2_triples" href="nilpotent_orbits_sl2_triples.html">SL2-Triples</a></li>
+<li><a class="node-ref" data-node-id="conjugacy_classes.nilpotent_orbits" href="conjugacy_classes_nilpotent_orbits.html">Conjugacy Classes</a></li>
+<li><a class="node-ref" data-node-id="reductive_structure.parabolic_subgroups" href="../reductive_structure/reductive_structure_parabolic_subgroups.html">Parabolic Subgroups</a></li>
+<li><a class="node-ref" data-node-id="reductive_structure.levi_subgroups_and_unipotent_radicals" href="../reductive_structure/reductive_structure_levi_subgroups_and_unipotent_radicals.html">Levi Subgroups and Unipotent Radicals</a></li>
+<li><a class="node-ref" data-node-id="conjugacy_classes.weighted_dynkin_diagrams" href="conjugacy_classes_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a></li>
 </ul>
-      </div>
-    </details>
     
   </div>
 
@@ -593,7 +594,7 @@ infrastructure.</p>
 
   
   <footer class="tags">
-    <span class="tag">jacobson-morozov</span><span class="tag">nilpotent-orbits</span>
+    <span class="tag">bala-carter</span><span class="tag">nilpotent-orbits</span>
   </footer>
   
 </article>

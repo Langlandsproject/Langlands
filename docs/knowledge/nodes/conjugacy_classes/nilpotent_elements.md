@@ -1,25 +1,26 @@
 ---
-id: nilpotent_orbits.nilpotent_elements
+id: conjugacy_classes.nilpotent_elements
 title: Nilpotent Elements
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
-- nilpotent_orbits.lie_algebras_of_reductive_groups
+- conjugacy_classes.lie_algebras_of_reductive_groups
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Are nilpotent elements treated for general Lie algebras (not just classical / matrix Lie algebras), with both the abstract and the matrix-theoretic characterisations?"
-  verdict: "Yes. The definition via ad-nilpotency is intrinsic to any Lie algebra; the equivalence with matrix-nilpotency for any faithful representation is standard."
+  prompt: Are nilpotent elements treated for general Lie algebras (not just classical
+    / matrix Lie algebras), with both the abstract and the matrix-theoretic characterisations?
+  verdict: Yes. The definition via ad-nilpotency is intrinsic to any Lie algebra;
+    the equivalence with matrix-nilpotency for any faithful representation is standard.
 tags:
 - nilpotent-elements
 - nilpotent-orbits
 ---
-
 # Nilpotent Elements
 
 A **nilpotent element** of a Lie algebra \(\mathfrak{g}\) is one whose

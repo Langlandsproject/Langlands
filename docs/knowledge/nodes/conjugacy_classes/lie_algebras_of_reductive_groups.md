@@ -1,11 +1,11 @@
 ---
-id: nilpotent_orbits.lie_algebras_of_reductive_groups
+id: conjugacy_classes.lie_algebras_of_reductive_groups
 title: Lie Algebras of Reductive Groups
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
 - linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras
 - reductive_structure.reductive_groups
@@ -14,14 +14,16 @@ verification:
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Are Lie algebras of reductive groups treated over arbitrary fields, with the structure of reductive Lie algebras both abstractly and concretely?"
-  verdict: "Yes. The Lie algebra of a reductive group is defined functorially as the tangent space at the identity; in characteristic zero this gives the classical semisimple/reductive Lie algebra theory."
+  prompt: Are Lie algebras of reductive groups treated over arbitrary fields, with
+    the structure of reductive Lie algebras both abstractly and concretely?
+  verdict: Yes. The Lie algebra of a reductive group is defined functorially as the
+    tangent space at the identity; in characteristic zero this gives the classical
+    semisimple/reductive Lie algebra theory.
 tags:
 - lie-algebras
 - reductive-groups
 - nilpotent-orbits
 ---
-
 # Lie Algebras of Reductive Groups
 
 The **Lie algebra** \(\mathfrak{g} = \operatorname{Lie}(G)\) of a

@@ -1,26 +1,27 @@
 ---
-id: nilpotent_orbits.adjoint_action
+id: conjugacy_classes.adjoint_action
 title: Adjoint Action
 kind: topic
 status: admitted
-primary_topic: nilpotent_orbits
+primary_topic: conjugacy_classes
 topics:
-- nilpotent_orbits
+- conjugacy_classes
 uses:
 - reductive_structure.reductive_groups
-- nilpotent_orbits.lie_algebras_of_reductive_groups
+- conjugacy_classes.lie_algebras_of_reductive_groups
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Is the adjoint action defined uniformly for any algebraic group acting on its Lie algebra, with the corresponding orbit structure?"
-  verdict: "Yes. The adjoint action G → GL(Lie G) is functorial and intrinsic to any algebraic group; orbit-by-orbit analysis is fundamental for reductive groups."
+  prompt: Is the adjoint action defined uniformly for any algebraic group acting on
+    its Lie algebra, with the corresponding orbit structure?
+  verdict: Yes. The adjoint action G → GL(Lie G) is functorial and intrinsic to any
+    algebraic group; orbit-by-orbit analysis is fundamental for reductive groups.
 tags:
 - adjoint-action
 - nilpotent-orbits
 ---
-
 # Adjoint Action
 
 The **adjoint action** of an algebraic group \(G\) on its Lie algebra

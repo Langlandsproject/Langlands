@@ -32,8 +32,13 @@
         "root_data_and_duality.root_subgroups_generate_reductive_group",
         "root_data_and_duality.root_datum_from_reductive_group",
         "bd_covers.brylinski_deligne_k2_extensions",
-        "nilpotent_orbits.adjoint_action",
-        "nilpotent_orbits.lie_algebras_of_reductive_groups",
+        "conjugacy_classes.unipotent_elements",
+        "conjugacy_classes.jordan_decomposition",
+        "conjugacy_classes.semisimple_conjugacy_classes",
+        "conjugacy_classes.springer_correspondence",
+        "conjugacy_classes.unipotent_orbits",
+        "conjugacy_classes.adjoint_action",
+        "conjugacy_classes.lie_algebras_of_reductive_groups",
         "descent_and_forms.rational_forms_of_reductive_groups",
         "buildings_and_parahorics.tits_buildings",
         "buildings_and_parahorics.moy_prasad_filtrations",
@@ -170,7 +175,8 @@
       "used_by": [
         "reductive_structure.maximal_tori_are_conjugate",
         "reductive_structure.cartan_subgroups_from_maximal_tori",
-        "root_data_and_duality.roots_coroots_and_root_subgroups"
+        "root_data_and_duality.roots_coroots_and_root_subgroups",
+        "conjugacy_classes.semisimple_conjugacy_classes"
       ],
       "href": "reductive_structure/reductive_structure_maximal_tori.html",
       "payload": "node_payloads/reductive_structure_maximal_tori.json"
@@ -353,7 +359,7 @@
       "used_by": [
         "reductive_structure.reductive_groups",
         "reductive_structure.levi_decomposition_of_parabolics",
-        "nilpotent_orbits.bala_carter_classification"
+        "conjugacy_classes.bala_carter_classification"
       ],
       "href": "reductive_structure/reductive_structure_levi_subgroups_and_unipotent_radicals.html",
       "payload": "node_payloads/reductive_structure_levi_subgroups_and_unipotent_radicals.json"
@@ -379,7 +385,7 @@
         "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
         "reductive_structure.maximal_f_split_tori_are_conjugate",
         "reductive_structure.standard_parabolic_classification",
-        "nilpotent_orbits.bala_carter_classification",
+        "conjugacy_classes.bala_carter_classification",
         "buildings_and_parahorics.tits_buildings",
         "buildings_and_parahorics.bn_pairs_and_tits_systems"
       ],
@@ -658,7 +664,8 @@
       ],
       "used_by": [
         "reductive_structure.parabolic_subgroups",
-        "reductive_structure.borel_subgroups_conjugacy_and_parabolics"
+        "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
+        "conjugacy_classes.springer_correspondence"
       ],
       "href": "reductive_structure/reductive_structure_borel_subgroups.html",
       "payload": "node_payloads/reductive_structure_borel_subgroups.json"
@@ -1189,7 +1196,7 @@
         "root_data_and_duality.dual_root_systems",
         "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
         "root_data_and_duality.weyl_group_generated_by_reflections",
-        "nilpotent_orbits.weighted_dynkin_diagrams",
+        "conjugacy_classes.weighted_dynkin_diagrams",
         "buildings_and_parahorics.affine_root_systems"
       ],
       "href": "root_data_and_duality/root_data_and_duality_root_systems.html",
@@ -2164,124 +2171,250 @@
       "payload": "node_payloads/bd_covers_l_groups_for_covers.json"
     },
     {
-      "id": "nilpotent_orbits.nilpotent_cone",
+      "id": "conjugacy_classes.nilpotent_cone",
       "title": "Nilpotent Cone",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "nilpotent-cone",
         "nilpotent-orbits"
       ],
       "uses": [
-        "nilpotent_orbits.nilpotent_elements",
-        "nilpotent_orbits.adjoint_action"
+        "conjugacy_classes.nilpotent_elements",
+        "conjugacy_classes.adjoint_action"
       ],
       "used_by": [
-        "nilpotent_orbits.nilpotent_orbits"
+        "conjugacy_classes.springer_correspondence",
+        "conjugacy_classes.nilpotent_orbits"
       ],
-      "href": "nilpotent_orbits/nilpotent_orbits_nilpotent_cone.html",
-      "payload": "node_payloads/nilpotent_orbits_nilpotent_cone.json"
+      "href": "conjugacy_classes/conjugacy_classes_nilpotent_cone.html"
     },
     {
-      "id": "nilpotent_orbits.sl2_triples",
+      "id": "conjugacy_classes.unipotent_elements",
+      "title": "Unipotent Elements and the Unipotent Variety",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes",
+        "reductive_structure"
+      ],
+      "tags": [
+        "unipotent-elements",
+        "unipotent-variety",
+        "conjugacy"
+      ],
+      "uses": [
+        "conjugacy_classes.jordan_decomposition",
+        "reductive_structure.reductive_groups",
+        "affine_group_schemes.affine_group_scheme_definition"
+      ],
+      "used_by": [
+        "conjugacy_classes.unipotent_orbits"
+      ],
+      "href": "conjugacy_classes/conjugacy_classes_unipotent_elements.html"
+    },
+    {
+      "id": "conjugacy_classes.jordan_decomposition",
+      "title": "Jordan Decomposition in Algebraic Groups",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes",
+        "reductive_structure"
+      ],
+      "tags": [
+        "jordan-decomposition",
+        "semisimple-elements",
+        "unipotent-elements",
+        "conjugacy"
+      ],
+      "uses": [
+        "affine_group_schemes.affine_algebraic_groups",
+        "reductive_structure.reductive_groups"
+      ],
+      "used_by": [
+        "conjugacy_classes.unipotent_elements",
+        "conjugacy_classes.semisimple_conjugacy_classes",
+        "conjugacy_classes.unipotent_orbits"
+      ],
+      "href": "conjugacy_classes/conjugacy_classes_jordan_decomposition.html"
+    },
+    {
+      "id": "conjugacy_classes.semisimple_conjugacy_classes",
+      "title": "Semisimple Conjugacy Classes",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes",
+        "reductive_structure"
+      ],
+      "tags": [
+        "semisimple-elements",
+        "conjugacy",
+        "maximal-tori",
+        "weyl-group"
+      ],
+      "uses": [
+        "conjugacy_classes.jordan_decomposition",
+        "reductive_structure.reductive_groups",
+        "reductive_structure.maximal_tori"
+      ],
+      "used_by": [],
+      "href": "conjugacy_classes/conjugacy_classes_semisimple_conjugacy_classes.html"
+    },
+    {
+      "id": "conjugacy_classes.sl2_triples",
       "title": "SL2-Triples",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "sl2-triples",
         "nilpotent-orbits"
       ],
       "uses": [
-        "nilpotent_orbits.nilpotent_elements"
+        "conjugacy_classes.nilpotent_elements"
       ],
       "used_by": [
-        "nilpotent_orbits.jacobson_morozov_theorem"
+        "conjugacy_classes.jacobson_morozov_theorem"
       ],
-      "href": "nilpotent_orbits/nilpotent_orbits_sl2_triples.html",
-      "payload": "node_payloads/nilpotent_orbits_sl2_triples.json"
+      "href": "conjugacy_classes/conjugacy_classes_sl2_triples.html"
     },
     {
-      "id": "nilpotent_orbits.jacobson_morozov_theorem",
+      "id": "conjugacy_classes.jacobson_morozov_theorem",
       "title": "Jacobson-Morozov Theorem",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "jacobson-morozov",
         "nilpotent-orbits"
       ],
       "uses": [
-        "nilpotent_orbits.sl2_triples"
+        "conjugacy_classes.sl2_triples"
       ],
       "used_by": [],
-      "href": "nilpotent_orbits/nilpotent_orbits_jacobson_morozov_theorem.html",
-      "payload": "node_payloads/nilpotent_orbits_jacobson_morozov_theorem.json"
+      "href": "conjugacy_classes/conjugacy_classes_jacobson_morozov_theorem.html"
     },
     {
-      "id": "nilpotent_orbits.nilpotent_orbits",
+      "id": "conjugacy_classes.springer_correspondence",
+      "title": "Springer Correspondence",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes"
+      ],
+      "tags": [
+        "springer-correspondence",
+        "unipotent-orbits",
+        "nilpotent-orbits",
+        "weyl-group",
+        "perverse-sheaves"
+      ],
+      "uses": [
+        "conjugacy_classes.unipotent_orbits",
+        "conjugacy_classes.nilpotent_orbits",
+        "conjugacy_classes.nilpotent_cone",
+        "reductive_structure.reductive_groups",
+        "reductive_structure.borel_subgroups"
+      ],
+      "used_by": [],
+      "href": "conjugacy_classes/conjugacy_classes_springer_correspondence.html"
+    },
+    {
+      "id": "conjugacy_classes.nilpotent_orbits",
       "title": "Nilpotent Orbits",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "nilpotent-orbits"
       ],
       "uses": [
-        "nilpotent_orbits.nilpotent_cone"
+        "conjugacy_classes.nilpotent_cone"
       ],
       "used_by": [
-        "nilpotent_orbits.bala_carter_classification",
-        "nilpotent_orbits.weighted_dynkin_diagrams",
-        "nilpotent_orbits.rational_nilpotent_orbits"
+        "conjugacy_classes.springer_correspondence",
+        "conjugacy_classes.bala_carter_classification",
+        "conjugacy_classes.unipotent_orbits",
+        "conjugacy_classes.weighted_dynkin_diagrams",
+        "conjugacy_classes.rational_nilpotent_orbits"
       ],
-      "href": "nilpotent_orbits/nilpotent_orbits_nilpotent_orbits.html",
-      "payload": "node_payloads/nilpotent_orbits_nilpotent_orbits.json"
+      "href": "conjugacy_classes/conjugacy_classes_nilpotent_orbits.html"
     },
     {
-      "id": "nilpotent_orbits.bala_carter_classification",
+      "id": "conjugacy_classes.bala_carter_classification",
       "title": "Bala-Carter Classification",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "bala-carter",
         "nilpotent-orbits"
       ],
       "uses": [
-        "nilpotent_orbits.nilpotent_orbits",
+        "conjugacy_classes.nilpotent_orbits",
         "reductive_structure.parabolic_subgroups",
         "reductive_structure.levi_subgroups_and_unipotent_radicals",
-        "nilpotent_orbits.weighted_dynkin_diagrams"
+        "conjugacy_classes.weighted_dynkin_diagrams"
       ],
       "used_by": [],
-      "href": "nilpotent_orbits/nilpotent_orbits_bala_carter_classification.html",
-      "payload": "node_payloads/nilpotent_orbits_bala_carter_classification.json"
+      "href": "conjugacy_classes/conjugacy_classes_bala_carter_classification.html"
     },
     {
-      "id": "nilpotent_orbits.adjoint_action",
+      "id": "conjugacy_classes.unipotent_orbits",
+      "title": "Unipotent Orbits",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes"
+      ],
+      "tags": [
+        "unipotent-orbits",
+        "conjugacy",
+        "bala-carter",
+        "weighted-dynkin-diagrams"
+      ],
+      "uses": [
+        "conjugacy_classes.unipotent_elements",
+        "conjugacy_classes.jordan_decomposition",
+        "conjugacy_classes.nilpotent_orbits",
+        "reductive_structure.reductive_groups"
+      ],
+      "used_by": [
+        "conjugacy_classes.springer_correspondence"
+      ],
+      "href": "conjugacy_classes/conjugacy_classes_unipotent_orbits.html"
+    },
+    {
+      "id": "conjugacy_classes.adjoint_action",
       "title": "Adjoint Action",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "adjoint-action",
@@ -2289,45 +2422,43 @@
       ],
       "uses": [
         "reductive_structure.reductive_groups",
-        "nilpotent_orbits.lie_algebras_of_reductive_groups"
+        "conjugacy_classes.lie_algebras_of_reductive_groups"
       ],
       "used_by": [
-        "nilpotent_orbits.nilpotent_cone"
+        "conjugacy_classes.nilpotent_cone"
       ],
-      "href": "nilpotent_orbits/nilpotent_orbits_adjoint_action.html",
-      "payload": "node_payloads/nilpotent_orbits_adjoint_action.json"
+      "href": "conjugacy_classes/conjugacy_classes_adjoint_action.html"
     },
     {
-      "id": "nilpotent_orbits.weighted_dynkin_diagrams",
+      "id": "conjugacy_classes.weighted_dynkin_diagrams",
       "title": "Weighted Dynkin Diagrams",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "weighted-dynkin-diagrams",
         "nilpotent-orbits"
       ],
       "uses": [
-        "nilpotent_orbits.nilpotent_orbits",
+        "conjugacy_classes.nilpotent_orbits",
         "root_data_and_duality.root_systems"
       ],
       "used_by": [
-        "nilpotent_orbits.bala_carter_classification"
+        "conjugacy_classes.bala_carter_classification"
       ],
-      "href": "nilpotent_orbits/nilpotent_orbits_weighted_dynkin_diagrams.html",
-      "payload": "node_payloads/nilpotent_orbits_weighted_dynkin_diagrams.json"
+      "href": "conjugacy_classes/conjugacy_classes_weighted_dynkin_diagrams.html"
     },
     {
-      "id": "nilpotent_orbits.lie_algebras_of_reductive_groups",
+      "id": "conjugacy_classes.lie_algebras_of_reductive_groups",
       "title": "Lie Algebras of Reductive Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "lie-algebras",
@@ -2339,56 +2470,53 @@
         "reductive_structure.reductive_groups"
       ],
       "used_by": [
-        "nilpotent_orbits.adjoint_action",
-        "nilpotent_orbits.nilpotent_elements"
+        "conjugacy_classes.adjoint_action",
+        "conjugacy_classes.nilpotent_elements"
       ],
-      "href": "nilpotent_orbits/nilpotent_orbits_lie_algebras_of_reductive_groups.html",
-      "payload": "node_payloads/nilpotent_orbits_lie_algebras_of_reductive_groups.json"
+      "href": "conjugacy_classes/conjugacy_classes_lie_algebras_of_reductive_groups.html"
     },
     {
-      "id": "nilpotent_orbits.rational_nilpotent_orbits",
+      "id": "conjugacy_classes.rational_nilpotent_orbits",
       "title": "Rational Nilpotent Orbits",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "rational-nilpotent-orbits",
         "nilpotent-orbits"
       ],
       "uses": [
-        "nilpotent_orbits.nilpotent_orbits",
+        "conjugacy_classes.nilpotent_orbits",
         "descent_and_forms.rational_forms_of_reductive_groups",
         "descent_and_forms.galois_cohomology"
       ],
       "used_by": [],
-      "href": "nilpotent_orbits/nilpotent_orbits_rational_nilpotent_orbits.html",
-      "payload": "node_payloads/nilpotent_orbits_rational_nilpotent_orbits.json"
+      "href": "conjugacy_classes/conjugacy_classes_rational_nilpotent_orbits.html"
     },
     {
-      "id": "nilpotent_orbits.nilpotent_elements",
+      "id": "conjugacy_classes.nilpotent_elements",
       "title": "Nilpotent Elements",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "nilpotent_orbits",
+      "primary_topic": "conjugacy_classes",
       "topics": [
-        "nilpotent_orbits"
+        "conjugacy_classes"
       ],
       "tags": [
         "nilpotent-elements",
         "nilpotent-orbits"
       ],
       "uses": [
-        "nilpotent_orbits.lie_algebras_of_reductive_groups"
+        "conjugacy_classes.lie_algebras_of_reductive_groups"
       ],
       "used_by": [
-        "nilpotent_orbits.nilpotent_cone",
-        "nilpotent_orbits.sl2_triples"
+        "conjugacy_classes.nilpotent_cone",
+        "conjugacy_classes.sl2_triples"
       ],
-      "href": "nilpotent_orbits/nilpotent_orbits_nilpotent_elements.html",
-      "payload": "node_payloads/nilpotent_orbits_nilpotent_elements.json"
+      "href": "conjugacy_classes/conjugacy_classes_nilpotent_elements.html"
     },
     {
       "id": "linear_algebraic_groups.gl_v_group_scheme",
@@ -2743,7 +2871,7 @@
         "affine_group_schemes.affine_algebraic_groups"
       ],
       "used_by": [
-        "nilpotent_orbits.lie_algebras_of_reductive_groups",
+        "conjugacy_classes.lie_algebras_of_reductive_groups",
         "linear_algebraic_groups.connected_components",
         "linear_algebraic_groups.lie_algebra_of_algebraic_group",
         "buildings_and_parahorics.smooth_affine_group_schemes_over_valuation_rings"
@@ -3112,7 +3240,7 @@
         "descent_and_forms.galois_groups_and_descent_data"
       ],
       "used_by": [
-        "nilpotent_orbits.rational_nilpotent_orbits",
+        "conjugacy_classes.rational_nilpotent_orbits",
         "descent_and_forms.rigid_inner_twists",
         "descent_and_forms.lang_theorem_finite_fields",
         "descent_and_forms.nonabelian_h1",
@@ -3390,7 +3518,7 @@
       ],
       "used_by": [
         "root_data_and_duality.indexed_root_datum_of_f_reductive_group",
-        "nilpotent_orbits.rational_nilpotent_orbits",
+        "conjugacy_classes.rational_nilpotent_orbits",
         "descent_and_forms.real_forms",
         "descent_and_forms.outer_forms",
         "descent_and_forms.inner_forms",
@@ -4505,6 +4633,7 @@
       ],
       "used_by": [
         "root_data_and_duality.chevalley_group_construction",
+        "conjugacy_classes.unipotent_elements",
         "affine_group_schemes.special_linear_group_scheme",
         "affine_group_schemes.symplectic_group_scheme",
         "affine_group_schemes.coordinate_hopf_algebra_of_group_scheme",
@@ -4997,6 +5126,7 @@
       ],
       "used_by": [
         "bd_covers.central_extensions_of_algebraic_groups",
+        "conjugacy_classes.jordan_decomposition",
         "linear_algebraic_groups.linear_algebraic_groups",
         "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
         "linear_algebraic_groups.automorphism_groups",
@@ -5915,80 +6045,148 @@
       "to": "bd_covers.l_groups_for_covers"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_elements",
-      "to": "nilpotent_orbits.nilpotent_cone"
+      "from": "conjugacy_classes.nilpotent_elements",
+      "to": "conjugacy_classes.nilpotent_cone"
     },
     {
-      "from": "nilpotent_orbits.adjoint_action",
-      "to": "nilpotent_orbits.nilpotent_cone"
+      "from": "conjugacy_classes.adjoint_action",
+      "to": "conjugacy_classes.nilpotent_cone"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_elements",
-      "to": "nilpotent_orbits.sl2_triples"
+      "from": "conjugacy_classes.jordan_decomposition",
+      "to": "conjugacy_classes.unipotent_elements"
     },
     {
-      "from": "nilpotent_orbits.sl2_triples",
-      "to": "nilpotent_orbits.jacobson_morozov_theorem"
+      "from": "reductive_structure.reductive_groups",
+      "to": "conjugacy_classes.unipotent_elements"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_cone",
-      "to": "nilpotent_orbits.nilpotent_orbits"
+      "from": "affine_group_schemes.affine_group_scheme_definition",
+      "to": "conjugacy_classes.unipotent_elements"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.bala_carter_classification"
+      "from": "affine_group_schemes.affine_algebraic_groups",
+      "to": "conjugacy_classes.jordan_decomposition"
+    },
+    {
+      "from": "reductive_structure.reductive_groups",
+      "to": "conjugacy_classes.jordan_decomposition"
+    },
+    {
+      "from": "conjugacy_classes.jordan_decomposition",
+      "to": "conjugacy_classes.semisimple_conjugacy_classes"
+    },
+    {
+      "from": "reductive_structure.reductive_groups",
+      "to": "conjugacy_classes.semisimple_conjugacy_classes"
+    },
+    {
+      "from": "reductive_structure.maximal_tori",
+      "to": "conjugacy_classes.semisimple_conjugacy_classes"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_elements",
+      "to": "conjugacy_classes.sl2_triples"
+    },
+    {
+      "from": "conjugacy_classes.sl2_triples",
+      "to": "conjugacy_classes.jacobson_morozov_theorem"
+    },
+    {
+      "from": "conjugacy_classes.unipotent_orbits",
+      "to": "conjugacy_classes.springer_correspondence"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.springer_correspondence"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_cone",
+      "to": "conjugacy_classes.springer_correspondence"
+    },
+    {
+      "from": "reductive_structure.reductive_groups",
+      "to": "conjugacy_classes.springer_correspondence"
+    },
+    {
+      "from": "reductive_structure.borel_subgroups",
+      "to": "conjugacy_classes.springer_correspondence"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_cone",
+      "to": "conjugacy_classes.nilpotent_orbits"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.bala_carter_classification"
     },
     {
       "from": "reductive_structure.parabolic_subgroups",
-      "to": "nilpotent_orbits.bala_carter_classification"
+      "to": "conjugacy_classes.bala_carter_classification"
     },
     {
       "from": "reductive_structure.levi_subgroups_and_unipotent_radicals",
-      "to": "nilpotent_orbits.bala_carter_classification"
+      "to": "conjugacy_classes.bala_carter_classification"
     },
     {
-      "from": "nilpotent_orbits.weighted_dynkin_diagrams",
-      "to": "nilpotent_orbits.bala_carter_classification"
+      "from": "conjugacy_classes.weighted_dynkin_diagrams",
+      "to": "conjugacy_classes.bala_carter_classification"
+    },
+    {
+      "from": "conjugacy_classes.unipotent_elements",
+      "to": "conjugacy_classes.unipotent_orbits"
+    },
+    {
+      "from": "conjugacy_classes.jordan_decomposition",
+      "to": "conjugacy_classes.unipotent_orbits"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.unipotent_orbits"
     },
     {
       "from": "reductive_structure.reductive_groups",
-      "to": "nilpotent_orbits.adjoint_action"
+      "to": "conjugacy_classes.unipotent_orbits"
     },
     {
-      "from": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "to": "nilpotent_orbits.adjoint_action"
+      "from": "reductive_structure.reductive_groups",
+      "to": "conjugacy_classes.adjoint_action"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.weighted_dynkin_diagrams"
+      "from": "conjugacy_classes.lie_algebras_of_reductive_groups",
+      "to": "conjugacy_classes.adjoint_action"
+    },
+    {
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.weighted_dynkin_diagrams"
     },
     {
       "from": "root_data_and_duality.root_systems",
-      "to": "nilpotent_orbits.weighted_dynkin_diagrams"
+      "to": "conjugacy_classes.weighted_dynkin_diagrams"
     },
     {
       "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
-      "to": "nilpotent_orbits.lie_algebras_of_reductive_groups"
+      "to": "conjugacy_classes.lie_algebras_of_reductive_groups"
     },
     {
       "from": "reductive_structure.reductive_groups",
-      "to": "nilpotent_orbits.lie_algebras_of_reductive_groups"
+      "to": "conjugacy_classes.lie_algebras_of_reductive_groups"
     },
     {
-      "from": "nilpotent_orbits.nilpotent_orbits",
-      "to": "nilpotent_orbits.rational_nilpotent_orbits"
+      "from": "conjugacy_classes.nilpotent_orbits",
+      "to": "conjugacy_classes.rational_nilpotent_orbits"
     },
     {
       "from": "descent_and_forms.rational_forms_of_reductive_groups",
-      "to": "nilpotent_orbits.rational_nilpotent_orbits"
+      "to": "conjugacy_classes.rational_nilpotent_orbits"
     },
     {
       "from": "descent_and_forms.galois_cohomology",
-      "to": "nilpotent_orbits.rational_nilpotent_orbits"
+      "to": "conjugacy_classes.rational_nilpotent_orbits"
     },
     {
-      "from": "nilpotent_orbits.lie_algebras_of_reductive_groups",
-      "to": "nilpotent_orbits.nilpotent_elements"
+      "from": "conjugacy_classes.lie_algebras_of_reductive_groups",
+      "to": "conjugacy_classes.nilpotent_elements"
     },
     {
       "from": "affine_group_schemes.general_linear_group_scheme",

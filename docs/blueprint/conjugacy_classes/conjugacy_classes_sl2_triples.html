@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lie Algebras of Reductive Groups — Reductive Linear Algebraic Groups Knowledge DAG</title>
+  <title>SL2-Triples — Reductive Linear Algebraic Groups Knowledge DAG</title>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex@0.16.46/dist/katex.min.css"
         integrity="sha384-hW6ZmmePRD2f/9cuxGE6C9faGprtIBOme5OLUiEjtRKMTN67tY23ur9eAi21H8De"
@@ -64,7 +64,7 @@
         </li>
       
         <li class="topic-leaf topic-active">
-          <a href="../nilpotent_orbits/index.html">Nilpotent Orbits</a>
+          <a href="../conjugacy_classes/index.html">Conjugacy Classes</a>
         </li>
       
         <li class="topic-leaf">
@@ -448,17 +448,17 @@
   </nav>
   <main>
     
-<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-lie_algebras_of_reductive_groups">
+<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-sl2_triples">
   <header class="topic_thmheading thm-heading">
     <span class="topic_thmcaption thm-caption">Topic</span>
-    <span class="topic_thmtitle thm-title">Lie Algebras of Reductive Groups</span>
+    <span class="topic_thmtitle thm-title">SL2-Triples</span>
     <div class="thm_header_extras">
       
       <span class="badge kind-topic">topic</span>
       <span class="badge status-admitted">admitted</span>
     </div>
     <div class="thm_header_hidden_extras">
-      <a class="permalink" href="#node-nilpotent_orbits-2e-lie_algebras_of_reductive_groups">#</a>
+      <a class="permalink" href="#node-nilpotent_orbits-2e-sl2_triples">#</a>
       
       <button class="modal-trigger" type="button" data-modal-target="uses-modal">Uses</button>
       
@@ -472,9 +472,7 @@
       <header><h1>Uses</h1><button class="closebtn" type="button">x</button></header>
       <ul class="uses">
         
-        <li><a href="../linear_algebraic_groups/linear_algebraic_groups_smoothness_tangent_spaces_lie_algebras.html">Smoothness, Tangent Spaces, and Lie Algebras</a></li>
-        
-        <li><a href="../reductive_structure/reductive_structure_reductive_groups.html">Reductive Groups</a></li>
+        <li><a href="conjugacy_classes_nilpotent_elements.html">Nilpotent Elements</a></li>
         
       </ul>
     </div>
@@ -484,118 +482,117 @@
   
 
   <div class="topic_thmcontent thm-content body">
-    <h1>Lie Algebras of Reductive Groups</h1>
-<p>The <strong>Lie algebra</strong> \(\mathfrak{g} = \operatorname{Lie}(G)\) of a
-reductive algebraic group \(G\) is the tangent space at the identity,
-equipped with the Lie bracket from the group structure. It encodes the
-infinitesimal symmetries of \(G\) and is the natural setting for the
-representation theory, the Killing form, root data, and nilpotent
-orbit theory.</p>
+    <h1>SL2-Triples</h1>
+<p>An <strong>\(\mathfrak{sl}_2\)-triple</strong> in a Lie algebra is a triple
+\((e, h, f)\) satisfying the standard \(\mathfrak{sl}_2\)-commutation
+relations. Such triples are the algebraic counterpart of
+representations of \(\mathfrak{sl}_2\) inside \(\mathfrak{g}\), and
+they package the structure of a nilpotent orbit into a finite list of
+weights.</p>
 <h2>Definition</h2>
-<p>For an algebraic group \(G\) over a field \(k\):
+<p>Let \(\mathfrak{g}\) be a Lie algebra over a field \(k\) (typically
+characteristic 0 or good for the type of \(\mathfrak{g}\)). An
+<strong>\(\mathfrak{sl}_2\)-triple</strong> is a triple \((e, h, f)\) of elements of
+\(\mathfrak{g}\) satisfying:
 \[
-\operatorname{Lie}(G) \;:=\; T_e G \;=\; \ker(G(k[\varepsilon]/\varepsilon^2) \to G(k)),
-\]
-the tangent space at the identity \(e\). The Lie bracket
-\([X, Y]\) is induced from the group commutator
-\((g, h) \mapsto ghg^{-1}h^{-1}\).</p>
-<p>For smooth \(G\): \(\dim \operatorname{Lie}(G) = \dim G\).</p>
-<h2>Structure for reductive \(G\)</h2>
-<p>If \(G\) is a connected reductive algebraic group over an algebraically
-closed field \(k\) of characteristic 0 (or good characteristic), then
-\(\mathfrak{g}\) is a <strong>reductive Lie algebra</strong>:</p>
-<ul>
-<li>\(\mathfrak{g} = \mathfrak{z} \oplus [\mathfrak{g}, \mathfrak{g}]\),
-  with \(\mathfrak{z} = \operatorname{Lie}(Z(G)^\circ)\) abelian and
-  \([\mathfrak{g}, \mathfrak{g}] = \operatorname{Lie}(G_{\mathrm{der}})\)
-  semisimple.</li>
-<li><strong>Killing form</strong> \(\kappa(X, Y) = \mathrm{tr}(\operatorname{ad}\,X \circ \operatorname{ad}\,Y)\)
-  is non-degenerate on \([\mathfrak{g}, \mathfrak{g}]\).</li>
-</ul>
-<h2>Root space decomposition</h2>
-<p>For \(T \subseteq G\) a maximal torus and
-\(\mathfrak{t} = \operatorname{Lie}(T)\):
-\[
-\mathfrak{g} \;=\; \mathfrak{t} \;\oplus\; \bigoplus_{\alpha \in \Phi} \mathfrak{g}_\alpha,
-\]
-where \(\mathfrak{g}_\alpha\) is the 1-dimensional <strong>root space</strong>:
-\(\mathfrak{g}_\alpha = \{X \in \mathfrak{g} : [H, X] = \alpha(H) X \text{ for all } H \in \mathfrak{t}\}\).</p>
-<p>The root spaces \(\mathfrak{g}_\alpha\) are 1-dimensional in characteristic
-0 (a key part of the root datum classification); in positive
-characteristic they remain 1-dimensional in good characteristic.</p>
-<h2>Examples</h2>
-<h3>\(\mathfrak{gl}_n\) and \(\mathfrak{sl}_n\)</h3>
-<ul>
-<li>\(\mathfrak{gl}_n = M_n(k)\), all \(n \times n\) matrices, with bracket
-  \([X, Y] = XY - YX\).</li>
-<li>\(\mathfrak{sl}_n = \{X \in M_n : \mathrm{tr}\,X = 0\}\), the
-  trace-zero matrices.</li>
-<li>\(\mathfrak{gl}_n = \mathfrak{sl}_n \oplus k \cdot I\); \(\mathfrak{sl}_n\)
-  semisimple, \(kI\) the abelian centre.</li>
-</ul>
-<h3>\(\mathfrak{so}_n\)</h3>
-<p>\(\mathfrak{so}_n = \{X \in M_n : X + X^T = 0\}\), skew-symmetric
-matrices. Dimension \(\binom{n}{2}\).</p>
-<h3>\(\mathfrak{sp}_{2n}\)</h3>
-<p>\(\mathfrak{sp}_{2n} = \{X : X^T J + J X = 0\}\), with \(J\) the
-standard symplectic form. Dimension \(n(2n+1)\).</p>
-<h3>Exceptional Lie algebras</h3>
-<ul>
-<li>\(G_2\): 14-dim (derivations of octonions);</li>
-<li>\(F_4\): 52-dim (derivations of \(H_3(\mathbb{O})\));</li>
-<li>\(E_6\): 78-dim, \(E_7\): 133-dim, \(E_8\): 248-dim.</li>
-</ul>
-<h2>The exponential map</h2>
-<p>In characteristic 0: \(\exp : \mathfrak{g} \to G\) is defined and
-gives a local diffeomorphism near 0/identity. Restricted to nilpotent
-elements:
-\[
-\exp : \mathcal{N} \;\xrightarrow{\sim}\; \mathcal{U},
-\]
-a bijection (in fact, an isomorphism of varieties) between the
-nilpotent cone and the unipotent variety. This is the <strong>Springer
-isomorphism</strong>.</p>
-<p>In positive characteristic: \(\exp\) is not well-defined globally, but
-in <strong>good characteristic</strong> the Springer isomorphism still holds (as a
-variety isomorphism that may not literally be the exponential).</p>
-<h2>Adjoint representation</h2>
-<p>\(G\) acts on \(\mathfrak{g}\) by conjugation:
-\(\operatorname{Ad}(g)(X) = g X g^{-1}\) (in matrix terms). This is
-the <strong>adjoint representation</strong>, a homomorphism
-\(\operatorname{Ad} : G \to \mathrm{GL}(\mathfrak{g})\), with image
-the <strong>adjoint group</strong> \(G_{\mathrm{ad}} = G/Z(G)\) and kernel \(Z(G)\).</p>
-<p>The induced map on Lie algebras is \(\mathrm{ad} : \mathfrak{g} \to \operatorname{End}(\mathfrak{g})\),
-\(X \mapsto [X, -]\).</p>
-<h2>Killing form and invariants</h2>
-<p>The <strong>Killing form</strong> \(\kappa : \mathfrak{g} \otimes \mathfrak{g} \to k\):
-\[
-\kappa(X, Y) \;:=\; \mathrm{tr}_{\mathfrak{g}}(\mathrm{ad}\, X \circ \mathrm{ad}\, Y).
+[h, e] = 2e, \qquad [h, f] = -2f, \qquad [e, f] = h.
 \]</p>
-<p>Properties:
-- Symmetric, \(G\)-invariant, bilinear;
-- Non-degenerate on a semisimple Lie algebra (Cartan's criterion);
-- Restricts to a positive-definite form on a compact real form;
-- Gives the basic invariant theory of \(G\) acting on \(\mathfrak{g}\).</p>
-<h2>Mathlib status</h2>
-<p><code>Mathlib.Algebra.Lie.*</code> has:
-- Lie algebras (general, semisimple, nilpotent, solvable);
-- Killing form;
-- Root systems via <code>Mathlib.LinearAlgebra.RootSystem</code>.</p>
-<p>The Lie algebra of a specific algebraic group (e.g.\
-\(\operatorname{Lie}(\mathrm{GL}_n)\)) is not yet directly formalised
-as such; the path goes via formal group schemes.</p>
+<p>Equivalently: \((e, h, f)\) defines a Lie algebra homomorphism
+\(\mathfrak{sl}_2(k) \to \mathfrak{g}\), \(\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} \mapsto e\),
+\(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} \mapsto h\), etc.</p>
+<p>Conventions:
+- \(e\) (or \(X\)) is the <strong>nilpositive</strong> element;
+- \(f\) (or \(Y\)) is the <strong>nilnegative</strong> element;
+- \(h\) (or \(H\)) is the <strong>neutral</strong> (semisimple) element.</p>
+<h2>Jacobson-Morozov theorem</h2>
+<p><strong>Theorem (Jacobson-Morozov).</strong> Let \(\mathfrak{g}\) be semisimple
+over \(k\) of characteristic 0 (or good positive characteristic). For
+every nonzero nilpotent \(e \in \mathfrak{g}\), there exist
+\(h, f \in \mathfrak{g}\) such that \((e, h, f)\) is an
+\(\mathfrak{sl}_2\)-triple.</p>
+<p>Moreover: any two such extensions are conjugate by an element of
+\(Z_G(e)^\circ\) (the identity component of the centraliser).</p>
+<p><strong>Corollary.</strong> There is a bijection
+\[
+\{\text{nonzero nilpotent orbits in } \mathfrak{g}\} \;\longleftrightarrow\;
+\{\text{}\mathfrak{sl}_2\text{-triples in } \mathfrak{g}\}/G.
+\]</p>
+<h2>Weights and representation structure</h2>
+<p>For an \(\mathfrak{sl}_2\)-triple \((e, h, f)\) in \(\mathfrak{g}\),
+the <strong>adjoint representation</strong> of the triple on \(\mathfrak{g}\)
+decomposes
+\[
+\mathfrak{g} \;=\; \bigoplus_{n \in \mathbb{Z}} \mathfrak{g}_n,
+\qquad \mathfrak{g}_n = \{X : [h, X] = nX\}.
+\]</p>
+<p>\(\mathfrak{g}\) becomes a graded \(\mathfrak{sl}_2\)-module: each
+\(\mathfrak{g}_n\) is finite-dimensional, and the multiplicities of
+irreducible \(\mathfrak{sl}_2\)-modules \(V_m\) in \(\mathfrak{g}\)
+give a finite list of integers — the <strong>dimension vector</strong> of the
+triple.</p>
+<p>By the structure of \(\mathfrak{sl}_2\)-representations:
+\(\dim \mathfrak{g}_n = \dim \mathfrak{g}_{-n}\), and \(e\) maps
+\(\mathfrak{g}_n \xrightarrow{\cong} \mathfrak{g}_{n+2}\) for
+\(n \ge 0\).</p>
+<h2>Weighted Dynkin diagram</h2>
+<p>Given an \(\mathfrak{sl}_2\)-triple, conjugate \(h\) into the dominant
+Weyl chamber of a fixed Cartan. The <strong>weighted Dynkin diagram</strong> records
+\(d_i = \alpha_i(h)\) for each simple root \(\alpha_i\):
+\[
+d_i \in \{0, 1, 2\}.
+\]</p>
+<p>This is the canonical combinatorial invariant of the
+\(G\)-conjugacy class of the triple (= the orbit \(G \cdot e\)). See
+<a class="node-ref" data-node-id="conjugacy_classes.weighted_dynkin_diagrams" href="conjugacy_classes_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a>.</p>
+<h2>Examples</h2>
+<h3>\(\mathfrak{sl}_2\) standard</h3>
+<p>\(e = E_{12}\), \(h = E_{11} - E_{22}\), \(f = E_{21}\). Adjoint
+representation decomposes as the irreducible \(V_3\)
+(\(3\)-dimensional).</p>
+<h3>\(\mathfrak{sl}_3\), regular nilpotent</h3>
+<p>Sum of all simple-root vectors:
+\(e = E_{12} + E_{23}\). The triple has \(h = 2(\omega_1 + \omega_2)\)
+in dominant Weyl coordinates; weighted Dynkin = \(2 - 2\).</p>
+<p>\(\mathfrak{g}\) decomposes into one \(V_5\) (the regular module) and
+nothing else.</p>
+<h3>\(\mathfrak{sl}_n\), Jordan-block triple</h3>
+<p>For Jordan partition \(\lambda = (\lambda_1, \ldots, \lambda_k)\): each
+block contributes an irreducible
+\(\mathfrak{sl}_2\)-module \(V_{\lambda_i - 1}\). The total
+\(\mathfrak{sl}_2\)-representation of \(\mathfrak{gl}_n\) (under the
+nilpotent triple) is determined by \(\lambda\).</p>
+<h2>Kostant's classification</h2>
+<p><strong>Theorem (Kostant 1959).</strong> The \(G\)-conjugacy classes of
+\(\mathfrak{sl}_2\)-triples in \(\mathfrak{g}\) are in bijection with
+the \(G\)-conjugacy classes of nonzero nilpotents (via \((e, h, f) \mapsto e\)).</p>
+<p>This is the existence-and-uniqueness theorem complementing
+Jacobson-Morozov.</p>
+<h2>Slice and transversal</h2>
+<p>For an \(\mathfrak{sl}_2\)-triple \((e, h, f)\), the <strong>Kostant-Slodowy
+slice</strong>
+\[
+S_e \;:=\; e + Z_{\mathfrak{g}}(f) \;\subseteq\; \mathfrak{g}
+\]
+is a transverse slice to the nilpotent orbit \(G \cdot e\) inside
+\(\mathfrak{g}\). The intersection \(S_e \cap \mathcal{N}\) gives a
+"local model" for the closure ordering of orbits near \(G \cdot e\).</p>
+<p>For the <strong>subregular</strong> nilpotent orbit: \(S_e \cap \mathcal{N}\) is a
+<strong>Kleinian (Du Val) singularity</strong> of the same type as the Dynkin
+diagram of \(\mathfrak{g}\) — a beautiful link between Lie theory and
+surface singularities.</p>
+<h2>Mathlib</h2>
+<p>Not formalised.</p>
 <h2>References</h2>
 <ul>
-<li>Humphreys, <em>Introduction to Lie Algebras and Representation Theory</em>
-  (1972).</li>
-<li>Bourbaki, <em>Groupes et Algèbres de Lie</em> I–III, VII–VIII.</li>
-<li>Borel, <em>Linear Algebraic Groups</em> (1991), §3.</li>
-<li>Milne, <em>Reductive Groups</em> (notes), §3.</li>
+<li>Kostant, <em>The principal three-dimensional subgroup and the Betti
+  numbers of a complex simple Lie group</em> (Amer.\ J.\ Math.\ 1959).</li>
+<li>Carter, <em>Finite Groups of Lie Type</em> (1985), §5.5.</li>
+<li>Collingwood–McGovern, <em>Conjugacy Classes in Semisimple Lie Algebras</em>
+  (1993), Ch. 3.</li>
 </ul>
 <h2>Prerequisite Topics</h2>
 <ul>
-<li><a class="node-ref" data-node-id="linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras" href="../linear_algebraic_groups/linear_algebraic_groups_smoothness_tangent_spaces_lie_algebras.html">Smoothness, Tangent Spaces, and Lie Algebras</a></li>
-<li><a class="node-ref" data-node-id="reductive_structure.reductive_groups" href="../reductive_structure/reductive_structure_reductive_groups.html">Reductive Groups</a></li>
+<li><a class="node-ref" data-node-id="conjugacy_classes.nilpotent_elements" href="conjugacy_classes_nilpotent_elements.html">Nilpotent Elements</a></li>
 </ul>
     
   </div>
@@ -607,11 +604,7 @@ as such; the path goes via formal group schemes.</p>
     <h2>Used by</h2>
     <ul>
       
-      <li><a href="../buildings_and_parahorics/buildings_and_parahorics_moy_prasad_filtrations.html">Moy-Prasad Filtrations</a></li>
-      
-      <li><a href="nilpotent_orbits_adjoint_action.html">Adjoint Action</a></li>
-      
-      <li><a href="nilpotent_orbits_nilpotent_elements.html">Nilpotent Elements</a></li>
+      <li><a href="conjugacy_classes_jacobson_morozov_theorem.html">Jacobson-Morozov Theorem</a></li>
       
     </ul>
   </section>
@@ -621,7 +614,7 @@ as such; the path goes via formal group schemes.</p>
 
   
   <footer class="tags">
-    <span class="tag">lie-algebras</span><span class="tag">reductive-groups</span><span class="tag">nilpotent-orbits</span>
+    <span class="tag">sl2-triples</span><span class="tag">nilpotent-orbits</span>
   </footer>
   
 </article>

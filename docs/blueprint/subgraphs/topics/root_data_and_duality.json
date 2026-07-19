@@ -622,7 +622,7 @@
       "id": "affine_group_schemes",
       "title": "Affine Group Schemes",
       "href": "affine_group_schemes/index.html",
-      "node_count": 0
+      "node_count": 38
     },
     {
       "id": "bd_covers",
@@ -641,6 +641,12 @@
       "title": "Classical And Exceptional Groups",
       "href": "classical_and_exceptional_groups/index.html",
       "node_count": 2
+    },
+    {
+      "id": "conjugacy_classes",
+      "title": "Conjugacy Classes",
+      "href": "conjugacy_classes/index.html",
+      "node_count": 15
     },
     {
       "id": "descent_and_forms",
@@ -665,12 +671,6 @@
       "title": "Linear Algebraic Groups",
       "href": "linear_algebraic_groups/index.html",
       "node_count": 30
-    },
-    {
-      "id": "nilpotent_orbits",
-      "title": "Nilpotent Orbits",
-      "href": "nilpotent_orbits/index.html",
-      "node_count": 10
     },
     {
       "id": "reductive_structure",
@@ -892,9 +892,9 @@
     },
     {
       "from": "root_data_and_duality.root_systems",
-      "to": "topic:nilpotent_orbits",
+      "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
-      "topic": "nilpotent_orbits",
+      "topic": "conjugacy_classes",
       "count": 1
     },
     {

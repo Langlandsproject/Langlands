@@ -445,7 +445,7 @@
       "id": "affine_group_schemes",
       "title": "Affine Group Schemes",
       "href": "affine_group_schemes/index.html",
-      "node_count": 0
+      "node_count": 38
     },
     {
       "id": "buildings_and_parahorics",
@@ -460,6 +460,12 @@
       "node_count": 2
     },
     {
+      "id": "conjugacy_classes",
+      "title": "Conjugacy Classes",
+      "href": "conjugacy_classes/index.html",
+      "node_count": 15
+    },
+    {
       "id": "descent_and_forms",
       "title": "Descent And Forms",
       "href": "descent_and_forms/index.html",
@@ -472,12 +478,6 @@
       "node_count": 8
     },
     {
-      "id": "nilpotent_orbits",
-      "title": "Nilpotent Orbits",
-      "href": "nilpotent_orbits/index.html",
-      "node_count": 10
-    },
-    {
       "id": "reductive_structure",
       "title": "Reductive Structure",
       "href": "reductive_structure/index.html",
@@ -487,7 +487,7 @@
       "id": "root_data_and_duality",
       "title": "Root Data And Duality",
       "href": "root_data_and_duality/index.html",
-      "node_count": 34
+      "node_count": 35
     }
   ],
   "boundary_edges": [
@@ -563,16 +563,16 @@
     },
     {
       "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
-      "to": "topic:nilpotent_orbits",
+      "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
-      "topic": "nilpotent_orbits",
+      "topic": "conjugacy_classes",
       "count": 1
     },
     {
       "from": "descent_and_forms.galois_cohomology",
-      "to": "topic:nilpotent_orbits",
+      "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
-      "topic": "nilpotent_orbits",
+      "topic": "conjugacy_classes",
       "count": 1
     },
     {

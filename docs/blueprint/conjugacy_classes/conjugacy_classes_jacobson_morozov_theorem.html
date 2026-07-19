@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SL2-Triples — Reductive Linear Algebraic Groups Knowledge DAG</title>
+  <title>Jacobson-Morozov Theorem — Reductive Linear Algebraic Groups Knowledge DAG</title>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex@0.16.46/dist/katex.min.css"
         integrity="sha384-hW6ZmmePRD2f/9cuxGE6C9faGprtIBOme5OLUiEjtRKMTN67tY23ur9eAi21H8De"
@@ -64,7 +64,7 @@
         </li>
       
         <li class="topic-leaf topic-active">
-          <a href="../nilpotent_orbits/index.html">Nilpotent Orbits</a>
+          <a href="../conjugacy_classes/index.html">Conjugacy Classes</a>
         </li>
       
         <li class="topic-leaf">
@@ -448,17 +448,17 @@
   </nav>
   <main>
     
-<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-sl2_triples">
+<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-jacobson_morozov_theorem">
   <header class="topic_thmheading thm-heading">
     <span class="topic_thmcaption thm-caption">Topic</span>
-    <span class="topic_thmtitle thm-title">SL2-Triples</span>
+    <span class="topic_thmtitle thm-title">Jacobson-Morozov Theorem</span>
     <div class="thm_header_extras">
       
       <span class="badge kind-topic">topic</span>
       <span class="badge status-admitted">admitted</span>
     </div>
     <div class="thm_header_hidden_extras">
-      <a class="permalink" href="#node-nilpotent_orbits-2e-sl2_triples">#</a>
+      <a class="permalink" href="#node-nilpotent_orbits-2e-jacobson_morozov_theorem">#</a>
       
       <button class="modal-trigger" type="button" data-modal-target="uses-modal">Uses</button>
       
@@ -472,7 +472,7 @@
       <header><h1>Uses</h1><button class="closebtn" type="button">x</button></header>
       <ul class="uses">
         
-        <li><a href="nilpotent_orbits_nilpotent_elements.html">Nilpotent Elements</a></li>
+        <li><a href="conjugacy_classes_sl2_triples.html">SL2-Triples</a></li>
         
       </ul>
     </div>
@@ -482,139 +482,118 @@
   
 
   <div class="topic_thmcontent thm-content body">
-    <h1>SL2-Triples</h1>
-<p>An <strong>\(\mathfrak{sl}_2\)-triple</strong> in a Lie algebra is a triple
-\((e, h, f)\) satisfying the standard \(\mathfrak{sl}_2\)-commutation
-relations. Such triples are the algebraic counterpart of
-representations of \(\mathfrak{sl}_2\) inside \(\mathfrak{g}\), and
-they package the structure of a nilpotent orbit into a finite list of
-weights.</p>
-<h2>Definition</h2>
-<p>Let \(\mathfrak{g}\) be a Lie algebra over a field \(k\) (typically
-characteristic 0 or good for the type of \(\mathfrak{g}\)). An
-<strong>\(\mathfrak{sl}_2\)-triple</strong> is a triple \((e, h, f)\) of elements of
-\(\mathfrak{g}\) satisfying:
+    <h1>Jacobson-Morozov Theorem</h1>
+<p>The <strong>Jacobson-Morozov theorem</strong> asserts that every nonzero nilpotent
+element in a semisimple Lie algebra extends to an
+\(\mathfrak{sl}_2\)-triple. This is the foundational existence
+statement underlying the entire classification of nilpotent orbits.</p>
+<h2>Statement</h2>
+<p><strong>Theorem (Jacobson-Morozov).</strong> Let \(\mathfrak{g}\) be a
+finite-dimensional semisimple Lie algebra over a field \(k\) of
+characteristic 0 (or of good characteristic for the type of
+\(\mathfrak{g}\)). For every nonzero nilpotent element
+\(e \in \mathfrak{g}\), there exist \(h, f \in \mathfrak{g}\) such
+that \((e, h, f)\) is an \(\mathfrak{sl}_2\)-triple:
 \[
 [h, e] = 2e, \qquad [h, f] = -2f, \qquad [e, f] = h.
 \]</p>
-<p>Equivalently: \((e, h, f)\) defines a Lie algebra homomorphism
-\(\mathfrak{sl}_2(k) \to \mathfrak{g}\), \(\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} \mapsto e\),
-\(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} \mapsto h\), etc.</p>
-<p>Conventions:
-- \(e\) (or \(X\)) is the <strong>nilpositive</strong> element;
-- \(f\) (or \(Y\)) is the <strong>nilnegative</strong> element;
-- \(h\) (or \(H\)) is the <strong>neutral</strong> (semisimple) element.</p>
-<h2>Jacobson-Morozov theorem</h2>
-<p><strong>Theorem (Jacobson-Morozov).</strong> Let \(\mathfrak{g}\) be semisimple
-over \(k\) of characteristic 0 (or good positive characteristic). For
-every nonzero nilpotent \(e \in \mathfrak{g}\), there exist
-\(h, f \in \mathfrak{g}\) such that \((e, h, f)\) is an
-\(\mathfrak{sl}_2\)-triple.</p>
-<p>Moreover: any two such extensions are conjugate by an element of
-\(Z_G(e)^\circ\) (the identity component of the centraliser).</p>
-<p><strong>Corollary.</strong> There is a bijection
-\[
-\{\text{nonzero nilpotent orbits in } \mathfrak{g}\} \;\longleftrightarrow\;
-\{\text{}\mathfrak{sl}_2\text{-triples in } \mathfrak{g}\}/G.
-\]</p>
-<h2>Weights and representation structure</h2>
-<p>For an \(\mathfrak{sl}_2\)-triple \((e, h, f)\) in \(\mathfrak{g}\),
-the <strong>adjoint representation</strong> of the triple on \(\mathfrak{g}\)
-decomposes
-\[
-\mathfrak{g} \;=\; \bigoplus_{n \in \mathbb{Z}} \mathfrak{g}_n,
-\qquad \mathfrak{g}_n = \{X : [h, X] = nX\}.
-\]</p>
-<p>\(\mathfrak{g}\) becomes a graded \(\mathfrak{sl}_2\)-module: each
-\(\mathfrak{g}_n\) is finite-dimensional, and the multiplicities of
-irreducible \(\mathfrak{sl}_2\)-modules \(V_m\) in \(\mathfrak{g}\)
-give a finite list of integers — the <strong>dimension vector</strong> of the
-triple.</p>
-<p>By the structure of \(\mathfrak{sl}_2\)-representations:
-\(\dim \mathfrak{g}_n = \dim \mathfrak{g}_{-n}\), and \(e\) maps
-\(\mathfrak{g}_n \xrightarrow{\cong} \mathfrak{g}_{n+2}\) for
-\(n \ge 0\).</p>
-<h2>Weighted Dynkin diagram</h2>
-<p>Given an \(\mathfrak{sl}_2\)-triple, conjugate \(h\) into the dominant
-Weyl chamber of a fixed Cartan. The <strong>weighted Dynkin diagram</strong> records
-\(d_i = \alpha_i(h)\) for each simple root \(\alpha_i\):
-\[
-d_i \in \{0, 1, 2\}.
-\]</p>
-<p>This is the canonical combinatorial invariant of the
-\(G\)-conjugacy class of the triple (= the orbit \(G \cdot e\)). See
-<a class="node-ref" data-node-id="nilpotent_orbits.weighted_dynkin_diagrams" href="nilpotent_orbits_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a>.</p>
+<p>Furthermore, the extension is <strong>unique up to \(Z_G(e)^\circ\)-conjugacy</strong>:
+any two \(\mathfrak{sl}_2\)-triples extending the same \(e\) differ by
+conjugation by an element of \(Z_G(e)^\circ\).</p>
+    
+    <details class="proof-details">
+      <summary>Proof</summary>
+      <div class="proof-body">
+        <p>sketch</p>
+<p>The key idea: extend the action of \(e\) (a nilpotent element) to a
+representation of \(\mathfrak{sl}_2\) on \(\mathfrak{g}\) by adjointly
+acting.</p>
+<ol>
+<li><strong>Construct \(h\).</strong> Use \(e\) and a Lie-theoretic argument:
+   \(\mathrm{im}(\mathrm{ad}\, e) \cap \mathrm{ker}(\mathrm{ad}\, e) \supseteq \{0\}\)
+   when \(\mathfrak{g}\) is "non-degenerate enough" (the Killing form
+   condition). Specifically, find \(h\) with
+   \([h, e] = 2e\) using semisimplicity of \(\mathrm{ad}(h)\).</li>
+<li><strong>Construct \(f\).</strong> Solve the equation \([e, f] = h\) using the
+   surjectivity of \(\mathrm{ad}\, e\) restricted to suitable weight
+   spaces.</li>
+<li><strong>Verify \([h, f] = -2f\).</strong> Automatic from the construction.</li>
+</ol>
+<p>The "non-degenerate enough" condition is automatic in characteristic
+0 (Killing form non-degenerate); in positive characteristic, "good"
+means: not a torsion prime for \(\mathfrak{g}\) (e.g.\ \(p \ne 2\) for
+\(B_n, C_n, D_n\); \(p \ne 2, 3\) for exceptional types; with
+specific exceptions for \(G_2, F_4, E_6, E_7, E_8\)).</p>
+<h2>Failure in bad characteristic</h2>
+<p>In bad characteristic (e.g.\ \(p = 2\) for \(\mathrm{SO}_n\), \(p = 3\)
+for \(G_2\)): the theorem can fail. Specific nilpotents may not
+embed in any \(\mathfrak{sl}_2\)-triple, or extensions may not be
+unique.</p>
+<p>The remedy is the <strong>Premet</strong> correspondence: replacing
+\(\mathfrak{sl}_2\)-triples with "associated cocharacters" — the
+extension still works.</p>
+<h2>Consequences</h2>
+<h3>Bijection of orbits with triples</h3>
+<p>\(G\)-conjugacy classes of nonzero nilpotents = \(G\)-conjugacy
+classes of \(\mathfrak{sl}_2\)-triples (Kostant).</p>
+<h3>Weighted Dynkin diagrams</h3>
+<p>Each triple gives a labelling of the simple roots by \(\alpha_i(h) \in \{0, 1, 2\}\)
+— the <strong>weighted Dynkin diagram</strong>. Injective on orbits;
+characterising image is the Bala-Carter analysis.</p>
+<h3>Finiteness of nilpotent orbits</h3>
+<p>Because there are finitely many weighted Dynkin diagrams, there are
+finitely many nilpotent orbits.</p>
 <h2>Examples</h2>
-<h3>\(\mathfrak{sl}_2\) standard</h3>
-<p>\(e = E_{12}\), \(h = E_{11} - E_{22}\), \(f = E_{21}\). Adjoint
-representation decomposes as the irreducible \(V_3\)
-(\(3\)-dimensional).</p>
-<h3>\(\mathfrak{sl}_3\), regular nilpotent</h3>
-<p>Sum of all simple-root vectors:
-\(e = E_{12} + E_{23}\). The triple has \(h = 2(\omega_1 + \omega_2)\)
-in dominant Weyl coordinates; weighted Dynkin = \(2 - 2\).</p>
-<p>\(\mathfrak{g}\) decomposes into one \(V_5\) (the regular module) and
-nothing else.</p>
-<h3>\(\mathfrak{sl}_n\), Jordan-block triple</h3>
-<p>For Jordan partition \(\lambda = (\lambda_1, \ldots, \lambda_k)\): each
-block contributes an irreducible
-\(\mathfrak{sl}_2\)-module \(V_{\lambda_i - 1}\). The total
-\(\mathfrak{sl}_2\)-representation of \(\mathfrak{gl}_n\) (under the
-nilpotent triple) is determined by \(\lambda\).</p>
-<h2>Kostant's classification</h2>
-<p><strong>Theorem (Kostant 1959).</strong> The \(G\)-conjugacy classes of
-\(\mathfrak{sl}_2\)-triples in \(\mathfrak{g}\) are in bijection with
-the \(G\)-conjugacy classes of nonzero nilpotents (via \((e, h, f) \mapsto e\)).</p>
-<p>This is the existence-and-uniqueness theorem complementing
-Jacobson-Morozov.</p>
-<h2>Slice and transversal</h2>
-<p>For an \(\mathfrak{sl}_2\)-triple \((e, h, f)\), the <strong>Kostant-Slodowy
-slice</strong>
-\[
-S_e \;:=\; e + Z_{\mathfrak{g}}(f) \;\subseteq\; \mathfrak{g}
-\]
-is a transverse slice to the nilpotent orbit \(G \cdot e\) inside
-\(\mathfrak{g}\). The intersection \(S_e \cap \mathcal{N}\) gives a
-"local model" for the closure ordering of orbits near \(G \cdot e\).</p>
-<p>For the <strong>subregular</strong> nilpotent orbit: \(S_e \cap \mathcal{N}\) is a
-<strong>Kleinian (Du Val) singularity</strong> of the same type as the Dynkin
-diagram of \(\mathfrak{g}\) — a beautiful link between Lie theory and
-surface singularities.</p>
+<h3>\(\mathfrak{sl}_2\)</h3>
+<p>For \(e = E_{12}\): \(h = E_{11} - E_{22}\), \(f = E_{21}\). The
+unique triple (no centraliser).</p>
+<h3>\(\mathfrak{sl}_3\)</h3>
+<p>For \(e = E_{12} + E_{23}\) (regular nilpotent): the unique extension
+gives \(h = 2 E_{11} - 2 E_{33}\), \(f\) determined up to scale by
+\([e, f] = h\). Centraliser \(Z_G(e)^\circ\) is trivial (regular
+implies abelian centraliser, here just centre).</p>
+<h3>Subregular nilpotent in \(E_8\)</h3>
+<p>\(e\) is a non-trivial sum of simple-root vectors; the triple's
+\(h\)-weights give a specific weighted Dynkin label that distinguishes
+the subregular orbit from neighbouring orbits in the closure order.</p>
+<h2>Constructive aspects</h2>
+<p>The proof gives an algorithm: given \(e\), one can compute \(h\) and
+\(f\) by solving linear equations in \(\mathfrak{g}\). This is the
+basis of computer-algebra implementations (LiE, GAP, Magma) of
+nilpotent-orbit classification.</p>
 <h2>Mathlib</h2>
-<p>Not formalised.</p>
+<p>Not formalised. Depends on full Lie algebra and reductive group
+infrastructure.</p>
 <h2>References</h2>
 <ul>
-<li>Kostant, <em>The principal three-dimensional subgroup and the Betti
-  numbers of a complex simple Lie group</em> (Amer.\ J.\ Math.\ 1959).</li>
-<li>Carter, <em>Finite Groups of Lie Type</em> (1985), §5.5.</li>
-<li>Collingwood–McGovern, <em>Nilpotent Orbits in Semisimple Lie Algebras</em>
-  (1993), Ch. 3.</li>
+<li>Jacobson, <em>Completely reducible Lie algebras of linear
+  transformations</em> (Proc.\ AMS 1951).</li>
+<li>Morozov, <em>On a nilpotent element in a semisimple Lie algebra</em>
+  (Doklady 1942).</li>
+<li>Bourbaki, <em>Groupes et algèbres de Lie</em>, Ch. VIII.</li>
+<li>Collingwood–McGovern, <em>Conjugacy Classes in Semisimple Lie Algebras</em>
+  (1993), §3.3.</li>
+<li>Premet, <em>Nilpotent commuting varieties of reductive Lie algebras</em>
+  (Invent.\ Math.\ 2003).</li>
 </ul>
 <h2>Prerequisite Topics</h2>
 <ul>
-<li><a class="node-ref" data-node-id="nilpotent_orbits.nilpotent_elements" href="nilpotent_orbits_nilpotent_elements.html">Nilpotent Elements</a></li>
+<li><a class="node-ref" data-node-id="conjugacy_classes.sl2_triples" href="conjugacy_classes_sl2_triples.html">SL2-Triples</a></li>
 </ul>
+      </div>
+    </details>
     
   </div>
 
   
 
   
-  <section class="deps deps-used-by">
-    <h2>Used by</h2>
-    <ul>
-      
-      <li><a href="nilpotent_orbits_jacobson_morozov_theorem.html">Jacobson-Morozov Theorem</a></li>
-      
-    </ul>
-  </section>
-  
 
   
 
   
   <footer class="tags">
-    <span class="tag">sl2-triples</span><span class="tag">nilpotent-orbits</span>
+    <span class="tag">jacobson-morozov</span><span class="tag">nilpotent-orbits</span>
   </footer>
   
 </article>

@@ -268,6 +268,12 @@
   ],
   "boundary_topics": [
     {
+      "id": "conjugacy_classes",
+      "title": "Conjugacy Classes",
+      "href": "conjugacy_classes/index.html",
+      "node_count": 15
+    },
+    {
       "id": "kottwitz_structures",
       "title": "Kottwitz Structures",
       "href": "kottwitz_structures/index.html",
@@ -280,12 +286,6 @@
       "node_count": 30
     },
     {
-      "id": "nilpotent_orbits",
-      "title": "Nilpotent Orbits",
-      "href": "nilpotent_orbits/index.html",
-      "node_count": 10
-    },
-    {
       "id": "reductive_structure",
       "title": "Reductive Structure",
       "href": "reductive_structure/index.html",
@@ -295,7 +295,7 @@
       "id": "root_data_and_duality",
       "title": "Root Data And Duality",
       "href": "root_data_and_duality/index.html",
-      "node_count": 34
+      "node_count": 35
     }
   ],
   "boundary_edges": [
@@ -322,9 +322,9 @@
     },
     {
       "from": "descent_and_forms.rational_forms_of_reductive_groups",
-      "to": "topic:nilpotent_orbits",
+      "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
-      "topic": "nilpotent_orbits",
+      "topic": "conjugacy_classes",
       "count": 1
     },
     {
