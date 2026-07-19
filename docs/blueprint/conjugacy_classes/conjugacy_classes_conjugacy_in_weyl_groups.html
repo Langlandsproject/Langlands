@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>nilpotent_orbits — Reductive Linear Algebraic Groups Knowledge DAG</title>
+  <title>Conjugacy Classes in the Weyl Group</title>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex@0.16.46/dist/katex.min.css"
         integrity="sha384-hW6ZmmePRD2f/9cuxGE6C9faGprtIBOme5OLUiEjtRKMTN67tY23ur9eAi21H8De"
@@ -448,135 +448,179 @@
   </nav>
   <main>
     
-<h1>Conjugacy Classes</h1>
+<article class="topic_thmwrapper theorem-style-topic node-page" id="node-nilpotent_orbits-2e-nilpotent_orbits">
+  <header class="topic_thmheading thm-heading">
+    <span class="topic_thmcaption thm-caption">Topic</span>
+    <span class="topic_thmtitle thm-title">Conjugacy Classes</span>
+    <div class="thm_header_extras">
+      
+      <span class="badge kind-topic">topic</span>
+      <span class="badge status-admitted">admitted</span>
+    </div>
+    <div class="thm_header_hidden_extras">
+      <a class="permalink" href="#node-nilpotent_orbits-2e-nilpotent_orbits">#</a>
+      
+      <button class="modal-trigger" type="button" data-modal-target="uses-modal">Uses</button>
+      
+      
+    </div>
+  </header>
 
-<div class="topic-meta">
-  <div class="topic-stats">
-    <span class="topic-node-count">10 nodes</span>
-    
-    <span class="badge status-admitted">10 admitted</span>
-    
+  
+  <div class="modal-container" id="uses-modal" hidden>
+    <div class="modal-content">
+      <header><h1>Uses</h1><button class="closebtn" type="button">x</button></header>
+      <ul class="uses">
+        
+        <li><a href="conjugacy_classes_nilpotent_cone.html">Nilpotent Cone</a></li>
+        
+      </ul>
+    </div>
   </div>
   
-</div>
 
+  
 
-<div class="topic-catalog">
-  <h1>Conjugacy Classes</h1>
-<p>This catalog lists topic-level nodes under the <code>conjugacy_classes</code> mathematical category. It is for human planning and does not create DAG edges.</p>
-<h2>Topic Nodes</h2>
+  <div class="topic_thmcontent thm-content body">
+    <h1>Conjugacy Classes</h1>
+<p>A <strong>nilpotent orbit</strong> in a reductive Lie algebra \(\mathfrak{g}\) is an
+adjoint orbit of nilpotent elements. The set of nilpotent orbits is
+finite, partially ordered, and stratifies the nilpotent cone — making
+it one of the basic combinatorial invariants of \(\mathfrak{g}\).</p>
+<h2>Definition</h2>
+<p>Let \(G\) be a connected reductive algebraic group over an
+algebraically closed field \(k\) of characteristic zero (or "good"
+characteristic for the type of \(G\)), with Lie algebra
+\(\mathfrak{g} = \operatorname{Lie}(G)\). An element
+\(X \in \mathfrak{g}\) is <strong>nilpotent</strong> if \(\operatorname{ad}(X)\) is
+nilpotent, equivalently if \(X\) lies in the <strong>nilpotent cone</strong>
+\(\mathcal{N} \subseteq \mathfrak{g}\).</p>
+<p>A <strong>nilpotent orbit</strong> is an orbit
+\(\mathcal{O} = G \cdot X \subseteq \mathfrak{g}\) for the adjoint
+action, where \(X \in \mathcal{N}\).</p>
+<h2>Finiteness</h2>
+<p><strong>Theorem.</strong> There are only finitely many nilpotent orbits in
+\(\mathfrak{g}\).</p>
+<p>The proof uses the <strong>Jacobson–Morozov theorem</strong>: every nilpotent
+element \(X \ne 0\) extends to an \(\mathfrak{sl}_2\)-triple
+\((X, H, Y)\), and \(\mathfrak{sl}_2\)-triples are classified up to
+\(G\)-conjugacy by a finite combinatorial datum (a <strong>weighted Dynkin
+diagram</strong>).</p>
+<h2>Examples</h2>
+<h3>\(\mathfrak{gl}_n\) and \(\mathfrak{sl}_n\)</h3>
+<p>Nilpotent orbits in \(\mathfrak{gl}_n\) are in bijection with
+<strong>partitions of \(n\)</strong>, via Jordan canonical form. A nilpotent
+\(n \times n\) matrix is conjugate to a sum of Jordan blocks; the
+partition records the block sizes.</p>
+<p>For \(\mathfrak{sl}_n\) the bijection is the same (the trace-zero
+condition is automatic for nilpotent matrices).</p>
+<h3>Classical types</h3>
+<p>For \(\mathfrak{so}_{2n+1}\), \(\mathfrak{sp}_{2n}\), \(\mathfrak{so}_{2n}\):
+nilpotent orbits are classified by partitions satisfying parity
+constraints:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Partitions of \(n\) (or \(2n+1\)) with constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(\mathfrak{sp}_{2n}\)</td>
+<td>odd parts have even multiplicity</td>
+</tr>
+<tr>
+<td>\(\mathfrak{so}_{2n+1}\)</td>
+<td>even parts have even multiplicity</td>
+</tr>
+<tr>
+<td>\(\mathfrak{so}_{2n}\)</td>
+<td>even parts have even multiplicity (very even ones split into two)</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptional types</h3>
+<p>For \(E_8, E_7, E_6, F_4, G_2\) the classification is via the
+Bala-Carter labels; there is no partition shortcut.</p>
+<h2>The closure order</h2>
+<p>Nilpotent orbits are partially ordered by
+\(\mathcal{O}_1 \le \mathcal{O}_2 \iff \mathcal{O}_1 \subseteq \overline{\mathcal{O}_2}\)
+(closure in the Zariski topology). The poset has:</p>
 <ul>
-<li><a class="node-ref" data-node-id="conjugacy_classes.adjoint_action" href="conjugacy_classes_adjoint_action.html">Adjoint Action</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.bala_carter_classification" href="conjugacy_classes_bala_carter_classification.html">Bala-Carter Classification</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.jacobson_morozov_theorem" href="conjugacy_classes_jacobson_morozov_theorem.html">Jacobson-Morozov Theorem</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.jordan_decomposition" href="conjugacy_classes_jordan_decomposition.html">Jordan Decomposition in Algebraic Groups</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.lie_algebras_of_reductive_groups" href="conjugacy_classes_lie_algebras_of_reductive_groups.html">Lie Algebras of Reductive Groups</a></li>
+<li>a <strong>minimum</strong>: the zero orbit \(\{0\}\);</li>
+<li>a <strong>maximum</strong>: the <strong>principal</strong> (= regular) nilpotent orbit, of
+  dimension \(\dim \mathfrak{g} - \operatorname{rank} \mathfrak{g}\).</li>
+</ul>
+<p>For \(\mathfrak{gl}_n\), the partition order on orbits is the
+<strong>dominance order</strong> on partitions.</p>
+<h2>Springer theory</h2>
+<p>The <strong>Springer resolution</strong>
+\(\mu : \tilde{\mathcal{N}} \to \mathcal{N}\) (with
+\(\tilde{\mathcal{N}}\) the cotangent bundle of the flag variety
+\(G/B\)) realises the nilpotent cone as the image of a smooth
+projective variety. The fibres are the <strong>Springer fibres</strong>
+\(\mathcal{B}_X = \mu^{-1}(X)\), and their cohomology carries a
+\(W\)-action (the <strong>Springer representation</strong>), giving a fundamental
+bijection:</p>
+<p>\[
+\{\text{nilpotent orbits in } \mathfrak{g}\} \;\hookrightarrow\; \widehat{W}
+\]</p>
+<p>(the <strong>Springer correspondence</strong>, when refined by the component group
+of the stabiliser \(Z_G(X)\)).</p>
+<h2>Role in Langlands</h2>
+<ul>
+<li><strong>Local Langlands at the unipotent block</strong> (Lusztig, Kazhdan-Lusztig)
+  is organised by nilpotent orbits in the dual Lie algebra
+  \(\operatorname{Lie}(\hat G)\).</li>
+<li><strong>Wavefront sets</strong> and <strong>Whittaker support</strong> of admissible
+  representations are tracked by their associated nilpotent orbit.</li>
+<li><strong>Endoscopy</strong> transfers nilpotent orbits between groups via the
+  Langlands–Shelstad transfer map.</li>
+<li><strong>Bala-Carter classification</strong> is the type-independent way to label
+  orbits in the dual Lie algebra appearing in L-parameters.</li>
+</ul>
+<h2>References</h2>
+<ul>
+<li>Collingwood–McGovern, <em>Conjugacy Classes in Semisimple Lie Algebras</em>
+  (1993).</li>
+<li>Carter, <em>Finite Groups of Lie Type</em> (1985), Ch. 5.</li>
+<li>Jantzen, <em>Conjugacy Classes in Representation Theory</em> (2004).</li>
+<li>Springer, <em>Trigonometric sums, Green functions of finite groups of
+  Lie type and representations of Weyl groups</em> (Inventiones 1976).</li>
+</ul>
+<h2>Prerequisite Topics</h2>
+<ul>
 <li><a class="node-ref" data-node-id="conjugacy_classes.nilpotent_cone" href="conjugacy_classes_nilpotent_cone.html">Nilpotent Cone</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.nilpotent_elements" href="conjugacy_classes_nilpotent_elements.html">Nilpotent Elements</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.nilpotent_orbits" href="conjugacy_classes_nilpotent_orbits.html">Nilpotent Orbits</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.rational_nilpotent_orbits" href="conjugacy_classes_rational_nilpotent_orbits.html">Rational Nilpotent Orbits</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.semisimple_conjugacy_classes" href="conjugacy_classes_semisimple_conjugacy_classes.html">Semisimple Conjugacy Classes</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.sl2_triples" href="conjugacy_classes_sl2_triples.html">SL2-Triples</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.springer_correspondence" href="conjugacy_classes_springer_correspondence.html">Springer Correspondence</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.unipotent_elements" href="conjugacy_classes_unipotent_elements.html">Unipotent Elements and the Unipotent Variety</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.unipotent_orbits" href="conjugacy_classes_unipotent_orbits.html">Unipotent Orbits</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.conjugacy_in_weyl_groups" href="conjugacy_classes_conjugacy_in_weyl_groups.html">Conjugacy Classes in the Weyl Group</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.geometric_conjugacy" href="conjugacy_classes_geometric_conjugacy.html">Geometric Conjugacy and Deligne–Lusztig Theory</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.regular_elements" href="conjugacy_classes_regular_elements.html">Regular Elements</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.stable_conjugacy_classes" href="conjugacy_classes_stable_conjugacy_classes.html">Stable Conjugacy Classes</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.strongly_regular_elements" href="conjugacy_classes_strongly_regular_elements.html">Strongly Regular Elements and Harish-Chandra Theory</a></li>
-<li><a class="node-ref" data-node-id="conjugacy_classes.weighted_dynkin_diagrams" href="conjugacy_classes_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a></li>
 </ul>
-<h2>Details To Discuss</h2>
-<ul>
-<li>Refine this list as the category is expanded.</li>
-</ul>
-</div>
+    
+  </div>
 
+  
 
-<div class="blueprint-node-list">
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_adjoint_action.html">Adjoint Action</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
+  <section class="deps deps-used-by">
+    <h2>Used by</h2>
+    <ul>
+      
+      <li><a href="conjugacy_classes_bala_carter_classification.html">Bala-Carter Classification</a></li>
+      
+      <li><a href="conjugacy_classes_rational_nilpotent_orbits.html">Rational Conjugacy Classes</a></li>
+      
+      <li><a href="conjugacy_classes_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a></li>
+      
+    </ul>
+  </section>
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_bala_carter_classification.html">Bala-Carter Classification</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
+
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_jacobson_morozov_theorem.html">Jacobson-Morozov Theorem</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
+
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_lie_algebras_of_reductive_groups.html">Lie Algebras of Reductive Groups</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
+  <footer class="tags">
+    <span class="tag">nilpotent-orbits</span>
+  </footer>
   
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_nilpotent_cone.html">Nilpotent Cone</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_nilpotent_elements.html">Nilpotent Elements</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_nilpotent_orbits.html">Conjugacy Classes</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_rational_nilpotent_orbits.html">Rational Conjugacy Classes</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_sl2_triples.html">SL2-Triples</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-  <article class="topic_thmwrapper theorem-style-topic summary-node">
-    <header class="topic_thmheading thm-heading">
-      <span class="topic_thmcaption thm-caption">Topic</span>
-      <a class="topic_thmtitle thm-title" href="conjugacy_classes_weighted_dynkin_diagrams.html">Weighted Dynkin Diagrams</a>
-      <span class="badge status-admitted">admitted</span>
-    </header>
-  </article>
-  
-</div>
+</article>
 
   </main>
   <script src="../graph.js"></script>

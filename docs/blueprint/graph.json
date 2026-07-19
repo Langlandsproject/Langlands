@@ -176,7 +176,9 @@
         "reductive_structure.maximal_tori_are_conjugate",
         "reductive_structure.cartan_subgroups_from_maximal_tori",
         "root_data_and_duality.roots_coroots_and_root_subgroups",
-        "conjugacy_classes.semisimple_conjugacy_classes"
+        "conjugacy_classes.strongly_regular_elements",
+        "conjugacy_classes.semisimple_conjugacy_classes",
+        "conjugacy_classes.regular_elements"
       ],
       "href": "reductive_structure/reductive_structure_maximal_tori.html",
       "payload": "node_payloads/reductive_structure_maximal_tori.json"
@@ -1006,7 +1008,8 @@
       ],
       "used_by": [
         "root_data_and_duality.l_groups",
-        "bd_covers.dual_groups_for_covers"
+        "bd_covers.dual_groups_for_covers",
+        "conjugacy_classes.geometric_conjugacy"
       ],
       "href": "root_data_and_duality/root_data_and_duality_langlands_dual_groups.html",
       "payload": "node_payloads/root_data_and_duality_langlands_dual_groups.json"
@@ -1197,6 +1200,7 @@
         "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
         "root_data_and_duality.weyl_group_generated_by_reflections",
         "conjugacy_classes.weighted_dynkin_diagrams",
+        "conjugacy_classes.conjugacy_in_weyl_groups",
         "buildings_and_parahorics.affine_root_systems"
       ],
       "href": "root_data_and_duality/root_data_and_duality_root_systems.html",
@@ -1279,7 +1283,8 @@
       "used_by": [
         "root_data_and_duality.root_systems",
         "root_data_and_duality.coxeter_systems_and_bruhat_order",
-        "root_data_and_duality.weyl_group_generated_by_reflections"
+        "root_data_and_duality.weyl_group_generated_by_reflections",
+        "conjugacy_classes.conjugacy_in_weyl_groups"
       ],
       "href": "root_data_and_duality/root_data_and_duality_weyl_groups.html",
       "payload": "node_payloads/root_data_and_duality_weyl_groups.json"
@@ -1330,7 +1335,8 @@
       ],
       "used_by": [
         "root_data_and_duality.pinned_dual_groups",
-        "root_data_and_duality.l_morphisms"
+        "root_data_and_duality.l_morphisms",
+        "conjugacy_classes.geometric_conjugacy"
       ],
       "href": "root_data_and_duality/root_data_and_duality_dual_reductive_groups.html",
       "payload": "node_payloads/root_data_and_duality_dual_reductive_groups.json"
@@ -2171,6 +2177,60 @@
       "payload": "node_payloads/bd_covers_l_groups_for_covers.json"
     },
     {
+      "id": "conjugacy_classes.strongly_regular_elements",
+      "title": "Strongly Regular Elements and Harish-Chandra Theory",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes"
+      ],
+      "tags": [
+        "strongly-regular",
+        "harish-chandra",
+        "orbital-integrals",
+        "trace-formula"
+      ],
+      "uses": [
+        "conjugacy_classes.regular_elements",
+        "conjugacy_classes.stable_conjugacy_classes",
+        "conjugacy_classes.lie_algebras_of_reductive_groups",
+        "reductive_structure.maximal_tori"
+      ],
+      "used_by": [],
+      "href": "conjugacy_classes/conjugacy_classes_strongly_regular_elements.html"
+    },
+    {
+      "id": "conjugacy_classes.stable_conjugacy_classes",
+      "title": "Stable Conjugacy Classes",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes",
+        "descent_and_forms"
+      ],
+      "tags": [
+        "stable-conjugacy",
+        "endoscopy",
+        "langlands",
+        "inner-forms",
+        "galois-cohomology"
+      ],
+      "uses": [
+        "conjugacy_classes.semisimple_conjugacy_classes",
+        "conjugacy_classes.unipotent_orbits",
+        "conjugacy_classes.regular_elements",
+        "descent_and_forms.galois_cohomology",
+        "descent_and_forms.inner_forms"
+      ],
+      "used_by": [
+        "conjugacy_classes.strongly_regular_elements",
+        "conjugacy_classes.geometric_conjugacy"
+      ],
+      "href": "conjugacy_classes/conjugacy_classes_stable_conjugacy_classes.html"
+    },
+    {
       "id": "conjugacy_classes.nilpotent_cone",
       "title": "Nilpotent Cone",
       "kind": "topic",
@@ -2241,7 +2301,8 @@
       "used_by": [
         "conjugacy_classes.unipotent_elements",
         "conjugacy_classes.semisimple_conjugacy_classes",
-        "conjugacy_classes.unipotent_orbits"
+        "conjugacy_classes.unipotent_orbits",
+        "conjugacy_classes.regular_elements"
       ],
       "href": "conjugacy_classes/conjugacy_classes_jordan_decomposition.html"
     },
@@ -2266,7 +2327,11 @@
         "reductive_structure.reductive_groups",
         "reductive_structure.maximal_tori"
       ],
-      "used_by": [],
+      "used_by": [
+        "conjugacy_classes.stable_conjugacy_classes",
+        "conjugacy_classes.geometric_conjugacy",
+        "conjugacy_classes.regular_elements"
+      ],
       "href": "conjugacy_classes/conjugacy_classes_semisimple_conjugacy_classes.html"
     },
     {
@@ -2310,6 +2375,31 @@
       "href": "conjugacy_classes/conjugacy_classes_jacobson_morozov_theorem.html"
     },
     {
+      "id": "conjugacy_classes.geometric_conjugacy",
+      "title": "Geometric Conjugacy and Deligne\u2013Lusztig Theory",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes"
+      ],
+      "tags": [
+        "geometric-conjugacy",
+        "deligne-lusztig",
+        "finite-groups-lie-type",
+        "dual-group",
+        "lusztig-series"
+      ],
+      "uses": [
+        "conjugacy_classes.semisimple_conjugacy_classes",
+        "conjugacy_classes.stable_conjugacy_classes",
+        "root_data_and_duality.dual_reductive_groups",
+        "root_data_and_duality.langlands_dual_groups"
+      ],
+      "used_by": [],
+      "href": "conjugacy_classes/conjugacy_classes_geometric_conjugacy.html"
+    },
+    {
       "id": "conjugacy_classes.springer_correspondence",
       "title": "Springer Correspondence",
       "kind": "theorem",
@@ -2332,7 +2422,9 @@
         "reductive_structure.reductive_groups",
         "reductive_structure.borel_subgroups"
       ],
-      "used_by": [],
+      "used_by": [
+        "conjugacy_classes.conjugacy_in_weyl_groups"
+      ],
       "href": "conjugacy_classes/conjugacy_classes_springer_correspondence.html"
     },
     {
@@ -2403,7 +2495,9 @@
         "reductive_structure.reductive_groups"
       ],
       "used_by": [
-        "conjugacy_classes.springer_correspondence"
+        "conjugacy_classes.stable_conjugacy_classes",
+        "conjugacy_classes.springer_correspondence",
+        "conjugacy_classes.regular_elements"
       ],
       "href": "conjugacy_classes/conjugacy_classes_unipotent_orbits.html"
     },
@@ -2428,6 +2522,33 @@
         "conjugacy_classes.nilpotent_cone"
       ],
       "href": "conjugacy_classes/conjugacy_classes_adjoint_action.html"
+    },
+    {
+      "id": "conjugacy_classes.regular_elements",
+      "title": "Regular Elements",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes"
+      ],
+      "tags": [
+        "regular-elements",
+        "regular-semisimple",
+        "regular-unipotent",
+        "centralizer"
+      ],
+      "uses": [
+        "conjugacy_classes.jordan_decomposition",
+        "conjugacy_classes.semisimple_conjugacy_classes",
+        "conjugacy_classes.unipotent_orbits",
+        "reductive_structure.maximal_tori"
+      ],
+      "used_by": [
+        "conjugacy_classes.strongly_regular_elements",
+        "conjugacy_classes.stable_conjugacy_classes"
+      ],
+      "href": "conjugacy_classes/conjugacy_classes_regular_elements.html"
     },
     {
       "id": "conjugacy_classes.weighted_dynkin_diagrams",
@@ -2470,6 +2591,7 @@
         "reductive_structure.reductive_groups"
       ],
       "used_by": [
+        "conjugacy_classes.strongly_regular_elements",
         "conjugacy_classes.adjoint_action",
         "conjugacy_classes.nilpotent_elements"
       ],
@@ -2517,6 +2639,30 @@
         "conjugacy_classes.sl2_triples"
       ],
       "href": "conjugacy_classes/conjugacy_classes_nilpotent_elements.html"
+    },
+    {
+      "id": "conjugacy_classes.conjugacy_in_weyl_groups",
+      "title": "Conjugacy Classes in the Weyl Group",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "conjugacy_classes",
+      "topics": [
+        "conjugacy_classes"
+      ],
+      "tags": [
+        "conjugacy",
+        "weyl-group",
+        "springer-correspondence",
+        "cuspidal",
+        "elliptic-elements"
+      ],
+      "uses": [
+        "conjugacy_classes.springer_correspondence",
+        "root_data_and_duality.weyl_groups",
+        "root_data_and_duality.root_systems"
+      ],
+      "used_by": [],
+      "href": "conjugacy_classes/conjugacy_classes_conjugacy_in_weyl_groups.html"
     },
     {
       "id": "linear_algebraic_groups.gl_v_group_scheme",
@@ -3240,6 +3386,7 @@
         "descent_and_forms.galois_groups_and_descent_data"
       ],
       "used_by": [
+        "conjugacy_classes.stable_conjugacy_classes",
         "conjugacy_classes.rational_nilpotent_orbits",
         "descent_and_forms.rigid_inner_twists",
         "descent_and_forms.lang_theorem_finite_fields",
@@ -3368,6 +3515,7 @@
         "descent_and_forms.rational_forms_of_reductive_groups"
       ],
       "used_by": [
+        "conjugacy_classes.stable_conjugacy_classes",
         "descent_and_forms.real_forms",
         "descent_and_forms.strong_inner_forms",
         "descent_and_forms.rigid_inner_forms",
@@ -6045,6 +6193,42 @@
       "to": "bd_covers.l_groups_for_covers"
     },
     {
+      "from": "conjugacy_classes.regular_elements",
+      "to": "conjugacy_classes.strongly_regular_elements"
+    },
+    {
+      "from": "conjugacy_classes.stable_conjugacy_classes",
+      "to": "conjugacy_classes.strongly_regular_elements"
+    },
+    {
+      "from": "conjugacy_classes.lie_algebras_of_reductive_groups",
+      "to": "conjugacy_classes.strongly_regular_elements"
+    },
+    {
+      "from": "reductive_structure.maximal_tori",
+      "to": "conjugacy_classes.strongly_regular_elements"
+    },
+    {
+      "from": "conjugacy_classes.semisimple_conjugacy_classes",
+      "to": "conjugacy_classes.stable_conjugacy_classes"
+    },
+    {
+      "from": "conjugacy_classes.unipotent_orbits",
+      "to": "conjugacy_classes.stable_conjugacy_classes"
+    },
+    {
+      "from": "conjugacy_classes.regular_elements",
+      "to": "conjugacy_classes.stable_conjugacy_classes"
+    },
+    {
+      "from": "descent_and_forms.galois_cohomology",
+      "to": "conjugacy_classes.stable_conjugacy_classes"
+    },
+    {
+      "from": "descent_and_forms.inner_forms",
+      "to": "conjugacy_classes.stable_conjugacy_classes"
+    },
+    {
       "from": "conjugacy_classes.nilpotent_elements",
       "to": "conjugacy_classes.nilpotent_cone"
     },
@@ -6091,6 +6275,22 @@
     {
       "from": "conjugacy_classes.sl2_triples",
       "to": "conjugacy_classes.jacobson_morozov_theorem"
+    },
+    {
+      "from": "conjugacy_classes.semisimple_conjugacy_classes",
+      "to": "conjugacy_classes.geometric_conjugacy"
+    },
+    {
+      "from": "conjugacy_classes.stable_conjugacy_classes",
+      "to": "conjugacy_classes.geometric_conjugacy"
+    },
+    {
+      "from": "root_data_and_duality.dual_reductive_groups",
+      "to": "conjugacy_classes.geometric_conjugacy"
+    },
+    {
+      "from": "root_data_and_duality.langlands_dual_groups",
+      "to": "conjugacy_classes.geometric_conjugacy"
     },
     {
       "from": "conjugacy_classes.unipotent_orbits",
@@ -6157,6 +6357,22 @@
       "to": "conjugacy_classes.adjoint_action"
     },
     {
+      "from": "conjugacy_classes.jordan_decomposition",
+      "to": "conjugacy_classes.regular_elements"
+    },
+    {
+      "from": "conjugacy_classes.semisimple_conjugacy_classes",
+      "to": "conjugacy_classes.regular_elements"
+    },
+    {
+      "from": "conjugacy_classes.unipotent_orbits",
+      "to": "conjugacy_classes.regular_elements"
+    },
+    {
+      "from": "reductive_structure.maximal_tori",
+      "to": "conjugacy_classes.regular_elements"
+    },
+    {
       "from": "conjugacy_classes.nilpotent_orbits",
       "to": "conjugacy_classes.weighted_dynkin_diagrams"
     },
@@ -6187,6 +6403,18 @@
     {
       "from": "conjugacy_classes.lie_algebras_of_reductive_groups",
       "to": "conjugacy_classes.nilpotent_elements"
+    },
+    {
+      "from": "conjugacy_classes.springer_correspondence",
+      "to": "conjugacy_classes.conjugacy_in_weyl_groups"
+    },
+    {
+      "from": "root_data_and_duality.weyl_groups",
+      "to": "conjugacy_classes.conjugacy_in_weyl_groups"
+    },
+    {
+      "from": "root_data_and_duality.root_systems",
+      "to": "conjugacy_classes.conjugacy_in_weyl_groups"
     },
     {
       "from": "affine_group_schemes.general_linear_group_scheme",

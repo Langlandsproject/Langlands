@@ -463,7 +463,7 @@
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
       "href": "conjugacy_classes/index.html",
-      "node_count": 15
+      "node_count": 20
     },
     {
       "id": "descent_and_forms",
@@ -562,14 +562,14 @@
       "count": 1
     },
     {
-      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
+      "from": "descent_and_forms.galois_cohomology",
       "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
       "topic": "conjugacy_classes",
-      "count": 1
+      "count": 2
     },
     {
-      "from": "descent_and_forms.galois_cohomology",
+      "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
       "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
       "topic": "conjugacy_classes",

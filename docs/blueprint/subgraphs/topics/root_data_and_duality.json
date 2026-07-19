@@ -10,7 +10,7 @@
   "counts": {
     "nodes": 35,
     "edges": 67,
-    "boundary_edges": 39
+    "boundary_edges": 42
   },
   "nodes": [
     {
@@ -646,7 +646,7 @@
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
       "href": "conjugacy_classes/index.html",
-      "node_count": 15
+      "node_count": 20
     },
     {
       "id": "descent_and_forms",
@@ -891,7 +891,28 @@
       "count": 1
     },
     {
+      "from": "root_data_and_duality.dual_reductive_groups",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
+      "count": 1
+    },
+    {
+      "from": "root_data_and_duality.langlands_dual_groups",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
+      "count": 1
+    },
+    {
       "from": "root_data_and_duality.root_systems",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
+      "count": 2
+    },
+    {
+      "from": "root_data_and_duality.weyl_groups",
       "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
       "topic": "conjugacy_classes",

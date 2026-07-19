@@ -539,7 +539,7 @@
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
       "href": "conjugacy_classes/index.html",
-      "node_count": 15
+      "node_count": 20
     },
     {
       "id": "descent_and_forms",
@@ -729,18 +729,18 @@
       "count": 1
     },
     {
+      "from": "reductive_structure.maximal_tori",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
+      "count": 3
+    },
+    {
       "from": "reductive_structure.reductive_groups",
       "to": "topic:conjugacy_classes",
       "kind": "boundary_dependent",
       "topic": "conjugacy_classes",
       "count": 7
-    },
-    {
-      "from": "reductive_structure.maximal_tori",
-      "to": "topic:conjugacy_classes",
-      "kind": "boundary_dependent",
-      "topic": "conjugacy_classes",
-      "count": 1
     },
     {
       "from": "reductive_structure.borel_subgroups",

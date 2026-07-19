@@ -61,7 +61,7 @@
       "title": "Conjugacy Classes",
       "depth": 1,
       "parent": null,
-      "node_count": 15,
+      "node_count": 20,
       "href": "conjugacy_classes/index.html"
     },
     {
@@ -133,7 +133,7 @@
     {
       "from": "descent_and_forms",
       "to": "conjugacy_classes",
-      "count": 1
+      "count": 2
     },
     {
       "from": "foundational_inputs",
@@ -183,7 +183,7 @@
     {
       "from": "linear_algebraic_groups",
       "to": "conjugacy_classes",
-      "count": 2
+      "count": 3
     },
     {
       "from": "linear_algebraic_groups",
@@ -218,7 +218,7 @@
     {
       "from": "reductive_structure",
       "to": "conjugacy_classes",
-      "count": 11
+      "count": 13
     },
     {
       "from": "reductive_structure",
@@ -253,7 +253,7 @@
     {
       "from": "root_data_and_duality",
       "to": "conjugacy_classes",
-      "count": 1
+      "count": 5
     },
     {
       "from": "root_data_and_duality",

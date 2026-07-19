@@ -10,7 +10,7 @@
   "counts": {
     "nodes": 18,
     "edges": 22,
-    "boundary_edges": 15
+    "boundary_edges": 16
   },
   "nodes": [
     {
@@ -271,7 +271,7 @@
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
       "href": "conjugacy_classes/index.html",
-      "node_count": 15
+      "node_count": 20
     },
     {
       "id": "kottwitz_structures",
@@ -319,6 +319,13 @@
       "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
       "count": 3
+    },
+    {
+      "from": "descent_and_forms.inner_forms",
+      "to": "topic:conjugacy_classes",
+      "kind": "boundary_dependent",
+      "topic": "conjugacy_classes",
+      "count": 1
     },
     {
       "from": "descent_and_forms.rational_forms_of_reductive_groups",
