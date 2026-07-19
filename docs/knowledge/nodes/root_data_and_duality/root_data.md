@@ -1,14 +1,15 @@
 ---
 id: root_data_and_duality.root_data
 title: Root Data
-kind: topic
-status: admitted
+kind: definition
+status: formalized
 primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality
 uses:
 - reductive_structure.character_and_cocharacter_lattices
 - root_data_and_duality.roots_coroots_and_root_subgroups
+- root_data_and_duality.root_pairing
 verification:
   definition: accepted
   proof: not_applicable
@@ -139,11 +140,26 @@ lattice refinement is what distinguishes \(\operatorname{SL}_n\) from
 \(\operatorname{PGL}_n\): both have the same \(\Phi\) of type
 \(A_{n-1}\) but different \(X\).
 
-## Mathlib
+## Mathlib (formalization)
 
-- `Mathlib.LinearAlgebra.RootSystem.*` formalises abstract root systems,
-  root pairings, and root data.
-- The classification by Dynkin diagram is partially formalised.
+Root data are formalized in Mathlib4 as a special case of the
+**root pairing** framework (`Mathlib.LinearAlgebra.RootSystem.Defs`):
+
+> A **root datum** is a `RootPairing ι ℤ M N` where `M` and `N` are
+> finitely generated free `ℤ`-modules (i.e.\ finitely generated free
+> abelian groups) equipped with a perfect `ℤ`-bilinear pairing.
+
+This formalizes the classical quadruple \((X, \Phi, X^\vee, \Phi^\vee)\) as:
+`M = X` (character lattice), `N = X^∨` (cocharacter lattice), `root : ι ↪ M`
+(roots), `coroot : ι ↪ N` (coroots).
+
+The isomorphism between root data and split reductive groups (the
+Chevalley–Tits classification) is in Mathlib as
+`Mathlib.AlgebraicGeometry.RootDatum` (or related files), but the
+explicit equivalence of categories is a work in progress.
+
+References: `Mathlib.LinearAlgebra.RootSystem.Defs`,
+`Mathlib.LinearAlgebra.RootSystem.Basic`.
 
 ## Prerequisite Topics
 
