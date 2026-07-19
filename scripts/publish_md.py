@@ -35,7 +35,7 @@ EXPECTED_ROOT_TOPICS = {
     "classical_and_exceptional_groups",
     "buildings_and_parahorics",
     "kottwitz_structures",
-    "nilpotent_orbits",
+    "conjugacy_classes",
     "bd_covers",
 }
 
