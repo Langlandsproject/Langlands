@@ -2,7 +2,7 @@
   "topic": {
     "id": "root_data_and_duality",
     "title": "Root Data and Duality",
-    "href": "blueprint/root_data_and_duality/index.html",
+    "href": "root_data_and_duality/index.html",
     "parent": null,
     "node_count": 45,
     "descendant_node_count": 45
@@ -13,1625 +13,831 @@
       "title": "Levi Decomposition of Parabolic Subgroups",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "reductive_structure",
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "springer",
-        "parabolic",
-        "levi-decomposition",
-        "unipotent-radical",
-        "theorem",
-        "reductive-structure"
-      ],
-      "uses": [
-        "reductive_structure.levi_subgroups_and_unipotent_radicals",
-        "reductive_structure.standard_parabolic_classification",
-        "root_data_and_duality.root_subgroups_generate_reductive_group"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_reductive_structure_levi_decomposition_of_parabolics.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_reductive_structure_levi_decomposition_of_parabolics.html",
+      "payload": "node_payloads/root_data_and_duality_reductive_structure_levi_decomposition_of_parabolics.json"
     },
     {
       "id": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
       "title": "Levi Decomposition for Parabolic F-Subgroups",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "reductive_structure",
-        "descent_and_forms"
-      ],
-      "tags": [
-        "springer",
-        "parabolic",
-        "levi-decomposition",
-        "f-group",
-        "theorem",
-        "reductive-structure"
-      ],
-      "uses": [
-        "reductive_structure.levi_decomposition_of_parabolics",
-        "reductive_structure.maximal_f_split_tori_are_conjugate",
-        "reductive_structure.reductive_groups",
-        "descent_and_forms.f_subgroup_field_of_definition"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_reductive_structure_parabolic_f_subgroups_levi_decomposition.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_reductive_structure_parabolic_f_subgroups_levi_decomposition.html",
+      "payload": "node_payloads/root_data_and_duality_reductive_structure_parabolic_f_subgroups_levi_decomposition.json"
     },
     {
       "id": "reductive_structure.standard_parabolic_classification",
       "title": "Standard Parabolics Are Classified by Simple Roots",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "reductive_structure",
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "springer",
-        "parabolic",
-        "simple-roots",
-        "classification",
-        "theorem",
-        "reductive-structure"
-      ],
-      "uses": [
-        "reductive_structure.parabolic_subgroups",
-        "reductive_structure.borel_subgroups_conjugacy_and_parabolics",
-        "root_data_and_duality.bruhat_decomposition",
-        "root_data_and_duality.weyl_group_generated_by_reflections"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_reductive_structure_standard_parabolic_classification.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_reductive_structure_standard_parabolic_classification.html",
+      "payload": "node_payloads/root_data_and_duality_reductive_structure_standard_parabolic_classification.json"
     },
     {
       "id": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
       "title": "Relative Root Datum of an F-Reductive Group",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "relative-root-datum",
-        "f-reductive-group",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "reductive_structure.maximal_f_split_tori_are_conjugate",
-        "reductive_structure.reductive_groups",
-        "root_data_and_duality.root_datum_from_reductive_group",
-        "root_data_and_duality.galois_action_on_root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_relative_root_datum_of_f_reductive_group.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_relative_root_datum_of_f_reductive_group.html",
+      "payload": "node_payloads/root_data_and_duality_relative_root_datum_of_f_reductive_group.json"
     },
     {
       "id": "root_data_and_duality.chevalley_existence_theorem",
       "title": "Chevalley Existence Theorem",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "chevalley",
-        "existence-theorem",
-        "root-datum",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_data",
-        "root_data_and_duality.based_root_data",
-        "root_data_and_duality.chevalley_isomorphism_theorem",
-        "root_data_and_duality.classification_of_split_reductive_groups",
-        "root_data_and_duality.chevalley_basis",
-        "root_data_and_duality.chevalley_group_construction"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_chevalley_existence_theorem.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_chevalley_existence_theorem.html",
+      "payload": "node_payloads/root_data_and_duality_chevalley_existence_theorem.json"
     },
     {
       "id": "root_data_and_duality.pinned_dual_groups",
       "title": "Pinned Dual Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "pinned-dual-groups",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.dual_reductive_groups",
-        "root_data_and_duality.pinnings"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_pinned_dual_groups.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_pinned_dual_groups.html",
+      "payload": "node_payloads/root_data_and_duality_pinned_dual_groups.json"
     },
     {
       "id": "root_data_and_duality.fundamental_group_of_root_datum",
       "title": "Fundamental Group of a Root Datum",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "fundamental-group",
-        "root-datum",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_fundamental_group_of_root_datum.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_fundamental_group_of_root_datum.html",
+      "payload": "node_payloads/root_data_and_duality_fundamental_group_of_root_datum.json"
     },
     {
       "id": "root_data_and_duality.crystallographic_and_reduced",
       "title": "Crystallographic and Reduced Root Systems",
       "kind": "definition",
       "status": "formalized",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [],
-      "uses": [
-        "root_data_and_duality.root_pairing",
-        "root_data_and_duality.root_systems"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_crystallographic_and_reduced.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_crystallographic_and_reduced.html",
+      "payload": "node_payloads/root_data_and_duality_crystallographic_and_reduced.json"
     },
     {
       "id": "root_data_and_duality.langlands_dual_groups",
       "title": "Langlands Dual Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "langlands-dual-groups",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.pinned_dual_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_langlands_dual_groups.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_langlands_dual_groups.html",
+      "payload": "node_payloads/root_data_and_duality_langlands_dual_groups.json"
     },
     {
       "id": "root_data_and_duality.isogeny_types_from_root_datum",
       "title": "Isogeny Types from the Root Datum",
       "kind": "definition",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "isogeny-type",
-        "simply-connected",
-        "adjoint",
-        "root-datum",
-        "weight-lattice",
-        "root-lattice",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_data",
-        "root_data_and_duality.root_datum_from_reductive_group",
-        "root_data_and_duality.fundamental_group_of_root_datum",
-        "root_data_and_duality.central_isogenies_and_duality",
-        "reductive_structure.central_isogenies",
-        "reductive_structure.derived_group_center_adjoint_sc_cover"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_isogeny_types_from_root_datum.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_isogeny_types_from_root_datum.html",
+      "payload": "node_payloads/root_data_and_duality_isogeny_types_from_root_datum.json"
     },
     {
       "id": "root_data_and_duality.based_root_data",
       "title": "Based Root Data",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "based-root-data",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_based_root_data.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_based_root_data.html",
+      "payload": "node_payloads/root_data_and_duality_based_root_data.json"
     },
     {
       "id": "root_data_and_duality.relative_weyl_group_generated_by_reflections",
       "title": "Relative Weyl Group Is Generated by Relative Reflections",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "relative-weyl-group",
-        "reflection",
-        "f-reductive-group",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.relative_root_datum_of_f_reductive_group",
-        "root_data_and_duality.weyl_group_generated_by_reflections",
-        "reductive_structure.maximal_f_split_tori_are_conjugate"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_relative_weyl_group_generated_by_reflections.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_relative_weyl_group_generated_by_reflections.html",
+      "payload": "node_payloads/root_data_and_duality_relative_weyl_group_generated_by_reflections.json"
     },
     {
       "id": "root_data_and_duality.central_isogenies_and_duality",
       "title": "Central Isogenies and Duality",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "central-isogenies",
-        "duality",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "reductive_structure.central_isogenies",
-        "root_data_and_duality.root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_central_isogenies_and_duality.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_central_isogenies_and_duality.html",
+      "payload": "node_payloads/root_data_and_duality_central_isogenies_and_duality.json"
     },
     {
       "id": "root_data_and_duality.rational_bruhat_decomposition",
       "title": "Rational Bruhat Decomposition",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "bruhat-decomposition",
-        "rational-points",
-        "relative-weyl-group",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "reductive_structure.parabolic_f_subgroups_levi_decomposition",
-        "root_data_and_duality.relative_weyl_group_generated_by_reflections",
-        "root_data_and_duality.bruhat_decomposition"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_rational_bruhat_decomposition.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_rational_bruhat_decomposition.html",
+      "payload": "node_payloads/root_data_and_duality_rational_bruhat_decomposition.json"
     },
     {
       "id": "root_data_and_duality.root_data",
       "title": "Root Data",
       "kind": "definition",
       "status": "formalized",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "root-data",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "reductive_structure.character_and_cocharacter_lattices",
-        "root_data_and_duality.roots_coroots_and_root_subgroups",
-        "root_data_and_duality.root_pairing"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_root_data.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_root_data.html",
+      "payload": "node_payloads/root_data_and_duality_root_data.json"
     },
     {
       "id": "root_data_and_duality.centers_and_dual_centers",
       "title": "Centers and Dual Centers",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "centers",
-        "duality",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.fundamental_group_of_root_datum",
-        "root_data_and_duality.dual_root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_centers_and_dual_centers.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_centers_and_dual_centers.html",
+      "payload": "node_payloads/root_data_and_duality_centers_and_dual_centers.json"
     },
     {
       "id": "root_data_and_duality.root_systems",
       "title": "Root Systems",
       "kind": "definition",
       "status": "formalized",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "root-systems",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.roots_coroots_and_root_subgroups",
-        "root_data_and_duality.weyl_groups",
-        "root_data_and_duality.root_pairing",
-        "root_data_and_duality.crystallographic_and_reduced"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_root_systems.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_root_systems.html",
+      "payload": "node_payloads/root_data_and_duality_root_systems.json"
     },
     {
       "id": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
       "title": "Rank-One Subgroups and SL₂-Embeddings",
       "kind": "definition",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "rank-one-subgroup",
-        "sl2-embedding",
-        "coroot",
-        "root-subgroup",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.roots_coroots_and_root_subgroups",
-        "root_data_and_duality.root_datum_from_reductive_group",
-        "reductive_structure.reductive_groups",
-        "reductive_structure.maximal_tori"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_rank_one_subgroups_sl2_embeddings.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_rank_one_subgroups_sl2_embeddings.html",
+      "payload": "node_payloads/root_data_and_duality_rank_one_subgroups_sl2_embeddings.json"
     },
     {
       "id": "root_data_and_duality.bruhat_decomposition",
       "title": "Bruhat Decomposition",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "bruhat-decomposition",
-        "weyl-group",
-        "borel",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.weyl_group_generated_by_reflections",
-        "root_data_and_duality.root_subgroups_generate_reductive_group",
-        "reductive_structure.borel_subgroups_conjugacy_and_parabolics"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_bruhat_decomposition.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_bruhat_decomposition.html",
+      "payload": "node_payloads/root_data_and_duality_bruhat_decomposition.json"
     },
     {
       "id": "root_data_and_duality.weyl_groups",
       "title": "Weyl Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "weyl-groups",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.roots_coroots_and_root_subgroups",
-        "root_data_and_duality.weyl_group_coxeter_structure"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_weyl_groups.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_weyl_groups.html",
+      "payload": "node_payloads/root_data_and_duality_weyl_groups.json"
     },
     {
       "id": "root_data_and_duality.dual_reductive_groups",
       "title": "Dual Reductive Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "dual-groups",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.dual_root_data",
-        "root_data_and_duality.classification_of_split_reductive_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_dual_reductive_groups.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_dual_reductive_groups.html",
+      "payload": "node_payloads/root_data_and_duality_dual_reductive_groups.json"
     },
     {
       "id": "root_data_and_duality.unipotent_radical_and_positive_roots",
       "title": "Unipotent Radical of a Borel Subgroup and Positive Roots",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "borel-subgroup",
-        "unipotent-radical",
-        "positive-roots",
-        "root-subgroup",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.roots_coroots_and_root_subgroups",
-        "root_data_and_duality.root_datum_from_reductive_group",
-        "root_data_and_duality.based_root_data",
-        "reductive_structure.borel_subgroups",
-        "reductive_structure.levi_subgroups_and_unipotent_radicals"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_unipotent_radical_and_positive_roots.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_unipotent_radical_and_positive_roots.html",
+      "payload": "node_payloads/root_data_and_duality_unipotent_radical_and_positive_roots.json"
     },
     {
       "id": "root_data_and_duality.galois_action_on_root_data",
       "title": "Galois Action on Root Data",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "galois-action",
-        "root-data",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.automorphisms_of_root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_galois_action_on_root_data.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_galois_action_on_root_data.html",
+      "payload": "node_payloads/root_data_and_duality_galois_action_on_root_data.json"
     },
     {
       "id": "root_data_and_duality.roots_coroots_and_root_subgroups",
       "title": "Roots, Coroots, and Root Subgroups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "roots",
-        "coroots",
-        "root-subgroups",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "reductive_structure.reductive_groups",
-        "reductive_structure.maximal_tori"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_roots_coroots_and_root_subgroups.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_roots_coroots_and_root_subgroups.html",
+      "payload": "node_payloads/root_data_and_duality_roots_coroots_and_root_subgroups.json"
     },
     {
       "id": "root_data_and_duality.dual_root_systems",
       "title": "Dual Root Systems",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "dual-root-systems",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_systems"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_dual_root_systems.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_dual_root_systems.html",
+      "payload": "node_payloads/root_data_and_duality_dual_root_systems.json"
     },
     {
       "id": "root_data_and_duality.l_groups",
       "title": "L-Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "l-groups",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.langlands_dual_groups",
-        "root_data_and_duality.galois_action_on_root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_l_groups.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_l_groups.html",
+      "payload": "node_payloads/root_data_and_duality_l_groups.json"
     },
     {
       "id": "root_data_and_duality.root_subgroups_generate_reductive_group",
       "title": "Root Subgroups Generate a Reductive Group",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "root-subgroup",
-        "reductive-group",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_datum_from_reductive_group",
-        "root_data_and_duality.roots_coroots_and_root_subgroups",
-        "reductive_structure.reductive_groups",
-        "root_data_and_duality.rank_one_subgroups_sl2_embeddings"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_root_subgroups_generate_reductive_group.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_root_subgroups_generate_reductive_group.html",
+      "payload": "node_payloads/root_data_and_duality_root_subgroups_generate_reductive_group.json"
     },
     {
       "id": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
       "title": "Cartan Matrices and Dynkin Diagrams",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "cartan-matrices",
-        "dynkin-diagrams",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_systems"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_cartan_matrices_and_dynkin_diagrams.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_cartan_matrices_and_dynkin_diagrams.html",
+      "payload": "node_payloads/root_data_and_duality_cartan_matrices_and_dynkin_diagrams.json"
     },
     {
       "id": "root_data_and_duality.bruhat_order_closure_relations",
       "title": "Bruhat Order Gives Schubert Closure Relations",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "bruhat-order",
-        "schubert-variety",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.bruhat_decomposition",
-        "root_data_and_duality.coxeter_systems_and_bruhat_order"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_bruhat_order_closure_relations.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_bruhat_order_closure_relations.html",
+      "payload": "node_payloads/root_data_and_duality_bruhat_order_closure_relations.json"
     },
     {
       "id": "root_data_and_duality.dual_root_data",
       "title": "Dual Root Data",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "dual-root-data",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_dual_root_data.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_dual_root_data.html",
+      "payload": "node_payloads/root_data_and_duality_dual_root_data.json"
     },
     {
       "id": "root_data_and_duality.automorphisms_of_root_data",
       "title": "Automorphisms of Root Data",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "root-data-automorphisms",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_data",
-        "root_data_and_duality.based_root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_automorphisms_of_root_data.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_automorphisms_of_root_data.html",
+      "payload": "node_payloads/root_data_and_duality_automorphisms_of_root_data.json"
     },
     {
       "id": "root_data_and_duality.root_form_and_positive_definiteness",
       "title": "Root Form and Positive Definiteness",
       "kind": "theorem",
       "status": "formalized",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [],
-      "uses": [
-        "root_data_and_duality.root_pairing",
-        "root_data_and_duality.weyl_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_root_form_and_positive_definiteness.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_root_form_and_positive_definiteness.html",
+      "payload": "node_payloads/root_data_and_duality_root_form_and_positive_definiteness.json"
     },
     {
       "id": "root_data_and_duality.weyl_group_coxeter_structure",
       "title": "Weyl Groups as Coxeter Groups",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [],
-      "uses": [
-        "root_data_and_duality.weyl_groups",
-        "root_data_and_duality.based_root_data",
-        "root_data_and_duality.classification_of_root_systems"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_weyl_group_coxeter_structure.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_weyl_group_coxeter_structure.html",
+      "payload": "node_payloads/root_data_and_duality_weyl_group_coxeter_structure.json"
     },
     {
       "id": "root_data_and_duality.root_pairing",
       "title": "Root Pairings (Unified Framework)",
       "kind": "definition",
       "status": "formalized",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [],
-      "uses": [
-        "root_data_and_duality.root_systems",
-        "root_data_and_duality.root_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_root_pairing.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_root_pairing.html",
+      "payload": "node_payloads/root_data_and_duality_root_pairing.json"
     },
     {
       "id": "root_data_and_duality.coxeter_systems_and_bruhat_order",
       "title": "Coxeter Systems and Bruhat Order",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "coxeter-groups",
-        "bruhat-order",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "foundational_inputs.basic_combinatorics",
-        "root_data_and_duality.weyl_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_coxeter_systems_and_bruhat_order.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_coxeter_systems_and_bruhat_order.html",
+      "payload": "node_payloads/root_data_and_duality_coxeter_systems_and_bruhat_order.json"
     },
     {
       "id": "root_data_and_duality.l_morphisms",
       "title": "L-Morphisms",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "l-morphisms",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.l_groups",
-        "root_data_and_duality.dual_reductive_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_l_morphisms.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_l_morphisms.html",
+      "payload": "node_payloads/root_data_and_duality_l_morphisms.json"
     },
     {
       "id": "root_data_and_duality.chevalley_group_construction",
       "title": "Chevalley Group Construction from a Root Datum",
       "kind": "definition",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "chevalley",
-        "root-datum",
-        "split-reductive-group",
-        "construction",
-        "group-scheme",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_data",
-        "root_data_and_duality.based_root_data",
-        "root_data_and_duality.pinnings",
-        "root_data_and_duality.chevalley_existence_theorem",
-        "root_data_and_duality.chevalley_isomorphism_theorem",
-        "reductive_structure.algebraic_tori",
-        "affine_group_schemes.affine_group_scheme_definition",
-        "affine_group_schemes.general_linear_group_scheme",
-        "root_data_and_duality.chevalley_basis",
-        "root_data_and_duality.rank_one_subgroups_sl2_embeddings"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_chevalley_group_construction.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_chevalley_group_construction.html",
+      "payload": "node_payloads/root_data_and_duality_chevalley_group_construction.json"
     },
     {
       "id": "root_data_and_duality.classification_of_split_reductive_groups",
       "title": "Classification of Split Reductive Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "classification",
-        "split-reductive-groups",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_data",
-        "root_data_and_duality.based_root_data",
-        "root_data_and_duality.pinnings",
-        "root_data_and_duality.isogeny_types_from_root_datum"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_classification_of_split_reductive_groups.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_classification_of_split_reductive_groups.html",
+      "payload": "node_payloads/root_data_and_duality_classification_of_split_reductive_groups.json"
     },
     {
       "id": "root_data_and_duality.root_chains",
       "title": "Root Chains and the String Property",
       "kind": "theorem",
       "status": "formalized",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [],
-      "uses": [
-        "root_data_and_duality.root_pairing",
-        "root_data_and_duality.crystallographic_and_reduced"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_root_chains.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_root_chains.html",
+      "payload": "node_payloads/root_data_and_duality_root_chains.json"
     },
     {
       "id": "root_data_and_duality.chevalley_isomorphism_theorem",
       "title": "Chevalley Isomorphism Theorem",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "chevalley",
-        "isomorphism-theorem",
-        "root-datum",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_datum_from_reductive_group",
-        "root_data_and_duality.root_subgroups_generate_reductive_group",
-        "root_data_and_duality.bruhat_decomposition",
-        "root_data_and_duality.based_root_data",
-        "root_data_and_duality.classification_of_split_reductive_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_chevalley_isomorphism_theorem.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_chevalley_isomorphism_theorem.html",
+      "payload": "node_payloads/root_data_and_duality_chevalley_isomorphism_theorem.json"
     },
     {
       "id": "root_data_and_duality.root_datum_from_reductive_group",
       "title": "Root Datum of a Reductive Group",
       "kind": "definition",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "root-datum",
-        "reductive-group",
-        "definition",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "reductive_structure.reductive_groups",
-        "reductive_structure.maximal_tori_are_conjugate",
-        "root_data_and_duality.root_data",
-        "root_data_and_duality.roots_coroots_and_root_subgroups"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_root_datum_from_reductive_group.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_root_datum_from_reductive_group.html",
+      "payload": "node_payloads/root_data_and_duality_root_datum_from_reductive_group.json"
     },
     {
       "id": "root_data_and_duality.chevalley_basis",
       "title": "Chevalley Basis",
       "kind": "definition",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "chevalley-basis",
-        "semisimple-lie-algebra",
-        "structure-constants",
-        "integral-form",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_systems",
-        "root_data_and_duality.cartan_matrices_and_dynkin_diagrams"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_chevalley_basis.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_chevalley_basis.html",
+      "payload": "node_payloads/root_data_and_duality_chevalley_basis.json"
     },
     {
       "id": "root_data_and_duality.weyl_group_generated_by_reflections",
       "title": "Weyl Group Is Generated by Root Reflections",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality",
-        "reductive_structure"
-      ],
-      "tags": [
-        "springer",
-        "weyl-group",
-        "reflection",
-        "root-system",
-        "theorem",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.root_datum_from_reductive_group",
-        "root_data_and_duality.weyl_groups",
-        "root_data_and_duality.root_systems"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_weyl_group_generated_by_reflections.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_weyl_group_generated_by_reflections.html",
+      "payload": "node_payloads/root_data_and_duality_weyl_group_generated_by_reflections.json"
     },
     {
       "id": "root_data_and_duality.classification_of_root_systems",
       "title": "Classification of Irreducible Root Systems",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [],
-      "uses": [
-        "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
-        "root_data_and_duality.crystallographic_and_reduced",
-        "root_data_and_duality.root_form_and_positive_definiteness"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_classification_of_root_systems.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_classification_of_root_systems.html",
+      "payload": "node_payloads/root_data_and_duality_classification_of_root_systems.json"
     },
     {
       "id": "root_data_and_duality.pinnings",
       "title": "Pinnings",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "root_data_and_duality",
-      "topics": [
-        "root_data_and_duality"
-      ],
-      "tags": [
-        "pinnings",
-        "root-data-and-duality"
-      ],
-      "uses": [
-        "root_data_and_duality.based_root_data",
-        "root_data_and_duality.roots_coroots_and_root_subgroups"
-      ],
-      "used_by": [],
-      "href": "blueprint/root_data_and_duality/root_data_and_duality_pinnings.html",
-      "payload": {}
+      "href": "root_data_and_duality/root_data_and_duality_pinnings.html",
+      "payload": "node_payloads/root_data_and_duality_pinnings.json"
     }
   ],
   "edges": [
     {
       "from": "reductive_structure.standard_parabolic_classification",
-      "to": "reductive_structure.levi_decomposition_of_parabolics",
-      "kind": "uses"
+      "to": "reductive_structure.levi_decomposition_of_parabolics"
     },
     {
       "from": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "to": "reductive_structure.levi_decomposition_of_parabolics",
-      "kind": "uses"
+      "to": "reductive_structure.levi_decomposition_of_parabolics"
     },
     {
       "from": "reductive_structure.levi_decomposition_of_parabolics",
-      "to": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
-      "kind": "uses"
+      "to": "reductive_structure.parabolic_f_subgroups_levi_decomposition"
     },
     {
       "from": "root_data_and_duality.bruhat_decomposition",
-      "to": "reductive_structure.standard_parabolic_classification",
-      "kind": "uses"
+      "to": "reductive_structure.standard_parabolic_classification"
     },
     {
       "from": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "to": "reductive_structure.standard_parabolic_classification",
-      "kind": "uses"
+      "to": "reductive_structure.standard_parabolic_classification"
     },
     {
       "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
-      "kind": "uses"
+      "to": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
     },
     {
       "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
-      "kind": "uses"
+      "to": "root_data_and_duality.relative_root_datum_of_f_reductive_group"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.chevalley_existence_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
       "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.chevalley_existence_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
       "from": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "to": "root_data_and_duality.chevalley_existence_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
       "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "root_data_and_duality.chevalley_existence_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
       "from": "root_data_and_duality.chevalley_basis",
-      "to": "root_data_and_duality.chevalley_existence_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
       "from": "root_data_and_duality.chevalley_group_construction",
-      "to": "root_data_and_duality.chevalley_existence_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_existence_theorem"
     },
     {
       "from": "root_data_and_duality.dual_reductive_groups",
-      "to": "root_data_and_duality.pinned_dual_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.pinned_dual_groups"
     },
     {
       "from": "root_data_and_duality.pinnings",
-      "to": "root_data_and_duality.pinned_dual_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.pinned_dual_groups"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.fundamental_group_of_root_datum",
-      "kind": "uses"
+      "to": "root_data_and_duality.fundamental_group_of_root_datum"
     },
     {
       "from": "root_data_and_duality.root_pairing",
-      "to": "root_data_and_duality.crystallographic_and_reduced",
-      "kind": "uses"
+      "to": "root_data_and_duality.crystallographic_and_reduced"
     },
     {
       "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.crystallographic_and_reduced",
-      "kind": "uses"
+      "to": "root_data_and_duality.crystallographic_and_reduced"
     },
     {
       "from": "root_data_and_duality.pinned_dual_groups",
-      "to": "root_data_and_duality.langlands_dual_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.langlands_dual_groups"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.isogeny_types_from_root_datum",
-      "kind": "uses"
+      "to": "root_data_and_duality.isogeny_types_from_root_datum"
     },
     {
       "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.isogeny_types_from_root_datum",
-      "kind": "uses"
+      "to": "root_data_and_duality.isogeny_types_from_root_datum"
     },
     {
       "from": "root_data_and_duality.fundamental_group_of_root_datum",
-      "to": "root_data_and_duality.isogeny_types_from_root_datum",
-      "kind": "uses"
+      "to": "root_data_and_duality.isogeny_types_from_root_datum"
     },
     {
       "from": "root_data_and_duality.central_isogenies_and_duality",
-      "to": "root_data_and_duality.isogeny_types_from_root_datum",
-      "kind": "uses"
+      "to": "root_data_and_duality.isogeny_types_from_root_datum"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.based_root_data",
-      "kind": "uses"
+      "to": "root_data_and_duality.based_root_data"
     },
     {
       "from": "root_data_and_duality.relative_root_datum_of_f_reductive_group",
-      "to": "root_data_and_duality.relative_weyl_group_generated_by_reflections",
-      "kind": "uses"
+      "to": "root_data_and_duality.relative_weyl_group_generated_by_reflections"
     },
     {
       "from": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "to": "root_data_and_duality.relative_weyl_group_generated_by_reflections",
-      "kind": "uses"
+      "to": "root_data_and_duality.relative_weyl_group_generated_by_reflections"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.central_isogenies_and_duality",
-      "kind": "uses"
+      "to": "root_data_and_duality.central_isogenies_and_duality"
     },
     {
       "from": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
-      "to": "root_data_and_duality.rational_bruhat_decomposition",
-      "kind": "uses"
+      "to": "root_data_and_duality.rational_bruhat_decomposition"
     },
     {
       "from": "root_data_and_duality.relative_weyl_group_generated_by_reflections",
-      "to": "root_data_and_duality.rational_bruhat_decomposition",
-      "kind": "uses"
+      "to": "root_data_and_duality.rational_bruhat_decomposition"
     },
     {
       "from": "root_data_and_duality.bruhat_decomposition",
-      "to": "root_data_and_duality.rational_bruhat_decomposition",
-      "kind": "uses"
+      "to": "root_data_and_duality.rational_bruhat_decomposition"
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.root_data",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_data"
     },
     {
       "from": "root_data_and_duality.root_pairing",
-      "to": "root_data_and_duality.root_data",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_data"
     },
     {
       "from": "root_data_and_duality.fundamental_group_of_root_datum",
-      "to": "root_data_and_duality.centers_and_dual_centers",
-      "kind": "uses"
+      "to": "root_data_and_duality.centers_and_dual_centers"
     },
     {
       "from": "root_data_and_duality.dual_root_data",
-      "to": "root_data_and_duality.centers_and_dual_centers",
-      "kind": "uses"
+      "to": "root_data_and_duality.centers_and_dual_centers"
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.root_systems",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_systems"
     },
     {
       "from": "root_data_and_duality.weyl_groups",
-      "to": "root_data_and_duality.root_systems",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_systems"
     },
     {
       "from": "root_data_and_duality.root_pairing",
-      "to": "root_data_and_duality.root_systems",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_systems"
     },
     {
       "from": "root_data_and_duality.crystallographic_and_reduced",
-      "to": "root_data_and_duality.root_systems",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_systems"
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
-      "kind": "uses"
+      "to": "root_data_and_duality.rank_one_subgroups_sl2_embeddings"
     },
     {
       "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
-      "kind": "uses"
+      "to": "root_data_and_duality.rank_one_subgroups_sl2_embeddings"
     },
     {
       "from": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "to": "root_data_and_duality.bruhat_decomposition",
-      "kind": "uses"
+      "to": "root_data_and_duality.bruhat_decomposition"
     },
     {
       "from": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "to": "root_data_and_duality.bruhat_decomposition",
-      "kind": "uses"
+      "to": "root_data_and_duality.bruhat_decomposition"
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.weyl_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.weyl_groups"
     },
     {
       "from": "root_data_and_duality.weyl_group_coxeter_structure",
-      "to": "root_data_and_duality.weyl_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.weyl_groups"
     },
     {
       "from": "root_data_and_duality.dual_root_data",
-      "to": "root_data_and_duality.dual_reductive_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.dual_reductive_groups"
     },
     {
       "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "root_data_and_duality.dual_reductive_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.dual_reductive_groups"
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.unipotent_radical_and_positive_roots",
-      "kind": "uses"
+      "to": "root_data_and_duality.unipotent_radical_and_positive_roots"
     },
     {
       "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.unipotent_radical_and_positive_roots",
-      "kind": "uses"
+      "to": "root_data_and_duality.unipotent_radical_and_positive_roots"
     },
     {
       "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.unipotent_radical_and_positive_roots",
-      "kind": "uses"
+      "to": "root_data_and_duality.unipotent_radical_and_positive_roots"
     },
     {
       "from": "root_data_and_duality.automorphisms_of_root_data",
-      "to": "root_data_and_duality.galois_action_on_root_data",
-      "kind": "uses"
+      "to": "root_data_and_duality.galois_action_on_root_data"
     },
     {
       "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.dual_root_systems",
-      "kind": "uses"
+      "to": "root_data_and_duality.dual_root_systems"
     },
     {
       "from": "root_data_and_duality.langlands_dual_groups",
-      "to": "root_data_and_duality.l_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.l_groups"
     },
     {
       "from": "root_data_and_duality.galois_action_on_root_data",
-      "to": "root_data_and_duality.l_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.l_groups"
     },
     {
       "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_subgroups_generate_reductive_group"
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_subgroups_generate_reductive_group"
     },
     {
       "from": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
-      "to": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_subgroups_generate_reductive_group"
     },
     {
       "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
-      "kind": "uses"
+      "to": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams"
     },
     {
       "from": "root_data_and_duality.bruhat_decomposition",
-      "to": "root_data_and_duality.bruhat_order_closure_relations",
-      "kind": "uses"
+      "to": "root_data_and_duality.bruhat_order_closure_relations"
     },
     {
       "from": "root_data_and_duality.coxeter_systems_and_bruhat_order",
-      "to": "root_data_and_duality.bruhat_order_closure_relations",
-      "kind": "uses"
+      "to": "root_data_and_duality.bruhat_order_closure_relations"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.dual_root_data",
-      "kind": "uses"
+      "to": "root_data_and_duality.dual_root_data"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.automorphisms_of_root_data",
-      "kind": "uses"
+      "to": "root_data_and_duality.automorphisms_of_root_data"
     },
     {
       "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.automorphisms_of_root_data",
-      "kind": "uses"
+      "to": "root_data_and_duality.automorphisms_of_root_data"
     },
     {
       "from": "root_data_and_duality.root_pairing",
-      "to": "root_data_and_duality.root_form_and_positive_definiteness",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_form_and_positive_definiteness"
     },
     {
       "from": "root_data_and_duality.weyl_groups",
-      "to": "root_data_and_duality.root_form_and_positive_definiteness",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_form_and_positive_definiteness"
     },
     {
       "from": "root_data_and_duality.weyl_groups",
-      "to": "root_data_and_duality.weyl_group_coxeter_structure",
-      "kind": "uses"
+      "to": "root_data_and_duality.weyl_group_coxeter_structure"
     },
     {
       "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.weyl_group_coxeter_structure",
-      "kind": "uses"
+      "to": "root_data_and_duality.weyl_group_coxeter_structure"
     },
     {
       "from": "root_data_and_duality.classification_of_root_systems",
-      "to": "root_data_and_duality.weyl_group_coxeter_structure",
-      "kind": "uses"
+      "to": "root_data_and_duality.weyl_group_coxeter_structure"
     },
     {
       "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.root_pairing",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_pairing"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.root_pairing",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_pairing"
     },
     {
       "from": "root_data_and_duality.weyl_groups",
-      "to": "root_data_and_duality.coxeter_systems_and_bruhat_order",
-      "kind": "uses"
+      "to": "root_data_and_duality.coxeter_systems_and_bruhat_order"
     },
     {
       "from": "root_data_and_duality.l_groups",
-      "to": "root_data_and_duality.l_morphisms",
-      "kind": "uses"
+      "to": "root_data_and_duality.l_morphisms"
     },
     {
       "from": "root_data_and_duality.dual_reductive_groups",
-      "to": "root_data_and_duality.l_morphisms",
-      "kind": "uses"
+      "to": "root_data_and_duality.l_morphisms"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.chevalley_group_construction",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_group_construction"
     },
     {
       "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.chevalley_group_construction",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_group_construction"
     },
     {
       "from": "root_data_and_duality.pinnings",
-      "to": "root_data_and_duality.chevalley_group_construction",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_group_construction"
     },
     {
       "from": "root_data_and_duality.chevalley_existence_theorem",
-      "to": "root_data_and_duality.chevalley_group_construction",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_group_construction"
     },
     {
       "from": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "to": "root_data_and_duality.chevalley_group_construction",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_group_construction"
     },
     {
       "from": "root_data_and_duality.chevalley_basis",
-      "to": "root_data_and_duality.chevalley_group_construction",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_group_construction"
     },
     {
       "from": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
-      "to": "root_data_and_duality.chevalley_group_construction",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_group_construction"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.classification_of_split_reductive_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.classification_of_split_reductive_groups"
     },
     {
       "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.classification_of_split_reductive_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.classification_of_split_reductive_groups"
     },
     {
       "from": "root_data_and_duality.pinnings",
-      "to": "root_data_and_duality.classification_of_split_reductive_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.classification_of_split_reductive_groups"
     },
     {
       "from": "root_data_and_duality.isogeny_types_from_root_datum",
-      "to": "root_data_and_duality.classification_of_split_reductive_groups",
-      "kind": "uses"
+      "to": "root_data_and_duality.classification_of_split_reductive_groups"
     },
     {
       "from": "root_data_and_duality.root_pairing",
-      "to": "root_data_and_duality.root_chains",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_chains"
     },
     {
       "from": "root_data_and_duality.crystallographic_and_reduced",
-      "to": "root_data_and_duality.root_chains",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_chains"
     },
     {
       "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
       "from": "root_data_and_duality.root_subgroups_generate_reductive_group",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
       "from": "root_data_and_duality.bruhat_decomposition",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
       "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
       "from": "root_data_and_duality.classification_of_split_reductive_groups",
-      "to": "root_data_and_duality.chevalley_isomorphism_theorem",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_isomorphism_theorem"
     },
     {
       "from": "root_data_and_duality.root_data",
-      "to": "root_data_and_duality.root_datum_from_reductive_group",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_datum_from_reductive_group"
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.root_datum_from_reductive_group",
-      "kind": "uses"
+      "to": "root_data_and_duality.root_datum_from_reductive_group"
     },
     {
       "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.chevalley_basis",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_basis"
     },
     {
       "from": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
-      "to": "root_data_and_duality.chevalley_basis",
-      "kind": "uses"
+      "to": "root_data_and_duality.chevalley_basis"
     },
     {
       "from": "root_data_and_duality.root_datum_from_reductive_group",
-      "to": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "kind": "uses"
+      "to": "root_data_and_duality.weyl_group_generated_by_reflections"
     },
     {
       "from": "root_data_and_duality.weyl_groups",
-      "to": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "kind": "uses"
+      "to": "root_data_and_duality.weyl_group_generated_by_reflections"
     },
     {
       "from": "root_data_and_duality.root_systems",
-      "to": "root_data_and_duality.weyl_group_generated_by_reflections",
-      "kind": "uses"
+      "to": "root_data_and_duality.weyl_group_generated_by_reflections"
     },
     {
       "from": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
-      "to": "root_data_and_duality.classification_of_root_systems",
-      "kind": "uses"
+      "to": "root_data_and_duality.classification_of_root_systems"
     },
     {
       "from": "root_data_and_duality.crystallographic_and_reduced",
-      "to": "root_data_and_duality.classification_of_root_systems",
-      "kind": "uses"
+      "to": "root_data_and_duality.classification_of_root_systems"
     },
     {
       "from": "root_data_and_duality.root_form_and_positive_definiteness",
-      "to": "root_data_and_duality.classification_of_root_systems",
-      "kind": "uses"
+      "to": "root_data_and_duality.classification_of_root_systems"
     },
     {
       "from": "root_data_and_duality.based_root_data",
-      "to": "root_data_and_duality.pinnings",
-      "kind": "uses"
+      "to": "root_data_and_duality.pinnings"
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
-      "to": "root_data_and_duality.pinnings",
-      "kind": "uses"
+      "to": "root_data_and_duality.pinnings"
     }
   ],
   "boundary_topics": [
     {
+      "id": "affine_group_schemes",
+      "title": "Affine Group Schemes",
+      "href": "affine_group_schemes/index.html",
+      "node_count": 38
+    },
+    {
       "id": "bd_covers",
       "title": "Brylinski-Deligne and Metaplectic Covers",
-      "href": "blueprint/bd_covers/index.html",
+      "href": "bd_covers/index.html",
       "node_count": 6
     },
     {
       "id": "buildings_and_parahorics",
       "title": "Buildings and Parahorics",
-      "href": "blueprint/buildings_and_parahorics/index.html",
+      "href": "buildings_and_parahorics/index.html",
       "node_count": 16
     },
     {
       "id": "classical_and_exceptional_groups",
       "title": "Classical and Exceptional Groups",
-      "href": "blueprint/classical_and_exceptional_groups/index.html",
+      "href": "classical_and_exceptional_groups/index.html",
       "node_count": 2
     },
     {
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
-      "href": "blueprint/conjugacy_classes/index.html",
+      "href": "conjugacy_classes/index.html",
       "node_count": 20
     },
     {
       "id": "descent_and_forms",
       "title": "Galois Descent, Cohomology, and Forms",
-      "href": "blueprint/descent_and_forms/index.html",
+      "href": "descent_and_forms/index.html",
       "node_count": 18
     },
     {
       "id": "foundational_inputs",
       "title": "Foundational Inputs",
-      "href": "blueprint/foundational_inputs/index.html",
+      "href": "foundational_inputs/index.html",
       "node_count": 8
     },
     {
       "id": "kottwitz_structures",
       "title": "Kottwitz Structures",
-      "href": "blueprint/kottwitz_structures/index.html",
+      "href": "kottwitz_structures/index.html",
       "node_count": 9
     },
     {
       "id": "linear_algebraic_groups",
       "title": "Linear Algebraic Groups",
-      "href": "blueprint/linear_algebraic_groups/index.html",
+      "href": "linear_algebraic_groups/index.html",
       "node_count": 30
     },
     {
       "id": "reductive_structure",
       "title": "Reductive Group Structure",
-      "href": "blueprint/reductive_structure/index.html",
+      "href": "reductive_structure/index.html",
       "node_count": 29
     }
   ],

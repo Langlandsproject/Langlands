@@ -2,7 +2,7 @@
   "topic": {
     "id": "linear_algebraic_groups",
     "title": "Linear Algebraic Groups",
-    "href": "blueprint/linear_algebraic_groups/index.html",
+    "href": "linear_algebraic_groups/index.html",
     "parent": null,
     "node_count": 30,
     "descendant_node_count": 30
@@ -13,921 +13,447 @@
       "title": "General Linear Group Scheme GL(V)",
       "kind": "definition",
       "status": "formalized",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "algebraic-groups",
-        "gl-v",
-        "group-scheme"
-      ],
-      "uses": [
-        "affine_group_schemes.general_linear_group_scheme"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_gl_v_group_scheme.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_gl_v_group_scheme.html",
+      "payload": "node_payloads/linear_algebraic_groups_gl_v_group_scheme.json"
     },
     {
       "id": "linear_algebraic_groups.embedding_theorem",
       "title": "Embedding Theorem for Algebraic Groups",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "embedding-theorem",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition",
-        "affine_group_schemes.faithful_linear_representation_definition",
-        "affine_group_schemes.hopf_spec_essential_image_affine",
-        "affine_group_schemes.representation_equals_comodule",
-        "affine_group_schemes.finite_dim_subcomodule_lemma",
-        "affine_group_schemes.regular_representation_example"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_embedding_theorem.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_embedding_theorem.html",
+      "payload": "node_payloads/linear_algebraic_groups_embedding_theorem.json"
     },
     {
       "id": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups",
       "title": "Connected Subgroups Generate a Closed Connected Subgroup",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "connected-group",
-        "generated-subgroup",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition",
-        "linear_algebraic_groups.connected_components",
-        "linear_algebraic_groups.morphisms_and_closed_subgroups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_subgroup_generated_by_connected_subgroups.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_subgroup_generated_by_connected_subgroups.html",
+      "payload": "node_payloads/linear_algebraic_groups_subgroup_generated_by_connected_subgroups.json"
     },
     {
       "id": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
       "title": "Algebraic Group Actions, Orbits, and Stabilizers",
       "kind": "definition",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "group-action",
-        "orbit",
-        "stabilizer",
-        "definition",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_algebraic_group_action_orbits_stabilizers.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_algebraic_group_action_orbits_stabilizers.html",
+      "payload": "node_payloads/linear_algebraic_groups_algebraic_group_action_orbits_stabilizers.json"
     },
     {
       "id": "linear_algebraic_groups.linearization_of_affine_g_varieties",
       "title": "Affine G-Varieties Embed Equivariantly in Representations",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "representation",
-        "equivariant-embedding",
-        "affine-variety",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-        "linear_algebraic_groups.embedding_theorem",
-        "affine_group_schemes.representation_equals_comodule"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_linearization_of_affine_g_varieties.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_linearization_of_affine_g_varieties.html",
+      "payload": "node_payloads/linear_algebraic_groups_linearization_of_affine_g_varieties.json"
     },
     {
       "id": "linear_algebraic_groups.closed_image_of_homomorphism",
       "title": "Image of an Algebraic Group Homomorphism Is Closed",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "homomorphism",
-        "closed-subgroup",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition",
-        "linear_algebraic_groups.morphisms_and_closed_subgroups",
-        "linear_algebraic_groups.kernels_images_and_quotients"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_closed_image_of_homomorphism.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_closed_image_of_homomorphism.html",
+      "payload": "node_payloads/linear_algebraic_groups_closed_image_of_homomorphism.json"
     },
     {
       "id": "linear_algebraic_groups.identity_component_normal_finite_index",
       "title": "Identity Component Is Closed Normal of Finite Index",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "connected-component",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition",
-        "linear_algebraic_groups.connected_components"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_identity_component_normal_finite_index.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_identity_component_normal_finite_index.html",
+      "payload": "node_payloads/linear_algebraic_groups_identity_component_normal_finite_index.json"
     },
     {
       "id": "linear_algebraic_groups.basic_examples",
       "title": "Basic Examples",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "examples",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "linear_algebraic_groups.linear_algebraic_groups",
-        "linear_algebraic_groups.morphisms_and_closed_subgroups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_basic_examples.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_basic_examples.html",
+      "payload": "node_payloads/linear_algebraic_groups_basic_examples.json"
     },
     {
       "id": "linear_algebraic_groups.linear_algebraic_groups",
       "title": "Linear Algebraic Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.affine_algebraic_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_linear_algebraic_groups.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_linear_algebraic_groups.html",
+      "payload": "node_payloads/linear_algebraic_groups_linear_algebraic_groups.json"
     },
     {
       "id": "linear_algebraic_groups.quotient_by_closed_subgroup_exists",
       "title": "Quotient by a Closed Subgroup Exists",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "quotient",
-        "homogeneous-space",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition",
-        "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-        "linear_algebraic_groups.kernels_images_and_quotients"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_quotient_by_closed_subgroup_exists.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_quotient_by_closed_subgroup_exists.html",
+      "payload": "node_payloads/linear_algebraic_groups_quotient_by_closed_subgroup_exists.json"
     },
     {
       "id": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group",
       "title": "Jordan Decomposition in a Linear Algebraic Group",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "jordan-decomposition",
-        "semisimple",
-        "unipotent",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition",
-        "linear_algebraic_groups.embedding_theorem"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_jordan_decomposition_in_algebraic_group.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_jordan_decomposition_in_algebraic_group.html",
+      "payload": "node_payloads/linear_algebraic_groups_jordan_decomposition_in_algebraic_group.json"
     },
     {
       "id": "linear_algebraic_groups.connected_components",
       "title": "Connected Components",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "connected-components",
-        "identity-component",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_connected_components.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_connected_components.html",
+      "payload": "node_payloads/linear_algebraic_groups_connected_components.json"
     },
     {
       "id": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
       "title": "Smoothness, Tangent Spaces, and Lie Algebras",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "smoothness",
-        "tangent-space",
-        "lie-algebras",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "foundational_inputs.affine_schemes",
-        "affine_group_schemes.affine_algebraic_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_smoothness_tangent_spaces_lie_algebras.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_smoothness_tangent_spaces_lie_algebras.html",
+      "payload": "node_payloads/linear_algebraic_groups_smoothness_tangent_spaces_lie_algebras.json"
     },
     {
       "id": "linear_algebraic_groups.affine_finite_type_faithful_representation",
       "title": "Affine Finite-Type Groups Have Faithful Finite-Dimensional Representations",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "embedding-theorem",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition",
-        "affine_group_schemes.faithful_linear_representation_definition",
-        "affine_group_schemes.hopf_spec_essential_image_affine",
-        "affine_group_schemes.finite_dim_subcomodule_lemma",
-        "linear_algebraic_groups.embedding_theorem"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_affine_finite_type_faithful_representation.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_affine_finite_type_faithful_representation.html",
+      "payload": "node_payloads/linear_algebraic_groups_affine_finite_type_faithful_representation.json"
     },
     {
       "id": "linear_algebraic_groups.kernels_images_and_quotients",
       "title": "Kernels, Images, and Quotients",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "kernels",
-        "images",
-        "quotients",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "linear_algebraic_groups.morphisms_and_closed_subgroups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_kernels_images_and_quotients.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_kernels_images_and_quotients.html",
+      "payload": "node_payloads/linear_algebraic_groups_kernels_images_and_quotients.json"
     },
     {
       "id": "linear_algebraic_groups.lie_algebra_of_algebraic_group",
       "title": "Lie Algebra of an Algebraic Group",
       "kind": "definition",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "lie-algebra",
-        "tangent-space",
-        "definition",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.algebraic_group_definition",
-        "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_lie_algebra_of_algebraic_group.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_lie_algebra_of_algebraic_group.html",
+      "payload": "node_payloads/linear_algebraic_groups_lie_algebra_of_algebraic_group.json"
     },
     {
       "id": "linear_algebraic_groups.orbits_are_locally_closed",
       "title": "Orbits of Algebraic Group Actions Are Locally Closed",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "orbit",
-        "locally-closed",
-        "theorem",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-        "linear_algebraic_groups.closed_image_of_homomorphism"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_orbits_are_locally_closed.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_orbits_are_locally_closed.html",
+      "payload": "node_payloads/linear_algebraic_groups_orbits_are_locally_closed.json"
     },
     {
       "id": "linear_algebraic_groups.automorphism_groups",
       "title": "Automorphism Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "automorphisms",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.affine_algebraic_groups",
-        "linear_algebraic_groups.morphisms_and_closed_subgroups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_automorphism_groups.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_automorphism_groups.html",
+      "payload": "node_payloads/linear_algebraic_groups_automorphism_groups.json"
     },
     {
       "id": "linear_algebraic_groups.conjugacy_classes",
       "title": "Conjugacy Classes",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "conjugacy",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "linear_algebraic_groups.linear_algebraic_groups",
-        "linear_algebraic_groups.automorphism_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_conjugacy_classes.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_conjugacy_classes.html",
+      "payload": "node_payloads/linear_algebraic_groups_conjugacy_classes.json"
     },
     {
       "id": "linear_algebraic_groups.embedding_corollary_closed_subgroup_GL_n",
       "title": "Algebraic Groups Are Closed Subgroups of GL_n",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "embedding-theorem",
-        "corollary",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "linear_algebraic_groups.embedding_theorem"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_embedding_corollary_closed_subgroup_GL_n.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_embedding_corollary_closed_subgroup_GL_n.html",
+      "payload": "node_payloads/linear_algebraic_groups_embedding_corollary_closed_subgroup_GL_n.json"
     },
     {
       "id": "linear_algebraic_groups.morphisms_and_closed_subgroups",
       "title": "Morphisms and Closed Subgroups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "morphisms",
-        "closed-subgroups",
-        "linear-algebraic-groups"
-      ],
-      "uses": [
-        "affine_group_schemes.affine_algebraic_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_morphisms_and_closed_subgroups.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_morphisms_and_closed_subgroups.html",
+      "payload": "node_payloads/linear_algebraic_groups_morphisms_and_closed_subgroups.json"
     },
     {
       "id": "descent_and_forms.forms_of_algebraic_objects",
       "title": "Forms of Algebraic Objects",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms"
-      ],
-      "tags": [
-        "forms",
-        "descent-and-forms"
-      ],
-      "uses": [
-        "descent_and_forms.galois_groups_and_descent_data",
-        "linear_algebraic_groups.automorphism_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_forms_of_algebraic_objects.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_forms_of_algebraic_objects.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_forms_of_algebraic_objects.json"
     },
     {
       "id": "descent_and_forms.cocycles_and_twisting",
       "title": "Cocycles and Twisting",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms"
-      ],
-      "tags": [
-        "twisting",
-        "cocycles",
-        "descent-and-forms"
-      ],
-      "uses": [
-        "descent_and_forms.nonabelian_h1",
-        "descent_and_forms.torsors",
-        "linear_algebraic_groups.automorphism_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_cocycles_and_twisting.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_cocycles_and_twisting.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_cocycles_and_twisting.json"
     },
     {
       "id": "descent_and_forms.galois_cohomology",
       "title": "Galois Cohomology",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms"
-      ],
-      "tags": [
-        "galois-cohomology",
-        "descent-and-forms"
-      ],
-      "uses": [
-        "descent_and_forms.galois_groups_and_descent_data"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_galois_cohomology.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_galois_cohomology.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_galois_cohomology.json"
     },
     {
       "id": "descent_and_forms.f_subgroup_field_of_definition",
       "title": "Field of Definition for Subgroups of F-Groups",
       "kind": "theorem",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms",
-        "linear_algebraic_groups"
-      ],
-      "tags": [
-        "springer",
-        "f-group",
-        "field-of-definition",
-        "descent",
-        "theorem"
-      ],
-      "uses": [
-        "descent_and_forms.rational_forms_of_linear_algebraic_groups",
-        "descent_and_forms.galois_groups_and_descent_data",
-        "linear_algebraic_groups.identity_component_normal_finite_index",
-        "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-        "linear_algebraic_groups.closed_image_of_homomorphism"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_f_subgroup_field_of_definition.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_f_subgroup_field_of_definition.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_f_subgroup_field_of_definition.json"
     },
     {
       "id": "descent_and_forms.galois_groups_and_descent_data",
       "title": "Galois Groups and Descent Data",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms"
-      ],
-      "tags": [
-        "galois-descent",
-        "descent-and-forms"
-      ],
-      "uses": [
-        "foundational_inputs.fields_and_field_extensions"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_galois_groups_and_descent_data.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_galois_groups_and_descent_data.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_galois_groups_and_descent_data.json"
     },
     {
       "id": "descent_and_forms.nonabelian_h1",
       "title": "Nonabelian H1",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms"
-      ],
-      "tags": [
-        "nonabelian-h1",
-        "descent-and-forms"
-      ],
-      "uses": [
-        "descent_and_forms.galois_cohomology"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_nonabelian_h1.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_nonabelian_h1.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_nonabelian_h1.json"
     },
     {
       "id": "descent_and_forms.forms_of_algebraic_groups",
       "title": "Forms of Algebraic Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms"
-      ],
-      "tags": [
-        "forms",
-        "algebraic-groups",
-        "descent-and-forms"
-      ],
-      "uses": [
-        "affine_group_schemes.base_change",
-        "descent_and_forms.forms_of_algebraic_objects",
-        "descent_and_forms.cocycles_and_twisting",
-        "affine_group_schemes.affine_algebraic_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_forms_of_algebraic_groups.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_forms_of_algebraic_groups.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_forms_of_algebraic_groups.json"
     },
     {
       "id": "descent_and_forms.torsors",
       "title": "Torsors",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms"
-      ],
-      "tags": [
-        "torsors",
-        "descent-and-forms"
-      ],
-      "uses": [
-        "descent_and_forms.nonabelian_h1"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_torsors.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_torsors.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_torsors.json"
     },
     {
       "id": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
       "title": "Rational Forms of Linear Algebraic Groups",
       "kind": "topic",
       "status": "admitted",
-      "primary_topic": "linear_algebraic_groups",
-      "topics": [
-        "descent_and_forms"
-      ],
-      "tags": [
-        "rational-forms",
-        "linear-algebraic-groups",
-        "descent-and-forms"
-      ],
-      "uses": [
-        "descent_and_forms.forms_of_algebraic_groups",
-        "linear_algebraic_groups.linear_algebraic_groups"
-      ],
-      "used_by": [],
-      "href": "blueprint/linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_rational_forms_of_linear_algebraic_groups.html",
-      "payload": {}
+      "href": "linear_algebraic_groups/linear_algebraic_groups_descent_and_forms_rational_forms_of_linear_algebraic_groups.html",
+      "payload": "node_payloads/linear_algebraic_groups_descent_and_forms_rational_forms_of_linear_algebraic_groups.json"
     }
   ],
   "edges": [
     {
       "from": "linear_algebraic_groups.connected_components",
-      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
     },
     {
       "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.subgroup_generated_by_connected_subgroups"
     },
     {
       "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties"
     },
     {
       "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.linearization_of_affine_g_varieties"
     },
     {
       "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.closed_image_of_homomorphism",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.closed_image_of_homomorphism"
     },
     {
       "from": "linear_algebraic_groups.kernels_images_and_quotients",
-      "to": "linear_algebraic_groups.closed_image_of_homomorphism",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.closed_image_of_homomorphism"
     },
     {
       "from": "linear_algebraic_groups.connected_components",
-      "to": "linear_algebraic_groups.identity_component_normal_finite_index",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.identity_component_normal_finite_index"
     },
     {
       "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "linear_algebraic_groups.basic_examples",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.basic_examples"
     },
     {
       "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.basic_examples",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.basic_examples"
     },
     {
       "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
     },
     {
       "from": "linear_algebraic_groups.kernels_images_and_quotients",
-      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.quotient_by_closed_subgroup_exists"
     },
     {
       "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.jordan_decomposition_in_algebraic_group"
     },
     {
       "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
-      "to": "linear_algebraic_groups.connected_components",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.connected_components"
     },
     {
       "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.affine_finite_type_faithful_representation",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.affine_finite_type_faithful_representation"
     },
     {
       "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.kernels_images_and_quotients",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.kernels_images_and_quotients"
     },
     {
       "from": "linear_algebraic_groups.smoothness_tangent_spaces_lie_algebras",
-      "to": "linear_algebraic_groups.lie_algebra_of_algebraic_group",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.lie_algebra_of_algebraic_group"
     },
     {
       "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "linear_algebraic_groups.orbits_are_locally_closed",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.orbits_are_locally_closed"
     },
     {
       "from": "linear_algebraic_groups.closed_image_of_homomorphism",
-      "to": "linear_algebraic_groups.orbits_are_locally_closed",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.orbits_are_locally_closed"
     },
     {
       "from": "linear_algebraic_groups.morphisms_and_closed_subgroups",
-      "to": "linear_algebraic_groups.automorphism_groups",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.automorphism_groups"
     },
     {
       "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "linear_algebraic_groups.conjugacy_classes",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.conjugacy_classes"
     },
     {
       "from": "linear_algebraic_groups.automorphism_groups",
-      "to": "linear_algebraic_groups.conjugacy_classes",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.conjugacy_classes"
     },
     {
       "from": "linear_algebraic_groups.embedding_theorem",
-      "to": "linear_algebraic_groups.embedding_corollary_closed_subgroup_GL_n",
-      "kind": "uses"
+      "to": "linear_algebraic_groups.embedding_corollary_closed_subgroup_GL_n"
     },
     {
       "from": "descent_and_forms.galois_groups_and_descent_data",
-      "to": "descent_and_forms.forms_of_algebraic_objects",
-      "kind": "uses"
+      "to": "descent_and_forms.forms_of_algebraic_objects"
     },
     {
       "from": "linear_algebraic_groups.automorphism_groups",
-      "to": "descent_and_forms.forms_of_algebraic_objects",
-      "kind": "uses"
+      "to": "descent_and_forms.forms_of_algebraic_objects"
     },
     {
       "from": "descent_and_forms.nonabelian_h1",
-      "to": "descent_and_forms.cocycles_and_twisting",
-      "kind": "uses"
+      "to": "descent_and_forms.cocycles_and_twisting"
     },
     {
       "from": "descent_and_forms.torsors",
-      "to": "descent_and_forms.cocycles_and_twisting",
-      "kind": "uses"
+      "to": "descent_and_forms.cocycles_and_twisting"
     },
     {
       "from": "linear_algebraic_groups.automorphism_groups",
-      "to": "descent_and_forms.cocycles_and_twisting",
-      "kind": "uses"
+      "to": "descent_and_forms.cocycles_and_twisting"
     },
     {
       "from": "descent_and_forms.galois_groups_and_descent_data",
-      "to": "descent_and_forms.galois_cohomology",
-      "kind": "uses"
+      "to": "descent_and_forms.galois_cohomology"
     },
     {
       "from": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
-      "to": "descent_and_forms.f_subgroup_field_of_definition",
-      "kind": "uses"
+      "to": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
       "from": "descent_and_forms.galois_groups_and_descent_data",
-      "to": "descent_and_forms.f_subgroup_field_of_definition",
-      "kind": "uses"
+      "to": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
       "from": "linear_algebraic_groups.identity_component_normal_finite_index",
-      "to": "descent_and_forms.f_subgroup_field_of_definition",
-      "kind": "uses"
+      "to": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
       "from": "linear_algebraic_groups.algebraic_group_action_orbits_stabilizers",
-      "to": "descent_and_forms.f_subgroup_field_of_definition",
-      "kind": "uses"
+      "to": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
       "from": "linear_algebraic_groups.closed_image_of_homomorphism",
-      "to": "descent_and_forms.f_subgroup_field_of_definition",
-      "kind": "uses"
+      "to": "descent_and_forms.f_subgroup_field_of_definition"
     },
     {
       "from": "descent_and_forms.galois_cohomology",
-      "to": "descent_and_forms.nonabelian_h1",
-      "kind": "uses"
+      "to": "descent_and_forms.nonabelian_h1"
     },
     {
       "from": "descent_and_forms.forms_of_algebraic_objects",
-      "to": "descent_and_forms.forms_of_algebraic_groups",
-      "kind": "uses"
+      "to": "descent_and_forms.forms_of_algebraic_groups"
     },
     {
       "from": "descent_and_forms.cocycles_and_twisting",
-      "to": "descent_and_forms.forms_of_algebraic_groups",
-      "kind": "uses"
+      "to": "descent_and_forms.forms_of_algebraic_groups"
     },
     {
       "from": "descent_and_forms.nonabelian_h1",
-      "to": "descent_and_forms.torsors",
-      "kind": "uses"
+      "to": "descent_and_forms.torsors"
     },
     {
       "from": "descent_and_forms.forms_of_algebraic_groups",
-      "to": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
-      "kind": "uses"
+      "to": "descent_and_forms.rational_forms_of_linear_algebraic_groups"
     },
     {
       "from": "linear_algebraic_groups.linear_algebraic_groups",
-      "to": "descent_and_forms.rational_forms_of_linear_algebraic_groups",
-      "kind": "uses"
+      "to": "descent_and_forms.rational_forms_of_linear_algebraic_groups"
     }
   ],
   "boundary_topics": [
     {
+      "id": "affine_group_schemes",
+      "title": "Affine Group Schemes",
+      "href": "affine_group_schemes/index.html",
+      "node_count": 38
+    },
+    {
       "id": "buildings_and_parahorics",
       "title": "Buildings and Parahorics",
-      "href": "blueprint/buildings_and_parahorics/index.html",
+      "href": "buildings_and_parahorics/index.html",
       "node_count": 16
     },
     {
       "id": "classical_and_exceptional_groups",
       "title": "Classical and Exceptional Groups",
-      "href": "blueprint/classical_and_exceptional_groups/index.html",
+      "href": "classical_and_exceptional_groups/index.html",
       "node_count": 2
     },
     {
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
-      "href": "blueprint/conjugacy_classes/index.html",
+      "href": "conjugacy_classes/index.html",
       "node_count": 20
     },
     {
       "id": "descent_and_forms",
       "title": "Galois Descent, Cohomology, and Forms",
-      "href": "blueprint/descent_and_forms/index.html",
+      "href": "descent_and_forms/index.html",
       "node_count": 18
     },
     {
       "id": "foundational_inputs",
       "title": "Foundational Inputs",
-      "href": "blueprint/foundational_inputs/index.html",
+      "href": "foundational_inputs/index.html",
       "node_count": 8
     },
     {
       "id": "reductive_structure",
       "title": "Reductive Group Structure",
-      "href": "blueprint/reductive_structure/index.html",
+      "href": "reductive_structure/index.html",
       "node_count": 29
     },
     {
       "id": "root_data_and_duality",
       "title": "Root Data and Duality",
-      "href": "blueprint/root_data_and_duality/index.html",
+      "href": "root_data_and_duality/index.html",
       "node_count": 45
     }
   ],

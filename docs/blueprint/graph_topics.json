@@ -3,7 +3,8 @@
     {
       "id": "foundational_inputs",
       "title": "Foundational Inputs",
-      "href": "blueprint/foundational_inputs/index.html",
+      "depth": 1,
+      "href": "foundational_inputs/index.html",
       "parent": null,
       "node_count": 8,
       "descendant_node_count": 8
@@ -11,7 +12,8 @@
     {
       "id": "linear_algebraic_groups",
       "title": "Linear Algebraic Groups",
-      "href": "blueprint/linear_algebraic_groups/index.html",
+      "depth": 1,
+      "href": "linear_algebraic_groups/index.html",
       "parent": null,
       "node_count": 30,
       "descendant_node_count": 30
@@ -19,7 +21,8 @@
     {
       "id": "descent_and_forms",
       "title": "Galois Descent, Cohomology, and Forms",
-      "href": "blueprint/descent_and_forms/index.html",
+      "depth": 1,
+      "href": "descent_and_forms/index.html",
       "parent": null,
       "node_count": 18,
       "descendant_node_count": 18
@@ -27,7 +30,8 @@
     {
       "id": "reductive_structure",
       "title": "Reductive Group Structure",
-      "href": "blueprint/reductive_structure/index.html",
+      "depth": 1,
+      "href": "reductive_structure/index.html",
       "parent": null,
       "node_count": 29,
       "descendant_node_count": 29
@@ -35,7 +39,8 @@
     {
       "id": "root_data_and_duality",
       "title": "Root Data and Duality",
-      "href": "blueprint/root_data_and_duality/index.html",
+      "depth": 1,
+      "href": "root_data_and_duality/index.html",
       "parent": null,
       "node_count": 45,
       "descendant_node_count": 45
@@ -43,7 +48,8 @@
     {
       "id": "classical_and_exceptional_groups",
       "title": "Classical and Exceptional Groups",
-      "href": "blueprint/classical_and_exceptional_groups/index.html",
+      "depth": 1,
+      "href": "classical_and_exceptional_groups/index.html",
       "parent": null,
       "node_count": 2,
       "descendant_node_count": 2
@@ -51,7 +57,8 @@
     {
       "id": "buildings_and_parahorics",
       "title": "Buildings and Parahorics",
-      "href": "blueprint/buildings_and_parahorics/index.html",
+      "depth": 1,
+      "href": "buildings_and_parahorics/index.html",
       "parent": null,
       "node_count": 16,
       "descendant_node_count": 16
@@ -59,7 +66,8 @@
     {
       "id": "kottwitz_structures",
       "title": "Kottwitz Structures",
-      "href": "blueprint/kottwitz_structures/index.html",
+      "depth": 1,
+      "href": "kottwitz_structures/index.html",
       "parent": null,
       "node_count": 9,
       "descendant_node_count": 9
@@ -67,7 +75,8 @@
     {
       "id": "conjugacy_classes",
       "title": "Conjugacy Classes",
-      "href": "blueprint/conjugacy_classes/index.html",
+      "depth": 1,
+      "href": "conjugacy_classes/index.html",
       "parent": null,
       "node_count": 20,
       "descendant_node_count": 20
@@ -75,7 +84,8 @@
     {
       "id": "bd_covers",
       "title": "Brylinski-Deligne and Metaplectic Covers",
-      "href": "blueprint/bd_covers/index.html",
+      "depth": 1,
+      "href": "bd_covers/index.html",
       "parent": null,
       "node_count": 6,
       "descendant_node_count": 6
