@@ -16,27 +16,34 @@ uses:
 - reductive_structure.algebraic_tori
 - affine_group_schemes.affine_group_scheme_definition
 - affine_group_schemes.general_linear_group_scheme
+- root_data_and_duality.chevalley_basis
+- root_data_and_duality.rank_one_subgroups_sl2_embeddings
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
-    locator: "Section 10.1"
+    locator: Section 10.1
     format: section
-    note: "Chevalley group construction; Springer follows the original Chevalley 1955 method via Lie algebras."
+    note: Chevalley group construction; Springer follows the original Chevalley 1955
+      method via Lie algebras.
   - artifact: conrad-sga3-reductive-book
-    locator: "Exposé XXIII"
+    locator: Exposé XXIII
     format: chapter
-    note: "Demazure's SGA3 construction of the group scheme associated to a based root datum over Z."
+    note: Demazure's SGA3 construction of the group scheme associated to a based root
+      datum over Z.
   - artifact: springer-algebraic-groups-survey
-    locator: "§4"
+    locator: §4
     format: section
-    note: "Split reductive groups and Chevalley group schemes over Z."
+    note: Split reductive groups and Chevalley group schemes over Z.
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Is the construction given over Z (Chevalley-Demazure integral form), not just over an algebraically closed field?"
-  verdict: "Yes. The construction produces a group scheme G over Z (a Chevalley group scheme), and base change G_R = G x_Z R recovers a split reductive group over any base ring R."
+  prompt: Is the construction given over Z (Chevalley-Demazure integral form), not
+    just over an algebraically closed field?
+  verdict: Yes. The construction produces a group scheme G over Z (a Chevalley group
+    scheme), and base change G_R = G x_Z R recovers a split reductive group over any
+    base ring R.
 tags:
 - chevalley
 - root-datum

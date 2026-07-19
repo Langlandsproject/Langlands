@@ -4,8 +4,8 @@
     "title": "Reductive Group Structure",
     "href": "blueprint/reductive_structure/index.html",
     "parent": null,
-    "node_count": 28,
-    "descendant_node_count": 28
+    "node_count": 29,
+    "descendant_node_count": 29
   },
   "nodes": [
     {
@@ -429,6 +429,31 @@
       ],
       "used_by": [],
       "href": "blueprint/reductive_structure/reductive_structure_maximal_f_split_tori_are_conjugate.html",
+      "payload": {}
+    },
+    {
+      "id": "reductive_structure.split_reductive_groups",
+      "title": "Split Reductive Groups",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "reductive_structure",
+      "topics": [
+        "reductive_structure",
+        "root_data_and_duality"
+      ],
+      "tags": [
+        "split-reductive-group",
+        "split-torus",
+        "reductive-structure"
+      ],
+      "uses": [
+        "reductive_structure.reductive_groups",
+        "reductive_structure.algebraic_tori",
+        "reductive_structure.maximal_tori",
+        "reductive_structure.character_and_cocharacter_lattices"
+      ],
+      "used_by": [],
+      "href": "blueprint/reductive_structure/reductive_structure_split_reductive_groups.html",
       "payload": {}
     },
     {
@@ -870,6 +895,26 @@
     },
     {
       "from": "reductive_structure.reductive_groups",
+      "to": "reductive_structure.split_reductive_groups",
+      "kind": "uses"
+    },
+    {
+      "from": "reductive_structure.algebraic_tori",
+      "to": "reductive_structure.split_reductive_groups",
+      "kind": "uses"
+    },
+    {
+      "from": "reductive_structure.maximal_tori",
+      "to": "reductive_structure.split_reductive_groups",
+      "kind": "uses"
+    },
+    {
+      "from": "reductive_structure.character_and_cocharacter_lattices",
+      "to": "reductive_structure.split_reductive_groups",
+      "kind": "uses"
+    },
+    {
+      "from": "reductive_structure.reductive_groups",
       "to": "reductive_structure.semisimple_groups",
       "kind": "uses"
     },
@@ -1016,7 +1061,7 @@
       "id": "root_data_and_duality",
       "title": "Root Data and Duality",
       "href": "blueprint/root_data_and_duality/index.html",
-      "node_count": 41
+      "node_count": 45
     }
   ],
   "boundary_edges": [
@@ -1053,7 +1098,7 @@
       "to": "topic:root_data_and_duality",
       "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
-      "count": 1
+      "count": 2
     },
     {
       "from": "topic:linear_algebraic_groups",
@@ -1074,7 +1119,7 @@
       "to": "topic:root_data_and_duality",
       "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
-      "count": 5
+      "count": 6
     },
     {
       "from": "topic:linear_algebraic_groups",
@@ -1144,6 +1189,13 @@
       "to": "topic:root_data_and_duality",
       "kind": "boundary_dependency",
       "topic": "root_data_and_duality",
+      "count": 2
+    },
+    {
+      "from": "reductive_structure.derived_group_center_adjoint_sc_cover",
+      "to": "topic:root_data_and_duality",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
       "count": 1
     },
     {
@@ -1155,6 +1207,13 @@
     },
     {
       "from": "reductive_structure.maximal_tori",
+      "to": "topic:root_data_and_duality",
+      "kind": "boundary_dependency",
+      "topic": "root_data_and_duality",
+      "count": 2
+    },
+    {
+      "from": "reductive_structure.borel_subgroups",
       "to": "topic:root_data_and_duality",
       "kind": "boundary_dependency",
       "topic": "root_data_and_duality",

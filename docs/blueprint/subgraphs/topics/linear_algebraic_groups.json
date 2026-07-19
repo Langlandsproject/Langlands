@@ -922,13 +922,13 @@
       "id": "reductive_structure",
       "title": "Reductive Group Structure",
       "href": "blueprint/reductive_structure/index.html",
-      "node_count": 28
+      "node_count": 29
     },
     {
       "id": "root_data_and_duality",
       "title": "Root Data and Duality",
       "href": "blueprint/root_data_and_duality/index.html",
-      "node_count": 41
+      "node_count": 45
     }
   ],
   "boundary_edges": [

@@ -29,16 +29,16 @@
       "title": "Reductive Group Structure",
       "href": "blueprint/reductive_structure/index.html",
       "parent": null,
-      "node_count": 28,
-      "descendant_node_count": 28
+      "node_count": 29,
+      "descendant_node_count": 29
     },
     {
       "id": "root_data_and_duality",
       "title": "Root Data and Duality",
       "href": "blueprint/root_data_and_duality/index.html",
       "parent": null,
-      "node_count": 41,
-      "descendant_node_count": 41
+      "node_count": 45,
+      "descendant_node_count": 45
     },
     {
       "id": "classical_and_exceptional_groups",
@@ -225,7 +225,7 @@
     {
       "from": "reductive_structure",
       "to": "root_data_and_duality",
-      "count": 17
+      "count": 23
     },
     {
       "from": "root_data_and_duality",

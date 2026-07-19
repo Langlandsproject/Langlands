@@ -4,8 +4,8 @@
     "title": "Root Data and Duality",
     "href": "blueprint/root_data_and_duality/index.html",
     "parent": null,
-    "node_count": 41,
-    "descendant_node_count": 41
+    "node_count": 45,
+    "descendant_node_count": 45
   },
   "nodes": [
     {
@@ -140,7 +140,9 @@
         "root_data_and_duality.root_data",
         "root_data_and_duality.based_root_data",
         "root_data_and_duality.chevalley_isomorphism_theorem",
-        "root_data_and_duality.classification_of_split_reductive_groups"
+        "root_data_and_duality.classification_of_split_reductive_groups",
+        "root_data_and_duality.chevalley_basis",
+        "root_data_and_duality.chevalley_group_construction"
       ],
       "used_by": [],
       "href": "blueprint/root_data_and_duality/root_data_and_duality_chevalley_existence_theorem.html",
@@ -224,6 +226,37 @@
       ],
       "used_by": [],
       "href": "blueprint/root_data_and_duality/root_data_and_duality_langlands_dual_groups.html",
+      "payload": {}
+    },
+    {
+      "id": "root_data_and_duality.isogeny_types_from_root_datum",
+      "title": "Isogeny Types from the Root Datum",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "root_data_and_duality",
+      "topics": [
+        "root_data_and_duality",
+        "reductive_structure"
+      ],
+      "tags": [
+        "isogeny-type",
+        "simply-connected",
+        "adjoint",
+        "root-datum",
+        "weight-lattice",
+        "root-lattice",
+        "root-data-and-duality"
+      ],
+      "uses": [
+        "root_data_and_duality.root_data",
+        "root_data_and_duality.root_datum_from_reductive_group",
+        "root_data_and_duality.fundamental_group_of_root_datum",
+        "root_data_and_duality.central_isogenies_and_duality",
+        "reductive_structure.central_isogenies",
+        "reductive_structure.derived_group_center_adjoint_sc_cover"
+      ],
+      "used_by": [],
+      "href": "blueprint/root_data_and_duality/root_data_and_duality_isogeny_types_from_root_datum.html",
       "payload": {}
     },
     {
@@ -390,6 +423,33 @@
       "payload": {}
     },
     {
+      "id": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
+      "title": "Rank-One Subgroups and SL₂-Embeddings",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "root_data_and_duality",
+      "topics": [
+        "root_data_and_duality",
+        "reductive_structure"
+      ],
+      "tags": [
+        "rank-one-subgroup",
+        "sl2-embedding",
+        "coroot",
+        "root-subgroup",
+        "root-data-and-duality"
+      ],
+      "uses": [
+        "root_data_and_duality.roots_coroots_and_root_subgroups",
+        "root_data_and_duality.root_datum_from_reductive_group",
+        "reductive_structure.reductive_groups",
+        "reductive_structure.maximal_tori"
+      ],
+      "used_by": [],
+      "href": "blueprint/root_data_and_duality/root_data_and_duality_rank_one_subgroups_sl2_embeddings.html",
+      "payload": {}
+    },
+    {
       "id": "root_data_and_duality.bruhat_decomposition",
       "title": "Bruhat Decomposition",
       "kind": "theorem",
@@ -456,6 +516,34 @@
       ],
       "used_by": [],
       "href": "blueprint/root_data_and_duality/root_data_and_duality_dual_reductive_groups.html",
+      "payload": {}
+    },
+    {
+      "id": "root_data_and_duality.unipotent_radical_and_positive_roots",
+      "title": "Unipotent Radical of a Borel Subgroup and Positive Roots",
+      "kind": "theorem",
+      "status": "admitted",
+      "primary_topic": "root_data_and_duality",
+      "topics": [
+        "root_data_and_duality",
+        "reductive_structure"
+      ],
+      "tags": [
+        "borel-subgroup",
+        "unipotent-radical",
+        "positive-roots",
+        "root-subgroup",
+        "root-data-and-duality"
+      ],
+      "uses": [
+        "root_data_and_duality.roots_coroots_and_root_subgroups",
+        "root_data_and_duality.root_datum_from_reductive_group",
+        "root_data_and_duality.based_root_data",
+        "reductive_structure.borel_subgroups",
+        "reductive_structure.levi_subgroups_and_unipotent_radicals"
+      ],
+      "used_by": [],
+      "href": "blueprint/root_data_and_duality/root_data_and_duality_unipotent_radical_and_positive_roots.html",
       "payload": {}
     },
     {
@@ -563,7 +651,8 @@
       "uses": [
         "root_data_and_duality.root_datum_from_reductive_group",
         "root_data_and_duality.roots_coroots_and_root_subgroups",
-        "reductive_structure.reductive_groups"
+        "reductive_structure.reductive_groups",
+        "root_data_and_duality.rank_one_subgroups_sl2_embeddings"
       ],
       "used_by": [],
       "href": "blueprint/root_data_and_duality/root_data_and_duality_root_subgroups_generate_reductive_group.html",
@@ -780,7 +869,9 @@
         "root_data_and_duality.chevalley_isomorphism_theorem",
         "reductive_structure.algebraic_tori",
         "affine_group_schemes.affine_group_scheme_definition",
-        "affine_group_schemes.general_linear_group_scheme"
+        "affine_group_schemes.general_linear_group_scheme",
+        "root_data_and_duality.chevalley_basis",
+        "root_data_and_duality.rank_one_subgroups_sl2_embeddings"
       ],
       "used_by": [],
       "href": "blueprint/root_data_and_duality/root_data_and_duality_chevalley_group_construction.html",
@@ -803,7 +894,8 @@
       "uses": [
         "root_data_and_duality.root_data",
         "root_data_and_duality.based_root_data",
-        "root_data_and_duality.pinnings"
+        "root_data_and_duality.pinnings",
+        "root_data_and_duality.isogeny_types_from_root_datum"
       ],
       "used_by": [],
       "href": "blueprint/root_data_and_duality/root_data_and_duality_classification_of_split_reductive_groups.html",
@@ -881,6 +973,30 @@
       ],
       "used_by": [],
       "href": "blueprint/root_data_and_duality/root_data_and_duality_root_datum_from_reductive_group.html",
+      "payload": {}
+    },
+    {
+      "id": "root_data_and_duality.chevalley_basis",
+      "title": "Chevalley Basis",
+      "kind": "definition",
+      "status": "admitted",
+      "primary_topic": "root_data_and_duality",
+      "topics": [
+        "root_data_and_duality"
+      ],
+      "tags": [
+        "chevalley-basis",
+        "semisimple-lie-algebra",
+        "structure-constants",
+        "integral-form",
+        "root-data-and-duality"
+      ],
+      "uses": [
+        "root_data_and_duality.root_systems",
+        "root_data_and_duality.cartan_matrices_and_dynkin_diagrams"
+      ],
+      "used_by": [],
+      "href": "blueprint/root_data_and_duality/root_data_and_duality_chevalley_basis.html",
       "payload": {}
     },
     {
@@ -1008,6 +1124,16 @@
       "kind": "uses"
     },
     {
+      "from": "root_data_and_duality.chevalley_basis",
+      "to": "root_data_and_duality.chevalley_existence_theorem",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.chevalley_group_construction",
+      "to": "root_data_and_duality.chevalley_existence_theorem",
+      "kind": "uses"
+    },
+    {
       "from": "root_data_and_duality.dual_reductive_groups",
       "to": "root_data_and_duality.pinned_dual_groups",
       "kind": "uses"
@@ -1035,6 +1161,26 @@
     {
       "from": "root_data_and_duality.pinned_dual_groups",
       "to": "root_data_and_duality.langlands_dual_groups",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.root_data",
+      "to": "root_data_and_duality.isogeny_types_from_root_datum",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.root_datum_from_reductive_group",
+      "to": "root_data_and_duality.isogeny_types_from_root_datum",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.fundamental_group_of_root_datum",
+      "to": "root_data_and_duality.isogeny_types_from_root_datum",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.central_isogenies_and_duality",
+      "to": "root_data_and_duality.isogeny_types_from_root_datum",
       "kind": "uses"
     },
     {
@@ -1113,6 +1259,16 @@
       "kind": "uses"
     },
     {
+      "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "to": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.root_datum_from_reductive_group",
+      "to": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
+      "kind": "uses"
+    },
+    {
       "from": "root_data_and_duality.weyl_group_generated_by_reflections",
       "to": "root_data_and_duality.bruhat_decomposition",
       "kind": "uses"
@@ -1143,6 +1299,21 @@
       "kind": "uses"
     },
     {
+      "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "to": "root_data_and_duality.unipotent_radical_and_positive_roots",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.root_datum_from_reductive_group",
+      "to": "root_data_and_duality.unipotent_radical_and_positive_roots",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.based_root_data",
+      "to": "root_data_and_duality.unipotent_radical_and_positive_roots",
+      "kind": "uses"
+    },
+    {
       "from": "root_data_and_duality.automorphisms_of_root_data",
       "to": "root_data_and_duality.galois_action_on_root_data",
       "kind": "uses"
@@ -1169,6 +1340,11 @@
     },
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
+      "to": "root_data_and_duality.root_subgroups_generate_reductive_group",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
       "to": "root_data_and_duality.root_subgroups_generate_reductive_group",
       "kind": "uses"
     },
@@ -1278,6 +1454,16 @@
       "kind": "uses"
     },
     {
+      "from": "root_data_and_duality.chevalley_basis",
+      "to": "root_data_and_duality.chevalley_group_construction",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
+      "to": "root_data_and_duality.chevalley_group_construction",
+      "kind": "uses"
+    },
+    {
       "from": "root_data_and_duality.root_data",
       "to": "root_data_and_duality.classification_of_split_reductive_groups",
       "kind": "uses"
@@ -1289,6 +1475,11 @@
     },
     {
       "from": "root_data_and_duality.pinnings",
+      "to": "root_data_and_duality.classification_of_split_reductive_groups",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.isogeny_types_from_root_datum",
       "to": "root_data_and_duality.classification_of_split_reductive_groups",
       "kind": "uses"
     },
@@ -1335,6 +1526,16 @@
     {
       "from": "root_data_and_duality.roots_coroots_and_root_subgroups",
       "to": "root_data_and_duality.root_datum_from_reductive_group",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.root_systems",
+      "to": "root_data_and_duality.chevalley_basis",
+      "kind": "uses"
+    },
+    {
+      "from": "root_data_and_duality.cartan_matrices_and_dynkin_diagrams",
+      "to": "root_data_and_duality.chevalley_basis",
       "kind": "uses"
     },
     {
@@ -1431,7 +1632,7 @@
       "id": "reductive_structure",
       "title": "Reductive Group Structure",
       "href": "blueprint/reductive_structure/index.html",
-      "node_count": 28
+      "node_count": 29
     }
   ],
   "boundary_edges": [
@@ -1500,6 +1701,13 @@
     },
     {
       "from": "topic:reductive_structure",
+      "to": "root_data_and_duality.isogeny_types_from_root_datum",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 2
+    },
+    {
+      "from": "topic:reductive_structure",
       "to": "root_data_and_duality.relative_weyl_group_generated_by_reflections",
       "kind": "boundary_dependency",
       "topic": "reductive_structure",
@@ -1518,6 +1726,13 @@
       "kind": "boundary_dependency",
       "topic": "reductive_structure",
       "count": 1
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "root_data_and_duality.rank_one_subgroups_sl2_embeddings",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 2
     },
     {
       "from": "reductive_structure.parabolic_f_subgroups_levi_decomposition",
@@ -1553,6 +1768,13 @@
       "kind": "boundary_dependency",
       "topic": "descent_and_forms",
       "count": 1
+    },
+    {
+      "from": "topic:reductive_structure",
+      "to": "root_data_and_duality.unipotent_radical_and_positive_roots",
+      "kind": "boundary_dependency",
+      "topic": "reductive_structure",
+      "count": 2
     },
     {
       "from": "topic:reductive_structure",
