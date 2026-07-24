@@ -1,1 +1,2 @@
 import LanglandsLean.AlgebraicGeometry
+import LanglandsLean.LieAlgebra
