@@ -19,7 +19,7 @@ source:
     note: "Geometric conjugacy of characters of maximal tori; parametrisation of Deligne-Lusztig representations."
   - artifact: carter-finite-groups-lie-type
     locator: "Chapter 5"
-    format: chapter
+    format: section
     note: "Geometric conjugacy and the classification of irreducible characters of G(F_q)."
 verification:
   definition: accepted

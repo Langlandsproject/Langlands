@@ -13,7 +13,7 @@ lean:
     - LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup
   declarations:
   - Langlands.AlgebraicGeometry.instIsAlgebraicGroup
-    - Langlands.AlgebraicGeometry.IsAlgebraicGroup
+  - Langlands.AlgebraicGeometry.IsAlgebraicGroup
 verification:
   definition: accepted
   proof: not_applicable

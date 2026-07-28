@@ -3,7 +3,7 @@ id: descent_and_forms.galois_groups_and_descent_data
 title: Galois Groups and Descent Data
 kind: topic
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: descent_and_forms
 topics:
 - descent_and_forms
 uses:

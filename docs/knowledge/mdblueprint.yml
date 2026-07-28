@@ -119,6 +119,8 @@ sources:
 topics:
 - id: foundational_inputs
   title: Foundational Inputs
+- id: affine_group_schemes
+  title: Affine Group Schemes
 - id: linear_algebraic_groups
   title: Linear Algebraic Groups
 - id: descent_and_forms

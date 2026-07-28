@@ -15,8 +15,8 @@ lean:
   - Langlands.AlgebraicGeometry.schemeOverSelf_hom
   - Langlands.AlgebraicGeometry.trivialIsAffineHom
   - Langlands.AlgebraicGeometry.trivialLocallyOfFiniteType
-    - Langlands.AlgebraicGeometry.schemeOverSelf
-    - Langlands.AlgebraicGeometry.trivialGrpObj
+  - Langlands.AlgebraicGeometry.schemeOverSelf
+  - Langlands.AlgebraicGeometry.trivialGrpObj
 verification:
   definition: accepted
   proof: accepted

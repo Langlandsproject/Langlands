@@ -13,7 +13,7 @@ source:
   spans:
   - artifact: chevalley-algebraic-groups
     locator: "Séminaire 1956, Exposé 5"
-    format: chapter
+    format: section
     note: "Chevalley's original construction of the integral basis."
   - artifact: carter-finite-groups-lie-type
     locator: "Section 1.4"

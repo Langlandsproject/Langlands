@@ -13,8 +13,8 @@ lean:
     - LanglandsLean.AlgebraicGeometry.Comodule
   declarations:
   - Langlands.AlgebraicGeometry.trivialCoaction_apply
-    - Langlands.AlgebraicGeometry.trivialCoaction
-    - Langlands.AlgebraicGeometry.trivialComodule
+  - Langlands.AlgebraicGeometry.trivialCoaction
+  - Langlands.AlgebraicGeometry.trivialComodule
 verification:
   statement: accepted
   proof: accepted

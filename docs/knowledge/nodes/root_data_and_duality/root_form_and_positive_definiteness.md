@@ -2,7 +2,7 @@
 id: root_data_and_duality.root_form_and_positive_definiteness
 title: Root Form and Positive Definiteness
 kind: theorem
-status: formalized
+status: admitted
 primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality

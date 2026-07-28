@@ -22,11 +22,11 @@ source:
     note: "Isogenies and the lattice X between root and weight lattices."
   - artifact: borel-linear-algebraic-groups
     locator: "Chapter 5"
-    format: chapter
+    format: section
     note: "Simply connected and adjoint forms."
   - artifact: sga3
     locator: "Exposé XXII"
-    format: chapter
+    format: section
     note: "Root data and isogeny types in the SGA3 setting."
 verification:
   definition: accepted

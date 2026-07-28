@@ -3,7 +3,7 @@ id: reductive_structure.levi_decomposition_of_parabolics
 title: Levi Decomposition of Parabolic Subgroups
 kind: theorem
 status: admitted
-primary_topic: root_data_and_duality
+primary_topic: reductive_structure
 topics:
 - reductive_structure
 - root_data_and_duality

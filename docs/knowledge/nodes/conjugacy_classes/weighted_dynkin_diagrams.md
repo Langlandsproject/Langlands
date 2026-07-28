@@ -135,5 +135,5 @@ unique weighted Dynkin diagram and vice versa.
 
 ## Prerequisite Topics
 
-- [[node:nilpotent_orbits.nilpotent_orbits|Nilpotent Orbits]]
+- [[node:conjugacy_classes.nilpotent_orbits|Nilpotent Orbits]]
 - [[node:root_data_and_duality.root_systems|Root Systems]]

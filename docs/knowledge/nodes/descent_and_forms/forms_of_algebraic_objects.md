@@ -3,7 +3,7 @@ id: descent_and_forms.forms_of_algebraic_objects
 title: Forms of Algebraic Objects
 kind: topic
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: descent_and_forms
 topics:
 - descent_and_forms
 uses:

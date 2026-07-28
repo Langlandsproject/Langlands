@@ -14,7 +14,7 @@ lean:
     - LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup
   declarations:
   - Langlands.AlgebraicGeometry.instIsAffineGroupScheme
-    - Langlands.AlgebraicGeometry.IsAffineGroupScheme
+  - Langlands.AlgebraicGeometry.IsAffineGroupScheme
 verification:
   definition: accepted
   proof: not_applicable

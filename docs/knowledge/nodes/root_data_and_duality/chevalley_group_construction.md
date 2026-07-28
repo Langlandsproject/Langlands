@@ -11,7 +11,6 @@ uses:
 - root_data_and_duality.root_data
 - root_data_and_duality.based_root_data
 - root_data_and_duality.pinnings
-- root_data_and_duality.chevalley_existence_theorem
 - root_data_and_duality.chevalley_isomorphism_theorem
 - reductive_structure.algebraic_tori
 - affine_group_schemes.affine_group_scheme_definition
@@ -27,7 +26,7 @@ source:
       method via Lie algebras.
   - artifact: conrad-sga3-reductive-book
     locator: Exposé XXIII
-    format: chapter
+    format: section
     note: Demazure's SGA3 construction of the group scheme associated to a based root
       datum over Z.
   - artifact: springer-algebraic-groups-survey

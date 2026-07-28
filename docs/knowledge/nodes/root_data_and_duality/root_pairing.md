@@ -2,7 +2,7 @@
 id: root_data_and_duality.root_pairing
 title: Root Pairings (Unified Framework)
 kind: definition
-status: formalized
+status: admitted
 primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality

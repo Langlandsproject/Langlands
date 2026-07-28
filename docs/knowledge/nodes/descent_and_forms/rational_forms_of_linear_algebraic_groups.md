@@ -3,7 +3,7 @@ id: descent_and_forms.rational_forms_of_linear_algebraic_groups
 title: Rational Forms of Linear Algebraic Groups
 kind: topic
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: descent_and_forms
 topics:
 - descent_and_forms
 uses:

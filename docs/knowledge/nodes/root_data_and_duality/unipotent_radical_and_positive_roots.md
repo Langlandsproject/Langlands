@@ -21,7 +21,7 @@ source:
     note: "Borel subgroup as semidirect product T ⋉ U where U is product of positive root subgroups."
   - artifact: borel-linear-algebraic-groups
     locator: "Theorem 13.18"
-    format: theorem
+    format: section
     note: "Structure of Borel subgroups in terms of root subgroups."
 verification:
   statement: accepted

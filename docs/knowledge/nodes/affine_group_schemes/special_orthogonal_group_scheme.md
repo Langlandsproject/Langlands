@@ -20,7 +20,7 @@ source:
     note: "Orthogonal and special orthogonal groups as group schemes preserving a quadratic form."
   - artifact: chevalley-algebraic-groups
     locator: "Chapter II"
-    format: chapter
+    format: section
     note: "Classical groups as algebraic groups."
 verification:
   definition: accepted

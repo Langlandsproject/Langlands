@@ -164,4 +164,4 @@ Lie algebras; specific algebraic-group cases are not formalised.
 ## Prerequisite Topics
 
 - [[node:reductive_structure.reductive_groups|Reductive Groups]]
-- [[node:nilpotent_orbits.lie_algebras_of_reductive_groups|Lie Algebras of Reductive Groups]]
+- [[node:conjugacy_classes.lie_algebras_of_reductive_groups|Lie Algebras of Reductive Groups]]

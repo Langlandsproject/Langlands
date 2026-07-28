@@ -16,14 +16,14 @@ source:
   spans:
   - artifact: springer-linear-algebraic-groups
     locator: "Chapter III"
-    format: chapter
+    format: section
     note: "Springer's original construction of the correspondence via perverse sheaves / nearby cycles."
   - artifact: collingwood-mcgovern-nilpotent-orbits
     locator: "Chapter 6"
-    format: chapter
+    format: section
     note: "Comprehensive treatment of the Springer correspondence and its combinatorics."
 verification:
-  definition: accepted
+  statement: accepted
   proof: not_applicable
 generality:
   reviewed: true

@@ -70,7 +70,7 @@ agrees with the usual matrix Jordan decomposition.
 \(X^N = 0\). The Jordan block structure of \(X\) (viewed as an
 \(n \times n\) matrix) must be compatible with the bilinear form
 preserved by \(\mathrm{SO}_n\); parity constraints apply (see
-[[node:nilpotent_orbits.bala_carter_classification|Bala-Carter]]).
+[[node:conjugacy_classes.bala_carter_classification|Bala-Carter]]).
 
 ### Nilpotent cone
 
@@ -122,7 +122,7 @@ partition \((n)\) (single Jordan block); subregular = \((n-1, 1)\).
 - \(X\), \(Y\) are nilpotent, \(H\) is semisimple.
 
 Two extensions are \(Z_G(X)\)-conjugate. This is the foundation of
-the [[node:nilpotent_orbits.weighted_dynkin_diagrams|weighted Dynkin
+the [[node:conjugacy_classes.weighted_dynkin_diagrams|weighted Dynkin
 diagram]] classification.
 
 ## Mathlib
@@ -141,4 +141,4 @@ are not (yet) a separate object.
 
 ## Prerequisite Topics
 
-- [[node:nilpotent_orbits.lie_algebras_of_reductive_groups|Lie Algebras of Reductive Groups]]
+- [[node:conjugacy_classes.lie_algebras_of_reductive_groups|Lie Algebras of Reductive Groups]]

@@ -136,4 +136,4 @@ of the stabiliser \(Z_G(X)\)).
 
 ## Prerequisite Topics
 
-- [[node:nilpotent_orbits.nilpotent_cone|Nilpotent Cone]]
+- [[node:conjugacy_classes.nilpotent_cone|Nilpotent Cone]]

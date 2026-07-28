@@ -10,7 +10,7 @@ uses:
 - foundational_inputs.fields_and_field_extensions
 - foundational_inputs.affine_schemes
 - foundational_inputs.hopf_algebras
-- linear_algebraic_groups.coordinate_rings_and_hopf_algebras
+- affine_group_schemes.coordinate_rings_and_hopf_algebras
 verification:
   definition: needs_revision
   proof: not_applicable
@@ -123,6 +123,6 @@ requires smooth algebraic groups.
 
 ## Related Nodes
 
-- [[node:linear_algebraic_groups.coordinate_rings_and_hopf_algebras|Coordinate Rings and Hopf Algebras]]
-- [[node:linear_algebraic_groups.affine_algebraic_groups|Affine Algebraic Groups]]
+- [[node:affine_group_schemes.coordinate_rings_and_hopf_algebras|Coordinate Rings and Hopf Algebras]]
+- [[node:affine_group_schemes.affine_algebraic_groups|Affine Algebraic Groups]]
 - [[node:linear_algebraic_groups.morphisms_and_closed_subgroups|Morphisms and Closed Subgroups]]

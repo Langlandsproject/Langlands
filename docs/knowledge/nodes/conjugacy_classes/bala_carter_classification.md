@@ -77,7 +77,7 @@ A nilpotent element \(e \in \mathfrak{g}\) is **distinguished** if the
 identity component of the centraliser \(Z_G(e)^\circ\) is unipotent
 (equivalently, contains no non-trivial torus). For each nilpotent
 orbit, the **weighted Dynkin diagram**
-([[node:nilpotent_orbits.weighted_dynkin_diagrams|see node]]) is
+([[node:conjugacy_classes.weighted_dynkin_diagrams|see node]]) is
 obtained from a Jacobson–Morozov \(\mathfrak{sl}_2\)-triple
 \((e, h, f)\) by recording the values \(\alpha_i(h)\) for each simple
 root \(\alpha_i\). The weights are in \(\{0, 1, 2\}\), and for
@@ -106,7 +106,7 @@ distinguished orbits they are in \(\{0, 2\}\).
 
 ## Prerequisite Topics
 
-- [[node:nilpotent_orbits.nilpotent_orbits|Nilpotent Orbits]]
+- [[node:conjugacy_classes.nilpotent_orbits|Nilpotent Orbits]]
 - [[node:reductive_structure.parabolic_subgroups|Parabolic Subgroups]]
 - [[node:reductive_structure.levi_subgroups_and_unipotent_radicals|Levi Subgroups and Unipotent Radicals]]
-- [[node:nilpotent_orbits.weighted_dynkin_diagrams|Weighted Dynkin Diagrams]]
+- [[node:conjugacy_classes.weighted_dynkin_diagrams|Weighted Dynkin Diagrams]]

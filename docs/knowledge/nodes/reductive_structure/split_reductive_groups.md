@@ -20,7 +20,7 @@ source:
     note: "Split groups and split maximal tori."
   - artifact: conrad-reductive-group-schemes
     locator: "Definition 5.1.1"
-    format: definition
+    format: section
     note: "Split reductive groups over arbitrary base schemes."
 verification:
   definition: accepted

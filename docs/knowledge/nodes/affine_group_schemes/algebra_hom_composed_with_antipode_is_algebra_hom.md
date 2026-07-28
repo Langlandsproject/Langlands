@@ -13,7 +13,7 @@ lean:
     - LanglandsLean.AlgebraicGeometry.HopfObjectBridge
   declarations:
   - Langlands.AlgebraicGeometry.HopfAntipode.algHomCompAntipode_apply
-    - Langlands.AlgebraicGeometry.HopfAntipode.algHomCompAntipode
+  - Langlands.AlgebraicGeometry.HopfAntipode.algHomCompAntipode
 verification:
   statement: accepted
   proof: accepted

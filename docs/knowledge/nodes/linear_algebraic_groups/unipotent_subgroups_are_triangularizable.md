@@ -3,8 +3,9 @@ id: linear_algebraic_groups.unipotent_subgroups_are_triangularizable
 title: Unipotent Subgroups Are Triangularizable
 kind: theorem
 status: admitted
-primary_topic: reductive_structure
+primary_topic: linear_algebraic_groups
 topics:
+- linear_algebraic_groups
 - reductive_structure
 - reductive_structure
 uses:

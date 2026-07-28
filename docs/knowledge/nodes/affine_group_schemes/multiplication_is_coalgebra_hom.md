@@ -18,7 +18,7 @@ lean:
   - Langlands.AlgebraicGeometry.HopfAntipode.convAntipode_mul_convId
   - Langlands.AlgebraicGeometry.HopfAntipode.convMul_mul_convMulCompSSTensor
   - Langlands.AlgebraicGeometry.HopfAntipode.mul_map_twist_eq_lTensor_smul_lTensor
-    - Langlands.AlgebraicGeometry.HopfAntipode.mulCoalgHom
+  - Langlands.AlgebraicGeometry.HopfAntipode.mulCoalgHom
 verification:
   statement: accepted
   proof: accepted

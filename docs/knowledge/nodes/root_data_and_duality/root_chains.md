@@ -2,7 +2,7 @@
 id: root_data_and_duality.root_chains
 title: Root Chains and the String Property
 kind: theorem
-status: formalized
+status: admitted
 primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality

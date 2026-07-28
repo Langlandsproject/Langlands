@@ -137,6 +137,6 @@ the exact sequence of pointed sets associated to
 
 ## Prerequisite Topics
 
-- [[node:nilpotent_orbits.nilpotent_orbits|Nilpotent Orbits]]
+- [[node:conjugacy_classes.nilpotent_orbits|Nilpotent Orbits]]
 - [[node:descent_and_forms.rational_forms_of_reductive_groups|Rational Forms of Reductive Groups]]
 - [[node:descent_and_forms.galois_cohomology|Galois Cohomology]]

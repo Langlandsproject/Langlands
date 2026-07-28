@@ -13,7 +13,7 @@ lean:
   - Langlands.AlgebraicGeometry.Examples.GLV
   - Langlands.AlgebraicGeometry.Examples.GLVSch
   modules:
-  - lean/LanglandsLean/AlgebraicGeometry/Examples/GLV.lean
+  - LanglandsLean.AlgebraicGeometry.Examples.GLV
 verification:
   definition: accepted
   proof: not_applicable

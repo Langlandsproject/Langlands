@@ -142,4 +142,4 @@ infrastructure.
 
 ## Prerequisite Topics
 
-- [[node:nilpotent_orbits.sl2_triples|SL2-Triples]]
+- [[node:conjugacy_classes.sl2_triples|SL2-Triples]]

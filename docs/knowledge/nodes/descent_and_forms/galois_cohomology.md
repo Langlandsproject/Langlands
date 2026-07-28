@@ -3,7 +3,7 @@ id: descent_and_forms.galois_cohomology
 title: Galois Cohomology
 kind: topic
 status: admitted
-primary_topic: linear_algebraic_groups
+primary_topic: descent_and_forms
 topics:
 - descent_and_forms
 uses:

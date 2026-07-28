@@ -97,7 +97,7 @@ d_i \in \{0, 1, 2\}.
 
 This is the canonical combinatorial invariant of the
 \(G\)-conjugacy class of the triple (= the orbit \(G \cdot e\)). See
-[[node:nilpotent_orbits.weighted_dynkin_diagrams|Weighted Dynkin Diagrams]].
+[[node:conjugacy_classes.weighted_dynkin_diagrams|Weighted Dynkin Diagrams]].
 
 ## Examples
 
@@ -163,4 +163,4 @@ Not formalised.
 
 ## Prerequisite Topics
 
-- [[node:nilpotent_orbits.nilpotent_elements|Nilpotent Elements]]
+- [[node:conjugacy_classes.nilpotent_elements|Nilpotent Elements]]

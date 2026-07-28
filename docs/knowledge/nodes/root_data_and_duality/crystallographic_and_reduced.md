@@ -2,7 +2,7 @@
 id: root_data_and_duality.crystallographic_and_reduced
 title: Crystallographic and Reduced Root Systems
 kind: definition
-status: formalized
+status: admitted
 primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality

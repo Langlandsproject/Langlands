@@ -18,7 +18,7 @@ lean:
   declarations:
   - Langlands.AlgebraicGeometry.existsClosedImmersionToGeneralLinear
   - Langlands.AlgebraicGeometry.existsClosedImmersionToGeneralLinear_of_hasFaithfulLinearRepresentation
-    - Langlands.AlgebraicGeometry.HasFaithfulLinearRepresentation
+  - Langlands.AlgebraicGeometry.HasFaithfulLinearRepresentation
 verification:
   statement: accepted
   alignment: pending

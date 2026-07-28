@@ -15,7 +15,7 @@ source:
   spans:
   - artifact: collingwood-mcgovern-nilpotent-orbits
     locator: "Chapter 3"
-    format: chapter
+    format: section
     note: "Unipotent classes in semisimple groups; Bala-Carter classification on the group side."
   - artifact: springer-linear-algebraic-groups
     locator: "Section 3.7"

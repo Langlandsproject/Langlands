@@ -16,13 +16,13 @@ lean:
   - Polynomial.gaAntipode_X
   - Polynomial.gaComul_X
   - Polynomial.gaCounit_X
-    - Polynomial.gaComul
-    - Polynomial.gaCounit
-    - Polynomial.gaAntipode
-    - Polynomial.instBialgebra
-    - Polynomial.instHopfAlgebra
-    - Langlands.AlgebraicGeometry.Examples.additiveGroup
-    - Langlands.AlgebraicGeometry.Examples.additiveGroup.instGrpObj
+  - Polynomial.gaComul
+  - Polynomial.gaCounit
+  - Polynomial.gaAntipode
+  - Polynomial.instBialgebra
+  - Polynomial.instHopfAlgebra
+  - Langlands.AlgebraicGeometry.Examples.additiveGroup
+  - Langlands.AlgebraicGeometry.Examples.additiveGroup.instGrpObj
 verification:
   definition: accepted
   proof: not_applicable

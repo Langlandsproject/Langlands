@@ -154,5 +154,5 @@ Not formalised.
 
 ## Prerequisite Topics
 
-- [[node:nilpotent_orbits.nilpotent_elements|Nilpotent Elements]]
-- [[node:nilpotent_orbits.adjoint_action|Adjoint Action]]
+- [[node:conjugacy_classes.nilpotent_elements|Nilpotent Elements]]
+- [[node:conjugacy_classes.adjoint_action|Adjoint Action]]

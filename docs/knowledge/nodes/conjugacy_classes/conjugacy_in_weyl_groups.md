@@ -14,11 +14,11 @@ source:
   spans:
   - artifact: carter-conjugacy-classes-weyl-groups
     locator: "Chapter 4"
-    format: chapter
+    format: section
     note: "Carter's classification of conjugacy classes in Weyl groups via admissible diagrams."
   - artifact: geck-pfeiffer-characters-of-finite-coxeter-groups
     locator: "Chapter 3"
-    format: chapter
+    format: section
     note: "Conjugacy classes and irreducible characters of Weyl groups."
 verification:
   definition: accepted

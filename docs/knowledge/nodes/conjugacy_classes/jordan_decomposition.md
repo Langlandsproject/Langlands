@@ -18,10 +18,10 @@ source:
     note: "Abstract Jordan decomposition in linear algebraic groups."
   - artifact: borel-linear-algebraic-groups
     locator: "Theorem 4.3"
-    format: theorem
+    format: section
     note: "Existence and functoriality of the Jordan decomposition."
 verification:
-  definition: accepted
+  statement: accepted
   proof: not_applicable
 generality:
   reviewed: true
