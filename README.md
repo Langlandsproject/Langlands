@@ -78,6 +78,55 @@ The knowledge graph currently has on the order of 200 admitted nodes
 under `docs/knowledge/nodes/`, with the heaviest concentration in
 `linear_algebraic_groups/`.
 
+## How to join
+
+This project is built for — and by — **mathematicians**. You do not
+need Lean experience or a software background: the intended workflow is
+that an AI coding agent ("vibecoding" tools such as Claude Code, Codex,
+or Cursor) does the writing, and you supply the mathematical judgment.
+The agent picks up its standing instructions automatically from
+[`AGENTS.md`](AGENTS.md); your job is the part it cannot be trusted
+with.
+
+Getting started takes three steps:
+
+1. Clone the repo and open your AI coding agent at the repo root.
+2. Pick a small goal from the roadmap in
+   [`docs/TODO.md`](docs/TODO.md) (or an open GitHub issue).
+3. Tell the agent what you are taking on; review the mathematics it
+   drafts; let it run the structural check; open a PR that names the
+   node ids you touched.
+
+### Where you can contribute
+
+- **Author knowledge nodes.** Take a goal from
+  [`docs/TODO.md`](docs/TODO.md), have the agent draft the
+  definitions/theorems as Markdown nodes, and shape the statements
+  until they are the ones you would put in a survey you signed.
+- **Review existing nodes.** Every node carries `verification` and
+  `generality` blocks that are meant for expert eyes: is the statement
+  correct, at the right generality, with honest hypotheses? Fixing a
+  wrong verdict is as valuable as a new node.
+- **Curate the DAG.** The dependency structure (`uses:` edges, topic
+  membership) is mathematics, not plumbing — flagging a wrong or
+  missing dependency is a real contribution.
+- **Bind sources.** Attach precise references (book/page spans against
+  the registered library in `docs/knowledge/mdblueprint.yml`, e.g.
+  Bruhat–Tits I/II or Kaletha–Prasad) to nodes that lack provenance;
+  see
+  [`docs/knowledge/references/bruhat-tits-sources.md`](docs/knowledge/references/bruhat-tits-sources.md).
+- **Propose scope.** The theme catalog in
+  [`docs/00-project-outline.md`](docs/00-project-outline.md) lists the
+  long-run surface (trace formulas, Shimura varieties, …). Argue for
+  what should be blueprinted next, and register the references it
+  needs.
+- **Formalize in Lean** (optional). For those inclined: the
+  issue-per-node pipeline below turns admitted nodes into Lean, with
+  the Lean LSP MCP as the day-to-day interface.
+
+The one hard rule: **AI writes, humans review** — nothing becomes an
+admitted node without a mathematician having read it.
+
 ## How development works
 
 The same four-step pipeline runs for every coherent unit of work
@@ -239,6 +288,7 @@ delimiters.
 
 ## Pointers
 
+- Roadmap and small goals: [`docs/TODO.md`](docs/TODO.md)
 - Project outline and theme catalog:
   [`docs/00-project-outline.md`](docs/00-project-outline.md)
 - Standing agent instructions (read before editing): [`AGENTS.md`](AGENTS.md)

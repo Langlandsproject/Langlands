@@ -45,11 +45,11 @@ sources:
     short: Conrad RGS
     authors: Brian Conrad
   - id: bruhat-tits-groupes-reductifs-i
-    title: Groupes reductifs sur un corps local, I
+    title: "Groupes reductifs sur un corps local, I: Donnees radicielles valuees (Publ. Math. IHES 41, 1972, 5-251)"
     short: Bruhat-Tits I
     authors: Francois Bruhat and Jacques Tits
   - id: bruhat-tits-groupes-reductifs-ii
-    title: Groupes reductifs sur un corps local, II
+    title: "Groupes reductifs sur un corps local, II: Schemas en groupes. Existence d'une donnee radicielle valuee (Publ. Math. IHES 60, 1984, 197-376)"
     short: Bruhat-Tits II
     authors: Francois Bruhat and Jacques Tits
   - id: brylinski-deligne-central-extensions
@@ -64,6 +64,10 @@ sources:
     title: Rigid Inner Forms of Real and p-adic Groups
     short: Kaletha Rigid Inner Forms
     authors: Tasho Kaletha
+  - id: kaletha-prasad-bruhat-tits
+    title: "Bruhat-Tits Theory: A New Approach (New Mathematical Monographs 44, Cambridge University Press, 2023)"
+    short: Kaletha-Prasad BT
+    authors: Tasho Kaletha and Gopal Prasad
   - id: carter-conjugacy-classes-weyl-groups
     title: "Conjugacy Classes in the Weyl Groups and Coxeter Groups"
     short: Carter Conjugacy Weyl
