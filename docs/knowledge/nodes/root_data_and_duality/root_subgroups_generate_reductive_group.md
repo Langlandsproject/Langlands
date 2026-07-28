@@ -11,19 +11,23 @@ uses:
 - root_data_and_duality.root_datum_from_reductive_group
 - root_data_and_duality.roots_coroots_and_root_subgroups
 - reductive_structure.reductive_groups
+- root_data_and_duality.rank_one_subgroups_sl2_embeddings
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
-    locator: "Section 8.1"
+    locator: Section 8.1
     format: section
-    note: "Theorem 8.1.1: root subgroups and generation."
+    note: 'Theorem 8.1.1: root subgroups and generation.'
 verification:
   statement: accepted
   proof: accepted
 generality:
   reviewed: true
-  prompt: "Does the theorem include both the existence of one-dimensional root subgroups and generation?"
-  verdict: "Yes. For a connected reductive group over an algebraically closed field, root spaces are one-dimensional and integrate to root subgroups; these together with the maximal torus generate the group."
+  prompt: Does the theorem include both the existence of one-dimensional root subgroups
+    and generation?
+  verdict: Yes. For a connected reductive group over an algebraically closed field,
+    root spaces are one-dimensional and integrate to root subgroups; these together
+    with the maximal torus generate the group.
 tags:
 - springer
 - root-subgroup

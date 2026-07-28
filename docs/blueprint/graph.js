@@ -56,23 +56,72 @@
   let graphZoomBehavior = null;
   let graphZoomSelection = null;
 
+  // Per-status fill and border RGB values — the only colors that encode meaning.
+  // Topic boxes blend these proportionally to show overall maturity at a glance.
+  const STATUS_RGB = {
+    formalized: { fill: [200, 230, 201], border: [46, 125, 50] },
+    proved:     { fill: [200, 230, 201], border: [46, 125, 50] },
+    admitted:   { fill: [187, 222, 251], border: [21, 101, 192] },
+  };
+  const STATUS_RGB_FALLBACK = { fill: [236, 236, 236], border: [130, 130, 130] };
+
+  function _toHex(v) {
+    return Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, "0");
+  }
+
+  // Returns {fillcolor, color} for a topic box based on the mix of node statuses.
+  // Colors are a weighted RGB blend of the status fill/border colors.
+  function topicMaturityColor(statusCounts) {
+    const sc = statusCounts || {};
+    const total = Object.values(sc).reduce((a, b) => a + b, 0);
+    if (!total) return { fillcolor: "#ececec", color: "#828282" };
+    let fr = 0, fg = 0, fb = 0, br = 0, bg = 0, bb = 0;
+    for (const [status, count] of Object.entries(sc)) {
+      const col = STATUS_RGB[status] || STATUS_RGB_FALLBACK;
+      const w = count / total;
+      fr += col.fill[0] * w;   fg += col.fill[1] * w;   fb += col.fill[2] * w;
+      br += col.border[0] * w; bg += col.border[1] * w; bb += col.border[2] * w;
+    }
+    return {
+      fillcolor: `#${_toHex(fr)}${_toHex(fg)}${_toHex(fb)}`,
+      color:     `#${_toHex(br)}${_toHex(bg)}${_toHex(bb)}`,
+    };
+  }
+
+  // Boundary topic nodes (other topics shown at the edge of a subgraph) — neutral style.
+  const BOUNDARY_TOPIC_STYLE = {
+    fillcolor: "#f0f4f8",
+    color: "#8aaac8",
+    fontcolor: "#6688aa",
+  };
+
   function topicOverviewToDot(data) {
     const lines = [
       'strict digraph "" {',
-      "\tgraph [bgcolor=transparent];",
-      '\tnode [label="\\N", penwidth=1.8, shape=box];',
-      "\tedge [arrowhead=vee];",
+      "\tgraph [bgcolor=transparent, rankdir=TB, ranksep=1.4, nodesep=0.8, splines=curved, pad=0.5];",
+      '\tnode [label="\\N", penwidth=1.8, shape=box, fontname="Helvetica Neue,Helvetica,Arial,sans-serif", fontsize=13, margin="0.38,0.22", style=filled];',
+      "\tedge [arrowhead=normal, arrowsize=0.7];",
     ];
     (data.topics || []).forEach((topic) => {
-      const attrs = [
-        ["label", topic.title],
-        ["shape", "box"],
-        ["URL", `#${topicGraphId(topic.id)}`],
-      ];
-      lines.push(`\t${dotQuote(topicGraphId(topic.id))} [${attrs.map(([key, value]) => `${key}=${dotQuote(value)}`).join(", ")}];`);
+      const mc = topicMaturityColor(topic.status_counts);
+      lines.push(`\t${dotQuote(topicGraphId(topic.id))} [label=${dotQuote(topic.title)}, fillcolor=${dotQuote(mc.fillcolor)}, color=${dotQuote(mc.color)}, penwidth=2.0, URL=${dotQuote(`#${topicGraphId(topic.id)}`)}];`);
     });
     (data.edges || []).forEach((edge) => {
-      lines.push(`\t${dotQuote(topicGraphId(edge.from))} -> ${dotQuote(topicGraphId(edge.to))} [style=dashed];`);
+      const count = edge.count || 1;
+      // Skip very rare cross-topic edges to reduce visual noise in the overview
+      if (count < 2) return;
+      const weight = Math.min(count, 10);
+      let penwidth, color;
+      if (count >= 15) {
+        penwidth = "2.4"; color = "#334455";
+      } else if (count >= 8) {
+        penwidth = "1.8"; color = "#556677";
+      } else if (count >= 4) {
+        penwidth = "1.2"; color = "#778899";
+      } else {
+        penwidth = "0.8"; color = "#aabbcc";
+      }
+      lines.push(`\t${dotQuote(topicGraphId(edge.from))} -> ${dotQuote(topicGraphId(edge.to))} [weight=${weight}, penwidth=${penwidth}, color=${dotQuote(color)}];`);
     });
     lines.push("}");
     return lines.join("\n");
@@ -91,9 +140,10 @@
       return { color: "#2e7d32", fillcolor: "#c8e6c9", filled: true };
     }
     if (status === "admitted") {
-      return { color: "#1f6feb", fillcolor: "#d6e4ff", filled: true };
+      return { color: "#1565c0", fillcolor: "#bbdefb", filled: true };
     }
-    return { color: null, fillcolor: null, filled: false };
+    // stub / needs_review / etc — light gray so it's visible but clearly incomplete
+    return { color: "#666666", fillcolor: "#f0f0f0", filled: true };
   }
 
   function nodeStyleAttr(node, statusFilled) {
@@ -137,14 +187,14 @@
         style: "dotted",
       };
     }
-    return { style: "dashed" };
+    return { color: "#444444", style: "solid" };
   }
 
   function boundaryEdgeDisplayAttributes(edge) {
     const isProofPlanRoute = edge.kind === "boundary_proof_plan_dependency"
       || edge.kind === "boundary_proof_plan_dependent";
     return {
-      color: isProofPlanRoute ? "#7a4aa0" : "#777777",
+      color: isProofPlanRoute ? "#7a4aa0" : "#999999",
       label: isProofPlanRoute ? "proof route" : "",
       style: isProofPlanRoute ? "dotted" : "dashed",
     };
@@ -156,32 +206,43 @@
     const endpointVisible = (nodeId) => nodeId.startsWith("topic:") || visibleNodeIds.has(nodeId);
     const lines = [
       'strict digraph "" {',
-      "\tgraph [bgcolor=transparent];",
-      '\tnode [label="\\N", penwidth=1.8];',
-      "\tedge [arrowhead=vee];",
+      "\tgraph [bgcolor=transparent, rankdir=TB, ranksep=1.0, nodesep=0.5, splines=spline, pad=0.3, fontname=\"Helvetica Neue,Helvetica,Arial,sans-serif\"];",
+      '\tnode [label="\\N", penwidth=1.6, fontname="Helvetica Neue,Helvetica,Arial,sans-serif", fontsize=11, margin="0.25,0.14"];',
+      "\tedge [arrowhead=normal, arrowsize=0.7, color=\"#444444\"];",
     ];
     if (data.topic) {
+      const mc = topicMaturityColor(data.topic.status_counts);
       lines.push(`\t${dotQuote(topicGraphId(data.topic.id))} [${dotAttributes({
-        color: "blue",
+        color: mc.color,
+        fillcolor: mc.fillcolor,
+        fontsize: "13",
         label: data.topic.title,
-        penwidth: "2.4",
+        penwidth: "2.6",
         shape: "box",
+        style: "filled,bold",
         URL: `#${topicGraphId(data.topic.id)}`,
       })}];`);
     }
     (data.child_topic_nodes || []).forEach((topic) => {
+      const mc = topicMaturityColor(topic.status_counts);
       lines.push(`\t${dotQuote(topicGraphId(topic.id))} [${dotAttributes({
+        color: mc.color,
+        fillcolor: mc.fillcolor,
         label: topic.title,
         shape: "box",
+        style: "filled",
         URL: `#${topicGraphId(topic.id)}`,
       })}];`);
     });
     (data.boundary_topics || []).forEach((topic) => {
       lines.push(`\t${dotQuote(topicGraphId(topic.id))} [${dotAttributes({
-        color: "#777777",
+        color: BOUNDARY_TOPIC_STYLE.color,
+        fillcolor: BOUNDARY_TOPIC_STYLE.fillcolor,
+        fontcolor: BOUNDARY_TOPIC_STYLE.fontcolor,
         label: topic.title,
+        penwidth: "1.2",
         shape: "box",
-        style: "dashed",
+        style: "filled,dashed",
         URL: `#${topicGraphId(topic.id)}`,
       })}];`);
     });

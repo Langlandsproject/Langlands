@@ -64,6 +64,58 @@ sources:
     title: Rigid Inner Forms of Real and p-adic Groups
     short: Kaletha Rigid Inner Forms
     authors: Tasho Kaletha
+  - id: carter-conjugacy-classes-weyl-groups
+    title: "Conjugacy Classes in the Weyl Groups and Coxeter Groups"
+    short: Carter Conjugacy Weyl
+    authors: Roger W. Carter
+  - id: carter-finite-groups-lie-type
+    title: "Finite Groups of Lie Type: Conjugacy Classes and Complex Characters"
+    short: Carter Finite Groups
+    authors: Roger W. Carter
+  - id: chevalley-algebraic-groups
+    title: "Classification des groupes de Lie algebriques (Seminaire Chevalley 1956-1958)"
+    short: Chevalley Alg Groups
+    authors: Claude Chevalley
+  - id: collingwood-mcgovern-nilpotent-orbits
+    title: Nilpotent Orbits in Semisimple Lie Algebras
+    short: Collingwood-McGovern
+    authors: David H. Collingwood and William M. McGovern
+  - id: conrad-sga3-reductive-book
+    title: "Reductive Group Schemes (SGA 3, Luminy Lecture Notes)"
+    short: Conrad SGA3
+    authors: Brian Conrad
+  - id: deligne-lusztig-representations-of-reductive-groups-over-finite-fields
+    title: Representations of Reductive Groups over Finite Fields
+    short: Deligne-Lusztig
+    authors: Pierre Deligne and George Lusztig
+  - id: demazure-gabriel-groupes-algebriques
+    title: "Groupes Algebriques, Tome I"
+    short: Demazure-Gabriel
+    authors: Michel Demazure and Pierre Gabriel
+  - id: geck-pfeiffer-characters-of-finite-coxeter-groups
+    title: Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras
+    short: Geck-Pfeiffer
+    authors: Meinolf Geck and Goran Pfeiffer
+  - id: harish-chandra-harmonic-analysis-on-reductive-groups
+    title: Harmonic Analysis on Reductive Groups
+    short: Harish-Chandra
+    authors: Harish-Chandra
+  - id: kottwitz-rational-conjugacy-classes
+    title: Rational Conjugacy Classes in Reductive Groups
+    short: Kottwitz Rational Conj
+    authors: Robert E. Kottwitz
+  - id: langlands-shelstad-on-the-definition-of-transfer-factors
+    title: On the Definition of Transfer Factors
+    short: Langlands-Shelstad Transfer
+    authors: Robert P. Langlands and Diana Shelstad
+  - id: springer-algebraic-groups-survey
+    title: "Algebraic Groups (Encyclopaedia of Mathematical Sciences, Vol. 55)"
+    short: Springer Alg Groups Survey
+    authors: T. A. Springer
+  - id: steinberg-endomorphisms-of-algebraic-groups
+    title: Endomorphisms of Linear Algebraic Groups
+    short: Steinberg Endomorphisms
+    authors: Robert Steinberg
 topics:
 - id: foundational_inputs
   title: Foundational Inputs
@@ -81,7 +133,7 @@ topics:
   title: Buildings and Parahorics
 - id: kottwitz_structures
   title: Kottwitz Structures
-- id: nilpotent_orbits
-  title: Nilpotent Orbits
+- id: conjugacy_classes
+  title: Conjugacy Classes
 - id: bd_covers
   title: Brylinski-Deligne and Metaplectic Covers

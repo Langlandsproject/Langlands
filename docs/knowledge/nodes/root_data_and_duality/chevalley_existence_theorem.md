@@ -12,19 +12,23 @@ uses:
 - root_data_and_duality.based_root_data
 - root_data_and_duality.chevalley_isomorphism_theorem
 - root_data_and_duality.classification_of_split_reductive_groups
+- root_data_and_duality.chevalley_basis
+- root_data_and_duality.chevalley_group_construction
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
-    locator: "Section 10.1"
+    locator: Section 10.1
     format: section
-    note: "Theorem 10.1.1: existence of a connected reductive group with a prescribed root datum."
+    note: 'Theorem 10.1.1: existence of a connected reductive group with a prescribed
+      root datum.'
 verification:
   statement: accepted
   proof: gap
 generality:
   reviewed: true
-  prompt: "Is this the existence half of the classification by root data?"
-  verdict: "Yes. Every abstract root datum occurs as the root datum of a connected reductive algebraic group."
+  prompt: Is this the existence half of the classification by root data?
+  verdict: Yes. Every abstract root datum occurs as the root datum of a connected
+    reductive algebraic group.
 tags:
 - springer
 - chevalley

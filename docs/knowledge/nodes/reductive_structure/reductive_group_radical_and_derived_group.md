@@ -10,7 +10,6 @@ uses:
 - reductive_structure.reductive_groups
 - reductive_structure.algebraic_tori
 - reductive_structure.semisimple_groups
-- root_data_and_duality.root_subgroups_generate_reductive_group
 source:
   spans:
   - artifact: springer-linear-algebraic-groups

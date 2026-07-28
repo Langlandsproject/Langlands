@@ -8,6 +8,7 @@ topics:
 - root_data_and_duality
 uses:
 - reductive_structure.character_and_cocharacter_lattices
+- root_data_and_duality.root_pairing
 - root_data_and_duality.root_systems
 verification:
   definition: accepted
@@ -133,9 +134,12 @@ This is the combinatorial operation underlying Langlands duality.
 - N. Bourbaki, *Groupes et algebres de Lie*, Chapters IV--VI.
 - B. Conrad, *Reductive Group Schemes*, Appendix B.
 - Mathlib, *LinearAlgebra.RootSystem.Defs* and
-  *LinearAlgebra.RootSystem.Reduced*.
+  *LinearAlgebra.RootSystem.Reduced*. The isomorphism between root data
+  and split reductive groups (the Chevalley--Tits classification) is not
+  yet an equivalence of categories in Mathlib.
 
 ## Prerequisites
 
+- [[node:root_data_and_duality.root_pairing|Root Pairings]]
 - [[node:root_data_and_duality.root_systems|Root Systems]]
 - [[node:reductive_structure.character_and_cocharacter_lattices|Character and Cocharacter Lattices]]

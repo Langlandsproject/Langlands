@@ -3,7 +3,7 @@ id: reductive_structure.standard_parabolic_classification
 title: Standard Parabolics Are Classified by Simple Roots
 kind: theorem
 status: admitted
-primary_topic: reductive_structure
+primary_topic: root_data_and_duality
 topics:
 - reductive_structure
 - root_data_and_duality

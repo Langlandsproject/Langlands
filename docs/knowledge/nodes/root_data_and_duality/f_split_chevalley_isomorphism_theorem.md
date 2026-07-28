@@ -3,7 +3,7 @@ id: root_data_and_duality.f_split_chevalley_isomorphism_theorem
 title: Chevalley Isomorphism Theorem for F-Split Groups
 kind: theorem
 status: admitted
-primary_topic: root_data_and_duality
+primary_topic: descent_and_forms
 topics:
 - root_data_and_duality
 - reductive_structure

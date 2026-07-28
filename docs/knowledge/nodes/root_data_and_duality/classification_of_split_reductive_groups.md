@@ -10,13 +10,17 @@ uses:
 - root_data_and_duality.root_data
 - root_data_and_duality.based_root_data
 - root_data_and_duality.pinnings
+- root_data_and_duality.isogeny_types_from_root_datum
 verification:
   definition: accepted
   proof: not_applicable
 generality:
   reviewed: true
-  prompt: "Is the classification stated uniformly over any base, including the SGA3 / Chevalley-over-Z version?"
-  verdict: "Yes. Demazure-Grothendieck classify split reductive groups over any base scheme by their based root datum, with a canonical Z-form (Chevalley group scheme) for each datum."
+  prompt: Is the classification stated uniformly over any base, including the SGA3
+    / Chevalley-over-Z version?
+  verdict: Yes. Demazure-Grothendieck classify split reductive groups over any base
+    scheme by their based root datum, with a canonical Z-form (Chevalley group scheme)
+    for each datum.
 tags:
 - classification
 - split-reductive-groups

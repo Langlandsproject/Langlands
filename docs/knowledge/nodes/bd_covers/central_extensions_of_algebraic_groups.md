@@ -7,7 +7,7 @@ primary_topic: bd_covers
 topics:
 - bd_covers
 uses:
-- linear_algebraic_groups.affine_algebraic_groups
+- affine_group_schemes.affine_algebraic_groups
 - foundational_inputs.hopf_algebras
 verification:
   definition: accepted
@@ -175,5 +175,5 @@ covers).
 
 ## Prerequisite Topics
 
-- [[node:linear_algebraic_groups.affine_algebraic_groups|Affine Algebraic Groups]]
+- [[node:affine_group_schemes.affine_algebraic_groups|Affine Algebraic Groups]]
 - [[node:foundational_inputs.hopf_algebras|Hopf Algebras]]

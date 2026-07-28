@@ -7,7 +7,7 @@ primary_topic: linear_algebraic_groups
 topics:
 - linear_algebraic_groups
 uses:
-- linear_algebraic_groups.affine_algebraic_groups
+- affine_group_schemes.affine_algebraic_groups
 - linear_algebraic_groups.morphisms_and_closed_subgroups
 verification:
   definition: accepted
@@ -47,7 +47,7 @@ right-hand side is the abstract automorphism group in the category of
   recording the involution \(T \mapsto T^{-1}\)).
 - \(\operatorname{Aut}(V) = \operatorname{GL}(V)\) for \(V\) a free
   module — see
-  [[node:linear_algebraic_groups.general_linear_group_scheme|GL_n]].
+  [[node:affine_group_schemes.general_linear_group_scheme|GL_n]].
 
 ## \(\operatorname{Aut}\) of a finite-rank free module
 
@@ -92,5 +92,5 @@ field with non-trivial Galois group).
 
 ## Prerequisite Topics
 
-- [[node:linear_algebraic_groups.affine_algebraic_groups|Affine Algebraic Groups]]
+- [[node:affine_group_schemes.affine_algebraic_groups|Affine Algebraic Groups]]
 - [[node:linear_algebraic_groups.morphisms_and_closed_subgroups|Morphisms and Closed Subgroups]]

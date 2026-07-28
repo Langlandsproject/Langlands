@@ -8,7 +8,7 @@ topics:
 - buildings_and_parahorics
 uses:
 - buildings_and_parahorics.parahoric_subgroups
-- nilpotent_orbits.lie_algebras_of_reductive_groups
+- reductive_structure.reductive_groups
 verification:
   definition: accepted
   proof: not_applicable
@@ -157,4 +157,4 @@ infrastructure.
 ## Prerequisite Topics
 
 - [[node:buildings_and_parahorics.parahoric_subgroups|Parahoric Subgroups]]
-- [[node:nilpotent_orbits.lie_algebras_of_reductive_groups|Lie Algebras of Reductive Groups]]
+- [[node:conjugacy_classes.lie_algebras_of_reductive_groups|Lie Algebras of Reductive Groups]]

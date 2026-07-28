@@ -81,12 +81,12 @@ The dictionary with group schemes:
 2. **Polynomial Hopf algebra \(R[T]\)** with primitive structure:
    \(\Delta(T) = T \otimes 1 + 1 \otimes T\), \(\varepsilon(T) = 0\),
    \(S(T) = -T\). Corresponds to
-   [[node:linear_algebraic_groups.additive_group_scheme|\(\mathbb{G}_a\)]].
+   [[node:affine_group_schemes.additive_group_scheme|\(\mathbb{G}_a\)]].
 
 3. **Laurent polynomial Hopf algebra \(R[T, T^{-1}]\)** with group-like
    structure: \(\Delta(T) = T \otimes T\), \(\varepsilon(T) = 1\),
    \(S(T) = T^{-1}\). Corresponds to
-   [[node:linear_algebraic_groups.multiplicative_group_scheme|\(\mathbb{G}_m\)]].
+   [[node:affine_group_schemes.multiplicative_group_scheme|\(\mathbb{G}_m\)]].
 
 4. **Coordinate Hopf algebra \(R[X_{ij}, \det^{-1}]\)** of
    \(\operatorname{GL}_n\) with matrix-multiplication coproduct
@@ -113,7 +113,7 @@ For ANY Hopf algebra \(A\) (commutative or not),
 **anti-homomorphism** for the multiplication. For commutative \(A\),
 this reduces to \(S(ab) = S(a) S(b)\), making \(S\) an algebra
 homomorphism — see
-[[node:linear_algebraic_groups.antipode_multiplicativity_commutative_hopf|the
+[[node:affine_group_schemes.antipode_multiplicativity_commutative_hopf|the
 commutative version]].
 
 ## Mathlib formalisation
@@ -129,10 +129,10 @@ commutative version]].
   axiom and study convolution inverses.
 
 In this project,
-[[node:linear_algebraic_groups.hopf_spec_functor|`hopfSpec`]] makes
+[[node:affine_group_schemes.hopf_spec_functor|`hopfSpec`]] makes
 Hopf algebras into affine group schemes via Spec; the inverse direction
 (coordinate Hopf algebra of a given affine group scheme) is the content
-of [[node:linear_algebraic_groups.coordinate_hopf_algebra_of_group_scheme|the
+of [[node:affine_group_schemes.coordinate_hopf_algebra_of_group_scheme|the
 coordinate Hopf algebra]] node.
 
 ## References

@@ -29,25 +29,25 @@ is assembled.
 
 ## The additive group \(\mathbb{G}_a\)
 
-[[node:linear_algebraic_groups.additive_group_scheme|\(\mathbb{G}_{a,R}\)]]
+[[node:affine_group_schemes.additive_group_scheme|\(\mathbb{G}_{a,R}\)]]
 \(= \operatorname{Spec} R[T]\) with primitive Hopf structure
 \(\Delta(T) = T \otimes 1 + 1 \otimes T\). Its
-[[node:linear_algebraic_groups.additive_group_scheme_points|functor of
+[[node:affine_group_schemes.additive_group_scheme_points|functor of
 points]] sends \(B \mapsto (B, +)\). One-dimensional, smooth, connected,
 non-reductive.
 
 ## The multiplicative group \(\mathbb{G}_m\)
 
-[[node:linear_algebraic_groups.multiplicative_group_scheme|\(\mathbb{G}_{m,R}\)]]
+[[node:affine_group_schemes.multiplicative_group_scheme|\(\mathbb{G}_{m,R}\)]]
 \(= \operatorname{Spec} R[T, T^{-1}]\) with group-like Hopf structure
 \(\Delta(T) = T \otimes T\). Its
-[[node:linear_algebraic_groups.multiplicative_group_scheme_points|functor
+[[node:affine_group_schemes.multiplicative_group_scheme_points|functor
 of points]] sends \(B \mapsto B^\times\). One-dimensional, smooth,
 connected, reductive (a torus).
 
 ## The \(n\)-th roots of unity \(\mu_n\)
 
-[[node:linear_algebraic_groups.roots_of_unity_group_scheme|\(\mu_{n,R}\)]]
+[[node:affine_group_schemes.roots_of_unity_group_scheme|\(\mu_{n,R}\)]]
 \(= \operatorname{Spec} R[T]/(T^n - 1) \cong \operatorname{Spec} R[\mathbb{Z}/n]\).
 Its points are \(\{x \in B^\times : x^n = 1\}\). Finite of order \(n\);
 étale iff \(n\) is invertible in \(R\); for \(n = p = \operatorname{char}(R)\)
@@ -55,10 +55,10 @@ it acquires an infinitesimal part.
 
 ## The general linear group \(\operatorname{GL}_n\)
 
-[[node:linear_algebraic_groups.general_linear_group_scheme|\(\operatorname{GL}_{n,R}\)]]
+[[node:affine_group_schemes.general_linear_group_scheme|\(\operatorname{GL}_{n,R}\)]]
 \(= \operatorname{Spec} R[X_{ij}, \det^{-1}]\) with matrix-multiplication
 Hopf structure \(\Delta(X_{ij}) = \sum_k X_{ik} \otimes X_{kj}\). Its
-[[node:linear_algebraic_groups.general_linear_group_scheme_points|functor
+[[node:affine_group_schemes.general_linear_group_scheme_points|functor
 of points]] sends \(B \mapsto \operatorname{GL}_n(B)\). Of dimension
 \(n^2\), smooth, connected, reductive.
 
@@ -99,7 +99,7 @@ groups in arbitrary reductive group schemes.
 
 ## Trivial group scheme
 
-[[node:linear_algebraic_groups.trivial_group_scheme|The trivial group
+[[node:affine_group_schemes.trivial_group_scheme|The trivial group
 scheme]] \(\mathrm{e}_{/S} = S\) (with the identity structure morphism)
 is the terminal object of `Grp(Over S)` — every group scheme has a unique
 morphism to it.

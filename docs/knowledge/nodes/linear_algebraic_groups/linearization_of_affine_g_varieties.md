@@ -9,7 +9,7 @@ topics:
 uses:
 - linear_algebraic_groups.algebraic_group_action_orbits_stabilizers
 - linear_algebraic_groups.embedding_theorem
-- linear_algebraic_groups.representation_equals_comodule
+- affine_group_schemes.representation_equals_comodule
 source:
   spans:
   - artifact: springer-linear-algebraic-groups

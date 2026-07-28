@@ -3,7 +3,7 @@ id: descent_and_forms.f_subgroup_field_of_definition
 title: Field of Definition for Subgroups of F-Groups
 kind: theorem
 status: admitted
-primary_topic: descent_and_forms
+primary_topic: linear_algebraic_groups
 topics:
 - descent_and_forms
 - linear_algebraic_groups

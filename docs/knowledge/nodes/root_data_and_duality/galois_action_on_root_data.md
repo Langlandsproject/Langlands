@@ -7,7 +7,6 @@ primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality
 uses:
-- descent_and_forms.rational_forms_of_reductive_groups
 - root_data_and_duality.automorphisms_of_root_data
 verification:
   definition: accepted

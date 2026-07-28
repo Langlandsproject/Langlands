@@ -49,7 +49,7 @@ Partitions parametrise:
   blocks, of \(\operatorname{GL}_n\));
 - via the Bala–Carter labels, nilpotent classes in exceptional Lie
   algebras (see
-  [[node:nilpotent_orbits.bala_carter_classification|Bala–Carter
+  [[node:conjugacy_classes.bala_carter_classification|Bala–Carter
   classification]]).
 
 ## Coxeter groups and Bruhat order

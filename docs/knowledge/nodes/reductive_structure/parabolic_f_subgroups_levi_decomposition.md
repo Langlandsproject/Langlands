@@ -3,7 +3,7 @@ id: reductive_structure.parabolic_f_subgroups_levi_decomposition
 title: Levi Decomposition for Parabolic F-Subgroups
 kind: theorem
 status: admitted
-primary_topic: reductive_structure
+primary_topic: root_data_and_duality
 topics:
 - reductive_structure
 - descent_and_forms

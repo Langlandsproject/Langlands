@@ -6,7 +6,8 @@ status: admitted
 primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality
-uses: []
+uses:
+- root_data_and_duality.root_pairing
 verification:
   definition: accepted
   proof: not_applicable
@@ -64,7 +65,8 @@ The same permutation \(r_i\) occurs in both formulas. This records that the
 reflection on roots and the dual reflection on coroots correspond under the
 common index set.
 
-In Lean, this data is the structure \(RootPairing\ \iota\ R\ M\ N\).
+In Lean, this data is the structure \(RootPairing\ \iota\ R\ M\ N\); see
+[[node:root_data_and_duality.root_pairing|Root Pairings]].
 
 ## Root-system condition
 
@@ -92,10 +94,55 @@ The following are not built into \(IsRootSystem\):
 
 Consequently, "finite reduced crystallographic root system" means a
 \(RootPairing\) carrying all four pieces of information: \(Finite\ \iota\),
-\(P.IsRootSystem\), \(P.IsCrystallographic\), and \(P.IsReduced\).
+\(P.IsRootSystem\), \(P.IsCrystallographic\), and \(P.IsReduced\). See
+[[node:root_data_and_duality.crystallographic_and_reduced|Crystallographic
+and Reduced Root Systems]].
 
 The familiar Euclidean definition is a realization of this interface over
 \(\mathbb R\), not the primary definition.
+
+## Classification
+
+Finite reduced crystallographic root systems decompose uniquely into
+irreducible ones, and the irreducible ones are classified by the connected
+Dynkin diagrams
+
+\[
+A_n \;(n \ge 1), \quad B_n \;(n \ge 2), \quad C_n \;(n \ge 3), \quad
+D_n \;(n \ge 4), \quad E_6, \quad E_7, \quad E_8, \quad F_4, \quad G_2.
+\]
+
+The classification is developed in
+[[node:root_data_and_duality.classification_of_root_systems|Classification of
+Root Systems]].
+
+## Examples (Euclidean realizations)
+
+### \(A_{n-1}\)
+
+\(V \subseteq \mathbb{R}^n\) the hyperplane \(\sum x_i = 0\);
+\(\Phi = \{e_i - e_j : i \ne j\}\); Weyl group \(S_n\) acting by
+permutation.
+
+### \(B_n\)
+
+\(V = \mathbb{R}^n\);
+\(\Phi = \{\pm e_i \pm e_j : i < j\} \cup \{\pm e_i\}\);
+Weyl group \(\{\pm 1\}^n \rtimes S_n\) (signed permutations).
+
+### \(C_n\) (dual of \(B_n\))
+
+\(\Phi = \{\pm e_i \pm e_j : i < j\} \cup \{\pm 2 e_i\}\).
+
+### \(D_n\)
+
+\(\Phi = \{\pm e_i \pm e_j : i < j\}\); only "two-letter" roots,
+simply laced.
+
+### \(G_2\)
+
+Rank 2; 12 roots; two root lengths in ratio \(\sqrt{3} : 1\); Weyl group
+dihedral of order 12.
 
 ## References
 
