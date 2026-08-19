@@ -21,9 +21,8 @@ through `σ`. Its fixed points form a `k`-subalgebra
 **twisted form** of the split torus `D(M)`; for `k`-tori this is
 exactly the quasi-inverse of `T ↦ X^*(T)`.
 
-Definitions here are sorry-free. Of the two descent *theorems*, the
-first is proved in `Tori/Speiser.lean`; the second is stated with
-`sorry` and tracked in `docs/TODO.md` (G0 roadmap):
+Everything in this file and its companion `Tori/Speiser.lean` is
+proved (no `sorry`):
 
 * `twistedGroupAlgebra_span_top` (Speiser's lemma / Galois descent):
   the fixed points span `E[M]` over `E`. **Proved** in

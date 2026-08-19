@@ -41,9 +41,10 @@ GaloisDescent (semilinear action + twistedGroupAlgebra defined
 sorry-free), and Speiser (**proved**: general semilinear Galois
 descent `span_fixedPoints_eq_top` via Dedekind independence +
 averaging — infrastructure Mathlib lacks — plus its application
-`twistedGroupAlgebra_span_top`). Single remaining sorry:
-`twistedGroupAlgebra_trivial` (trivial action recovers k[M]; needs
-fixedField ⊤ = ⊥ + coefficientwise descent of Finsupp).*
+`twistedGroupAlgebra_span_top`). `twistedGroupAlgebra_trivial` also proved (2026-08-19 third pass);
+**the Lean library is sorry-free**. Open Lean items: independence
+half of descent, Hopf structure on the twisted algebra, X^* of the
+twisted form.*
 
 Blocks G5, G7, and the `kottwitz_structures` cluster. Land this before
 resuming G1–G4; the Bruhat–Tits nodes silently assume it.
