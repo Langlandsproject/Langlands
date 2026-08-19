@@ -7,7 +7,7 @@ primary_topic: reductive_structure
 topics:
 - reductive_structure
 uses:
-- reductive_structure.algebraic_tori
+- tori.algebraic_tori
 - reductive_structure.unipotent_groups
 - reductive_structure.solvable_groups
 - reductive_structure.levi_subgroups_and_unipotent_radicals
@@ -132,7 +132,7 @@ Reductive groups are the natural setting for:
 
 ## Prerequisite Topics
 
-- [[node:reductive_structure.algebraic_tori|Algebraic Tori]]
+- [[node:tori.algebraic_tori|Algebraic Tori]]
 - [[node:reductive_structure.unipotent_groups|Unipotent Groups]]
 - [[node:reductive_structure.solvable_groups|Solvable Groups]]
 - [[node:reductive_structure.levi_subgroups_and_unipotent_radicals|Levi Subgroups and Unipotent Radicals]]

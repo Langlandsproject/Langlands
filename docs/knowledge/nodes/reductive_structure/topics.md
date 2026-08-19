@@ -4,10 +4,8 @@ This catalog lists topic-level nodes under the `reductive_structure` mathematica
 
 ## Topic Nodes
 
-- [[node:reductive_structure.algebraic_tori|Algebraic Tori]]
 - [[node:reductive_structure.borel_subgroups|Borel Subgroups]]
 - [[node:reductive_structure.central_isogenies|Central Isogenies]]
-- [[node:reductive_structure.character_and_cocharacter_lattices|Character and Cocharacter Lattices]]
 - [[node:reductive_structure.derived_group_center_adjoint_sc_cover|Derived Group, Center, Adjoint Group, and Simply Connected Cover]]
 - [[node:reductive_structure.diagonalizable_groups|Diagonalizable Groups]]
 - [[node:reductive_structure.levi_subgroups_and_unipotent_radicals|Levi Subgroups and Unipotent Radicals]]
@@ -32,7 +30,6 @@ This catalog lists topic-level nodes under the `reductive_structure` mathematica
 - [[node:reductive_structure.reductive_group_radical_and_derived_group|Radical and Derived Group of a Reductive Group]]
 - [[node:reductive_structure.standard_parabolic_classification|Standard Parabolics Are Classified by Simple Roots]]
 - [[node:reductive_structure.levi_decomposition_of_parabolics|Levi Decomposition of Parabolic Subgroups]]
-- [[node:reductive_structure.f_tori_galois_module_classification|F-Tori Are Classified by Galois Modules]]
 - [[node:reductive_structure.maximal_f_tori_exist|Maximal F-Tori Exist in Connected F-Groups]]
 - [[node:reductive_structure.f_split_solvable_fixed_point_theorem|Fixed Point Theorem for F-Split Solvable Groups]]
 - [[node:reductive_structure.maximal_f_split_tori_are_conjugate|Maximal F-Split Tori Are G(F)-Conjugate]]
@@ -48,7 +45,7 @@ These groups are a human execution order only; they do not create DAG edges.
 - #30 Phase J1: [[node:reductive_structure.maximal_tori_are_conjugate|Maximal Tori Are Conjugate]] and [[node:reductive_structure.cartan_subgroups_from_maximal_tori|Cartan Subgroups from Maximal Tori]].
 - #31 Phase H1: [[node:reductive_structure.reductive_group_radical_and_derived_group|Radical and Derived Group of a Reductive Group]].
 - #34 Phase I4: [[node:reductive_structure.standard_parabolic_classification|Standard Parabolics Are Classified by Simple Roots]] and [[node:reductive_structure.levi_decomposition_of_parabolics|Levi Decomposition of Parabolic Subgroups]].
-- #38 Phase M2: [[node:reductive_structure.f_tori_galois_module_classification|F-Tori Are Classified by Galois Modules]], [[node:reductive_structure.maximal_f_tori_exist|Maximal F-Tori Exist in Connected F-Groups]], [[node:reductive_structure.f_split_solvable_fixed_point_theorem|Fixed Point Theorem for F-Split Solvable Groups]], and [[node:reductive_structure.maximal_f_split_tori_are_conjugate|Maximal F-Split Tori Are G(F)-Conjugate]].
+- #38 Phase M2: [[node:tori.f_tori_galois_module_classification|F-Tori Are Classified by Galois Modules]], [[node:reductive_structure.maximal_f_tori_exist|Maximal F-Tori Exist in Connected F-Groups]], [[node:reductive_structure.f_split_solvable_fixed_point_theorem|Fixed Point Theorem for F-Split Solvable Groups]], and [[node:reductive_structure.maximal_f_split_tori_are_conjugate|Maximal F-Split Tori Are G(F)-Conjugate]].
 - #39 Phase M3: [[node:reductive_structure.parabolic_f_subgroups_levi_decomposition|Levi Decomposition for Parabolic F-Subgroups]].
 
 ## Details To Discuss

@@ -9,9 +9,9 @@ topics:
 - root_data_and_duality
 uses:
 - reductive_structure.reductive_groups
-- reductive_structure.algebraic_tori
+- tori.algebraic_tori
 - reductive_structure.maximal_tori
-- reductive_structure.character_and_cocharacter_lattices
+- tori.character_and_cocharacter_lattices
 source:
   spans:
   - artifact: springer-linear-algebraic-groups

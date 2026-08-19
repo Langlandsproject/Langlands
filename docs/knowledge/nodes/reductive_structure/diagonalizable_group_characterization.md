@@ -8,7 +8,6 @@ topics:
 - reductive_structure
 uses:
 - reductive_structure.diagonalizable_groups
-- reductive_structure.character_and_cocharacter_lattices
 source:
   spans:
   - artifact: springer-linear-algebraic-groups

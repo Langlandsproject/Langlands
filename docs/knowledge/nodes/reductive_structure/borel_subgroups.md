@@ -7,7 +7,7 @@ primary_topic: reductive_structure
 topics:
 - reductive_structure
 uses:
-- reductive_structure.algebraic_tori
+- tori.algebraic_tori
 - reductive_structure.solvable_groups
 - linear_algebraic_groups.connected_components
 verification:
@@ -122,6 +122,6 @@ Over a non-algebraically closed field \(k\):
 
 ## Prerequisite Topics
 
-- [[node:reductive_structure.algebraic_tori|Algebraic Tori]]
+- [[node:tori.algebraic_tori|Algebraic Tori]]
 - [[node:reductive_structure.solvable_groups|Solvable Groups]]
 - [[node:linear_algebraic_groups.connected_components|Connected Components]]

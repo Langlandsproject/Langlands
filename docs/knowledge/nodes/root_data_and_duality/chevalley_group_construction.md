@@ -12,7 +12,7 @@ uses:
 - root_data_and_duality.based_root_data
 - root_data_and_duality.pinnings
 - root_data_and_duality.chevalley_isomorphism_theorem
-- reductive_structure.algebraic_tori
+- tori.algebraic_tori
 - affine_group_schemes.affine_group_scheme_definition
 - affine_group_schemes.general_linear_group_scheme
 - root_data_and_duality.chevalley_basis

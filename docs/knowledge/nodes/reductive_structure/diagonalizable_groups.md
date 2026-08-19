@@ -8,7 +8,6 @@ topics:
 - reductive_structure
 uses:
 - linear_algebraic_groups.linear_algebraic_groups
-- reductive_structure.character_and_cocharacter_lattices
 verification:
   definition: accepted
   proof: not_applicable
@@ -76,10 +75,18 @@ characteristic \(p\), all diagonalisable groups are smooth.
 Let \(G = D(M)\) be a diagonalisable group over a field \(k\):
 
 - \(G\) is affine, of multiplicative type;
-- \(G\) is smooth iff \(\mathrm{char}(k) \nmid |M_{\mathrm{tors}}|\);
-- \(G^\circ\) (identity component) is the maximal torus \(D(M/M_{\mathrm{tors}})\);
-- \(\pi_0(G) = D(M_{\mathrm{tors}})\), a finite group of multiplicative
-  type.
+- \(G\) is smooth iff \(M\) has no \(p\)-torsion, where
+  \(p = \mathrm{char}(k)\) (no condition in characteristic zero);
+- \(G^\circ\) (identity component) is \(D(M/M[p'])\), where
+  \(M[p'] \subseteq M_{\mathrm{tors}}\) is the torsion of order prime
+  to \(p\); in characteristic zero \(M[p'] = M_{\mathrm{tors}}\) and
+  \(G^\circ\) is the maximal torus \(D(M/M_{\mathrm{tors}})\), but in
+  characteristic \(p > 0\) the component \(G^\circ\) also contains the
+  infinitesimal part \(D\) of the \(p\)-primary torsion (e.g.
+  \(\mu_p\) is connected);
+- \(\pi_0(G) = D(M[p'])\), a finite etale group of multiplicative
+  type;
+- the maximal subtorus of \(G\) is \(D(M/M_{\mathrm{tors}})\).
 
 ## Twisted forms and groups of multiplicative type
 
@@ -143,4 +150,4 @@ reduce to abelian-group questions.
 ## Prerequisite Topics
 
 - [[node:linear_algebraic_groups.linear_algebraic_groups|Linear Algebraic Groups]]
-- [[node:reductive_structure.character_and_cocharacter_lattices|Character and Cocharacter Lattices]]
+- [[node:tori.character_and_cocharacter_lattices|Character and Cocharacter Lattices]]

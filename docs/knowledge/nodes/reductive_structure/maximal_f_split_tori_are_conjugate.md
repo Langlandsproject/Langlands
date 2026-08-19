@@ -9,7 +9,7 @@ topics:
 - descent_and_forms
 uses:
 - reductive_structure.maximal_f_tori_exist
-- reductive_structure.f_tori_galois_module_classification
+- tori.f_tori_galois_module_classification
 - reductive_structure.f_split_solvable_fixed_point_theorem
 - reductive_structure.parabolic_subgroups
 source:

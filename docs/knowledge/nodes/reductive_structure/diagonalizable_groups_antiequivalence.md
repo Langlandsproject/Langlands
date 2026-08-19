@@ -9,8 +9,6 @@ topics:
 - root_data_and_duality
 uses:
 - reductive_structure.diagonalizable_group_characterization
-- reductive_structure.character_and_cocharacter_lattices
-- reductive_structure.algebraic_tori
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -42,7 +40,10 @@ D \longmapsto X(D)=\operatorname{Hom}(D,\mathbb{G}_m)
 gives an anti-equivalence between diagonalizable algebraic groups over an
 algebraically closed field and finitely generated abelian character groups
 of the allowed type in the given characteristic. Under this correspondence,
-a torus corresponds exactly to a free abelian group of finite rank.
+groups with free abelian character group of finite rank are exactly the
+split tori; how the remaining invariants (smoothness, connectedness)
+read off the torsion of the character group is recorded where tori are
+defined.
 
 For a finitely generated abelian group \(M\), the associated diagonalizable
 group is
@@ -61,5 +62,7 @@ the coordinate Hopf algebra with the group algebra \(k[X(D)]\). A morphism
 Conversely, any finitely generated abelian group \(M\) defines the Hopf
 algebra \(k[M]\), hence the diagonalizable group \(D(M)\). Its characters
 are exactly the basis elements indexed by \(M\). These two constructions are
-inverse to each other. Connected diagonalizable groups are precisely those
-with torsion-free character group, hence precisely tori.
+inverse to each other. Groups with torsion-free character group are
+precisely the split tori; note that in characteristic \(p > 0\)
+connectedness alone does not force torsion-freeness, since the character
+group \(\mathbb{Z}/p\) gives the connected non-smooth group \(\mu_p\).

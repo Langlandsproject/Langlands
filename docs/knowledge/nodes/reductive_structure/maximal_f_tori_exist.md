@@ -9,7 +9,7 @@ topics:
 - descent_and_forms
 uses:
 - reductive_structure.maximal_tori_are_conjugate
-- reductive_structure.f_tori_galois_module_classification
+- tori.f_tori_galois_module_classification
 - reductive_structure.cartan_subgroups_from_maximal_tori
 - descent_and_forms.f_subgroup_field_of_definition
 source:

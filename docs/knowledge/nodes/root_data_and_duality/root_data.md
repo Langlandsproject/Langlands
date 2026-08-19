@@ -7,7 +7,7 @@ primary_topic: root_data_and_duality
 topics:
 - root_data_and_duality
 uses:
-- reductive_structure.character_and_cocharacter_lattices
+- tori.character_and_cocharacter_lattices
 - root_data_and_duality.root_pairing
 - root_data_and_duality.root_systems
 verification:
@@ -142,4 +142,4 @@ This is the combinatorial operation underlying Langlands duality.
 
 - [[node:root_data_and_duality.root_pairing|Root Pairings]]
 - [[node:root_data_and_duality.root_systems|Root Systems]]
-- [[node:reductive_structure.character_and_cocharacter_lattices|Character and Cocharacter Lattices]]
+- [[node:tori.character_and_cocharacter_lattices|Character and Cocharacter Lattices]]

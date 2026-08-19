@@ -8,7 +8,7 @@ topics:
 - reductive_structure
 uses:
 - reductive_structure.reductive_groups
-- reductive_structure.algebraic_tori
+- tori.algebraic_tori
 - reductive_structure.semisimple_groups
 source:
   spans:

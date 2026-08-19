@@ -8,7 +8,7 @@ topics:
 - reductive_structure
 uses:
 - reductive_structure.reductive_groups
-- reductive_structure.algebraic_tori
+- tori.algebraic_tori
 verification:
   definition: accepted
   proof: not_applicable
@@ -161,4 +161,4 @@ abstractly; specific algebraic-group maximal tori are not formalised.
 ## Prerequisite Topics
 
 - [[node:reductive_structure.reductive_groups|Reductive Groups]]
-- [[node:reductive_structure.algebraic_tori|Algebraic Tori]]
+- [[node:tori.algebraic_tori|Algebraic Tori]]

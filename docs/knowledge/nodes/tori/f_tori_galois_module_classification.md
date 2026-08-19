@@ -1,15 +1,16 @@
 ---
-id: reductive_structure.f_tori_galois_module_classification
+id: tori.f_tori_galois_module_classification
 title: F-Tori Are Classified by Galois Modules
 kind: theorem
 status: admitted
-primary_topic: reductive_structure
+primary_topic: tori
 topics:
-- reductive_structure
+- tori
 - descent_and_forms
 uses:
+- tori.algebraic_tori
 - reductive_structure.diagonalizable_groups_antiequivalence
-- reductive_structure.character_and_cocharacter_lattices
+- tori.character_and_cocharacter_lattices
 - descent_and_forms.galois_groups_and_descent_data
 - descent_and_forms.rational_forms_of_linear_algebraic_groups
 source:
@@ -35,7 +36,7 @@ tags:
 - galois-module
 - f-group
 - theorem
-- reductive-structure
+- tori
 ---
 
 # F-Tori Are Classified by Galois Modules

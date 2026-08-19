@@ -59,7 +59,7 @@ H^1(\Gamma', \mathrm{Aut}(\mathbb{G}_m^n)) \;=\; H^1(\Gamma', \mathrm{GL}_n(\mat
 \]
 i.e.\ continuous representations \(\Gamma' \to \mathrm{GL}_n(\mathbb{Z})\)
 up to conjugation. This recovers the
-[[node:reductive_structure.algebraic_tori|torus-lattice equivalence]].
+[[node:tori.algebraic_tori|torus-lattice equivalence]].
 
 ### Unipotent groups
 

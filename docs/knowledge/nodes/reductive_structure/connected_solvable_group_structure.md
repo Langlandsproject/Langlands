@@ -9,7 +9,7 @@ topics:
 uses:
 - reductive_structure.solvable_groups
 - reductive_structure.unipotent_groups
-- reductive_structure.algebraic_tori
+- tori.algebraic_tori
 - reductive_structure.lie_kolchin_theorem
 source:
   spans:

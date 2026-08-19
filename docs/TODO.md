@@ -28,6 +28,12 @@ noted; each goal leaves the DAG consistent and publishable.
 
 ## G0 — Algebraic tori (prerequisite layer)
 
+*2026-08-19: definitional core landed — topic `tori` registered, 17
+nodes under `docs/knowledge/nodes/tori/` (2 migrated, 15 new),
+`tools.knowledge.check` at 0 errors. Also added
+`multiplicative_type_characterization` (the char-p trichotomy node,
+not in the original list). Open: G0.2 machinery migration, G0.5–G0.10.*
+
 Blocks G5, G7, and the `kottwitz_structures` cluster. Land this before
 resuming G1–G4; the Bruhat–Tits nodes silently assume it.
 
@@ -94,10 +100,10 @@ not smooth: it belongs to `affine_group_schemes`.
 
 ### G0.0 — Architecture repair (do first)
 
-- [ ] Create a top-level topic `tori` positioned per (D3): it `uses`
+- [x] Create a top-level topic `tori` positioned per (D3): it `uses`
       `linear_algebraic_groups` and `affine_group_schemes`; it is used
       by `reductive_structure`. Not a child of `reductive_structure`.
-- [ ] Move the machinery down: `diagonalizable_groups`,
+- [ ] (partial 2026-08-19: `algebraic_tori`, `character_and_cocharacter_lattices`, `f_tori_galois_module_classification` moved into `tori` with full id renames; diagonalizable trio still in `reductive_structure`, char-p component-group errors in them fixed in place) Move the machinery down: `diagonalizable_groups`,
       `diagonalizable_group_characterization`,
       `diagonalizable_groups_antiequivalence` (and a new
       multiplicative-type node) migrate to `affine_group_schemes`,
@@ -105,7 +111,7 @@ not smooth: it belongs to `affine_group_schemes`.
       `algebraic_tori`, `character_and_cocharacter_lattices`,
       `f_tori_galois_module_classification` into `tori`. Keep id
       aliases so existing `uses:` edges resolve during the move.
-- [ ] Fix the inverted dependency: the multiplicative-type nodes must
+- [x] Fix the inverted dependency: the multiplicative-type nodes must
       NOT `uses` `algebraic_tori`. The general anti-equivalence comes
       first; tori are the torsion-free case.
 - [ ] Add a convention node in `linear_algebraic_groups`: LAG :=
@@ -114,7 +120,7 @@ not smooth: it belongs to `affine_group_schemes`.
       with the embedding theorem G ↪ GL_n as the bridge to the
       classical picture. Torus nodes then inherit LAG-ness by the
       smoothness criterion below rather than by fiat.
-- [ ] Split `algebraic_tori` (currently one `kind: topic` node carrying
+- [x] Split `algebraic_tori` (currently one `kind: topic` node carrying
       ~8 definitions and 3 theorems, which makes its
       `verification.definition` field meaningless) into separate
       definition and theorem nodes, each with its own `source:` span.
@@ -129,7 +135,7 @@ These are formalization-driven. Each one removes a choice, a `Q`, or a
 base point that would otherwise have to be carried through the whole
 building development.
 
-- [ ] **`X_*` is the working lattice.** State the anti-equivalence with
+- [x] **`X_*` is the working lattice.** State the anti-equivalence with
       `X^*` (standard, and KP's convention), then fix
       `X_* = Hom(X^*, Z)` and phrase every downstream statement in
       `X_*`. Building theory consumes `X_*` only.
@@ -139,7 +145,7 @@ building development.
       with no choice; `X_*(T)^Θ ⊗ Q` needs the KP Lem. 2.5.5 comparison.
       Record `X_*(T)_I ⊗ Q ≅ X_*(T)^I ⊗ Q` as a lemma and use it in no
       definition.
-- [ ] **No `Q`- or `R`-valued map is primitive.** Every primitive map is
+- [x] **No `Q`- or `R`-valued map is primitive.** Every primitive map is
       `Z`-valued into a finitely generated abelian group. `⊗ R` happens
       once, at the apartment, and nowhere else.
 - [ ] **The apartment is an `AddTorsor`, not a vector space.** KP's
@@ -149,12 +155,12 @@ building development.
       "the origin". This is Mathlib-native and must be fixed now,
       because retrofitting a base point out of the apartment nodes
       later is a rewrite.
-- [ ] **`X^*(T) = Hom_{k_s}(T, G_m)`** with the Galois action as
+- [x] **`X^*(T) = Hom_{k_s}(T, G_m)`** with the Galois action as
       separate data (KP p. 86). No `\bar k` anywhere in the torus or
       building clusters.
-- [ ] **Anisotropic means `X_*(T)^Θ = 0`** (KP Prop. 2.5.8). The current
+- [x] **Anisotropic means `X_*(T)^Θ = 0`** (KP Prop. 2.5.8). The current
       node states it two incompatible ways; pick this one everywhere.
-- [ ] Avoid naming a splitting field in statements. Phrase as "there
+- [x] Avoid naming a splitting field in statements. Phrase as "there
       exists a finite Galois `E/k` such that …", with `E`-independence
       proved as a lemma wherever a construction appears to need one
       (this is exactly the shape of KP Lem. 2.5.12 and Prop. 11.1.1).
@@ -181,41 +187,41 @@ placed in `affine_group_schemes` per (D3))
 
 ### G0.3 — Torus structure (Tier A)
 
-- [ ] `torus_definition` [def] — multiplicative type with `X^*(T)`
+- [x] `torus_definition` [def] — multiplicative type with `X^*(T)`
       **torsion-free**; equivalently smooth **and** connected
       multiplicative type; equivalently `T_{k_s} ≅ G_m^n`. Record the
       char-p trichotomy that forces this phrasing: `D(M)` is smooth ⟺
       `M` has no p-torsion, connected ⟺ `M` has no prime-to-p torsion;
       so μ_p is connected multiplicative type but NOT a torus, and
       "connected multiplicative type" alone is a wrong definition.
-- [ ] `tori_are_linear_algebraic` [thm] — torsion-free ⟹ smooth, so a
+- [x] (folded into `torus_definition`: the definition takes T to be a linear algebraic group, and `multiplicative_type_characterization` carries the smoothness content) `tori_are_linear_algebraic` [thm] — torsion-free ⟹ smooth, so a
       torus is a linear algebraic group; this is the edge `tori` →
       `linear_algebraic_groups` demanded by (D3).
-- [ ] `splitting_field` [thm] — minimal splitting field is finite
+- [x] `splitting_field` [thm] — minimal splitting field is finite
       Galois; `Gal(E/k) ↪ GL_n(Z)`.
-- [ ] `subtori_quotients_dictionary` [thm] — subtori ↔ saturated
+- [x] (as `subtori_and_quotients`) `subtori_quotients_dictionary` [thm] — subtori ↔ saturated
       quotients of `X^*(T)`; quotient tori ↔ saturated submodules.
-- [ ] `split_anisotropic_decomposition` [thm] — `X_*(S) = X_*(T)^Θ`,
+- [x] `split_anisotropic_decomposition` [thm] — `X_*(S) = X_*(T)^Θ`,
       `X^*(T_a) = X^*(T)/X^*(T)^Θ`; `T = S · T_a` is an almost direct
       product, **not** a direct product. Include the `R_{E/k}G_m`
       counterexample. `X_*(S)` is the lattice the apartment is built on,
       so this node is on the building's critical path.
-- [ ] `weil_restriction_of_tori` [thm] — `X^*(R_{E/k}T) = Ind`.
-- [ ] `rank_one_classification` [example] — `G_m` and `R^1_{E/k}G_m`
+- [x] `weil_restriction_of_tori` [thm] — `X^*(R_{E/k}T) = Ind`.
+- [x] `rank_one_classification` [example] — `G_m` and `R^1_{E/k}G_m`
       exhaust rank one.
 
 ### G0.4 — Special classes of tori (Tier A)
 
-- [ ] `induced_tori` [def] — permutation lattice ⟺ product of
+- [x] `induced_tori` [def] — permutation lattice ⟺ product of
       `R_{E_i/k}G_m` (KP Def. 2.5.1). Record KP's terminology warning:
       do not call these "quasi-split tori"; every torus is a quasi-split
       reductive group.
-- [ ] `induced_resolution` [thm] — `R_1 → R_0 → T → 1` (KP Lem. 2.5.3).
+- [x] `induced_resolution` [thm] — `R_1 → R_0 → T → 1` (KP Lem. 2.5.3).
       The reduction engine for G0.5–G0.8; state it early.
-- [ ] `unramified_torus` [def] — splits over `K` (KP Def. 16.1).
-- [ ] `tamely_ramified_torus` [def] — splits over a tame Galois
+- [x] `unramified_torus` [def] — splits over `K` (KP Def. 16.1).
+- [x] `tamely_ramified_torus` [def] — splits over a tame Galois
       extension (KP Def. 17.1).
-- [ ] `weakly_induced_torus` [def] — wild inertia permutes a basis
+- [x] `weakly_induced_torus` [def] — wild inertia permutes a basis
       (KP Def. B.6.2).
 - [ ] `flasque_coflasque_resolution` [thm] — Colliot-Thélène–Sansuc.
       Not used by KP and not on the building path; drop from this goal

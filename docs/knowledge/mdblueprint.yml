@@ -127,6 +127,8 @@ topics:
   title: Affine Group Schemes
 - id: linear_algebraic_groups
   title: Linear Algebraic Groups
+- id: tori
+  title: Algebraic Tori
 - id: descent_and_forms
   title: Galois Descent, Cohomology, and Forms
 - id: reductive_structure
