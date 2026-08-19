@@ -8,12 +8,15 @@ import Mathlib.RepresentationTheory.Basic
 Textbook definitions transcribed (conventions §6, transcription
 procedure):
 
-* **X^*(T) := Hom(T, 𝔾ₘ)** — `CharLattice R A` is the character
-  group `HopfCharacterGroup R A` (homomorphisms of algebraic groups
-  `Spec A → 𝔾ₘ`, the repo's faithful form) **written additively**,
-  as the literature writes the character lattice. This `Additive`
-  is the single point where the multiplicative character group is
-  identified with the lattice notation.
+* **X^*(T) := Hom(T, 𝔾ₘ)** — the definition is `CharacterGroup`
+  (morphisms of algebraic groups, `CharacterGroup.lean`).
+  `CharLattice R A` is the **coordinate presentation**
+  `HopfCharacterGroup R A` written additively, as the literature
+  writes the lattice; it is identified with the definition by the
+  (M0) bridge `nonempty_characterGroup_equiv_hopf`, and the lattice
+  layer rebases onto the definition once that bridge is proved
+  (recorded in TODO). The `Additive` here is the single point where
+  the multiplicative character group meets the lattice notation.
 * **γ · χ := γ_{𝔾ₘ} ∘ χ ∘ γ_T⁻¹** — the Galois action on characters
   is conjugation (`conjChar`); on coordinate rings, `γ · χ =
   (γ ⊗ 1) ∘ χ ∘ γ_*⁻¹` with `γ_*` the coefficientwise action on
@@ -42,10 +45,12 @@ universe u v
 
 variable (R : Type u) [CommRing R] [IsDomain R]
 
-/-- **The character lattice** `X^*(Spec A) := Hom(Spec A, 𝔾ₘ)`: the
-character group (`HopfCharacterGroup`, the faithful Hom-form), written
-additively as in the literature — `X^*` is a lattice with `ℤ`-valued
-pairings.
+/-- **The character lattice** `X^*(Spec A)`, working form: the
+coordinate presentation `HopfCharacterGroup` of the character group,
+written additively as in the literature — `X^*` is a lattice with
+`ℤ`-valued pairings. The definition of a character is
+`CharacterGroup` (a homomorphism of algebraic groups); the
+identification is the (M0) bridge.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/

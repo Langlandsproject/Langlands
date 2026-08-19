@@ -72,7 +72,16 @@ mathematical definition**. The procedure that prevents it:
 6. **`Examples/` holds only illustrations.** Anything referenced by
    a definition elsewhere is a construction, not an example, and is
    promoted out of `Examples/` (burned: `Gm`).
-7. **Plans do not override conventions.** A plan line that encodes a
+7. **Fixes replace, never layer.** When a review corrects a
+   definition, the old form is *replaced* — not kept under its old
+   name beside the new one, and the concept's name is never handed
+   to a convenience composite over the real definition. Dual pairs
+   (`X^*`/`X_*`) are defined in the same shape, differing only where
+   the mathematics differs (one arrow direction). Burned:
+   `CharacterGroup` briefly became a `CommRingCat.of` composite over
+   `SchemeCharacterGroup` while `CocharacterGroup` was a raw hom —
+   two styles for dual concepts (2026-08-19).
+8. **Plans do not override conventions.** A plan line that encodes a
    convenient-form definition (it happened: plan M5 said
    "charLattice := GroupLike…") is a bug in the plan; conventions
    §6 wins and the plan line gets annotated, not executed.

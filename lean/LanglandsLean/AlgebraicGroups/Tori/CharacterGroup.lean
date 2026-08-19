@@ -94,14 +94,24 @@ noncomputable def specGrp (A : Type u) [CommRing A] [HopfAlgebra Rc A] :
   { X := specObjOver Rc A
     grp := hopfSpecGrpObj Rc A }
 
-/-- The character group of an arbitrary algebraic group:
-`X^*(G) = Hom_grp(G, 𝔾ₘ)`.
+/-- **The character group** `X^*(G) := Hom_grp(G, 𝔾ₘ)`: morphisms
+of algebraic groups into the multiplicative group — the textbook
+definition, verbatim, with `G` the subject.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-noncomputable def SchemeCharacterGroup
+noncomputable def CharacterGroup
     (G : Grp (Over (Scheme.Spec.obj (op Rc)))) : Type _ :=
   G ⟶ gmGrp Rc
+
+/-- **The cocharacter group** `X_*(G) := Hom_grp(𝔾ₘ, G)` —
+symmetric to `CharacterGroup`.
+
+Blueprint: tori.character_and_cocharacter_lattices
+-/
+noncomputable def CocharacterGroup
+    (G : Grp (Over (Scheme.Spec.obj (op Rc)))) : Type _ :=
+  gmGrp Rc ⟶ G
 
 /-- `D(M)` bundled as a group object. -/
 noncomputable def diagGrp (M : Type u) [AddCommGroup M] :
@@ -126,33 +136,12 @@ pass, via the two bridge stages): algebraic-group homomorphisms
 
 Blueprint: tori.characters_as_group_like_elements
 -/
-theorem schemeCharacter_diag_equiv (M : Type u) [AddCommGroup M]
+theorem characterGroup_diag_equiv (M : Type u) [AddCommGroup M]
     [IsDomain Rc] :
-    Nonempty (SchemeCharacterGroup Rc (diagGrp Rc M) ≃ Multiplicative M) := by
+    Nonempty (CharacterGroup Rc (diagGrp Rc M) ≃ Multiplicative M) := by
   sorry
 
 end SchemeLevel
-
-/-- **The character group** `X^*(Spec A) = Hom_grp(Spec A, 𝔾ₘ)`:
-morphisms of algebraic groups from `Spec A` to the multiplicative
-group — the textbook definition, verbatim. The coordinate
-presentation `HopfCharacterGroup` below is the working form,
-identified with this one by the (M0) bridge
-`nonempty_characterGroup_equiv_hopf`.
-
-Blueprint: tori.character_and_cocharacter_lattices
--/
-noncomputable def CharacterGroup (A : Type u) [CommRing A]
-    [HopfAlgebra R A] : Type _ :=
-  SchemeCharacterGroup (CommRingCat.of R) (specGrp (CommRingCat.of R) A)
-
-/-- **The cocharacter group** `X_*(Spec A) = Hom_grp(𝔾ₘ, Spec A)`.
-
-Blueprint: tori.character_and_cocharacter_lattices
--/
-noncomputable def CocharacterGroup (A : Type u) [CommRing A]
-    [HopfAlgebra R A] : Type _ :=
-  gmGrp (CommRingCat.of R) ⟶ specGrp (CommRingCat.of R) A
 
 /-! ### The coordinate presentation (working form) -/
 
@@ -186,8 +175,8 @@ with the character group of algebraic-group homomorphisms.
 Blueprint: affine_group_schemes.group_scheme_homomorphism
 -/
 theorem nonempty_characterGroup_equiv_hopf
-    (A : Type u) [CommRing A] [HopfAlgebra R A] :
-    Nonempty (CharacterGroup R A ≃ HopfCharacterGroup R A) := by
+    (Rc : CommRingCat.{u}) (A : Type u) [CommRing A] [HopfAlgebra Rc A] :
+    Nonempty (CharacterGroup Rc (specGrp Rc A) ≃ HopfCharacterGroup Rc A) := by
   sorry
 
 variable (M N : Type v) [AddCommGroup M] [AddCommGroup N]

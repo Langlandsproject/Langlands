@@ -20,7 +20,6 @@ lean:
   - Langlands.Tori.CocharLattice
   - Langlands.Tori.charPairing
   - Langlands.Tori.charPairing_perfect
-  - Langlands.Tori.SchemeCharacterGroup
   - Langlands.Tori.gmGrp
   - Langlands.Tori.CharacterGroup
   - Langlands.Tori.HopfCharacterGroup

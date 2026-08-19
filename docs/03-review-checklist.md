@@ -38,6 +38,10 @@ show the statements to the owner before the proof pass.
       already has a name (repo or Mathlib) is referenced by that
       name; no inline re-spelling, no second definitions, no
       re-encoded Homs (conventions §6, reuse rule).
+- [ ] **No layering, symmetric duals**: corrected definitions
+      replace the old ones (no compat layers, no concept names on
+      convenience composites); dual pairs are stated in the same
+      shape.
 - [ ] **Hierarchy transcribed**: if the notion is a special case of a
       general KB notion, is the Lean definition literally *general +
       condition* (class field / conjunct), not a standalone
