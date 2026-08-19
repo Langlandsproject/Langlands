@@ -32,7 +32,16 @@ noted; each goal leaves the DAG consistent and publishable.
 nodes under `docs/knowledge/nodes/tori/` (2 migrated, 15 new),
 `tools.knowledge.check` at 0 errors. Also added
 `multiplicative_type_characterization` (the char-p trichotomy node,
-not in the original list). Open: G0.2 machinery migration, G0.5–G0.10.*
+not in the original list). Open: G0.2 machinery migration, G0.5–G0.10. Lean side (2026-08-19,
+second pass): toolchain upgraded v4.28→v4.33; `LanglandsLean/Tori/`
+has Diagonalizable (D(M)), SplitTorus (D(Z^n)), CharacterGroup
+(X^*, X_*, Cartier T1a **proved** at object/hom/iso level over a
+domain, riding v4.33's GroupLike + mapDomainBialgHomEquiv), and
+GaloisDescent (semilinear action + twistedGroupAlgebra defined
+sorry-free; Speiser span theorem and trivial-action computation
+stated with sorry — proof route: Dedekind independence
+`linearIndependent_monoidHom` + averaging, no Mathlib descent
+needed).*
 
 Blocks G5, G7, and the `kottwitz_structures` cluster. Land this before
 resuming G1–G4; the Bruhat–Tits nodes silently assume it.

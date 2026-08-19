@@ -2,3 +2,4 @@ import LanglandsLean.AlgebraicGeometry
 import LanglandsLean.Tori.Diagonalizable
 import LanglandsLean.Tori.SplitTorus
 import LanglandsLean.Tori.CharacterGroup
+import LanglandsLean.Tori.GaloisDescent
