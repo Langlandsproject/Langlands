@@ -35,6 +35,8 @@ Galois-ness is not needed for the span statement.
 `tori.f_tori_galois_module_classification`.
 -/
 
+open scoped TensorProduct
+
 namespace Langlands.Forms
 
 universe u v
@@ -178,5 +180,7 @@ theorem span_fixedPoints_eq_top
     Submodule.smul_mem _ _ (Submodule.subset_span (havg c))
 
 end Semilinear
+
+
 
 end Langlands.Forms

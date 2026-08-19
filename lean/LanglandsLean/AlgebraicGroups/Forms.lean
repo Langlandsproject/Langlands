@@ -1,4 +1,5 @@
 import LanglandsLean.AlgebraicGroups.Forms.GaloisDescent
+import LanglandsLean.AlgebraicGroups.Forms.GaloisDescentStatements
 
 /-!
 # Forms and Galois Descent
