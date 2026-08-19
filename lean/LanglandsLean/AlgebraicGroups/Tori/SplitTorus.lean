@@ -1,34 +1,41 @@
 import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
+import Mathlib.RingTheory.Finiteness.Defs
+import Mathlib.LinearAlgebra.FreeModule.Basic
 
 /-!
-# Split tori `D(ℤ^n) = Spec R[x_1^{±1}, …, x_n^{±1}]`
+# Split tori `D(M) = Spec R[M]` for a lattice `M`
 
-The **split torus of rank `n`** over `Spec R` is the diagonalizable
-group scheme of the free abelian group `ℤ^n`:
+The **split torus** over `Spec R` presented by a lattice `M` (a
+finite free `ℤ`-module) is the diagonalizable group scheme
 
 \[
-\mathbb{G}_{m}^{\,n} \;=\; D(\mathbb{Z}^n) \;=\;
-\operatorname{Spec} R[\mathbb{Z}^n],
+D(M) \;=\; \operatorname{Spec} R[M],
 \]
 
-whose coordinate ring is the Laurent polynomial ring in `n`
-variables. For `n = 1` this recovers `G_m` (`Examples/Gm.lean`,
-where the coordinate ring is presented as `LaurentPolynomial R`).
+whose coordinate ring is the Laurent polynomial ring in
+`Module.finrank ℤ M` variables once a basis is chosen. For `M = ℤ`
+this recovers `G_m` (`Examples/Gm.lean`, where the coordinate ring is
+presented as `LaurentPolynomial R`).
+
+The definition is parameterized by the lattice, not by a rank `n`
+with the hard-coded skeleton `Fin n → ℤ`: the skeleton lives in
+`Type 0` while `R` is universe-polymorphic, and baking it in forces
+`ULift` into every statement. Universe bookkeeping stays out of the
+public API; concrete `Fin n → ℤ` instantiations belong in examples
+over `Type 0`, where they typecheck as-is. (Design rule: conventions
+§7.)
 
 In the knowledge base, a torus over a field is a form of a split
 torus (`tori.torus_definition`), and `tori.split_torus` is the case
-where no Galois twisting occurs. Étale descent for forms is not yet
-available in Mathlib, so the Lean development takes the split torus
-as its primitive scheme-level object; the general torus enters
+where no Galois twisting occurs. The general torus enters
 lattice-first (a Galois lattice, with `D` applied after base change),
 as recorded in the G0 roadmap.
 
 ## Main declarations
 
-* `splitTorusOver R n` — `D(ℤ^n)` as an object of `Over (Spec R)`, with
-  its group-object structure and `IsAlgebraicGroup` instance inherited
-  from `Tori/Diagonalizable.lean`.
-* `SplitTorus R n` — the underlying scheme.
+* `splitTorusOver R M` — `D(M)` as an object of `Over (Spec R)`, with
+  its group-object structure inherited from `diagGroupOver`.
+* `SplitTorus R M` — the underlying scheme.
 
 ## Knowledge base
 
@@ -41,35 +48,37 @@ open Langlands.AlgebraicGeometry.AlgHomPointsPresheaf
 
 namespace Langlands.Tori
 
-universe u w
+universe u
 
-variable (R : CommRingCat.{u}) (n : ℕ)
+/-- A `ℤ`-finite module is additively finitely generated. This lets
+the finite-type instances of `diagGroupOver` (keyed on
+`[AddMonoid.FG M]`) fire for a lattice given as
+`[Module.Finite ℤ M]`. Scoped: Mathlib's global instance
+`AddMonoid.FG.to_moduleFinite_int` goes the other way, and a global
+converse would set up a typeclass cycle. -/
+scoped instance (M : Type*) [AddCommGroup M] [Module.Finite ℤ M] :
+    AddMonoid.FG M :=
+  AddGroup.fg_iff_addMonoid_fg.mp (Module.Finite.iff_addGroup_fg.mp ‹_›)
 
-/-- `ULift` preserves finite generation of additive monoids: transfer
-along the surjective hom `ULift.addEquiv.symm`. Mathlib has the pi and
-`ℤ` instances but not this one; it is what lets the rank-`n` lattice
-`ℤ^n : Type 0` feed the universe-polymorphic `diagonalizable`. -/
-instance {M : Type*} [AddMonoid M] [AddMonoid.FG M] :
-    AddMonoid.FG (ULift.{w} M) :=
-  AddMonoid.fg_of_surjective
-    (AddEquiv.ulift.symm : M ≃+ ULift M).toAddMonoidHom
-    (AddEquiv.ulift.symm : M ≃+ ULift M).surjective
+variable (R : CommRingCat.{u}) (M : Type u)
+variable [AddCommGroup M] [Module.Free ℤ M] [Module.Finite ℤ M]
 
-/-- The split torus of rank `n` over `Spec R`, as the diagonalizable
-group scheme of the free abelian group `ℤ^n`. Being an `abbrev`, it
-inherits every instance of `diagGroupOver` — group object, affine
-group scheme, algebraic group.
+/-- The split torus over `Spec R` presented by the lattice `M`: the
+diagonalizable group scheme `D(M)` of a finite free abelian group.
+Its rank is `Module.finrank ℤ M`. Being an `abbrev`, it inherits
+every instance of `diagGroupOver` — group object, affine group
+scheme, algebraic group.
 
 Blueprint: tori.split_torus
 -/
 noncomputable abbrev splitTorusOver : Over (Scheme.Spec.obj (op R)) :=
-  diagGroupOver R (ULift.{u} (Fin n → ℤ))
+  diagGroupOver R M
 
-/-- The underlying scheme of the rank-`n` split torus.
+/-- The underlying scheme of the split torus of the lattice `M`.
 
 Blueprint: tori.split_torus
 -/
-noncomputable abbrev SplitTorus : Scheme.{u} := (splitTorusOver R n).left
+noncomputable abbrev SplitTorus : Scheme.{u} := (splitTorusOver R M).left
 
 /- Instance availability (GrpObj, IsAffineGroupScheme, IsAlgebraicGroup)
 is inherited from `diagGroupOver` since `splitTorusOver` is an

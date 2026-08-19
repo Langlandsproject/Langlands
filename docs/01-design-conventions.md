@@ -169,6 +169,17 @@ workflow bug, not a knowledge bug:
   discussion in `lean/LanglandsLean/AlgebraicGeometry/Conventions.lean`.
 - Inner loop: Lean LSP MCP diagnostics/goals; full `lake build` only at
   checkpoints.
+- **No `ULift` (or any universe shim) in public statements.** A
+  universe mismatch means the design hard-codes a `Type 0` skeleton
+  (`Fin n → ℤ`, `ℤ`, `ℚ`) into a universe-polymorphic definition. The
+  fix is Mathlib's: parameterize over a carrier in the ambient
+  universe with the right typeclasses (`[Module.Free ℤ M]`
+  `[Module.Finite ℤ M]` for a lattice) and let the skeleton appear
+  only in `Type 0` examples, where `max u 0 = u` makes it typecheck
+  without lifting. Burned once: `splitTorusOver R n :=
+  diagGroupOver R (ULift (Fin n → ℤ))` plus a transfer instance —
+  both deleted when the definition was re-parameterized by `M`
+  (2026-08-19).
 
 ## 8. Lean naming (Mathlib conventions, binding)
 

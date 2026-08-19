@@ -145,8 +145,8 @@ cd lean && lake build
 
 ## Design conventions
 
-All in `docs/01-design-conventions.md`. Three that are broken most
-often — the full text and examples are in that file, §6:
+All in `docs/01-design-conventions.md`. The ones broken most often —
+full text and examples are in that file (§6–§8):
 
 1. **Faithful formalization**: Lean definitions mirror the KB
    statement's form; computed/equivalent descriptions are theorems,
@@ -156,7 +156,15 @@ often — the full text and examples are in that file, §6:
    conversion-glossary entry in the module docstring.
 3. **No smoke tests**: examples go in `Examples` sections/files;
    instance checks live in real downstream uses.
-4. **Mathlib naming, binding** (full rules: conventions §8): types
+4. **No universe hacking** (full rule: conventions §7): never write
+   `ULift`/universe shims into public statements, and do not add
+   `universe`/`Type*` gymnastics beyond what Mathlib's own signatures
+   force. A universe mismatch means a `Type 0` skeleton
+   (`Fin n → ℤ`) was hard-coded where the definition should be
+   parameterized over a carrier with typeclasses
+   (`[Module.Free ℤ M] [Module.Finite ℤ M]`). Skeletons belong in
+   `Type 0` examples only.
+5. **Mathlib naming, binding** (full rules: conventions §8): types
    and predicates UpperCamel (`IsTorusAlgebra`); data terms lowerCamel
    (`descentMap`); theorems snake_case named by conclusion with
    Mathlib patterns (`_eq_top`, `foo_one`, no typeclass hypotheses in
