@@ -79,6 +79,10 @@ show the statements to the owner before the proof pass.
       file's directory topic as primary topic (conventions §4). A
       definition whose home node lives elsewhere moves elsewhere.
 
+- [ ] **Design lint**: `python3 scripts/lint_design.py` — new
+      findings in touched files are blockers (legacy findings are
+      tracked in TODO's lint batch).
+
 ## 4. Statements vs proofs
 - [ ] Statement-first work: `sorry` only as a proof placeholder, one
       per statement, each tagged with its proof-pass milestone;

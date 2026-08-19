@@ -496,6 +496,14 @@ Note: `finiteness_per_rank` landed as kind `theorem` statement-only
       hopf_spec_grpobj_via_yoneda, spec_representability…) to list
       Mathlib declarations. Sized as its own session.
 
+- [ ] LINT BATCH (scripts/lint_design.py, first run 2026-08-19):
+      legacy findings to clear — module-level '## Blueprint' stamps in
+      AlgHomGroup/Ga/MuN/Gm/HopfObjectBridge/HopfSpecFunctor;
+      structure-∃ in FaithfulRepresentation.lean:123; Type-u
+      ascriptions in GLn/MuN/Points; universe declarations without
+      pins in Comodule/HopfSpec/Forms/TwistedGroupAlgebra. Drive the
+      linter to zero, then wire it into publish gates.
+
 ### M2 — Lean: complete linear descent
 
 - [ ] Independence half: k-linearly independent fixed vectors stay

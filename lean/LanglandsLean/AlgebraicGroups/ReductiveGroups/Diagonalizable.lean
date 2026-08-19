@@ -44,7 +44,7 @@ group of `D(M)` is exactly the lattice `M`. The character attached to
 exponents; the identification of lattice addition with convolution is
 Mathlib's `mapDomainBialgHomAddEquiv`.
 
-Blueprint: tori.character_and_cocharacter_lattices, reductive_groups.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
+Blueprint: reductive_groups.diagonalizable_groups_antiequivalence, tori.character_and_cocharacter_lattices, tori.f_tori_galois_module_classification
 -/
 noncomputable def diagCharEquiv :
     Multiplicative M ≃* HopfCharacterGroup R (AddMonoidAlgebra R M) :=
@@ -95,13 +95,13 @@ theorem diag_bialgEquiv_iff_addEquiv :
 section Examples
 
 /-- Characters of `𝔾ₘ = D(ℤ)`: the lattice `ℤ`. -/
-noncomputable example : Multiplicative ℤ ≃* HopfCharacterGroup R (AddMonoidAlgebra R ℤ) :=
+noncomputable example : Multiplicative ℤ ≃* HopfCharacterGroup R (LaurentPolynomial R) :=
   diagCharEquiv R ℤ
 
 /-- Endomorphisms of `𝔾ₘ` as a group scheme: `ℤ`, acting by
 `t ↦ tⁿ`. -/
 noncomputable example :
-    (ℤ →+ ℤ) ≃ (AddMonoidAlgebra R ℤ →ₐc[R] AddMonoidAlgebra R ℤ) :=
+    (ℤ →+ ℤ) ≃ (LaurentPolynomial R →ₐc[R] LaurentPolynomial R) :=
   diagHomEquiv R ℤ ℤ
 
 end Examples

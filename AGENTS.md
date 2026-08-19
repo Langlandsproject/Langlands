@@ -133,6 +133,9 @@ message** (owner directive, 2026-08-19).
 mdblueprint tools live in `~/mycodes/mdblueprint`. From this repo:
 
 ```bash
+# Design lint (mechanized review rules — run before every commit)
+python3 scripts/lint_design.py
+
 # Static structural + math preflight check
 cd ~/mycodes/mdblueprint
 uv run python -m tools.knowledge.check \

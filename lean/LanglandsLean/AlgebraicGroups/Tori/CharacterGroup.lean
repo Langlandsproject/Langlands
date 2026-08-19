@@ -85,7 +85,7 @@ and `𝔾ₘ R` the algebraic-group level of the key construction.
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def CharacterGroup
-    (G : Grp (Over (Scheme.Spec.obj (op R)))) : Type _ :=
+    (G : Grp (Over (Scheme.Spec.obj (op R)))) :=
   G ⟶ 𝔾ₘ R
 
 /-- **The cocharacter group** `X_*(G) := Hom_grp(𝔾ₘ, G)` —
@@ -94,7 +94,7 @@ symmetric to `CharacterGroup`.
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def CocharacterGroup
-    (G : Grp (Over (Scheme.Spec.obj (op R)))) : Type _ :=
+    (G : Grp (Over (Scheme.Spec.obj (op R)))) :=
   𝔾ₘ R ⟶ G
 
 /-- **Bridge, stage 1** (statement; proof: M0 pass): `hopfSpec` is
