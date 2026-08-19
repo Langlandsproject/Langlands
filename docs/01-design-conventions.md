@@ -128,6 +128,20 @@ goal preambles at decision time.
   instance-wiring checks belong to real downstream uses, not
   anonymous `example := inferInstance` piles.
 
+### The transcription procedure (binding)
+
+For every new definition: (1) copy the textbook definiens into the
+docstring draft *first*; (2) transcribe token-by-token — every Lean
+object must answer to a word of the definiens; an object the sentence
+does not mention (`GroupLike`, a dual, an `∃` over carriers, an
+`Additive` stack) makes the definition wrong by default; (3) the name
+test — an API name that mentions the avatar (`groupLikeLift`) means
+the design is already wrong; (4) awkward transcriptions are never
+"fixed" in the definition — the convenient object enters as a bridge
+theorem with its KB node, and **bridge nodes license identifications
+in proofs, never as definitions**; (5) plans do not override this
+section — a plan line encoding a convenient form is a plan bug.
+
 ### Why unfaithful definitions kept appearing (2026-08-19 root cause)
 
 Three reviews in one day found the same failure shape (X^* defined as

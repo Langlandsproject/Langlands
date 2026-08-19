@@ -29,6 +29,11 @@ show the statements to the owner before the proof pass.
       (bridge-node rule). Missing bridge = stop, add the node first.
 - [ ] Every wrapper in a public statement has a conversion-glossary
       entry in the module docstring.
+- [ ] **Transcription check**: for each new definition, quote the
+      textbook definiens in the docstring; every Lean object in the
+      definition answers to a word of it. Any avatar (`GroupLike`,
+      duals, `Additive` stacks) in a definition or in an API *name*
+      is a blocker (conventions §6, transcription procedure).
 - [ ] **Hierarchy transcribed**: if the notion is a special case of a
       general KB notion, is the Lean definition literally *general +
       condition* (class field / conjunct), not a standalone

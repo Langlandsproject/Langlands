@@ -33,6 +33,39 @@ If a `lean/blueprint/` directory exists in this repo, treat it as
 deprecated scaffolding from a misstep and either ignore it or delete it
 (check with the user first).
 
+## The second rule: definitions are transcriptions, not translations
+
+Every owner review of 2026-08-19 caught the same failure: a Lean
+definition built from whatever object was *available or convenient*
+(group-like elements, Hopf-hom tricks, dual lattices, `Additive`
+stacks, structure-quantifying `∃`) instead of the **normal
+mathematical definition**. The procedure that prevents it:
+
+1. **Write the textbook sentence first.** Before any Lean definition,
+   copy the definiens from the KB node / standard reference into the
+   docstring draft: "X^*(T) := Hom(T, 𝔾ₘ)", "diagonalizable :=
+   isomorphic to k[M]", "cocharacter := hom 𝔾ₘ → T".
+2. **Transcribe token-by-token.** Every object in the Lean definition
+   must correspond to a word in that sentence. `Hom(T, 𝔾ₘ)` →
+   homomorphisms of algebraic groups (`CharacterGroup`). If the Lean
+   spelling contains an object the sentence does not mention
+   (`GroupLike`, a dual, an existential over carriers), the
+   definition is wrong — *by default, before any argument*.
+3. **The name test.** If the API name mentions the avatar
+   (`groupLikeLift`), the design is already wrong; correct names fall
+   out of correct definitions (`charLift`).
+4. **Awkwardness never changes the definition.** If the transcription
+   is hard to work with, the convenient object enters as a *bridge
+   theorem* (with its KB node), and proofs go through the bridge.
+   Bridge nodes license identifications **in proofs — never as
+   definitions**.
+5. **Plans do not override conventions.** A plan line that encodes a
+   convenient-form definition (it happened: plan M5 said
+   "charLattice := GroupLike…") is a bug in the plan; conventions
+   §6 wins and the plan line gets annotated, not executed.
+
+Full text and the day's case log: `docs/01-design-conventions.md` §6.
+
 ## Where the existing nodes live
 
 - `docs/knowledge/mdblueprint.yml` — project config (site title, math
@@ -183,6 +216,13 @@ the inner loop.
 
 ## Things that have burned us before
 
+- **Avatar-based definitions, three relapses in one day**
+  (2026-08-19): X^* as group-likes (twice at definition sites, once
+  more as `CharLattice := Additive (GroupLike …)`), diagonalizability
+  as `groupLikeLift` bijectivity with the avatar in the API name.
+  Each time the fix was the same: define via `Hom(−, 𝔾ₘ)`
+  (`CharacterGroup`), demote the avatar to a bridge theorem. See
+  "The second rule" above.
 - **Structure-quantifying existentials and inverted hierarchies**
   (2026-08-19, owner-caught): `IsTorusAlgebra := ∃ M
   (_ : AddCommGroup M), …` and torus defined without reference to
