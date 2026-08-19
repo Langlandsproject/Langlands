@@ -108,6 +108,11 @@ change policies.
   (`charLift`, `IsDiagonalizableAlgebra`, Cartier duality,
   `DiagGroup`) in `Tori/` (moved to `ReductiveGroups/` and
   `AlgebraicGeometry/`).
+- **File size**: 200–400 lines typical, **1000 lines hard cap**
+  (owner decision 2026-08-19). When a file approaches the cap, split
+  it along node-cluster lines — the placement rule above already
+  defines the cut points (one node cluster per file). Never split
+  mid-cluster just to satisfy the cap; regroup clusters instead.
 - **Gates** before any commit touching either side:
   `tools.knowledge.check` — 0 errors;
   `tools.knowledge.lean_reverse_check` — 0 cross-mismatch;
