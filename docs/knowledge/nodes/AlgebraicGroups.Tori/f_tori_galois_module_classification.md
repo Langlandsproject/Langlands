@@ -14,16 +14,6 @@ uses:
 - forms.galois_groups_and_descent_data
 - forms.galois_descent_for_vector_spaces
 - forms.rational_forms_of_linear_algebraic_groups
-lean:
-  modules:
-  - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
-  - LanglandsLean.AlgebraicGroups.Tori.GaloisDescent
-  - LanglandsLean.AlgebraicGroups.Tori.Speiser
-  declarations:
-  - Langlands.Tori.diagCharEquiv
-  - Langlands.Tori.diag_bialgEquiv_iff_addEquiv
-  - Langlands.Tori.twistedGroupAlgebra
-  - Langlands.Tori.twistedGroupAlgebra_span_top
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -37,7 +27,6 @@ source:
 verification:
   statement: accepted
   proof: accepted
-  alignment: pending
 generality:
   reviewed: true
   prompt: "Does the classification use the separable Galois action and not assume the torus is split over F?"

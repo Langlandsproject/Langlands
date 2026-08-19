@@ -14,6 +14,7 @@ lean:
   - LanglandsLean.AlgebraicGroups.Tori.Speiser
   declarations:
   - Langlands.Tori.span_fixedPoints_eq_top
+  - Langlands.Tori.twistedGroupAlgebra_span_top
   - Langlands.Tori.span_galEval_eq_top
   - Langlands.Tori.linearIndependent_algEquiv
 verification:

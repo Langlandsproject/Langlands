@@ -419,9 +419,11 @@ classification items inside G0.
 **Definition of done.** KB: the proof of
 `tori.f_tori_galois_module_classification` is a structured composition
 of admitted nodes (no prose gaps); corollary nodes admitted. Lean:
-essential surjectivity + full faithfulness + inverse computation
-compile without sorry, plus the cocycle bijection and rank-one
-classification. Links: every theorem node lean-linked, reverse check
+the categorical statement `toriClassification : (ToriCat k E)ᵒᵖ ≌
+LatticeCat Γ` compiles without sorry (built from essential
+surjectivity + full faithfulness + inverse computation via
+`ofFullyFaithfullyEssSurj`), plus rank/split rank, the cocycle
+bijection, and rank-one classification. Links: every theorem node lean-linked, reverse check
 0 cross-mismatch, site published.
 
 **Fixed design decisions** (do not relitigate mid-way):
@@ -433,7 +435,9 @@ classification. Links: every theorem node lean-linked, reverse check
   finite Galois `E/k` — {tori split by E} ≃ {Gal(E/k)-lattices}. The
   continuous-`Θ` version stays KB-level (`tori.splitting_field`
   justifies the equivalence).
-- (D-c) Three separate theorems, no bundled categorical Equivalence.
+- (D-c revised) The final statement IS a `CategoryTheory.Equivalence`
+  on `CommHopfAlgCat`-based carriers; the three working theorems are
+  the ingredients (see the plan file for the reversal rationale).
 
 ### M1 — KB: close the four proof holes (KB-first; do before Lean M2+)
 
@@ -458,6 +462,8 @@ classification. Links: every theorem node lean-linked, reverse check
       Jordan–Zassenhaus: finitely many rank-n tori types per field.
 - [ ] `tori.isogeny_classification` [thm] — isogeny classes ↔
       Q-representations of finite quotients (Maschke).
+- [ ] `tori.split_rank` [def] — split rank = rk X_*(T)^Θ; bounds and
+      split/anisotropic criteria; = apartment dimension downstream.
 - [ ] Rewrite the proof of `tori.f_tori_galois_module_classification`
       as a structured composition of the nodes above.
 
@@ -504,14 +510,28 @@ classification. Links: every theorem node lean-linked, reverse check
 
 - [ ] Full faithfulness over k (Galois descent of morphisms +
       `diagHomEquiv` over E).
-- [ ] Essential surjectivity = M4 + M5. The three-part classification
-      is done here.
+- [ ] Essential surjectivity = M4 + M5.
+- [ ] The categorical statement: `ToriCat k E`, `LatticeCat Γ`,
+      `charLatticeFunctor` with Full/Faithful/EssSurj instances,
+      `toriClassification : (ToriCat k E)ᵒᵖ ≌ LatticeCat Γ`. Only
+      then does `f_tori_galois_module_classification` get its lean
+      block (its lean links were removed 2026-08-19 as premature).
 
-### M7 — Corollaries
+### M7 — Corollaries and examples
 
 - [ ] Lean: cocycle bijection; split ⟺ trivial action; anisotropic ⟺
-      no invariant cocharacters; rank-one classification.
+      split rank 0; `normOneTorus` and `inducedTorus` (lattice-side);
+      rank-one classification.
 - [ ] Stretch: R and F_q lists in Lean (KB versions land in M1).
+
+### M8 — Lean structure theorems (transported through the equivalence)
+
+- [ ] Subtori/quotients dictionary; split-anisotropic decomposition;
+      isogeny (lattice-side definition). Statements fixed after M6.
+
+Non-goals of G0.C (recorded in the plan §9): continuous-Θ statement,
+D(M) smoothness/connectedness trichotomy, Weil restriction machinery,
+Jordan–Zassenhaus proof, arithmetic classes (G0.5–G0.8).
 
 Sequencing: M1 independent and first (KB-first discipline); M2→M3→M4
 →M5→M6 strictly serial; M7 after M6. Assets already in place: Cartier

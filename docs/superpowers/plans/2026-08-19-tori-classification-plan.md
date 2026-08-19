@@ -20,7 +20,18 @@ transcribe rather than design.
   {tori split by `E`} ≃ {`Γ`-lattices}. The continuous
   `Gal(k_s/k)` version exists only in the KB
   (`tori.splitting_field` supplies the equivalence).
-- **(D-c) Three theorems**, not a bundled `CategoryTheory.Equivalence`.
+- **(D-c, REVISED 2026-08-19)** The final Lean statement **is** a
+  genuine `CategoryTheory.Equivalence`: with `Γ = Gal(E/k)`,
+  `(ToriCat k E)ᵒᵖ ≌ LatticeCat Γ`, built via
+  `Equivalence.ofFullyFaithfullyEssSurj` from the three working
+  theorems (which remain the M2–M6 content). Rationale for the
+  reversal (owner review): "three separate theorems" understates the
+  theorem — the KB node claims an anti-equivalence of categories, and
+  a faithful Lean statement must exhibit it. Mathlib v4.33 provides
+  `CommHopfAlgCat k`, so the carrier categories are cheap:
+  `ToriCat k E := FullSubcategory (IsTorusAlgebra k E ∘ ...)` of
+  `(CommHopfAlgCat k)ᵒᵖ`, and `LatticeCat Γ := FullSubcategory`
+  (finite free ℤ-module) of `Rep ℤ Γ`.
 - **(D-d, new) No abstract "Hopf algebra with semilinear action"
   typeclass in Lean.** Everything is proved for the concrete
   `twistedGroupAlgebra k E M σ`. The abstract statement lives in the
@@ -125,7 +136,19 @@ No proof section (statement + source only — kind `theorem` with
 `verification.statement: accepted` and no proof block; do NOT use
 `external-theorem`, which mandates Lean refs we don't have).
 
-### 1.9 `tori.isogeny_classification` [theorem]
+### 1.9 `tori.split_rank` [definition]
+
+- **uses:** `tori.torus_definition`,
+  `tori.split_anisotropic_decomposition`,
+  `tori.character_and_cocharacter_lattices`.
+- **Statement.** The **rank** of `T` is `rk_ℤ X^*(T)`
+  (already in `tori.torus_definition`); the **split rank** (or
+  `k`-rank) is `rk_ℤ X_*(T)^Θ` = the rank of the maximal split
+  subtorus `T_d`. Facts: `0 ≤ split rank ≤ rank`; split rank `= rank`
+  ⟺ split; `= 0` ⟺ anisotropic. Downstream: the split rank is the
+  dimension of the Bruhat–Tits apartment.
+
+### 1.10 `tori.isogeny_classification` [theorem]
 
 Tori up to isogeny ↔ `ℚ`-representations of finite quotients of `Θ`
 (semisimple by Maschke); `X^* ⊗ ℚ` is a complete isogeny invariant.
@@ -234,6 +257,20 @@ noncomputable def charLatticeGalAction :
 theorem charLattice_twisted :
     (charLattice k E A) ≃* Multiplicative M      -- Γ-equivariantly, via twistedBaseChange
 -- also: the E-independence statement stays KB-level (D-b).
+
+/-- cocharacter lattice, pairing, anisotropy (KB:
+    tori.character_and_cocharacter_lattices, tori.anisotropic_torus) -/
+noncomputable def cocharLattice := (Additive (charLattice k E A)) →+ ℤ   -- dual lattice, Γ-action by precomposition
+noncomputable def charPairing : Additive (charLattice ...) →+ cocharLattice ... →+ ℤ  -- evaluation; perfectness stated
+def IsAnisotropic (A) : Prop := ∀ l : cocharLattice ..., Γ-invariant l → l = 0
+   -- spelled via fixed points of the dual action; KB working definition X_*(T)^Θ = 0
+
+/-- rank and split rank (KB: tori.torus_definition, tori.split_rank) -/
+noncomputable def torusRank (A) : ℕ :=
+  Module.finrank ℤ (Additive (charLattice k E A))
+noncomputable def torusSplitRank (A) : ℕ :=
+  Module.finrank ℤ (fixed points of charLatticeGalAction)
+theorem splitRank_le_rank ... ; theorem splitRank_eq_zero_iff_anisotropic ...
 ```
 
 ## 6. M6 — Lean: assemble
@@ -244,17 +281,75 @@ theorem homEquiv_split_by_E :
 theorem classification_essSurj : ∀ (M σ), IsTorusAlgebra ... (twistedGroupAlgebra σ) ∧ charLattice ... ≃ M
 theorem classification_fullyFaithful :
     (A →ₐc[k] B) ≃ (Γ-equivariant lattice homs charLattice B →+ charLattice A)
+
+-- (D-c revised) the categorical statement — THE theorem:
+def ToriCat (k E) := ObjectProperty.FullSubcategory
+  (fun A : (CommHopfAlgCat k)ᵒᵖ => IsTorusAlgebra k E A.unop)  -- exact spelling at impl
+def LatticeCat (Γ) := FullSubcategory (finite free) (Rep ℤ Γ)   -- or ModuleCat (MonoidAlgebra ℤ Γ)
+noncomputable def charLatticeFunctor : (ToriCat k E)ᵒᵖ ⥤ LatticeCat Γ
+instance : charLatticeFunctor.Full        -- = fullyFaithful, surj half
+instance : charLatticeFunctor.Faithful    -- = fullyFaithful, inj half
+instance : charLatticeFunctor.EssSurj     -- = essSurj (twisted form)
+noncomputable def toriClassification : (ToriCat k E)ᵒᵖ ≌ LatticeCat Γ :=
+  Equivalence.ofFullyFaithfullyEssSurj? (exact constructor name at impl)
 ```
 
 Exact packaging of "Γ-equivariant lattice hom" fixed at
-implementation (subtype of `→+` with commuting condition).
+implementation (subtype of `→+` with commuting condition). The KB
+node `tori.f_tori_galois_module_classification` gets its `lean:`
+block ONLY when `toriClassification` exists — per the linking rule,
+the three working theorems alone do not witness the node.
 
 ## 7. M7 — Corollaries (Lean)
 
-`classification_by_cocycles` (bijection with
-`Hom(Γ, GL) / conj` at finite level), split ⟺ trivial action,
-anisotropic ⟺ no invariant cocharacters, rank-one classification.
+`classification_by_cocycles` (bijection with `Hom(Γ, GL)/conj` at
+finite level); split ⟺ trivial action; anisotropic ⟺ split rank 0;
+**`normOneTorus E k` := twistedTorus of the sign lattice of a
+quadratic `E/k`** (the running example, needed by rank-one);
+**`inducedTorus`** := twistedTorus of a permutation lattice
+(lattice-side definition — no Weil-restriction-of-schemes machinery,
+see Non-goals); rank-one classification: every 1-dimensional torus
+is `𝔾_m` or `normOneTorus` of a quadratic extension.
 `ℝ`/`𝔽_q` lists: stretch.
+
+## 7b. M8 — Lean structure theorems (after M6; completes "the theory")
+
+The classification equivalence transports structure theory to the
+lattice side; these become lattice computations:
+
+```lean
+theorem subtorusEquiv : (sub-Hopf quotients of A) ≃ (Γ-stable saturated sublattices)
+   -- KB: tori.subtori_and_quotients
+theorem splitAnisotropicDecomposition :
+   -- maximal split subtorus + maximal anisotropic subtorus, product
+   -- map is an isogeny; KB: tori.split_anisotropic_decomposition
+def IsIsogeny (f : A →ₐc[k] B) : Prop := (lattice map has finite cokernel & is injective)
+theorem isogenyClassification :  -- KB: tori.isogeny_classification (Lean: stretch)
+```
+
+Exact statements fixed when M6 lands (they consume `toriClassification`
+to move to the lattice side; proving them scheme-side first would be
+strictly harder).
+
+## 9. Non-goals of G0.C (explicit, with reasons)
+
+- **The continuous `Gal(k_s/k)` statement** — permanently KB-level by
+  (D-b); `tori.splitting_field` records the equivalence with the
+  finite-level version.
+- **Smoothness/connectedness trichotomy for `D(M)`**
+  (`tori.multiplicative_type_characterization`) — scheme-topological
+  (idempotents of `R[M]` vs `π₀`); independent of the classification;
+  future goal of its own.
+- **Weil restriction as a scheme/Hopf functor** — induced tori are
+  obtained lattice-side instead; `Res_{E/k}` machinery is a separate
+  infrastructure project.
+- **Jordan–Zassenhaus in Lean** — KB statement-only (§1.8).
+- **Arithmetic classes** (unramified / tamely ramified / weakly
+  induced, `T(k)_0/T(k)_1`, integral models) — those are goals
+  G0.5–G0.8, not classification.
+- **KB structure theorems already admitted** (`subtori_and_quotients`,
+  `split_anisotropic_decomposition`) get Lean counterparts only in M8,
+  transported through the equivalence.
 
 ## 8. Risk register
 
@@ -268,8 +363,9 @@ anisotropic ⟺ no invariant cocharacters, rank-one classification.
 
 ## 9. Session schedule & acceptance
 
-S1: §1.1–1.4 (KB core) · S2: §1.5–1.9 (KB corollaries) ·
-S3: M2 · S4–S5: M3 · S6: M4 · S7: M5 · S8: M6 · S9: M7.
+S1: §1.1–1.4 (KB core) · S2: §1.5–1.10 (KB corollaries) ·
+S3: M2 · S4–S5: M3 · S6: M4 · S7: M5 · S8: M6 (incl. the categorical
+statement) · S9: M7 · S10: M8.
 Every session ends with: `tools.knowledge.check` 0 errors,
 `lean_reverse_check` 0 cross-mismatch, `lake build` green (no new
 sorry), links updated, site published, commit pushed.

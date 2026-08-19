@@ -200,7 +200,7 @@ property, surjectivity half): the fixed points of the semilinear
 action span `E[M]` over `E`. This discharges the statement recorded
 in `Tori/GaloisDescent.lean`.
 
-Blueprint: tori.f_tori_galois_module_classification
+Blueprint: forms.galois_descent_for_vector_spaces
 -/
 theorem twistedGroupAlgebra_span_top [FiniteDimensional k E] :
     Submodule.span E
