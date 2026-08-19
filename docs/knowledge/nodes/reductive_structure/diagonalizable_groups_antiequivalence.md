@@ -9,6 +9,13 @@ topics:
 - root_data_and_duality
 uses:
 - reductive_structure.diagonalizable_group_characterization
+lean:
+  modules:
+  - LanglandsLean.Tori.CharacterGroup
+  declarations:
+  - Langlands.Tori.diagCharEquiv
+  - Langlands.Tori.diagHomEquiv
+  - Langlands.Tori.diag_bialgEquiv_iff_addEquiv
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -18,6 +25,7 @@ source:
 verification:
   statement: accepted
   proof: accepted
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Does the statement distinguish diagonalizable groups from tori?"

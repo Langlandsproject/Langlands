@@ -8,9 +8,18 @@ topics:
 - tori
 uses:
 - tori.algebraic_tori
+lean:
+  modules:
+  - LanglandsLean.Tori.CharacterGroup
+  declarations:
+  - Langlands.Tori.characterGroup
+  - Langlands.Tori.cocharacterHom
+  - Langlands.Tori.diagCharEquiv
+  - Langlands.Tori.diagCocharEquiv
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Are character and cocharacter lattices treated as Galois modules over the separable closure in general, not just for split tori?"
