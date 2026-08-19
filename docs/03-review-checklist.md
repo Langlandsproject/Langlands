@@ -34,6 +34,10 @@ show the statements to the owner before the proof pass.
       definition answers to a word of it. Any avatar (`GroupLike`,
       duals, `Additive` stacks) in a definition or in an API *name*
       is a blocker (conventions §6, transcription procedure).
+- [ ] **Reuse before define**: every object in a new statement that
+      already has a name (repo or Mathlib) is referenced by that
+      name; no inline re-spelling, no second definitions, no
+      re-encoded Homs (conventions §6, reuse rule).
 - [ ] **Hierarchy transcribed**: if the notion is a special case of a
       general KB notion, is the Lean definition literally *general +
       condition* (class field / conjunct), not a standalone

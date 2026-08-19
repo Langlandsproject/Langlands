@@ -6,7 +6,7 @@ import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
 
 * `CocharLattice k E A` — the cocharacter lattice `X_*(T_E)` in its
   faithful form: Hopf-algebra homomorphisms `O(T_E) → O(𝔾ₘ)`, i.e.
-  cocharacters `𝔾ₘ → T_E` (`CocharacterGroup E (E ⊗[k] A)`), with
+  cocharacters `𝔾ₘ → T_E` (`HopfCocharacterGroup E (E ⊗[k] A)`), with
   the convolution group structure (`WithConv`; under `Spec`,
   pointwise multiplication —
   `tori.convolution_is_pointwise_multiplication`). The lattice
@@ -65,7 +65,7 @@ Hopf-algebra homomorphisms `O(T_E) → O(𝔾ₘ)`, i.e. cocharacters
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev CocharLattice : Type u := CocharacterGroup E (E ⊗[k] A)
+abbrev CocharLattice : Type u := HopfCocharacterGroup E (E ⊗[k] A)
 
 /-- **The character–cocharacter pairing** `⟨χ, λ⟩`: the composite
 `χ ∘ λ : 𝔾ₘ → 𝔾ₘ` is `z ↦ z^n` for a unique integer `n` — extracted

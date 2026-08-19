@@ -471,6 +471,15 @@ Note: `finiteness_per_rank` landed as kind `theorem` statement-only
 - [x] Rewrite the proof of `tori.f_tori_galois_module_classification`
       as a structured composition of the nodes above.
 
+- [ ] POST-M0 REBASE (recorded 2026-08-19): once the bridges
+      (`hopfSpec_map_bijective`, `nonempty_characterGroup_equiv_hopf`)
+      are proved, rebase `CharLattice`/`CocharLattice` from the
+      coordinate presentations (`HopfCharacterGroup`,
+      `HopfCocharacterGroup`) onto the primary
+      `CharacterGroup`/`CocharacterGroup` (scheme homs) by transport,
+      so the lattice layer speaks in the definition, not the
+      presentation.
+
 ### M2 — Lean: complete linear descent
 
 - [ ] Independence half: k-linearly independent fixed vectors stay

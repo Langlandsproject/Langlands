@@ -9,6 +9,12 @@ topics:
 uses:
 - affine_group_schemes.affine_group_scheme_definition
 - affine_group_schemes.coordinate_hopf_algebra_of_group_scheme
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
+  declarations:
+  - Langlands.Tori.specGrp
+  - Langlands.Tori.nonempty_characterGroup_equiv_hopf
 source:
   spans:
   - artifact: sga3
@@ -17,6 +23,7 @@ source:
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the definition given as group-object morphisms over an arbitrary base, with unit and inversion compatibility derived rather than assumed?"

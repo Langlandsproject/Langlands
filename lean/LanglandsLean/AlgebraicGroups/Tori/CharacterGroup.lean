@@ -1,5 +1,6 @@
 import LanglandsLean.AlgebraicGeometry.DiagGroup
 import LanglandsLean.AlgebraicGeometry.HopfSpecFunctor
+import LanglandsLean.AlgebraicGeometry.Gm
 import Mathlib.RingTheory.HopfAlgebra.GroupLike
 import Mathlib.RingTheory.HopfAlgebra.MonoidAlgebra
 import Mathlib.RingTheory.HopfAlgebra.Convolution
@@ -19,8 +20,8 @@ with the group law of pointwise multiplication in `𝔾ₘ`. The faithful
 contravariant translation to coordinate Hopf algebras, with
 `O(𝔾ₘ) = R[ℤ]`:
 
-* `CharacterGroup R A := WithConv (R[ℤ] →ₐc[R] A)`,
-* `CocharacterGroup R A := WithConv (A →ₐc[R] R[ℤ])`,
+* `HopfCharacterGroup R A := WithConv (R[ℤ] →ₐc[R] A)`,
+* `HopfCocharacterGroup R A := WithConv (A →ₐc[R] R[ℤ])`,
 
 where `WithConv` is Mathlib's carrier for "this hom-set with the
 convolution product" — under `Spec`, convolution *is* pointwise
@@ -62,26 +63,132 @@ universe u v
 
 variable (R : Type u) [CommRing R]
 
-/-! ### The faithful definitions -/
+
+/-! ### The definition: characters are homomorphisms of algebraic groups
+
+`X^*(G) = Hom_grp(G, 𝔾ₘ)` and `X_*(G) = Hom_grp(𝔾ₘ, G)` — morphisms
+in the category `Grp (Over (Spec R))` of algebraic groups
+(`affine_group_schemes.group_scheme_homomorphism`: group-scheme
+homomorphisms *are* the categorical homs), into/out of the key
+construction `multiplicativeGroup` (`AlgebraicGeometry/Gm.lean`).
+Nothing is re-encoded and nothing is re-defined here. -/
+
+section SchemeLevel
+
+variable (Rc : CommRingCat.{u})
+
+/-- `𝔾ₘ` bundled as a group object of `Over (Spec R)` — reuses the
+key construction `multiplicativeGroup`; there is no second
+definition of `𝔾ₘ`. -/
+noncomputable def gmGrp : Grp (Over (Scheme.Spec.obj (op Rc))) :=
+  { X := multiplicativeGroup Rc
+    grp := multiplicativeGroup.instGrpObj Rc }
+
+/-- The affine algebraic group `Spec A` of a commutative Hopf
+algebra, bundled as a group object.
+
+Blueprint: affine_group_schemes.group_scheme_homomorphism
+-/
+noncomputable def specGrp (A : Type u) [CommRing A] [HopfAlgebra Rc A] :
+    Grp (Over (Scheme.Spec.obj (op Rc))) :=
+  { X := specObjOver Rc A
+    grp := hopfSpecGrpObj Rc A }
+
+/-- The character group of an arbitrary algebraic group:
+`X^*(G) = Hom_grp(G, 𝔾ₘ)`.
+
+Blueprint: tori.character_and_cocharacter_lattices
+-/
+noncomputable def SchemeCharacterGroup
+    (G : Grp (Over (Scheme.Spec.obj (op Rc)))) : Type _ :=
+  G ⟶ gmGrp Rc
+
+/-- `D(M)` bundled as a group object. -/
+noncomputable def diagGrp (M : Type u) [AddCommGroup M] :
+    Grp (Over (Scheme.Spec.obj (op Rc))) :=
+  specGrp Rc (AddMonoidAlgebra Rc M)
+
+/-- **Bridge, stage 1** (statement; proof: M0 pass): `hopfSpec` is
+fully faithful — algebraic-group homs between spectra correspond to
+group-object morphisms on the algebra side.
+
+Blueprint: affine_group_schemes.hopf_spec_fully_faithful
+-/
+theorem hopfSpec_map_bijective
+    (A B : Grp ((CommAlgCat Rc)ᵒᵖ)) :
+    Function.Bijective
+      (fun f : A ⟶ B => (Langlands.AlgebraicGeometry.hopfSpec Rc).map f) := by
+  sorry
+
+/-- **Scheme-level Cartier duality for `D(M)`** (statement; proof: M0
+pass, via the two bridge stages): algebraic-group homomorphisms
+`D(M) → 𝔾ₘ` correspond to lattice elements.
+
+Blueprint: tori.characters_as_group_like_elements
+-/
+theorem schemeCharacter_diag_equiv (M : Type u) [AddCommGroup M]
+    [IsDomain Rc] :
+    Nonempty (SchemeCharacterGroup Rc (diagGrp Rc M) ≃ Multiplicative M) := by
+  sorry
+
+end SchemeLevel
 
 /-- **The character group** `X^*(Spec A) = Hom_grp(Spec A, 𝔾ₘ)`:
-Hopf-algebra homomorphisms `O(𝔾ₘ) = R[ℤ] → A` with the convolution
-product — under `Spec`, pointwise multiplication of characters.
+morphisms of algebraic groups from `Spec A` to the multiplicative
+group — the textbook definition, verbatim. The coordinate
+presentation `HopfCharacterGroup` below is the working form,
+identified with this one by the (M0) bridge
+`nonempty_characterGroup_equiv_hopf`.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev CharacterGroup (A : Type v) [CommSemiring A] [Bialgebra R A] : Type _ :=
-  WithConv ((AddMonoidAlgebra R ℤ) →ₐc[R] A)
+noncomputable def CharacterGroup (A : Type u) [CommRing A]
+    [HopfAlgebra R A] : Type _ :=
+  SchemeCharacterGroup (CommRingCat.of R) (specGrp (CommRingCat.of R) A)
 
-/-- **The cocharacter group** `X_*(Spec A) = Hom_grp(𝔾ₘ, Spec A)`:
-Hopf-algebra homomorphisms `A → R[ℤ]` with convolution. The
-convolution structure requires `A` cocommutative — faithfully so:
-`X_*(G)` is a group precisely because `G` is commutative.
+/-- **The cocharacter group** `X_*(Spec A) = Hom_grp(𝔾ₘ, Spec A)`.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev CocharacterGroup (A : Type v) [Semiring A] [Bialgebra R A] : Type _ :=
-  WithConv (A →ₐc[R] (AddMonoidAlgebra R ℤ))
+noncomputable def CocharacterGroup (A : Type u) [CommRing A]
+    [HopfAlgebra R A] : Type _ :=
+  gmGrp (CommRingCat.of R) ⟶ specGrp (CommRingCat.of R) A
+
+/-! ### The coordinate presentation (working form) -/
+
+/-- The **coordinate presentation** of the character group:
+Hopf-algebra homomorphisms `O(𝔾ₘ) = R[T;T⁻¹] → A` with the
+convolution product. Identified with `CharacterGroup` (the
+definition) by the (M0) bridge; convolution is pointwise
+multiplication of characters
+(`convMul_apply_of_isGroupLikeElem`,
+`tori.convolution_is_pointwise_multiplication`).
+
+Blueprint: tori.character_and_cocharacter_lattices
+-/
+abbrev HopfCharacterGroup (A : Type v) [CommSemiring A] [Bialgebra R A] : Type _ :=
+  WithConv (LaurentPolynomial R →ₐc[R] A)
+
+/-- The **coordinate presentation** of the cocharacter group:
+Hopf-algebra homomorphisms `A → O(𝔾ₘ) = R[T;T⁻¹]` with convolution.
+The convolution structure requires `A` cocommutative — faithfully
+so: `X_*(G)` is a group precisely because `G` is commutative.
+
+Blueprint: tori.character_and_cocharacter_lattices
+-/
+abbrev HopfCocharacterGroup (A : Type v) [Semiring A] [Bialgebra R A] : Type _ :=
+  WithConv (A →ₐc[R] LaurentPolynomial R)
+
+/-- **The bridge** (statement; proof: M0 pass, from
+`hopfSpec_map_bijective`): the coordinate presentation coincides
+with the character group of algebraic-group homomorphisms.
+
+Blueprint: affine_group_schemes.group_scheme_homomorphism
+-/
+theorem nonempty_characterGroup_equiv_hopf
+    (A : Type u) [CommRing A] [HopfAlgebra R A] :
+    Nonempty (CharacterGroup R A ≃ HopfCharacterGroup R A) := by
+  sorry
 
 variable (M N : Type v) [AddCommGroup M] [AddCommGroup N]
 
@@ -105,7 +212,7 @@ variable [IsDomain R]
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def diagCocharEquiv :
-    (M →+ ℤ) ≃ CocharacterGroup R (AddMonoidAlgebra R M) :=
+    (M →+ ℤ) ≃ HopfCocharacterGroup R (AddMonoidAlgebra R M) :=
   (AddMonoidAlgebra.mapDomainBialgHomEquiv).trans (WithConv.equiv _).symm
 
 /-! ### The computed description: characters as group-like elements
@@ -151,73 +258,12 @@ noncomputable def diagGroupLikeEquiv :
         AddMonoidAlgebra.isGroupLikeElem_iff_mem_range_single_one.mp hx
       exact ⟨Multiplicative.ofAdd m, rfl⟩
 
-/-! ### The scheme-level definition (primary faithful form)
-
-`X^*(G) = Hom_grp(G, 𝔾ₘ)` — homomorphisms of algebraic groups, i.e.
-morphisms in the category `Grp (Over (Spec R))` of group objects. The
-Hopf-hom presentation above is the first computed form; the bridge
-decomposes into two identifications (KB:
-`affine_group_schemes.group_scheme_homomorphism`), stated below with
-proofs deferred to the M0 proof pass. -/
-
-section SchemeLevel
-
-variable (Rc : CommRingCat.{u})
-
-/-- `𝔾ₘ = Spec R[ℤ]` bundled as a group object of `Over (Spec R)`. -/
-noncomputable def gmGrp : Grp (Over (Scheme.Spec.obj (op Rc))) :=
-  { X := specObjOver Rc (AddMonoidAlgebra Rc ℤ)
-    grp := hopfSpecGrpObj Rc (AddMonoidAlgebra Rc ℤ) }
-
-/-- **The character group, scheme level** — the faithful primary
-definition: homomorphisms of algebraic groups `G → 𝔾ₘ`, i.e.
-morphisms of group objects over `Spec R`.
-
-Blueprint: tori.character_and_cocharacter_lattices
--/
-noncomputable def SchemeCharacterGroup
-    (G : Grp (Over (Scheme.Spec.obj (op Rc)))) : Type _ :=
-  G ⟶ gmGrp Rc
-
-/-- `D(M)` bundled as a group object. -/
-noncomputable def diagGrp (M : Type u) [AddCommGroup M] :
-    Grp (Over (Scheme.Spec.obj (op Rc))) :=
-  { X := diagGroupOver Rc M
-    grp := diagGroupOver.instGrpObj Rc M }
-
-/-- **Bridge, stage 1** (statement; proof: M0 pass): `hopfSpec` is
-fully faithful — algebraic-group homs between spectra correspond to
-group-object morphisms on the algebra side.
-
-Blueprint: affine_group_schemes.hopf_spec_fully_faithful
--/
-theorem hopfSpec_map_bijective
-    (A B : Grp ((CommAlgCat Rc)ᵒᵖ)) :
-    Function.Bijective
-      (fun f : A ⟶ B => (Langlands.AlgebraicGeometry.hopfSpec Rc).map f) := by
-  sorry
-
-/-- **Scheme-level Cartier duality for `D(M)`** (statement; proof: M0
-pass, via the two bridge stages): algebraic-group homomorphisms
-`D(M) → 𝔾ₘ` correspond to lattice elements. The group-law
-compatibility (pointwise multiplication ↔ lattice addition) is
-stated once hom-groups of commutative group objects are available
-(KB: `tori.convolution_is_pointwise_multiplication`).
-
-Blueprint: tori.characters_as_group_like_elements
--/
-theorem schemeCharacter_diag_equiv (M : Type u) [AddCommGroup M]
-    [IsDomain Rc] :
-    Nonempty (SchemeCharacterGroup Rc (diagGrp Rc M) ≃ Multiplicative M) := by
-  sorry
-
-end SchemeLevel
 
 end Domain
 
 /-! ### Inversion of characters via the antipode (statements)
 
-The convolution `CommMonoid` on `CharacterGroup` is Mathlib's; the
+The convolution `CommMonoid` on `HopfCharacterGroup` is Mathlib's; the
 group law needs inversion by the antipode. Definitions are given
 here; the group axioms are the M0 proof pass. -/
 
@@ -228,20 +274,20 @@ variable {R}
 /-- The antipode of `O(𝔾ₘ) = R[ℤ]` as a Hopf-algebra homomorphism:
 induced by negation on the exponent lattice. -/
 noncomputable def gmAntipodeBialgHom :
-    (AddMonoidAlgebra R ℤ) →ₐc[R] (AddMonoidAlgebra R ℤ) :=
+    (LaurentPolynomial R) →ₐc[R] (LaurentPolynomial R) :=
   AddMonoidAlgebra.mapDomainBialgHom R (AddMonoidHom.mk' Neg.neg neg_add)
 
 /-- Inversion of a character: precompose with the antipode of `𝔾ₘ`.
 Under `Spec`, this is `χ ↦ χ⁻¹` pointwise. -/
 noncomputable instance (A : Type v) [CommSemiring A] [Bialgebra R A] :
-    Inv (CharacterGroup R A) :=
+    Inv (HopfCharacterGroup R A) :=
   ⟨fun φ => toConv (φ.ofConv.comp gmAntipodeBialgHom)⟩
 
 /-- The repo's `𝔾ₘ`-antipode agrees with Mathlib's antipode of the
 group algebra, as algebra maps. -/
 lemma gmAntipodeBialgHom_toAlgHom :
     (gmAntipodeBialgHom (R := R)).toAlgHom =
-      HopfAlgebra.antipodeAlgHom R (AddMonoidAlgebra R ℤ) := by
+      HopfAlgebra.antipodeAlgHom R (LaurentPolynomial R) := by
   refine AddMonoidAlgebra.algHom_ext (fun n => ?_) (Subsingleton.elim _ _)
   show AddMonoidAlgebra.mapDomainBialgHom R (AddMonoidHom.mk' Neg.neg neg_add)
       (AddMonoidAlgebra.single n (1 : R)) =
@@ -257,18 +303,18 @@ lemma gmAntipodeBialgHom_toAlgHom :
 homomorphisms. -/
 theorem characterGroup_inv_mul_cancel
     (A : Type v) [CommSemiring A] [Bialgebra R A]
-    (φ : CharacterGroup R A) : φ⁻¹ * φ = 1 := by
+    (φ : HopfCharacterGroup R A) : φ⁻¹ * φ = 1 := by
   have hΨ : Function.Injective
-      (fun f : CharacterGroup R A => toConv f.ofConv.toAlgHom) := by
+      (fun f : HopfCharacterGroup R A => toConv f.ofConv.toAlgHom) := by
     intro f g h
     have h' : f.ofConv.toAlgHom = g.ofConv.toAlgHom :=
       WithConv.toConv_injective h
     refine WithConv.ofConv_injective (BialgHom.ext fun x => ?_)
     exact DFunLike.congr_fun h' x
   apply hΨ
-  show toConv ((φ⁻¹ * φ).ofConv.toAlgHom) = toConv ((1 : CharacterGroup R A).ofConv.toAlgHom)
+  show toConv ((φ⁻¹ * φ).ofConv.toAlgHom) = toConv ((1 : HopfCharacterGroup R A).ofConv.toAlgHom)
   rw [BialgHom.toAlgHom_convMul, BialgHom.toAlgHom_convOne]
-  have hinv : toConv ((φ⁻¹ : CharacterGroup R A).ofConv.toAlgHom) =
+  have hinv : toConv ((φ⁻¹ : HopfCharacterGroup R A).ofConv.toAlgHom) =
       (toConv φ.ofConv.toAlgHom)⁻¹ := by
     show toConv ((φ.ofConv.comp gmAntipodeBialgHom).toAlgHom) = _
     have : (φ.ofConv.comp gmAntipodeBialgHom).toAlgHom =
@@ -282,8 +328,8 @@ theorem characterGroup_inv_mul_cancel
 by the antipode of `𝔾ₘ` (`characterGroup_inv_mul_cancel` carries the
 knowledge-base link). -/
 noncomputable instance (A : Type v) [CommSemiring A] [Bialgebra R A] :
-    CommGroup (CharacterGroup R A) where
-  __ := (inferInstance : CommMonoid (CharacterGroup R A))
+    CommGroup (HopfCharacterGroup R A) where
+  __ := (inferInstance : CommMonoid (HopfCharacterGroup R A))
   inv := Inv.inv
   inv_mul_cancel := characterGroup_inv_mul_cancel A
 
@@ -310,7 +356,7 @@ is an isomorphism of character groups — functoriality of `X^*` in
 isomorphisms. -/
 noncomputable def charGroupCongr {A₁ A₂ : Type v}
     [CommSemiring A₁] [Bialgebra R A₁] [CommSemiring A₂] [Bialgebra R A₂]
-    (e : A₁ ≃ₐc[R] A₂) : CharacterGroup R A₁ ≃* CharacterGroup R A₂ where
+    (e : A₁ ≃ₐc[R] A₂) : HopfCharacterGroup R A₁ ≃* HopfCharacterGroup R A₂ where
   toFun χ := toConv ((e : A₁ →ₐc[R] A₂).comp χ.ofConv)
   invFun χ := toConv ((e.symm : A₂ →ₐc[R] A₁).comp χ.ofConv)
   left_inv χ := by

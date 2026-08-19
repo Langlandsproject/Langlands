@@ -163,6 +163,22 @@ theorem with its KB node, and **bridge nodes license identifications
 in proofs, never as definitions**; (5) plans do not override this
 section — a plan line encoding a convenient form is a plan bug.
 
+### Reuse before define (binding)
+
+One object, one name. Before an object appears in any statement,
+find its existing name — repo first, then Mathlib
+(`lean_local_search`, grep). Violations, both banned: (i)
+*re-spelling* — writing an existing object's underlying term inline
+(`AddMonoidAlgebra R ℤ` for `O(𝔾ₘ) = LaurentPolynomial R`); (ii)
+*re-defining* — building a second copy (`gmGrp` hand-rolling
+`Spec R[ℤ]` while `multiplicativeGroup` existed). Corollaries: a
+"Hom of Xs" in a definition means the existing categorical hom
+(group-scheme homs are morphisms of `Grp (Over (Spec R))`), never a
+re-encoded carrier — encodings (`WithConv` of Hopf homs) are
+bridge-side working forms under their own names; and `Examples/`
+holds only illustrations — anything referenced by a definition is a
+construction and gets promoted (burned: `Gm`, 2026-08-19).
+
 ### Why unfaithful definitions kept appearing (2026-08-19 root cause)
 
 Three reviews in one day found the same failure shape (X^* defined as

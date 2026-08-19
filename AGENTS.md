@@ -59,7 +59,20 @@ mathematical definition**. The procedure that prevents it:
    theorem* (with its KB node), and proofs go through the bridge.
    Bridge nodes license identifications **in proofs — never as
    definitions**.
-5. **Plans do not override conventions.** A plan line that encodes a
+5. **Reuse before define — one object, one name.** Before any object
+   appears in a statement, find its existing name (repo first, then
+   Mathlib: `lean_local_search`, grep). Re-spelling an existing
+   object inline (`AddMonoidAlgebra R ℤ` where `O(𝔾ₘ) =
+   LaurentPolynomial R` is meant) and re-defining it (a hand-rolled
+   second `𝔾ₘ` when `multiplicativeGroup` exists) are both banned.
+   "Hom of algebraic groups" means the categorical hom that already
+   exists (morphisms of `Grp (Over (Spec R))`), never a re-encoded
+   carrier (`WithConv` of Hopf homs) — encodings live on the bridge
+   side, under their own names (`HopfCharacterGroup`).
+6. **`Examples/` holds only illustrations.** Anything referenced by
+   a definition elsewhere is a construction, not an example, and is
+   promoted out of `Examples/` (burned: `Gm`).
+7. **Plans do not override conventions.** A plan line that encodes a
    convenient-form definition (it happened: plan M5 said
    "charLattice := GroupLike…") is a bug in the plan; conventions
    §6 wins and the plan line gets annotated, not executed.

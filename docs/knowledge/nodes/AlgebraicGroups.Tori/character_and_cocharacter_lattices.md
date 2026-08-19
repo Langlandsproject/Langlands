@@ -23,7 +23,9 @@ lean:
   - Langlands.Tori.SchemeCharacterGroup
   - Langlands.Tori.gmGrp
   - Langlands.Tori.CharacterGroup
+  - Langlands.Tori.HopfCharacterGroup
   - Langlands.Tori.CocharacterGroup
+  - Langlands.Tori.HopfCocharacterGroup
   - Langlands.ReductiveGroups.diagCharEquiv
   - Langlands.Tori.diagCocharEquiv
   - Langlands.Tori.diagGroupLikeEquiv

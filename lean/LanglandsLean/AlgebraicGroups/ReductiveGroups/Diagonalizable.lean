@@ -48,7 +48,7 @@ Mathlib's `mapDomainBialgHomAddEquiv`.
 Blueprint: tori.character_and_cocharacter_lattices, reductive_groups.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
 -/
 noncomputable def diagCharEquiv :
-    Multiplicative M ≃* CharacterGroup R (AddMonoidAlgebra R M) :=
+    Multiplicative M ≃* HopfCharacterGroup R (AddMonoidAlgebra R M) :=
   AddEquiv.toMultiplicativeLeft
     ((zmultiplesAddEquiv M).trans
       (AddMonoidAlgebra.mapDomainBialgHomAddEquiv (R := R)))
@@ -96,7 +96,7 @@ theorem diag_bialgEquiv_iff_addEquiv :
 section Examples
 
 /-- Characters of `𝔾ₘ = D(ℤ)`: the lattice `ℤ`. -/
-noncomputable example : Multiplicative ℤ ≃* CharacterGroup R (AddMonoidAlgebra R ℤ) :=
+noncomputable example : Multiplicative ℤ ≃* HopfCharacterGroup R (AddMonoidAlgebra R ℤ) :=
   diagCharEquiv R ℤ
 
 /-- Endomorphisms of `𝔾ₘ` as a group scheme: `ℤ`, acting by
@@ -122,9 +122,9 @@ group this is the character decomposition `k[D] = k[X(D)]`.
 Blueprint: reductive_groups.diagonalizable_groups_antiequivalence
 -/
 noncomputable def charLift :
-    MonoidAlgebra R (CharacterGroup R A) →ₐc[R] A :=
+    MonoidAlgebra R (HopfCharacterGroup R A) →ₐc[R] A :=
   BialgHom.ofAlgHom
-    (MonoidAlgebra.lift R A (CharacterGroup R A)
+    (MonoidAlgebra.lift R A (HopfCharacterGroup R A)
       { toFun := fun χ => χ.ofConv (AddMonoidAlgebra.single 1 1)
         map_one' := by
           rw [BialgHom.convOne_apply,
@@ -136,9 +136,9 @@ noncomputable def charLift :
     (by
       refine MonoidAlgebra.algHom_ext (fun χ => ?_) (Subsingleton.elim _ _)
       show Coalgebra.counit (R := R)
-          (MonoidAlgebra.lift R A (CharacterGroup R A) _
+          (MonoidAlgebra.lift R A (HopfCharacterGroup R A) _
             (MonoidAlgebra.single χ 1)) =
-        Bialgebra.counitAlgHom R (MonoidAlgebra R (CharacterGroup R A))
+        Bialgebra.counitAlgHom R (MonoidAlgebra R (HopfCharacterGroup R A))
           (MonoidAlgebra.single χ 1)
       rw [MonoidAlgebra.lift_single, one_smul]
       have h1 : Coalgebra.counit (R := R)
@@ -149,7 +149,7 @@ noncomputable def charLift :
           (AddMonoidAlgebra.single (1 : ℤ) (1 : R)))
       show Coalgebra.counit (R := R)
           (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R))) =
-        Bialgebra.counitAlgHom R (MonoidAlgebra R (CharacterGroup R A))
+        Bialgebra.counitAlgHom R (MonoidAlgebra R (HopfCharacterGroup R A))
           (MonoidAlgebra.single χ 1)
       rw [h1, (AddMonoidAlgebra.isGroupLikeElem_single_one
         (R := R) (1 : ℤ)).counit_eq_one]
@@ -164,12 +164,12 @@ noncomputable def charLift :
           (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R))) :=
         (AddMonoidAlgebra.isGroupLikeElem_single_one 1).map χ.ofConv
       show Algebra.TensorProduct.map _ _
-          (Bialgebra.comulAlgHom R (MonoidAlgebra R (CharacterGroup R A))
+          (Bialgebra.comulAlgHom R (MonoidAlgebra R (HopfCharacterGroup R A))
             (MonoidAlgebra.single χ 1)) =
         Bialgebra.comulAlgHom R A
-          (MonoidAlgebra.lift R A (CharacterGroup R A) _
+          (MonoidAlgebra.lift R A (HopfCharacterGroup R A) _
             (MonoidAlgebra.single χ 1))
-      rw [show Bialgebra.comulAlgHom R (MonoidAlgebra R (CharacterGroup R A))
+      rw [show Bialgebra.comulAlgHom R (MonoidAlgebra R (HopfCharacterGroup R A))
           (MonoidAlgebra.single χ (1 : R)) =
           Coalgebra.comul (MonoidAlgebra.single χ (1 : R)) from rfl]
       rw [(MonoidAlgebra.isGroupLikeElem_single_one χ).comul_eq_tmul_self]

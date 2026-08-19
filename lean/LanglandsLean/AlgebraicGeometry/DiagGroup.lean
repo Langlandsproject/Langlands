@@ -30,7 +30,7 @@ object up to canonical isomorphism by Yoneda, and every downstream
 computation should go through it rather than through the construction.
 
 Special cases already in the library: `𝔾ₘ = D(ℤ)`
-(`Examples/Gm.lean`), `μ_n = D(ℤ/n)` (`Examples/MuN.lean`), split
+(`AlgebraicGeometry/Gm.lean`), `μ_n = D(ℤ/n)` (`Examples/MuN.lean`), split
 tori `D(ℤⁿ)` (`Tori/SplitTorus.lean`).
 
 Note on the name: `D(M)` is the *object*; the *property* "the group

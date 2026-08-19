@@ -14,7 +14,7 @@ D(M) \;=\; \operatorname{Spec} R[M],
 
 whose coordinate ring is the Laurent polynomial ring in
 `Module.finrank ℤ M` variables once a basis is chosen. For `M = ℤ`
-this recovers `G_m` (`Examples/Gm.lean`, where the coordinate ring is
+this recovers `G_m` (`AlgebraicGeometry/Gm.lean`, where the coordinate ring is
 presented as `LaurentPolynomial R`).
 
 The definition is parameterized by the lattice, not by a rank `n`

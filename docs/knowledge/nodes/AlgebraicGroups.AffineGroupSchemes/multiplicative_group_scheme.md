@@ -11,12 +11,12 @@ uses:
 - affine_group_schemes.coordinate_hopf_algebra_of_group_scheme
 lean:
   modules:
-    - LanglandsLean.AlgebraicGeometry.Examples.Gm
+    - LanglandsLean.AlgebraicGeometry.Gm
   declarations:
-  - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup.hopfAlg
-  - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup
-  - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup.instGrpObj
-  - Langlands.AlgebraicGeometry.Examples.Gm
+  - Langlands.AlgebraicGeometry.multiplicativeGroup.hopfAlg
+  - Langlands.AlgebraicGeometry.multiplicativeGroup
+  - Langlands.AlgebraicGeometry.multiplicativeGroup.instGrpObj
+  - Langlands.AlgebraicGeometry.Gm
 verification:
   definition: accepted
   proof: not_applicable

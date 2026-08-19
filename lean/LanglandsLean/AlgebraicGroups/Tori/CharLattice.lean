@@ -9,7 +9,7 @@ Textbook definitions transcribed (conventions §6, transcription
 procedure):
 
 * **X^*(T) := Hom(T, 𝔾ₘ)** — `CharLattice R A` is the character
-  group `CharacterGroup R A` (homomorphisms of algebraic groups
+  group `HopfCharacterGroup R A` (homomorphisms of algebraic groups
   `Spec A → 𝔾ₘ`, the repo's faithful form) **written additively**,
   as the literature writes the character lattice. This `Additive`
   is the single point where the multiplicative character group is
@@ -43,14 +43,14 @@ universe u v
 variable (R : Type u) [CommRing R] [IsDomain R]
 
 /-- **The character lattice** `X^*(Spec A) := Hom(Spec A, 𝔾ₘ)`: the
-character group (`CharacterGroup`, the faithful Hom-form), written
+character group (`HopfCharacterGroup`, the faithful Hom-form), written
 additively as in the literature — `X^*` is a lattice with `ℤ`-valued
 pairings.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 abbrev CharLattice (A : Type v) [CommSemiring A] [Bialgebra R A] : Type _ :=
-  Additive (CharacterGroup R A)
+  Additive (HopfCharacterGroup R A)
 
 /-! ### The Galois action: conjugation -/
 
@@ -288,7 +288,7 @@ form: `γ · χ = γ_{𝔾ₘ} ∘ χ ∘ γ_T⁻¹`.
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def charGalAct :
-    (E ≃ₐ[k] E) →* Monoid.End (CharacterGroup E (E ⊗[k] A)) where
+    (E ≃ₐ[k] E) →* Monoid.End (HopfCharacterGroup E (E ⊗[k] A)) where
   toFun γ :=
     { toFun := fun χ => toConv (conjChar k E A γ χ.ofConv)
       map_one' := by
@@ -366,7 +366,7 @@ noncomputable def charLatticeMap (f : A →ₐc[k] B) :
       map_one' := by
         refine WithConv.ofConv_injective (charBialgHom_ext k E B fun n => ?_)
         show Bialgebra.TensorProduct.map (BialgHom.id E E) f
-            ((1 : CharacterGroup E (E ⊗[k] A)).ofConv
+            ((1 : HopfCharacterGroup E (E ⊗[k] A)).ofConv
               (AddMonoidAlgebra.single n 1)) = _
         rw [BialgHom.convOne_apply, BialgHom.convOne_apply]
         exact AlgHomClass.commutes _ _

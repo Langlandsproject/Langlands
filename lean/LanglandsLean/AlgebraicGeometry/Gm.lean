@@ -8,7 +8,7 @@ import Mathlib.AlgebraicGeometry.Morphisms.FiniteType
 import Mathlib.RingTheory.FiniteType
 
 /-!
-# The multiplicative group scheme `G_m`
+# The multiplicative group scheme `𝔾ₘ`
 
 For a commutative ring `R`, the multiplicative group scheme
 \(\mathbb{G}_{m,R} = \operatorname{Spec} R[T, T^{-1}]\) is constructed
@@ -17,7 +17,10 @@ via `hopfSpec` from Mathlib's
 (group-like comultiplication `Δ(T) = T ⊗ T`, counit `ε(T) = 1`,
 antipode `S(T) = T⁻¹`).
 
-This is the **first concrete example** verifying the Yoneda hopfSpec
+`𝔾ₘ` is a **key construction**, not an example (owner ruling
+2026-08-19): the character and cocharacter groups of every algebraic
+group are defined as homomorphisms into/out of it, and the split
+torus is its power. It also exercises the Yoneda hopfSpec
 chain end-to-end on an actual algebraic group.
 
 ## Main declarations
@@ -39,7 +42,7 @@ Phase D2: <https://github.com/Langlandsproject/Langlands/issues/7>.
 open AlgebraicGeometry CategoryTheory Opposite LaurentPolynomial
 open Langlands.AlgebraicGeometry.AlgHomPointsPresheaf
 
-namespace Langlands.AlgebraicGeometry.Examples
+namespace Langlands.AlgebraicGeometry
 
 universe u
 
@@ -111,4 +114,4 @@ noncomputable instance :
 noncomputable instance : IsAlgebraicGroup (Gm R) (Scheme.Spec.obj (op R)) :=
   inferInstance
 
-end Langlands.AlgebraicGeometry.Examples
+end Langlands.AlgebraicGeometry
