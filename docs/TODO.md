@@ -638,6 +638,13 @@ Sources: KP Ch. 13; Ch. 16–17 optional.
 
 ## Standing hygiene
 
+- [ ] mdblueprint linter gaps found 2026-08-19 (rules that should be
+      mechanical, not checklist items): warn on `Blueprint:` appearing
+      mid-line in a docstring (currently silently ignored — caused a
+      fake 0-cross-mismatch); naming lint for Type-valued lowerCamel
+      defs in the Lean index; surface per-file sorry counts in
+      lean_reverse_check output.
+
 - [ ] Keep `tools.knowledge.check` at 0 errors before every commit
       (the 2026-07-28 merge repaired 71 errors introduced by a remote
       batch; do not let cloud sessions land unchecked).
