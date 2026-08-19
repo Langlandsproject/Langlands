@@ -257,8 +257,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             pages = [
                 "index.html",
                 "dep_graph_document.html",
-                "linear_algebraic_groups/index.html",
-                "root_data_and_duality/root_data_and_duality_root_data.html",
+                "AlgebraicGroups/Tori/index.html",
+                "AlgebraicGroups/Tori/tori_f_tori_galois_module_classification.html",
             ]
         render_check(paths, pages, dry_run=args.dry_run)
         sync_pages(paths, dry_run=args.dry_run)
