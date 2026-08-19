@@ -88,6 +88,34 @@ mathematical definition**. The procedure that prevents it:
 
 Full text and the day's case log: `docs/01-design-conventions.md` §6.
 
+## The working order (binding)
+
+2026-08-19 produced six recurring defect classes (avatar-defined
+concepts, non-reuse, invented names, structural violations, drift,
+skipped process). Root causes: generation before design,
+single-constraint fixes, and mechanically checkable rules left
+unmechanized. The standing countermeasures, in execution order:
+
+1. **Ledger first.** Any new or contested design surface starts as a
+   row in `docs/04-design-ledger.md` (textbook sentence, Lean form,
+   working carrier, bridge, names) — checked against the ledger's
+   full constraint set, shown to the owner when the surface is new
+   or contested, and only then implemented. A review correction
+   amends the ledger row first, then the code. Never rotate a design
+   to satisfy only the newest comment.
+2. **Implement small.** The review unit is a ledger row / one node
+   cluster, not a 300-line fait accompli.
+3. **Lint.** `python3 scripts/lint_design.py` before every commit —
+   new findings in touched files are blockers; each check is a
+   mechanized burn (re-spelling, structure-∃, Type ascriptions,
+   universe without pin, module Blueprint stamps, placement).
+4. **Checklist walk + audit.** Walk `docs/03-review-checklist.md`,
+   then audit the change-set against THIS file's rules and write the
+   audit outcome — including findings beyond the change-set — into
+   the commit message.
+5. **Gates.** `tools.knowledge.check` 0 errors,
+   `lean_reverse_check` 0 cross-mismatch, `lake build` green.
+
 ## Where the existing nodes live
 
 - `docs/knowledge/mdblueprint.yml` — project config (site title, math
@@ -117,6 +145,8 @@ on the topic-level node via `uses:`.
 | Per-topic mathematical conventions | the topic entry node (e.g. `tori.algebraic_tori`) |
 | Publishing | `docs/publishing.md`, `scripts/publish_md.py` |
 | **Pre-commit review checklist (binding)** | `docs/03-review-checklist.md` |
+| **Design ledger — settled decisions; amend BEFORE code, owner sign-off to change a row** | `docs/04-design-ledger.md` |
+| Design linter (mechanized review rules) | `scripts/lint_design.py` |
 | Reusable review prompts (plan verification etc.) | `docs/superpowers/prompts/` |
 
 Read `docs/01-design-conventions.md` before creating, renaming, or
