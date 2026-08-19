@@ -120,6 +120,18 @@ sources:
     title: Endomorphisms of Linear Algebraic Groups
     short: Steinberg Endomorphisms
     authors: Robert Steinberg
+  - id: waterhouse-affine-group-schemes
+    title: "Introduction to Affine Group Schemes (GTM 66, Springer, 1979)"
+    short: Waterhouse AGS
+    authors: William C. Waterhouse
+  - id: curtis-reiner-methods
+    title: "Methods of Representation Theory, with Applications to Finite Groups and Orders, Vol. I (Wiley, 1981)"
+    short: Curtis-Reiner Methods I
+    authors: Charles W. Curtis and Irving Reiner
+  - id: voskresenskii-algebraic-tori
+    title: "Algebraic Groups and Their Birational Invariants (Translations of Mathematical Monographs 179, AMS, 1998)"
+    short: Voskresenskii Tori
+    authors: V. E. Voskresenskii
 topics:
 - id: Foundations
   title: Foundations
