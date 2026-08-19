@@ -8,9 +8,16 @@ topics:
 - reductive_structure
 uses:
 - linear_algebraic_groups.linear_algebraic_groups
+lean:
+  modules:
+  - LanglandsLean.Tori.Diagonalizable
+  declarations:
+  - Langlands.Tori.diagonalizable
+  - Langlands.Tori.Diagonalizable
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Are diagonalisable groups treated as groups of multiplicative type including non-connected cases (finite multiplicative groups)?"

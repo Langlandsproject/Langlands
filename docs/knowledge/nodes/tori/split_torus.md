@@ -9,6 +9,12 @@ topics:
 uses:
 - tori.algebraic_tori
 - tori.torus_definition
+lean:
+  modules:
+  - LanglandsLean.Tori.SplitTorus
+  declarations:
+  - Langlands.Tori.splitTorus
+  - Langlands.Tori.SplitTorus
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -18,6 +24,7 @@ source:
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is splitness characterized both by an isomorphism over k and by the Galois module?"
