@@ -14,7 +14,7 @@ import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
   defines `X_*` as `Hom(𝔾ₘ, T_E)`, not as the dual of `X^*`.
 * `charPairing` — the pairing `⟨χ, λ⟩ : X^* × X_* → ℤ`: the
   composite `χ ∘ λ` is an endomorphism `z ↦ zⁿ` of `𝔾ₘ`, extracted
-  by group-like rigidity. Perfectness (`charPairing_perfect`) and
+  by Cartier duality for `𝔾ₘ`. Perfectness (`charPairing_perfect`) and
   nondegeneracy are the duality statements of
   `tori.character_and_cocharacter_lattices`.
 * `IsGalFixedCochar`, `IsAnisotropicAlgebra` — cocharacters defined
@@ -38,18 +38,19 @@ variable (k E : Type u) [Field k] [Field E] [Algebra k E]
 variable (A : Type u) [CommRing A] [HopfAlgebra k A]
 
 /-- Computation of the character lattice from a splitting
-isomorphism: `X^*` of a torus split as `E[M]` is `M`, via group-like
-rigidity (`diagGroupLikeEquiv`) transported along the isomorphism. -/
+isomorphism: `X^*` of a torus split as `E[M]` is `M`, by composing
+with the isomorphism (`charGroupCongr`) and Cartier duality on the
+split side (`diagCharEquiv`). -/
 theorem nonempty_charLattice_addEquiv (M : Type u) [AddCommGroup M]
     (e : (E ⊗[k] A) ≃ₐc[E] AddMonoidAlgebra E M) :
     Nonempty (CharLattice E (E ⊗[k] A) ≃+ M) :=
   ⟨(MulEquiv.toAdditive
-      ((groupLikeCongr e).trans (diagGroupLikeEquiv E M).symm)).trans
+      ((charGroupCongr e).trans (diagCharEquiv E M).symm)).trans
     (AddEquiv.additiveMultiplicative M)⟩
 
 /-- A torus algebra is cocommutative after base change — tori are
 commutative group schemes (statement; proof: M5, transport along
-`BialgEquiv.ofBijective (groupLikeLift …)` from the group algebra,
+`BialgEquiv.ofBijective (charLift …)` from the group algebra,
 whose cocommutativity is Mathlib's `MonoidAlgebra` instance). -/
 theorem IsTorusAlgebra.isCocomm [IsTorusAlgebra k E A] :
     Coalgebra.IsCocomm E (E ⊗[k] A) := by
@@ -65,22 +66,21 @@ Blueprint: tori.character_and_cocharacter_lattices
 -/
 abbrev CocharLattice : Type u := CocharacterGroup E (E ⊗[k] A)
 
-/-- **The character–cocharacter pairing** `⟨χ, λ⟩`: composing a
-cocharacter with a character gives an endomorphism of `𝔾ₘ`, i.e. an
-integer — extracted by group-like rigidity (`diagGroupLikeEquiv`):
-`λ` maps the group-like `χ` to the group-like `e^{⟨χ,λ⟩}` of `E[ℤ]`.
+/-- **The character–cocharacter pairing** `⟨χ, λ⟩`: the composite
+`χ ∘ λ : 𝔾ₘ → 𝔾ₘ` is `z ↦ z^n` for a unique integer `n` — extracted
+by Cartier duality for `𝔾ₘ` itself (`diagCharEquiv` at `M = ℤ`). On
+coordinate rings the composite is `λ^* ∘ χ^* : O(𝔾ₘ) → O(𝔾ₘ)`.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def charPairing
     (x : CharLattice E (E ⊗[k] A)) (l : CocharLattice k E A) : ℤ :=
   Multiplicative.toAdd <|
-    (diagGroupLikeEquiv E ℤ).symm
-      ⟨l.ofConv x.toMul.val, x.toMul.isGroupLikeElem_val.map l.ofConv⟩
+    (diagCharEquiv E ℤ).symm (toConv (l.ofConv.comp x.toMul.ofConv))
 
 /-- Additivity of the pairing in the character (statement;
-proof: M5 — `l.ofConv` is an algebra homomorphism and
-`diagGroupLikeEquiv` is multiplicative). -/
+proof: M5 — precomposition with a fixed cocharacter is multiplicative
+for convolution, and `diagCharEquiv` is multiplicative). -/
 theorem charPairing_add_left (x y : CharLattice E (E ⊗[k] A))
     (l : CocharLattice k E A) :
     charPairing k E A (x + y) l =

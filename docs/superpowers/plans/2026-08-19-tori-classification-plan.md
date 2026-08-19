@@ -279,6 +279,16 @@ actually blocks; else leave.
 
 ## 5. M5 — Lean: character lattice with Galois action
 
+> **SUPERSEDED 2026-08-19 (owner review; conventions §6 transcription
+> procedure).** The sketch below encoded avatar-based definitions
+> (`charLattice := GroupLike E (E ⊗ A)`, dual-lattice cocharacters).
+> Implemented instead: `CharLattice R A := Additive (CharacterGroup
+> R A)` (X^* = Hom(T, 𝔾ₘ), additively), Galois action by conjugation
+> `conjChar`, functoriality by composition, `CocharLattice` as
+> `CocharacterGroup` (Hom form), pairing as the degree of `χ ∘ λ`.
+> Group-likes remain proof machinery only. Plans do not override
+> conventions.
+
 File: extend `CharacterGroup.lean` or new `CharLattice.lean`.
 
 ```lean

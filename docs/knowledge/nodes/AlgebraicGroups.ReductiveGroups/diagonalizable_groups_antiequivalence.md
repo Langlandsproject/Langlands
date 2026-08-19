@@ -17,7 +17,7 @@ lean:
   - Langlands.Tori.diagCharEquiv
   - Langlands.Tori.diagHomEquiv
   - Langlands.Tori.diag_bialgEquiv_iff_addEquiv
-  - Langlands.Tori.groupLikeLift
+  - Langlands.Tori.charLift
   - Langlands.Tori.IsDiagonalizableAlgebra
   - Langlands.Tori.characterGroup_inv_mul_cancel
   - Langlands.Tori.comul_comp_antipode

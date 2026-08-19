@@ -45,7 +45,7 @@ The convolution *group* structure (inversion via the antipode of
 `𝔾ₘ`) is tracked as plan G0.C M5; the `CommMonoid` instance is
 Mathlib's and suffices for every statement in this file.
 
-## Blueprint
+## Knowledge base
 
 `tori.character_and_cocharacter_lattices`,
 `reductive_groups.diagonalizable_groups_antiequivalence`.
@@ -94,6 +94,8 @@ noncomputable def zmultiplesAddEquiv : M ≃+ (ℤ →+ M) :=
       simp [zsmul_add] }
 
 /-! ### Cartier duality for split tori (T1a), over a domain -/
+
+section Domain
 
 variable [IsDomain R]
 
@@ -280,6 +282,8 @@ theorem schemeCharacter_diag_equiv (M : Type u) [AddCommGroup M]
 
 end SchemeLevel
 
+end Domain
+
 /-! ### Inversion of characters via the antipode (statements)
 
 The convolution `CommMonoid` on `CharacterGroup` is Mathlib's; the
@@ -302,13 +306,91 @@ noncomputable instance (A : Type v) [CommSemiring A] [Bialgebra R A] :
     Inv (CharacterGroup R A) :=
   ⟨fun φ => toConv (φ.ofConv.comp gmAntipodeBialgHom)⟩
 
-/-- The group axiom for characters (statement; proof: M0 pass via
-injective transfer along `toAlgHom` into Mathlib's convolution
-group). -/
+/-- The repo's `𝔾ₘ`-antipode agrees with Mathlib's antipode of the
+group algebra, as algebra maps. -/
+lemma gmAntipodeBialgHom_toAlgHom :
+    (gmAntipodeBialgHom (R := R)).toAlgHom =
+      HopfAlgebra.antipodeAlgHom R (AddMonoidAlgebra R ℤ) := by
+  refine AddMonoidAlgebra.algHom_ext (fun n => ?_) (Subsingleton.elim _ _)
+  show AddMonoidAlgebra.mapDomainBialgHom R (AddMonoidHom.mk' Neg.neg neg_add)
+      (AddMonoidAlgebra.single n (1 : R)) =
+    HopfAlgebra.antipode R (AddMonoidAlgebra.single n (1 : R))
+  rw [AddMonoidAlgebra.antipode_single]
+  show AddMonoidAlgebra.mapDomain (Neg.neg : ℤ → ℤ)
+      (AddMonoidAlgebra.single n (1 : R)) =
+    AddMonoidAlgebra.single (-n) (1 : R)
+  rw [AddMonoidAlgebra.mapDomain_single]
+
+/-- The group axiom for characters, by injective transfer along
+`toAlgHom` into Mathlib's convolution group of algebra
+homomorphisms. -/
 theorem characterGroup_inv_mul_cancel
     (A : Type v) [CommSemiring A] [Bialgebra R A]
     (φ : CharacterGroup R A) : φ⁻¹ * φ = 1 := by
-  sorry
+  have hΨ : Function.Injective
+      (fun f : CharacterGroup R A => toConv f.ofConv.toAlgHom) := by
+    intro f g h
+    have h' : f.ofConv.toAlgHom = g.ofConv.toAlgHom :=
+      WithConv.toConv_injective h
+    refine WithConv.ofConv_injective (BialgHom.ext fun x => ?_)
+    exact DFunLike.congr_fun h' x
+  apply hΨ
+  show toConv ((φ⁻¹ * φ).ofConv.toAlgHom) = toConv ((1 : CharacterGroup R A).ofConv.toAlgHom)
+  rw [BialgHom.toAlgHom_convMul, BialgHom.toAlgHom_convOne]
+  have hinv : toConv ((φ⁻¹ : CharacterGroup R A).ofConv.toAlgHom) =
+      (toConv φ.ofConv.toAlgHom)⁻¹ := by
+    show toConv ((φ.ofConv.comp gmAntipodeBialgHom).toAlgHom) = _
+    have : (φ.ofConv.comp gmAntipodeBialgHom).toAlgHom =
+        φ.ofConv.toAlgHom.comp (HopfAlgebra.antipodeAlgHom R _) := by
+      rw [← gmAntipodeBialgHom_toAlgHom]; rfl
+    rw [this]
+    rfl
+  rw [hinv, inv_mul_cancel]
+
+/-- **The character group is a group**: convolution product, inverse
+by the antipode of `𝔾ₘ` (`characterGroup_inv_mul_cancel` carries the
+knowledge-base link). -/
+noncomputable instance (A : Type v) [CommSemiring A] [Bialgebra R A] :
+    CommGroup (CharacterGroup R A) where
+  __ := (inferInstance : CommMonoid (CharacterGroup R A))
+  inv := Inv.inv
+  inv_mul_cancel := characterGroup_inv_mul_cancel A
+
+/-- Convolution of Hopf-algebra homomorphisms, evaluated at a
+group-like element, is pointwise multiplication — the Lean form of
+the identification of the convolution product with pointwise
+multiplication of characters.
+
+Blueprint: tori.convolution_is_pointwise_multiplication
+-/
+theorem convMul_apply_of_isGroupLikeElem
+    {C A : Type*} [Semiring C] [CommSemiring A] [Bialgebra R C]
+    [Bialgebra R A] [Coalgebra.IsCocomm R C]
+    (f g : WithConv (C →ₐc[R] A)) {c : C} (hc : IsGroupLikeElem R c) :
+    (f * g).ofConv c = f.ofConv c * g.ofConv c := by
+  rw [BialgHom.convMul_def]
+  show Bialgebra.mulBialgHom R A
+      ((Bialgebra.TensorProduct.map f.ofConv g.ofConv) (Coalgebra.comul c)) = _
+  rw [hc.comul_eq_tmul_self]
+  simp [Bialgebra.TensorProduct.map_tmul]
+
+/-- Composition with a Hopf-algebra isomorphism of coordinate rings
+is an isomorphism of character groups — functoriality of `X^*` in
+isomorphisms. -/
+noncomputable def charGroupCongr {A₁ A₂ : Type v}
+    [CommSemiring A₁] [Bialgebra R A₁] [CommSemiring A₂] [Bialgebra R A₂]
+    (e : A₁ ≃ₐc[R] A₂) : CharacterGroup R A₁ ≃* CharacterGroup R A₂ where
+  toFun χ := toConv ((e : A₁ →ₐc[R] A₂).comp χ.ofConv)
+  invFun χ := toConv ((e.symm : A₂ →ₐc[R] A₁).comp χ.ofConv)
+  left_inv χ := by
+    refine WithConv.ofConv_injective (BialgHom.ext fun x => ?_)
+    simp
+  right_inv χ := by
+    refine WithConv.ofConv_injective (BialgHom.ext fun x => ?_)
+    simp
+  map_mul' χ ψ := by
+    refine WithConv.ofConv_injective (BialgHom.ext fun x => ?_)
+    sorry -- proof: M5 (post-composition distributes over convolution)
 
 /-- The comultiplication commutes with the antipode on a
 cocommutative Hopf algebra (statement; proof: M0 pass — this is the

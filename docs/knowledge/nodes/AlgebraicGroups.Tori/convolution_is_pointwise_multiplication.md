@@ -12,9 +12,15 @@ uses:
 - affine_group_schemes.group_scheme_homomorphism
 - affine_group_schemes.coordinate_hopf_algebra_of_group_scheme
 - affine_group_schemes.hopf_spec_grpobj_via_yoneda
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
+  declarations:
+  - Langlands.Tori.convMul_apply_of_isGroupLikeElem
 verification:
   statement: accepted
   proof: accepted
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the statement given both for point groups of an arbitrary affine group scheme and for character groups, over an arbitrary base?"

@@ -53,34 +53,83 @@ section Diagonalizable
 variable (R : Type u) [CommRing R]
 variable (A : Type u) [CommRing A] [HopfAlgebra R A]
 
-/-- **The canonical evaluation** from the group algebra of the
-group-like elements: `R[X(A)] → A`, `e^g ↦ g`. For a diagonalizable
-group this is the character decomposition of the coordinate ring
-(`k[D] = k[X(D)]`).
+/-- **The canonical evaluation of characters**: `R[X(A)] → A`,
+`e^χ ↦ χ(t)` — the group algebra of the character group
+`X(A) = Hom(Spec A, 𝔾ₘ)` maps into the coordinate ring by evaluating
+each character at the coordinate `t` of `𝔾ₘ`. For a diagonalizable
+group this is the character decomposition `k[D] = k[X(D)]`.
 
 Blueprint: reductive_groups.diagonalizable_groups_antiequivalence
 -/
-noncomputable def groupLikeLift :
-    MonoidAlgebra R (GroupLike R A) →ₐc[R] A :=
+noncomputable def charLift :
+    MonoidAlgebra R (CharacterGroup R A) →ₐc[R] A :=
   BialgHom.ofAlgHom
-    (MonoidAlgebra.lift R A (GroupLike R A) (GroupLike.valMonoidHom R A))
+    (MonoidAlgebra.lift R A (CharacterGroup R A)
+      { toFun := fun χ => χ.ofConv (AddMonoidAlgebra.single 1 1)
+        map_one' := by
+          rw [BialgHom.convOne_apply,
+            (AddMonoidAlgebra.isGroupLikeElem_single_one
+              (R := R) (1 : ℤ)).counit_eq_one, map_one]
+        map_mul' := fun χ ψ =>
+          convMul_apply_of_isGroupLikeElem χ ψ
+            (AddMonoidAlgebra.isGroupLikeElem_single_one 1) })
     (by
-      ext g
-      simp)
+      refine MonoidAlgebra.algHom_ext (fun χ => ?_) (Subsingleton.elim _ _)
+      show Coalgebra.counit (R := R)
+          (MonoidAlgebra.lift R A (CharacterGroup R A) _
+            (MonoidAlgebra.single χ 1)) =
+        Bialgebra.counitAlgHom R (MonoidAlgebra R (CharacterGroup R A))
+          (MonoidAlgebra.single χ 1)
+      rw [MonoidAlgebra.lift_single, one_smul]
+      have h1 : Coalgebra.counit (R := R)
+          (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R))) =
+          Coalgebra.counit (R := R)
+            (AddMonoidAlgebra.single (1 : ℤ) (1 : R)) :=
+        congr($(CoalgHomClass.counit_comp χ.ofConv)
+          (AddMonoidAlgebra.single (1 : ℤ) (1 : R)))
+      show Coalgebra.counit (R := R)
+          (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R))) =
+        Bialgebra.counitAlgHom R (MonoidAlgebra R (CharacterGroup R A))
+          (MonoidAlgebra.single χ 1)
+      rw [h1, (AddMonoidAlgebra.isGroupLikeElem_single_one
+        (R := R) (1 : ℤ)).counit_eq_one]
+      show (1 : R) =
+        Coalgebra.counit (R := R) (MonoidAlgebra.single χ (1 : R))
+      rw [MonoidAlgebra.counit_single χ (1 : R)]
+      exact (CommSemiring.counit_apply (R := R) (1 : R)).symm
+      )
     (by
-      ext g
-      simp)
+      refine MonoidAlgebra.algHom_ext (fun χ => ?_) (Subsingleton.elim _ _)
+      have hgl : IsGroupLikeElem R
+          (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R))) :=
+        (AddMonoidAlgebra.isGroupLikeElem_single_one 1).map χ.ofConv
+      show Algebra.TensorProduct.map _ _
+          (Bialgebra.comulAlgHom R (MonoidAlgebra R (CharacterGroup R A))
+            (MonoidAlgebra.single χ 1)) =
+        Bialgebra.comulAlgHom R A
+          (MonoidAlgebra.lift R A (CharacterGroup R A) _
+            (MonoidAlgebra.single χ 1))
+      rw [show Bialgebra.comulAlgHom R (MonoidAlgebra R (CharacterGroup R A))
+          (MonoidAlgebra.single χ (1 : R)) =
+          Coalgebra.comul (MonoidAlgebra.single χ (1 : R)) from rfl]
+      rw [(MonoidAlgebra.isGroupLikeElem_single_one χ).comul_eq_tmul_self]
+      rw [Algebra.TensorProduct.map_tmul, MonoidAlgebra.lift_single, one_smul]
+      show χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R)) ⊗ₜ[R]
+          χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R)) =
+        Coalgebra.comul (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R)))
+      exact hgl.comul_eq_tmul_self.symm
+      )
 
 /-- **Diagonalizable coordinate algebra**: the canonical evaluation
-`R[X(A)] → A` is bijective — `A` has a basis of group-like elements.
-This is the canonical-witness form of "`A ≅ R[M]` for some abelian
-group `M`" (take `M = X(A)`; group-like rigidity makes any witness
-isomorphic to this one).
+`R[X(A)] → A` is bijective — the character decomposition
+`A ≅ R[X(A)]` holds, i.e. `A` is the group algebra of its character
+group. This is the canonical-witness form of "`A ≅ R[M]` for some
+abelian group `M`" (take `M = X(A)`).
 
 Blueprint: reductive_groups.diagonalizable_groups_antiequivalence
 -/
 class IsDiagonalizableAlgebra : Prop where
-  bijective_groupLikeLift : Function.Bijective (groupLikeLift R A)
+  bijective_charLift : Function.Bijective (charLift R A)
 
 end Diagonalizable
 
