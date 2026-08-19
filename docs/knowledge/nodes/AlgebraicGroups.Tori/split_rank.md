@@ -13,7 +13,7 @@ uses:
 - tori.anisotropic_torus
 lean:
   modules:
-  - LanglandsLean.AlgebraicGroups.Tori.CharLattice
+  - LanglandsLean.AlgebraicGroups.Tori.Rank
   declarations:
   - Langlands.Tori.torusRank
   - Langlands.Tori.torusSplitRank

@@ -1,4 +1,4 @@
-import LanglandsLean.AlgebraicGroups.Tori.CharLattice
+import LanglandsLean.AlgebraicGroups.Tori.Torus
 import Mathlib.Algebra.Category.CommHopfAlgCat
 import Mathlib.RepresentationTheory.Rep.Basic
 
@@ -37,6 +37,7 @@ itself is then genuine data via `Functor.asEquivalence`.
 -/
 
 open CategoryTheory
+open scoped TensorProduct
 
 namespace Langlands.Tori
 
@@ -84,6 +85,7 @@ variable {Γ}
 
 /-! ### The character-lattice functor -/
 
+section CharRep
 variable (A : Type u) [CommRing A] [HopfAlgebra k A]
 
 /-- The character lattice with its Galois action, as an object of
@@ -94,7 +96,7 @@ Blueprint: tori.f_tori_galois_module_classification
 noncomputable def charLatticeRep : Rep.{u} ℤ (E ≃ₐ[k] E) :=
   Rep.of (charRep k E A)
 
-variable {A}
+end CharRep
 
 /-- **The character-lattice functor** `A ↦ X^*(Spec A)`: covariant
 on coordinate algebras, i.e. contravariant on tori. Functoriality
@@ -111,8 +113,7 @@ noncomputable def charLatticeFunctor :
       charLattice_finite k E A.obj⟩
   map {A B} f :=
     ⟨Rep.ofHom
-      { toLinearMap :=
-          (MonoidHom.toAdditive (charLatticeMap k E f.hom.hom)).toIntLinearMap
+      { toLinearMap := (charLatticeMap k E f.hom.hom).toIntLinearMap
         isIntertwining' := fun γ => by
           sorry }⟩ -- proof: M6 (equivariance = charLatticeMap_galAct)
   map_id A := by
@@ -154,6 +155,22 @@ instance charLatticeFunctor_essSurj : (charLatticeFunctor k E).EssSurj where
     sorry
 
 instance : (charLatticeFunctor k E).IsEquivalence where
+
+variable {A B : Type u} [CommRing A] [HopfAlgebra k A] [CommRing B] [HopfAlgebra k B] in
+/-- **The hom-level classification** (full faithfulness, working
+form): for tori split by `E`, every Galois-equivariant homomorphism
+of character lattices is induced by a unique Hopf-algebra
+homomorphism (statement; proof: M6 via `forms.hopf_descent` and
+Cartier duality over `E`).
+
+Blueprint: tori.classification_hom_level
+-/
+theorem existsUnique_bialgHom_of_equivariant
+    [IsTorusAlgebra k E A] [IsTorusAlgebra k E B]
+    (g : CharLattice E (E ⊗[k] A) →+ CharLattice E (E ⊗[k] B))
+    (hg : ∀ γ x, g (charRep k E A γ x) = charRep k E B γ (g x)) :
+    ∃! f : A →ₐc[k] B, charLatticeMap k E f = g := by
+  sorry
 
 /-- Essential surjectivity, unbundled (KB:
 `tori.twisted_form_of_lattice`): every finite free `ℤ`-module with

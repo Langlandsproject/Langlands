@@ -1,77 +1,58 @@
-import LanglandsLean.AlgebraicGroups.Tori.Torus
-import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
+import Mathlib.RingTheory.HopfAlgebra.GroupLike
 import Mathlib.RingTheory.HopfAlgebra.TensorProduct
-import Mathlib.RepresentationTheory.Invariants
-import Mathlib.LinearAlgebra.Dimension.Finrank
+import Mathlib.RingTheory.Bialgebra.TensorProduct
+import Mathlib.RepresentationTheory.Basic
 
 /-!
-# The character lattice of a torus as a Galois module (plan G0.C M5)
+# The character lattice and its Galois action (plan G0.C M5)
 
-For a torus over `k` split by a finite Galois extension `E`, with
-coordinate Hopf algebra `A`, this file defines
+* `CharLattice R A` — **the character lattice** `X^*(Spec A)` of a
+  Hopf algebra: the group-like elements of `A` (the characters, via
+  the bridge `tori.characters_as_group_like_elements`; the primitive
+  form of a character is a group-scheme homomorphism,
+  `SchemeCharacterGroup`), written **additively** — the knowledge
+  base's `X^*` is a lattice: a `ℤ`-module with `ℤ`-valued pairings.
+  This is the one place where the multiplicative group of characters
+  is identified with its additive avatar; no other statement carries
+  an `Additive`/`Multiplicative` wrapper for it.
+* `galAlgAut`, `charGalAct`, `charRep` — for a torus presented over
+  `k` and split by `E`: the semilinear Galois action `γ ⊗ 1` on the
+  base change, its action on characters, and the resulting
+  `ℤ`-linear representation of `Gal(E/k)` on `X^*(T_E)` — the Galois
+  module of the classification
+  (`tori.f_tori_galois_module_classification`).
+* `charLatticeMap` — functoriality: a Hopf map `A → B` induces a
+  lattice map `X^*(Spec A) → X^*(Spec B)` (contravariantly on tori),
+  Galois-equivariantly (`charLatticeMap_galAct`).
 
-* `CharLattice k E A` — the character lattice `X^*(T_E)`, in its
-  **working form**: the group-like elements of the base change
-  `E ⊗[k] A`. The primitive definition of a character is a
-  group-scheme homomorphism (`SchemeCharacterGroup`); passing to
-  group-likes is licensed by the bridge node
-  `tori.characters_as_group_like_elements` (an identification proved
-  in the KB, not a redefinition).
-* `charGalAct`, `charRep` — the Galois action `γ · χ = (γ ⊗ 1) χ` on
-  characters, as a monoid action and as a `ℤ`-linear representation
-  of `Gal(E/k)`. This is the Galois-module structure that the
-  classification `tori.f_tori_galois_module_classification` says is
-  a complete invariant.
-* `torusRank`, `torusSplitRank` — rank and split rank
-  (`tori.split_rank`). The split rank is defined through the
-  `Θ`-invariants of `X^*`; the KB node proves this agrees with the
-  cocharacter-side and maximal-split-subtorus definitions.
-* `CocharLattice`, `charPairing` — the cocharacter lattice in its
-  faithful form (Hopf homomorphisms `O(T_E) → O(𝔾ₘ)`, i.e.
-  `CocharacterGroup E (E ⊗[k] A)`) and the perfect pairing
-  `X^* × X_* → ℤ`.
-* `IsAnisotropicAlgebra` — anisotropy via Galois-fixed cocharacters
-  (`tori.anisotropic_torus`, working definition `X_*(T)^Θ = 0`).
-
-## Conversion glossary
-
-* `WithConv` (in `CocharLattice`): the convolution monoid structure
-  on Hopf-hom sets; under `Spec` it is pointwise multiplication
-  (`tori.convolution_is_pointwise_multiplication`).
-* `Additive (CharLattice …)`: characters form a multiplicative
-  group; the lattice/`ℤ`-module structure of the KB is its additive
-  form. `Multiplicative ℤ` appears inversely in `charPairing` via
-  `diagGroupLikeEquiv`.
-
-## Statement-first status
-
-Definitions are complete; every `sorry` is a theorem statement or a
-proof obligation inside a definition (group-like membership under
-the Galois action, functoriality fields), each tagged with the
-milestone that discharges it. No proofs are attempted in this pass.
+The key lemma is `isGroupLikeElem_galAlgAut`: the Galois action
+preserves group-likes. Its proof works through `sqBaseChange`, the
+identification `(E⊗A) ⊗[E] (E⊗A) ≅ E ⊗ (A⊗A)` under which the
+base-change comultiplication becomes `1 ⊗ Δ_A` and the diagonal
+semilinear action becomes `γ ⊗ 1` — no semilinear tensor machinery.
 -/
 
 open scoped TensorProduct
-open Bialgebra Coalgebra HopfAlgebra WithConv
+open Bialgebra Coalgebra HopfAlgebra
 
 namespace Langlands.Tori
 
 universe u
 
-variable (k E : Type u) [Field k] [Field E] [Algebra k E]
-variable (A B : Type u) [CommRing A] [HopfAlgebra k A] [CommRing B] [HopfAlgebra k B]
+/-! ### The character lattice of a Hopf algebra -/
 
-/-! ### The character lattice and its Galois action -/
+variable (R : Type u) [CommRing R]
 
-/-- **The character lattice** `X^*(T_E)` of the torus with coordinate
-algebra `A`, in its working form: group-like elements of `E ⊗[k] A`
-(bridge: `tori.characters_as_group_like_elements`; the primitive
-form is `SchemeCharacterGroup`). A commutative group under
-multiplication; its additive form is the KB's lattice.
+/-- **The character lattice** `X^*(Spec A)`: the group-like elements
+of `A` — the characters `Spec A → 𝔾ₘ`, by
+`tori.characters_as_group_like_elements` — as an additive group. The
+knowledge base's character lattice is additive (`ℤ`-module, integral
+pairings); the multiplicative group of characters is its `.toMul`.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev CharLattice : Type u := GroupLike E (E ⊗[k] A)
+abbrev CharLattice (A : Type u) [CommRing A] [HopfAlgebra R A] : Type u :=
+  Additive (GroupLike R A)
 
 /-- Transport of group-like elements along a bialgebra isomorphism
 (Mathlib gap: no `GroupLike.congr`). -/
@@ -83,6 +64,11 @@ noncomputable def groupLikeCongr {R A₁ A₂ : Type*} [CommSemiring R]
   left_inv x := by ext; simp
   right_inv y := by ext; simp
   map_mul' x y := by ext; simp
+
+/-! ### The Galois action on the base change -/
+
+variable (k E : Type u) [Field k] [Field E] [Algebra k E]
+variable (A B : Type u) [CommRing A] [HopfAlgebra k A] [CommRing B] [HopfAlgebra k B]
 
 /-- The semilinear Galois action on the base change: `γ ⊗ 1` as a
 `k`-algebra automorphism of `E ⊗[k] A`. -/
@@ -173,7 +159,7 @@ lemma counit_galAlgAut (γ : E ≃ₐ[k] E) (v : E ⊗[k] A) :
 /-- `γ ⊗ 1` preserves group-like elements: the semilinear
 compatibility of the comultiplication with the Galois action,
 expressed through `sqBaseChange`. -/
-theorem isGroupLikeElem_galAlgAut (γ : E ≃ₐ[k] E) (x : CharLattice k E A) :
+theorem isGroupLikeElem_galAlgAut (γ : E ≃ₐ[k] E) (x : GroupLike E (E ⊗[k] A)) :
     IsGroupLikeElem E (galAlgAut k E A γ x.val) where
   counit_eq_one := by
     rw [counit_galAlgAut, x.2.counit_eq_one, map_one]
@@ -182,13 +168,13 @@ theorem isGroupLikeElem_galAlgAut (γ : E ≃ₐ[k] E) (x : CharLattice k E A) :
     rw [sqBaseChange_comul, baseChangeComul_galAlgAut, ← sqBaseChange_comul,
       x.2.comul_eq_tmul_self, sqBaseChange_galAlgAut_tmul]
 
-/-- **The Galois action on characters**: `γ · χ = (γ ⊗ 1) χ`. The
-monoid-hom fields are the functoriality of `γ ⊗ 1` (proof: M5).
+/-- The Galois action on characters, multiplicative avatar:
+`γ · χ = (γ ⊗ 1) χ` on the group-like elements.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def charGalAct :
-    (E ≃ₐ[k] E) →* Monoid.End (CharLattice k E A) where
+    (E ≃ₐ[k] E) →* Monoid.End (GroupLike E (E ⊗[k] A)) where
   toFun γ :=
     { toFun := fun x =>
         ⟨galAlgAut k E A γ x.val, isGroupLikeElem_galAlgAut k E A γ x⟩
@@ -205,13 +191,14 @@ noncomputable def charGalAct :
     ext x
     exact galAlgAut_mul k E A γ δ x.val
 
-/-- The character lattice as a `ℤ`-linear representation of
-`Gal(E/k)` — the Galois module `X^*(T)` of the classification.
+/-- **The character lattice as a Galois module**: the `ℤ`-linear
+representation of `Gal(E/k)` on `X^*(T_E)` — the complete invariant
+of the classification.
 
 Blueprint: tori.f_tori_galois_module_classification
 -/
 noncomputable def charRep :
-    Representation ℤ (E ≃ₐ[k] E) (Additive (CharLattice k E A)) where
+    Representation ℤ (E ≃ₐ[k] E) (CharLattice E (E ⊗[k] A)) where
   toFun γ := (MonoidHom.toAdditive (charGalAct k E A γ)).toIntLinearMap
   map_one' := by
     refine LinearMap.ext fun x => ?_
@@ -224,189 +211,7 @@ noncomputable def charRep :
     rw [map_mul (charGalAct k E A)]
     rfl
 
-/-- Computation of the character lattice from a splitting
-isomorphism: `X^*` of a torus split as `E[M]` is `M` (statement;
-proof: M5 — transport `diagGroupLikeEquiv` along the base-change
-isomorphism). -/
-theorem nonempty_charLattice_mulEquiv (M : Type u) [AddCommGroup M]
-    (e : (E ⊗[k] A) ≃ₐc[E] AddMonoidAlgebra E M) :
-    Nonempty (CharLattice k E A ≃* Multiplicative M) :=
-  ⟨(groupLikeCongr e).trans (diagGroupLikeEquiv E M).symm⟩
-
-/-- The character lattice of a torus is a free `ℤ`-module — a field
-of the torus class (`IsTorusAlgebra.free`), exposed as an instance on
-the `CharLattice` spelling. -/
-instance charLattice_free [IsTorusAlgebra k E A] :
-    Module.Free ℤ (Additive (CharLattice k E A)) :=
-  IsTorusAlgebra.free
-
-/-- The character lattice of a torus is a finite `ℤ`-module — a
-field of the torus class, exposed as an instance. -/
-instance charLattice_finite [IsTorusAlgebra k E A] :
-    Module.Finite ℤ (Additive (CharLattice k E A)) :=
-  IsTorusAlgebra.finite
-
-/-! ### Rank and split rank -/
-
-/-- **The rank of a torus**: the `ℤ`-rank of its character lattice.
-
-Blueprint: tori.split_rank
--/
-noncomputable def torusRank : ℕ :=
-  Module.finrank ℤ (Additive (CharLattice k E A))
-
-/-- **The split rank** (`k`-rank) of a torus: the rank of the Galois
-invariants of the character lattice. The KB node proves this equals
-the rank of the maximal split subtorus and the rank of
-`X_*(T)^Θ` (the two formulas agree by the averaging argument over
-`ℚ`).
-
-Blueprint: tori.split_rank
--/
-noncomputable def torusSplitRank : ℕ :=
-  Module.finrank ℤ (charRep k E A).invariants
-
-/-- Split rank is at most rank (statement; proof: M5).
-
-Blueprint: tori.split_rank
--/
-theorem torusSplitRank_le_torusRank [IsTorusAlgebra k E A] :
-    torusSplitRank k E A ≤ torusRank k E A :=
-  Submodule.finrank_le _
-
-/-- A torus is split iff its split rank equals its rank (statement;
-proof: M6 — finite-order actions with full-rank invariants are
-trivial).
-
-Blueprint: tori.split_rank
--/
-theorem torusSplitRank_eq_torusRank_iff
-    [FiniteDimensional k E] [IsGalois k E] [IsTorusAlgebra k E A] :
-    torusSplitRank k E A = torusRank k E A ↔ IsSplitTorusAlgebra k A := by
-  sorry
-
-/-! ### The cocharacter lattice, the pairing, anisotropy -/
-
-/-- **The cocharacter lattice** `X_*(T_E)` in its faithful form:
-Hopf-algebra homomorphisms `O(T_E) → O(𝔾ₘ)`, i.e. cocharacters
-`𝔾ₘ → T_E`, with the convolution group structure.
-
-Blueprint: tori.character_and_cocharacter_lattices
--/
-abbrev CocharLattice : Type u := CocharacterGroup E (E ⊗[k] A)
-
-/-- **The character–cocharacter pairing** `⟨χ, λ⟩`: composing a
-cocharacter with a character gives an endomorphism of `𝔾ₘ`, i.e. an
-integer — extracted by group-like rigidity (`diagGroupLikeEquiv`):
-`λ` maps the group-like `χ` to the group-like `e^{⟨χ,λ⟩}` of
-`E[ℤ]`.
-
-Blueprint: tori.character_and_cocharacter_lattices
--/
-noncomputable def charPairing
-    (x : CharLattice k E A) (l : CocharLattice k E A) : ℤ :=
-  Multiplicative.toAdd <|
-    (diagGroupLikeEquiv E ℤ).symm
-      ⟨l.ofConv x.val, x.isGroupLikeElem_val.map l.ofConv⟩
-
-/-- Additivity of the pairing in the character (statement;
-proof: M5). -/
-theorem charPairing_mul_left (x y : CharLattice k E A)
-    (l : CocharLattice k E A) :
-    charPairing k E A (x * y) l =
-      charPairing k E A x l + charPairing k E A y l := by
-  sorry
-
-/-- A torus algebra is cocommutative after base change — tori are
-commutative group schemes (statement; proof: M5, transport from
-`E[M]`). This is what makes the cocharacters a group under
-convolution. -/
-theorem IsTorusAlgebra.isCocomm [IsTorusAlgebra k E A] :
-    Coalgebra.IsCocomm E (E ⊗[k] A) := by
-  sorry
-
-/-- Additivity of the pairing in the cocharacter (statement;
-proof: M5). The cocommutativity hypothesis makes the convolution
-product exist; it holds for every torus algebra
-(`IsTorusAlgebra.isCocomm`). -/
-theorem charPairing_mul_right [Coalgebra.IsCocomm E (E ⊗[k] A)]
-    (x : CharLattice k E A)
-    (l m : CocharLattice k E A) :
-    charPairing k E A x (l * m) =
-      charPairing k E A x l + charPairing k E A x m := by
-  sorry
-
-/-- **Perfectness of the pairing**, cocharacter side: every additive
-functional on the character lattice is pairing against a unique
-cocharacter — `X_*(T) ≅ Hom(X^*(T), ℤ)` (statement; proof: M5).
-
-Blueprint: tori.character_and_cocharacter_lattices
--/
-theorem charPairing_perfect [IsTorusAlgebra k E A]
-    (f : Additive (CharLattice k E A) →+ ℤ) :
-    ∃! l : CocharLattice k E A,
-      ∀ x : CharLattice k E A,
-        charPairing k E A x l = f (Additive.ofMul x) := by
-  sorry
-
-/-- Nondegeneracy of the pairing, character side (statement;
-proof: M5). -/
-theorem charPairing_left_injective [IsTorusAlgebra k E A]
-    {x y : CharLattice k E A}
-    (h : ∀ l, charPairing k E A x l = charPairing k E A y l) : x = y := by
-  sorry
-
-/-- A cocharacter is **Galois-fixed** if it commutes with the
-semilinear Galois actions on source and target: `λ ∘ (γ ⊗ 1) =
-γ_* ∘ λ`, where `γ_*` is the coefficientwise action on
-`O(𝔾ₘ) = E[ℤ]`. These are the cocharacters defined over `k`. -/
-def IsGalFixedCochar (l : CocharLattice k E A) : Prop :=
-  ∀ (γ : E ≃ₐ[k] E) (x : E ⊗[k] A),
-    l.ofConv (galAlgAut k E A γ x) =
-      AddMonoidAlgebra.mapAlgEquiv k ℤ γ (l.ofConv x)
-
-/-- **Anisotropy** (working definition of the KB:
-`X_*(T)^Θ = 0`): the only Galois-fixed cocharacter is the trivial
-one (the convolution unit `η ∘ ε`, i.e. the constant cocharacter).
-
-Blueprint: tori.anisotropic_torus
--/
-def IsAnisotropicAlgebra : Prop :=
-  ∀ l : CocharLattice k E A, IsGalFixedCochar k E A l → l = 1
-
-/-- A torus is anisotropic iff its split rank is zero (statement;
-proof: M6 — the KB equivalence `X_*(T)^Θ = 0 ↔ X^*(T)^Θ = 0` by the
-averaging argument).
-
-Blueprint: tori.split_rank, tori.anisotropic_torus
--/
-theorem torusSplitRank_eq_zero_iff
-    [FiniteDimensional k E] [IsGalois k E] [IsTorusAlgebra k E A] :
-    torusSplitRank k E A = 0 ↔ IsAnisotropicAlgebra k E A := by
-  sorry
-
-/-! ### Functoriality: the hom-level classification -/
-
-variable {A B} in
-/-- The map induced on character lattices by a Hopf-algebra
-homomorphism (contravariantly on tori: `Spec B → Spec A` induces
-`X^*(Spec A) → X^*(Spec B)`): group-likes map along the base change
-`1 ⊗ f`, a Hopf homomorphism via `Bialgebra.TensorProduct.map`.
-
-Blueprint: tori.classification_hom_level
--/
-noncomputable def charLatticeMap (f : A →ₐc[k] B) :
-    CharLattice k E A →* CharLattice k E B where
-  toFun x :=
-    ⟨Bialgebra.TensorProduct.map (BialgHom.id E E) f x.val,
-      x.2.map (Bialgebra.TensorProduct.map (BialgHom.id E E) f)⟩
-  map_one' := by
-    ext
-    exact map_one (Bialgebra.TensorProduct.map (BialgHom.id E E) f)
-  map_mul' := fun x y => by
-    ext
-    exact map_mul (Bialgebra.TensorProduct.map (BialgHom.id E E) f)
-      x.val y.val
+/-! ### Functoriality -/
 
 variable {A B} in
 /-- Element form of the equivariance: `(1 ⊗ f)` commutes with
@@ -421,31 +226,40 @@ lemma baseChangeMap_galAlgAut (f : A →ₐc[k] B) (γ : E ≃ₐ[k] E)
   | add u v hu hv => simp [hu, hv]
 
 variable {A B} in
+/-- The lattice map induced on character lattices by a Hopf-algebra
+homomorphism (contravariantly on tori: `Spec B → Spec A` induces
+`X^*(Spec A) → X^*(Spec B)`): group-likes map along the base change
+`1 ⊗ f`.
+
+Blueprint: tori.classification_hom_level
+-/
+noncomputable def charLatticeMap (f : A →ₐc[k] B) :
+    CharLattice E (E ⊗[k] A) →+ CharLattice E (E ⊗[k] B) :=
+  MonoidHom.toAdditive
+    { toFun := fun x =>
+        ⟨Bialgebra.TensorProduct.map (BialgHom.id E E) f x.val,
+          x.2.map (Bialgebra.TensorProduct.map (BialgHom.id E E) f)⟩
+      map_one' := by
+        ext
+        exact map_one (Bialgebra.TensorProduct.map (BialgHom.id E E) f)
+      map_mul' := fun x y => by
+        ext
+        exact map_mul (Bialgebra.TensorProduct.map (BialgHom.id E E) f)
+          x.val y.val }
+
+variable {A B} in
 /-- The induced lattice map is Galois-equivariant:
 `(γ ⊗ 1) ∘ (1 ⊗ f) = (1 ⊗ f) ∘ (γ ⊗ 1)`.
 
 Blueprint: tori.classification_hom_level
 -/
 theorem charLatticeMap_galAct (f : A →ₐc[k] B) (γ : E ≃ₐ[k] E)
-    (x : CharLattice k E A) :
-    charLatticeMap k E f (charGalAct k E A γ x) =
-      charGalAct k E B γ (charLatticeMap k E f x) := by
+    (x : CharLattice E (E ⊗[k] A)) :
+    charLatticeMap k E f (charRep k E A γ x) =
+      charRep k E B γ (charLatticeMap k E f x) := by
+  show Additive.ofMul (⟨_, _⟩ : GroupLike E (E ⊗[k] B)) = Additive.ofMul ⟨_, _⟩
+  congr 1
   ext
-  exact baseChangeMap_galAlgAut k E f γ x.val
-
-/-- **The hom-level classification** (full faithfulness): for tori
-split by `E`, every Galois-equivariant homomorphism of character
-lattices is induced by a unique Hopf-algebra homomorphism
-(statement; proof: M6 via `forms.hopf_descent` and Cartier duality).
-
-Blueprint: tori.classification_hom_level
--/
-theorem existsUnique_bialgHom_of_equivariant
-    [FiniteDimensional k E] [IsGalois k E]
-    [IsTorusAlgebra k E A] [IsTorusAlgebra k E B]
-    (g : CharLattice k E A →* CharLattice k E B)
-    (hg : ∀ γ x, g (charGalAct k E A γ x) = charGalAct k E B γ (g x)) :
-    ∃! f : A →ₐc[k] B, charLatticeMap k E f = g := by
-  sorry
+  exact baseChangeMap_galAlgAut k E f γ x.toMul.val
 
 end Langlands.Tori

@@ -2,8 +2,10 @@ import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
 import LanglandsLean.AlgebraicGroups.Tori.SplitTorus
 import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
 import LanglandsLean.AlgebraicGroups.Tori.TwistedGroupAlgebra
-import LanglandsLean.AlgebraicGroups.Tori.Torus
 import LanglandsLean.AlgebraicGroups.Tori.CharLattice
+import LanglandsLean.AlgebraicGroups.Tori.Torus
+import LanglandsLean.AlgebraicGroups.Tori.Duality
+import LanglandsLean.AlgebraicGroups.Tori.Rank
 import LanglandsLean.AlgebraicGroups.Tori.Classification
 
 /-!

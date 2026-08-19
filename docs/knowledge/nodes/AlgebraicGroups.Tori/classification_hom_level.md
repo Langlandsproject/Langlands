@@ -16,6 +16,7 @@ uses:
 lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Tori.CharLattice
+  - LanglandsLean.AlgebraicGroups.Tori.Classification
   declarations:
   - Langlands.Tori.charLatticeMap
   - Langlands.Tori.charLatticeMap_galAct

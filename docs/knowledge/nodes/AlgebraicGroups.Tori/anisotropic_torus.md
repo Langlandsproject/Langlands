@@ -12,7 +12,8 @@ uses:
 - tori.character_and_cocharacter_lattices
 lean:
   modules:
-  - LanglandsLean.AlgebraicGroups.Tori.CharLattice
+  - LanglandsLean.AlgebraicGroups.Tori.Duality
+  - LanglandsLean.AlgebraicGroups.Tori.Rank
   declarations:
   - Langlands.Tori.IsAnisotropicAlgebra
   - Langlands.Tori.torusSplitRank_eq_zero_iff

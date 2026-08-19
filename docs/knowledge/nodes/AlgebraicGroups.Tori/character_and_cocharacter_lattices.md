@@ -12,6 +12,7 @@ lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
   - LanglandsLean.AlgebraicGroups.Tori.CharLattice
+  - LanglandsLean.AlgebraicGroups.Tori.Duality
   declarations:
   - Langlands.Tori.CharLattice
   - Langlands.Tori.charGalAct
