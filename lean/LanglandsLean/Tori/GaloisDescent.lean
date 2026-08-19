@@ -21,15 +21,14 @@ through `σ`. Its fixed points form a `k`-subalgebra
 **twisted form** of the split torus `D(M)`; for `k`-tori this is
 exactly the quasi-inverse of `T ↦ X^*(T)`.
 
-Definitions here are sorry-free. The two descent *theorems* are stated
-with `sorry` and tracked in `docs/TODO.md` (G0 roadmap):
+Definitions here are sorry-free. Of the two descent *theorems*, the
+first is proved in `Tori/Speiser.lean`; the second is stated with
+`sorry` and tracked in `docs/TODO.md` (G0 roadmap):
 
 * `twistedGroupAlgebra_span_top` (Speiser's lemma / Galois descent):
-  the fixed points span `E[M]` over `E`; equivalently the canonical
-  map `E ⊗ₖ (E[M])^Γ → E[M]` is surjective. Together with linear
-  independence this says the twisted algebra is an `E/k`-form of the
-  group algebra. Mathlib has no semilinear descent; the proof will be
-  built here (averaging / Hilbert 90, finite Galois case).
+  the fixed points span `E[M]` over `E`. **Proved** in
+  `Tori/Speiser.lean` via the general semilinear descent theorem
+  `span_fixedPoints_eq_top` built there (Mathlib has none).
 * `twistedGroupAlgebra_trivial` : for the trivial action the
   construction recovers `k[M]` inside `E[M]`.
 
@@ -127,18 +126,10 @@ lemma mem_twistedGroupAlgebra_iff {f : AddMonoidAlgebra E M} :
 
 /-! ### The descent theorems (stated; proofs are the next milestone) -/
 
-/-- **Speiser's lemma / Galois descent** for the twisted group
-algebra: over a finite Galois extension, the fixed points of the
-semilinear action span `E[M]` as an `E`-vector space. Equivalently,
-the canonical map `E ⊗ₖ (twistedGroupAlgebra σ) → E[M]` is
-surjective; combined with linear independence of fixed vectors this
-makes `twistedGroupAlgebra σ` an `E/k`-form of the group algebra.
-
-Mathlib has no semilinear Galois descent; this will be proved here
-(averaging over the group / Hilbert 90). Tracked in `docs/TODO.md`. -/
-theorem twistedGroupAlgebra_span_top [IsGalois k E] [FiniteDimensional k E] :
-    Submodule.span E ((twistedGroupAlgebra k E M σ : Set (AddMonoidAlgebra E M))) = ⊤ := by
-  sorry
+/- Speiser's lemma for the twisted group algebra —
+`twistedGroupAlgebra_span_top` — is stated and **proved** in
+`Tori/Speiser.lean`, which builds the general semilinear descent
+theorem `span_fixedPoints_eq_top` that Mathlib lacks. -/
 
 /-- For the **trivial** action on the lattice, the twisted group
 algebra is the image of `k[M]`: no twisting occurs. Tracked in

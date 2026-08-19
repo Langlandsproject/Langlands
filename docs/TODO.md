@@ -38,10 +38,12 @@ has Diagonalizable (D(M)), SplitTorus (D(Z^n)), CharacterGroup
 (X^*, X_*, Cartier T1a **proved** at object/hom/iso level over a
 domain, riding v4.33's GroupLike + mapDomainBialgHomEquiv), and
 GaloisDescent (semilinear action + twistedGroupAlgebra defined
-sorry-free; Speiser span theorem and trivial-action computation
-stated with sorry — proof route: Dedekind independence
-`linearIndependent_monoidHom` + averaging, no Mathlib descent
-needed).*
+sorry-free), and Speiser (**proved**: general semilinear Galois
+descent `span_fixedPoints_eq_top` via Dedekind independence +
+averaging — infrastructure Mathlib lacks — plus its application
+`twistedGroupAlgebra_span_top`). Single remaining sorry:
+`twistedGroupAlgebra_trivial` (trivial action recovers k[M]; needs
+fixedField ⊤ = ⊥ + coefficientwise descent of Finsupp).*
 
 Blocks G5, G7, and the `kottwitz_structures` cluster. Land this before
 resuming G1–G4; the Bruhat–Tits nodes silently assume it.
