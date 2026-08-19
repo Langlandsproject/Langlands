@@ -410,6 +410,115 @@ descent. Not needed for the apartment or for the building over `K`.
       "filtrations of tori" to point at G0.8 instead of treating them as
       external.
 
+## G0.C — Classification theory of tori (master plan, 2026-08-19)
+
+Goal: the classification of tori done *completely* — KB proof
+structure closed, Lean theorem sorry-free. Supersedes the scattered
+classification items inside G0.
+
+**Definition of done.** KB: the proof of
+`tori.f_tori_galois_module_classification` is a structured composition
+of admitted nodes (no prose gaps); corollary nodes admitted. Lean:
+essential surjectivity + full faithfulness + inverse computation
+compile without sorry, plus the cocycle bijection and rank-one
+classification. Links: every theorem node lean-linked, reverse check
+0 cross-mismatch, site published.
+
+**Fixed design decisions** (do not relitigate mid-way):
+
+- (D-a) Algebra-first: the classification lives at the Hopf-algebra
+  level; the scheme layer is a corollary through the existing
+  `hopfSpec` machinery. No group-scheme base-change machinery.
+- (D-b) Finite level: Lean statements are parameterized by a fixed
+  finite Galois `E/k` — {tori split by E} ≃ {Gal(E/k)-lattices}. The
+  continuous-`Θ` version stays KB-level (`tori.splitting_field`
+  justifies the equivalence).
+- (D-c) Three separate theorems, no bundled categorical Equivalence.
+
+### M1 — KB: close the four proof holes (KB-first; do before Lean M2+)
+
+- [ ] `forms.hopf_descent` [thm] — the multiplicative upgrade of
+      [[node:forms.galois_descent_for_vector_spaces]]: for a Hopf
+      algebra with compatible semilinear action, fixed points form a
+      k-Hopf algebra and `E ⊗_k A^Γ ≅ A` as Hopf algebras.
+- [ ] `tori.twisted_form_of_lattice` [def+thm] — the inverse
+      construction packaged: `Spec (E[M])^Γ` is a torus with character
+      lattice `(M, σ)`.
+- [ ] `tori.classification_hom_level` [thm] — full faithfulness over
+      k: `Hom_k(T,T') ≅ Hom_Γ(X^*(T'), X^*(T))` (descent of morphisms
+      + Cartier over E).
+- [ ] `tori.classification_by_cocycles` [thm] — rank-n tori up to iso
+      ↔ `Hom_cont(Θ, GL_n(Z))`/conj = `H¹(Θ, GL_n(Z))`.
+- [ ] `tori.real_tori_classification` [example] — Z[Z/2] has three
+      indecomposable lattices; every real torus is
+      `G_m^a × (S¹)^b × (Res_{C/R} G_m)^c`.
+- [ ] `tori.tori_over_finite_fields` [example] — tori/F_q ↔ conjugacy
+      classes of finite-order elements of GL_n(Z) (Frobenius image).
+- [ ] `tori.finiteness_per_rank` [external-theorem] —
+      Jordan–Zassenhaus: finitely many rank-n tori types per field.
+- [ ] `tori.isogeny_classification` [thm] — isogeny classes ↔
+      Q-representations of finite quotients (Maschke).
+- [ ] Rewrite the proof of `tori.f_tori_galois_module_classification`
+      as a structured composition of the nodes above.
+
+### M2 — Lean: complete linear descent
+
+- [ ] Independence half: k-linearly independent fixed vectors stay
+      E-independent (mirror Mathlib's
+      `FixedPoints.linearIndependent_smul_of_linearIndependent`).
+- [ ] Package `E ⊗_k V^Γ ≃ₗ V` as an explicit isomorphism
+      (Speiser spanning + independence).
+
+### M3 — Lean: Hopf descent ★ (hardest step)
+
+- [ ] Descent commutes with tensor square:
+      `(E[M] ⊗_E E[M])^Γ ≅ A ⊗_k A` for `A = twistedGroupAlgebra σ`.
+      Fallback if the general statement balloons: prove it for the
+      concrete basis of `E[M]` (finite-free case suffices here).
+- [ ] Descend Δ: `HopfAlgebra k (twistedGroupAlgebra σ)` instance.
+- [ ] Base-change Hopf isomorphism `E ⊗_k A ≅ E[M]`.
+
+### M4 — Lean: the torus object
+
+- [ ] `twistedTorus (M,σ)` := Spec of the twisted algebra as a group
+      scheme over k (existing specObjOver/hopfSpecGrpObj machinery).
+- [ ] `IsTorus` predicate, algebra-level:
+      `∃ E finite Galois, ∃ n, E ⊗ A ≅ E[Z^n]` as Hopf algebras;
+      scheme-level reading as corollary. Also the deferred
+      `IsDiagonalizable`.
+- [ ] `twistedTorus` satisfies `IsTorus`; smoke test
+      `SplitTorus R 1 ≅ Gm R`.
+- [ ] Universe note: widen `specObjOver` only if ULift actually blocks
+      M4; otherwise leave.
+
+### M5 — Lean: the classification functors
+
+- [ ] `X^*` with Galois action: `X^*(A) := GroupLike E (E ⊗ A)` with
+      `Γ`-action; independence of the splitting field E.
+      (Also closes the flagged gap: scheme-side reading of
+      characterGroup.)
+- [ ] Inverse computation: `X^*(twistedTorus (M,σ)) ≅ (M,σ)`
+      (Lean side of `tori.twisted_form_of_lattice`).
+
+### M6 — Lean: assemble the theorem
+
+- [ ] Full faithfulness over k (Galois descent of morphisms +
+      `diagHomEquiv` over E).
+- [ ] Essential surjectivity = M4 + M5. The three-part classification
+      is done here.
+
+### M7 — Corollaries
+
+- [ ] Lean: cocycle bijection; split ⟺ trivial action; anisotropic ⟺
+      no invariant cocharacters; rank-one classification.
+- [ ] Stretch: R and F_q lists in Lean (KB versions land in M1).
+
+Sequencing: M1 independent and first (KB-first discipline); M2→M3→M4
+→M5→M6 strictly serial; M7 after M6. Assets already in place: Cartier
+T1a fully proved (engine over E), Speiser spanning half,
+twistedGroupAlgebra + trivial-action computation, D(M) with the points
+characterization.
+
 ## G1 — Affine root systems and affine Weyl groups (BT1)
 
 Sources: KP Ch. 1 §1.3; Bourbaki *Groupes et algèbres de Lie* VI.
