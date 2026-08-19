@@ -152,6 +152,13 @@ the inner loop.
 
 ## Things that have burned us before
 
+- **Availability-driven definitions** (three review rounds on
+  2026-08-19): defining X^* as group-likes / Hopf homs because Mathlib
+  made them cheap, when the KB definiens is group-scheme homs. Root
+  cause and the two rules that prevent it (statement-driven
+  transcription; bridge identifications need KB nodes first):
+  `docs/01-design-conventions.md` §6.
+
 - **Setting up a parallel PFR-style TeX blueprint** when this project
   uses mdblueprint. Cost: one full chat session of wasted scaffolding
   in `lean/blueprint/`. Do not repeat.

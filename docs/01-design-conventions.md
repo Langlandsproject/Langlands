@@ -128,6 +128,36 @@ goal preambles at decision time.
   instance-wiring checks belong to real downstream uses, not
   anonymous `example := inferInstance` piles.
 
+### Why unfaithful definitions kept appearing (2026-08-19 root cause)
+
+Three reviews in one day found the same failure shape (X^* defined as
+group-likes, then as Hopf homs, when the KB says group-scheme homs;
+missing group structures; unexplained wrappers). The root cause is a
+workflow bug, not a knowledge bug:
+
+1. **Availability-driven instead of statement-driven formalization.**
+   The Lean author reached for whatever Mathlib made cheap (GroupLike
+   was bundled → it became "the definition"; WithConv had instances →
+   it became the carrier) instead of transcribing the KB definiens
+   and paying for the bridge. Rule: **transcribe the definiens; if an
+   equivalent form is cheaper to compute with, the identification
+   becomes a bridge theorem — and a KB bridge node — never the
+   definition.**
+2. **Bridge identifications had no KB nodes**, so nothing existed to
+   align against and the mechanical gates passed. The KB states
+   endpoints (definitions, main theorems) but the identifications
+   between presentations (group-scheme homs ≃ Hopf homs ≃ group-like
+   elements; convolution = pointwise multiplication; hom-groups of
+   commutative group objects) were never nodes. Rule: **every
+   identification used by a Lean definition or computation must have
+   a KB node before the Lean lands.** A missing bridge is a stop —
+   add the node first.
+3. **`verification.alignment` was treated as a formality.** For a
+   definition node, the alignment review question is precisely: does
+   the Lean definiens mirror the node's definiens (not merely
+   "does a related declaration exist")? This question is now part of
+   the linking discipline in §4.
+
 ## 7. Lean idioms
 
 - "Group scheme over `S`" is the Mathlib typeclass-on-scheme pattern

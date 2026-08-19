@@ -40,6 +40,38 @@ transcribe rather than design.
   bookkeeping (`ε` into `E` is itself semilinear) is a large design
   surface with exactly one client today.
 
+## 0b. M0 — Faithfulness repair (before M1; from the 2026-08-19 reviews)
+
+KB bridge nodes (rule: identifications get nodes before Lean uses them):
+
+- [ ] `affine_group_schemes.group_scheme_homomorphism` [def] —
+      homomorphisms of affine group schemes = group-object morphisms;
+      under `Spec`, bialgebra homomorphisms (the bridge stated).
+- [ ] `tori.characters_as_group_like_elements` [thm] — the computed
+      description `X^*(Spec A) ≅ GroupLike(A)` (this was wrongly the
+      Lean *definition* twice).
+- [ ] `tori.convolution_is_pointwise_multiplication` [thm] — under
+      `Spec`, the convolution product on Hopf-hom sets is pointwise
+      multiplication of characters (justifies `WithConv` as carrier).
+
+Lean:
+
+- [ ] Scheme-level `X^*`: the repo already has
+      `hopfSpec : Grp((CommAlgCat R)ᵒᵖ) ⥤ Grp(Over(Spec R))` with
+      full faithfulness (HopfSpecFunctor.lean); define
+      `characterGroup` as homs to `𝔾ₘ` in `Grp(Over(Spec R))` and
+      demote the current Hopf-hom form to the first bridge theorem.
+- [ ] Convolution `Group` instances: `characterGroup` via
+      `gmAntipodeBialgHom` (= `mapDomainBialgHom` of negation) and
+      injective transfer along `toAlgHom` into Mathlib's `convGroup`;
+      `cocharacterGroup` needs the generic
+      `antipodeBialgHom [IsCocomm]`, blocked on a missing Mathlib
+      lemma (`comul ∘ antipode` under cocommutativity —
+      `counit_antipode` exists, the comul side does not; build
+      in-repo).
+- [ ] Group-law upgrade of `diagGroupPointsEquiv` (moved here
+      from M5).
+
 ## 1. M1 — KB nodes (create in this order)
 
 All in `status: admitted` with sources; run the three gates and
