@@ -1,28 +1,44 @@
 import LanglandsLean.AlgebraicGroups.Tori.TwistedGroupAlgebra
 import Mathlib.RingTheory.Bialgebra.TensorProduct
+import Mathlib.RingTheory.HopfAlgebra.TensorProduct
+import Mathlib.RingTheory.HopfAlgebra.GroupLike
+import Mathlib.RingTheory.Bialgebra.MonoidAlgebra
 import Mathlib.LinearAlgebra.FreeModule.Basic
 import Mathlib.RingTheory.Finiteness.Defs
 
 /-!
-# The torus predicates (statement layer)
+# The torus predicates (plan G0.C, definition layer)
 
-This file is the definition layer for "torus" in the Lean library,
-per plan G0.C (design decisions D-a algebra-first, D-b finite Galois
-level): a **torus split by `E`** is presented by its coordinate Hopf
-algebra `A` together with a Hopf-algebra identification of the base
-change `E ⊗ₖ A` with the group algebra of a lattice (a finite free
-`ℤ`-module). Choosing a basis of the lattice recovers the knowledge
-base's `T_{k_s} ≅ 𝔾ₘⁿ`; the lattice form is used so that no `Type 0`
-skeleton (`Fin n → ℤ`) is hard-coded into a universe-polymorphic
-statement (conventions §7).
+The definition hierarchy mirrors the knowledge base: **diagonalizable
+groups first, tori as the special case** (a torus is a diagonalizable
+group whose character group is a lattice —
+`reductive_groups.diagonalizable_groups_antiequivalence`: "groups with
+free abelian character group of finite rank are exactly the split
+tori").
 
-The knowledge-base definition (`tori.torus_definition`) is stated
-over a separable closure; by `tori.splitting_field` it is equivalent
-to being split by *some* finite Galois extension, which is the form
-taken here with the extension as a parameter.
+* `groupLikeLift` — the canonical evaluation
+  `R[X(A)] →ₐc[R] A`, `e^g ↦ g`, from the group algebra of the
+  group-like elements. This is the character decomposition of the
+  coordinate ring.
+* `IsDiagonalizableAlgebra R A` — `groupLikeLift` is bijective:
+  `A` has a basis of group-like elements, canonically `A ≅ R[X(A)]`.
+  No existential over a carrier type — the witness is canonical.
+* `IsTorusAlgebra k E A` — **a torus split by `E` is a special
+  diagonalizable group**: the base change `E ⊗[k] A` is
+  diagonalizable and its group of group-likes (= the character
+  lattice) is free of finite rank.
+* `IsSplitTorusAlgebra k A` — the same over `k` itself: no Galois
+  twisting (`tori.split_torus`).
 
-Statements below marked "proof: M3/M4" are the statement-first
-skeleton; no proofs are attempted here.
+All three are classes (`Module.Free` pattern): downstream statements
+take them as instance hypotheses and the lattice-structure instances
+flow automatically.
+
+The `T_E ≅ 𝔾ₘⁿ` form of the knowledge base's `tori.torus_definition`
+is the interop theorem `isTorusAlgebra_iff_gm_pow` (choose a basis of
+the lattice); it is a consequence, not the definition, so that no
+`Type 0` skeleton or structure-quantifying existential enters the
+definition layer (conventions §7).
 -/
 
 open scoped TensorProduct
@@ -31,36 +47,91 @@ namespace Langlands.Tori
 
 universe u
 
-variable (k E : Type u) [Field k] [Field E] [Algebra k E]
+/-! ### Diagonalizable Hopf algebras -/
 
-/-- **Torus split by `E`, algebra form** (D-a, D-b): the coordinate
-Hopf algebra becomes the group algebra of a lattice after base
-change to `E`.
+section Diagonalizable
+
+variable (R : Type u) [CommRing R]
+variable (A : Type u) [CommRing A] [HopfAlgebra R A]
+
+/-- **The canonical evaluation** from the group algebra of the
+group-like elements: `R[X(A)] → A`, `e^g ↦ g`. For a diagonalizable
+group this is the character decomposition of the coordinate ring
+(`k[D] = k[X(D)]`).
+
+Blueprint: reductive_groups.diagonalizable_groups_antiequivalence
+-/
+noncomputable def groupLikeLift :
+    AddMonoidAlgebra R (Additive (GroupLike R A)) →ₐc[R] A :=
+  BialgHom.ofAlgHom
+    (AddMonoidAlgebra.lift R A (Additive (GroupLike R A))
+      ((GroupLike.valMonoidHom R A).comp
+        (MulEquiv.multiplicativeAdditive (GroupLike R A)).toMonoidHom))
+    (by
+      ext g
+      simp)
+    (by
+      ext g
+      simp)
+
+/-- **Diagonalizable coordinate algebra**: the canonical evaluation
+`R[X(A)] → A` is bijective — `A` has a basis of group-like elements.
+This is the canonical-witness form of "`A ≅ R[M]` for some abelian
+group `M`" (take `M = X(A)`; group-like rigidity makes any witness
+isomorphic to this one).
+
+Blueprint: reductive_groups.diagonalizable_groups_antiequivalence
+-/
+class IsDiagonalizableAlgebra : Prop where
+  bijective_groupLikeLift : Function.Bijective (groupLikeLift R A)
+
+end Diagonalizable
+
+/-! ### Tori -/
+
+section Torus
+
+variable (k E : Type u) [Field k] [Field E] [Algebra k E]
+variable (A : Type u) [CommRing A] [HopfAlgebra k A]
+
+/-- **Torus split by `E`** (D-a algebra form, D-b finite level): a
+torus is a **special diagonalizable group** — the base change
+`E ⊗[k] A` is diagonalizable and its group of group-likes (the
+character lattice `X^*(T_E)`) is a lattice: free of finite rank.
 
 Blueprint: tori.torus_definition
 -/
-def IsTorusAlgebra (A : Type u) [CommRing A] [HopfAlgebra k A] : Prop :=
-  ∃ (M : Type u) (_ : AddCommGroup M) (_ : Module.Free ℤ M)
-    (_ : Module.Finite ℤ M),
-    Nonempty ((E ⊗[k] A) ≃ₐc[E] AddMonoidAlgebra E M)
+class IsTorusAlgebra : Prop where
+  diagonalizable : IsDiagonalizableAlgebra E (E ⊗[k] A)
+  free : Module.Free ℤ (Additive (GroupLike E (E ⊗[k] A)))
+  finite : Module.Finite ℤ (Additive (GroupLike E (E ⊗[k] A)))
 
-/-- **Split torus, algebra form**: the coordinate Hopf algebra is the
-group algebra of a lattice already over `k` — no base change, no
-Galois twisting.
+/-- **Split torus**: diagonalizable over `k` itself with lattice
+character group — no base change, no Galois twisting.
 
 Blueprint: tori.split_torus
 -/
-def IsSplitTorusAlgebra (A : Type u) [CommRing A] [HopfAlgebra k A] : Prop :=
-  ∃ (M : Type u) (_ : AddCommGroup M) (_ : Module.Free ℤ M)
-    (_ : Module.Finite ℤ M),
-    Nonempty (A ≃ₐc[k] AddMonoidAlgebra k M)
+class IsSplitTorusAlgebra : Prop where
+  diagonalizable : IsDiagonalizableAlgebra k A
+  free : Module.Free ℤ (Additive (GroupLike k A))
+  finite : Module.Finite ℤ (Additive (GroupLike k A))
 
-/-- **Diagonalizable coordinate algebra**: isomorphic to the group
-algebra of some abelian group (not necessarily free — `μ_n` factors
-allowed; compare `tori.multiplicative_type_characterization`). -/
-def IsDiagonalizableAlgebra (A : Type u) [CommRing A] [HopfAlgebra k A] : Prop :=
-  ∃ (M : Type u) (_ : AddCommGroup M),
-    Nonempty (A ≃ₐc[k] AddMonoidAlgebra k M)
+instance [IsTorusAlgebra k E A] : IsDiagonalizableAlgebra E (E ⊗[k] A) :=
+  ‹IsTorusAlgebra k E A›.diagonalizable
+
+instance [IsSplitTorusAlgebra k A] : IsDiagonalizableAlgebra k A :=
+  ‹IsSplitTorusAlgebra k A›.diagonalizable
+
+/-- The group algebra of a lattice is a split torus algebra
+(statement; proof: M4 — group-like rigidity gives bijectivity of the
+canonical evaluation).
+
+Blueprint: tori.split_torus
+-/
+theorem isSplitTorusAlgebra_addMonoidAlgebra
+    (M : Type u) [AddCommGroup M] [Module.Free ℤ M] [Module.Finite ℤ M] :
+    IsSplitTorusAlgebra k (AddMonoidAlgebra k M) := by
+  sorry
 
 /-- The group algebra of a lattice is a torus algebra — the split
 case (statement; proof: M4, base change of group algebras).
@@ -73,13 +144,25 @@ theorem isTorusAlgebra_addMonoidAlgebra
   sorry
 
 /-- A split torus algebra is a torus algebra (statement; proof: M4 —
-base change the witnessing isomorphism).
+base change the canonical decomposition).
 
 Blueprint: tori.split_torus
 -/
 theorem IsSplitTorusAlgebra.isTorusAlgebra
     {A : Type u} [CommRing A] [HopfAlgebra k A]
-    (h : IsSplitTorusAlgebra k A) : IsTorusAlgebra k E A := by
+    [IsSplitTorusAlgebra k A] : IsTorusAlgebra k E A := by
+  sorry
+
+/-- Interop with the knowledge base's `T_E ≅ 𝔾ₘⁿ` form
+(`tori.torus_definition`): a torus algebra is one whose base change
+is the group algebra of `ℤⁿ` (statement; proof: M4/M5 — choose a
+`ℤ`-basis of the character lattice).
+
+Blueprint: tori.torus_definition
+-/
+theorem isTorusAlgebra_iff_gm_pow :
+    IsTorusAlgebra k E A ↔
+      ∃ n : ℕ, Nonempty ((E ⊗[k] A) ≃ₐc[E] AddMonoidAlgebra E (Fin n → ℤ)) := by
   sorry
 
 /- The twisted group algebra of a `Gal(E/k)`-lattice is a torus
@@ -87,5 +170,7 @@ algebra. BLOCKED (not even statable yet): requires the
 `HopfAlgebra k (twistedGroupAlgebra k E M σ)` instance from the
 descent of the comultiplication — plan G0.C M3. Recorded here so the
 gap is visible at the definition site. -/
+
+end Torus
 
 end Langlands.Tori

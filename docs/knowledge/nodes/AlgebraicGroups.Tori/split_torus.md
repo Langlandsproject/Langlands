@@ -17,6 +17,7 @@ lean:
   - Langlands.Tori.splitTorusOver
   - Langlands.Tori.SplitTorus
   - Langlands.Tori.IsSplitTorusAlgebra
+  - Langlands.Tori.isSplitTorusAlgebra_addMonoidAlgebra
   - Langlands.Tori.isTorusAlgebra_addMonoidAlgebra
   - Langlands.Tori.IsSplitTorusAlgebra.isTorusAlgebra
 source:

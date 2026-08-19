@@ -16,6 +16,7 @@ lean:
   - LanglandsLean.AlgebraicGroups.Tori.Torus
   declarations:
   - Langlands.Tori.IsTorusAlgebra
+  - Langlands.Tori.isTorusAlgebra_iff_gm_pow
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -55,6 +56,16 @@ Equivalently (see [[node:tori.splitting_field]]) there exists a finite
 separable extension \(E/k\) with \(T_E \cong \mathbb{G}_{m,E}^{\,n}\);
 the separable closure in the definition is not a genuine infinite
 limit.
+
+**Working form (hierarchy).** A torus is a **special diagonalizable
+group**: \(T\) is a torus split by \(E\) if and only if \(T_E\) is
+diagonalizable and its character group \(X^*(T_E)\) is a *lattice* —
+free of finite rank
+([[node:reductive_groups.diagonalizable_groups_antiequivalence]]:
+groups with free abelian character group of finite rank are exactly
+the split tori). The formalization takes this form as the
+definition, with \(T_E \cong \mathbb{G}_m^n\) recovered by choosing
+a basis of the lattice.
 
 The character lattice \(X^*(T)\) and cocharacter lattice \(X_*(T)\)
 of a torus of rank \(n\) are free \(\mathbb{Z}\)-modules of rank

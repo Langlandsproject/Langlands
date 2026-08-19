@@ -105,9 +105,10 @@ Blueprint: tori.f_tori_galois_module_classification
 noncomputable def charLatticeFunctor :
     TorusAlgCat k E ⥤ LatticeCat (E ≃ₐ[k] E) where
   obj A :=
+    haveI : IsTorusAlgebra k E A.obj := A.property
     ⟨charLatticeRep k E A.obj,
-      charLattice_free k E A.obj A.property,
-      charLattice_finite k E A.obj A.property⟩
+      charLattice_free k E A.obj,
+      charLattice_finite k E A.obj⟩
   map {A B} f :=
     ⟨Rep.ofHom
       { toLinearMap :=
@@ -164,8 +165,8 @@ Blueprint: tori.twisted_form_of_lattice
 theorem exists_charLatticeRep_iso
     (V : Rep.{u} ℤ (E ≃ₐ[k] E))
     (hfree : Module.Free ℤ V) (hfin : Module.Finite ℤ V) :
-    ∃ (A : Type u) (_ : CommRing A) (_ : HopfAlgebra k A),
-      IsTorusAlgebra k E A ∧ Nonempty (charLatticeRep k E A ≅ V) := by
+    ∃ T : TorusAlgCat k E,
+      Nonempty ((charLatticeFunctor k E).obj T ≅ ⟨V, hfree, hfin⟩) := by
   sorry
 
 /-- **The classification of tori** (finite Galois level): the

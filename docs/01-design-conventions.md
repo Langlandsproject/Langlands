@@ -158,6 +158,20 @@ workflow bug, not a knowledge bug:
    "does a related declaration exist")? This question is now part of
    the linking discipline in §4.
 
+### Transcribe the hierarchy, not just the nodes
+
+When the KB presents a general notion with a special case
+(diagonalizable groups ⊃ tori; reductive ⊃ semisimple), the Lean
+definitions must mirror the subsumption: the special case is defined
+as *the general notion plus a condition* (`IsTorusAlgebra` has a
+`diagonalizable` field), never as a free-standing definition that
+happens to be equivalent. Checking each definition against its own
+node is not enough — the *relations between* definitions are part of
+faithfulness. Burned once: `IsTorusAlgebra` defined standalone with
+`IsDiagonalizableAlgebra` as an unrelated sibling (2026-08-19,
+owner-caught; root cause: goal-fixation on the theorem being
+formalized instead of the KB's definitional order).
+
 ## 7. Lean idioms
 
 - "Group scheme over `S`" is the Mathlib typeclass-on-scheme pattern
@@ -169,6 +183,22 @@ workflow bug, not a knowledge bug:
   discussion in `lean/LanglandsLean/AlgebraicGeometry/Conventions.lean`.
 - Inner loop: Lean LSP MCP diagnostics/goals; full `lake build` only at
   checkpoints.
+- **No structure quantification in propositions.** `∃ (M : Type u)
+  (_ : AddCommGroup M), …` is banned: existential binders cannot be
+  instance-implicit, so quantified structures bypass the typeclass
+  system and produce un-idiomatic, hard-to-consume statements. Use,
+  in order of preference: (i) a **canonical witness** — replace
+  "isomorphic to some X(M)" by "the canonical map to/from X(the
+  canonical M) is bijective" (`IsDiagonalizableAlgebra` via
+  `groupLikeLift`; Mathlib's `Module.Free` via bases); (ii) a
+  **class** whose fields carry the structure (`IsTorusAlgebra`);
+  (iii) bundled data in a `Σ`/`Nonempty` (quantify a bare type plus
+  bundled data like `Basis`, never a bare type plus a class).
+  Skeleton existentials (`∃ n, … ≅ X(Fin n → ℤ)`) are acceptable in
+  **interop theorems**, not definitions. Burned once: `IsTorusAlgebra
+  := ∃ M (_ : AddCommGroup M) …` (2026-08-19, owner-caught; note the
+  ULift rule below was over-applied — it governs *parameters*, not
+  existentials).
 - **No `ULift` (or any universe shim) in public statements.** A
   universe mismatch means the design hard-codes a `Type 0` skeleton
   (`Fin n → ℤ`, `ℤ`, `ℚ`) into a universe-polymorphic definition. The

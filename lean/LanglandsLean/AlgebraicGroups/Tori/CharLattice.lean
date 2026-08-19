@@ -233,26 +233,18 @@ theorem nonempty_charLattice_mulEquiv (M : Type u) [AddCommGroup M]
     Nonempty (CharLattice k E A ≃* Multiplicative M) :=
   ⟨(groupLikeCongr e).trans (diagGroupLikeEquiv E M).symm⟩
 
-/-- The character lattice of a torus is a free `ℤ`-module
-(statement; proof: M5 via `nonempty_charLattice_mulEquiv` and
-group-like rigidity). -/
-theorem charLattice_free (hA : IsTorusAlgebra k E A) :
-    Module.Free ℤ (Additive (CharLattice k E A)) := by
-  obtain ⟨M, _, _, _, ⟨e⟩⟩ := hA
-  obtain ⟨φ⟩ := nonempty_charLattice_mulEquiv k E A M e
-  have ψ : Additive (CharLattice k E A) ≃+ M :=
-    (MulEquiv.toAdditive φ).trans (AddEquiv.additiveMultiplicative M)
-  exact Module.Free.of_equiv' ‹Module.Free ℤ M› ψ.symm.toIntLinearEquiv
+/-- The character lattice of a torus is a free `ℤ`-module — a field
+of the torus class (`IsTorusAlgebra.free`), exposed as an instance on
+the `CharLattice` spelling. -/
+instance charLattice_free [IsTorusAlgebra k E A] :
+    Module.Free ℤ (Additive (CharLattice k E A)) :=
+  IsTorusAlgebra.free
 
-/-- The character lattice of a torus is a finite `ℤ`-module
-(statement; proof: M5). -/
-theorem charLattice_finite (hA : IsTorusAlgebra k E A) :
-    Module.Finite ℤ (Additive (CharLattice k E A)) := by
-  obtain ⟨M, _, _, _, ⟨e⟩⟩ := hA
-  obtain ⟨φ⟩ := nonempty_charLattice_mulEquiv k E A M e
-  have ψ : Additive (CharLattice k E A) ≃+ M :=
-    (MulEquiv.toAdditive φ).trans (AddEquiv.additiveMultiplicative M)
-  exact Module.Finite.equiv ψ.symm.toIntLinearEquiv
+/-- The character lattice of a torus is a finite `ℤ`-module — a
+field of the torus class, exposed as an instance. -/
+instance charLattice_finite [IsTorusAlgebra k E A] :
+    Module.Finite ℤ (Additive (CharLattice k E A)) :=
+  IsTorusAlgebra.finite
 
 /-! ### Rank and split rank -/
 
@@ -278,10 +270,9 @@ noncomputable def torusSplitRank : ℕ :=
 
 Blueprint: tori.split_rank
 -/
-theorem torusSplitRank_le_torusRank (hA : IsTorusAlgebra k E A) :
-    torusSplitRank k E A ≤ torusRank k E A := by
-  have := charLattice_finite k E A hA
-  exact Submodule.finrank_le _
+theorem torusSplitRank_le_torusRank [IsTorusAlgebra k E A] :
+    torusSplitRank k E A ≤ torusRank k E A :=
+  Submodule.finrank_le _
 
 /-- A torus is split iff its split rank equals its rank (statement;
 proof: M6 — finite-order actions with full-rank invariants are
@@ -290,7 +281,7 @@ trivial).
 Blueprint: tori.split_rank
 -/
 theorem torusSplitRank_eq_torusRank_iff
-    [FiniteDimensional k E] [IsGalois k E] (hA : IsTorusAlgebra k E A) :
+    [FiniteDimensional k E] [IsGalois k E] [IsTorusAlgebra k E A] :
     torusSplitRank k E A = torusRank k E A ↔ IsSplitTorusAlgebra k A := by
   sorry
 
@@ -330,7 +321,7 @@ theorem charPairing_mul_left (x y : CharLattice k E A)
 commutative group schemes (statement; proof: M5, transport from
 `E[M]`). This is what makes the cocharacters a group under
 convolution. -/
-theorem IsTorusAlgebra.isCocomm (hA : IsTorusAlgebra k E A) :
+theorem IsTorusAlgebra.isCocomm [IsTorusAlgebra k E A] :
     Coalgebra.IsCocomm E (E ⊗[k] A) := by
   sorry
 
@@ -351,7 +342,7 @@ cocharacter — `X_*(T) ≅ Hom(X^*(T), ℤ)` (statement; proof: M5).
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-theorem charPairing_perfect (hA : IsTorusAlgebra k E A)
+theorem charPairing_perfect [IsTorusAlgebra k E A]
     (f : Additive (CharLattice k E A) →+ ℤ) :
     ∃! l : CocharLattice k E A,
       ∀ x : CharLattice k E A,
@@ -360,7 +351,7 @@ theorem charPairing_perfect (hA : IsTorusAlgebra k E A)
 
 /-- Nondegeneracy of the pairing, character side (statement;
 proof: M5). -/
-theorem charPairing_left_injective (hA : IsTorusAlgebra k E A)
+theorem charPairing_left_injective [IsTorusAlgebra k E A]
     {x y : CharLattice k E A}
     (h : ∀ l, charPairing k E A x l = charPairing k E A y l) : x = y := by
   sorry
@@ -390,7 +381,7 @@ averaging argument).
 Blueprint: tori.split_rank, tori.anisotropic_torus
 -/
 theorem torusSplitRank_eq_zero_iff
-    [FiniteDimensional k E] [IsGalois k E] (hA : IsTorusAlgebra k E A) :
+    [FiniteDimensional k E] [IsGalois k E] [IsTorusAlgebra k E A] :
     torusSplitRank k E A = 0 ↔ IsAnisotropicAlgebra k E A := by
   sorry
 
@@ -451,7 +442,7 @@ Blueprint: tori.classification_hom_level
 -/
 theorem existsUnique_bialgHom_of_equivariant
     [FiniteDimensional k E] [IsGalois k E]
-    (hA : IsTorusAlgebra k E A) (hB : IsTorusAlgebra k E B)
+    [IsTorusAlgebra k E A] [IsTorusAlgebra k E B]
     (g : CharLattice k E A →* CharLattice k E B)
     (hg : ∀ γ x, g (charGalAct k E A γ x) = charGalAct k E B γ (g x)) :
     ∃! f : A →ₐc[k] B, charLatticeMap k E f = g := by

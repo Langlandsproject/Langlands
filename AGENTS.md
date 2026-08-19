@@ -183,6 +183,13 @@ the inner loop.
 
 ## Things that have burned us before
 
+- **Structure-quantifying existentials and inverted hierarchies**
+  (2026-08-19, owner-caught): `IsTorusAlgebra := ∃ M
+  (_ : AddCommGroup M), …` and torus defined without reference to
+  diagonalizable. Rules: conventions §6 ("transcribe the hierarchy")
+  and §7 ("no structure quantification in propositions"). Root
+  cause both times: mechanically pattern-matching a fresh rule /
+  goal-fixation instead of design reasoning.
 - **Availability-driven definitions** (three review rounds on
   2026-08-19): defining X^* as group-likes / Hopf homs because Mathlib
   made them cheap, when the KB definiens is group-scheme homs. Root
