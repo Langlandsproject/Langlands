@@ -62,12 +62,16 @@ instance {M : Type*} [AddMonoid M] [AddMonoid.FG M] :
 /-- The split torus of rank `n` over `Spec R`, as the diagonalizable
 group scheme of the free abelian group `ℤ^n`. Being an `abbrev`, it
 inherits every instance of `diagonalizable` — group object, affine
-group scheme, algebraic group. Blueprint: tori.split_torus
+group scheme, algebraic group.
+
+Blueprint: tori.split_torus
 -/
 noncomputable abbrev splitTorus : Over (Scheme.Spec.obj (op R)) :=
   diagonalizable R (ULift.{u} (freeLattice n))
 
-/-- The underlying scheme of the rank-`n` split torus. Blueprint: tori.split_torus
+/-- The underlying scheme of the rank-`n` split torus.
+
+Blueprint: tori.split_torus
 -/
 noncomputable abbrev SplitTorus : Scheme.{u} := (splitTorus R n).left
 

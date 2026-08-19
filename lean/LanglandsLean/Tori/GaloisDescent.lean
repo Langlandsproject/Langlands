@@ -110,7 +110,9 @@ noncomputable def semilinearHom :
 action of `Gal(E/k)` on `E[M]`, as a `k`-subalgebra of `E[M]`. For a
 Galois lattice `(M, σ)` this is the coordinate algebra of the twisted
 form of the split torus `D(M)` — the general torus of the
-knowledge base. Blueprint: tori.f_tori_galois_module_classification
+knowledge base.
+
+Blueprint: tori.f_tori_galois_module_classification
 -/
 noncomputable def twistedGroupAlgebra : Subalgebra k (AddMonoidAlgebra E M) where
   carrier := {f | ∀ γ : E ≃ₐ[k] E, semilinearAut k E M σ γ f = f}

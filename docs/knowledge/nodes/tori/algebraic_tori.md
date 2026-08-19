@@ -9,6 +9,9 @@ topics:
 uses:
 - linear_algebraic_groups.linear_algebraic_groups
 - affine_group_schemes.multiplicative_group_scheme
+lean:
+  modules:
+  - LanglandsLean.Tori
 verification:
   definition: accepted
   proof: not_applicable

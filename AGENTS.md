@@ -105,6 +105,40 @@ Math conventions:
   `math.macros`; declare without leading slash, use with leading slash.
 - `[[node:id]]` cross-refs must live outside math delimiters.
 
+## Lean ↔ KB linking convention
+
+The knowledge base is the source of truth for mathematical
+organization; the Lean tree mirrors it mechanically:
+
+- **One Lean directory per KB topic**, named `PascalCase(topic id)`:
+  KB topic `tori` ↔ `lean/LanglandsLean/Tori/` ↔ namespace
+  `Langlands.Tori`, with an umbrella module `LanglandsLean/Tori.lean`
+  importing the directory and linked from the topic entry node's
+  `lean.modules`. (Legacy exception: `LanglandsLean/AlgebraicGeometry/`
+  predates this rule and serves the `affine_group_schemes` topic.)
+- **Node → Lean**: an admitted node lists its witnesses in `lean:`
+  (`modules` + `declarations`), with `verification.alignment: pending`
+  until reviewed. Do not link a node to a declaration that only covers
+  a special case of the node's statement — leave it unlinked and record
+  the gap instead.
+- **Lean → node**: every principal declaration carries a `Blueprint:`
+  line in its docstring naming exactly the node ids whose
+  `lean.declarations` list it. The marker must start at the beginning
+  of a docstring line (`Blueprint: id1, id2`); markers glued to the end
+  of a sentence are silently ignored by the parser. Helper lemmas need
+  no marker. Do not use module-level `## Blueprint` sections — they
+  stamp every declaration in the file with the same node set and cause
+  cross-mismatches; use `## Knowledge base` for prose pointers instead.
+- **Gate**: `tools.knowledge.lean_reverse_check` must report
+  0 cross-mismatch before every commit that touches either side
+  (it runs inside `scripts/publish_md.py`); `md_only`/`lean_only`
+  are informational.
+- **Topic naming**: KB topic ids stay flat and stable (`tori`, not
+  `algebraic_groups.tori`); dependency layering lives in `uses:` edges,
+  not in id prefixes. If a future top-level reorganization introduces
+  umbrella topics, it must be a planned global migration, never a
+  one-topic exception.
+
 ## Build and check commands
 
 mdblueprint tools live in `~/mycodes/mdblueprint`. From this repo:

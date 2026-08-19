@@ -59,7 +59,9 @@ noncomputable abbrev diagonalizable.hopfAlg : Type u :=
   AddMonoidAlgebra R M
 
 /-- The diagonalizable group scheme `D(M) = Spec R[M]` over `Spec R`,
-as an object of `Over (Spec R)`. Blueprint: reductive_structure.diagonalizable_groups
+as an object of `Over (Spec R)`.
+
+Blueprint: reductive_structure.diagonalizable_groups
 -/
 noncomputable def diagonalizable : Over (Scheme.Spec.obj (op R)) :=
   specObjOver R (diagonalizable.hopfAlg R M)
@@ -70,7 +72,9 @@ noncomputable instance diagonalizable.instGrpObj :
     GrpObj (diagonalizable R M) :=
   hopfSpecGrpObj R (diagonalizable.hopfAlg R M)
 
-/-- The underlying scheme of `D(M)`. Blueprint: reductive_structure.diagonalizable_groups
+/-- The underlying scheme of `D(M)`.
+
+Blueprint: reductive_structure.diagonalizable_groups
 -/
 noncomputable abbrev Diagonalizable : Scheme.{u} := (diagonalizable R M).left
 

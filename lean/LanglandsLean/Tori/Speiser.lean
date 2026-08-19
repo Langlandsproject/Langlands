@@ -42,7 +42,9 @@ variable {k E : Type u} [Field k] [Field E] [Algebra k E] [FiniteDimensional k E
 
 /-- Dedekind's independence of characters, specialized: the elements
 of `Gal(E/k)`, as functions `E → E`, are linearly independent over
-`E`. Blueprint: descent_and_forms.galois_descent_for_vector_spaces
+`E`.
+
+Blueprint: descent_and_forms.galois_descent_for_vector_spaces
 -/
 theorem linearIndependent_algEquiv :
     LinearIndependent E (fun γ : E ≃ₐ[k] E => (γ : E → E)) := by
@@ -54,7 +56,9 @@ theorem linearIndependent_algEquiv :
 
 set_option maxHeartbeats 800000 in
 /-- **Step 1**: the evaluation vectors `(γ c)_γ`, `c ∈ E`, span the
-function space `Gal(E/k) → E` over `E`. Blueprint: descent_and_forms.galois_descent_for_vector_spaces
+function space `Gal(E/k) → E` over `E`.
+
+Blueprint: descent_and_forms.galois_descent_for_vector_spaces
 -/
 theorem span_galEval_eq_top :
     Submodule.span E
@@ -112,7 +116,9 @@ variable {V : Type v} [AddCommGroup V] [Module E V]
 variable (ρ : (E ≃ₐ[k] E) → V ≃+ V)
 
 /-- **Speiser's lemma**: for a semilinear action of `Gal(E/k)` on an
-`E`-vector space `V`, the fixed points span `V` over `E`. Blueprint: descent_and_forms.galois_descent_for_vector_spaces
+`E`-vector space `V`, the fixed points span `V` over `E`.
+
+Blueprint: descent_and_forms.galois_descent_for_vector_spaces
 -/
 theorem span_fixedPoints_eq_top
     (hone : ∀ v, ρ 1 v = v)
@@ -192,7 +198,9 @@ lemma semilinearAut_smul (γ : E ≃ₐ[k] E) (c : E) (f : AddMonoidAlgebra E M)
 /-- **Galois descent for the twisted group algebra** (the form
 property, surjectivity half): the fixed points of the semilinear
 action span `E[M]` over `E`. This discharges the statement recorded
-in `Tori/GaloisDescent.lean`. Blueprint: tori.f_tori_galois_module_classification
+in `Tori/GaloisDescent.lean`.
+
+Blueprint: tori.f_tori_galois_module_classification
 -/
 theorem twistedGroupAlgebra_span_top [FiniteDimensional k E] :
     Submodule.span E

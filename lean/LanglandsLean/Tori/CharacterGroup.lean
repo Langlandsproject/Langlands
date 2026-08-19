@@ -66,7 +66,9 @@ variable (R : Type u) [CommRing R]
 group-like elements of `A`. A character `G → 𝔾ₘ` corresponds to a
 group-like unit of `A`; group-likes in a Hopf algebra are
 automatically units, and Mathlib's `GroupLike R A` carries the
-(commutative) group structure. Blueprint: tori.character_and_cocharacter_lattices
+(commutative) group structure.
+
+Blueprint: tori.character_and_cocharacter_lattices
 -/
 abbrev characterGroup (A : Type v) [Ring A] [HopfAlgebra R A] : Type v :=
   GroupLike R A
@@ -76,7 +78,9 @@ bialgebra homomorphisms `A →ₐc[R] R[ℤ]` from the coordinate Hopf
 algebra to the coordinate ring of `𝔾ₘ` (a cocharacter `𝔾ₘ → G`
 corresponds contravariantly to such a map). The group structure (by
 convolution) is transported from `M →+ ℤ` in the diagonalizable case
-below. Blueprint: tori.character_and_cocharacter_lattices
+below.
+
+Blueprint: tori.character_and_cocharacter_lattices
 -/
 abbrev cocharacterHom (A : Type v) [Ring A] [HopfAlgebra R A] : Type _ :=
   A →ₐc[R] AddMonoidAlgebra R ℤ
@@ -105,7 +109,9 @@ variable [IsDomain R]
 
 /-- **Cartier duality, object level**: the character group of the
 diagonalizable group `D(M)` is exactly `M`. Group-like elements of
-`R[M]` over a domain are precisely the basis elements `e^m`. Blueprint: tori.character_and_cocharacter_lattices, reductive_structure.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
+`R[M]` over a domain are precisely the basis elements `e^m`.
+
+Blueprint: tori.character_and_cocharacter_lattices, reductive_structure.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
 -/
 noncomputable def diagCharEquiv :
     Multiplicative M ≃* characterGroup R (AddMonoidAlgebra R M) :=
@@ -124,14 +130,18 @@ noncomputable def diagCharEquiv :
 /-- **Cartier duality, hom level**: bialgebra homomorphisms
 `R[M] → R[N]` correspond to additive homomorphisms `M → N`. This is
 full faithfulness of `D` on the split category (contravariance
-appears when passing to schemes). Blueprint: reductive_structure.diagonalizable_groups_antiequivalence
+appears when passing to schemes).
+
+Blueprint: reductive_structure.diagonalizable_groups_antiequivalence
 -/
 noncomputable def diagHomEquiv :
     (M →+ N) ≃ (AddMonoidAlgebra R M →ₐc[R] AddMonoidAlgebra R N) :=
   AddMonoidAlgebra.mapDomainBialgHomEquiv
 
 /-- **Cartier duality, cocharacter level**: the cocharacters of
-`D(M)` form the dual lattice `Hom(M, ℤ)`. Blueprint: tori.character_and_cocharacter_lattices
+`D(M)` form the dual lattice `Hom(M, ℤ)`.
+
+Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def diagCocharEquiv :
     (M →+ ℤ) ≃ cocharacterHom R (AddMonoidAlgebra R M) :=
@@ -140,7 +150,9 @@ noncomputable def diagCocharEquiv :
 /-- **Split classification theorem** (iso level of Cartier duality):
 two diagonalizable groups — in particular two split tori — are
 isomorphic over a domain `R` if and only if their lattices are
-isomorphic. Blueprint: reductive_structure.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
+isomorphic.
+
+Blueprint: reductive_structure.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
 -/
 theorem diag_bialgEquiv_iff_addEquiv :
     Nonempty (AddMonoidAlgebra R M ≃ₐc[R] AddMonoidAlgebra R N) ↔
