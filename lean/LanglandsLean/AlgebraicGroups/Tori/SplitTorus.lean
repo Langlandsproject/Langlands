@@ -45,10 +45,6 @@ universe u w
 
 variable (R : CommRingCat.{u}) (n : ℕ)
 
-/-- The free abelian group `ℤ^n`, the (co)character lattice of the
-rank-`n` split torus. -/
-abbrev freeLattice : Type := Fin n → ℤ
-
 /-- `ULift` preserves finite generation of additive monoids: transfer
 along the surjective hom `ULift.addEquiv.symm`. Mathlib has the pi and
 `ℤ` instances but not this one; it is what lets the rank-`n` lattice
@@ -67,7 +63,7 @@ group scheme, algebraic group.
 Blueprint: tori.split_torus
 -/
 noncomputable abbrev splitTorusOver : Over (Scheme.Spec.obj (op R)) :=
-  diagGroupOver R (ULift.{u} (freeLattice n))
+  diagGroupOver R (ULift.{u} (Fin n → ℤ))
 
 /-- The underlying scheme of the rank-`n` split torus.
 

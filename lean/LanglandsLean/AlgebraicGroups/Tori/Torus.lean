@@ -50,7 +50,7 @@ the split case (statement; proof: M4, base change of group algebras).
 
 Blueprint: tori.split_torus
 -/
-theorem isTorusAlgebra_groupAlgebra (n : ℕ) :
+theorem isTorusAlgebra_addMonoidAlgebra (n : ℕ) :
     IsTorusAlgebra k E (AddMonoidAlgebra k (Fin n → ℤ)) := by
   sorry
 

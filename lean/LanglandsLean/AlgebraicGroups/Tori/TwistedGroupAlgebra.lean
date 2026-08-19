@@ -25,17 +25,17 @@ exactly the quasi-inverse of `T ↦ X^*(T)`.
 Everything in this file and `Forms/GaloisDescent.lean` is
 proved (no `sorry`):
 
-* `twistedGroupAlgebra_span_top` (Speiser's lemma / Galois descent):
+* `span_twistedGroupAlgebra_eq_top` (Speiser's lemma / Galois descent):
   the fixed points span `E[M]` over `E`. **Proved** in
   this file via the general semilinear descent theorem of
   `Forms/GaloisDescent.lean`,
   `span_fixedPoints_eq_top` built there (Mathlib has none).
-* `twistedGroupAlgebra_trivial` : for the trivial action the
+* `twistedGroupAlgebra_one` : for the trivial action the
   construction recovers `k[M]` inside `E[M]`.
 
 The `k`-Hopf structure on `twistedGroupAlgebra σ` (comultiplication by
 descent of `Δ_E`) is the next construction target; it requires
-`twistedGroupAlgebra_span_top` and is deliberately not stated as a
+`span_twistedGroupAlgebra_eq_top` and is deliberately not stated as a
 placeholder.
 
 ## Knowledge base
@@ -131,13 +131,13 @@ lemma mem_twistedGroupAlgebra_iff {f : AddMonoidAlgebra E M} :
 /-! ### The descent theorems (stated; proofs are the next milestone) -/
 
 /- Speiser's lemma for the twisted group algebra —
-`twistedGroupAlgebra_span_top` — is stated and **proved** in
+`span_twistedGroupAlgebra_eq_top` — is stated and **proved** in
 `Forms/GaloisDescent.lean`, which builds the general semilinear descent
 theorem `span_fixedPoints_eq_top` that Mathlib lacks. -/
 
 /-- With the trivial lattice action, the semilinear action reduces to
 the coefficient action. -/
-lemma semilinearAut_one_smulHom (γ : E ≃ₐ[k] E) (f : AddMonoidAlgebra E M) :
+lemma semilinearAut_one_apply (γ : E ≃ₐ[k] E) (f : AddMonoidAlgebra E M) :
     semilinearAut k E M 1 γ f = AddMonoidAlgebra.mapAlgEquiv k M γ f := by
   have h0 : (latticeAut k E M 1 γ) = AddEquiv.refl M := by
     ext m
@@ -147,7 +147,7 @@ lemma semilinearAut_one_smulHom (γ : E ≃ₐ[k] E) (f : AddMonoidAlgebra E M) 
 
 /-- For the **trivial** action on the lattice, the twisted group
 algebra is the image of `k[M]`: no twisting occurs. -/
-theorem twistedGroupAlgebra_trivial [IsGalois k E] [FiniteDimensional k E] :
+theorem twistedGroupAlgebra_one [IsGalois k E] [FiniteDimensional k E] :
     twistedGroupAlgebra k E M 1 =
       (AddMonoidAlgebra.mapAlgHom M (Algebra.ofId k E)).range := by
   classical
@@ -160,7 +160,7 @@ theorem twistedGroupAlgebra_trivial [IsGalois k E] [FiniteDimensional k E] :
       rw [IsGalois.mem_range_algebraMap_iff_fixed]
       intro γ
       have hγ := hf γ
-      rw [semilinearAut_one_smulHom] at hγ
+      rw [semilinearAut_one_apply] at hγ
       calc γ (f.coeff m)
           = (AddMonoidAlgebra.mapAlgEquiv k M γ f).coeff m := by simp
         _ = f.coeff m := by rw [hγ]
@@ -177,7 +177,7 @@ theorem twistedGroupAlgebra_trivial [IsGalois k E] [FiniteDimensional k E] :
     rw [Finsupp.mapRange_apply, Algebra.ofId_apply]
     exact Function.invFun_eq (hcoef m)
   · rintro ⟨g, rfl⟩ γ
-    rw [semilinearAut_one_smulHom]
+    rw [semilinearAut_one_apply]
     ext m
     simp [AddMonoidAlgebra.coeff_mapAlgHom]
 
@@ -201,7 +201,7 @@ in `Tori/GaloisDescent.lean`.
 
 Blueprint: forms.galois_descent_for_vector_spaces
 -/
-theorem twistedGroupAlgebra_span_top [FiniteDimensional k E] :
+theorem span_twistedGroupAlgebra_eq_top [FiniteDimensional k E] :
     Submodule.span E
       ((twistedGroupAlgebra k E M σ : Set (AddMonoidAlgebra E M))) = ⊤ := by
   have hset : ((twistedGroupAlgebra k E M σ : Set (AddMonoidAlgebra E M))) =

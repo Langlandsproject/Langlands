@@ -41,7 +41,7 @@ GaloisDescent (semilinear action + twistedGroupAlgebra defined
 sorry-free), and Speiser (**proved**: general semilinear Galois
 descent `span_fixedPoints_eq_top` via Dedekind independence +
 averaging — infrastructure Mathlib lacks — plus its application
-`twistedGroupAlgebra_span_top`). `twistedGroupAlgebra_trivial` also proved (2026-08-19 third pass);
+`span_twistedGroupAlgebra_eq_top`). `twistedGroupAlgebra_one` also proved (2026-08-19 third pass);
 **the Lean library is sorry-free**. Open Lean items: independence
 half of descent, Hopf structure on the twisted algebra, X^* of the
 twisted form.*
@@ -502,7 +502,7 @@ bijection, and rank-one classification. Links: every theorem node lean-linked, r
 - [ ] `X^*` with Galois action: `X^*(A) := GroupLike E (E ⊗ A)` with
       `Γ`-action; independence of the splitting field E.
       (Also closes the flagged gap: scheme-side reading of
-      characterGroup.)
+      CharacterGroup.)
 - [ ] Inverse computation: `X^*(twistedTorus (M,σ)) ≅ (M,σ)`
       (Lean side of `tori.twisted_form_of_lattice`).
 

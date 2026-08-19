@@ -12,10 +12,10 @@ lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
   declarations:
-  - Langlands.Tori.schemeCharacterGroup
+  - Langlands.Tori.SchemeCharacterGroup
   - Langlands.Tori.gmGrp
-  - Langlands.Tori.characterGroup
-  - Langlands.Tori.cocharacterGroup
+  - Langlands.Tori.CharacterGroup
+  - Langlands.Tori.coCharacterGroup
   - Langlands.Tori.diagCharEquiv
   - Langlands.Tori.diagCocharEquiv
   - Langlands.Tori.diagGroupLikeEquiv

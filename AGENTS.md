@@ -137,7 +137,12 @@ often — the full text and examples are in that file, §6:
    `WithConv`, `ULift`, ...) in a public statement needs a
    conversion-glossary entry in the module docstring.
 3. **No smoke tests**: examples go in `Examples` sections/files;
-   instance checks live in real downstream uses. Lean-specific idioms
+   instance checks live in real downstream uses.
+4. **Mathlib naming, binding** (full rules: conventions §8): types
+   and predicates UpperCamel (`IsTorusAlgebra`); data terms lowerCamel
+   (`descentMap`); theorems snake_case named by conclusion with
+   Mathlib patterns (`_eq_top`, `foo_one`, no typeclass hypotheses in
+   names); no ad-hoc abbreviations. Lean-specific idioms
 (group-scheme typeclass pattern, no bundled `GroupScheme`) are its §6;
 the affine-algebraic-group spec is
 `docs/superpowers/specs/2026-05-23-affine-algebraic-group-design.md`.

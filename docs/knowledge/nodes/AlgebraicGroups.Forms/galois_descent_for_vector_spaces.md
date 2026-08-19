@@ -14,7 +14,7 @@ lean:
   - LanglandsLean.AlgebraicGroups.Forms.GaloisDescent
   declarations:
   - Langlands.Forms.span_fixedPoints_eq_top
-  - Langlands.Tori.twistedGroupAlgebra_span_top
+  - Langlands.Tori.span_twistedGroupAlgebra_eq_top
   - Langlands.Forms.span_galEval_eq_top
   - Langlands.Forms.linearIndependent_algEquiv
 verification:

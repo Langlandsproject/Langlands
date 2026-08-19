@@ -169,3 +169,39 @@ workflow bug, not a knowledge bug:
   discussion in `lean/LanglandsLean/AlgebraicGeometry/Conventions.lean`.
 - Inner loop: Lean LSP MCP diagnostics/goals; full `lake build` only at
   checkpoints.
+
+## 8. Lean naming (Mathlib conventions, binding)
+
+Follow the Mathlib naming conventions; the recurring cases:
+
+- **Types, type formers, structures, classes, `Prop`-valued
+  predicates**: `UpperCamelCase` — `CharacterGroup`, `IsTorusAlgebra`,
+  `WithConv`. (2026-08-19 repair: `characterGroup`/`cocharacterGroup`
+  were lowerCamel type formers — renamed.)
+- **Data-valued terms** (functions, homs, equivs, category objects):
+  `lowerCamelCase` — `descentMap`, `diagCharEquiv`, `gmGrp`,
+  `fixedSubmodule`.
+- **Theorems/lemmas**: `snake_case`, named by the **conclusion**, head
+  symbol first, with Mathlib's connective patterns: `_eq_top`,
+  `_iff_`, `_of_`, `_apply`, argument-based suffixes (`foo_one` for
+  the statement about `1`, not `foo_trivial`). Typeclass hypotheses
+  do not go into the name (`comul_comp_antipode`, not
+  `comul_comp_antipode_of_isCocomm`; compare Mathlib's
+  `antipode_mul_distrib`/`antidistrib`).
+- **No ad-hoc abbreviations** in names, and no abbreviation defs that
+  hide an honest type (`freeLattice := Fin n → ℤ` removed — write the
+  type).
+- **Carve-out** (repo precedent, Mathlib's atomic-object exception):
+  named geometric objects as terms of `Scheme` are UpperCamel —
+  `Gm`, `MuN`, `SplitTorus`, `DiagGroup`; their `Over`-object
+  companions stay lowerCamel with the `Over` suffix
+  (`diagGroupOver`).
+- **Category-theory statements**: prefer Mathlib's structured forms
+  over raw `Prop`s in final form — `Functor.FullyFaithful (hopfSpec R)`
+  rather than `hopfSpec_map_bijective`; the `Prop` form is acceptable
+  only in statement-first skeletons and must carry a note.
+- Interim disambiguation prefixes that encode a *presentation level*
+  (`SchemeCharacterGroup` vs `CharacterGroup`) are tolerated only
+  while the bridge between the presentations is unproved; once the
+  bridge lands, one form is primary and the other becomes a derived
+  equivalence, and the prefix is removed.

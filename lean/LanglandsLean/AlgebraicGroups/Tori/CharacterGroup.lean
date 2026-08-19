@@ -19,8 +19,8 @@ with the group law of pointwise multiplication in `𝔾ₘ`. The faithful
 contravariant translation to coordinate Hopf algebras, with
 `O(𝔾ₘ) = R[ℤ]`:
 
-* `characterGroup R A := WithConv (R[ℤ] →ₐc[R] A)`,
-* `cocharacterGroup R A := WithConv (A →ₐc[R] R[ℤ])`,
+* `CharacterGroup R A := WithConv (R[ℤ] →ₐc[R] A)`,
+* `coCharacterGroup R A := WithConv (A →ₐc[R] R[ℤ])`,
 
 where `WithConv` is Mathlib's carrier for "this hom-set with the
 convolution product" — under `Spec`, convolution *is* pointwise
@@ -70,7 +70,7 @@ product — under `Spec`, pointwise multiplication of characters.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev characterGroup (A : Type v) [CommSemiring A] [Bialgebra R A] : Type _ :=
+abbrev CharacterGroup (A : Type v) [CommSemiring A] [Bialgebra R A] : Type _ :=
   WithConv ((AddMonoidAlgebra R ℤ) →ₐc[R] A)
 
 /-- **The cocharacter group** `X_*(Spec A) = Hom_grp(𝔾ₘ, Spec A)`:
@@ -80,7 +80,7 @@ convolution structure requires `A` cocommutative — faithfully so:
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev cocharacterGroup (A : Type v) [Semiring A] [Bialgebra R A] : Type _ :=
+abbrev coCharacterGroup (A : Type v) [Semiring A] [Bialgebra R A] : Type _ :=
   WithConv (A →ₐc[R] (AddMonoidAlgebra R ℤ))
 
 variable (M N : Type v) [AddCommGroup M] [AddCommGroup N]
@@ -106,7 +106,7 @@ Mathlib's `mapDomainBialgHomAddEquiv`.
 Blueprint: tori.character_and_cocharacter_lattices, reductive_groups.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
 -/
 noncomputable def diagCharEquiv :
-    Multiplicative M ≃* characterGroup R (AddMonoidAlgebra R M) :=
+    Multiplicative M ≃* CharacterGroup R (AddMonoidAlgebra R M) :=
   AddEquiv.toMultiplicativeLeft
     ((zmultiplesAddEquiv M).trans
       (AddMonoidAlgebra.mapDomainBialgHomAddEquiv (R := R)))
@@ -127,7 +127,7 @@ noncomputable def diagHomEquiv :
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def diagCocharEquiv :
-    (M →+ ℤ) ≃ cocharacterGroup R (AddMonoidAlgebra R M) :=
+    (M →+ ℤ) ≃ coCharacterGroup R (AddMonoidAlgebra R M) :=
   (AddMonoidAlgebra.mapDomainBialgHomEquiv).trans (WithConv.equiv _).symm
 
 /-- **Split classification theorem** (isomorphism level of Cartier
@@ -206,7 +206,7 @@ noncomputable def diagGroupLikeEquiv :
 section Examples
 
 /-- Characters of `𝔾ₘ = D(ℤ)`: the lattice `ℤ`. -/
-noncomputable example : Multiplicative ℤ ≃* characterGroup R (AddMonoidAlgebra R ℤ) :=
+noncomputable example : Multiplicative ℤ ≃* CharacterGroup R (AddMonoidAlgebra R ℤ) :=
   diagCharEquiv R ℤ
 
 /-- Endomorphisms of `𝔾ₘ` as a group scheme: `ℤ`, acting by
@@ -242,7 +242,7 @@ morphisms of group objects over `Spec R`.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-noncomputable def schemeCharacterGroup
+noncomputable def SchemeCharacterGroup
     (G : Grp (Over (Scheme.Spec.obj (op Rc)))) : Type _ :=
   G ⟶ gmGrp Rc
 
@@ -275,14 +275,14 @@ Blueprint: tori.characters_as_group_like_elements
 -/
 theorem schemeCharacter_diag_equiv (M : Type u) [AddCommGroup M]
     [IsDomain Rc] :
-    Nonempty (schemeCharacterGroup Rc (diagGrp Rc M) ≃ Multiplicative M) := by
+    Nonempty (SchemeCharacterGroup Rc (diagGrp Rc M) ≃ Multiplicative M) := by
   sorry
 
 end SchemeLevel
 
 /-! ### Inversion of characters via the antipode (statements)
 
-The convolution `CommMonoid` on `characterGroup` is Mathlib's; the
+The convolution `CommMonoid` on `CharacterGroup` is Mathlib's; the
 group law needs inversion by the antipode. Definitions are given
 here; the group axioms are the M0 proof pass. -/
 
@@ -299,22 +299,22 @@ noncomputable def gmAntipodeBialgHom :
 /-- Inversion of a character: precompose with the antipode of `𝔾ₘ`.
 Under `Spec`, this is `χ ↦ χ⁻¹` pointwise. -/
 noncomputable instance (A : Type v) [CommSemiring A] [Bialgebra R A] :
-    Inv (characterGroup R A) :=
+    Inv (CharacterGroup R A) :=
   ⟨fun φ => toConv (φ.ofConv.comp gmAntipodeBialgHom)⟩
 
 /-- The group axiom for characters (statement; proof: M0 pass via
 injective transfer along `toAlgHom` into Mathlib's convolution
 group). -/
-theorem characterGroup_inv_mul_cancel
+theorem CharacterGroup_inv_mul_cancel
     (A : Type v) [CommSemiring A] [Bialgebra R A]
-    (φ : characterGroup R A) : φ⁻¹ * φ = 1 := by
+    (φ : CharacterGroup R A) : φ⁻¹ * φ = 1 := by
   sorry
 
 /-- The comultiplication commutes with the antipode on a
 cocommutative Hopf algebra (statement; proof: M0 pass — this is the
 lemma Mathlib lacks; `counit_antipode` is the counit-side
 counterpart). -/
-theorem comul_comp_antipode_of_isCocomm
+theorem comul_comp_antipode
     (A : Type v) [CommRing A] [HopfAlgebra R A] [Coalgebra.IsCocomm R A] :
     (Coalgebra.comul (R := R) (A := A)) ∘ₗ (HopfAlgebra.antipode R) =
       (TensorProduct.map (HopfAlgebra.antipode R) (HopfAlgebra.antipode R))

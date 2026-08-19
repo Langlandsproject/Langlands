@@ -59,12 +59,12 @@ Lean:
 - [ ] Scheme-level `X^*`: the repo already has
       `hopfSpec : Grp((CommAlgCat R)ᵒᵖ) ⥤ Grp(Over(Spec R))` with
       full faithfulness (HopfSpecFunctor.lean); define
-      `characterGroup` as homs to `𝔾ₘ` in `Grp(Over(Spec R))` and
+      `CharacterGroup` as homs to `𝔾ₘ` in `Grp(Over(Spec R))` and
       demote the current Hopf-hom form to the first bridge theorem.
-- [ ] Convolution `Group` instances: `characterGroup` via
+- [ ] Convolution `Group` instances: `CharacterGroup` via
       `gmAntipodeBialgHom` (= `mapDomainBialgHom` of negation) and
       injective transfer along `toAlgHom` into Mathlib's `convGroup`;
-      `cocharacterGroup` needs the generic
+      `coCharacterGroup` needs the generic
       `antipodeBialgHom [IsCocomm]`, blocked on a missing Mathlib
       lemma (`comul ∘ antipode` under cocommutativity —
       `counit_antipode` exists, the comul side does not; build
@@ -203,7 +203,7 @@ Route: minimal-relation argument (KB node proof of
 (FieldTheory/Fixed.lean) — Finset induction on the support of a
 relation. Needs `E^Γ = k`: from `IsGalois` via
 `IsGalois.mem_range_algebraMap_iff_fixed` (already used in
-`twistedGroupAlgebra_trivial`). NOTE: this theorem, unlike the span,
+`twistedGroupAlgebra_one`). NOTE: this theorem, unlike the span,
 genuinely requires `[IsGalois k E]`.
 
 ```lean
@@ -292,9 +292,9 @@ theorem charLattice_twisted :
 
 /-- carried over from the 2026-08-19 faithfulness refactor of
     CharacterGroup.lean:
-    (i) convolution Group instance on characterGroup (inverse =
+    (i) convolution Group instance on CharacterGroup (inverse =
         precomposition with the antipode of R[ℤ]);
-    (ii) the general bridge characterGroup R A ≃* GroupLike R A
+    (ii) the general bridge CharacterGroup R A ≃* GroupLike R A
         (split case done: diagGroupLikeEquiv);
     (iii) upgrade diagGroupPointsEquiv to a group isomorphism
         (points group law = pointwise multiplication). -/
