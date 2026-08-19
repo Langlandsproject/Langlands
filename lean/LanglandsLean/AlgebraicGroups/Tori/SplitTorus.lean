@@ -1,4 +1,4 @@
-import LanglandsLean.AlgebraicGroups.Tori.Diagonalizable
+import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
 
 /-!
 # Split tori `D(ℤ^n) = Spec R[x_1^{±1}, …, x_n^{±1}]`

@@ -12,7 +12,7 @@ This catalog lists nodes under the `tori` mathematical category. It is for human
 - [[node:tori.torus_definition|Algebraic Torus]]
 - [[node:tori.split_torus|Split Torus]]
 - [[node:tori.anisotropic_torus|Anisotropic Torus]]
-- [[node:tori.induced_tori|Induced Tori]]
+- [[node:tori.induced_torus|Induced Torus]]
 - [[node:tori.unramified_torus|Unramified Torus]]
 - [[node:tori.tamely_ramified_torus|Tamely Ramified Torus]]
 - [[node:tori.weakly_induced_torus|Weakly Induced Torus]]

@@ -224,7 +224,7 @@ placed in `affine_group_schemes` per (D3))
 
 ### G0.4 — Special classes of tori (Tier A)
 
-- [x] `induced_tori` [def] — permutation lattice ⟺ product of
+- [x] `induced_torus` (né `induced_tori`; singularized 2026-08-19) [def] — permutation lattice ⟺ product of
       `R_{E_i/k}G_m` (KP Def. 2.5.1). Record KP's terminology warning:
       do not call these "quasi-split tori"; every torus is a quasi-split
       reductive group.
@@ -384,7 +384,7 @@ descent. Not needed for the apartment or for the building over `K`.
       via z-extensions (§11.4–11.5); the torus case is the base case,
       not a special case.
 - [ ] New node `z_extensions` (KP §11.4) in `kottwitz_structures`,
-      `uses` `tori.induced_tori`.
+      `uses` `tori.induced_torus`.
 - [ ] New node: `G(k)^0 = ker κ_G` (KP Prop. 11.5.4), which makes the ad
       hoc Def. 2.6.23 conceptual and is the definitional basis for
       parahorics. Edge into `parahoric_subgroups`.

@@ -9,7 +9,7 @@ topics:
 uses:
 - tori.algebraic_tori
 - tori.torus_definition
-- tori.induced_tori
+- tori.induced_torus
 - tori.weil_restriction_of_tori
 - tori.subtori_and_quotients
 - tori.f_tori_galois_module_classification
@@ -54,7 +54,7 @@ Let \(T\) be a torus over \(k\). Then:
 These resolutions are the reduction engine of the whole topic: a
 statement about arbitrary tori that is stable under the boundary maps
 of these sequences reduces to the case of induced tori, hence — by the
-product description in [[node:tori.induced_tori]] — to
+product description in [[node:tori.induced_torus]] — to
 \(\mathbb{G}_m\) over finite separable extensions.
 
 *Proof.*

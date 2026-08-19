@@ -31,6 +31,10 @@ change policies.
 - Every topic is registered in `docs/knowledge/mdblueprint.yml` under
   `topics:` (id + human title). `scripts/publish_md.py` keeps the
   expected root-area list.
+- **Grammatical number**: a topic names a *class* of objects and is
+  plural (`Tori`, `ReductiveGroups`, `Buildings`); a definition node or
+  Lean declaration names a *concept or object* and is singular
+  (`torus_definition` "Algebraic Torus", `split_torus`, `IsTorus`).
 - **Names are standard mathematical nouns.** Filler words are banned:
   no `structure`, `inputs`, `basic`, `misc`, `data` unless the
   mathematical term itself contains them (`RootData` is the standard
@@ -62,7 +66,8 @@ change policies.
   `foundational_inputs→foundations`,
   `reductive_structure→reductive_groups`, `descent_and_forms→forms`,
   `bd_covers→covers`, `buildings_and_parahorics→buildings`,
-  `kottwitz_structures→kottwitz`, `root_data_and_duality→root_data`.
+  `kottwitz_structures→kottwitz`, `root_data_and_duality→root_data`,
+  and (same window, singular/plural repair) `tori.induced_tori→tori.induced_torus`.
   From now on, renaming an id requires an alias/redirect mechanism in
   the tooling plus a project-level decision. Session-level renames are
   forbidden.

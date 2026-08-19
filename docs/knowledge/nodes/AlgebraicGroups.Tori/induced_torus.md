@@ -1,6 +1,6 @@
 ---
-id: tori.induced_tori
-title: Induced Tori
+id: tori.induced_torus
+title: Induced Torus
 kind: definition
 status: admitted
 primary_topic: AlgebraicGroups.Tori
@@ -31,7 +31,7 @@ tags:
 - AlgebraicGroups.Tori
 ---
 
-# Induced Tori
+# Induced Torus
 
 A torus \(T\) over \(k\) is **induced** (synonym in the literature:
 *quasi-trivial*) if the lattice \(X^*(T)\) — equivalently

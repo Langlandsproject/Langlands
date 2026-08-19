@@ -13,7 +13,7 @@ uses:
 - foundations.hopf_algebras
 lean:
   modules:
-  - LanglandsLean.AlgebraicGroups.Tori.Diagonalizable
+  - LanglandsLean.AlgebraicGroups.Tori.DiagGroup
   declarations:
   - Langlands.Tori.diagGroupOver
   - Langlands.Tori.DiagGroup

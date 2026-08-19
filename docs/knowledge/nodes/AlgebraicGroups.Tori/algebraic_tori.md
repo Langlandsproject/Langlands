@@ -78,7 +78,7 @@ Fixed for every node of this topic and for downstream consumers.
   almost direct product of the two extremes.
 - [[node:tori.weil_restriction_of_tori]], [[node:tori.norm_one_torus]],
   [[node:tori.rank_one_classification]] — the basic examples.
-- [[node:tori.induced_tori]], [[node:tori.induced_resolution]] — the
+- [[node:tori.induced_torus]], [[node:tori.induced_resolution]] — the
   class that behaves like \(\mathbb{G}_m\), and the resolution of an
   arbitrary torus by it.
 - [[node:tori.unramified_torus]], [[node:tori.tamely_ramified_torus]],

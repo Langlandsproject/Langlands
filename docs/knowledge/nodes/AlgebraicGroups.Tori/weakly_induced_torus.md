@@ -9,7 +9,7 @@ topics:
 uses:
 - tori.algebraic_tori
 - tori.torus_definition
-- tori.induced_tori
+- tori.induced_torus
 - tori.tamely_ramified_torus
 - foundations.local_fields
 source:
@@ -46,7 +46,7 @@ maximal tamely ramified extension of \(k\), so
 
 A torus \(T\) over \(k\) is **weakly induced** if there exists a
 tamely ramified extension \(\ell/k\) such that \(T_\ell\) is
-[[node:tori.induced_tori|induced]]. Equivalently:
+[[node:tori.induced_torus|induced]]. Equivalently:
 
 - \(T_{k_t}\) is induced; equivalently
 - \(X^*(T)\) (equivalently \(X_*(T)\)) has a \(\mathbb{Z}\)-basis

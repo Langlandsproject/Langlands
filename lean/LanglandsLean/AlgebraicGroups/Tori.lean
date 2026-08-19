@@ -1,4 +1,4 @@
-import LanglandsLean.AlgebraicGroups.Tori.Diagonalizable
+import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
 import LanglandsLean.AlgebraicGroups.Tori.SplitTorus
 import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
 import LanglandsLean.AlgebraicGroups.Tori.GaloisDescent

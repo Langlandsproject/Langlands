@@ -1,4 +1,4 @@
-import LanglandsLean.AlgebraicGroups.Tori.Diagonalizable
+import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
 import Mathlib.RingTheory.HopfAlgebra.GroupLike
 import Mathlib.RingTheory.HopfAlgebra.MonoidAlgebra
 
