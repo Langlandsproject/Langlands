@@ -24,7 +24,7 @@ the group object structure on `Spec A` (Step 4).
 
 ## Blueprint
 
-`linear_algebraic_groups.hopf_spec_grpobj_via_yoneda` (Step 1).
+`affine_group_schemes.hopf_spec_grpobj_via_yoneda` (Step 1).
 
 ## GitHub issue
 
@@ -284,7 +284,7 @@ set_option backward.isDefEq.respectTransparency.types false in
 yields an `R`-algebra hom `A →ₐ[R] Γ(T.left, ⊤)` by applying `Γ`
 (i.e., `f.left.appTop`) and pre-composing with the `ΓSpec` iso.
 
-Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+Blueprint: affine_group_schemes.spec_representability_via_global_sections
 -/
 noncomputable def homOverToAlgHom (T : Over (Scheme.Spec.obj (op R)))
     (f : T ⟶ specObjOver R A) :
@@ -342,7 +342,7 @@ set_option backward.isDefEq.respectTransparency false in
 morphism `T ⟶ specObjOver R A` in `Over (Spec R)` via the `Γ ⊣ Spec`
 adjunction.
 
-Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+Blueprint: affine_group_schemes.spec_representability_via_global_sections
 -/
 noncomputable def algHomToHomOver (T : Over (Scheme.Spec.obj (op R)))
     (φ : letI := gammaAlgebra R T; A →ₐ[R] Γ(T.left, ⊤)) :
@@ -405,7 +405,7 @@ set_option backward.isDefEq.respectTransparency false in
 `pointsPresheaf` is naturally isomorphic to `Hom_{Over Spec R}(-, Spec A)`,
 hence representable by `specObjOver R A`.
 
-Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+Blueprint: affine_group_schemes.spec_representability_via_global_sections
 -/
 noncomputable def specRepresentability :
     (pointsPresheaf R A ⋙ forget GrpCat).RepresentableBy (specObjOver R A) where

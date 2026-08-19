@@ -29,7 +29,7 @@ chain end-to-end on an actual algebraic group.
 
 ## Blueprint
 
-`linear_algebraic_groups.multiplicative_group_scheme`.
+`affine_group_schemes.multiplicative_group_scheme`.
 
 ## GitHub issue
 

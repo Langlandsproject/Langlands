@@ -19,7 +19,7 @@ the Hopf antipode axiom.
 
 ## Blueprint
 
-`linear_algebraic_groups.algebra_homs_form_group_under_convolution`
+`affine_group_schemes.algebra_homs_form_group_under_convolution`
 
 ## GitHub issue
 

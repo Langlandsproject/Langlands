@@ -28,7 +28,9 @@ DEFAULT_PAGES_ROOT = Path(os.environ.get("PAGES_ROOT", "~/mydoc/jiajunma.github.
 DEFAULT_PAGES_SUBDIR = "Langlands"
 EXPECTED_ROOT_TOPICS = {
     "foundational_inputs",
+    "affine_group_schemes",
     "linear_algebraic_groups",
+    "tori",
     "descent_and_forms",
     "reductive_structure",
     "root_data_and_duality",

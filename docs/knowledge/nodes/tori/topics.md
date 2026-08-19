@@ -31,6 +31,14 @@ This catalog lists nodes under the `tori` mathematical category. It is for human
 
 - [[node:tori.norm_one_torus|Norm-One Torus of a Separable Extension]]
 
+## Lean coverage (LanglandsLean/Tori/)
+
+- `Diagonalizable` — D(M) = Spec R[M] with group-object and algebraic-group instances.
+- `SplitTorus` — D(Z^n).
+- `CharacterGroup` — X^*, X_*; Cartier duality for split tori proved at object, hom, cocharacter, and isomorphism level (aligned with [[node:reductive_structure.diagonalizable_groups_antiequivalence]]).
+- `GaloisDescent` — semilinear action, twisted group algebra (the general torus's coordinate algebra).
+- `Speiser` — semilinear Galois descent proved in-repo (see [[node:descent_and_forms.galois_descent_for_vector_spaces]]).
+
 ## Planned (G0 roadmap, docs/TODO.md)
 
 - Galois cohomology of tori (G0.5).
@@ -38,3 +46,4 @@ This catalog lists nodes under the `tori` mathematical category. It is for human
 - The building of a torus, the interface consumed by buildings_and_parahorics (G0.7).
 - Integral models: standard model, Neron tower, filtrations (G0.8).
 - Dual torus, L-group, local Langlands for tori (G0.9).
+- Lean: Hopf structure on the twisted group algebra; independence half of descent; trivial-action computation (single remaining sorry).

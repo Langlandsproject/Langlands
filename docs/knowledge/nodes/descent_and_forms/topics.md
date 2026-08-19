@@ -27,6 +27,10 @@ This catalog lists topic-level nodes under the `descent_and_forms` mathematical 
 - [[node:descent_and_forms.twisted_conjugacy_classes|Twisted Conjugacy Classes]]
 - [[node:descent_and_forms.vogan_diagrams|Vogan Diagrams]]
 
+## Theorem Nodes
+
+- [[node:descent_and_forms.galois_descent_for_vector_spaces|Galois Descent for Vector Spaces]]
+
 ## Springer Linear Algebraic Group Nodes
 
 - [[node:descent_and_forms.f_subgroup_field_of_definition|Field of Definition for Subgroups of F-Groups]]

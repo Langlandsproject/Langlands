@@ -34,7 +34,7 @@ sides at `a ⊗ b` gives `S(ab) = S(a) · S(b)`.
 
 ## Blueprint
 
-`linear_algebraic_groups.antipode_anti_multiplicativity` (the
+`affine_group_schemes.antipode_anti_multiplicativity` (the
 commutative version corresponds to the simpler formula).
 
 ## GitHub issue

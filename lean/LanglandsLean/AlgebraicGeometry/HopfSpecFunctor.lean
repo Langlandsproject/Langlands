@@ -21,7 +21,7 @@ to obtain a `GrpObj` on `algSpec.obj A.X` via `GrpObj.ofRepresentableBy`.
 
 ## Blueprint
 
-`linear_algebraic_groups.hopf_spec_functor` Yoneda construction (object +
+`affine_group_schemes.hopf_spec_functor` Yoneda construction (object +
 functor parts).
 
 ## GitHub issue

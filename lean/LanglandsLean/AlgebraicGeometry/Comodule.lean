@@ -12,7 +12,7 @@ For a commutative semiring `R` and an `R`-coalgebra `A`, a (right)
 This module records the basic structure and morphisms. Examples
 (regular comodule, etc.) and the link to representations of affine
 group schemes appear in follow-up modules; the blueprint counterpart
-is `linear_algebraic_groups.comodule_definition`.
+is `affine_group_schemes.comodule_definition`.
 
 ## GitHub issue
 
@@ -105,7 +105,7 @@ comultiplication `Δ : A → A ⊗ A`.
 Geometrically (when `A = O(G)` is the coordinate Hopf algebra of an
 affine group scheme `G`), this is the action of `G` on its own
 coordinate ring; see the blueprint node
-`linear_algebraic_groups.regular_representation_example`. -/
+`affine_group_schemes.regular_representation_example`. -/
 def regularComodule : Comodule R A A where
   coaction := CoalgebraStruct.comul
   coassoc := by

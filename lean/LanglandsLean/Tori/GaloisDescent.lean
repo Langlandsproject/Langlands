@@ -37,7 +37,7 @@ descent of `Δ_E`) is the next construction target; it requires
 `twistedGroupAlgebra_span_top` and is deliberately not stated as a
 placeholder.
 
-## Blueprint
+## Knowledge base
 
 `tori.f_tori_galois_module_classification`, `tori.torus_definition`
 (the general, non-split torus enters Lean through this construction).
@@ -111,7 +111,8 @@ noncomputable def semilinearHom :
 action of `Gal(E/k)` on `E[M]`, as a `k`-subalgebra of `E[M]`. For a
 Galois lattice `(M, σ)` this is the coordinate algebra of the twisted
 form of the split torus `D(M)` — the general torus of the
-knowledge base. -/
+knowledge base. Blueprint: tori.f_tori_galois_module_classification
+-/
 noncomputable def twistedGroupAlgebra : Subalgebra k (AddMonoidAlgebra E M) where
   carrier := {f | ∀ γ : E ≃ₐ[k] E, semilinearAut k E M σ γ f = f}
   add_mem' hf hg γ := by rw [map_add, hf γ, hg γ]
