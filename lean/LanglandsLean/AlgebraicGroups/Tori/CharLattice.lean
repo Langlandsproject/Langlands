@@ -73,10 +73,38 @@ Blueprint: tori.character_and_cocharacter_lattices
 -/
 abbrev CharLattice : Type u := GroupLike E (E ⊗[k] A)
 
+/-- Transport of group-like elements along a bialgebra isomorphism
+(Mathlib gap: no `GroupLike.congr`). -/
+noncomputable def groupLikeCongr {R A₁ A₂ : Type*} [CommSemiring R]
+    [CommSemiring A₁] [Bialgebra R A₁] [CommSemiring A₂] [Bialgebra R A₂]
+    (e : A₁ ≃ₐc[R] A₂) : GroupLike R A₁ ≃* GroupLike R A₂ where
+  toFun x := ⟨e x.val, x.2.map (e : A₁ →ₐc[R] A₂)⟩
+  invFun y := ⟨e.symm y.val, y.2.map (e.symm : A₂ →ₐc[R] A₁)⟩
+  left_inv x := by ext; simp
+  right_inv y := by ext; simp
+  map_mul' x y := by ext; simp
+
 /-- The semilinear Galois action on the base change: `γ ⊗ 1` as a
 `k`-algebra automorphism of `E ⊗[k] A`. -/
 noncomputable def galAlgAut (γ : E ≃ₐ[k] E) : (E ⊗[k] A) ≃ₐ[k] (E ⊗[k] A) :=
   Algebra.TensorProduct.congr γ (AlgEquiv.refl : A ≃ₐ[k] A)
+
+@[simp]
+lemma galAlgAut_tmul (γ : E ≃ₐ[k] E) (e : E) (a : A) :
+    galAlgAut k E A γ (e ⊗ₜ a) = γ e ⊗ₜ a := rfl
+
+lemma galAlgAut_one (x : E ⊗[k] A) : galAlgAut k E A 1 x = x := by
+  induction x using TensorProduct.induction_on with
+  | zero => simp
+  | tmul e a => simp
+  | add u v hu hv => simp [hu, hv]
+
+lemma galAlgAut_mul (γ δ : E ≃ₐ[k] E) (x : E ⊗[k] A) :
+    galAlgAut k E A (γ * δ) x = galAlgAut k E A γ (galAlgAut k E A δ x) := by
+  induction x using TensorProduct.induction_on with
+  | zero => simp
+  | tmul e a => simp
+  | add u v hu hv => simp [hu, hv]
 
 /-- `γ ⊗ 1` preserves group-like elements (statement; proof: M5 —
 the semilinear compatibility of the comultiplication with the
@@ -102,9 +130,11 @@ noncomputable def charGalAct :
         ext
         exact map_mul (galAlgAut k E A γ) x.val y.val }
   map_one' := by
-    sorry -- proof: M5 (Algebra.TensorProduct.congr of refl is refl)
-  map_mul' := by
-    sorry -- proof: M5 (congr is multiplicative in γ)
+    ext x
+    exact galAlgAut_one k E A x.val
+  map_mul' := fun γ δ => by
+    ext x
+    exact galAlgAut_mul k E A γ δ x.val
 
 /-- The character lattice as a `ℤ`-linear representation of
 `Gal(E/k)` — the Galois module `X^*(T)` of the classification.
@@ -115,9 +145,15 @@ noncomputable def charRep :
     Representation ℤ (E ≃ₐ[k] E) (Additive (CharLattice k E A)) where
   toFun γ := (MonoidHom.toAdditive (charGalAct k E A γ)).toIntLinearMap
   map_one' := by
-    sorry -- proof: M5 (transport of charGalAct.map_one)
-  map_mul' := by
-    sorry -- proof: M5 (transport of charGalAct.map_mul)
+    refine LinearMap.ext fun x => ?_
+    show Additive.ofMul ((charGalAct k E A 1) x.toMul) = x
+    rw [map_one (charGalAct k E A)]
+    rfl
+  map_mul' := fun γ δ => by
+    refine LinearMap.ext fun x => ?_
+    show Additive.ofMul ((charGalAct k E A (γ * δ)) x.toMul) = _
+    rw [map_mul (charGalAct k E A)]
+    rfl
 
 /-- The character lattice of a torus is a free `ℤ`-module
 (statement; proof: M5 via `nonempty_charLattice_mulEquiv` and
