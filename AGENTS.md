@@ -10,7 +10,7 @@ Langlands program plus a Lean 4 formalization layer.
 
 - Knowledge base: Markdown nodes under `docs/knowledge/nodes/`, organized
   by topic directories.
-- Lean library: `lean/LanglandsLean/` (Lean 4, Mathlib v4.28.0).
+- Lean library: `lean/LanglandsLean/` (Lean 4, Mathlib v4.33.0).
 - Design docs and specs: `docs/superpowers/specs/`.
 
 ## The one rule you must follow
@@ -91,10 +91,24 @@ uv run --extra browser python -m tools.knowledge.render_check \
 ```
 
 Lean side is **not** normally checked with `lake build` during ordinary
-formalization. Use the `lean4` skill plus Archon/Lean LSP MCP for local,
+formalization. Use the lean4-skills below plus Lean LSP MCP for local,
 interactive feedback. `lake build` is reserved for explicit checkpoint,
 CI-parity, or release-style validation, because it is too heavy for normal
 proof iteration.
+
+## Lean skills (installed — invoke by these exact names)
+
+From [cameronfreer/lean4-skills](https://github.com/cameronfreer/lean4-skills),
+installed at `~/.claude/skills/`. There is **no** skill named `lean4`;
+these are the real names:
+
+| Skill | When to invoke |
+|---|---|
+| `lean-sorry-crusher` | **Mandatory for every proof pass** — any session whose goal is filling `sorry`s in a Lean file. Plan/prover/review loop with state files. |
+| `lean-blueprint` | **Do not use for scaffolding here** (this repo uses mdblueprint, see "The one rule"). Reference only, for its Lean↔prose alignment conventions. |
+
+Statement-first passes (definitions + sorry'd statements) use the Lean
+LSP MCP calls below directly; the crusher takes over when proofs start.
 
 Preferred Lean MCP calls:
 

@@ -79,8 +79,10 @@ Use `gh issue create` with bodies authored as files in `/tmp/`.
 
 Implement in Lean following the DAG order from the blueprint. Per issue:
 
-- activate/read the `lean4` skill if available, then use Archon/Lean LSP
-  MCP as the primary formalization interface;
+- statement pass: use Lean LSP MCP directly as the formalization
+  interface; **proof pass: invoke the `lean-sorry-crusher` skill**
+  (from cameronfreer/lean4-skills, `~/.claude/skills/`) — see the
+  "Lean skills" table in `AGENTS.md`;
 - write the Lean code; aim for minimal stubs over speculative
   refactors; `sorry` only with a documented gap;
 - after each focused edit, run `lean_diagnostic_messages` on the touched
