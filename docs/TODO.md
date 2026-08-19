@@ -26,6 +26,372 @@ noted; each goal leaves the DAG consistent and publishable.
       in
       [knowledge/references/bruhat-tits-sources.md](knowledge/references/bruhat-tits-sources.md).
 
+## G0 — Algebraic tori (prerequisite layer)
+
+Blocks G5, G7, and the `kottwitz_structures` cluster. Land this before
+resuming G1–G4; the Bruhat–Tits nodes silently assume it.
+
+Sources: KP §2.5 (pp. 86–92), §2.6(a) (p. 93), Ch. 11 §§11.1–11.2
+(pp. 421–427), App. B (pp. 653–695), Def. 16.1 (p. 547), Def. 17.1
+(p. 553); SGA3 Exp. VIII–X; Borel §8; Colliot-Thélène–Sansuc for the
+flasque material.
+
+Two design decisions are recorded here because both diverge from the
+book's presentation. They agree with each other, which is why they are
+worth committing to.
+
+**(D1) κ_T is the primitive; ω_T is derived.** KP present ω_T in §2.5
+and κ_T only in Ch. 11, because a book must be linear. The dependency
+runs the other way: for split T, κ_T is `id ⊗ ω` and needs nothing;
+ω_T is `κ_T` followed by "forget torsion". Under this order KP
+Def. 2.5.13 and Prop. 2.5.8 become theorems, and Lem. 2.5.18 and
+Rem. 2.5.15 collapse to one-line lattice facts. See G0.6.
+
+**(D2) The cluster is tiered by what the building formalization
+consumes, not by mathematical subject.**
+
+- *Tier A (lattice tier)* — G0.1–G0.7. Stated entirely in terms of
+  lattices, Galois modules and the abstract group `T(k)`. **No schemes.**
+  This is exactly what the construction of the building needs: KP build
+  the apartment (Ch. 6) and the building (Ch. 7) from the valued root
+  datum, Iwahori subgroups and the Iwahori–Tits system, all *before*
+  integral models appear in Ch. 8.
+- *Tier B (scheme tier)* — G0.8. Integral models, Néron models,
+  filtrations. Needed for parahoric *group schemes* (G5), Moy–Prasad
+  (G7), and unramified descent to non-quasi-split `G` (Ch. 9, which
+  does use Ch. 8), but **not** for the building over `K` as a metric
+  and polysimplicial object.
+
+Consequence for Lean: Tier A is reachable without étale descent,
+Néron models, or dilatations. Formalize it first and the building
+construction is unblocked; Tier B can lag.
+
+**(D3) Topic placement: tori sit between `linear_algebraic_groups` and
+`reductive_structure`, and the anti-equivalence machinery sits below
+tori.** The apparent circle "a torus is a special case of a reductive
+group, yet also its foundation" is resolved at the level of
+definitions: *reductive* is defined via the unipotent radical without
+mentioning tori, and *torus* is defined as a linear algebraic group
+without mentioning reductive; so the DAG layers as
+
+```
+affine_group_schemes            (Hopf algebras; NOT smoothness-restricted)
+  └─ D(M), multiplicative type, the anti-equivalence   ← machinery here
+linear_algebraic_groups         (convention: smooth affine finite type)
+tori                            (a class of LAG; uses both layers above)
+reductive_structure             (uses linear_algebraic_groups + tori)
+  └─ theorem `tori_are_reductive`   ← the "special case" edge
+buildings_and_parahorics        (entry: G connected REDUCTIVE over
+                                 Henselian discretely valued k)
+  └─ degenerate base case `building_of_a_torus`  ← the "foundation" edge
+```
+
+"Special case" and "foundation" are two families of edges in opposite
+directions between different nodes; neither creates a cycle. The
+multiplicative-type machinery cannot live inside `tori` or
+`linear_algebraic_groups` because in char p it contains μ_p, which is
+not smooth: it belongs to `affine_group_schemes`.
+
+### G0.0 — Architecture repair (do first)
+
+- [ ] Create a top-level topic `tori` positioned per (D3): it `uses`
+      `linear_algebraic_groups` and `affine_group_schemes`; it is used
+      by `reductive_structure`. Not a child of `reductive_structure`.
+- [ ] Move the machinery down: `diagonalizable_groups`,
+      `diagonalizable_group_characterization`,
+      `diagonalizable_groups_antiequivalence` (and a new
+      multiplicative-type node) migrate to `affine_group_schemes`,
+      since they cover non-smooth objects (μ_p). Move
+      `algebraic_tori`, `character_and_cocharacter_lattices`,
+      `f_tori_galois_module_classification` into `tori`. Keep id
+      aliases so existing `uses:` edges resolve during the move.
+- [ ] Fix the inverted dependency: the multiplicative-type nodes must
+      NOT `uses` `algebraic_tori`. The general anti-equivalence comes
+      first; tori are the torsion-free case.
+- [ ] Add a convention node in `linear_algebraic_groups`: LAG :=
+      **smooth** affine group scheme of finite type over k (not
+      "reduced" — over imperfect fields reduced does not imply smooth),
+      with the embedding theorem G ↪ GL_n as the bridge to the
+      classical picture. Torus nodes then inherit LAG-ness by the
+      smoothness criterion below rather than by fiat.
+- [ ] Split `algebraic_tori` (currently one `kind: topic` node carrying
+      ~8 definitions and 3 theorems, which makes its
+      `verification.definition` field meaningless) into separate
+      definition and theorem nodes, each with its own `source:` span.
+- [ ] Detach the dual torus from `root_data_and_duality`: for a torus
+      `T̂ = Hom(X^*(T), C^×)` needs no root datum, and routing it through
+      root data is a false dependency that currently makes local
+      Langlands for tori unstatable.
+
+### G0.1 — Conventions (fix before writing any node)
+
+These are formalization-driven. Each one removes a choice, a `Q`, or a
+base point that would otherwise have to be carried through the whole
+building development.
+
+- [ ] **`X_*` is the working lattice.** State the anti-equivalence with
+      `X^*` (standard, and KP's convention), then fix
+      `X_* = Hom(X^*, Z)` and phrase every downstream statement in
+      `X_*`. Building theory consumes `X_*` only.
+- [ ] **Coinvariants, not invariants, are the target.** `κ_T` lands in
+      `X_*(T)_I`; the apartment's vector space is `X_*(T)_I ⊗ R`.
+      Coinvariants are a quotient, so maps *out of* `T(k)` are definable
+      with no choice; `X_*(T)^Θ ⊗ Q` needs the KP Lem. 2.5.5 comparison.
+      Record `X_*(T)_I ⊗ Q ≅ X_*(T)^I ⊗ Q` as a lemma and use it in no
+      definition.
+- [ ] **No `Q`- or `R`-valued map is primitive.** Every primitive map is
+      `Z`-valued into a finitely generated abelian group. `⊗ R` happens
+      once, at the apartment, and nowhere else.
+- [ ] **The apartment is an `AddTorsor`, not a vector space.** KP's
+      equipollence-class definition (Def. 6.1.15 / 6.1.24 / 6.1.27) is
+      literally a torsor under `V`. Introduce no origin in KB
+      statements; a Chevalley valuation is then a torsor point, not
+      "the origin". This is Mathlib-native and must be fixed now,
+      because retrofitting a base point out of the apartment nodes
+      later is a rewrite.
+- [ ] **`X^*(T) = Hom_{k_s}(T, G_m)`** with the Galois action as
+      separate data (KP p. 86). No `\bar k` anywhere in the torus or
+      building clusters.
+- [ ] **Anisotropic means `X_*(T)^Θ = 0`** (KP Prop. 2.5.8). The current
+      node states it two incompatible ways; pick this one everywhere.
+- [ ] Avoid naming a splitting field in statements. Phrase as "there
+      exists a finite Galois `E/k` such that …", with `E`-independence
+      proved as a lemma wherever a construction appears to need one
+      (this is exactly the shape of KP Lem. 2.5.12 and Prop. 11.1.1).
+
+### G0.2 — Multiplicative type and the anti-equivalence (Tier A;
+placed in `affine_group_schemes` per (D3))
+
+- [ ] `group_algebra_scheme` [def] — `D(M) = Spec k[M]`.
+- [ ] `diagonalizable_characterization` [thm] — `k[D]` spanned by
+      characters ⟺ `D ≅ D(M)`.
+- [ ] `cartier_duality_split` [thm] — the split anti-equivalence. Pure
+      Hopf algebra, no Galois. **Lean-reachable now**; mark as such.
+- [ ] `automorphism_scheme_is_constant` [thm] — `Aut(D(M)) = Aut(M)`.
+- [ ] `forms_by_galois_descent` [thm] — forms ↔ `Hom_cont(Θ, Aut(M))`
+      up to conjugacy. Needs étale descent; record the Mathlib gap as an
+      issue, and note that the lattice-first Lean route (G8) can take
+      this as a *definition* rather than a theorem.
+- [ ] `antiequivalence_over_a_field` [thm] — the two previous combined.
+- [ ] `rigidity` [thm] — connected groups act trivially on
+      multiplicative-type groups. Export edge to the reductive cluster
+      (`N_G(S)/Z_G(S)` finite étale, KP Lem. 2.4.8(1)) — this is what
+      makes the Weyl group finite and hence the whole affine
+      combinatorics discrete.
+
+### G0.3 — Torus structure (Tier A)
+
+- [ ] `torus_definition` [def] — multiplicative type with `X^*(T)`
+      **torsion-free**; equivalently smooth **and** connected
+      multiplicative type; equivalently `T_{k_s} ≅ G_m^n`. Record the
+      char-p trichotomy that forces this phrasing: `D(M)` is smooth ⟺
+      `M` has no p-torsion, connected ⟺ `M` has no prime-to-p torsion;
+      so μ_p is connected multiplicative type but NOT a torus, and
+      "connected multiplicative type" alone is a wrong definition.
+- [ ] `tori_are_linear_algebraic` [thm] — torsion-free ⟹ smooth, so a
+      torus is a linear algebraic group; this is the edge `tori` →
+      `linear_algebraic_groups` demanded by (D3).
+- [ ] `splitting_field` [thm] — minimal splitting field is finite
+      Galois; `Gal(E/k) ↪ GL_n(Z)`.
+- [ ] `subtori_quotients_dictionary` [thm] — subtori ↔ saturated
+      quotients of `X^*(T)`; quotient tori ↔ saturated submodules.
+- [ ] `split_anisotropic_decomposition` [thm] — `X_*(S) = X_*(T)^Θ`,
+      `X^*(T_a) = X^*(T)/X^*(T)^Θ`; `T = S · T_a` is an almost direct
+      product, **not** a direct product. Include the `R_{E/k}G_m`
+      counterexample. `X_*(S)` is the lattice the apartment is built on,
+      so this node is on the building's critical path.
+- [ ] `weil_restriction_of_tori` [thm] — `X^*(R_{E/k}T) = Ind`.
+- [ ] `rank_one_classification` [example] — `G_m` and `R^1_{E/k}G_m`
+      exhaust rank one.
+
+### G0.4 — Special classes of tori (Tier A)
+
+- [ ] `induced_tori` [def] — permutation lattice ⟺ product of
+      `R_{E_i/k}G_m` (KP Def. 2.5.1). Record KP's terminology warning:
+      do not call these "quasi-split tori"; every torus is a quasi-split
+      reductive group.
+- [ ] `induced_resolution` [thm] — `R_1 → R_0 → T → 1` (KP Lem. 2.5.3).
+      The reduction engine for G0.5–G0.8; state it early.
+- [ ] `unramified_torus` [def] — splits over `K` (KP Def. 16.1).
+- [ ] `tamely_ramified_torus` [def] — splits over a tame Galois
+      extension (KP Def. 17.1).
+- [ ] `weakly_induced_torus` [def] — wild inertia permutes a basis
+      (KP Def. B.6.2).
+- [ ] `flasque_coflasque_resolution` [thm] — Colliot-Thélène–Sansuc.
+      Not used by KP and not on the building path; drop from this goal
+      if it overruns.
+
+### G0.5 — Galois cohomology of tori (Tier A)
+
+- [ ] `h1_of_induced_vanishes` [thm] — Hilbert 90 + Shapiro.
+- [ ] `cohomology_vanishing_dim_le_1` [thm] — KP Lem. 2.5.4. This is the
+      licence for G0.6; admit it before κ_T.
+- [ ] `h1_of_norm_one_torus` [example] — `k^×/N_{E/k}E^×`.
+- [ ] `h1_via_cocharacter_coinvariants` [thm] —
+      `H^1(k,T) ≅ X_*(T)_{Θ,tor}` for local `k` (KP Thm. 11.7.7
+      specialized to a torus).
+- [ ] `tate_nakayama_local_duality` [thm] — optional in this pass; not
+      on the building path.
+
+### G0.6 — The Kottwitz homomorphism for tori (Tier A) ★
+
+The keystone. G0.7, G0.8, G5, G7 and `kottwitz_structures` all depend
+on it.
+
+- [ ] `kappa_for_split_tori` [def] — `id ⊗ ω : X_*(T) ⊗ K^× → X_*(T)`.
+      Elementary: no `Q`, no invariants, no KP Lem. 2.5.5. This is the
+      node the Lean development should start from.
+- [ ] `kottwitz_homomorphism_for_tori` [thm] — KP Prop. 11.1.1:
+      existence, uniqueness, surjectivity and `Γ`-equivariance of
+      `κ_T : T(K) → X_*(T)_I`, by norm descent from a splitting `L/K`.
+      `uses:` `cohomology_vanishing_dim_le_1`.
+- [ ] `iwahori_subgroup` [def] — `T(K)_0 := ker κ_T`,
+      `T(k)_0 := T(K)_0 ∩ T(k)`. **Primary definition.**
+- [ ] `norm_image_characterization` [thm] — `ker κ_T = N_{L/K}(T(L)_1)`,
+      i.e. KP Def. 2.5.13 demoted to a theorem (KP Prop. 11.1.5). Record
+      both; downstream nodes use the kernel form.
+- [ ] `maximal_bounded_subgroup` [def+thm] —
+      `T(K)_1 := κ_T^{-1}(X_*(T)_{I,tor})`; it is the unique maximal
+      bounded subgroup (KP Prop. 2.5.8, Lem. 11.1.3).
+- [ ] `anisotropic_iff_bounded` [thm] — `T(k)` bounded ⟺ `X_*(T)^Θ = 0`.
+- [ ] `valuation_homomorphism` [def] — `ω_T` as `κ_T` followed by
+      `X_*(T)_I → Hom(X^*(T)^I, Z)`. **Derived, not primitive.**
+- [ ] `image_of_omega` [thm] — the renormalized norm description
+      (KP Cor. 11.7.3), completing KP Lem. 2.5.7.
+- [ ] `component_quotients` [thm] — `T(k)/T(k)_0 ↪ (X_*(T)_I)^Γ` and
+      `T(k)_1/T(k)_0 ↪ (X_*(T)_{I,tor})^Γ`, isomorphisms when
+      `dim(f) ≤ 1` (KP Cor. 11.1.6, 11.7.2).
+- [ ] `induced_ramification` [def+thm] — `T_K` induced ⟺ `X_*(T)_I`
+      torsion-free ⟹ `T(k)_0 = T(k)_1`. Under (D1) a one-line
+      consequence, replacing KP's Lem. 2.5.18 norm computation.
+- [ ] `ramified_norm_one_example` [example] — `T = R^1_{ℓ/k}G_m` with
+      `ℓ/k` ramified quadratic: `X_*(T)_I = Z/2`, so
+      `[T(K)_1 : T(K)_0] = 2`. This is the index part of KP Rem. 2.5.15;
+      the finer location of `T(K)_0` inside `1 + M_L` belongs to the
+      filtration nodes in G0.8.
+
+### G0.7 — The building of a torus: the degenerate base case (closes Tier A) ★
+
+Buildings are attached to *connected reductive* groups; a torus is the
+degenerate case, and Tier A is precisely its complete Bruhat–Tits
+theory. Writing this as a node turns the torus/building interface from
+a hand-maintained list into a mathematical object, with a built-in
+consistency test: the general theory restricted to `G = T` must
+reproduce Tier A verbatim.
+
+- [ ] `building_of_a_torus` [def+thm] — for a torus `T` over Henselian
+      discretely valued `k`: the reduced building `B(T)` is a point;
+      the enlarged building is a torsor under
+      `V(T) = X_*(T)^Θ ⊗ R` (an affine space with no preferred
+      origin — keep it an `AddTorsor` per G0.1); the stabilizer of any
+      point is `T(k)_1`, the parahoric is `T(k)_0`, the Moy–Prasad
+      filtration is `{T(k)_r}` (Tier B supplies the last item).
+- [ ] `torus_interface_for_buildings` [topic] — the contract listing
+      exactly what `buildings_and_parahorics` consumes from `tori`,
+      and nothing else:
+      - `V(S) = X_*(S) ⊗ R` — the vector space the apartment is a
+        torsor under;
+      - `ν = -ω_Z : Z(k) → V(S)` for `Z = Z_G(S)` — the translation
+        part of the `N(k)` action (KP Axiom 4.1.4, Ch. 6 §6.1); note
+        `Z` is a torus exactly when `G` is quasi-split, which is how
+        the general case consumes `building_of_a_torus`;
+      - `T(k)_0 = ker κ_T` — makes `W̃ = N(k)/T(k)_0` discrete
+        (KP §7.4–7.5);
+      - `X_*(T)_I` — the translation lattice of `W̃`, with
+        `W̃ / W_aff ≅ π_1(G)_I` (KP Cor. 11.6.3);
+      - `{T(k)_r}` — Moy–Prasad, supplied later by G0.8.
+- [ ] Verify the list against KP Ch. 6 §6.1, Ch. 7 §§7.4–7.6, §§9.2–9.3.
+      If a building node needs a torus fact not on this list, either the
+      list is wrong or the node is reaching past the interface — resolve
+      before proceeding.
+- [ ] Fix the entry-point definition downstream:
+      `buildings_and_parahorics.bruhat_tits_buildings` must state its
+      input data as (`G` connected **reductive**, `k` Henselian
+      discretely valued, `f` perfect) — buildings are not attached to
+      arbitrary linear algebraic groups — and cite
+      `building_of_a_torus` as its degenerate case.
+- [ ] Record explicitly that everything above except `{T(k)_r}` is
+      Tier A: the apartment and the building over `K` are
+      constructible with no integral model. Unramified descent to
+      general `G` (Ch. 9) is where Tier B first becomes unavoidable.
+
+### G0.8 — Integral models and filtrations (Tier B)
+
+Needed for G5 (parahoric group schemes), G7 (Moy–Prasad) and Ch. 9
+descent. Not needed for the apartment or for the building over `K`.
+
+- [ ] `o_torus` [def] — SGA3 Exp. IX 1.3; over `o`, equivalent to
+      splitting after a finite unramified extension. Record KP's warning
+      (p. 654) that the models below are generally **not** `o`-tori.
+- [ ] `standard_model` [def] — split (KP Def. B.2.1) → induced
+      (Def. B.3.4) → general as schematic closure (Def. B.4.1); note the
+      identification with BT84's "canonical scheme".
+- [ ] `neron_mapping_properties` [def] — Néron / ft-Néron / connected
+      (KP Def. B.8.1).
+- [ ] `neron_tower` [thm] — `T^0 ⊂ T^ft ⊂ T^lft` with
+      `T^0(o) = T(k)_0`, `T^ft(o) = T(k)_1`, `T^lft(o) = T(k)`
+      (KP Prop. B.7.2, Cor. B.8.7). This is the bridge from Tier A to
+      Tier B: the group-theoretic subgroups of G0.6 are exactly the
+      integral points of this tower.
+- [ ] `pi0_via_kappa` [thm] — `π_0(T^lft) = X_*(T)_I`,
+      `π_0(T^ft) = X_*(T)_{I,tor}` as `Gal(K/k)`-modules
+      (KP Cor. 11.2.1).
+- [ ] `special_fiber_structure` [thm] — `X_*(T̄) = X_*(T)^I`; `T^0` is an
+      `o`-torus ⟺ `T` splits over `K`; `T^0 = S × R_u(T^0)`
+      (KP Prop. B.7.9, Cor. B.7.10, Cor. B.7.12).
+- [ ] `standard_filtration` [def] — schematic / connected / congruent
+      (KP Def. B.5.1–B.5.3); good exactly for weakly induced tori
+      (Prop. B.6.4).
+- [ ] `minimal_congruent_filtration` [def] — KP §B.10; the correct
+      general filtration. Export edge to `moy_prasad_filtrations`.
+- [ ] Consistency check (node, or a rule in `tools.knowledge.check`):
+      `T^lft(o)/T^0(o) = T(k)/T(k)_0 ↪ (X_*(T)_I)^Γ = π_0(T^lft)(f̄)^Γ`.
+      Closes the loop between G0.6 and G0.8; should fail loudly if
+      either side drifts.
+
+### G0.9 — Dual side
+
+- [ ] `dual_torus` [def] — `T̂ = Hom(X^*(T), C^×)` with the dual
+      `Θ`-action. No root datum in the dependency list.
+- [ ] `l_group_of_a_torus` [def] — `^L T = T̂ ⋊ W_k`.
+- [ ] `local_langlands_for_tori` [thm] —
+      `Hom_cont(T(k), C^×) ≅ H^1(W_k, T̂)`; local class field theory is
+      the case `T = G_m`. Currently absent from the KB, which is a real
+      gap for a Langlands knowledge base.
+
+### G0.10 — Rewire downstream
+
+- [ ] `kottwitz_structures.kottwitz_homomorphism` must `uses`
+      `tori.kottwitz_homomorphism_for_tori`. KP build `κ_G` from `κ_T`
+      via z-extensions (§11.4–11.5); the torus case is the base case,
+      not a special case.
+- [ ] New node `z_extensions` (KP §11.4) in `kottwitz_structures`,
+      `uses` `tori.induced_tori`.
+- [ ] New node: `G(k)^0 = ker κ_G` (KP Prop. 11.5.4), which makes the ad
+      hoc Def. 2.6.23 conceptual and is the definitional basis for
+      parahorics. Edge into `parahoric_subgroups`.
+- [ ] `moy_prasad_filtrations` must `uses`
+      `tori.minimal_congruent_filtration` — the edge does not currently
+      exist, which is why G7 is stalled.
+- [ ] New node `reductive_structure.tori_are_reductive` [thm] — a
+      torus has no roots and trivial Weyl group, hence is reductive and
+      automatically quasi-split; `uses` `tori.torus_definition` and
+      `reductive_structure.reductive_groups`. This is the "special
+      case" edge of (D3), and the source of KP's terminology warning
+      ("quasi-split torus" carries no information).
+- [ ] Pseudo-reductive pointer node in `reductive_structure`: over
+      imperfect fields `R_u(G_k)` trivial does not imply geometrically
+      trivial; cite [CGP15]; the KB main line (like KP) defines
+      reductive via the geometric unipotent radical and does not
+      develop pseudo-reductive theory.
+- [ ] Keep `special_tori` (KP 9.2.2), `elliptic_maximal_tori`
+      (Def. 16.6) and the Ch. 16–17 classifications in
+      `buildings_and_parahorics`, not in `tori`: their definitions
+      mention `G` and `B(G_K)`. They `uses` `tori.unramified_torus`.
+- [ ] Update G5's "Néron models of tori as external input" and G7's
+      "filtrations of tori" to point at G0.8 instead of treating them as
+      external.
+
 ## G1 — Affine root systems and affine Weyl groups (BT1)
 
 Sources: KP Ch. 1 §1.3; Bourbaki *Groupes et algèbres de Lie* VI.
