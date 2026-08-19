@@ -18,6 +18,7 @@ lean:
   declarations:
   - Langlands.Tori.diagGroupLikeEquiv
   - Langlands.Tori.characterGroup_diag_equiv
+  - Langlands.Tori.nonempty_characterGroup_equiv_groupLike
 verification:
   statement: accepted
   proof: accepted

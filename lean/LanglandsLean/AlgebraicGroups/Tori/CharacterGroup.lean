@@ -20,8 +20,8 @@ with the group law of pointwise multiplication in `𝔾ₘ`. The faithful
 contravariant translation to coordinate Hopf algebras, with
 `O(𝔾ₘ) = R[ℤ]`:
 
-* `HopfCharacterGroup R A := WithConv (R[ℤ] →ₐc[R] A)`,
-* `HopfCocharacterGroup R A := WithConv (A →ₐc[R] R[ℤ])`,
+* `WithConv (LaurentPolynomial R →ₐc[R] A) := WithConv (R[ℤ] →ₐc[R] A)`,
+* `WithConv (A →ₐc[R] LaurentPolynomial R) := WithConv (A →ₐc[R] R[ℤ])`,
 
 where `WithConv` is Mathlib's carrier for "this hom-set with the
 convolution product" — under `Spec`, convolution *is* pointwise
@@ -126,28 +126,7 @@ variable (R : Type*) [CommRing R]
 
 /-! ### The coordinate presentation (working form) -/
 
-/-- The **coordinate presentation** of the character group:
-Hopf-algebra homomorphisms `O(𝔾ₘ) = R[T;T⁻¹] → A` with the
-convolution product. Identified with `CharacterGroup` (the
-definition) by the (M0) bridge; convolution is pointwise
-multiplication of characters
-(`convMul_apply_of_isGroupLikeElem`,
-`tori.convolution_is_pointwise_multiplication`).
 
-Blueprint: tori.character_and_cocharacter_lattices
--/
-abbrev HopfCharacterGroup (A : Type*) [CommSemiring A] [Bialgebra R A] :=
-  WithConv (LaurentPolynomial R →ₐc[R] A)
-
-/-- The **coordinate presentation** of the cocharacter group:
-Hopf-algebra homomorphisms `A → O(𝔾ₘ) = R[T;T⁻¹]` with convolution.
-The convolution structure requires `A` cocommutative — faithfully
-so: `X_*(G)` is a group precisely because `G` is commutative.
-
-Blueprint: tori.character_and_cocharacter_lattices
--/
-abbrev HopfCocharacterGroup (A : Type*) [Semiring A] [Bialgebra R A] :=
-  WithConv (A →ₐc[R] LaurentPolynomial R)
 
 variable (M N : Type*) [AddCommGroup M] [AddCommGroup N]
 
@@ -171,7 +150,7 @@ variable [IsDomain R]
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def diagCocharEquiv :
-    (M →+ ℤ) ≃ HopfCocharacterGroup R (AddMonoidAlgebra R M) :=
+    (M →+ ℤ) ≃ WithConv (AddMonoidAlgebra R M →ₐc[R] LaurentPolynomial R) :=
   (AddMonoidAlgebra.mapDomainBialgHomEquiv).trans (WithConv.equiv _).symm
 
 /-! ### The computed description: characters as group-like elements
@@ -222,7 +201,7 @@ end Domain
 
 /-! ### Inversion of characters via the antipode (statements)
 
-The convolution `CommMonoid` on `HopfCharacterGroup` is Mathlib's; the
+The convolution `CommMonoid` on the coordinate characters is Mathlib's; the
 group law needs inversion by the antipode. Definitions are given
 here; the group axioms are the M0 proof pass. -/
 
@@ -239,7 +218,7 @@ noncomputable def gmAntipodeBialgHom :
 /-- Inversion of a character: precompose with the antipode of `𝔾ₘ`.
 Under `Spec`, this is `χ ↦ χ⁻¹` pointwise. -/
 noncomputable instance (A : Type*) [CommSemiring A] [Bialgebra R A] :
-    Inv (HopfCharacterGroup R A) :=
+    Inv (WithConv (LaurentPolynomial R →ₐc[R] A)) :=
   ⟨fun φ => toConv (φ.ofConv.comp gmAntipodeBialgHom)⟩
 
 /-- The repo's `𝔾ₘ`-antipode agrees with Mathlib's antipode of the
@@ -262,18 +241,18 @@ lemma gmAntipodeBialgHom_toAlgHom :
 homomorphisms. -/
 theorem characterGroup_inv_mul_cancel
     (A : Type*) [CommSemiring A] [Bialgebra R A]
-    (φ : HopfCharacterGroup R A) : φ⁻¹ * φ = 1 := by
+    (φ : WithConv (LaurentPolynomial R →ₐc[R] A)) : φ⁻¹ * φ = 1 := by
   have hΨ : Function.Injective
-      (fun f : HopfCharacterGroup R A => toConv f.ofConv.toAlgHom) := by
+      (fun f : WithConv (LaurentPolynomial R →ₐc[R] A) => toConv f.ofConv.toAlgHom) := by
     intro f g h
     have h' : f.ofConv.toAlgHom = g.ofConv.toAlgHom :=
       WithConv.toConv_injective h
     refine WithConv.ofConv_injective (BialgHom.ext fun x => ?_)
     exact DFunLike.congr_fun h' x
   apply hΨ
-  show toConv ((φ⁻¹ * φ).ofConv.toAlgHom) = toConv ((1 : HopfCharacterGroup R A).ofConv.toAlgHom)
+  show toConv ((φ⁻¹ * φ).ofConv.toAlgHom) = toConv ((1 : WithConv (LaurentPolynomial R →ₐc[R] A)).ofConv.toAlgHom)
   rw [BialgHom.toAlgHom_convMul, BialgHom.toAlgHom_convOne]
-  have hinv : toConv ((φ⁻¹ : HopfCharacterGroup R A).ofConv.toAlgHom) =
+  have hinv : toConv ((φ⁻¹ : WithConv (LaurentPolynomial R →ₐc[R] A)).ofConv.toAlgHom) =
       (toConv φ.ofConv.toAlgHom)⁻¹ := by
     show toConv ((φ.ofConv.comp gmAntipodeBialgHom).toAlgHom) = _
     have : (φ.ofConv.comp gmAntipodeBialgHom).toAlgHom =
@@ -287,8 +266,8 @@ theorem characterGroup_inv_mul_cancel
 by the antipode of `𝔾ₘ` (`characterGroup_inv_mul_cancel` carries the
 knowledge-base link). -/
 noncomputable instance (A : Type*) [CommSemiring A] [Bialgebra R A] :
-    CommGroup (HopfCharacterGroup R A) where
-  __ := (inferInstance : CommMonoid (HopfCharacterGroup R A))
+    CommGroup (WithConv (LaurentPolynomial R →ₐc[R] A)) where
+  __ := (inferInstance : CommMonoid (WithConv (LaurentPolynomial R →ₐc[R] A)))
   inv := Inv.inv
   inv_mul_cancel := characterGroup_inv_mul_cancel A
 
@@ -315,7 +294,7 @@ is an isomorphism of character groups — functoriality of `X^*` in
 isomorphisms. -/
 noncomputable def charGroupCongr {A₁ : Type*} {A₂ : Type*}
     [CommSemiring A₁] [Bialgebra R A₁] [CommSemiring A₂] [Bialgebra R A₂]
-    (e : A₁ ≃ₐc[R] A₂) : HopfCharacterGroup R A₁ ≃* HopfCharacterGroup R A₂ where
+    (e : A₁ ≃ₐc[R] A₂) : WithConv (LaurentPolynomial R →ₐc[R] A₁) ≃* WithConv (LaurentPolynomial R →ₐc[R] A₂) where
   toFun χ := toConv ((e : A₁ →ₐc[R] A₂).comp χ.ofConv)
   invFun χ := toConv ((e.symm : A₂ →ₐc[R] A₁).comp χ.ofConv)
   left_inv χ := by
@@ -346,15 +325,16 @@ section Bridge
 variable (R : CommRingCat.{u})
 
 /-- **The bridge** (statement; proof: M0 pass, from
-`hopfSpec_map_bijective`): the coordinate presentation coincides
-with the character group of algebraic-group homomorphisms.
+`hopfSpec_map_bijective` and group-like rigidity): characters of
+`Spec A` are the group-like elements of `A` — the license for the
+working carrier of the lattice layer
+(`docs/04-design-ledger.md`, X^* stack).
 
-Blueprint: affine_group_schemes.group_scheme_homomorphism
+Blueprint: tori.characters_as_group_like_elements
 -/
-theorem nonempty_characterGroup_equiv_hopf
+theorem nonempty_characterGroup_equiv_groupLike
     (A : Type u) [CommRing A] [HopfAlgebra R A] :
-    Nonempty (CharacterGroup R (Grp.mk (specObjOver R A)) ≃
-      HopfCharacterGroup R A) := by
+    Nonempty (CharacterGroup R (Grp.mk (specObjOver R A)) ≃ GroupLike R A) := by
   sorry
 
 end Bridge

@@ -47,7 +47,7 @@ Mathlib's `mapDomainBialgHomAddEquiv`.
 Blueprint: reductive_groups.diagonalizable_groups_antiequivalence, tori.character_and_cocharacter_lattices, tori.f_tori_galois_module_classification
 -/
 noncomputable def diagCharEquiv :
-    Multiplicative M ≃* HopfCharacterGroup R (AddMonoidAlgebra R M) :=
+    Multiplicative M ≃* WithConv (LaurentPolynomial R →ₐc[R] AddMonoidAlgebra R M) :=
   AddEquiv.toMultiplicativeLeft
     ((zmultiplesAddEquiv M).trans
       (AddMonoidAlgebra.mapDomainBialgHomAddEquiv (R := R)))
@@ -95,7 +95,7 @@ theorem diag_bialgEquiv_iff_addEquiv :
 section Examples
 
 /-- Characters of `𝔾ₘ = D(ℤ)`: the lattice `ℤ`. -/
-noncomputable example : Multiplicative ℤ ≃* HopfCharacterGroup R (LaurentPolynomial R) :=
+noncomputable example : Multiplicative ℤ ≃* WithConv (LaurentPolynomial R →ₐc[R] LaurentPolynomial R) :=
   diagCharEquiv R ℤ
 
 /-- Endomorphisms of `𝔾ₘ` as a group scheme: `ℤ`, acting by
@@ -112,78 +112,29 @@ section Diagonalizable
 
 variable (A : Type*) [CommRing A] [HopfAlgebra R A]
 
-/-- **The canonical evaluation of characters**: `R[X(A)] → A`,
-`e^χ ↦ χ(t)` — the group algebra of the character group
-`X(A) = Hom(Spec A, 𝔾ₘ)` maps into the coordinate ring by evaluating
-each character at the coordinate `t` of `𝔾ₘ`. For a diagonalizable
-group this is the character decomposition `k[D] = k[X(D)]`.
+/-- **The canonical evaluation of characters** `R[X(A)] → A`,
+`e^χ ↦ χ` — the character decomposition of the coordinate ring
+(`k[D] = k[X(D)]`). Characters appear here in their working carrier,
+the group-like elements (`tori.characters_as_group_like_elements`;
+the definition of a character is `CharacterGroup`).
 
 Blueprint: reductive_groups.diagonalizable_groups_antiequivalence
 -/
 noncomputable def charLift :
-    MonoidAlgebra R (HopfCharacterGroup R A) →ₐc[R] A :=
+    MonoidAlgebra R (GroupLike R A) →ₐc[R] A :=
   BialgHom.ofAlgHom
-    (MonoidAlgebra.lift R A (HopfCharacterGroup R A)
-      { toFun := fun χ => χ.ofConv (AddMonoidAlgebra.single 1 1)
-        map_one' := by
-          rw [BialgHom.convOne_apply,
-            (AddMonoidAlgebra.isGroupLikeElem_single_one
-              (R := R) (1 : ℤ)).counit_eq_one, map_one]
-        map_mul' := fun χ ψ =>
-          convMul_apply_of_isGroupLikeElem χ ψ
-            (AddMonoidAlgebra.isGroupLikeElem_single_one 1) })
+    (MonoidAlgebra.lift R A (GroupLike R A) (GroupLike.valMonoidHom R A))
     (by
-      refine MonoidAlgebra.algHom_ext (fun χ => ?_) (Subsingleton.elim _ _)
-      show Coalgebra.counit (R := R)
-          (MonoidAlgebra.lift R A (HopfCharacterGroup R A) _
-            (MonoidAlgebra.single χ 1)) =
-        Bialgebra.counitAlgHom R (MonoidAlgebra R (HopfCharacterGroup R A))
-          (MonoidAlgebra.single χ 1)
-      rw [MonoidAlgebra.lift_single, one_smul]
-      have h1 : Coalgebra.counit (R := R)
-          (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R))) =
-          Coalgebra.counit (R := R)
-            (AddMonoidAlgebra.single (1 : ℤ) (1 : R)) :=
-        congr($(CoalgHomClass.counit_comp χ.ofConv)
-          (AddMonoidAlgebra.single (1 : ℤ) (1 : R)))
-      show Coalgebra.counit (R := R)
-          (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R))) =
-        Bialgebra.counitAlgHom R (MonoidAlgebra R (HopfCharacterGroup R A))
-          (MonoidAlgebra.single χ 1)
-      rw [h1, (AddMonoidAlgebra.isGroupLikeElem_single_one
-        (R := R) (1 : ℤ)).counit_eq_one]
-      show (1 : R) =
-        Coalgebra.counit (R := R) (MonoidAlgebra.single χ (1 : R))
-      rw [MonoidAlgebra.counit_single χ (1 : R)]
-      exact (CommSemiring.counit_apply (R := R) (1 : R)).symm
-      )
+      ext g
+      simp)
     (by
-      refine MonoidAlgebra.algHom_ext (fun χ => ?_) (Subsingleton.elim _ _)
-      have hgl : IsGroupLikeElem R
-          (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R))) :=
-        (AddMonoidAlgebra.isGroupLikeElem_single_one 1).map χ.ofConv
-      show Algebra.TensorProduct.map _ _
-          (Bialgebra.comulAlgHom R (MonoidAlgebra R (HopfCharacterGroup R A))
-            (MonoidAlgebra.single χ 1)) =
-        Bialgebra.comulAlgHom R A
-          (MonoidAlgebra.lift R A (HopfCharacterGroup R A) _
-            (MonoidAlgebra.single χ 1))
-      rw [show Bialgebra.comulAlgHom R (MonoidAlgebra R (HopfCharacterGroup R A))
-          (MonoidAlgebra.single χ (1 : R)) =
-          Coalgebra.comul (MonoidAlgebra.single χ (1 : R)) from rfl]
-      rw [(MonoidAlgebra.isGroupLikeElem_single_one χ).comul_eq_tmul_self]
-      rw [Algebra.TensorProduct.map_tmul, MonoidAlgebra.lift_single, one_smul]
-      show χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R)) ⊗ₜ[R]
-          χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R)) =
-        Coalgebra.comul (χ.ofConv (AddMonoidAlgebra.single (1 : ℤ) (1 : R)))
-      exact hgl.comul_eq_tmul_self.symm
-      )
+      ext g
+      simp)
 
 /-- **Diagonalizable coordinate algebra**: the canonical evaluation
 `R[X(A)] → A` is bijective — the character decomposition
-`A ≅ R[X(A)]` holds, i.e. `A` is the group algebra of its character
-group. This is the canonical-witness form of "`A ≅ R[M]` for some
-abelian group `M`" (take `M = X(A)`).
+`A ≅ R[X(A)]` holds. This is the canonical-witness form of
+"`A ≅ R[M]` for some abelian group `M`" (take `M = X(A)`).
 
 Blueprint: reductive_groups.diagonalizable_groups_antiequivalence
 -/

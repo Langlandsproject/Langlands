@@ -13,7 +13,6 @@ lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
   declarations:
-  - Langlands.Tori.nonempty_characterGroup_equiv_hopf
 source:
   spans:
   - artifact: sga3

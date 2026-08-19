@@ -1,62 +1,70 @@
-import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
+import Mathlib.RingTheory.HopfAlgebra.GroupLike
 import Mathlib.RingTheory.HopfAlgebra.TensorProduct
+import Mathlib.RingTheory.Bialgebra.TensorProduct
 import Mathlib.RepresentationTheory.Basic
 
 /-!
 # The character lattice and its Galois action (plan G0.C M5)
 
-Textbook definitions transcribed (conventions §6, transcription
-procedure):
+* `CharLattice R A` — **the character lattice** `X^*(Spec A)` of a
+  Hopf algebra: the group-like elements of `A` (the characters, via
+  the bridge `tori.characters_as_group_like_elements`; the primitive
+  form of a character is a group-scheme homomorphism,
+  `SchemeCharacterGroup`), written **additively** — the knowledge
+  base's `X^*` is a lattice: a `ℤ`-module with `ℤ`-valued pairings.
+  This is the one place where the multiplicative group of characters
+  is identified with its additive avatar; no other statement carries
+  an `Additive`/`Multiplicative` wrapper for it.
+* `galAlgAut`, `charGalAct`, `charRep` — for a torus presented over
+  `k` and split by `E`: the semilinear Galois action `γ ⊗ 1` on the
+  base change, its action on characters, and the resulting
+  `ℤ`-linear representation of `Gal(E/k)` on `X^*(T_E)` — the Galois
+  module of the classification
+  (`tori.f_tori_galois_module_classification`).
+* `charLatticeMap` — functoriality: a Hopf map `A → B` induces a
+  lattice map `X^*(Spec A) → X^*(Spec B)` (contravariantly on tori),
+  Galois-equivariantly (`charLatticeMap_galAct`).
 
-* **X^*(T) := Hom(T, 𝔾ₘ)** — the definition is `CharacterGroup`
-  (morphisms of algebraic groups, `CharacterGroup.lean`).
-  `CharLattice R A` is the **coordinate presentation**
-  `HopfCharacterGroup R A` written additively, as the literature
-  writes the lattice; it is identified with the definition by the
-  (M0) bridge `nonempty_characterGroup_equiv_hopf`, and the lattice
-  layer rebases onto the definition once that bridge is proved
-  (recorded in TODO). The `Additive` here is the single point where
-  the multiplicative character group meets the lattice notation.
-* **γ · χ := γ_{𝔾ₘ} ∘ χ ∘ γ_T⁻¹** — the Galois action on characters
-  is conjugation (`conjChar`); on coordinate rings, `γ · χ =
-  (γ ⊗ 1) ∘ χ ∘ γ_*⁻¹` with `γ_*` the coefficientwise action on
-  `O(𝔾ₘ) = E[ℤ]`. `charRep` packages it as the `ℤ`-linear
-  representation of `Gal(E/k)` — the Galois module of
-  `tori.f_tori_galois_module_classification`.
-* **X^*(f) := (χ ↦ χ ∘ f)** — functoriality is composition
-  (`charLatticeMap`), Galois-equivariantly.
-
-Group-like elements appear **only** in the proof-machinery section
-at the end (the avatar of `tori.characters_as_group_like_elements`):
-`sqBaseChange` turns the semilinear tensor-square action into
-`γ ⊗ 1`, giving `isGroupLikeElem_galAlgAut` — the engine behind the
-Hopf-compatibility proofs of the conjugation action. No definition
-mentions them.
+The key lemma is `isGroupLikeElem_galAlgAut`: the Galois action
+preserves group-likes. Its proof works through `sqBaseChange`, the
+identification `(E⊗A) ⊗[E] (E⊗A) ≅ E ⊗ (A⊗A)` under which the
+base-change comultiplication becomes `1 ⊗ Δ_A` and the diagonal
+semilinear action becomes `γ ⊗ 1` — no semilinear tensor machinery.
 -/
 
 open scoped TensorProduct
-open Bialgebra Coalgebra HopfAlgebra WithConv
+open Bialgebra Coalgebra HopfAlgebra
 
 namespace Langlands.Tori
 
 
-/-! ### The character lattice -/
+/-! ### The character lattice of a Hopf algebra -/
 
-variable (R : Type*) [CommRing R] [IsDomain R]
+variable (R : Type*) [CommRing R]
 
-/-- **The character lattice** `X^*(Spec A)`, working form: the
-coordinate presentation `HopfCharacterGroup` of the character group,
-written additively as in the literature — `X^*` is a lattice with
-`ℤ`-valued pairings. The definition of a character is
-`CharacterGroup` (a homomorphism of algebraic groups); the
-identification is the (M0) bridge.
+/-- **The character lattice** `X^*(Spec A)`: the group-like elements
+of `A` — the characters `Spec A → 𝔾ₘ`, by
+`tori.characters_as_group_like_elements` — as an additive group. The
+knowledge base's character lattice is additive (`ℤ`-module, integral
+pairings); the multiplicative group of characters is its `.toMul`.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev CharLattice (A : Type*) [CommSemiring A] [Bialgebra R A] :=
-  Additive (HopfCharacterGroup R A)
+abbrev CharLattice (A : Type*) [CommRing A] [HopfAlgebra R A] :=
+  Additive (GroupLike R A)
 
-/-! ### The Galois action: conjugation -/
+/-- Transport of group-like elements along a bialgebra isomorphism
+(Mathlib gap: no `GroupLike.congr`). -/
+noncomputable def groupLikeCongr {R A₁ A₂ : Type*} [CommSemiring R]
+    [CommSemiring A₁] [Bialgebra R A₁] [CommSemiring A₂] [Bialgebra R A₂]
+    (e : A₁ ≃ₐc[R] A₂) : GroupLike R A₁ ≃* GroupLike R A₂ where
+  toFun x := ⟨e x.val, x.2.map (e : A₁ →ₐc[R] A₂)⟩
+  invFun y := ⟨e.symm y.val, y.2.map (e.symm : A₂ →ₐc[R] A₁)⟩
+  left_inv x := by ext; simp
+  right_inv y := by ext; simp
+  map_mul' x y := by ext; simp
+
+/-! ### The Galois action on the base change -/
 
 variable (k E : Type*) [Field k] [Field E] [Algebra k E]
 variable (A B : Type*) [CommRing A] [HopfAlgebra k A] [CommRing B] [HopfAlgebra k B]
@@ -83,44 +91,11 @@ lemma galAlgAut_mul (γ δ : E ≃ₐ[k] E) (x : E ⊗[k] A) :
   | tmul e a => simp
   | add u v hu hv => simp [hu, hv]
 
-/-- The coefficientwise Galois action fixes the character basis of
-`O(𝔾ₘ)`. -/
-lemma mapAlgEquiv_single (γ : E ≃ₐ[k] E) (n : ℤ) (a : E) :
-    AddMonoidAlgebra.mapAlgEquiv k ℤ γ (AddMonoidAlgebra.single n a) =
-      AddMonoidAlgebra.single n (γ a) :=
-  AddMonoidAlgebra.mapRingHom_single _ _ _
-
-/-- The coefficientwise Galois action fixes the character basis of
-`O(𝔾ₘ)`. -/
-lemma mapAlgEquiv_single_one (γ : E ≃ₐ[k] E) (n : ℤ) :
-    AddMonoidAlgebra.mapAlgEquiv k ℤ γ
-        (AddMonoidAlgebra.single n (1 : E)) =
-      AddMonoidAlgebra.single n (1 : E) := by
-  rw [mapAlgEquiv_single, map_one]
-
-section ProofMachinery
-/-! ### Proof machinery: the group-like avatar
-
-The identification of characters with group-like elements
-(`tori.characters_as_group_like_elements`) is a bridge, not a
-definition; this section holds the avatar-side lemmas that power the
-Hopf-compatibility proofs below. `sqBaseChange` expresses the
-diagonal semilinear action on the tensor square as `γ ⊗ 1` on
-`E ⊗ (A ⊗ A)`, with no semilinear tensor machinery. -/
-
-/-- Transport of group-like elements along a bialgebra
-isomorphism. -/
-noncomputable def groupLikeCongr {R A₁ A₂ : Type*} [CommSemiring R]
-    [CommSemiring A₁] [Bialgebra R A₁] [CommSemiring A₂] [Bialgebra R A₂]
-    (e : A₁ ≃ₐc[R] A₂) : GroupLike R A₁ ≃* GroupLike R A₂ where
-  toFun x := ⟨e x.val, x.2.map (e : A₁ →ₐc[R] A₂)⟩
-  invFun y := ⟨e.symm y.val, y.2.map (e.symm : A₂ →ₐc[R] A₁)⟩
-  left_inv x := by ext; simp
-  right_inv y := by ext; simp
-  map_mul' x y := by ext; simp
-
 /-- The base-change identification of the tensor square:
-`(E ⊗ A) ⊗[E] (E ⊗ A) ≅ E ⊗ (A ⊗ A)`. -/
+`(E ⊗ A) ⊗[E] (E ⊗ A) ≅ E ⊗ (A ⊗ A)`. Through it, the base-change
+comultiplication becomes `1 ⊗ Δ_A` and the diagonal Galois action
+becomes `γ ⊗ 1` — the device that makes the semilinear tensor-square
+action expressible without semilinear tensor machinery. -/
 noncomputable def sqBaseChange :
     ((E ⊗[k] A) ⊗[E] (E ⊗[k] A)) ≃ₗ[E] E ⊗[k] (A ⊗[k] A) :=
   (TensorProduct.AlgebraTensorModule.tensorTensorTensorComm k E k E E E A A).symm.trans
@@ -181,145 +156,39 @@ lemma counit_galAlgAut (γ : E ≃ₐ[k] E) (v : E ⊗[k] A) :
   | add u v hu hv => simp [hu, hv]
 
 /-- `γ ⊗ 1` preserves group-like elements: the semilinear
-compatibility of the comultiplication with the Galois action. -/
-theorem isGroupLikeElem_galAlgAut (γ : E ≃ₐ[k] E) {x : E ⊗[k] A}
-    (hx : IsGroupLikeElem E x) :
-    IsGroupLikeElem E (galAlgAut k E A γ x) where
+compatibility of the comultiplication with the Galois action,
+expressed through `sqBaseChange`. -/
+theorem isGroupLikeElem_galAlgAut (γ : E ≃ₐ[k] E) (x : GroupLike E (E ⊗[k] A)) :
+    IsGroupLikeElem E (galAlgAut k E A γ x.val) where
   counit_eq_one := by
-    rw [counit_galAlgAut, hx.counit_eq_one, map_one]
+    rw [counit_galAlgAut, x.2.counit_eq_one, map_one]
   comul_eq_tmul_self := by
     apply (sqBaseChange k E A).injective
     rw [sqBaseChange_comul, baseChangeComul_galAlgAut, ← sqBaseChange_comul,
-      hx.comul_eq_tmul_self, sqBaseChange_galAlgAut_tmul]
+      x.2.comul_eq_tmul_self, sqBaseChange_galAlgAut_tmul]
 
-end ProofMachinery
-
-/-- The underlying algebra map of the conjugated character
-`(γ ⊗ 1) ∘ χ ∘ γ_*⁻¹`. -/
-noncomputable def conjCharAlgHom (γ : E ≃ₐ[k] E)
-    (χ : AddMonoidAlgebra E ℤ →ₐc[E] E ⊗[k] A) :
-    AddMonoidAlgebra E ℤ →ₐ[E] E ⊗[k] A where
-  toRingHom :=
-    ((galAlgAut k E A γ).toAlgHom.toRingHom.comp
-      χ.toAlgHom.toRingHom).comp
-      (AddMonoidAlgebra.mapAlgEquiv k ℤ γ.symm).toAlgHom.toRingHom
-  commutes' := fun e => by
-    have h0 : ∀ c : E, algebraMap E (AddMonoidAlgebra E ℤ) c =
-        AddMonoidAlgebra.single 0 c := fun c => by
-      simp [AddMonoidAlgebra.coe_algebraMap]
-    show galAlgAut k E A γ
-        (χ (AddMonoidAlgebra.mapAlgEquiv k ℤ γ.symm
-          (algebraMap E (AddMonoidAlgebra E ℤ) e))) =
-      algebraMap E (E ⊗[k] A) e
-    rw [h0 e, mapAlgEquiv_single k E γ.symm 0 e, ← h0 (γ.symm e),
-      AlgHomClass.commutes χ, Algebra.TensorProduct.algebraMap_apply]
-    simp
-
-@[simp]
-lemma conjCharAlgHom_single_one (γ : E ≃ₐ[k] E)
-    (χ : AddMonoidAlgebra E ℤ →ₐc[E] E ⊗[k] A) (n : ℤ) :
-    conjCharAlgHom k E A γ χ (AddMonoidAlgebra.single n 1) =
-      galAlgAut k E A γ (χ (AddMonoidAlgebra.single n 1)) := by
-  show galAlgAut k E A γ (χ (AddMonoidAlgebra.mapAlgEquiv k ℤ γ.symm
-    (AddMonoidAlgebra.single n 1))) = _
-  rw [mapAlgEquiv_single_one]
-
-/-- **The Galois action on characters** is conjugation:
-`γ · χ = γ_{𝔾ₘ} ∘ χ ∘ γ_T⁻¹`, on coordinate rings
-`(γ ⊗ 1) ∘ χ ∘ γ_*⁻¹`. The Hopf-compatibility fields are proved by
-the group-like avatar machinery. -/
-noncomputable def conjChar (γ : E ≃ₐ[k] E)
-    (χ : AddMonoidAlgebra E ℤ →ₐc[E] E ⊗[k] A) :
-    AddMonoidAlgebra E ℤ →ₐc[E] E ⊗[k] A :=
-  BialgHom.ofAlgHom (conjCharAlgHom k E A γ χ)
-    (by
-      refine AddMonoidAlgebra.algHom_ext (fun n => ?_) (Subsingleton.elim _ _)
-      show Coalgebra.counit (R := E)
-          (conjCharAlgHom k E A γ χ (AddMonoidAlgebra.single n 1)) =
-        Bialgebra.counitAlgHom E (AddMonoidAlgebra E ℤ)
-          (AddMonoidAlgebra.single n 1)
-      rw [conjCharAlgHom_single_one, counit_galAlgAut]
-      have h1 : Coalgebra.counit (R := E)
-          (χ (AddMonoidAlgebra.single n (1 : E))) =
-          Coalgebra.counit (R := E) (AddMonoidAlgebra.single n (1 : E)) :=
-        congr($(CoalgHomClass.counit_comp χ) (AddMonoidAlgebra.single n 1))
-      rw [h1, (AddMonoidAlgebra.isGroupLikeElem_single_one n).counit_eq_one,
-        map_one]
-      exact ((AddMonoidAlgebra.isGroupLikeElem_single_one
-        (R := E) (n : ℤ)).counit_eq_one).symm)
-    (by
-      refine AddMonoidAlgebra.algHom_ext (fun n => ?_) (Subsingleton.elim _ _)
-      have hgl : IsGroupLikeElem E
-          (conjCharAlgHom k E A γ χ (AddMonoidAlgebra.single n (1 : E))) := by
-        rw [conjCharAlgHom_single_one]
-        exact isGroupLikeElem_galAlgAut k E A γ
-          ((AddMonoidAlgebra.isGroupLikeElem_single_one n).map χ)
-      show Algebra.TensorProduct.map (conjCharAlgHom k E A γ χ)
-          (conjCharAlgHom k E A γ χ)
-          (Bialgebra.comulAlgHom E (AddMonoidAlgebra E ℤ)
-            (AddMonoidAlgebra.single n 1)) =
-        Bialgebra.comulAlgHom E (E ⊗[k] A)
-          (conjCharAlgHom k E A γ χ (AddMonoidAlgebra.single n 1))
-      rw [show Bialgebra.comulAlgHom E (AddMonoidAlgebra E ℤ)
-          (AddMonoidAlgebra.single n (1 : E)) =
-          Coalgebra.comul (AddMonoidAlgebra.single n (1 : E)) from rfl]
-      rw [(AddMonoidAlgebra.isGroupLikeElem_single_one (R := E)
-        (n : ℤ)).comul_eq_tmul_self]
-      rw [Algebra.TensorProduct.map_tmul]
-      rw [show ∀ y, Bialgebra.comulAlgHom E (E ⊗[k] A) y =
-          Coalgebra.comul y from fun _ => rfl]
-      exact hgl.comul_eq_tmul_self.symm)
-
-@[simp]
-lemma conjChar_single_one (γ : E ≃ₐ[k] E)
-    (χ : AddMonoidAlgebra E ℤ →ₐc[E] E ⊗[k] A) (n : ℤ) :
-    conjChar k E A γ χ (AddMonoidAlgebra.single n 1) =
-      galAlgAut k E A γ (χ (AddMonoidAlgebra.single n 1)) :=
-  conjCharAlgHom_single_one k E A γ χ n
-
-/-- Two characters agreeing on the character basis of `O(𝔾ₘ)` are
-equal. -/
-lemma charBialgHom_ext {χ ψ : AddMonoidAlgebra E ℤ →ₐc[E] E ⊗[k] A}
-    (h : ∀ n : ℤ, χ (AddMonoidAlgebra.single n 1) =
-      ψ (AddMonoidAlgebra.single n 1)) : χ = ψ := by
-  have := AddMonoidAlgebra.algHom_ext (φ₁ := χ.toAlgHom) (φ₂ := ψ.toAlgHom)
-    h (Subsingleton.elim _ _)
-  exact BialgHom.ext fun x => DFunLike.congr_fun this x
-
-/-- **The Galois action on the character group**, multiplicative
-form: `γ · χ = γ_{𝔾ₘ} ∘ χ ∘ γ_T⁻¹`.
+/-- The Galois action on characters, multiplicative avatar:
+`γ · χ = (γ ⊗ 1) χ` on the group-like elements.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def charGalAct :
-    (E ≃ₐ[k] E) →* Monoid.End (HopfCharacterGroup E (E ⊗[k] A)) where
+    (E ≃ₐ[k] E) →* Monoid.End (GroupLike E (E ⊗[k] A)) where
   toFun γ :=
-    { toFun := fun χ => toConv (conjChar k E A γ χ.ofConv)
+    { toFun := fun x =>
+        ⟨galAlgAut k E A γ x.val, isGroupLikeElem_galAlgAut k E A γ x⟩
       map_one' := by
-        refine WithConv.ofConv_injective (charBialgHom_ext k E A fun n => ?_)
-        rw [conjChar_single_one, BialgHom.convOne_apply,
-          (AddMonoidAlgebra.isGroupLikeElem_single_one
-            (R := E) (n : ℤ)).counit_eq_one]
-        simp
-      map_mul' := fun χ ψ => by
-        refine WithConv.ofConv_injective (charBialgHom_ext k E A fun n => ?_)
-        rw [conjChar_single_one,
-          convMul_apply_of_isGroupLikeElem _ _
-            (AddMonoidAlgebra.isGroupLikeElem_single_one n),
-          convMul_apply_of_isGroupLikeElem _ _
-            (AddMonoidAlgebra.isGroupLikeElem_single_one n),
-          map_mul, conjChar_single_one, conjChar_single_one] }
+        ext
+        exact map_one (galAlgAut k E A γ)
+      map_mul' := fun x y => by
+        ext
+        exact map_mul (galAlgAut k E A γ) x.val y.val }
   map_one' := by
-    ext χ m
-    show conjChar k E A 1 χ.ofConv (AddMonoidAlgebra.single m 1) =
-      χ.ofConv (AddMonoidAlgebra.single m 1)
-    rw [conjChar_single_one, galAlgAut_one]
+    ext x
+    exact galAlgAut_one k E A x.val
   map_mul' := fun γ δ => by
-    ext χ m
-    show conjChar k E A (γ * δ) χ.ofConv (AddMonoidAlgebra.single m 1) =
-      conjChar k E A γ (conjChar k E A δ χ.ofConv) (AddMonoidAlgebra.single m 1)
-    rw [conjChar_single_one, conjChar_single_one, conjChar_single_one,
-      galAlgAut_mul]
+    ext x
+    exact galAlgAut_mul k E A γ δ x.val
 
 /-- **The character lattice as a Galois module**: the `ℤ`-linear
 representation of `Gal(E/k)` on `X^*(T_E)` — the complete invariant
@@ -356,38 +225,30 @@ lemma baseChangeMap_galAlgAut (f : A →ₐc[k] B) (γ : E ≃ₐ[k] E)
   | add u v hu hv => simp [hu, hv]
 
 variable {A B} in
-/-- **Functoriality of the character lattice**: a Hopf-algebra map
-`f : A → B` induces `X^*(f) : X^*(Spec A) → X^*(Spec B)`,
-`χ ↦ (1 ⊗ f) ∘ χ` — composition, contravariantly on tori.
+/-- The lattice map induced on character lattices by a Hopf-algebra
+homomorphism (contravariantly on tori: `Spec B → Spec A` induces
+`X^*(Spec A) → X^*(Spec B)`): group-likes map along the base change
+`1 ⊗ f`.
 
 Blueprint: tori.classification_hom_level
 -/
 noncomputable def charLatticeMap (f : A →ₐc[k] B) :
     CharLattice E (E ⊗[k] A) →+ CharLattice E (E ⊗[k] B) :=
   MonoidHom.toAdditive
-    { toFun := fun χ => toConv
-        ((Bialgebra.TensorProduct.map (BialgHom.id E E) f).comp χ.ofConv)
+    { toFun := fun x =>
+        ⟨Bialgebra.TensorProduct.map (BialgHom.id E E) f x.val,
+          x.2.map (Bialgebra.TensorProduct.map (BialgHom.id E E) f)⟩
       map_one' := by
-        refine WithConv.ofConv_injective (charBialgHom_ext k E B fun n => ?_)
-        show Bialgebra.TensorProduct.map (BialgHom.id E E) f
-            ((1 : HopfCharacterGroup E (E ⊗[k] A)).ofConv
-              (AddMonoidAlgebra.single n 1)) = _
-        rw [BialgHom.convOne_apply, BialgHom.convOne_apply]
-        exact AlgHomClass.commutes _ _
-      map_mul' := fun χ ψ => by
-        refine WithConv.ofConv_injective (charBialgHom_ext k E B fun n => ?_)
-        show Bialgebra.TensorProduct.map (BialgHom.id E E) f
-            ((χ * ψ).ofConv (AddMonoidAlgebra.single n 1)) = _
-        rw [convMul_apply_of_isGroupLikeElem _ _
-            (AddMonoidAlgebra.isGroupLikeElem_single_one n),
-          convMul_apply_of_isGroupLikeElem _ _
-            (AddMonoidAlgebra.isGroupLikeElem_single_one n),
-          map_mul]
-        rfl }
+        ext
+        exact map_one (Bialgebra.TensorProduct.map (BialgHom.id E E) f)
+      map_mul' := fun x y => by
+        ext
+        exact map_mul (Bialgebra.TensorProduct.map (BialgHom.id E E) f)
+          x.val y.val }
 
 variable {A B} in
 /-- The induced lattice map is Galois-equivariant:
-`X^*(f)(γ · χ) = γ · X^*(f)(χ)`.
+`(γ ⊗ 1) ∘ (1 ⊗ f) = (1 ⊗ f) ∘ (γ ⊗ 1)`.
 
 Blueprint: tori.classification_hom_level
 -/
@@ -395,12 +256,9 @@ theorem charLatticeMap_galAct (f : A →ₐc[k] B) (γ : E ≃ₐ[k] E)
     (x : CharLattice E (E ⊗[k] A)) :
     charLatticeMap k E f (charRep k E A γ x) =
       charRep k E B γ (charLatticeMap k E f x) := by
-  refine congrArg Additive.ofMul
-    (WithConv.ofConv_injective (charBialgHom_ext k E B fun n => ?_))
-  show Bialgebra.TensorProduct.map (BialgHom.id E E) f
-      (conjChar k E A γ x.toMul.ofConv (AddMonoidAlgebra.single n 1)) =
-    conjChar k E B γ _ (AddMonoidAlgebra.single n 1)
-  rw [conjChar_single_one, conjChar_single_one, baseChangeMap_galAlgAut]
-  rfl
+  show Additive.ofMul (⟨_, _⟩ : GroupLike E (E ⊗[k] B)) = Additive.ofMul ⟨_, _⟩
+  congr 1
+  ext
+  exact baseChangeMap_galAlgAut k E f γ x.toMul.val
 
 end Langlands.Tori

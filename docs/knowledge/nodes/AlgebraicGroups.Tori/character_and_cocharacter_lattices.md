@@ -21,9 +21,7 @@ lean:
   - Langlands.Tori.charPairing
   - Langlands.Tori.charPairing_perfect
   - Langlands.Tori.CharacterGroup
-  - Langlands.Tori.HopfCharacterGroup
   - Langlands.Tori.CocharacterGroup
-  - Langlands.Tori.HopfCocharacterGroup
   - Langlands.ReductiveGroups.diagCharEquiv
   - Langlands.Tori.diagCocharEquiv
   - Langlands.Tori.diagGroupLikeEquiv

@@ -4,17 +4,19 @@ import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
 /-!
 # Cocharacters and the character–cocharacter duality (plan G0.C M5)
 
-* `CocharLattice k E A` — the cocharacter lattice `X_*(T_E)` in its
-  faithful form: Hopf-algebra homomorphisms `O(T_E) → O(𝔾ₘ)`, i.e.
-  cocharacters `𝔾ₘ → T_E` (`HopfCocharacterGroup E (E ⊗[k] A)`), with
-  the convolution group structure (`WithConv`; under `Spec`,
+* `CocharLattice k E A` — the **coordinate presentation** of the
+  cocharacter lattice `X_*(T_E)`: Hopf-algebra homomorphisms
+  `O(T_E) → O(𝔾ₘ) = E[T;T⁻¹]` with the convolution group structure,
+  spelled with Mathlib names only (`WithConv`; under `Spec`,
   pointwise multiplication —
-  `tori.convolution_is_pointwise_multiplication`). The lattice
-  structure is *derived*, through the perfect pairing — the KB
-  defines `X_*` as `Hom(𝔾ₘ, T_E)`, not as the dual of `X^*`.
+  `tori.convolution_is_pointwise_multiplication`). The definition of
+  a cocharacter is `CocharacterGroup` (a homomorphism of algebraic
+  groups, `CharacterGroup.lean`); the lattice structure of `X_*` is
+  *derived*, through the perfect pairing — never the dual of `X^*`
+  by definition.
 * `charPairing` — the pairing `⟨χ, λ⟩ : X^* × X_* → ℤ`: the
   composite `χ ∘ λ` is an endomorphism `z ↦ zⁿ` of `𝔾ₘ`, extracted
-  by Cartier duality for `𝔾ₘ`. Perfectness (`charPairing_perfect`) and
+  by group-like rigidity. Perfectness (`charPairing_perfect`) and
   nondegeneracy are the duality statements of
   `tori.character_and_cocharacter_lattices`.
 * `IsGalFixedCochar`, `IsAnisotropicAlgebra` — cocharacters defined
@@ -29,7 +31,6 @@ Statements tagged "proof: M5" are `sorry`; each carries its route.
 
 open scoped TensorProduct
 open Bialgebra Coalgebra HopfAlgebra WithConv
-open Langlands.ReductiveGroups
 
 namespace Langlands.Tori
 
@@ -38,15 +39,13 @@ variable (k E : Type*) [Field k] [Field E] [Algebra k E]
 variable (A : Type*) [CommRing A] [HopfAlgebra k A]
 
 /-- Computation of the character lattice from a splitting
-isomorphism: `X^*` of a torus split as `E[M]` is `M`, by composing
-with the isomorphism (`charGroupCongr`) and Cartier duality on the
-split side (`diagCharEquiv`). -/
+isomorphism: `X^*` of a torus split as `E[M]` is `M`, via group-like
+rigidity (`diagGroupLikeEquiv`) transported along the isomorphism. -/
 theorem nonempty_charLattice_addEquiv (M : Type*) [AddCommGroup M]
     (e : (E ⊗[k] A) ≃ₐc[E] AddMonoidAlgebra E M) :
     Nonempty (CharLattice E (E ⊗[k] A) ≃+ M) :=
   ⟨(MulEquiv.toAdditive
-      (((charGroupCongr e).trans (diagCharEquiv E M).symm :
-        HopfCharacterGroup E (E ⊗[k] A) ≃* Multiplicative M))).trans
+      ((groupLikeCongr e).trans (diagGroupLikeEquiv E M).symm)).trans
     (AddEquiv.additiveMultiplicative M)⟩
 
 /-- A torus algebra is cocommutative after base change — tori are
@@ -65,23 +64,24 @@ Hopf-algebra homomorphisms `O(T_E) → O(𝔾ₘ)`, i.e. cocharacters
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev CocharLattice := HopfCocharacterGroup E (E ⊗[k] A)
+abbrev CocharLattice := WithConv ((E ⊗[k] A) →ₐc[E] LaurentPolynomial E)
 
-/-- **The character–cocharacter pairing** `⟨χ, λ⟩`: the composite
-`χ ∘ λ : 𝔾ₘ → 𝔾ₘ` is `z ↦ z^n` for a unique integer `n` — extracted
-by Cartier duality for `𝔾ₘ` itself (`diagCharEquiv` at `M = ℤ`). On
-coordinate rings the composite is `λ^* ∘ χ^* : O(𝔾ₘ) → O(𝔾ₘ)`.
+/-- **The character–cocharacter pairing** `⟨χ, λ⟩`: composing a
+cocharacter with a character gives an endomorphism of `𝔾ₘ`, i.e. an
+integer — extracted by group-like rigidity (`diagGroupLikeEquiv`):
+`λ` maps the group-like `χ` to the group-like `e^{⟨χ,λ⟩}` of `E[ℤ]`.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def charPairing
     (x : CharLattice E (E ⊗[k] A)) (l : CocharLattice k E A) : ℤ :=
   Multiplicative.toAdd <|
-    (diagCharEquiv E ℤ).symm (toConv (l.ofConv.comp x.toMul.ofConv))
+    (diagGroupLikeEquiv E ℤ).symm
+      ⟨l.ofConv x.toMul.val, x.toMul.isGroupLikeElem_val.map l.ofConv⟩
 
 /-- Additivity of the pairing in the character (statement;
-proof: M5 — precomposition with a fixed cocharacter is multiplicative
-for convolution, and `diagCharEquiv` is multiplicative). -/
+proof: M5 — `l.ofConv` is an algebra homomorphism and
+`diagGroupLikeEquiv` is multiplicative). -/
 theorem charPairing_add_left (x y : CharLattice E (E ⊗[k] A))
     (l : CocharLattice k E A) :
     charPairing k E A (x + y) l =

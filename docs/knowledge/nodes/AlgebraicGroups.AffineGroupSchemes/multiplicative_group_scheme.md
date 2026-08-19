@@ -15,6 +15,7 @@ lean:
   declarations:
   - Langlands.AlgebraicGeometry.multiplicativeGroup.hopfAlg
   - Langlands.AlgebraicGeometry.multiplicativeGroup
+  - Langlands.AlgebraicGeometry.𝔾ₘ
   - Langlands.AlgebraicGeometry.multiplicativeGroup.instGrpObj
   - Langlands.AlgebraicGeometry.Gm
 verification:
