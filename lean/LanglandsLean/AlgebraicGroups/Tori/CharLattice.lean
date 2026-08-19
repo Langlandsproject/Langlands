@@ -106,12 +106,81 @@ lemma galAlgAut_mul (γ δ : E ≃ₐ[k] E) (x : E ⊗[k] A) :
   | tmul e a => simp
   | add u v hu hv => simp [hu, hv]
 
-/-- `γ ⊗ 1` preserves group-like elements (statement; proof: M5 —
-the semilinear compatibility of the comultiplication with the
-Galois action). -/
+/-- The base-change identification of the tensor square:
+`(E ⊗ A) ⊗[E] (E ⊗ A) ≅ E ⊗ (A ⊗ A)`. Through it, the base-change
+comultiplication becomes `1 ⊗ Δ_A` and the diagonal Galois action
+becomes `γ ⊗ 1` — the device that makes the semilinear tensor-square
+action expressible without semilinear tensor machinery. -/
+noncomputable def sqBaseChange :
+    ((E ⊗[k] A) ⊗[E] (E ⊗[k] A)) ≃ₗ[E] E ⊗[k] (A ⊗[k] A) :=
+  (TensorProduct.AlgebraTensorModule.tensorTensorTensorComm k E k E E E A A).symm.trans
+    (TensorProduct.AlgebraTensorModule.congr (TensorProduct.lid E E)
+      (LinearEquiv.refl k (A ⊗[k] A)))
+
+/-- Under `sqBaseChange`, the comultiplication of `E ⊗ A` is the base
+change `1 ⊗ Δ_A` of the comultiplication of `A`. -/
+lemma sqBaseChange_comul (x : E ⊗[k] A) :
+    sqBaseChange k E A (Coalgebra.comul (R := E) x) =
+      TensorProduct.AlgebraTensorModule.map (LinearMap.id : E →ₗ[E] E)
+        (Coalgebra.comul (R := k) (A := A)) x := by
+  induction x using TensorProduct.induction_on with
+  | zero => simp
+  | tmul e a =>
+    rw [TensorProduct.comul_tmul, CommSemiring.comul_apply,
+      TensorProduct.AlgebraTensorModule.map_tmul]
+    generalize Coalgebra.comul (R := k) a = w
+    induction w using TensorProduct.induction_on with
+    | zero => simp
+    | tmul a₁ a₂ => simp [sqBaseChange]
+    | add w₁ w₂ h₁ h₂ => simp only [TensorProduct.tmul_add, map_add, h₁, h₂]
+  | add u v hu hv => simp [hu, hv]
+
+/-- Under `sqBaseChange`, the diagonal Galois action on the tensor
+square corresponds to `γ ⊗ 1` on `E ⊗ (A ⊗ A)`. -/
+lemma sqBaseChange_galAlgAut_tmul (γ : E ≃ₐ[k] E) (u v : E ⊗[k] A) :
+    sqBaseChange k E A (galAlgAut k E A γ u ⊗ₜ galAlgAut k E A γ v) =
+      galAlgAut k E (A ⊗[k] A) γ (sqBaseChange k E A (u ⊗ₜ v)) := by
+  induction u using TensorProduct.induction_on with
+  | zero => simp
+  | tmul e a =>
+    induction v using TensorProduct.induction_on with
+    | zero => simp [TensorProduct.tmul_zero]
+    | tmul e' a' => simp [sqBaseChange, smul_eq_mul, map_mul]
+    | add v₁ v₂ h₁ h₂ => simp only [TensorProduct.tmul_add, map_add, h₁, h₂]
+  | add u₁ u₂ h₁ h₂ => simp only [TensorProduct.add_tmul, map_add, h₁, h₂]
+
+/-- The base change `1 ⊗ Δ_A` commutes with `γ ⊗ 1`. -/
+lemma baseChangeComul_galAlgAut (γ : E ≃ₐ[k] E) (v : E ⊗[k] A) :
+    TensorProduct.AlgebraTensorModule.map (LinearMap.id : E →ₗ[E] E)
+        (Coalgebra.comul (R := k) (A := A)) (galAlgAut k E A γ v) =
+      galAlgAut k E (A ⊗[k] A) γ
+        (TensorProduct.AlgebraTensorModule.map (LinearMap.id : E →ₗ[E] E)
+          (Coalgebra.comul (R := k) (A := A)) v) := by
+  induction v using TensorProduct.induction_on with
+  | zero => simp
+  | tmul e a => simp
+  | add u v hu hv => simp [hu, hv]
+
+/-- The counit of `E ⊗ A` intertwines `γ ⊗ 1` with `γ`. -/
+lemma counit_galAlgAut (γ : E ≃ₐ[k] E) (v : E ⊗[k] A) :
+    Coalgebra.counit (R := E) (galAlgAut k E A γ v) =
+      γ (Coalgebra.counit (R := E) v) := by
+  induction v using TensorProduct.induction_on with
+  | zero => simp
+  | tmul e a => simp [map_smul]
+  | add u v hu hv => simp [hu, hv]
+
+/-- `γ ⊗ 1` preserves group-like elements: the semilinear
+compatibility of the comultiplication with the Galois action,
+expressed through `sqBaseChange`. -/
 theorem isGroupLikeElem_galAlgAut (γ : E ≃ₐ[k] E) (x : CharLattice k E A) :
-    IsGroupLikeElem E (galAlgAut k E A γ x.val) := by
-  sorry
+    IsGroupLikeElem E (galAlgAut k E A γ x.val) where
+  counit_eq_one := by
+    rw [counit_galAlgAut, x.2.counit_eq_one, map_one]
+  comul_eq_tmul_self := by
+    apply (sqBaseChange k E A).injective
+    rw [sqBaseChange_comul, baseChangeComul_galAlgAut, ← sqBaseChange_comul,
+      x.2.comul_eq_tmul_self, sqBaseChange_galAlgAut_tmul]
 
 /-- **The Galois action on characters**: `γ · χ = (γ ⊗ 1) χ`. The
 monoid-hom fields are the functoriality of `γ ⊗ 1` (proof: M5).
