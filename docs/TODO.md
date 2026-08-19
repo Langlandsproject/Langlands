@@ -180,7 +180,7 @@ building development.
 ### G0.2 — Multiplicative type and the anti-equivalence (Tier A;
 placed in `affine_group_schemes` per (D3))
 
-- [ ] `group_algebra_scheme` [def] — `D(M) = Spec k[M]`.
+- [x] `group_algebra_scheme` [def] — `D(M) = Spec k[M]` (KB node + Lean `DiagGroup`, `diagGroupPointsEquiv` 2026-08-19).
 - [ ] `diagonalizable_characterization` [thm] — `k[D]` spanned by
       characters ⟺ `D ≅ D(M)`.
 - [ ] `cartier_duality_split` [thm] — the split anti-equivalence. Pure

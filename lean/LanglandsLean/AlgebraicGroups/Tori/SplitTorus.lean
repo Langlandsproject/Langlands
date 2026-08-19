@@ -25,7 +25,7 @@ as recorded in the G0 roadmap.
 
 ## Main declarations
 
-* `splitTorus R n` — `D(ℤ^n)` as an object of `Over (Spec R)`, with
+* `splitTorusOver R n` — `D(ℤ^n)` as an object of `Over (Spec R)`, with
   its group-object structure and `IsAlgebraicGroup` instance inherited
   from `Tori/Diagonalizable.lean`.
 * `SplitTorus R n` — the underlying scheme.
@@ -61,24 +61,24 @@ instance {M : Type*} [AddMonoid M] [AddMonoid.FG M] :
 
 /-- The split torus of rank `n` over `Spec R`, as the diagonalizable
 group scheme of the free abelian group `ℤ^n`. Being an `abbrev`, it
-inherits every instance of `diagonalizable` — group object, affine
+inherits every instance of `diagGroupOver` — group object, affine
 group scheme, algebraic group.
 
 Blueprint: tori.split_torus
 -/
-noncomputable abbrev splitTorus : Over (Scheme.Spec.obj (op R)) :=
-  diagonalizable R (ULift.{u} (freeLattice n))
+noncomputable abbrev splitTorusOver : Over (Scheme.Spec.obj (op R)) :=
+  diagGroupOver R (ULift.{u} (freeLattice n))
 
 /-- The underlying scheme of the rank-`n` split torus.
 
 Blueprint: tori.split_torus
 -/
-noncomputable abbrev SplitTorus : Scheme.{u} := (splitTorus R n).left
+noncomputable abbrev SplitTorus : Scheme.{u} := (splitTorusOver R n).left
 
 section SmokeTests
 
 /-- The split torus is a group object. -/
-noncomputable example : GrpObj (splitTorus R n) := inferInstance
+noncomputable example : GrpObj (splitTorusOver R n) := inferInstance
 
 /-- The split torus is an affine group scheme over `Spec R`. -/
 noncomputable example :

@@ -13,7 +13,7 @@ lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Tori.SplitTorus
   declarations:
-  - Langlands.Tori.splitTorus
+  - Langlands.Tori.splitTorusOver
   - Langlands.Tori.SplitTorus
 source:
   spans:

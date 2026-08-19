@@ -7,39 +7,35 @@ import Mathlib.AlgebraicGeometry.Morphisms.FiniteType
 import Mathlib.RingTheory.FiniteType
 
 /-!
-# Diagonalizable group schemes `D(M) = Spec R[M]`
+# The diagonalizable group scheme `D(M)`
 
 For a commutative ring `R` and an additive commutative group `M`, the
-**diagonalizable group scheme** attached to `M` is
+**diagonalizable group scheme** `D(M)` admits two equivalent
+descriptions, and this file provides both:
 
-\[
-D(M) \;=\; \operatorname{Spec} R[M],
-\]
+1. **As a spectrum** (the construction): `D(M) = Spec R[M]`, the
+   spectrum of the group algebra with its group-like Hopf structure
+   `Δ(e^m) = e^m ⊗ e^m` — this is the *definition*
+   (`diagGroupOver`, underlying scheme `DiagGroup`);
+2. **By its points** (the characterization to *read*): for any
+   `T` over `Spec R`,
+   \[ D(M)(T) \;=\; \operatorname{Hom}_{\mathrm{grp}}\bigl(M,\;
+      \Gamma(T)^\times\bigr), \]
+   "characters of `M` valued in units of the coordinate ring" — this
+   is `diagGroupPointsEquiv`, and the group structure of `D(M)` is
+   pointwise multiplication of characters under this identification.
 
-the spectrum of the group algebra `AddMonoidAlgebra R M`, with the
-group-like Hopf structure: `Δ(e^m) = e^m ⊗ e^m`, `ε(e^m) = 1`,
-`S(e^m) = e^{-m}` (Mathlib's `AddMonoidAlgebra.instHopfAlgebra`).
+If the internal plumbing of (1) is opaque, read (2): it pins the
+object up to canonical isomorphism by Yoneda, and every downstream
+computation should go through it rather than through the construction.
 
-This is the machinery node of the tori program: `G_m = D(ℤ)`
-(`Examples/Gm.lean`), `μ_n = D(ℤ/n)` (`Examples/MuN.lean`), and split
-tori are `D(ℤ^n)` (`Tori/SplitTorus.lean`). The functor `M ↦ D(M)` is
-the split half of the anti-equivalence between diagonalizable groups
-and finitely generated abelian groups.
+Special cases already in the library: `𝔾ₘ = D(ℤ)`
+(`Examples/Gm.lean`), `μ_n = D(ℤ/n)` (`Examples/MuN.lean`), split
+tori `D(ℤⁿ)` (`Tori/SplitTorus.lean`).
 
-## Main declarations
-
-* `diagonalizable R M` — `Spec R[M]` as an object of `Over (Spec R)`.
-* `diagonalizable.instGrpObj` — its group-object structure via
-  `hopfSpecGrpObj`.
-* `Diagonalizable R M` — the underlying scheme, with
-  `IsAffineGroupScheme` always and `IsAlgebraicGroup` when `M` is
-  finitely generated.
-
-## Knowledge base
-
-`tori.algebraic_tori` topic; machinery for
-`tori.multiplicative_type_characterization` and (knowledge-base side)
-the diagonalizable-group nodes.
+Note on the name: `D(M)` is the *object*; the *property* "the group
+scheme `G` is diagonalizable" (`∃ M, G ≅ D(M)`) is not yet
+formalized and will be a separate `IsDiagonalizable` predicate.
 -/
 
 open AlgebraicGeometry CategoryTheory Opposite
@@ -52,58 +48,78 @@ universe u
 
 variable (R : CommRingCat.{u}) (M : Type u) [AddCommGroup M]
 
-/-- The group algebra `R[M]` of an additive commutative group `M`,
-the coordinate ring of the diagonalizable group scheme `D(M)`. Its
-Hopf structure is Mathlib's group-like one on `AddMonoidAlgebra`. -/
-noncomputable abbrev diagonalizable.hopfAlg : Type u :=
-  AddMonoidAlgebra R M
-
 /-- The diagonalizable group scheme `D(M) = Spec R[M]` over `Spec R`,
-as an object of `Over (Spec R)`.
+as an object of `Over (Spec R)`; the coordinate ring is the group
+algebra `AddMonoidAlgebra R M` with its group-like Hopf structure.
+For the readable characterization see `diagGroupPointsEquiv`:
+`D(M)(T) = Hom(M, Γ(T)ˣ)`.
 
-Blueprint: reductive_groups.diagonalizable_groups
+Blueprint: affine_group_schemes.group_algebra_scheme
 -/
-noncomputable def diagonalizable : Over (Scheme.Spec.obj (op R)) :=
-  specObjOver R (diagonalizable.hopfAlg R M)
+noncomputable def diagGroupOver : Over (Scheme.Spec.obj (op R)) :=
+  specObjOver R (AddMonoidAlgebra R M)
 
-/-- The group-object structure on `D(M)`, inherited from the
-group-like Hopf structure on `R[M]` via the Yoneda construction. -/
-noncomputable instance diagonalizable.instGrpObj :
-    GrpObj (diagonalizable R M) :=
-  hopfSpecGrpObj R (diagonalizable.hopfAlg R M)
+/-- The group-object structure on `D(M)`: under
+`diagGroupPointsEquiv` it is pointwise multiplication of characters
+`M → Γ(T)ˣ`. (Internally: the convolution group on the points
+presheaf, transported through representability.) -/
+noncomputable instance diagGroupOver.instGrpObj :
+    GrpObj (diagGroupOver R M) :=
+  hopfSpecGrpObj R (AddMonoidAlgebra R M)
 
 /-- The underlying scheme of `D(M)`.
 
-Blueprint: reductive_groups.diagonalizable_groups
+Blueprint: affine_group_schemes.group_algebra_scheme
 -/
-noncomputable abbrev Diagonalizable : Scheme.{u} := (diagonalizable R M).left
+noncomputable abbrev DiagGroup : Scheme.{u} := (diagGroupOver R M).left
+
+/-- **The functor of points of `D(M)`** — the definitional
+characterization: morphisms `T ⟶ D(M)` over `Spec R` correspond to
+group homomorphisms `M → Γ(T)ˣ`, i.e. characters of the lattice
+valued in units of the coordinate ring.
+
+Composite of three known identifications:
+`(T ⟶ Spec R[M]) ≃ (R[M] →ₐ[R] Γ(T))` (representability of the
+points presheaf), `≃ (M →* Γ(T))` (universal property of the group
+algebra), `≃ (M →* Γ(T)ˣ)` (a monoid hom from a group lands in the
+units).
+
+Blueprint: affine_group_schemes.group_algebra_scheme
+-/
+noncomputable def diagGroupPointsEquiv (T : Over (Scheme.Spec.obj (op R))) :
+    (T ⟶ diagGroupOver R M) ≃
+      (Multiplicative M →* (Γ(T.left, ⊤) : CommRingCat)ˣ) :=
+  letI := gammaAlgebra R T
+  ((specRepresentability R (AddMonoidAlgebra R M)).homEquiv).trans <|
+    (AddMonoidAlgebra.lift R (Γ(T.left, ⊤) : CommRingCat) M).symm.trans
+      (MonoidHom.toHomUnitsMulEquiv).toEquiv
 
 /-- `D(M)` is canonically a scheme over `Spec R`. -/
-noncomputable instance : (Diagonalizable R M).Over (Scheme.Spec.obj (op R)) :=
-  ⟨(diagonalizable R M).hom⟩
+noncomputable instance : (DiagGroup R M).Over (Scheme.Spec.obj (op R)) :=
+  ⟨(diagGroupOver R M).hom⟩
 
-/-- The `GrpObj` on `Scheme.asOver (Diagonalizable R M) (Spec R)`. -/
+/-- The `GrpObj` on `Scheme.asOver (DiagGroup R M) (Spec R)`. -/
 noncomputable instance :
-    GrpObj (Scheme.asOver (Diagonalizable R M) (Scheme.Spec.obj (op R))) :=
-  diagonalizable.instGrpObj R M
+    GrpObj (Scheme.asOver (DiagGroup R M) (Scheme.Spec.obj (op R))) :=
+  diagGroupOver.instGrpObj R M
 
 /-- The structure morphism of `D(M)` is affine (it is `Spec.map` of a
 ring homomorphism). -/
 noncomputable instance :
-    IsAffineHom ((Diagonalizable R M) ↘ Scheme.Spec.obj (op R)) := by
+    IsAffineHom ((DiagGroup R M) ↘ Scheme.Spec.obj (op R)) := by
   show IsAffineHom (Scheme.Spec.map _)
   infer_instance
 
 /-- `D(M)` is an affine group scheme over `Spec R`, for every `M`. -/
 noncomputable instance :
-    IsAffineGroupScheme (Diagonalizable R M) (Scheme.Spec.obj (op R)) :=
+    IsAffineGroupScheme (DiagGroup R M) (Scheme.Spec.obj (op R)) :=
   inferInstance
 
 /-- For finitely generated `M`, the group algebra `R[M]` is a finitely
 generated `R`-algebra, so the structure morphism of `D(M)` is locally
 of finite type. -/
 noncomputable instance [AddMonoid.FG M] :
-    LocallyOfFiniteType ((Diagonalizable R M) ↘ Scheme.Spec.obj (op R)) := by
+    LocallyOfFiniteType ((DiagGroup R M) ↘ Scheme.Spec.obj (op R)) := by
   show LocallyOfFiniteType (Spec.map _)
   rw [HasRingHomProperty.Spec_iff (P := @LocallyOfFiniteType)]
   show RingHom.FiniteType (algebraMap R (AddMonoidAlgebra R M))
@@ -113,7 +129,7 @@ noncomputable instance [AddMonoid.FG M] :
 /-- For finitely generated `M`, `D(M)` is an algebraic group over
 `Spec R`. -/
 noncomputable instance [AddMonoid.FG M] :
-    IsAlgebraicGroup (Diagonalizable R M) (Scheme.Spec.obj (op R)) :=
+    IsAlgebraicGroup (DiagGroup R M) (Scheme.Spec.obj (op R)) :=
   inferInstance
 
 end Langlands.Tori
