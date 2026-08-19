@@ -169,7 +169,7 @@ in the split case. The bridge for general `A` is plan G0.C M5. -/
 /-- The canonical map from the lattice to the group-like elements of
 the group algebra: `m ↦ e^m`. -/
 @[simps]
-noncomputable def diagGroupLikeChar [Nontrivial R] :
+noncomputable def groupLikeSingle [Nontrivial R] :
     Multiplicative M →* GroupLike R (AddMonoidAlgebra R M) where
   toFun m :=
     ⟨AddMonoidAlgebra.single m.toAdd 1,
@@ -189,7 +189,7 @@ Blueprint: tori.character_and_cocharacter_lattices, tori.characters_as_group_lik
 -/
 noncomputable def diagGroupLikeEquiv :
     Multiplicative M ≃* GroupLike R (AddMonoidAlgebra R M) :=
-  MulEquiv.ofBijective (diagGroupLikeChar R M) <| by
+  MulEquiv.ofBijective (groupLikeSingle R M) <| by
     constructor
     · intro a b hab
       have h2 : (AddMonoidAlgebra.single a.toAdd 1 : AddMonoidAlgebra R M)

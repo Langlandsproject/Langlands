@@ -36,6 +36,8 @@ show the statements to the owner before the proof pass.
       (head symbol first; `_eq_top`/`_iff_`/`_of_`/`_apply`/`foo_one`
       patterns; no typeclass hypotheses in names).
 - [ ] No ad-hoc abbreviations; no abbrevs hiding honest types.
+- [ ] As short as clarity allows; every name component carries
+      meaning; no qualifier mashes.
 - [ ] Grammatical number: classes plural, concepts/objects singular.
 
 ## 3. Placement & linking (conventions §2, §4)

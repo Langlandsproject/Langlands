@@ -191,6 +191,12 @@ Follow the Mathlib naming conventions; the recurring cases:
 - **No ad-hoc abbreviations** in names, and no abbreviation defs that
   hide an honest type (`freeLattice := Fin n → ℤ` removed — write the
   type).
+- **As short as clarity allows.** Every name component must carry
+  meaning; qualifier mashes are review-blockers (2026-08-19 example:
+  `diagGroupLikeChar` → `groupLikeSingle` — "the group-like element
+  made from `single`", each word doing work). A name needing four or
+  more components usually means the declaration wants a namespace or
+  wants splitting.
 - **Carve-out** (repo precedent, Mathlib's atomic-object exception):
   named geometric objects as terms of `Scheme` are UpperCamel —
   `Gm`, `MuN`, `SplitTorus`, `DiagGroup`; their `Over`-object
