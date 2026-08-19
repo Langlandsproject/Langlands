@@ -68,6 +68,16 @@ noncomputable instance multiplicativeGroup.instGrpObj :
     GrpObj (multiplicativeGroup R) :=
   hopfSpecGrpObj R (LaurentPolynomial R)
 
+/-- `𝔾ₘ R`: the multiplicative group as an **algebraic group** over
+`Spec R` — the group-object level of the key construction, defined
+once; every Hom against `𝔾ₘ` references this.
+
+Blueprint: affine_group_schemes.multiplicative_group_scheme
+-/
+noncomputable def 𝔾ₘ (R : CommRingCat.{u}) :
+    Grp (Over (Scheme.Spec.obj (op R))) :=
+  Grp.mk (multiplicativeGroup R)
+
 /-! ### Project-convention packaging: `IsAffineGroupScheme` instance
 
 The Yoneda construction above gives `GrpObj` on the `Over (Spec R)`

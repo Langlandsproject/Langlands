@@ -79,15 +79,14 @@ variable (R : CommRingCat.{u})
 
 /-- **The character group** `X^*(G) := Hom_grp(G, 𝔾ₘ)`: morphisms
 of algebraic groups into the multiplicative group — the textbook
-definition, verbatim, with the algebraic group `G` as the subject.
-`𝔾ₘ` is the key construction `multiplicativeGroup`, bundled by
-`Grp.mk`; no second name for it exists.
+definition, verbatim, with the algebraic group `G` as the subject
+and `𝔾ₘ R` the algebraic-group level of the key construction.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def CharacterGroup
     (G : Grp (Over (Scheme.Spec.obj (op R)))) : Type _ :=
-  G ⟶ Grp.mk (multiplicativeGroup R)
+  G ⟶ 𝔾ₘ R
 
 /-- **The cocharacter group** `X_*(G) := Hom_grp(𝔾ₘ, G)` —
 symmetric to `CharacterGroup`.
@@ -96,7 +95,7 @@ Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def CocharacterGroup
     (G : Grp (Over (Scheme.Spec.obj (op R)))) : Type _ :=
-  Grp.mk (multiplicativeGroup R) ⟶ G
+  𝔾ₘ R ⟶ G
 
 /-- **Bridge, stage 1** (statement; proof: M0 pass): `hopfSpec` is
 fully faithful — algebraic-group homs between spectra correspond to
