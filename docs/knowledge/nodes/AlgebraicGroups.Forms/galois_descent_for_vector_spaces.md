@@ -11,12 +11,12 @@ uses:
 - forms.galois_groups_and_descent_data
 lean:
   modules:
-  - LanglandsLean.AlgebraicGroups.Tori.Speiser
+  - LanglandsLean.AlgebraicGroups.Forms.GaloisDescent
   declarations:
-  - Langlands.Tori.span_fixedPoints_eq_top
+  - Langlands.Forms.span_fixedPoints_eq_top
   - Langlands.Tori.twistedGroupAlgebra_span_top
-  - Langlands.Tori.span_galEval_eq_top
-  - Langlands.Tori.linearIndependent_algEquiv
+  - Langlands.Forms.span_galEval_eq_top
+  - Langlands.Forms.linearIndependent_algEquiv
 verification:
   statement: accepted
   proof: accepted

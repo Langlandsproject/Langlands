@@ -1,4 +1,5 @@
 import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
+import LanglandsLean.AlgebraicGroups.Forms.GaloisDescent
 import Mathlib.FieldTheory.Galois.Basic
 import Mathlib.Algebra.Group.End
 
@@ -21,12 +22,13 @@ through `σ`. Its fixed points form a `k`-subalgebra
 **twisted form** of the split torus `D(M)`; for `k`-tori this is
 exactly the quasi-inverse of `T ↦ X^*(T)`.
 
-Everything in this file and its companion `Tori/Speiser.lean` is
+Everything in this file and `Forms/GaloisDescent.lean` is
 proved (no `sorry`):
 
 * `twistedGroupAlgebra_span_top` (Speiser's lemma / Galois descent):
   the fixed points span `E[M]` over `E`. **Proved** in
-  `Tori/Speiser.lean` via the general semilinear descent theorem
+  this file via the general semilinear descent theorem of
+  `Forms/GaloisDescent.lean`,
   `span_fixedPoints_eq_top` built there (Mathlib has none).
 * `twistedGroupAlgebra_trivial` : for the trivial action the
   construction recovers `k[M]` inside `E[M]`.
@@ -130,7 +132,7 @@ lemma mem_twistedGroupAlgebra_iff {f : AddMonoidAlgebra E M} :
 
 /- Speiser's lemma for the twisted group algebra —
 `twistedGroupAlgebra_span_top` — is stated and **proved** in
-`Tori/Speiser.lean`, which builds the general semilinear descent
+`Forms/GaloisDescent.lean`, which builds the general semilinear descent
 theorem `span_fixedPoints_eq_top` that Mathlib lacks. -/
 
 /-- With the trivial lattice action, the semilinear action reduces to
@@ -178,5 +180,43 @@ theorem twistedGroupAlgebra_trivial [IsGalois k E] [FiniteDimensional k E] :
     rw [semilinearAut_one_smulHom]
     ext m
     simp [AddMonoidAlgebra.coeff_mapAlgHom]
+
+section Descent
+
+/-- The semilinear automorphisms of `E[M]` are semilinear over
+`E`-scalars: `γ • (c · f) = γ(c) · (γ • f)`. -/
+lemma semilinearAut_smul (γ : E ≃ₐ[k] E) (c : E) (f : AddMonoidAlgebra E M) :
+    semilinearAut k E M σ γ (c • f) = γ c • semilinearAut k E M σ γ f := by
+  induction f using AddMonoidAlgebra.induction_linear with
+  | zero => simp
+  | add f g hf hg => simp [smul_add, hf, hg]
+  | single m a =>
+    rw [AddMonoidAlgebra.smul_single', semilinearAut_single, semilinearAut_single,
+      AddMonoidAlgebra.smul_single', map_mul]
+
+/-- **Galois descent for the twisted group algebra** (the form
+property, surjectivity half): the fixed points of the semilinear
+action span `E[M]` over `E`. This discharges the statement recorded
+in `Tori/GaloisDescent.lean`.
+
+Blueprint: forms.galois_descent_for_vector_spaces
+-/
+theorem twistedGroupAlgebra_span_top [FiniteDimensional k E] :
+    Submodule.span E
+      ((twistedGroupAlgebra k E M σ : Set (AddMonoidAlgebra E M))) = ⊤ := by
+  have hset : ((twistedGroupAlgebra k E M σ : Set (AddMonoidAlgebra E M))) =
+      {f : AddMonoidAlgebra E M |
+        ∀ γ : E ≃ₐ[k] E, (semilinearAut k E M σ γ).toAddEquiv f = f} := rfl
+  rw [hset]
+  refine Langlands.Forms.span_fixedPoints_eq_top
+    (fun γ => (semilinearAut k E M σ γ).toAddEquiv) ?_ ?_ ?_
+  · intro f
+    exact DFunLike.congr_fun (map_one (semilinearHom k E M σ)) f
+  · intro γ δ f
+    exact DFunLike.congr_fun (map_mul (semilinearHom k E M σ) γ δ) f
+  · intro γ c f
+    exact semilinearAut_smul k E M σ γ c f
+
+end Descent
 
 end Langlands.Tori

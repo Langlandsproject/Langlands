@@ -1,8 +1,7 @@
 import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
 import LanglandsLean.AlgebraicGroups.Tori.SplitTorus
 import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
-import LanglandsLean.AlgebraicGroups.Tori.GaloisDescent
-import LanglandsLean.AlgebraicGroups.Tori.Speiser
+import LanglandsLean.AlgebraicGroups.Tori.TwistedGroupAlgebra
 
 /-!
 # Tori

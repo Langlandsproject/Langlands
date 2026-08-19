@@ -36,8 +36,7 @@ This catalog lists nodes under the `tori` mathematical category. It is for human
 - `Diagonalizable` — D(M) = Spec R[M] with group-object and algebraic-group instances.
 - `SplitTorus` — D(Z^n).
 - `CharacterGroup` — X^*, X_*; Cartier duality for split tori proved at object, hom, cocharacter, and isomorphism level (aligned with [[node:reductive_groups.diagonalizable_groups_antiequivalence]]).
-- `GaloisDescent` — semilinear action, twisted group algebra (the general torus's coordinate algebra).
-- `Speiser` — semilinear Galois descent proved in-repo (see [[node:forms.galois_descent_for_vector_spaces]]).
+- `TwistedGroupAlgebra` — semilinear action, twisted group algebra (the general torus's coordinate algebra) and its descent theorems; the general semilinear-descent engine lives in `Forms/GaloisDescent` (see [[node:forms.galois_descent_for_vector_spaces]]).
 
 ## Planned (G0 roadmap, docs/TODO.md)
 

@@ -188,7 +188,7 @@ Tori up to isogeny ↔ `ℚ`-representations of finite quotients of `Θ`
 
 ## 2. M2 — Lean: complete linear descent
 
-File: `lean/LanglandsLean/AlgebraicGroups/Tori/Speiser.lean` (extend).
+File: `lean/LanglandsLean/AlgebraicGroups/Forms/GaloisDescent.lean` (extend).
 
 ```lean
 -- setting as in span_fixedPoints_eq_top: ρ, hone, hmul, hsemi

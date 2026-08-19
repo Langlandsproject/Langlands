@@ -1,4 +1,5 @@
-import LanglandsLean.AlgebraicGroups.Tori.GaloisDescent
+import Mathlib.FieldTheory.Galois.Basic
+import Mathlib.Algebra.Group.End
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.LinearAlgebra.LinearIndependent.Basic
 
@@ -34,7 +35,7 @@ Galois-ness is not needed for the span statement.
 `tori.f_tori_galois_module_classification`.
 -/
 
-namespace Langlands.Tori
+namespace Langlands.Forms
 
 universe u v
 
@@ -178,46 +179,4 @@ theorem span_fixedPoints_eq_top
 
 end Semilinear
 
-section Application
-
-variable (k E : Type u) [Field k] [Field E] [Algebra k E]
-variable (M : Type u) [AddCommGroup M]
-variable (σ : (E ≃ₐ[k] E) →* Multiplicative (AddAut M))
-
-/-- The semilinear automorphisms of `E[M]` are semilinear over
-`E`-scalars: `γ • (c · f) = γ(c) · (γ • f)`. -/
-lemma semilinearAut_smul (γ : E ≃ₐ[k] E) (c : E) (f : AddMonoidAlgebra E M) :
-    semilinearAut k E M σ γ (c • f) = γ c • semilinearAut k E M σ γ f := by
-  induction f using AddMonoidAlgebra.induction_linear with
-  | zero => simp
-  | add f g hf hg => simp [smul_add, hf, hg]
-  | single m a =>
-    rw [AddMonoidAlgebra.smul_single', semilinearAut_single, semilinearAut_single,
-      AddMonoidAlgebra.smul_single', map_mul]
-
-/-- **Galois descent for the twisted group algebra** (the form
-property, surjectivity half): the fixed points of the semilinear
-action span `E[M]` over `E`. This discharges the statement recorded
-in `Tori/GaloisDescent.lean`.
-
-Blueprint: forms.galois_descent_for_vector_spaces
--/
-theorem twistedGroupAlgebra_span_top [FiniteDimensional k E] :
-    Submodule.span E
-      ((twistedGroupAlgebra k E M σ : Set (AddMonoidAlgebra E M))) = ⊤ := by
-  have hset : ((twistedGroupAlgebra k E M σ : Set (AddMonoidAlgebra E M))) =
-      {f : AddMonoidAlgebra E M |
-        ∀ γ : E ≃ₐ[k] E, (semilinearAut k E M σ γ).toAddEquiv f = f} := rfl
-  rw [hset]
-  refine span_fixedPoints_eq_top
-    (fun γ => (semilinearAut k E M σ γ).toAddEquiv) ?_ ?_ ?_
-  · intro f
-    exact DFunLike.congr_fun (map_one (semilinearHom k E M σ)) f
-  · intro γ δ f
-    exact DFunLike.congr_fun (map_mul (semilinearHom k E M σ) γ δ) f
-  · intro γ c f
-    exact semilinearAut_smul k E M σ γ c f
-
-end Application
-
-end Langlands.Tori
+end Langlands.Forms
