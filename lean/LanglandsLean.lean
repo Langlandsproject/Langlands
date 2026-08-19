@@ -1,2 +1,2 @@
 import LanglandsLean.AlgebraicGeometry
-import LanglandsLean.Tori
+import LanglandsLean.AlgebraicGroups

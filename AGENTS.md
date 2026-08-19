@@ -48,96 +48,22 @@ are intentionally broad; sub-nodes (definitions, theorems, lemmas,
 constructions, examples) belong under the same topic directory and depend
 on the topic-level node via `uses:`.
 
-## Node format (short reference)
+## Where the rules live (map, not content)
 
-See `~/mycodes/mdblueprint/docs/node-format.md` and
-`~/mycodes/mdblueprint/docs/math-authoring.md` for the full contract.
-Minimal shape:
+| Concern | Authoritative file |
+|---|---|
+| Project purpose, themes | `docs/00-project-outline.md` |
+| **Design constraints** (topic naming, node-id freeze, Lean↔KB linking, gates) | `docs/01-design-conventions.md` |
+| Roadmap and per-goal design decisions | `docs/TODO.md` |
+| Standard 4-step workflow | `docs/02-agent-workflow.md` |
+| Node format, statuses, admission pipeline | `~/mycodes/mdblueprint/docs/node-format.md` |
+| Topic model | `~/mycodes/mdblueprint/docs/topic-model.md` |
+| Math authoring (delimiters, macros) | `~/mycodes/mdblueprint/docs/math-authoring.md` |
+| Per-topic mathematical conventions | the topic entry node (e.g. `tori.algebraic_tori`) |
+| Publishing | `docs/publishing.md`, `scripts/publish_md.py` |
 
-```markdown
----
-id: <full dotted id, e.g. linear_algebraic_groups.affine_group_scheme_definition>
-title: <display title>
-kind: definition | theorem | lemma | corollary | example | construction | topic
-status: admitted
-primary_topic: <topic_id>
-topics:
-  - <topic_id>
-uses:
-  - <other_node_id>
-lean:
-  modules:
-    - <Lean module name>
-  declarations:
-    - <fully-qualified Lean decl>
-verification:
-  statement: accepted | pending
-  proof: accepted | pending | not_applicable
-  alignment: pending
-generality:
-  reviewed: true
-  prompt: "..."
-  verdict: "..."
-tags:
-  - <tag>
----
-
-# <title>
-
-Statement in natural language with inline math \(f : X \to Y\) and
-display math:
-\[
-\Delta(x) = x \otimes 1 + 1 \otimes x.
-\]
-
-*Proof.*  
-Natural-language proof, with [[node:other_node|label]] for
-cross-references. Do **not** use LaTeX `\begin{theorem}` /
-`\begin{proof}` environments — node `kind` and the publisher provide
-styling.
-```
-
-Math conventions:
-
-- Inline: `\(...\)` (preferred) or `$...$`.
-- Display: `\[...\]` (preferred) or `$$...$$`.
-- Project-wide macros live in `docs/knowledge/mdblueprint.yml` under
-  `math.macros`; declare without leading slash, use with leading slash.
-- `[[node:id]]` cross-refs must live outside math delimiters.
-
-## Lean ↔ KB linking convention
-
-The knowledge base is the source of truth for mathematical
-organization; the Lean tree mirrors it mechanically:
-
-- **One Lean directory per KB topic**, named `PascalCase(topic id)`:
-  KB topic `tori` ↔ `lean/LanglandsLean/Tori/` ↔ namespace
-  `Langlands.Tori`, with an umbrella module `LanglandsLean/Tori.lean`
-  importing the directory and linked from the topic entry node's
-  `lean.modules`. (Legacy exception: `LanglandsLean/AlgebraicGeometry/`
-  predates this rule and serves the `affine_group_schemes` topic.)
-- **Node → Lean**: an admitted node lists its witnesses in `lean:`
-  (`modules` + `declarations`), with `verification.alignment: pending`
-  until reviewed. Do not link a node to a declaration that only covers
-  a special case of the node's statement — leave it unlinked and record
-  the gap instead.
-- **Lean → node**: every principal declaration carries a `Blueprint:`
-  line in its docstring naming exactly the node ids whose
-  `lean.declarations` list it. The marker must start at the beginning
-  of a docstring line (`Blueprint: id1, id2`); markers glued to the end
-  of a sentence are silently ignored by the parser. Helper lemmas need
-  no marker. Do not use module-level `## Blueprint` sections — they
-  stamp every declaration in the file with the same node set and cause
-  cross-mismatches; use `## Knowledge base` for prose pointers instead.
-- **Gate**: `tools.knowledge.lean_reverse_check` must report
-  0 cross-mismatch before every commit that touches either side
-  (it runs inside `scripts/publish_md.py`); `md_only`/`lean_only`
-  are informational.
-- **Topic naming**: KB topic ids stay flat and stable (`tori`, not
-  `algebraic_groups.tori`); dependency layering lives in `uses:` edges,
-  not in id prefixes. If a future top-level reorganization introduces
-  umbrella topics, it must be a planned global migration, never a
-  one-topic exception.
+Read `docs/01-design-conventions.md` before creating, renaming, or
+linking anything.
 
 ## Build and check commands
 
@@ -198,128 +124,20 @@ Full Lean build, only when explicitly needed:
 cd lean && lake build
 ```
 
-## Design conventions (high-level pointers)
+## Design conventions
 
-- Affine algebraic groups: see
-  `docs/superpowers/specs/2026-05-23-affine-algebraic-group-design.md`.
-- Lean idiom for "group scheme over `S`": follow Mathlib's
-  typeclass-on-scheme pattern
-  `(G : Scheme) [G.Over S] [GrpObj (Scheme.asOver G S)]` plus property
-  typeclasses on the structure morphism `(G ↘ S)`. **Do not** introduce
-  bundled types like `GroupScheme S := Grp (Over S)`. Project-specific
-  aggregator typeclasses (`IsAffineGroupScheme`, `IsAlgebraicGroup`) live
-  in `lean/LanglandsLean/AlgebraicGeometry/IsAlgebraicGroup.lean`; the
-  full convention is documented in
-  `lean/LanglandsLean/AlgebraicGeometry/Conventions.lean`.
-- GitHub: issues track milestones grouped by phase (`phase:A`,
-  `phase:B`, `phase:D`, ...). Issue body acceptance criteria are
-  binding; the dependency relation is encoded in the "Blocked by"
-  section. Repo: `Langlandsproject/Langlands`.
+All in `docs/01-design-conventions.md`. Lean-specific idioms
+(group-scheme typeclass pattern, no bundled `GroupScheme`) are its §6;
+the affine-algebraic-group spec is
+`docs/superpowers/specs/2026-05-23-affine-algebraic-group-design.md`.
+GitHub: issues per phase (`phase:A` ...), repo `Langlandsproject/Langlands`.
 
 ## Standard workflow
 
-For any new mathematical content (a sub-module, a cluster of related
-theorems, a new phase milestone), follow this 4-step pipeline:
-
-### 1. Identify
-
-Read the spec (`docs/superpowers/specs/`) or roadmap. Pick a coherent
-unit: one definition + its immediate properties, one theorem + its
-required lemmas, etc. Do not interleave unrelated topics.
-
-**Mathlib survey (mandatory).** Before drafting blueprint nodes, run a
-short discovery pass to learn what Mathlib actually has. The cheap
-tools to use through Archon/Lean LSP MCP, in order:
-
-1. `lean_local_search` — verify whether a suspected declaration or
-   namespace exists locally before guessing.
-2. `lean_leansearch` — natural-language semantic search across Mathlib
-   (e.g., "antipode anti-multiplicative", "convolution algebra hom",
-   "Yoneda from group object to representable presheaf").
-3. `lean_loogle` — type-pattern search when you have a target signature
-   in mind.
-4. Targeted `grep` against `lean/.lake/packages/mathlib/Mathlib/` for
-   directory hierarchies and namespace conventions.
-
-The survey should produce a one-paragraph "Mathlib state" entry for the
-unit being scoped, listing:
-
-- existing lemmas/definitions to depend on;
-- categorical alternatives (e.g., `CategoryTheory.HopfObj.mul_antipode`
-  lives at the abstract level even when the ring-theoretic version
-  isn't packaged);
-- genuine gaps that should be tracked as their own issues, separate
-  from the main work.
-
-This step catches cases where the gap is engineering (a missing
-bridge instance) rather than mathematics (a missing theorem). The two
-demand very different issue scoping and effort estimates.
-
-### 2. Blueprint
-
-Write mdblueprint nodes under
-`docs/knowledge/nodes/<topic>/<node-id>.md` for every definition,
-theorem, lemma, example, or proof-plan in the unit. Each node has:
-
-- complete YAML frontmatter (id, title, kind, status, primary_topic,
-  topics, uses, verification, generality, tags) — `kind` must be one of
-  `topic | concept | definition | lemma | proposition | theorem | example | proof-plan | external-theorem | task`;
-- precise statement in KaTeX with `\(...\)` / `\[...\]` delimiters;
-- for theorems / lemmas with substantive math, a real natural-language
-  proof in the body — not "see Lean";
-- correct `uses:` list (forms an acyclic DAG);
-- `lean:` field left empty at this stage (it gets filled when the Lean
-  implementation lands).
-
-Run `uv run python -m tools.knowledge.check docs/knowledge` (from
-`~/mycodes/mdblueprint`) until it reports `0 error(s)`. Run
-`uv run python -m tools.knowledge.publish` to materialize the site, and
-visually skim the rendered dep graph if practical.
-
-### 3. Issue
-
-For each blueprint node (or a tightly coupled cluster), create one
-GitHub issue:
-
-- title: `[Phase X] <Implement Lean for ...>` or `<formalize node-id>`;
-- body: link the blueprint node id; restate acceptance criteria;
-  "Blocked by #N" lines mirroring the blueprint `uses` graph;
-- labels: `phase:X` + `area:algebraic-geometry` (or other area label);
-- milestone: the phase's milestone (create one if not present).
-
-Use `gh issue create` with bodies authored as files in `/tmp/`.
-
-### 4. Execute
-
-Implement in Lean following the DAG order from the blueprint. Per issue:
-
-- activate/read the `lean4` skill if available, then use Archon/Lean LSP
-  MCP as the primary formalization interface;
-- write the Lean code; aim for minimal stubs over speculative
-  refactors; `sorry` only with a documented gap;
-- after each focused edit, run `lean_diagnostic_messages` on the touched
-  file; use `lean_goal`, `lean_hover_info`, and `lean_multi_attempt` for
-  proof states and tactic experiments;
-- update the corresponding blueprint node:
-  `lean.modules`, `lean.declarations`, and
-  `verification.alignment: aligned`;
-- re-run mdblueprint check (green); run shell `lake build` only when the
-  user explicitly asks for a full checkpoint/CI-style verification;
-- commit with a body that names the blueprint node and the issue;
-- close the issue with a comment naming the commit.
-
-### Why this pipeline
-
-Two reasons, learned the hard way:
-
-1. **Blueprint-first prevents over-commitment in Lean.** Writing the
-   natural-language proof first forces honesty about what's actually
-   provable and identifies the right Mathlib hooks (or gaps) before
-   investing in code that may need to be rewritten.
-2. **Issues-from-blueprint keeps the formalization tractable.** Each
-   issue is one node; "Blocked by" mirrors a mathematical dependency,
-   not an engineering preference. The PR-per-node granularity matches
-   what a single focused session can finish.
+See `docs/02-agent-workflow.md` for the 4-step pipeline
+(Identify → Blueprint → Formalize → Link). Mathlib survey before
+drafting is mandatory; LSP diagnostics over shell `lake build` for
+the inner loop.
 
 ## Things that have burned us before
 

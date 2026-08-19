@@ -323,7 +323,7 @@ reproduce Tier A verbatim.
       list is wrong or the node is reaching past the interface — resolve
       before proceeding.
 - [ ] Fix the entry-point definition downstream:
-      `buildings_and_parahorics.bruhat_tits_buildings` must state its
+      `buildings.bruhat_tits_buildings` must state its
       input data as (`G` connected **reductive**, `k` Henselian
       discretely valued, `f` perfect) — buildings are not attached to
       arbitrary linear algebraic groups — and cite
@@ -379,7 +379,7 @@ descent. Not needed for the apartment or for the building over `K`.
 
 ### G0.10 — Rewire downstream
 
-- [ ] `kottwitz_structures.kottwitz_homomorphism` must `uses`
+- [ ] `kottwitz.kottwitz_homomorphism` must `uses`
       `tori.kottwitz_homomorphism_for_tori`. KP build `κ_G` from `κ_T`
       via z-extensions (§11.4–11.5); the torus case is the base case,
       not a special case.
@@ -391,10 +391,10 @@ descent. Not needed for the apartment or for the building over `K`.
 - [ ] `moy_prasad_filtrations` must `uses`
       `tori.minimal_congruent_filtration` — the edge does not currently
       exist, which is why G7 is stalled.
-- [ ] New node `reductive_structure.tori_are_reductive` [thm] — a
+- [ ] New node `reductive_groups.tori_are_reductive` [thm] — a
       torus has no roots and trivial Weyl group, hence is reductive and
       automatically quasi-split; `uses` `tori.torus_definition` and
-      `reductive_structure.reductive_groups`. This is the "special
+      `reductive_groups.reductive_groups`. This is the "special
       case" edge of (D3), and the source of KP's terminology warning
       ("quasi-split torus" carries no information).
 - [ ] Pseudo-reductive pointer node in `reductive_structure`: over
@@ -432,7 +432,7 @@ Sources: KP Ch. 1 §1.4–1.5; BT I §2.
       simple reflections).
 - [ ] Complete `spherical_buildings` and `tits_buildings` (abstract
       buildings, apartments, the spherical building of a reductive
-      group); connect to `root_data_and_duality.bruhat_decomposition`.
+      group); connect to `root_data.bruhat_decomposition`.
 
 ## G3 — Valued root data and the apartment (BT2, part 1)
 

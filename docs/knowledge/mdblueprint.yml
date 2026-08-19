@@ -121,27 +121,27 @@ sources:
     short: Steinberg Endomorphisms
     authors: Robert Steinberg
 topics:
-- id: foundational_inputs
-  title: Foundational Inputs
-- id: affine_group_schemes
+- id: Foundations
+  title: Foundations
+- id: AlgebraicGroups.AffineGroupSchemes
   title: Affine Group Schemes
-- id: linear_algebraic_groups
+- id: AlgebraicGroups.LinearAlgebraicGroups
   title: Linear Algebraic Groups
-- id: tori
+- id: AlgebraicGroups.Tori
   title: Algebraic Tori
-- id: descent_and_forms
-  title: Galois Descent, Cohomology, and Forms
-- id: reductive_structure
-  title: Reductive Group Structure
-- id: root_data_and_duality
+- id: AlgebraicGroups.ReductiveGroups
+  title: Reductive Groups
+- id: AlgebraicGroups.RootData
   title: Root Data and Duality
-- id: classical_and_exceptional_groups
+- id: AlgebraicGroups.ClassicalAndExceptionalGroups
   title: Classical and Exceptional Groups
-- id: buildings_and_parahorics
-  title: Buildings and Parahorics
-- id: kottwitz_structures
-  title: Kottwitz Structures
-- id: conjugacy_classes
+- id: AlgebraicGroups.ConjugacyClasses
   title: Conjugacy Classes
-- id: bd_covers
+- id: AlgebraicGroups.Forms
+  title: Forms and Galois Descent
+- id: AlgebraicGroups.Covers
   title: Brylinski-Deligne and Metaplectic Covers
+- id: AlgebraicGroups.Buildings
+  title: Buildings and Parahorics
+- id: AlgebraicGroups.Kottwitz
+  title: Kottwitz Theory
