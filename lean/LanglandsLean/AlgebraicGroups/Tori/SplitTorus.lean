@@ -75,22 +75,8 @@ Blueprint: tori.split_torus
 -/
 noncomputable abbrev SplitTorus : Scheme.{u} := (splitTorusOver R n).left
 
-section SmokeTests
-
-/-- The split torus is a group object. -/
-noncomputable example : GrpObj (splitTorusOver R n) := inferInstance
-
-/-- The split torus is an affine group scheme over `Spec R`. -/
-noncomputable example :
-    IsAffineGroupScheme (SplitTorus R n) (Scheme.Spec.obj (op R)) :=
-  inferInstance
-
-/-- `ℤ^n` is finitely generated, so the split torus is an algebraic
-group over `Spec R`. -/
-noncomputable example :
-    IsAlgebraicGroup (SplitTorus R n) (Scheme.Spec.obj (op R)) :=
-  inferInstance
-
-end SmokeTests
+/- Instance availability (GrpObj, IsAffineGroupScheme, IsAlgebraicGroup)
+is inherited from `diagGroupOver` since `splitTorusOver` is an
+`abbrev`; downstream uses exercise it. -/
 
 end Langlands.Tori

@@ -127,7 +127,17 @@ cd lean && lake build
 
 ## Design conventions
 
-All in `docs/01-design-conventions.md`. Lean-specific idioms
+All in `docs/01-design-conventions.md`. Three that are broken most
+often — the full text and examples are in that file, §6:
+
+1. **Faithful formalization**: Lean definitions mirror the KB
+   statement's form; computed/equivalent descriptions are theorems,
+   never definitions.
+2. **Justified conversions**: every wrapper (`Multiplicative`,
+   `WithConv`, `ULift`, ...) in a public statement needs a
+   conversion-glossary entry in the module docstring.
+3. **No smoke tests**: examples go in `Examples` sections/files;
+   instance checks live in real downstream uses. Lean-specific idioms
 (group-scheme typeclass pattern, no bundled `GroupScheme`) are its §6;
 the affine-algebraic-group spec is
 `docs/superpowers/specs/2026-05-23-affine-algebraic-group-design.md`.

@@ -107,7 +107,28 @@ node** of each topic — e.g. `tori.algebraic_tori` fixes `k_s` over
 κ-primitive order, Tier A/B layering) are recorded in `docs/TODO.md`
 goal preambles at decision time.
 
-## 6. Lean idioms
+## 6. Faithfulness of formalization
+
+- **A Lean definition must mirror the KB statement's mathematical
+  form.** Equivalent or computed descriptions are theorems, never the
+  definition. Example of the rule applied: `X^*(Spec A)` is *defined*
+  as Hopf-algebra homomorphisms `R[ℤ] →ₐc[R] A` with convolution
+  (the literal translation of `Hom_grp(G, 𝔾ₘ)`); the group-like
+  description is the theorem `diagGroupLikeEquiv`. Simplifying
+  substitutions in definitions are review-blockers, even when
+  provably equivalent.
+- **Every type conversion must be justified.** Wrappers
+  (`Multiplicative`, `Additive`, `WithConv`, `ULift`, ...) appearing
+  in public statements require a "conversion glossary" entry in the
+  module docstring explaining why each is there; unexplained coercion
+  chains are review-blockers. Conversions confined to proof terms
+  need no entry.
+- **No smoke-test grab-bags.** Mathematical examples live in an
+  `Examples` section (or the `Examples/` directory) with docstrings;
+  instance-wiring checks belong to real downstream uses, not
+  anonymous `example := inferInstance` piles.
+
+## 7. Lean idioms
 
 - "Group scheme over `S`" is the Mathlib typeclass-on-scheme pattern
   `(G : Scheme) [G.Over S] [GrpObj (Scheme.asOver G S)]` plus property

@@ -13,9 +13,10 @@ lean:
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
   declarations:
   - Langlands.Tori.characterGroup
-  - Langlands.Tori.cocharacterHom
+  - Langlands.Tori.cocharacterGroup
   - Langlands.Tori.diagCharEquiv
   - Langlands.Tori.diagCocharEquiv
+  - Langlands.Tori.diagGroupLikeEquiv
 verification:
   definition: accepted
   proof: not_applicable

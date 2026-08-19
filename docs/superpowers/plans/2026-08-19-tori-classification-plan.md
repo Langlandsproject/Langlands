@@ -258,6 +258,15 @@ theorem charLattice_twisted :
     (charLattice k E A) ≃* Multiplicative M      -- Γ-equivariantly, via twistedBaseChange
 -- also: the E-independence statement stays KB-level (D-b).
 
+/-- carried over from the 2026-08-19 faithfulness refactor of
+    CharacterGroup.lean:
+    (i) convolution Group instance on characterGroup (inverse =
+        precomposition with the antipode of R[ℤ]);
+    (ii) the general bridge characterGroup R A ≃* GroupLike R A
+        (split case done: diagGroupLikeEquiv);
+    (iii) upgrade diagGroupPointsEquiv to a group isomorphism
+        (points group law = pointwise multiplication). -/
+
 /-- cocharacter lattice, pairing, anisotropy (KB:
     tori.character_and_cocharacter_lattices, tori.anisotropic_torus) -/
 noncomputable def cocharLattice := (Additive (charLattice k E A)) →+ ℤ   -- dual lattice, Γ-action by precomposition
