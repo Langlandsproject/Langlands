@@ -29,6 +29,7 @@ Statements tagged "proof: M5" are `sorry`; each carries its route.
 
 open scoped TensorProduct
 open Bialgebra Coalgebra HopfAlgebra WithConv
+open Langlands.ReductiveGroups
 
 namespace Langlands.Tori
 

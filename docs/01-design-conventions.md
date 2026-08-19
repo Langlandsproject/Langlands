@@ -92,6 +92,22 @@ change policies.
   lemmas need no marker. Never use module-level `## Blueprint`
   sections (they stamp every declaration in the file identically);
   use `## Knowledge base` for prose pointers.
+- **File contents are node-driven.** Every Lean file has a home node
+  cluster within **one** topic, declared in its module docstring; the
+  file lives in that topic's directory, and its Lean namespace
+  matches the topic (`Langlands.Tori`, `Langlands.ReductiveGroups`).
+  The **first** node in a declaration's `Blueprint:` line is its home
+  node. Rule: every *definition* (data) in a file must have a home
+  node whose `primary_topic` is the file's directory topic; theorems
+  may cross-witness nodes of other topics. Review check per touched
+  file: `grep 'Blueprint:'`, take first-listed nodes of definitions,
+  map to primary topics — the set must be exactly the directory's
+  topic, else the definition moves (or a new file in the right
+  directory is created). Burned twice on 2026-08-19: Speiser's lemma
+  in `Tori/` (moved to `Forms/`); diagonalizable-group definitions
+  (`charLift`, `IsDiagonalizableAlgebra`, Cartier duality,
+  `DiagGroup`) in `Tori/` (moved to `ReductiveGroups/` and
+  `AlgebraicGeometry/`).
 - **Gates** before any commit touching either side:
   `tools.knowledge.check` — 0 errors;
   `tools.knowledge.lean_reverse_check` — 0 cross-mismatch;

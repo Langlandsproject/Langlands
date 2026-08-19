@@ -1,4 +1,4 @@
-import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
+import LanglandsLean.AlgebraicGeometry.DiagGroup
 import Mathlib.RingTheory.Finiteness.Defs
 import Mathlib.LinearAlgebra.FreeModule.Basic
 

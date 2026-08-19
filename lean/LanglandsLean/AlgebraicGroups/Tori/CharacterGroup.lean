@@ -1,4 +1,4 @@
-import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
+import LanglandsLean.AlgebraicGeometry.DiagGroup
 import LanglandsLean.AlgebraicGeometry.HopfSpecFunctor
 import Mathlib.RingTheory.HopfAlgebra.GroupLike
 import Mathlib.RingTheory.HopfAlgebra.MonoidAlgebra
@@ -99,30 +99,6 @@ section Domain
 
 variable [IsDomain R]
 
-/-- **Cartier duality, object level** (split case): the character
-group of `D(M)` is exactly the lattice `M`. The character attached to
-`m : M` is the Hopf map `R[ℤ] → R[M]` induced by `1 ↦ m` on
-exponents; the identification of lattice addition with convolution is
-Mathlib's `mapDomainBialgHomAddEquiv`.
-
-Blueprint: tori.character_and_cocharacter_lattices, reductive_groups.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
--/
-noncomputable def diagCharEquiv :
-    Multiplicative M ≃* CharacterGroup R (AddMonoidAlgebra R M) :=
-  AddEquiv.toMultiplicativeLeft
-    ((zmultiplesAddEquiv M).trans
-      (AddMonoidAlgebra.mapDomainBialgHomAddEquiv (R := R)))
-
-/-- **Cartier duality, hom level**: Hopf-algebra homomorphisms
-`R[M] → R[N]` correspond to lattice homomorphisms `M → N` — full
-faithfulness of `D` on the split category.
-
-Blueprint: reductive_groups.diagonalizable_groups_antiequivalence
--/
-noncomputable def diagHomEquiv :
-    (M →+ N) ≃ (AddMonoidAlgebra R M →ₐc[R] AddMonoidAlgebra R N) :=
-  AddMonoidAlgebra.mapDomainBialgHomEquiv
-
 /-- **Cartier duality, cocharacter level**: the cocharacters of
 `D(M)` form the dual lattice `Hom(M, ℤ)`.
 
@@ -131,34 +107,6 @@ Blueprint: tori.character_and_cocharacter_lattices
 noncomputable def diagCocharEquiv :
     (M →+ ℤ) ≃ CocharacterGroup R (AddMonoidAlgebra R M) :=
   (AddMonoidAlgebra.mapDomainBialgHomEquiv).trans (WithConv.equiv _).symm
-
-/-- **Split classification theorem** (isomorphism level of Cartier
-duality): two split diagonalizable groups are isomorphic over a
-domain iff their lattices are.
-
-Blueprint: reductive_groups.diagonalizable_groups_antiequivalence, tori.f_tori_galois_module_classification
--/
-theorem diag_bialgEquiv_iff_addEquiv :
-    Nonempty (AddMonoidAlgebra R M ≃ₐc[R] AddMonoidAlgebra R N) ↔
-      Nonempty (M ≃+ N) := by
-  constructor
-  · rintro ⟨φ⟩
-    refine ⟨AddMonoidHom.toAddEquiv
-      (AddMonoidAlgebra.mapDomainOfBialgHom
-        (φ : AddMonoidAlgebra R M →ₐc[R] AddMonoidAlgebra R N))
-      (AddMonoidAlgebra.mapDomainOfBialgHom
-        (φ.symm : AddMonoidAlgebra R N →ₐc[R] AddMonoidAlgebra R M))
-      ?_ ?_⟩
-    · ext m
-      refine AddMonoidAlgebra.single_left_injective (r := (1 : R))
-        one_ne_zero ?_
-      simp [AddMonoidAlgebra.single_mapDomainOfBialgHom]
-    · ext n
-      refine AddMonoidAlgebra.single_left_injective (r := (1 : R))
-        one_ne_zero ?_
-      simp [AddMonoidAlgebra.single_mapDomainOfBialgHom]
-  · rintro ⟨e⟩
-    exact ⟨AddMonoidAlgebra.domCongrBialgEquiv R R e⟩
 
 /-! ### The computed description: characters as group-like elements
 
@@ -202,23 +150,6 @@ noncomputable def diagGroupLikeEquiv :
       obtain ⟨m, rfl⟩ :=
         AddMonoidAlgebra.isGroupLikeElem_iff_mem_range_single_one.mp hx
       exact ⟨Multiplicative.ofAdd m, rfl⟩
-
-/-! ### Examples -/
-
-section Examples
-
-/-- Characters of `𝔾ₘ = D(ℤ)`: the lattice `ℤ`. -/
-noncomputable example : Multiplicative ℤ ≃* CharacterGroup R (AddMonoidAlgebra R ℤ) :=
-  diagCharEquiv R ℤ
-
-/-- Endomorphisms of `𝔾ₘ` as a group scheme: `ℤ`, acting by
-`t ↦ tⁿ`. -/
-noncomputable example :
-    (ℤ →+ ℤ) ≃ (AddMonoidAlgebra R ℤ →ₐc[R] AddMonoidAlgebra R ℤ) :=
-  diagHomEquiv R ℤ ℤ
-
-end Examples
-
 
 /-! ### The scheme-level definition (primary faithful form)
 

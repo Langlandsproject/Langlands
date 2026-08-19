@@ -1,4 +1,3 @@
-import LanglandsLean.AlgebraicGroups.Tori.DiagGroup
 import LanglandsLean.AlgebraicGroups.Tori.SplitTorus
 import LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
 import LanglandsLean.AlgebraicGroups.Tori.TwistedGroupAlgebra

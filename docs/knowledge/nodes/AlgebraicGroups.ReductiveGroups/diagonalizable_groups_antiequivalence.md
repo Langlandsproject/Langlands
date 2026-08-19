@@ -12,13 +12,13 @@ uses:
 lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
-  - LanglandsLean.AlgebraicGroups.Tori.Torus
+  - LanglandsLean.AlgebraicGroups.ReductiveGroups.Diagonalizable
   declarations:
-  - Langlands.Tori.diagCharEquiv
-  - Langlands.Tori.diagHomEquiv
-  - Langlands.Tori.diag_bialgEquiv_iff_addEquiv
-  - Langlands.Tori.charLift
-  - Langlands.Tori.IsDiagonalizableAlgebra
+  - Langlands.ReductiveGroups.diagCharEquiv
+  - Langlands.ReductiveGroups.diagHomEquiv
+  - Langlands.ReductiveGroups.diag_bialgEquiv_iff_addEquiv
+  - Langlands.ReductiveGroups.charLift
+  - Langlands.ReductiveGroups.IsDiagonalizableAlgebra
   - Langlands.Tori.characterGroup_inv_mul_cancel
   - Langlands.Tori.comul_comp_antipode
   - Langlands.Tori.diagGrp

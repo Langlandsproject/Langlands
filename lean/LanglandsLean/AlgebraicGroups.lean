@@ -1,4 +1,5 @@
 import LanglandsLean.AlgebraicGroups.Forms
+import LanglandsLean.AlgebraicGroups.ReductiveGroups
 import LanglandsLean.AlgebraicGroups.Tori
 
 /-!

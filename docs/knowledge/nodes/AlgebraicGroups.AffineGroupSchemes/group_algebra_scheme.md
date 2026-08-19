@@ -13,11 +13,11 @@ uses:
 - foundations.hopf_algebras
 lean:
   modules:
-  - LanglandsLean.AlgebraicGroups.Tori.DiagGroup
+  - LanglandsLean.AlgebraicGeometry.DiagGroup
   declarations:
-  - Langlands.Tori.diagGroupOver
-  - Langlands.Tori.DiagGroup
-  - Langlands.Tori.diagGroupPointsEquiv
+  - Langlands.AlgebraicGeometry.diagGroupOver
+  - Langlands.AlgebraicGeometry.DiagGroup
+  - Langlands.AlgebraicGeometry.diagGroupPointsEquiv
 source:
   spans:
   - artifact: sga3

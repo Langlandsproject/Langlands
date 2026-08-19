@@ -42,7 +42,7 @@ open AlgebraicGeometry CategoryTheory Opposite
 open Langlands.AlgebraicGeometry
 open Langlands.AlgebraicGeometry.AlgHomPointsPresheaf
 
-namespace Langlands.Tori
+namespace Langlands.AlgebraicGeometry
 
 universe u
 
@@ -132,4 +132,4 @@ noncomputable instance [AddMonoid.FG M] :
     IsAlgebraicGroup (DiagGroup R M) (Scheme.Spec.obj (op R)) :=
   inferInstance
 
-end Langlands.Tori
+end Langlands.AlgebraicGeometry

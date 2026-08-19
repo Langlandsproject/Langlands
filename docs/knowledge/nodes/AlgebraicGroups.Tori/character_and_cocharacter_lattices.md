@@ -13,6 +13,7 @@ lean:
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
   - LanglandsLean.AlgebraicGroups.Tori.CharLattice
   - LanglandsLean.AlgebraicGroups.Tori.Duality
+  - LanglandsLean.AlgebraicGroups.ReductiveGroups.Diagonalizable
   declarations:
   - Langlands.Tori.CharLattice
   - Langlands.Tori.charGalAct
@@ -23,7 +24,7 @@ lean:
   - Langlands.Tori.gmGrp
   - Langlands.Tori.CharacterGroup
   - Langlands.Tori.CocharacterGroup
-  - Langlands.Tori.diagCharEquiv
+  - Langlands.ReductiveGroups.diagCharEquiv
   - Langlands.Tori.diagCocharEquiv
   - Langlands.Tori.diagGroupLikeEquiv
   - Langlands.Tori.characterGroup_inv_mul_cancel

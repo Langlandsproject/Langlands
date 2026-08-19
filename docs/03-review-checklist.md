@@ -66,6 +66,11 @@ show the statements to the owner before the proof pass.
 - [ ] Definition nodes are never linked to special-case or
       computed-form witnesses.
 
+- [ ] **Node-driven placement**: for each touched Lean file, the
+      first-listed Blueprint nodes of its *definitions* all have the
+      file's directory topic as primary topic (conventions §4). A
+      definition whose home node lives elsewhere moves elsewhere.
+
 ## 4. Statements vs proofs
 - [ ] Statement-first work: `sorry` only as a proof placeholder, one
       per statement, each tagged with its proof-pass milestone;

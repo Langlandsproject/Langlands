@@ -197,7 +197,16 @@ full text and examples are in that file (§6–§8):
    parameterized over a carrier with typeclasses
    (`[Module.Free ℤ M] [Module.Finite ℤ M]`). Skeletons belong in
    `Type 0` examples only.
-5. **Mathlib naming, binding** (full rules: conventions §8): types
+5. **File contents are node-driven** (full rule: conventions §4):
+   a Lean file = the definitions of one node cluster in one topic;
+   the file's directory = that topic; the namespace matches. Before
+   adding a definition to a file, check the primary topic of its
+   Blueprint node — different topic means different file. Quick
+   audit: `grep -o 'Blueprint: [a-z_.,\ ]*' <file> | sort -u` — the
+   first-listed nodes of definitions must all live in the file's
+   topic. Burned: diagonalizable-group definitions in `Tori/Torus.lean`;
+   Speiser in `Tori/`.
+6. **Mathlib naming, binding** (full rules: conventions §8): types
    and predicates UpperCamel (`IsTorusAlgebra`); data terms lowerCamel
    (`descentMap`); theorems snake_case named by conclusion with
    Mathlib patterns (`_eq_top`, `foo_one`, no typeclass hypotheses in

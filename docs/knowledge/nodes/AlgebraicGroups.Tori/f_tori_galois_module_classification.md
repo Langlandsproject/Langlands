@@ -25,6 +25,7 @@ lean:
   - LanglandsLean.AlgebraicGroups.Tori.Classification
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
   - LanglandsLean.AlgebraicGroups.Tori.TwistedGroupAlgebra
+  - LanglandsLean.AlgebraicGroups.ReductiveGroups.Diagonalizable
   declarations:
   - Langlands.Tori.charRep
   - Langlands.Tori.TorusAlgCat
@@ -36,8 +37,8 @@ lean:
   - Langlands.Tori.charLatticeFunctor_full
   - Langlands.Tori.charLatticeFunctor_essSurj
   - Langlands.Tori.toriClassification
-  - Langlands.Tori.diagCharEquiv
-  - Langlands.Tori.diag_bialgEquiv_iff_addEquiv
+  - Langlands.ReductiveGroups.diagCharEquiv
+  - Langlands.ReductiveGroups.diag_bialgEquiv_iff_addEquiv
   - Langlands.Tori.twistedGroupAlgebra
 source:
   spans:
