@@ -155,27 +155,35 @@ noncomputable def charRep :
     rw [map_mul (charGalAct k E A)]
     rfl
 
-/-- The character lattice of a torus is a free `ℤ`-module
-(statement; proof: M5 via `nonempty_charLattice_mulEquiv` and
-group-like rigidity). -/
-theorem charLattice_free (hA : IsTorusAlgebra k E A) :
-    Module.Free ℤ (Additive (CharLattice k E A)) := by
-  sorry
-
-/-- The character lattice of a torus is a finite `ℤ`-module
-(statement; proof: M5). -/
-theorem charLattice_finite (hA : IsTorusAlgebra k E A) :
-    Module.Finite ℤ (Additive (CharLattice k E A)) := by
-  sorry
-
 /-- Computation of the character lattice from a splitting
 isomorphism: `X^*` of a torus split as `E[M]` is `M` (statement;
 proof: M5 — transport `diagGroupLikeEquiv` along the base-change
 isomorphism). -/
 theorem nonempty_charLattice_mulEquiv (M : Type u) [AddCommGroup M]
     (e : (E ⊗[k] A) ≃ₐc[E] AddMonoidAlgebra E M) :
-    Nonempty (CharLattice k E A ≃* Multiplicative M) := by
-  sorry
+    Nonempty (CharLattice k E A ≃* Multiplicative M) :=
+  ⟨(groupLikeCongr e).trans (diagGroupLikeEquiv E M).symm⟩
+
+/-- The character lattice of a torus is a free `ℤ`-module
+(statement; proof: M5 via `nonempty_charLattice_mulEquiv` and
+group-like rigidity). -/
+theorem charLattice_free (hA : IsTorusAlgebra k E A) :
+    Module.Free ℤ (Additive (CharLattice k E A)) := by
+  obtain ⟨M, _, _, _, ⟨e⟩⟩ := hA
+  obtain ⟨φ⟩ := nonempty_charLattice_mulEquiv k E A M e
+  have ψ : Additive (CharLattice k E A) ≃+ M :=
+    (MulEquiv.toAdditive φ).trans (AddEquiv.additiveMultiplicative M)
+  exact Module.Free.of_equiv' ‹Module.Free ℤ M› ψ.symm.toIntLinearEquiv
+
+/-- The character lattice of a torus is a finite `ℤ`-module
+(statement; proof: M5). -/
+theorem charLattice_finite (hA : IsTorusAlgebra k E A) :
+    Module.Finite ℤ (Additive (CharLattice k E A)) := by
+  obtain ⟨M, _, _, _, ⟨e⟩⟩ := hA
+  obtain ⟨φ⟩ := nonempty_charLattice_mulEquiv k E A M e
+  have ψ : Additive (CharLattice k E A) ≃+ M :=
+    (MulEquiv.toAdditive φ).trans (AddEquiv.additiveMultiplicative M)
+  exact Module.Finite.equiv ψ.symm.toIntLinearEquiv
 
 /-! ### Rank and split rank -/
 
@@ -203,7 +211,8 @@ Blueprint: tori.split_rank
 -/
 theorem torusSplitRank_le_torusRank (hA : IsTorusAlgebra k E A) :
     torusSplitRank k E A ≤ torusRank k E A := by
-  sorry
+  have := charLattice_finite k E A hA
+  exact Submodule.finrank_le _
 
 /-- A torus is split iff its split rank equals its rank (statement;
 proof: M6 — finite-order actions with full-rank invariants are
@@ -321,28 +330,39 @@ theorem torusSplitRank_eq_zero_iff
 variable {A B} in
 /-- The map induced on character lattices by a Hopf-algebra
 homomorphism (contravariantly on tori: `Spec B → Spec A` induces
-`X^*(Spec A) → X^*(Spec B)`). The group-like membership is the base
-change of a Hopf hom being a Hopf hom — a Mathlib gap (no
-`BialgHom.baseChange`), discharged in M5.
+`X^*(Spec A) → X^*(Spec B)`): group-likes map along the base change
+`1 ⊗ f`, a Hopf homomorphism via `Bialgebra.TensorProduct.map`.
 
 Blueprint: tori.classification_hom_level
 -/
 noncomputable def charLatticeMap (f : A →ₐc[k] B) :
     CharLattice k E A →* CharLattice k E B where
   toFun x :=
-    ⟨Algebra.TensorProduct.map (AlgHom.id E E) f.toAlgHom x.val, by
-      sorry⟩ -- proof: M5 (base change of a Hopf hom preserves group-likes)
+    ⟨Bialgebra.TensorProduct.map (BialgHom.id E E) f x.val,
+      x.2.map (Bialgebra.TensorProduct.map (BialgHom.id E E) f)⟩
   map_one' := by
     ext
-    exact map_one (Algebra.TensorProduct.map (AlgHom.id E E) f.toAlgHom)
+    exact map_one (Bialgebra.TensorProduct.map (BialgHom.id E E) f)
   map_mul' := fun x y => by
     ext
-    exact map_mul (Algebra.TensorProduct.map (AlgHom.id E E) f.toAlgHom)
+    exact map_mul (Bialgebra.TensorProduct.map (BialgHom.id E E) f)
       x.val y.val
 
 variable {A B} in
-/-- The induced lattice map is Galois-equivariant (statement;
-proof: M5 — `(γ ⊗ 1) ∘ (1 ⊗ f) = (1 ⊗ f) ∘ (γ ⊗ 1)`).
+/-- Element form of the equivariance: `(1 ⊗ f)` commutes with
+`(γ ⊗ 1)` on the base change. -/
+lemma baseChangeMap_galAlgAut (f : A →ₐc[k] B) (γ : E ≃ₐ[k] E)
+    (v : E ⊗[k] A) :
+    Bialgebra.TensorProduct.map (BialgHom.id E E) f (galAlgAut k E A γ v) =
+      galAlgAut k E B γ (Bialgebra.TensorProduct.map (BialgHom.id E E) f v) := by
+  induction v using TensorProduct.induction_on with
+  | zero => simp
+  | tmul e a => simp [Bialgebra.TensorProduct.map_tmul]
+  | add u v hu hv => simp [hu, hv]
+
+variable {A B} in
+/-- The induced lattice map is Galois-equivariant:
+`(γ ⊗ 1) ∘ (1 ⊗ f) = (1 ⊗ f) ∘ (γ ⊗ 1)`.
 
 Blueprint: tori.classification_hom_level
 -/
@@ -350,7 +370,8 @@ theorem charLatticeMap_galAct (f : A →ₐc[k] B) (γ : E ≃ₐ[k] E)
     (x : CharLattice k E A) :
     charLatticeMap k E f (charGalAct k E A γ x) =
       charGalAct k E B γ (charLatticeMap k E f x) := by
-  sorry
+  ext
+  exact baseChangeMap_galAlgAut k E f γ x.val
 
 /-- **The hom-level classification** (full faithfulness): for tori
 split by `E`, every Galois-equivariant homomorphism of character
