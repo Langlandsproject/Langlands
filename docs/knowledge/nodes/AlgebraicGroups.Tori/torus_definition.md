@@ -11,6 +11,11 @@ uses:
 - linear_algebraic_groups.linear_algebraic_groups
 - affine_group_schemes.multiplicative_group_scheme
 - affine_group_schemes.base_change
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.Torus
+  declarations:
+  - Langlands.Tori.IsTorusAlgebra
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -24,6 +29,7 @@ source:
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the definition stated over an arbitrary field using the separable closure, without perfectness or characteristic assumptions?"

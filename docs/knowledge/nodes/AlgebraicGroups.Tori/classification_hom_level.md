@@ -13,6 +13,13 @@ uses:
 - tori.character_and_cocharacter_lattices
 - tori.characters_as_group_like_elements
 - tori.twisted_form_of_lattice
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.CharLattice
+  declarations:
+  - Langlands.Tori.charLatticeMap
+  - Langlands.Tori.charLatticeMap_galAct
+  - Langlands.Tori.existsUnique_bialgHom_of_equivariant
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -22,6 +29,7 @@ source:
 verification:
   statement: accepted
   proof: accepted
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the hom bijection stated for tori over an arbitrary field split by a common finite Galois extension, contravariantly and compatibly with composition?"

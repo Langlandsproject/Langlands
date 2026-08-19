@@ -23,6 +23,11 @@ lean:
   - Langlands.AlgebraicGeometry.AlgHomGroup.mul_def
   - Langlands.AlgebraicGeometry.AlgHomGroup.one_def
   - Langlands.AlgebraicGeometry.AlgHomGroup.toConv_convOneAlg
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_eq_via_toConv
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_inv_mul_cancel
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_mul_assoc
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_mul_one
+  - Langlands.AlgebraicGeometry.AlgHomGroup.alghom_one_mul
 verification:
   statement: accepted
   proof: accepted

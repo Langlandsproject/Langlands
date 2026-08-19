@@ -441,30 +441,34 @@ bijection, and rank-one classification. Links: every theorem node lean-linked, r
 
 ### M1 — KB: close the four proof holes (KB-first; do before Lean M2+)
 
-- [ ] `forms.hopf_descent` [thm] — the multiplicative upgrade of
+DONE 2026-08-19 (commit a3cc0e6): all ten nodes admitted, gates green.
+Note: `finiteness_per_rank` landed as kind `theorem` statement-only
+(`proof: gap`), not `external-theorem`, per plan §1.8.
+
+- [x] `forms.hopf_descent` [thm] — the multiplicative upgrade of
       [[node:forms.galois_descent_for_vector_spaces]]: for a Hopf
       algebra with compatible semilinear action, fixed points form a
       k-Hopf algebra and `E ⊗_k A^Γ ≅ A` as Hopf algebras.
-- [ ] `tori.twisted_form_of_lattice` [def+thm] — the inverse
+- [x] `tori.twisted_form_of_lattice` [def+thm] — the inverse
       construction packaged: `Spec (E[M])^Γ` is a torus with character
       lattice `(M, σ)`.
-- [ ] `tori.classification_hom_level` [thm] — full faithfulness over
+- [x] `tori.classification_hom_level` [thm] — full faithfulness over
       k: `Hom_k(T,T') ≅ Hom_Γ(X^*(T'), X^*(T))` (descent of morphisms
       + Cartier over E).
-- [ ] `tori.classification_by_cocycles` [thm] — rank-n tori up to iso
+- [x] `tori.classification_by_cocycles` [thm] — rank-n tori up to iso
       ↔ `Hom_cont(Θ, GL_n(Z))`/conj = `H¹(Θ, GL_n(Z))`.
-- [ ] `tori.real_tori_classification` [example] — Z[Z/2] has three
+- [x] `tori.real_tori_classification` [example] — Z[Z/2] has three
       indecomposable lattices; every real torus is
       `G_m^a × (S¹)^b × (Res_{C/R} G_m)^c`.
-- [ ] `tori.tori_over_finite_fields` [example] — tori/F_q ↔ conjugacy
+- [x] `tori.tori_over_finite_fields` [example] — tori/F_q ↔ conjugacy
       classes of finite-order elements of GL_n(Z) (Frobenius image).
-- [ ] `tori.finiteness_per_rank` [external-theorem] —
+- [x] `tori.finiteness_per_rank` [external-theorem] —
       Jordan–Zassenhaus: finitely many rank-n tori types per field.
-- [ ] `tori.isogeny_classification` [thm] — isogeny classes ↔
+- [x] `tori.isogeny_classification` [thm] — isogeny classes ↔
       Q-representations of finite quotients (Maschke).
-- [ ] `tori.split_rank` [def] — split rank = rk X_*(T)^Θ; bounds and
+- [x] `tori.split_rank` [def] — split rank = rk X_*(T)^Θ; bounds and
       split/anisotropic criteria; = apartment dimension downstream.
-- [ ] Rewrite the proof of `tori.f_tori_galois_module_classification`
+- [x] Rewrite the proof of `tori.f_tori_galois_module_classification`
       as a structured composition of the nodes above.
 
 ### M2 — Lean: complete linear descent
@@ -494,15 +498,17 @@ bijection, and rank-one classification. Links: every theorem node lean-linked, r
       `IsDiagonalizable`.
 - [ ] `twistedTorus` satisfies `IsTorus`; smoke test
       `SplitTorus R 1 ≅ Gm R`.
-- [ ] Universe note: widen `specObjOver` only if ULift actually blocks
-      M4; otherwise leave.
+- [x] Universe note RESOLVED 2026-08-19 (8e165b1): no ULift anywhere —
+      predicates and `splitTorusOver` are lattice-parameterized
+      (`[Module.Free ℤ M] [Module.Finite ℤ M]`); rule in conventions §7.
 
 ### M5 — Lean: the classification functors
 
-- [ ] `X^*` with Galois action: `X^*(A) := GroupLike E (E ⊗ A)` with
-      `Γ`-action; independence of the splitting field E.
-      (Also closes the flagged gap: scheme-side reading of
-      CharacterGroup.)
+- [x] STATEMENT LAYER 2026-08-19: `CharLattice`, `charGalAct`,
+      `charRep`, `torusRank`, `torusSplitRank`, `CocharLattice`,
+      `charPairing`, `IsAnisotropicAlgebra` + 14 sorry'd statements
+      in `Tori/CharLattice.lean`. Proof pass pending (invoke
+      lean-sorry-crusher). E-independence stays KB-level (D-b).
 - [ ] Inverse computation: `X^*(twistedTorus (M,σ)) ≅ (M,σ)`
       (Lean side of `tori.twisted_form_of_lattice`).
 
@@ -511,11 +517,12 @@ bijection, and rank-one classification. Links: every theorem node lean-linked, r
 - [ ] Full faithfulness over k (Galois descent of morphisms +
       `diagHomEquiv` over E).
 - [ ] Essential surjectivity = M4 + M5.
-- [ ] The categorical statement: `ToriCat k E`, `LatticeCat Γ`,
-      `charLatticeFunctor` with Full/Faithful/EssSurj instances,
-      `toriClassification : (ToriCat k E)ᵒᵖ ≌ LatticeCat Γ`. Only
-      then does `f_tori_galois_module_classification` get its lean
-      block (its lean links were removed 2026-08-19 as premature).
+- [x] STATEMENT LAYER 2026-08-19: `TorusAlgCat`/`TorusCat`/
+      `LatticeCat`, `charLatticeFunctor` (data real, functor laws
+      sorry), Full/Faithful/EssSurj instances (sorry),
+      `toriClassification : (TorusCat k E)ᵒᵖ ≌ LatticeCat Γ` in
+      `Tori/Classification.lean`; `f_tori` node now carries its lean
+      block (alignment: pending until the proof pass).
 
 ### M7 — Corollaries and examples
 

@@ -11,14 +11,26 @@ uses:
 lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
+  - LanglandsLean.AlgebraicGroups.Tori.CharLattice
   declarations:
+  - Langlands.Tori.CharLattice
+  - Langlands.Tori.charGalAct
+  - Langlands.Tori.CocharLattice
+  - Langlands.Tori.charPairing
+  - Langlands.Tori.charPairing_perfect
   - Langlands.Tori.SchemeCharacterGroup
   - Langlands.Tori.gmGrp
   - Langlands.Tori.CharacterGroup
-  - Langlands.Tori.coCharacterGroup
+  - Langlands.Tori.CocharacterGroup
   - Langlands.Tori.diagCharEquiv
   - Langlands.Tori.diagCocharEquiv
   - Langlands.Tori.diagGroupLikeEquiv
+  - Langlands.Tori.characterGroup_inv_mul_cancel
+  - Langlands.Tori.comul_comp_antipode
+  - Langlands.Tori.diagGrp
+  - Langlands.Tori.gmAntipodeBialgHom
+  - Langlands.Tori.groupLikeSingle
+  - Langlands.Tori.zmultiplesAddEquiv
 verification:
   definition: accepted
   proof: not_applicable

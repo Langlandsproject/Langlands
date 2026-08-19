@@ -12,11 +12,14 @@ uses:
 lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Forms.GaloisDescent
+  - LanglandsLean.AlgebraicGroups.Forms.GaloisDescentStatements
   declarations:
   - Langlands.Forms.span_fixedPoints_eq_top
   - Langlands.Tori.span_twistedGroupAlgebra_eq_top
   - Langlands.Forms.span_galEval_eq_top
   - Langlands.Forms.linearIndependent_algEquiv
+  - Langlands.Forms.descentMap_bijective
+  - Langlands.Forms.linearIndependent_fixedPoints
 verification:
   statement: accepted
   proof: accepted

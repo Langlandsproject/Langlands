@@ -10,6 +10,12 @@ uses:
 - tori.algebraic_tori
 - tori.torus_definition
 - tori.character_and_cocharacter_lattices
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.CharLattice
+  declarations:
+  - Langlands.Tori.IsAnisotropicAlgebra
+  - Langlands.Tori.torusSplitRank_eq_zero_iff
 source:
   spans:
   - artifact: kaletha-prasad-bruhat-tits
@@ -19,6 +25,7 @@ source:
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Are the character-side and cocharacter-side formulations both recorded, with their equivalence proved rather than assumed?"

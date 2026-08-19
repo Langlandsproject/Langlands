@@ -19,6 +19,26 @@ uses:
 - tori.classification_hom_level
 - tori.characters_as_group_like_elements
 - tori.anisotropic_torus
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.CharLattice
+  - LanglandsLean.AlgebraicGroups.Tori.Classification
+  - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
+  - LanglandsLean.AlgebraicGroups.Tori.TwistedGroupAlgebra
+  declarations:
+  - Langlands.Tori.charRep
+  - Langlands.Tori.TorusAlgCat
+  - Langlands.Tori.TorusCat
+  - Langlands.Tori.LatticeCat
+  - Langlands.Tori.charLatticeRep
+  - Langlands.Tori.charLatticeFunctor
+  - Langlands.Tori.charLatticeFunctor_faithful
+  - Langlands.Tori.charLatticeFunctor_full
+  - Langlands.Tori.charLatticeFunctor_essSurj
+  - Langlands.Tori.toriClassification
+  - Langlands.Tori.diagCharEquiv
+  - Langlands.Tori.diag_bialgEquiv_iff_addEquiv
+  - Langlands.Tori.twistedGroupAlgebra
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -32,6 +52,7 @@ source:
 verification:
   statement: accepted
   proof: accepted
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Does the classification use the separable Galois action and not assume the torus is split over F?"

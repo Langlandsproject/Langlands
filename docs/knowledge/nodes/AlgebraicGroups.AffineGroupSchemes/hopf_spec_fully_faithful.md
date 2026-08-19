@@ -8,8 +8,14 @@ topics:
 - AlgebraicGroups.AffineGroupSchemes
 uses:
 - affine_group_schemes.hopf_spec_functor
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
+  declarations:
+  - Langlands.Tori.hopfSpec_map_bijective
 verification:
   statement: accepted
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the statement formulated for an arbitrary commutative base ring \\(R\\)?"

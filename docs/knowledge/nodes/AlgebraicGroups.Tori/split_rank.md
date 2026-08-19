@@ -11,6 +11,15 @@ uses:
 - tori.character_and_cocharacter_lattices
 - tori.split_anisotropic_decomposition
 - tori.anisotropic_torus
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.CharLattice
+  declarations:
+  - Langlands.Tori.torusRank
+  - Langlands.Tori.torusSplitRank
+  - Langlands.Tori.torusSplitRank_le_torusRank
+  - Langlands.Tori.torusSplitRank_eq_torusRank_iff
+  - Langlands.Tori.torusSplitRank_eq_zero_iff
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -24,6 +33,7 @@ source:
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Are rank and split rank defined over an arbitrary field via the Galois module structure, with the equality of the two invariant-rank formulas justified?"

@@ -20,7 +20,7 @@ contravariant translation to coordinate Hopf algebras, with
 `O(𝔾ₘ) = R[ℤ]`:
 
 * `CharacterGroup R A := WithConv (R[ℤ] →ₐc[R] A)`,
-* `coCharacterGroup R A := WithConv (A →ₐc[R] R[ℤ])`,
+* `CocharacterGroup R A := WithConv (A →ₐc[R] R[ℤ])`,
 
 where `WithConv` is Mathlib's carrier for "this hom-set with the
 convolution product" — under `Spec`, convolution *is* pointwise
@@ -80,7 +80,7 @@ convolution structure requires `A` cocommutative — faithfully so:
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev coCharacterGroup (A : Type v) [Semiring A] [Bialgebra R A] : Type _ :=
+abbrev CocharacterGroup (A : Type v) [Semiring A] [Bialgebra R A] : Type _ :=
   WithConv (A →ₐc[R] (AddMonoidAlgebra R ℤ))
 
 variable (M N : Type v) [AddCommGroup M] [AddCommGroup N]
@@ -127,7 +127,7 @@ noncomputable def diagHomEquiv :
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def diagCocharEquiv :
-    (M →+ ℤ) ≃ coCharacterGroup R (AddMonoidAlgebra R M) :=
+    (M →+ ℤ) ≃ CocharacterGroup R (AddMonoidAlgebra R M) :=
   (AddMonoidAlgebra.mapDomainBialgHomEquiv).trans (WithConv.equiv _).symm
 
 /-- **Split classification theorem** (isomorphism level of Cartier
@@ -305,7 +305,7 @@ noncomputable instance (A : Type v) [CommSemiring A] [Bialgebra R A] :
 /-- The group axiom for characters (statement; proof: M0 pass via
 injective transfer along `toAlgHom` into Mathlib's convolution
 group). -/
-theorem CharacterGroup_inv_mul_cancel
+theorem characterGroup_inv_mul_cancel
     (A : Type v) [CommSemiring A] [Bialgebra R A]
     (φ : CharacterGroup R A) : φ⁻¹ * φ = 1 := by
   sorry

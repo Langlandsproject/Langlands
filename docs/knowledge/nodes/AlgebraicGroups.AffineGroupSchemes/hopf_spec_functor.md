@@ -28,6 +28,7 @@ lean:
   - Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsPresheafGrp
   - Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsPresheafGrpMap
   - Langlands.AlgebraicGeometry.HopfSpecFunctor.pointsRepresentabilityGrp
+  - Langlands.AlgebraicGeometry.HopfSpecFunctor.algSpec_obj_hom_eq
 verification:
   definition: accepted
   proof: not_applicable

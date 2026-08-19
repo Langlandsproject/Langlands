@@ -16,6 +16,13 @@ lean:
   - Langlands.Tori.diagCharEquiv
   - Langlands.Tori.diagHomEquiv
   - Langlands.Tori.diag_bialgEquiv_iff_addEquiv
+  - Langlands.Tori.characterGroup_inv_mul_cancel
+  - Langlands.Tori.comul_comp_antipode
+  - Langlands.Tori.diagGrp
+  - Langlands.Tori.gmAntipodeBialgHom
+  - Langlands.Tori.gmGrp
+  - Langlands.Tori.groupLikeSingle
+  - Langlands.Tori.zmultiplesAddEquiv
 source:
   spans:
   - artifact: springer-linear-algebraic-groups

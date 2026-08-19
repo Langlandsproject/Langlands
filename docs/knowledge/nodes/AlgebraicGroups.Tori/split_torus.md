@@ -12,9 +12,13 @@ uses:
 lean:
   modules:
   - LanglandsLean.AlgebraicGroups.Tori.SplitTorus
+  - LanglandsLean.AlgebraicGroups.Tori.Torus
   declarations:
   - Langlands.Tori.splitTorusOver
   - Langlands.Tori.SplitTorus
+  - Langlands.Tori.IsSplitTorusAlgebra
+  - Langlands.Tori.isTorusAlgebra_addMonoidAlgebra
+  - Langlands.Tori.IsSplitTorusAlgebra.isTorusAlgebra
 source:
   spans:
   - artifact: springer-linear-algebraic-groups

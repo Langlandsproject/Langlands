@@ -17,6 +17,7 @@ lean:
   - LanglandsLean.AlgebraicGroups.Tori.CharacterGroup
   declarations:
   - Langlands.Tori.diagGroupLikeEquiv
+  - Langlands.Tori.schemeCharacter_diag_equiv
 verification:
   statement: accepted
   proof: accepted

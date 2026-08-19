@@ -16,6 +16,7 @@ lean:
   - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup.hopfAlg
   - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup
   - Langlands.AlgebraicGeometry.Examples.multiplicativeGroup.instGrpObj
+  - Langlands.AlgebraicGeometry.Examples.Gm
 verification:
   definition: accepted
   proof: not_applicable

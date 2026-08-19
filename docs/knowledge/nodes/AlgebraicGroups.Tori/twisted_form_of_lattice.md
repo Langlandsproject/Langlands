@@ -13,6 +13,11 @@ uses:
 - tori.torus_definition
 - tori.split_torus
 - tori.characters_as_group_like_elements
+lean:
+  modules:
+  - LanglandsLean.AlgebraicGroups.Tori.Classification
+  declarations:
+  - Langlands.Tori.exists_charLatticeRep_iso
 source:
   spans:
   - artifact: springer-linear-algebraic-groups
@@ -26,6 +31,7 @@ source:
 verification:
   definition: accepted
   proof: not_applicable
+  alignment: pending
 generality:
   reviewed: true
   prompt: "Is the construction stated for an arbitrary finite Galois extension and an arbitrary finite free lattice with Gamma-action, without hypotheses on the characteristic or on the action?"

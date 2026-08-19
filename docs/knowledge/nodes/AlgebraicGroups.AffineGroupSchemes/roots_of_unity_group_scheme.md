@@ -17,6 +17,7 @@ lean:
   - Langlands.AlgebraicGeometry.Examples.muN.hopfAlg
   - Langlands.AlgebraicGeometry.Examples.muN
   - Langlands.AlgebraicGeometry.Examples.muN.instGrpObj
+  - Langlands.AlgebraicGeometry.Examples.MuN
 verification:
   definition: accepted
   proof: not_applicable
