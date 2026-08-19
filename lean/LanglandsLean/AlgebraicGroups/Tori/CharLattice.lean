@@ -39,11 +39,10 @@ open Bialgebra Coalgebra HopfAlgebra WithConv
 
 namespace Langlands.Tori
 
-universe u v
 
 /-! ### The character lattice -/
 
-variable (R : Type u) [CommRing R] [IsDomain R]
+variable (R : Type*) [CommRing R] [IsDomain R]
 
 /-- **The character lattice** `X^*(Spec A)`, working form: the
 coordinate presentation `HopfCharacterGroup` of the character group,
@@ -54,13 +53,13 @@ identification is the (M0) bridge.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev CharLattice (A : Type v) [CommSemiring A] [Bialgebra R A] : Type _ :=
+abbrev CharLattice (A : Type*) [CommSemiring A] [Bialgebra R A] :=
   Additive (HopfCharacterGroup R A)
 
 /-! ### The Galois action: conjugation -/
 
-variable (k E : Type u) [Field k] [Field E] [Algebra k E]
-variable (A B : Type u) [CommRing A] [HopfAlgebra k A] [CommRing B] [HopfAlgebra k B]
+variable (k E : Type*) [Field k] [Field E] [Algebra k E]
+variable (A B : Type*) [CommRing A] [HopfAlgebra k A] [CommRing B] [HopfAlgebra k B]
 
 /-- The semilinear Galois action on the base change: `γ ⊗ 1` as a
 `k`-algebra automorphism of `E ⊗[k] A`. -/

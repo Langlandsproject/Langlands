@@ -19,10 +19,9 @@ open scoped TensorProduct
 
 namespace Langlands.Tori
 
-universe u
 
-variable (k E : Type u) [Field k] [Field E] [Algebra k E]
-variable (A : Type u) [CommRing A] [HopfAlgebra k A]
+variable (k E : Type*) [Field k] [Field E] [Algebra k E]
+variable (A : Type*) [CommRing A] [HopfAlgebra k A]
 
 /-- **The rank of a torus**: the `ℤ`-rank of its character lattice.
 

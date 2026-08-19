@@ -41,7 +41,6 @@ open Langlands.ReductiveGroups
 
 namespace Langlands.Tori
 
-universe u
 
 
 
@@ -49,8 +48,8 @@ universe u
 
 section Torus
 
-variable (k E : Type u) [Field k] [Field E] [Algebra k E]
-variable (A : Type u) [CommRing A] [HopfAlgebra k A]
+variable (k E : Type*) [Field k] [Field E] [Algebra k E]
+variable (A : Type*) [CommRing A] [HopfAlgebra k A]
 
 /-- **Torus split by `E`** (D-a algebra form, D-b finite level): a
 torus is a **special diagonalizable group** — the base change
@@ -100,7 +99,7 @@ canonical evaluation).
 Blueprint: tori.split_torus
 -/
 theorem isSplitTorusAlgebra_addMonoidAlgebra
-    (M : Type u) [AddCommGroup M] [Module.Free ℤ M] [Module.Finite ℤ M] :
+    (M : Type*) [AddCommGroup M] [Module.Free ℤ M] [Module.Finite ℤ M] :
     IsSplitTorusAlgebra k (AddMonoidAlgebra k M) := by
   sorry
 
@@ -110,7 +109,7 @@ case (statement; proof: M4, base change of group algebras).
 Blueprint: tori.split_torus
 -/
 theorem isTorusAlgebra_addMonoidAlgebra
-    (M : Type u) [AddCommGroup M] [Module.Free ℤ M] [Module.Finite ℤ M] :
+    (M : Type*) [AddCommGroup M] [Module.Free ℤ M] [Module.Finite ℤ M] :
     IsTorusAlgebra k E (AddMonoidAlgebra k M) := by
   sorry
 
@@ -120,7 +119,7 @@ base change the canonical decomposition).
 Blueprint: tori.split_torus
 -/
 theorem IsSplitTorusAlgebra.isTorusAlgebra
-    {A : Type u} [CommRing A] [HopfAlgebra k A]
+    {A : Type*} [CommRing A] [HopfAlgebra k A]
     [IsSplitTorusAlgebra k A] : IsTorusAlgebra k E A := by
   sorry
 

@@ -30,14 +30,13 @@ open Langlands.Tori
 
 namespace Langlands.ReductiveGroups
 
-universe u v
 
-variable (R : Type u) [CommRing R]
+variable (R : Type*) [CommRing R]
 
 section Cartier
 
 variable [IsDomain R]
-variable (M N : Type v) [AddCommGroup M] [AddCommGroup N]
+variable (M N : Type*) [AddCommGroup M] [AddCommGroup N]
 
 /-- **Cartier duality, object level** (split case): the character
 group of `D(M)` is exactly the lattice `M`. The character attached to
@@ -111,7 +110,7 @@ end Cartier
 
 section Diagonalizable
 
-variable (A : Type u) [CommRing A] [HopfAlgebra R A]
+variable (A : Type*) [CommRing A] [HopfAlgebra R A]
 
 /-- **The canonical evaluation of characters**: `R[X(A)] → A`,
 `e^χ ↦ χ(t)` — the group algebra of the character group

@@ -61,7 +61,7 @@ namespace Langlands.Tori
 
 universe u v
 
-variable (R : Type u) [CommRing R]
+variable (R : Type*) [CommRing R]
 
 
 /-! ### The definition: characters are homomorphisms of algebraic groups
@@ -123,7 +123,7 @@ theorem characterGroup_diag_equiv (M : Type u) [AddCommGroup M]
 
 end SchemeLevel
 
-variable (R : Type u) [CommRing R]
+variable (R : Type*) [CommRing R]
 
 /-! ### The coordinate presentation (working form) -/
 
@@ -137,7 +137,7 @@ multiplication of characters
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev HopfCharacterGroup (A : Type v) [CommSemiring A] [Bialgebra R A] : Type _ :=
+abbrev HopfCharacterGroup (A : Type*) [CommSemiring A] [Bialgebra R A] :=
   WithConv (LaurentPolynomial R →ₐc[R] A)
 
 /-- The **coordinate presentation** of the cocharacter group:
@@ -147,10 +147,10 @@ so: `X_*(G)` is a group precisely because `G` is commutative.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev HopfCocharacterGroup (A : Type v) [Semiring A] [Bialgebra R A] : Type _ :=
+abbrev HopfCocharacterGroup (A : Type*) [Semiring A] [Bialgebra R A] :=
   WithConv (A →ₐc[R] LaurentPolynomial R)
 
-variable (M N : Type v) [AddCommGroup M] [AddCommGroup N]
+variable (M N : Type*) [AddCommGroup M] [AddCommGroup N]
 
 /-- `zmultiplesHom` upgraded to an additive equivalence
 `M ≃+ (ℤ →+ M)`, `m ↦ (n ↦ n • m)`. -/
@@ -239,7 +239,7 @@ noncomputable def gmAntipodeBialgHom :
 
 /-- Inversion of a character: precompose with the antipode of `𝔾ₘ`.
 Under `Spec`, this is `χ ↦ χ⁻¹` pointwise. -/
-noncomputable instance (A : Type v) [CommSemiring A] [Bialgebra R A] :
+noncomputable instance (A : Type*) [CommSemiring A] [Bialgebra R A] :
     Inv (HopfCharacterGroup R A) :=
   ⟨fun φ => toConv (φ.ofConv.comp gmAntipodeBialgHom)⟩
 
@@ -262,7 +262,7 @@ lemma gmAntipodeBialgHom_toAlgHom :
 `toAlgHom` into Mathlib's convolution group of algebra
 homomorphisms. -/
 theorem characterGroup_inv_mul_cancel
-    (A : Type v) [CommSemiring A] [Bialgebra R A]
+    (A : Type*) [CommSemiring A] [Bialgebra R A]
     (φ : HopfCharacterGroup R A) : φ⁻¹ * φ = 1 := by
   have hΨ : Function.Injective
       (fun f : HopfCharacterGroup R A => toConv f.ofConv.toAlgHom) := by
@@ -287,7 +287,7 @@ theorem characterGroup_inv_mul_cancel
 /-- **The character group is a group**: convolution product, inverse
 by the antipode of `𝔾ₘ` (`characterGroup_inv_mul_cancel` carries the
 knowledge-base link). -/
-noncomputable instance (A : Type v) [CommSemiring A] [Bialgebra R A] :
+noncomputable instance (A : Type*) [CommSemiring A] [Bialgebra R A] :
     CommGroup (HopfCharacterGroup R A) where
   __ := (inferInstance : CommMonoid (HopfCharacterGroup R A))
   inv := Inv.inv
@@ -314,7 +314,7 @@ theorem convMul_apply_of_isGroupLikeElem
 /-- Composition with a Hopf-algebra isomorphism of coordinate rings
 is an isomorphism of character groups — functoriality of `X^*` in
 isomorphisms. -/
-noncomputable def charGroupCongr {A₁ A₂ : Type v}
+noncomputable def charGroupCongr {A₁ : Type*} {A₂ : Type*}
     [CommSemiring A₁] [Bialgebra R A₁] [CommSemiring A₂] [Bialgebra R A₂]
     (e : A₁ ≃ₐc[R] A₂) : HopfCharacterGroup R A₁ ≃* HopfCharacterGroup R A₂ where
   toFun χ := toConv ((e : A₁ →ₐc[R] A₂).comp χ.ofConv)
@@ -334,7 +334,7 @@ cocommutative Hopf algebra (statement; proof: M0 pass — this is the
 lemma Mathlib lacks; `counit_antipode` is the counit-side
 counterpart). -/
 theorem comul_comp_antipode
-    (A : Type v) [CommRing A] [HopfAlgebra R A] [Coalgebra.IsCocomm R A] :
+    (A : Type*) [CommRing A] [HopfAlgebra R A] [Coalgebra.IsCocomm R A] :
     (Coalgebra.comul (R := R) (A := A)) ∘ₗ (HopfAlgebra.antipode R) =
       (TensorProduct.map (HopfAlgebra.antipode R) (HopfAlgebra.antipode R))
         ∘ₗ Coalgebra.comul := by

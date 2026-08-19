@@ -33,20 +33,20 @@ open Langlands.ReductiveGroups
 
 namespace Langlands.Tori
 
-universe u
 
-variable (k E : Type u) [Field k] [Field E] [Algebra k E]
-variable (A : Type u) [CommRing A] [HopfAlgebra k A]
+variable (k E : Type*) [Field k] [Field E] [Algebra k E]
+variable (A : Type*) [CommRing A] [HopfAlgebra k A]
 
 /-- Computation of the character lattice from a splitting
 isomorphism: `X^*` of a torus split as `E[M]` is `M`, by composing
 with the isomorphism (`charGroupCongr`) and Cartier duality on the
 split side (`diagCharEquiv`). -/
-theorem nonempty_charLattice_addEquiv (M : Type u) [AddCommGroup M]
+theorem nonempty_charLattice_addEquiv (M : Type*) [AddCommGroup M]
     (e : (E ⊗[k] A) ≃ₐc[E] AddMonoidAlgebra E M) :
     Nonempty (CharLattice E (E ⊗[k] A) ≃+ M) :=
   ⟨(MulEquiv.toAdditive
-      ((charGroupCongr e).trans (diagCharEquiv E M).symm)).trans
+      (((charGroupCongr e).trans (diagCharEquiv E M).symm :
+        HopfCharacterGroup E (E ⊗[k] A) ≃* Multiplicative M))).trans
     (AddEquiv.additiveMultiplicative M)⟩
 
 /-- A torus algebra is cocommutative after base change — tori are
@@ -65,7 +65,7 @@ Hopf-algebra homomorphisms `O(T_E) → O(𝔾ₘ)`, i.e. cocharacters
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
-abbrev CocharLattice : Type u := HopfCocharacterGroup E (E ⊗[k] A)
+abbrev CocharLattice := HopfCocharacterGroup E (E ⊗[k] A)
 
 /-- **The character–cocharacter pairing** `⟨χ, λ⟩`: the composite
 `χ ∘ λ : 𝔾ₘ → 𝔾ₘ` is `z ↦ z^n` for a unique integer `n` — extracted

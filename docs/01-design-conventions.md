@@ -264,6 +264,13 @@ formalized instead of the KB's definitional order).
 
 ## 8. Lean naming (Mathlib conventions, binding)
 
+- **Universe style**: binders are `Type*`; a named `universe u` is
+  declared only where a pin is genuinely forced (schemes and bundled
+  categories: `CommRingCat.{u}`, `Rep.{u}`, `Grp (Over _)`). Result
+  types of type-former `def`/`abbrev`s are not ascribed (` :=`, no
+  `: Type _`); in general a `def`'s result type is written only when
+  it carries information the body does not (owner directive,
+  2026-08-19).
 - **Variable names follow Mathlib**: `R S k E A B M N γ δ`. A
   bundled category variable keeps the plain letter in its own
   `section` (`variable (R : CommRingCat.{u})`), never an invented
