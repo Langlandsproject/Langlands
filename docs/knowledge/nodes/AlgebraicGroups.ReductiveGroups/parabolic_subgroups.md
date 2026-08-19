@@ -91,6 +91,7 @@ depending on the dimensions.
 ## Geometry of the flag variety
 
 The variety \(G/P\) is:
+
 - **projective** and **smooth**;
 - **rational** (in fact built from \(\mathbb{A}^1\)'s via Bruhat
   cells);

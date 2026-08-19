@@ -57,6 +57,7 @@ fibre \(G\) (the **parahoric group scheme** of \(F\)).
 | General facet | **Standard parahoric** | between Iwahori and hyperspecial |
 
 For \(G = \mathrm{SL}_2(\mathbb{Q}_p)\):
+
 - Iwahori \(I\) = matrices that are upper-triangular mod \(p\);
 - Hyperspecial \(K_0 = \mathrm{SL}_2(\mathbb{Z}_p)\).
 

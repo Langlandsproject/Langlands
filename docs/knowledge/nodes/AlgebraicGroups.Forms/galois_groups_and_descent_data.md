@@ -35,6 +35,7 @@ group).
 
 For a category of "objects with field of definition" (e.g.\ vector
 spaces, algebras, varieties, group schemes):
+
 - \(\mathcal{C}(k)\) = \(k\)-objects;
 - \(\mathcal{C}(\bar k)\) = \(\bar k\)-objects, with \(\Gamma\)-action.
 
@@ -101,6 +102,7 @@ the new \(\Gamma\)-action.
 
 For a 1-cocycle \(c : \Gamma \to \mathrm{PGL}_n(\bar k)\) corresponding
 to a central simple \(k\)-algebra \(D\) of degree \(n\):
+
 - Descent datum: \(\phi_\sigma = \mathrm{conj}(c_\sigma)\).
 - \(k\)-form: \(D^\times\) (the algebraic group of units of \(D\)).
 - Original \(\bar k\)-form: \(D^\times \otimes \bar k = \mathrm{GL}_n(\bar k)\).
@@ -108,6 +110,7 @@ to a central simple \(k\)-algebra \(D\) of degree \(n\):
 ## Non-Galois descent (sketch)
 
 Galois descent extends to:
+
 - **fpqc descent**: faithfully flat quasi-compact (most general).
 - **fppf descent**: faithfully flat finite presentation.
 - **Étale descent**: cover by étale morphisms.

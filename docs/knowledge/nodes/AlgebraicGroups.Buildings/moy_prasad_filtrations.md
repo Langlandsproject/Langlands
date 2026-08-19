@@ -41,12 +41,14 @@ G(F)_{x, r} \;:=\; \langle T(F)_r, \;U_{\alpha, \alpha(x) + r} : \alpha \in \Phi
 \]
 
 where:
+
 - \(T(F)_r\) = the depth-\(r\) part of a maximal torus of \(G\)
   (typically \(T(F)_r = \{t \in T(\mathcal{O}_F) : t \equiv 1 \pmod {\pi^r}\}\));
 - \(U_{\alpha, \alpha(x) + r}\) = the level-\((\alpha(x) + r)\) part of
   the root subgroup \(U_\alpha\) (via the valued root datum filtration).
 
 Key features:
+
 - \(G(F)_{x, 0} = \mathcal{P}_x\), the **parahoric** subgroup
   associated to the facet containing \(x\).
 - \(G(F)_{x, 0^+} = \mathcal{P}_x^+\), the pro-unipotent radical of

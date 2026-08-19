@@ -41,6 +41,7 @@ Equivalently: \(c_{ij}\) is the integer such that the reflection
 \(s_j\) acts on \(\alpha_i\) by \(s_j(\alpha_i) = \alpha_i - c_{ij} \alpha_j\).
 
 Properties:
+
 - \(c_{ii} = 2\) for all \(i\);
 - \(c_{ij} \in \{0, -1, -2, -3\}\) for \(i \ne j\);
 - \(c_{ij} = 0 \iff c_{ji} = 0\) (orthogonality is symmetric);
@@ -116,6 +117,7 @@ with one extra vertex attached to the third from one end.
 ## Duality on diagrams
 
 The **dual diagram** swaps:
+
 - \(B_n \leftrightarrow C_n\) (arrow reversal in the diagram);
 - \(F_4\) is self-dual under arrow reversal (sends \(F_4\) to itself
   via the central symmetry).

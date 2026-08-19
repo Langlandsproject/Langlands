@@ -113,6 +113,7 @@ root system — it also inverts the lattice gap (sc ↔ ad).
 ## Geometric interpretation
 
 In the geometric setting:
+
 - \(\Phi\) = weights of \(T\) acting on \(\operatorname{Lie}(G)\);
 - \(\Phi^\vee\) = cocharacters arising from \(\mathfrak{sl}_2\)-triples.
 

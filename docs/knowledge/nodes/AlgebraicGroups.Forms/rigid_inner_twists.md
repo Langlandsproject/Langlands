@@ -112,6 +112,7 @@ identifying rigid inner twists with basic \(\sigma\)-conjugacy classes
 (modulo central character data).
 
 This gives a uniform framework comparing:
+
 - Local Langlands (parameters into \({}^L G\));
 - Inner forms (\(H^1(F, G_{\mathrm{ad}})\));
 - Rigid inner twists (\(H^1(F, \mathcal{E}_G)\));

@@ -80,6 +80,7 @@ The set of all nilpotent elements is the **nilpotent cone**:
 \]
 
 \(\mathcal{N}\) is:
+
 - a closed cone (closed under scalar multiplication);
 - an algebraic variety, irreducible for semisimple \(\mathfrak{g}\);
 - of dimension \(\dim \mathfrak{g} - \mathrm{rank}\, \mathfrak{g}\);

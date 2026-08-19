@@ -48,6 +48,7 @@ dual) group over $\mathbb{F}_q$ with dual Frobenius $F^*$.
 ## Pairs $(T, \theta)$
 
 A **character datum** is a pair $(T, \theta)$ where:
+
 - $T \subset G$ is an $F$-stable maximal torus.
 - $\theta : T^F \to \mathbb{C}^\times$ is a character of the finite group $T^F = T(\mathbb{F}_q)$.
 

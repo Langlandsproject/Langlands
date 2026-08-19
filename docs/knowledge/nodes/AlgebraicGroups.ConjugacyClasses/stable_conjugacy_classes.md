@@ -78,6 +78,7 @@ This finite set measures the failure of Hilbert 90 for the torus $T$.
 ## Role in endoscopy
 
 **Endoscopic groups** $H$ of $G$ are defined so that:
+
 - Stable conjugacy classes of $H(F)$ map to stable conjugacy classes of $G(F)$.
 - The **transfer** of orbital integrals from $G$ to $H$ (or vice versa) respects
   stable conjugacy classes.

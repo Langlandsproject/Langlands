@@ -42,6 +42,7 @@ closed subgroup of \(G\); it represents the functor
 \(B \mapsto \ker(G(B) \to G'(B))\).
 
 **Examples.**
+
 - \(\ker(\det : \operatorname{GL}_n \to \mathbb{G}_m) = \operatorname{SL}_n\).
 - \(\ker((-)^n : \mathbb{G}_m \to \mathbb{G}_m) = \mu_n\).
 - \(\ker(\text{Frobenius}) = \) infinitesimal group schemes in
@@ -56,6 +57,7 @@ factorisation respects the group structure, which is automatic for
 group morphisms).
 
 Subtleties:
+
 - The set-theoretic image (the image on points) may not be closed even
   for finite-type morphisms; the scheme-theoretic image is the closure.
 - Over an algebraically closed field of characteristic zero, image

@@ -108,6 +108,7 @@ corresponds to an **inclusion of cocharacter lattices**
 to a **surjection of character lattices** \(X^*(T) \twoheadrightarrow X^*(T')\).
 
 Specifically:
+
 - \(X_*(T) / X_*(T')\) is the kernel \(\ker(G \to G')\) (as a
   finite group of multiplicative type).
 

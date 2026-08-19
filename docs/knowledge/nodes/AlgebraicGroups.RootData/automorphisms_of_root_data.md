@@ -139,6 +139,7 @@ conjugacy:
 
 For a root datum \((X, \Phi, X^\vee, \Phi^\vee)\), \(\mathrm{Aut}(\Psi)\)
 is a subgroup of \(\mathrm{Aut}(X)\), and is computable by:
+
 - Listing automorphisms of the \(\mathbb{Q}\)-vector space
   \(X \otimes \mathbb{Q}\) that preserve \(\Phi\);
 - Restricting to those preserving \(X\) and inducing an isomorphism on

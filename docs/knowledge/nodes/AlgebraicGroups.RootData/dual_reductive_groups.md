@@ -83,6 +83,7 @@ Z(\hat G) \;\cong\; X^*(\pi_1(G))^\vee, \qquad
 \]
 
 Concretely:
+
 - \(\mathrm{SL}_n\): \(Z = \mu_n\), \(\pi_1 = 0\) →
   \(\widehat{\mathrm{SL}_n} = \mathrm{PGL}_n\): \(Z = 1\), \(\pi_1 = \mathbb{Z}/n\).
 - \(\mathrm{GL}_n\): \(Z = \mathbb{G}_m\), \(\pi_1 = \mathbb{Z}\) →

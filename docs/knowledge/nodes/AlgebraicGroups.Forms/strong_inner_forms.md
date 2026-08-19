@@ -49,6 +49,7 @@ intertwining them.
 For a connected reductive \(G\) over an arbitrary field \(k\):
 
 A **strong inner form** is a triple \((G^*, \delta, \omega)\) where:
+
 - \(G^*\) is an inner form of \(G\);
 - \(\delta : G \to G^*\) is a specific inner-twisting isomorphism over
   \(\bar k\);

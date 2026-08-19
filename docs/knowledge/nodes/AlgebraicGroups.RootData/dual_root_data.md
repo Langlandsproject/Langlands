@@ -83,6 +83,7 @@ swap under duality:
   \(\hat G\).
 
 So:
+
 - \((\mathrm{SL}_n)^\vee = \mathrm{PGL}_n\) (sc ↔ ad);
 - \((\mathrm{SO}_{2n+1})^\vee = \mathrm{Sp}_{2n}\) (sc-of-B_n ↔ sc-of-C_n);
 - \(\mathrm{GL}_n^\vee = \mathrm{GL}_n\) (self-dual, but with the

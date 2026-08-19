@@ -80,6 +80,7 @@ be unramified.
 
 \(\mathcal{B}(\mathrm{SL}_2, \mathbb{Q}_p)\) is the \((p+1)\)-regular
 tree:
+
 - **Vertices**: 2 conjugacy classes (one for each hyperspecial class).
 - **Edges** = alcoves: 1 conjugacy class.
 - The two vertex classes give two conjugate copies of

@@ -55,6 +55,7 @@ the inclusion is a morphism in \(\mathsf{Grp}\)). Closed subgroups are
 the kernels of group-scheme morphisms.
 
 **Examples.**
+
 - \(\operatorname{SL}_n \subseteq \operatorname{GL}_n\) (kernel of det).
 - \(\mu_n \subseteq \mathbb{G}_m\) (kernel of \(n\)-th power).
 - Diagonal torus \(T \subseteq \operatorname{GL}_n\).

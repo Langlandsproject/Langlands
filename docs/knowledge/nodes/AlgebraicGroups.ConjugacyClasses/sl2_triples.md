@@ -44,6 +44,7 @@ Equivalently: \((e, h, f)\) defines a Lie algebra homomorphism
 \(\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \mapsto h\), etc.
 
 Conventions:
+
 - \(e\) (or \(X\)) is the **nilpositive** element;
 - \(f\) (or \(Y\)) is the **nilnegative** element;
 - \(h\) (or \(H\)) is the **neutral** (semisimple) element.

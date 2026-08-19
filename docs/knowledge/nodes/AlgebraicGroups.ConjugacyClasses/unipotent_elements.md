@@ -82,6 +82,7 @@ that exists under mild hypotheses on \(p\), e.g.\ \(p\) good for \(G\)).
 
 The unipotent elements in a **connected unipotent** algebraic group \(U\) fill
 all of \(U\). For a reductive \(G\), unipotent elements appear in:
+
 - Unipotent radicals \(R_u(P)\) of parabolic subgroups \(P\).
 - Root subgroups \(U_\alpha \cong \mathbb{G}_a\).
 - The big cell \(B^- \cdot B\) (open dense in \(G\)).

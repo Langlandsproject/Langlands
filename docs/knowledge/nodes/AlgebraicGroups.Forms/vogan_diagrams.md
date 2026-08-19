@@ -41,6 +41,7 @@ Dynkin diagram of type \(X_n\) together with:
    colouring.
 
 Constraints:
+
 - If \(\sigma = \mathrm{id}\) (trivial diagram automorphism): the
   Vogan diagram corresponds to an **inner real form**.
 - If \(\sigma \ne \mathrm{id}\): the Vogan diagram corresponds to an
@@ -83,6 +84,7 @@ for each real form; classification is done by tabulating these.
 ### \(\mathfrak{so}_{2n+1}\) (type \(B_n\))
 
 \(\mathrm{Out} = 1\), so only inner real forms:
+
 - \(\mathfrak{so}(2n+1)\) (compact, all white);
 - \(\mathfrak{so}(p, q)\) with \(p + q = 2n+1\) (mixed black/white).
 

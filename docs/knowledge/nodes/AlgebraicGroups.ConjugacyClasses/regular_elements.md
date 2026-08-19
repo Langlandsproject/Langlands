@@ -52,6 +52,7 @@ A semisimple element $s \in G$ is **regular semisimple** if $C_G(s)^\circ$ is
 a maximal torus (equivalently, $\alpha(s) \ne 1$ for all roots $\alpha$).
 
 **Properties:**
+
 - The set $G^{\mathrm{rs}}$ of regular semisimple elements is open dense in $G$.
 - $s$ is regular semisimple $\iff$ $s$ lies in a **unique** maximal torus.
 - Over an algebraically closed field, $G^{\mathrm{rs}}$ is the complement of

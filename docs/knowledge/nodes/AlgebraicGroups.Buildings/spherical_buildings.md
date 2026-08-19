@@ -44,6 +44,7 @@ For \(G\) a connected reductive group over a field \(k\) with Borel
 \(B\), maximal torus \(T \subseteq B\), normaliser \(N = N_G(T)\):
 
 The **spherical building of \(G\)** is the simplicial complex with:
+
 - **Vertices** = maximal proper parabolic subgroups of \(G(k)\);
 - **Simplices** = parabolic subgroups, ordered by reverse inclusion;
 - **Chambers** = Borel subgroups of \(G(k)\).
@@ -58,6 +59,7 @@ of maximal split tori.
 
 The spherical building of \(\mathrm{GL}_n(k)\) is the
 **flag complex** of \(k^n\):
+
 - Vertices = proper non-trivial subspaces of \(k^n\);
 - Simplices = flags \(V_1 \subsetneq V_2 \subsetneq \cdots \subsetneq V_r\);
 - Chambers = full flags \(V_1 \subsetneq \cdots \subsetneq V_{n-1}\).

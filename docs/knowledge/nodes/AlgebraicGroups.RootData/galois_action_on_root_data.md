@@ -41,6 +41,7 @@ defined.
 
 \(\Gamma\) acts on \(T_{\bar k}\) via its action on \(\bar k\), hence
 acts on:
+
 - the character lattice \(X^*(T_{\bar k})\);
 - the cocharacter lattice \(X_*(T_{\bar k})\);
 - the set of roots \(\Phi\) (preserving it as a subset of
@@ -69,6 +70,7 @@ General forms are quasi-split forms further twisted by a class in
 ## Inner vs.\ outer
 
 A form \(G' / k\) of \(G\) is:
+
 - **Inner**: \(\Gamma\) acts trivially on the based root datum of
   \(G'_{\bar k}\) — the form is twisted purely "internally" by
   \(G_{\mathrm{ad}}\)-cocycles.
@@ -123,6 +125,7 @@ defining the **L-group**:
 
 The combinatorial data of the Galois action plus the inner-form
 cocycle is encoded by a **Tits index**: a Dynkin diagram with:
+
 - \(\Gamma\)-orbits marked;
 - distinguished vertices (representing the \(k\)-rational simple
   roots);

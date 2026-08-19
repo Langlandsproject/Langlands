@@ -53,6 +53,7 @@ The **roots** are
 \]
 
 Properties:
+
 - \(\Phi\) is finite;
 - \(\dim \mathfrak{g}_\alpha = 1\) for each \(\alpha \in \Phi\);
 - \(\Phi = -\Phi\) (roots come in pairs \(\pm \alpha\));
@@ -111,6 +112,7 @@ For \(\alpha, -\alpha\):
 \(\Phi = \{\varepsilon_i - \varepsilon_j : i \ne j\}\).
 
 For \(\alpha = \varepsilon_i - \varepsilon_j\):
+
 - \(U_\alpha\) = matrices with single non-zero off-diagonal entry at
   position \((i, j)\), i.e.\ \(I + x E_{ij}\) for \(x \in k\).
 - \(\alpha^\vee\) = the cocharacter \(t \mapsto \mathrm{diag}(1, \ldots, t, \ldots, t^{-1}, \ldots, 1)\)
@@ -126,6 +128,7 @@ For \(\alpha = \varepsilon_i - \varepsilon_j\):
 
 For a morphism \(f : (G, T) \to (G', T')\) of reductive groups
 matching maximal tori:
+
 - \(f\) induces a map of character lattices \(X^*(T') \to X^*(T)\);
 - \(f\) maps \(U_\alpha\) to \(U'_{f^*(\alpha)}\) (compatibly with
   Steinberg relations).

@@ -168,6 +168,7 @@ over \(\mathbb{Z}\), smooth and flat, with geometrically connected fibres.
 ## Independence of choices
 
 The construction depends on:
+
 - The choice of Chevalley basis (sign conventions for structure
   constants \(N_{\alpha,\beta}\)): different choices give isomorphic
   groups.

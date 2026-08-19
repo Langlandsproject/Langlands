@@ -60,6 +60,7 @@ reflection representation, i.e.\ $V^w = 0$ where $V = X^*(T) \otimes \mathbb{R}$
 Equivalently, $w$ is not contained in any proper parabolic subgroup of $W$.
 
 Elliptic elements play a key role in:
+
 - The **elliptic representation theory** of $p$-adic groups (depth-zero
   supercuspidal representations).
 - The **elliptic pairing** on class functions: $(f, g)_{\mathrm{ell}} =

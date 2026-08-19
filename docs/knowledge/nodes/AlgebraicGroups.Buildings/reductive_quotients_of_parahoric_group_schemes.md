@@ -98,6 +98,7 @@ representations of \(G(F)\) at depth zero is in bijection with pairs:
 (\mathcal{F}, \pi)
 \]
 where:
+
 - \(\mathcal{F}\) is a facet of \(\mathcal{B}(G, F)\) modulo \(G(F)\)-action;
 - \(\pi\) is an irreducible **cuspidal** representation of
   \(\bar{\mathcal{G}}_\mathcal{F}^{\mathrm{red}}(\mathbb{F}_q)\).

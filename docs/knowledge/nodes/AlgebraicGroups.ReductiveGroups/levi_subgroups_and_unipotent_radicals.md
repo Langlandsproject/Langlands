@@ -39,6 +39,7 @@ unipotent radical, defined over \(\bar k\) and descending under
 suitable hypotheses).
 
 For a parabolic \(P\) inside a connected reductive \(G\):
+
 - \(R_u(P)\) is the unipotent radical of \(P\);
 - \(R_u(P)\) is a (split, geometrically) unipotent group;
 - the quotient \(P / R_u(P)\) is reductive.

@@ -89,6 +89,7 @@ to the central simple algebra \(D_{k/n} = D\) of degree \(n/d\) and
 invariant \(k\); the inner form is \(\mathrm{GL}_{d}(D)\).
 
 In particular:
+
 - \(s = 0\): split form \(\mathrm{GL}_n\) (trivial Brauer class).
 - \(s = k/n\) with \(\gcd(k, n) = 1\): "supersingular" class, inner
   form is \(\mathrm{SL}_1(D)\) for \(D\) a division algebra of degree

@@ -117,6 +117,7 @@ isomorphism) and a unique split form.
 
 A **Vogan diagram** is a Dynkin diagram with additional decorations
 encoding a real form:
+
 - Vertices coloured "compact" or "non-compact" (black/white circles);
 - Optional diagram automorphism (for outer real forms).
 

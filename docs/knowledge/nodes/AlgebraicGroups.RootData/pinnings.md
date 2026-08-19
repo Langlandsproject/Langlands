@@ -52,6 +52,7 @@ The triple \((G, T, B, \{X_\alpha\})\) is a **pinned reductive group**.
 
 A morphism of pinned groups is a homomorphism \(f : (G, T, B, \{X_\alpha\}) \to (G', T', B', \{X'_{\alpha'}\})\)
 such that:
+
 - \(f(T) \subseteq T'\);
 - \(f(B) \subseteq B'\);
 - \(f(X_\alpha) = X'_{\alpha'}\) under the induced map of simple roots.
@@ -105,6 +106,7 @@ cocycles.
 ### \(\mathrm{SL}_n\)
 
 A pinning consists of:
+
 - Diagonal maximal torus \(T\);
 - Upper-triangular Borel \(B\);
 - For each \(\alpha_i = \varepsilon_i - \varepsilon_{i+1}\), the root

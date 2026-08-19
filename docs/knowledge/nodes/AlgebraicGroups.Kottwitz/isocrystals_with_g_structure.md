@@ -40,6 +40,7 @@ Let \(F\) be a non-archimedean local field with residue field
 
 An **isocrystal** of dimension \(n\) over \(F\) is a pair \((V, F_V)\)
 where:
+
 - \(V\) is a finite-dimensional \(\breve F\)-vector space of dim \(n\);
 - \(F_V : V \to V\) is a \(\sigma\)-linear bijection.
 

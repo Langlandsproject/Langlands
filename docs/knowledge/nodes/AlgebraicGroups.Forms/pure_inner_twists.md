@@ -66,6 +66,7 @@ H^1(k, Z(G)) \;\to\; H^1(k, G) \;\to\; H^1(k, G_{\mathrm{ad}}) \;\to\; H^2(k, Z(
 \]
 
 So:
+
 - The map \(H^1(k, G) \to H^1(k, G_{\mathrm{ad}})\) has fibres
   parametrised by \(H^1(k, Z(G))\).
 - The image is the kernel of the boundary
@@ -90,6 +91,7 @@ inner forms.
 ## Example: Real \(\mathrm{SL}_2\)
 
 For \(G = \mathrm{SL}_2 / \mathbb{R}\):
+
 - \(Z(G) = \{\pm 1\}\);
 - \(H^1(\mathbb{R}, Z(G)) = \{\pm 1\}\);
 - \(H^1(\mathbb{R}, G) = \{\pm 1\}\) (split form \(\mathrm{SL}_2(\mathbb{R})\)

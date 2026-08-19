@@ -40,6 +40,7 @@ properly contained in any larger torus.
 
 **Theorem.** Let \(G\) be a connected linear algebraic group over an
 algebraically closed field \(k\). Then:
+
 1. \(G\) contains a maximal torus.
 2. All maximal tori of \(G\) are conjugate by elements of \(G(k)\).
 3. The dimension of any maximal torus is the same; this common

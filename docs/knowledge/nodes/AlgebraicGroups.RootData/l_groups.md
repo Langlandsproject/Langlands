@@ -106,6 +106,7 @@ homomorphism
 \varphi : W_F \times \mathrm{SL}_2(\mathbb{C}) \;\longrightarrow\; {}^L G
 \]
 satisfying:
+
 - \(\varphi\) commutes with the projection \({}^L G \to \Gamma\);
 - \(\varphi|_{W_F}\) is semisimple (image consists of semisimple
   elements);

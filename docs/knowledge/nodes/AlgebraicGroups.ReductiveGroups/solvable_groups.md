@@ -61,6 +61,7 @@ B \;=\; T \ltimes U,
 \]
 
 where:
+
 - \(U = R_u(B)\) is the **unipotent radical** (a connected unipotent
   normal subgroup);
 - \(T\) is a **maximal torus** of \(B\) (any two are \(U\)-conjugate);
@@ -111,6 +112,7 @@ maximal torus defined over \(k\); the obstruction is measured by
 Galois cohomology and class field theory.
 
 Examples:
+
 - **Norm one tori** \(R^{(1)}_{K/k}\mathbb{G}_m\) are connected
   solvable (in fact commutative) but not split unless \(K = k\).
 - Inner forms of Borel subgroups appear in the study of stable

@@ -53,6 +53,7 @@ The induced map on Lie algebras is \(\mathrm{ad} : \mathfrak{g} \to \operatornam
 ## Kernel and image
 
 For \(G\) connected:
+
 - \(\ker(\operatorname{Ad}) = Z(G)\), the centre of \(G\);
 - \(\operatorname{Ad}(G) = G_{\mathrm{ad}} := G/Z(G)\), the **adjoint
   group**.

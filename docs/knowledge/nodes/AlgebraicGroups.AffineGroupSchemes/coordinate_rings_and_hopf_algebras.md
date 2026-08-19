@@ -101,6 +101,7 @@ noncommutative geometry and lie outside the present scope.
 
 The commutativity of \(G\) (the group law) is independent of the
 commutativity of \(A\) (the algebra structure):
+
 - \(A\) commutative \(\iff\) \(G\) is affine over Spec(commutative ring).
 - \(G\) commutative as a group \(\iff\) \(A\) is **cocommutative**
   (\(\Delta\) symmetric).

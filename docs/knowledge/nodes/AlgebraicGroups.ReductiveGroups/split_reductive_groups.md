@@ -101,6 +101,7 @@ is automatically split. Thus the Chevalley classification over
 ## Role in the theory
 
 Split reductive groups are the starting point for:
+
 - **Chevalley group construction**: building \(G\) from a based root
   datum.
 - **Galois descent**: non-split forms are torsors for split groups.

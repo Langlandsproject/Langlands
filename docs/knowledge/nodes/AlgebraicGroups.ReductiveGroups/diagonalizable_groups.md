@@ -116,6 +116,7 @@ extension \(K/k\) such that \(G_K\) is split — the **splitting field**.
 ## Functoriality
 
 The functor \(M \mapsto D(M)\):
+
 - exact: short exact sequences in \(M\) correspond to short exact
   sequences in \(D(M)\);
 - compatible with base change: \(D(M)_S = D(M)_{\text{Spec } S}\).

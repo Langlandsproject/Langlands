@@ -114,6 +114,7 @@ the chosen facet.
 ## Smooth models and integral structure
 
 Parahoric group schemes are the prototypical examples of:
+
 - **Smooth integral models** of reductive groups (in the sense of
   Bruhat-Tits / Conrad-Gabber-Prasad).
 - **Néron models** in the additive case (Néron blowing up).

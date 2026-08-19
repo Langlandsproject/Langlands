@@ -134,6 +134,7 @@ The **Killing form** \(\kappa : \mathfrak{g} \otimes \mathfrak{g} \to k\):
 \]
 
 Properties:
+
 - Symmetric, \(G\)-invariant, bilinear;
 - Non-degenerate on a semisimple Lie algebra (Cartan's criterion);
 - Restricts to a positive-definite form on a compact real form;
@@ -142,6 +143,7 @@ Properties:
 ## Mathlib status
 
 `Mathlib.Algebra.Lie.*` has:
+
 - Lie algebras (general, semisimple, nilpotent, solvable);
 - Killing form;
 - Root systems via `Mathlib.LinearAlgebra.RootSystem`.

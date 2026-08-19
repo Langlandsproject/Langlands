@@ -69,6 +69,7 @@ is connected semisimple, with the same root datum as \(G\) modulo
 the abelianisation lattice.
 
 Examples:
+
 - \(\mathrm{GL}_n\): \(G_{\mathrm{der}} = \mathrm{SL}_n\).
 - \(\mathrm{Sp}_{2n}\): \(G_{\mathrm{der}} = \mathrm{Sp}_{2n}\) (already
   semisimple, perfect).
@@ -85,6 +86,7 @@ The **connected centre** \(Z(G)^\circ\) is a torus (the "central
 torus"). The component group \(Z(G)/Z(G)^\circ\) is finite.
 
 Examples:
+
 - \(Z(\mathrm{GL}_n) = \mathbb{G}_m\) (scalar matrices); connected.
 - \(Z(\mathrm{SL}_n) = \mu_n\); finite, not connected unless \(n = 1\).
 - \(Z(\mathrm{Sp}_{2n}) = \mu_2\); finite.
@@ -94,12 +96,14 @@ Examples:
 ## Adjoint group \(G_{\mathrm{ad}}\)
 
 \(G_{\mathrm{ad}} := G / Z(G)\), the **adjoint form**:
+
 - \(Z(G_{\mathrm{ad}}) = 1\) (trivial centre);
 - \(\pi_1(G_{\mathrm{ad}})\) is the dual of \(Z(G^{\mathrm{sc}})\);
 - The root datum of \(G_{\mathrm{ad}}\) has \(X^* = \mathbb{Z}\Phi\)
   (root lattice).
 
 Examples:
+
 - \(\mathrm{PGL}_n = \mathrm{GL}_n / \mathbb{G}_m = \mathrm{SL}_n / \mu_n\).
 - \(\mathrm{PSp}_{2n} = \mathrm{Sp}_{2n} / \mu_2\).
 - \(\mathrm{PSO}_n = \mathrm{SO}_n / Z(\mathrm{SO}_n)\).
@@ -119,6 +123,7 @@ canonical homomorphism \(G^{\mathrm{sc}} \to G\), but it need not be
 surjective onto \(G\).
 
 Examples:
+
 - \((\mathrm{PGL}_n)^{\mathrm{sc}} = \mathrm{SL}_n\).
 - \((\mathrm{SO}_n)^{\mathrm{sc}} = \mathrm{Spin}_n\).
 - \((\mathrm{PSp}_{2n})^{\mathrm{sc}} = \mathrm{Sp}_{2n}\).

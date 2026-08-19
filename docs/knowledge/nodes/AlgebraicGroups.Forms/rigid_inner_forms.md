@@ -35,6 +35,7 @@ parametrisation across inner forms is canonical.
 For an inner form \(G^*\) of a quasi-split \(G\), the L-packet of an
 L-parameter \(\varphi\) is conjecturally indexed by characters of the
 S-group \(S_\varphi\). However:
+
 - **Pure inner twists**: work when \(G\) has enough central
   cohomology to lift cocycles cleanly.
 - **General inner forms**: lifting can fail, and the parametrisation
@@ -79,6 +80,7 @@ local Langlands parametrisation.
 ### \(\mathrm{SL}_2\) over local field
 
 \(G = \mathrm{SL}_2 / \mathbb{Q}_p\):
+
 - \(Z(G) = \mu_2\); \(\pi_1(G) = 0\).
 - Pure inner twists = inner forms: just two (split and quaternionic).
 - Rigid inner forms: same two, but with explicit central data lifted
@@ -87,6 +89,7 @@ local Langlands parametrisation.
 ### \(\mathrm{PGL}_n\)
 
 \(G = \mathrm{PGL}_n / F\) (\(F\) a local field):
+
 - \(\pi_1(G) = \mathbb{Z}/n\); so non-pure cocycles exist.
 - Rigid inner forms strictly refine pure ones; the refinement
   parametrises **central characters** of L-packet members.
@@ -115,6 +118,7 @@ known, encompassing classical, pure, and rigid versions.
 ## Computational tools
 
 Cohomology of Galois gerbes is computable via:
+
 - **Tate-Nakayama** for tori (after rigidification);
 - **Borovoi abelianisation** for general reductive groups;
 - Explicit cocycle representatives for low-dimensional / classical

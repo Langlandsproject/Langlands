@@ -112,6 +112,7 @@ The proof proceeds in three steps:
 
 **The classification theorem is NOT formalized in Mathlib4.** As of mid-2026, the
 file `Mathlib.LinearAlgebra.RootSystem` contains:
+
 - The general theory of root pairings, root systems, and root data.
 - Finite root systems and their basic properties.
 - Partial Coxeter weight constraints.

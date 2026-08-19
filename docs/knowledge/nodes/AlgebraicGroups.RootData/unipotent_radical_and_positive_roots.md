@@ -72,6 +72,7 @@ B(\Phi^+) = T \cdot \prod_{\alpha \in \Phi^+} U_\alpha.
 \]
 
 This gives a bijection between:
+
 - Systems of positive roots \(\Phi^+ \subseteq \Phi\)
 - Borel subgroups containing \(T\)
 - Chambers in the apartment \(V = X^*(T) \otimes \mathbb{R}\)
@@ -86,6 +87,7 @@ For any subset \(I \subseteq \Delta\) of simple roots, the corresponding
 P_I = L_I \ltimes U_I,
 \]
 where:
+
 - \(L_I = \langle T, U_\alpha : \alpha \in \Phi_I \cup \Phi_{-I} \rangle\)
   is the **Levi subgroup** containing \(T\), with root system
   \(\Phi_I = \Phi \cap \mathbb{Z} I\),
@@ -93,6 +95,7 @@ where:
   is the **unipotent radical** of \(P_I\).
 
 **Special cases:**
+
 - \(I = \emptyset\): \(P_\emptyset = B\) (the Borel subgroup itself).
 - \(I = \Delta\): \(P_\Delta = G\) (the whole group).
 - \(|I| = |\Delta| - 1\): **minimal parabolics** (maximal proper parabolics).

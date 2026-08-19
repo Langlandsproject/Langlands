@@ -57,6 +57,7 @@ The **L-group of the cover** is the semi-direct product:
 {}^L \overline G \;:=\; \hat{\overline G}(\mathbb{C}) \;\rtimes\; W_F,
 \]
 where:
+
 - \(W_F\) is the Weil group of \(F\);
 - The action of \(W_F\) on \(\hat{\overline G}\) is the natural one
   coming from the Galois action on the rescaled root datum.

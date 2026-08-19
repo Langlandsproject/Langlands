@@ -116,6 +116,7 @@ Hilbert symbol \((2, \cdot)_2\).
 
 For a global BD extension, the local-global splitting structure is
 governed by:
+
 - Local Hilbert symbols at each place;
 - The global reciprocity (= product formula).
 

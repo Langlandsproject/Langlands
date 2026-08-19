@@ -37,6 +37,7 @@ ring perspective: \(\mathcal{O}(\mathrm{GL}(V)) = \mathrm{Sym}(V \otimes_R V^*)[
 ## Lean Formalization
 
 The Lean 4 formalization provides:
+
 - `GLV`: the group scheme object
 - `GLVSch`: the scheme underlying `GL(V)`
 

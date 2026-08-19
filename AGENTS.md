@@ -61,6 +61,7 @@ on the topic-level node via `uses:`.
 | Math authoring (delimiters, macros) | `~/mycodes/mdblueprint/docs/math-authoring.md` |
 | Per-topic mathematical conventions | the topic entry node (e.g. `tori.algebraic_tori`) |
 | Publishing | `docs/publishing.md`, `scripts/publish_md.py` |
+| Reusable review prompts (plan verification etc.) | `docs/superpowers/prompts/` |
 
 Read `docs/01-design-conventions.md` before creating, renaming, or
 linking anything.

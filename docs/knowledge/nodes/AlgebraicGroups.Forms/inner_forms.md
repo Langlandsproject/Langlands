@@ -74,6 +74,7 @@ The split form (\(D = M_n(k)\)) corresponds to the marked class
 ### Real forms of \(\mathrm{SL}_n\)
 
 \(H^1(\mathbb{R}, \mathrm{PGL}_n)\) gives:
+
 - the split form \(\mathrm{SL}_n(\mathbb{R})\);
 - the compact form \(\mathrm{SU}_n\);
 - intermediate forms \(\mathrm{SU}(p, q)\) for \(p + q = n\).
@@ -132,6 +133,7 @@ formalism).
 ## Role in endoscopy
 
 The Langlands–Shelstad transfer between inner forms uses:
+
 - transfer factors on \(G\) and \(G^c\);
 - character relations between L-packets on the two groups;
 - Kaletha's refinement: rigid inner twists make the transfer canonical.
