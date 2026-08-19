@@ -29,6 +29,8 @@ functor parts).
 Phase B-Y5: <https://github.com/Langlandsproject/Langlands/issues/21>
 -/
 
+set_option backward.isDefEq.respectTransparency false
+
 open AlgebraicGeometry CategoryTheory Opposite
 open Langlands.AlgebraicGeometry
 open scoped CategoryTheory.MonObj
@@ -279,7 +281,7 @@ noncomputable def pointsRepresentabilityGrp (A : Grp ((CommAlgCat R)ᵒᵖ)) :
         have hunop := congrArg Quiver.Hom.unop happ
         have := congrArg (fun (r : CommRingCat.of A.X.unop ⟶
             CommRingCat.of (Γ(T.left, ⊤) : CommRingCat)) => r.hom a) hunop
-        simpa using this }
+        exact this }
   homEquiv_comp := by
     intro X X' g f
     -- Naturality (same as `specRepresentability.homEquiv_comp`).

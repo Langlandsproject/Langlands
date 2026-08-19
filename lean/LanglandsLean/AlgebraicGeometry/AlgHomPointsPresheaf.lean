@@ -279,6 +279,7 @@ morphism `algebraMap R A`. -/
 noncomputable def specObjOver : Over (Scheme.Spec.obj (op R)) :=
   Over.mk (Scheme.Spec.map (op (CommRingCat.ofHom (algebraMap R A))))
 
+set_option backward.isDefEq.respectTransparency.types false in
 /-- Forward map: a morphism `T ⟶ specObjOver R A` in `Over (Spec R)`
 yields an `R`-algebra hom `A →ₐ[R] Γ(T.left, ⊤)` by applying `Γ`
 (i.e., `f.left.appTop`) and pre-composing with the `ΓSpec` iso.
@@ -336,6 +337,7 @@ noncomputable def homOverToAlgHom (T : Over (Scheme.Spec.obj (op R)))
         rfl
       exact key.symm }
 
+set_option backward.isDefEq.respectTransparency false in
 /-- Backward map: an R-algebra hom `φ : A →ₐ[R] Γ(T.left, ⊤)` yields a
 morphism `T ⟶ specObjOver R A` in `Over (Spec R)` via the `Γ ⊣ Spec`
 adjunction.
@@ -398,6 +400,7 @@ noncomputable def algHomToHomOver (T : Over (Scheme.Spec.obj (op R)))
       rw [hop]
       exact hTHom)
 
+set_option backward.isDefEq.respectTransparency false in
 /-- The representability witness: the forgetful image of
 `pointsPresheaf` is naturally isomorphic to `Hom_{Over Spec R}(-, Spec A)`,
 hence representable by `specObjOver R A`.
@@ -449,7 +452,7 @@ noncomputable def specRepresentability :
             CommRingCat.of (Γ(T.left, ⊤) : CommRingCat)) => r.hom a) hunop
         -- The LHS reduces to ((ΓSpecIso A).inv ≫ ...).hom a,
         -- the RHS to (CommRingCat.ofHom φ.toRingHom).hom a = φ a.
-        simpa using this }
+        simpa [homOverToAlgHom, algHomToHomOver] using this }
   homEquiv_comp := by
     intro X X' g f
     -- Naturality of the homEquiv: both sides reduce to the AlgHom

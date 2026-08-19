@@ -67,6 +67,7 @@ noncomputable example {M S T : Scheme} [M.Over S] {f : T ⟶ S}
     GrpObj (Scheme.asOver (Limits.pullback (M ↘ S) f) T) :=
   inferInstance
 
+set_option backward.isDefEq.respectTransparency.types false in
 /-- Base change of `IsAffineHom` along a pullback: stated as a local
 helper because Mathlib only provides the `MorphismProperty` form. -/
 private lemma isAffineHom_pullback_snd
