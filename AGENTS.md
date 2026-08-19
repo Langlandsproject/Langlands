@@ -123,7 +123,10 @@ Read `docs/01-design-conventions.md` before creating, renaming, or
 linking anything. **No commit touching KB or Lean without walking
 `docs/03-review-checklist.md`** — the rules exist because they were
 each violated once; the checklist is what makes them fire at the
-right moment.
+right moment. **After every change-set, audit it against the rules
+in this file and record the audit outcome (including findings that
+exceed the change-set, e.g. discovered duplication) in the commit
+message** (owner directive, 2026-08-19).
 
 ## Build and check commands
 
