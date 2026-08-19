@@ -480,6 +480,22 @@ Note: `finiteness_per_rank` landed as kind `theorem` statement-only
       so the lattice layer speaks in the definition, not the
       presentation.
 
+- [ ] **MIGRATION (found 2026-08-19 by the reuse audit): replace the
+      repo hopfSpec machinery with Mathlib's.** Mathlib
+      `AlgebraicGeometry/Group/Affine.lean` provides
+      `hopfSpec : (CommHopfAlgCat R)ᵒᵖ ⥤ Grp (Over (Spec R))` with
+      `instFull`/`instFaithful`/`fullyFaithful` PROVED — the repo's
+      Phase-B Yoneda chain (AlgHomPointsPresheaf, HopfSpecFunctor,
+      specObjOver/hopfSpecGrpObj, and the M0 sorry
+      `hopfSpec_map_bijective`) duplicates it. Plan: rebase
+      `multiplicativeGroup`/`DiagGroup`/`specObjOver` consumers onto
+      Mathlib's functor; `hopfSpec_map_bijective` and the
+      `nonempty_characterGroup_equiv_hopf` bridge then close by
+      reuse; retire the duplicated repo modules; update the KB nodes
+      (hopf_spec_functor, hopf_spec_fully_faithful,
+      hopf_spec_grpobj_via_yoneda, spec_representability…) to list
+      Mathlib declarations. Sized as its own session.
+
 ### M2 — Lean: complete linear descent
 
 - [ ] Independence half: k-linearly independent fixed vectors stay

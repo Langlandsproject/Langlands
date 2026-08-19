@@ -20,7 +20,6 @@ lean:
   - Langlands.Tori.CocharLattice
   - Langlands.Tori.charPairing
   - Langlands.Tori.charPairing_perfect
-  - Langlands.Tori.gmGrp
   - Langlands.Tori.CharacterGroup
   - Langlands.Tori.HopfCharacterGroup
   - Langlands.Tori.CocharacterGroup
@@ -30,7 +29,6 @@ lean:
   - Langlands.Tori.diagGroupLikeEquiv
   - Langlands.Tori.characterGroup_inv_mul_cancel
   - Langlands.Tori.comul_comp_antipode
-  - Langlands.Tori.diagGrp
   - Langlands.Tori.gmAntipodeBialgHom
   - Langlands.Tori.groupLikeSingle
   - Langlands.Tori.zmultiplesAddEquiv

@@ -75,34 +75,19 @@ Nothing is re-encoded and nothing is re-defined here. -/
 
 section SchemeLevel
 
-variable (Rc : CommRingCat.{u})
-
-/-- `𝔾ₘ` bundled as a group object of `Over (Spec R)` — reuses the
-key construction `multiplicativeGroup`; there is no second
-definition of `𝔾ₘ`. -/
-noncomputable def gmGrp : Grp (Over (Scheme.Spec.obj (op Rc))) :=
-  { X := multiplicativeGroup Rc
-    grp := multiplicativeGroup.instGrpObj Rc }
-
-/-- The affine algebraic group `Spec A` of a commutative Hopf
-algebra, bundled as a group object.
-
-Blueprint: affine_group_schemes.group_scheme_homomorphism
--/
-noncomputable def specGrp (A : Type u) [CommRing A] [HopfAlgebra Rc A] :
-    Grp (Over (Scheme.Spec.obj (op Rc))) :=
-  { X := specObjOver Rc A
-    grp := hopfSpecGrpObj Rc A }
+variable (R : CommRingCat.{u})
 
 /-- **The character group** `X^*(G) := Hom_grp(G, 𝔾ₘ)`: morphisms
 of algebraic groups into the multiplicative group — the textbook
-definition, verbatim, with `G` the subject.
+definition, verbatim, with the algebraic group `G` as the subject.
+`𝔾ₘ` is the key construction `multiplicativeGroup`, bundled by
+`Grp.mk`; no second name for it exists.
 
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def CharacterGroup
-    (G : Grp (Over (Scheme.Spec.obj (op Rc)))) : Type _ :=
-  G ⟶ gmGrp Rc
+    (G : Grp (Over (Scheme.Spec.obj (op R)))) : Type _ :=
+  G ⟶ Grp.mk (multiplicativeGroup R)
 
 /-- **The cocharacter group** `X_*(G) := Hom_grp(𝔾ₘ, G)` —
 symmetric to `CharacterGroup`.
@@ -110,13 +95,8 @@ symmetric to `CharacterGroup`.
 Blueprint: tori.character_and_cocharacter_lattices
 -/
 noncomputable def CocharacterGroup
-    (G : Grp (Over (Scheme.Spec.obj (op Rc)))) : Type _ :=
-  gmGrp Rc ⟶ G
-
-/-- `D(M)` bundled as a group object. -/
-noncomputable def diagGrp (M : Type u) [AddCommGroup M] :
-    Grp (Over (Scheme.Spec.obj (op Rc))) :=
-  specGrp Rc (AddMonoidAlgebra Rc M)
+    (G : Grp (Over (Scheme.Spec.obj (op R)))) : Type _ :=
+  Grp.mk (multiplicativeGroup R) ⟶ G
 
 /-- **Bridge, stage 1** (statement; proof: M0 pass): `hopfSpec` is
 fully faithful — algebraic-group homs between spectra correspond to
@@ -125,9 +105,9 @@ group-object morphisms on the algebra side.
 Blueprint: affine_group_schemes.hopf_spec_fully_faithful
 -/
 theorem hopfSpec_map_bijective
-    (A B : Grp ((CommAlgCat Rc)ᵒᵖ)) :
+    (A B : Grp ((CommAlgCat R)ᵒᵖ)) :
     Function.Bijective
-      (fun f : A ⟶ B => (Langlands.AlgebraicGeometry.hopfSpec Rc).map f) := by
+      (fun f : A ⟶ B => (Langlands.AlgebraicGeometry.hopfSpec R).map f) := by
   sorry
 
 /-- **Scheme-level Cartier duality for `D(M)`** (statement; proof: M0
@@ -137,11 +117,13 @@ pass, via the two bridge stages): algebraic-group homomorphisms
 Blueprint: tori.characters_as_group_like_elements
 -/
 theorem characterGroup_diag_equiv (M : Type u) [AddCommGroup M]
-    [IsDomain Rc] :
-    Nonempty (CharacterGroup Rc (diagGrp Rc M) ≃ Multiplicative M) := by
+    [IsDomain R] :
+    Nonempty (CharacterGroup R (Grp.mk (diagGroupOver R M)) ≃ Multiplicative M) := by
   sorry
 
 end SchemeLevel
+
+variable (R : Type u) [CommRing R]
 
 /-! ### The coordinate presentation (working form) -/
 
@@ -167,17 +149,6 @@ Blueprint: tori.character_and_cocharacter_lattices
 -/
 abbrev HopfCocharacterGroup (A : Type v) [Semiring A] [Bialgebra R A] : Type _ :=
   WithConv (A →ₐc[R] LaurentPolynomial R)
-
-/-- **The bridge** (statement; proof: M0 pass, from
-`hopfSpec_map_bijective`): the coordinate presentation coincides
-with the character group of algebraic-group homomorphisms.
-
-Blueprint: affine_group_schemes.group_scheme_homomorphism
--/
-theorem nonempty_characterGroup_equiv_hopf
-    (Rc : CommRingCat.{u}) (A : Type u) [CommRing A] [HopfAlgebra Rc A] :
-    Nonempty (CharacterGroup Rc (specGrp Rc A) ≃ HopfCharacterGroup Rc A) := by
-  sorry
 
 variable (M N : Type v) [AddCommGroup M] [AddCommGroup N]
 
@@ -370,5 +341,23 @@ theorem comul_comp_antipode
   sorry
 
 end Inversion
+
+section Bridge
+
+variable (R : CommRingCat.{u})
+
+/-- **The bridge** (statement; proof: M0 pass, from
+`hopfSpec_map_bijective`): the coordinate presentation coincides
+with the character group of algebraic-group homomorphisms.
+
+Blueprint: affine_group_schemes.group_scheme_homomorphism
+-/
+theorem nonempty_characterGroup_equiv_hopf
+    (A : Type u) [CommRing A] [HopfAlgebra R A] :
+    Nonempty (CharacterGroup R (Grp.mk (specObjOver R A)) ≃
+      HopfCharacterGroup R A) := by
+  sorry
+
+end Bridge
 
 end Langlands.Tori

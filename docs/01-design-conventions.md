@@ -264,6 +264,13 @@ formalized instead of the KB's definitional order).
 
 ## 8. Lean naming (Mathlib conventions, binding)
 
+- **Variable names follow Mathlib**: `R S k E A B M N γ δ`. A
+  bundled category variable keeps the plain letter in its own
+  `section` (`variable (R : CommRingCat.{u})`), never an invented
+  tag (`Rc` — burned 2026-08-19). If two flavors of the same ring
+  must coexist, scope them into separate sections instead of
+  renaming one.
+
 Follow the Mathlib naming conventions; the recurring cases:
 
 - **Types, type formers, structures, classes, `Prop`-valued

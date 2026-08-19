@@ -22,7 +22,7 @@ is the **Step 2** of the Yoneda construction of `hopfSpec`: combined
 with representability (Step 3), `GrpObj.ofRepresentableBy` then yields
 the group object structure on `Spec A` (Step 4).
 
-## Blueprint
+## Knowledge base
 
 `affine_group_schemes.hopf_spec_grpobj_via_yoneda` (Step 1).
 
@@ -498,5 +498,10 @@ via the Yoneda lemma from the convolution group on
 noncomputable def hopfSpecGrpObj : GrpObj (specObjOver R A) :=
   GrpObj.ofRepresentableBy (specObjOver R A) (pointsPresheaf R A)
     (specRepresentability R A)
+
+/-- `hopfSpecGrpObj` as an instance: `Spec A` of a Hopf algebra is a
+group object, canonically. -/
+noncomputable instance specObjOver.instGrpObj : GrpObj (specObjOver R A) :=
+  hopfSpecGrpObj R A
 
 end Langlands.AlgebraicGeometry.AlgHomPointsPresheaf
