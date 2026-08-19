@@ -132,12 +132,50 @@ lemma mem_twistedGroupAlgebra_iff {f : AddMonoidAlgebra E M} :
 `Tori/Speiser.lean`, which builds the general semilinear descent
 theorem `span_fixedPoints_eq_top` that Mathlib lacks. -/
 
+/-- With the trivial lattice action, the semilinear action reduces to
+the coefficient action. -/
+lemma semilinearAut_one_smulHom (γ : E ≃ₐ[k] E) (f : AddMonoidAlgebra E M) :
+    semilinearAut k E M 1 γ f = AddMonoidAlgebra.mapAlgEquiv k M γ f := by
+  have h0 : (latticeAut k E M 1 γ) = AddEquiv.refl M := by
+    ext m
+    simp [latticeAut]
+  rw [semilinearAut, h0, AddMonoidAlgebra.domCongr_refl]
+  rfl
+
 /-- For the **trivial** action on the lattice, the twisted group
-algebra is the image of `k[M]`: no twisting occurs. Tracked in
-`docs/TODO.md`. -/
+algebra is the image of `k[M]`: no twisting occurs. -/
 theorem twistedGroupAlgebra_trivial [IsGalois k E] [FiniteDimensional k E] :
     twistedGroupAlgebra k E M 1 =
       (AddMonoidAlgebra.mapAlgHom M (Algebra.ofId k E)).range := by
-  sorry
+  classical
+  ext f
+  constructor
+  · intro hf
+    -- every coefficient is Galois-fixed, hence comes from `k`
+    have hcoef : ∀ m : M, f.coeff m ∈ Set.range (algebraMap k E) := by
+      intro m
+      rw [IsGalois.mem_range_algebraMap_iff_fixed]
+      intro γ
+      have hγ := hf γ
+      rw [semilinearAut_one_smulHom] at hγ
+      calc γ (f.coeff m)
+          = (AddMonoidAlgebra.mapAlgEquiv k M γ f).coeff m := by simp
+        _ = f.coeff m := by rw [hγ]
+    -- assemble the preimage coefficientwise
+    set h : E → k := Function.invFun (algebraMap k E) with hh
+    have hinj : Function.Injective (algebraMap k E) := (algebraMap k E).injective
+    have h0 : h 0 = 0 := by
+      rw [hh, ← map_zero (algebraMap k E), Function.leftInverse_invFun hinj]
+    refine (AlgHom.mem_range _).mpr
+      ⟨AddMonoidAlgebra.ofCoeff (f.coeff.mapRange h h0), ?_⟩
+    ext m
+    rw [AddMonoidAlgebra.coeff_mapAlgHom]
+    show Algebra.ofId k E (Finsupp.mapRange h h0 f.coeff m) = f.coeff m
+    rw [Finsupp.mapRange_apply, Algebra.ofId_apply]
+    exact Function.invFun_eq (hcoef m)
+  · rintro ⟨g, rfl⟩ γ
+    rw [semilinearAut_one_smulHom]
+    ext m
+    simp [AddMonoidAlgebra.coeff_mapAlgHom]
 
 end Langlands.Tori
