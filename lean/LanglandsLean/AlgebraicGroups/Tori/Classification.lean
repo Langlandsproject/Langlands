@@ -115,7 +115,8 @@ noncomputable def charLatticeFunctor :
     ⟨Rep.ofHom
       { toLinearMap := (charLatticeMap k E f.hom.hom).toIntLinearMap
         isIntertwining' := fun γ => by
-          sorry }⟩ -- proof: M6 (equivariance = charLatticeMap_galAct)
+          ext x
+          exact charLatticeMap_galAct k E f.hom.hom γ x }⟩
   map_id A := by
     sorry -- proof: M6 (charLatticeMap of the identity)
   map_comp f g := by
