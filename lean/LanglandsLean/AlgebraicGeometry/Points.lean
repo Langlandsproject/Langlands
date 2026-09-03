@@ -1,5 +1,5 @@
 import LanglandsLean.AlgebraicGeometry.IsAlgebraicGroup
-import Mathlib.CategoryTheory.Monoidal.Cartesian.Grp_
+import Mathlib.CategoryTheory.Monoidal.Cartesian.Grp
 
 /-!
 # Points functor for an affine group scheme over a field

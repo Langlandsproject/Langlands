@@ -39,7 +39,7 @@ For `n = 0`, `ZMod 0 = ℤ` so `μ_0 = G_m` (no constraint). For `n > 0`,
 
 ## Blueprint
 
-A node `linear_algebraic_groups.roots_of_unity_group_scheme` can be
+A node `affine_group_schemes.roots_of_unity_group_scheme` can be
 added; this construction is on the `basic_examples` track.
 
 ## GitHub issue

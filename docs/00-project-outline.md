@@ -53,3 +53,8 @@ homogeneous and spherical spaces, buildings, and the Kottwitz and Kaletha
 structures needed for later Langlands applications.
 
 See [Algebraic Groups and Homogeneous Spaces](topics/algebraic-groups.md).
+
+Within this theme the active push is Bruhat–Tits theory
+(`buildings_and_parahorics`), following Bruhat–Tits I/II and the
+modern treatment of Kaletha–Prasad; the goal-by-goal roadmap lives in
+[TODO.md](TODO.md).

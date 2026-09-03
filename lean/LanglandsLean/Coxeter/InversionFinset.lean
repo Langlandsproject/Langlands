@@ -9,9 +9,9 @@ and every member is a corresponding inversion of the represented element.
 
 No converse membership statement is made here.
 
-## Blueprint
+## Knowledge base
 
-`root_data_and_duality.reduced_word_inversion_finsets`
+`root_data.reduced_word_inversion_finsets`
 
 ## GitHub issue
 
