@@ -58,14 +58,15 @@ Every member of \(R(\omega)\) is a right inversion of the word product of
 \(\omega\), and every member of \(L(\omega)\) is a left inversion of that
 product.
 
-*Proof.*  
+*Proof.*
+
 Mathlib proves that the right and left inversion sequences of a reduced word
 have no duplicates. Passing either sequence to a finite set therefore
 preserves its length. Mathlib also proves that both inversion-sequence lengths
 equal the length of the original word, giving the two cardinality formulas.
 Finally, finite-set membership unfolds to membership in the corresponding
 list, where Mathlib's inversion-sequence membership theorems give the stated
-right or left inversion property.  
+right or left inversion property.
 \(\square\)
 
 This result supplies a finite-set interface to the inversion sequences in
