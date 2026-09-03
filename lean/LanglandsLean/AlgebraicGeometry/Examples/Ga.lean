@@ -38,7 +38,7 @@ get `G_a` as an `IsAlgebraicGroup`.
 
 ## Blueprint
 
-`linear_algebraic_groups.additive_group_scheme`.
+`affine_group_schemes.additive_group_scheme`.
 
 ## GitHub issue
 

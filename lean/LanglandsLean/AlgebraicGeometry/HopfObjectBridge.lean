@@ -1,5 +1,6 @@
 import LanglandsLean.AlgebraicGeometry.Conventions
 import Mathlib.RingTheory.HopfAlgebra.Basic
+import Mathlib.RingTheory.HopfAlgebra.Convolution
 import Mathlib.RingTheory.Coalgebra.Hom
 import Mathlib.RingTheory.Coalgebra.Convolution
 import Mathlib.RingTheory.Bialgebra.TensorProduct
@@ -33,7 +34,7 @@ sides at `a ⊗ b` gives `S(ab) = S(a) · S(b)`.
 
 ## Blueprint
 
-`linear_algebraic_groups.antipode_anti_multiplicativity` (the
+`affine_group_schemes.antipode_anti_multiplicativity` (the
 commutative version corresponds to the simpler formula).
 
 ## GitHub issue
@@ -59,7 +60,7 @@ theorem antipode_anti_multiplicativity (a b : A) :
     HopfAlgebraStruct.antipode (R := R) (a * b) =
       HopfAlgebraStruct.antipode (R := R) b *
         HopfAlgebraStruct.antipode (R := R) a :=
-  HopfAlgebra.antipode_mul (R := R) (A := A) a b
+  HopfAlgebra.antipode_mul_antidistrib (R := R) (A := A) a b
 
 end General
 

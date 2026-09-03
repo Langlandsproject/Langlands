@@ -10,7 +10,7 @@ Langlands program plus a Lean 4 formalization layer.
 
 - Knowledge base: Markdown nodes under `docs/knowledge/nodes/`, organized
   by topic directories.
-- Lean library: `lean/LanglandsLean/` (Lean 4, Mathlib v4.28.0).
+- Lean library: `lean/LanglandsLean/` (Lean 4, Mathlib v4.33.0).
 - Design docs and specs: `docs/superpowers/specs/`.
 
 ## The one rule you must follow
@@ -33,6 +33,89 @@ If a `lean/blueprint/` directory exists in this repo, treat it as
 deprecated scaffolding from a misstep and either ignore it or delete it
 (check with the user first).
 
+## The second rule: definitions are transcriptions, not translations
+
+Every owner review of 2026-08-19 caught the same failure: a Lean
+definition built from whatever object was *available or convenient*
+(group-like elements, Hopf-hom tricks, dual lattices, `Additive`
+stacks, structure-quantifying `∃`) instead of the **normal
+mathematical definition**. The procedure that prevents it:
+
+1. **Write the textbook sentence first.** Before any Lean definition,
+   copy the definiens from the KB node / standard reference into the
+   docstring draft: "X^*(T) := Hom(T, 𝔾ₘ)", "diagonalizable :=
+   isomorphic to k[M]", "cocharacter := hom 𝔾ₘ → T".
+2. **Transcribe token-by-token.** Every object in the Lean definition
+   must correspond to a word in that sentence. `Hom(T, 𝔾ₘ)` →
+   homomorphisms of algebraic groups (`CharacterGroup`). If the Lean
+   spelling contains an object the sentence does not mention
+   (`GroupLike`, a dual, an existential over carriers), the
+   definition is wrong — *by default, before any argument*.
+3. **The name test.** If the API name mentions the avatar
+   (`groupLikeLift`), the design is already wrong; correct names fall
+   out of correct definitions (`charLift`).
+4. **Awkwardness never changes the definition.** If the transcription
+   is hard to work with, the convenient object enters as a *bridge
+   theorem* (with its KB node), and proofs go through the bridge.
+   Bridge nodes license identifications **in proofs — never as
+   definitions**.
+5. **Reuse before define — one object, one name.** Before any object
+   appears in a statement, find its existing name (repo first, then
+   Mathlib: `lean_local_search`, grep). Re-spelling an existing
+   object inline (`AddMonoidAlgebra R ℤ` where `O(𝔾ₘ) =
+   LaurentPolynomial R` is meant) and re-defining it (a hand-rolled
+   second `𝔾ₘ` when `multiplicativeGroup` exists) are both banned.
+   "Hom of algebraic groups" means the categorical hom that already
+   exists (morphisms of `Grp (Over (Spec R))`), never a re-encoded
+   carrier (`WithConv` of Hopf homs) — encodings live on the bridge
+   side, under their own names (`HopfCharacterGroup`).
+6. **`Examples/` holds only illustrations.** Anything referenced by
+   a definition elsewhere is a construction, not an example, and is
+   promoted out of `Examples/` (burned: `Gm`).
+7. **Fixes replace, never layer.** When a review corrects a
+   definition, the old form is *replaced* — not kept under its old
+   name beside the new one, and the concept's name is never handed
+   to a convenience composite over the real definition. Dual pairs
+   (`X^*`/`X_*`) are defined in the same shape, differing only where
+   the mathematics differs (one arrow direction). Burned:
+   `CharacterGroup` briefly became a `CommRingCat.of` composite over
+   `SchemeCharacterGroup` while `CocharacterGroup` was a raw hom —
+   two styles for dual concepts (2026-08-19).
+8. **Plans do not override conventions.** A plan line that encodes a
+   convenient-form definition (it happened: plan M5 said
+   "charLattice := GroupLike…") is a bug in the plan; conventions
+   §6 wins and the plan line gets annotated, not executed.
+
+Full text and the day's case log: `docs/01-design-conventions.md` §6.
+
+## The working order (binding)
+
+2026-08-19 produced six recurring defect classes (avatar-defined
+concepts, non-reuse, invented names, structural violations, drift,
+skipped process). Root causes: generation before design,
+single-constraint fixes, and mechanically checkable rules left
+unmechanized. The standing countermeasures, in execution order:
+
+1. **Ledger first.** Any new or contested design surface starts as a
+   row in `docs/04-design-ledger.md` (textbook sentence, Lean form,
+   working carrier, bridge, names) — checked against the ledger's
+   full constraint set, shown to the owner when the surface is new
+   or contested, and only then implemented. A review correction
+   amends the ledger row first, then the code. Never rotate a design
+   to satisfy only the newest comment.
+2. **Implement small.** The review unit is a ledger row / one node
+   cluster, not a 300-line fait accompli.
+3. **Lint.** `python3 scripts/lint_design.py` before every commit —
+   new findings in touched files are blockers; each check is a
+   mechanized burn (re-spelling, structure-∃, Type ascriptions,
+   universe without pin, module Blueprint stamps, placement).
+4. **Checklist walk + audit.** Walk `docs/03-review-checklist.md`,
+   then audit the change-set against THIS file's rules and write the
+   audit outcome — including findings beyond the change-set — into
+   the commit message.
+5. **Gates.** `tools.knowledge.check` 0 errors,
+   `lean_reverse_check` 0 cross-mismatch, `lake build` green.
+
 ## Where the existing nodes live
 
 - `docs/knowledge/mdblueprint.yml` — project config (site title, math
@@ -48,68 +131,41 @@ are intentionally broad; sub-nodes (definitions, theorems, lemmas,
 constructions, examples) belong under the same topic directory and depend
 on the topic-level node via `uses:`.
 
-## Node format (short reference)
+## Where the rules live (map, not content)
 
-See `~/mycodes/mdblueprint/docs/node-format.md` and
-`~/mycodes/mdblueprint/docs/math-authoring.md` for the full contract.
-Minimal shape:
+| Concern | Authoritative file |
+|---|---|
+| Project purpose, themes | `docs/00-project-outline.md` |
+| **Design constraints** (topic naming, node-id freeze, Lean↔KB linking, gates) | `docs/01-design-conventions.md` |
+| Roadmap and per-goal design decisions | `docs/TODO.md` |
+| Standard 4-step workflow | `docs/02-agent-workflow.md` |
+| Node format, statuses, admission pipeline | `~/mycodes/mdblueprint/docs/node-format.md` |
+| Topic model | `~/mycodes/mdblueprint/docs/topic-model.md` |
+| Math authoring (delimiters, macros) | `~/mycodes/mdblueprint/docs/math-authoring.md` |
+| Per-topic mathematical conventions | the topic entry node (e.g. `tori.algebraic_tori`) |
+| Publishing | `docs/publishing.md`, `scripts/publish_md.py` |
+| **Pre-commit review checklist (binding)** | `docs/03-review-checklist.md` |
+| **Design ledger — settled decisions; amend BEFORE code, owner sign-off to change a row** | `docs/04-design-ledger.md` |
+| Design linter (mechanized review rules) | `scripts/lint_design.py` |
+| Reusable review prompts (plan verification etc.) | `docs/superpowers/prompts/` |
 
-```markdown
----
-id: <full dotted id, e.g. linear_algebraic_groups.affine_group_scheme_definition>
-title: <display title>
-kind: definition | theorem | lemma | corollary | example | construction | topic
-status: admitted
-primary_topic: <topic_id>
-topics:
-  - <topic_id>
-uses:
-  - <other_node_id>
-lean:
-  modules:
-    - <Lean module name>
-  declarations:
-    - <fully-qualified Lean decl>
-verification:
-  statement: accepted | pending
-  proof: accepted | pending | not_applicable
-  alignment: pending
-generality:
-  reviewed: true
-  prompt: "..."
-  verdict: "..."
-tags:
-  - <tag>
----
-
-# <title>
-
-Statement in natural language with inline math \(f : X \to Y\) and
-display math:
-\[
-\Delta(x) = x \otimes 1 + 1 \otimes x.
-\]
-
-*Proof.*  
-Natural-language proof, with [[node:other_node|label]] for
-cross-references. Do **not** use LaTeX `\begin{theorem}` /
-`\begin{proof}` environments — node `kind` and the publisher provide
-styling.
-```
-
-Math conventions:
-
-- Inline: `\(...\)` (preferred) or `$...$`.
-- Display: `\[...\]` (preferred) or `$$...$$`.
-- Project-wide macros live in `docs/knowledge/mdblueprint.yml` under
-  `math.macros`; declare without leading slash, use with leading slash.
-- `[[node:id]]` cross-refs must live outside math delimiters.
+Read `docs/01-design-conventions.md` before creating, renaming, or
+linking anything. **No commit touching KB or Lean without walking
+`docs/03-review-checklist.md`** — the rules exist because they were
+each violated once; the checklist is what makes them fire at the
+right moment. **After every change-set, audit it against the rules
+in this file and record the audit outcome (including findings that
+exceed the change-set, e.g. discovered duplication) in the commit
+message** (owner directive, 2026-08-19).
 
 ## Build and check commands
 
 mdblueprint tools live in `~/mycodes/mdblueprint`. From this repo:
 
 ```bash
+# Design lint (mechanized review rules — run before every commit)
+python3 scripts/lint_design.py
+
 # Static structural + math preflight check
 cd ~/mycodes/mdblueprint
 uv run python -m tools.knowledge.check \
@@ -126,10 +182,24 @@ uv run --extra browser python -m tools.knowledge.render_check \
 ```
 
 Lean side is **not** normally checked with `lake build` during ordinary
-formalization. Use the `lean4` skill plus Archon/Lean LSP MCP for local,
+formalization. Use the lean4-skills below plus Lean LSP MCP for local,
 interactive feedback. `lake build` is reserved for explicit checkpoint,
 CI-parity, or release-style validation, because it is too heavy for normal
 proof iteration.
+
+## Lean skills (installed — invoke by these exact names)
+
+From [cameronfreer/lean4-skills](https://github.com/cameronfreer/lean4-skills),
+installed at `~/.claude/skills/`. There is **no** skill named `lean4`;
+these are the real names:
+
+| Skill | When to invoke |
+|---|---|
+| `lean-sorry-crusher` | **Mandatory for every proof pass** — any session whose goal is filling `sorry`s in a Lean file. Plan/prover/review loop with state files. |
+| `lean-blueprint` | **Do not use for scaffolding here** (this repo uses mdblueprint, see "The one rule"). Reference only, for its Lean↔prose alignment conventions. |
+
+Statement-first passes (definitions + sorry'd statements) use the Lean
+LSP MCP calls below directly; the crusher takes over when proofs start.
 
 Preferred Lean MCP calls:
 
@@ -164,130 +234,75 @@ Full Lean build, only when explicitly needed:
 cd lean && lake build
 ```
 
-## Design conventions (high-level pointers)
+## Design conventions
 
-- Affine algebraic groups: see
-  `docs/superpowers/specs/2026-05-23-affine-algebraic-group-design.md`.
-- Lean idiom for "group scheme over `S`": follow Mathlib's
-  typeclass-on-scheme pattern
-  `(G : Scheme) [G.Over S] [GrpObj (Scheme.asOver G S)]` plus property
-  typeclasses on the structure morphism `(G ↘ S)`. **Do not** introduce
-  bundled types like `GroupScheme S := Grp (Over S)`. Project-specific
-  aggregator typeclasses (`IsAffineGroupScheme`, `IsAlgebraicGroup`) live
-  in `lean/LanglandsLean/AlgebraicGeometry/IsAlgebraicGroup.lean`; the
-  full convention is documented in
-  `lean/LanglandsLean/AlgebraicGeometry/Conventions.lean`.
-- GitHub: issues track milestones grouped by phase (`phase:A`,
-  `phase:B`, `phase:D`, ...). Issue body acceptance criteria are
-  binding; the dependency relation is encoded in the "Blocked by"
-  section. Repo: `Langlandsproject/Langlands`.
+All in `docs/01-design-conventions.md`. The ones broken most often —
+full text and examples are in that file (§6–§8):
+
+1. **Faithful formalization**: Lean definitions mirror the KB
+   statement's form; computed/equivalent descriptions are theorems,
+   never definitions.
+2. **Justified conversions**: every wrapper (`Multiplicative`,
+   `WithConv`, `ULift`, ...) in a public statement needs a
+   conversion-glossary entry in the module docstring.
+3. **No smoke tests**: examples go in `Examples` sections/files;
+   instance checks live in real downstream uses.
+4. **No universe hacking** (full rule: conventions §7): never write
+   `ULift`/universe shims into public statements, and do not add
+   `universe`/`Type*` gymnastics beyond what Mathlib's own signatures
+   force. A universe mismatch means a `Type 0` skeleton
+   (`Fin n → ℤ`) was hard-coded where the definition should be
+   parameterized over a carrier with typeclasses
+   (`[Module.Free ℤ M] [Module.Finite ℤ M]`). Skeletons belong in
+   `Type 0` examples only.
+5. **File contents are node-driven** (full rule: conventions §4):
+   a Lean file = the definitions of one node cluster in one topic;
+   the file's directory = that topic; the namespace matches. Before
+   adding a definition to a file, check the primary topic of its
+   Blueprint node — different topic means different file. Quick
+   audit: `grep -o 'Blueprint: [a-z_.,\ ]*' <file> | sort -u` — the
+   first-listed nodes of definitions must all live in the file's
+   topic. Burned: diagonalizable-group definitions in `Tori/Torus.lean`;
+   Speiser in `Tori/`.
+6. **Mathlib naming, binding** (full rules: conventions §8): types
+   and predicates UpperCamel (`IsTorusAlgebra`); data terms lowerCamel
+   (`descentMap`); theorems snake_case named by conclusion with
+   Mathlib patterns (`_eq_top`, `foo_one`, no typeclass hypotheses in
+   names); no ad-hoc abbreviations. Lean-specific idioms
+(group-scheme typeclass pattern, no bundled `GroupScheme`) are its §6;
+the affine-algebraic-group spec is
+`docs/superpowers/specs/2026-05-23-affine-algebraic-group-design.md`.
+GitHub: issues per phase (`phase:A` ...), repo `Langlandsproject/Langlands`.
 
 ## Standard workflow
 
-For any new mathematical content (a sub-module, a cluster of related
-theorems, a new phase milestone), follow this 4-step pipeline:
-
-### 1. Identify
-
-Read the spec (`docs/superpowers/specs/`) or roadmap. Pick a coherent
-unit: one definition + its immediate properties, one theorem + its
-required lemmas, etc. Do not interleave unrelated topics.
-
-**Mathlib survey (mandatory).** Before drafting blueprint nodes, run a
-short discovery pass to learn what Mathlib actually has. The cheap
-tools to use through Archon/Lean LSP MCP, in order:
-
-1. `lean_local_search` — verify whether a suspected declaration or
-   namespace exists locally before guessing.
-2. `lean_leansearch` — natural-language semantic search across Mathlib
-   (e.g., "antipode anti-multiplicative", "convolution algebra hom",
-   "Yoneda from group object to representable presheaf").
-3. `lean_loogle` — type-pattern search when you have a target signature
-   in mind.
-4. Targeted `grep` against `lean/.lake/packages/mathlib/Mathlib/` for
-   directory hierarchies and namespace conventions.
-
-The survey should produce a one-paragraph "Mathlib state" entry for the
-unit being scoped, listing:
-
-- existing lemmas/definitions to depend on;
-- categorical alternatives (e.g., `CategoryTheory.HopfObj.mul_antipode`
-  lives at the abstract level even when the ring-theoretic version
-  isn't packaged);
-- genuine gaps that should be tracked as their own issues, separate
-  from the main work.
-
-This step catches cases where the gap is engineering (a missing
-bridge instance) rather than mathematics (a missing theorem). The two
-demand very different issue scoping and effort estimates.
-
-### 2. Blueprint
-
-Write mdblueprint nodes under
-`docs/knowledge/nodes/<topic>/<node-id>.md` for every definition,
-theorem, lemma, example, or proof-plan in the unit. Each node has:
-
-- complete YAML frontmatter (id, title, kind, status, primary_topic,
-  topics, uses, verification, generality, tags) — `kind` must be one of
-  `topic | concept | definition | lemma | proposition | theorem | example | proof-plan | external-theorem | task`;
-- precise statement in KaTeX with `\(...\)` / `\[...\]` delimiters;
-- for theorems / lemmas with substantive math, a real natural-language
-  proof in the body — not "see Lean";
-- correct `uses:` list (forms an acyclic DAG);
-- `lean:` field left empty at this stage (it gets filled when the Lean
-  implementation lands).
-
-Run `uv run python -m tools.knowledge.check docs/knowledge` (from
-`~/mycodes/mdblueprint`) until it reports `0 error(s)`. Run
-`uv run python -m tools.knowledge.publish` to materialize the site, and
-visually skim the rendered dep graph if practical.
-
-### 3. Issue
-
-For each blueprint node (or a tightly coupled cluster), create one
-GitHub issue:
-
-- title: `[Phase X] <Implement Lean for ...>` or `<formalize node-id>`;
-- body: link the blueprint node id; restate acceptance criteria;
-  "Blocked by #N" lines mirroring the blueprint `uses` graph;
-- labels: `phase:X` + `area:algebraic-geometry` (or other area label);
-- milestone: the phase's milestone (create one if not present).
-
-Use `gh issue create` with bodies authored as files in `/tmp/`.
-
-### 4. Execute
-
-Implement in Lean following the DAG order from the blueprint. Per issue:
-
-- activate/read the `lean4` skill if available, then use Archon/Lean LSP
-  MCP as the primary formalization interface;
-- write the Lean code; aim for minimal stubs over speculative
-  refactors; `sorry` only with a documented gap;
-- after each focused edit, run `lean_diagnostic_messages` on the touched
-  file; use `lean_goal`, `lean_hover_info`, and `lean_multi_attempt` for
-  proof states and tactic experiments;
-- update the corresponding blueprint node:
-  `lean.modules`, `lean.declarations`, and
-  `verification.alignment: aligned`;
-- re-run mdblueprint check (green); run shell `lake build` only when the
-  user explicitly asks for a full checkpoint/CI-style verification;
-- commit with a body that names the blueprint node and the issue;
-- close the issue with a comment naming the commit.
-
-### Why this pipeline
-
-Two reasons, learned the hard way:
-
-1. **Blueprint-first prevents over-commitment in Lean.** Writing the
-   natural-language proof first forces honesty about what's actually
-   provable and identifies the right Mathlib hooks (or gaps) before
-   investing in code that may need to be rewritten.
-2. **Issues-from-blueprint keeps the formalization tractable.** Each
-   issue is one node; "Blocked by" mirrors a mathematical dependency,
-   not an engineering preference. The PR-per-node granularity matches
-   what a single focused session can finish.
+See `docs/02-agent-workflow.md` for the 4-step pipeline
+(Identify → Blueprint → Formalize → Link). Mathlib survey before
+drafting is mandatory; LSP diagnostics over shell `lake build` for
+the inner loop.
 
 ## Things that have burned us before
+
+- **Avatar-based definitions, three relapses in one day**
+  (2026-08-19): X^* as group-likes (twice at definition sites, once
+  more as `CharLattice := Additive (GroupLike …)`), diagonalizability
+  as `groupLikeLift` bijectivity with the avatar in the API name.
+  Each time the fix was the same: define via `Hom(−, 𝔾ₘ)`
+  (`CharacterGroup`), demote the avatar to a bridge theorem. See
+  "The second rule" above.
+- **Structure-quantifying existentials and inverted hierarchies**
+  (2026-08-19, owner-caught): `IsTorusAlgebra := ∃ M
+  (_ : AddCommGroup M), …` and torus defined without reference to
+  diagonalizable. Rules: conventions §6 ("transcribe the hierarchy")
+  and §7 ("no structure quantification in propositions"). Root
+  cause both times: mechanically pattern-matching a fresh rule /
+  goal-fixation instead of design reasoning.
+- **Availability-driven definitions** (three review rounds on
+  2026-08-19): defining X^* as group-likes / Hopf homs because Mathlib
+  made them cheap, when the KB definiens is group-scheme homs. Root
+  cause and the two rules that prevent it (statement-driven
+  transcription; bridge identifications need KB nodes first):
+  `docs/01-design-conventions.md` §6.
 
 - **Setting up a parallel PFR-style TeX blueprint** when this project
   uses mdblueprint. Cost: one full chat session of wasted scaffolding
