@@ -11,6 +11,7 @@ This catalog lists topic-level nodes under the `root_data_and_duality` mathemati
 - [[node:root_data.central_isogenies_and_duality|Central Isogenies and Duality]]
 - [[node:root_data.classification_of_split_reductive_groups|Classification of Split Reductive Groups]]
 - [[node:root_data.coxeter_systems_and_bruhat_order|Coxeter Systems and Bruhat Order]]
+- [[node:root_data.reduced_word_inversion_finsets|Reduced-Word Inversion Sequences as Finite Sets]]
 - [[node:root_data.dual_reductive_groups|Dual Reductive Groups]]
 - [[node:root_data.dual_root_data|Dual Root Data]]
 - [[node:root_data.dual_root_systems|Dual Root Systems]]
