@@ -22,9 +22,9 @@ is the **Step 2** of the Yoneda construction of `hopfSpec`: combined
 with representability (Step 3), `GrpObj.ofRepresentableBy` then yields
 the group object structure on `Spec A` (Step 4).
 
-## Blueprint
+## Knowledge base
 
-`linear_algebraic_groups.hopf_spec_grpobj_via_yoneda` (Step 1).
+`affine_group_schemes.hopf_spec_grpobj_via_yoneda` (Step 1).
 
 ## GitHub issue
 
@@ -279,11 +279,12 @@ morphism `algebraMap R A`. -/
 noncomputable def specObjOver : Over (Scheme.Spec.obj (op R)) :=
   Over.mk (Scheme.Spec.map (op (CommRingCat.ofHom (algebraMap R A))))
 
+set_option backward.isDefEq.respectTransparency.types false in
 /-- Forward map: a morphism `T ⟶ specObjOver R A` in `Over (Spec R)`
 yields an `R`-algebra hom `A →ₐ[R] Γ(T.left, ⊤)` by applying `Γ`
 (i.e., `f.left.appTop`) and pre-composing with the `ΓSpec` iso.
 
-Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+Blueprint: affine_group_schemes.spec_representability_via_global_sections
 -/
 noncomputable def homOverToAlgHom (T : Over (Scheme.Spec.obj (op R)))
     (f : T ⟶ specObjOver R A) :
@@ -336,11 +337,12 @@ noncomputable def homOverToAlgHom (T : Over (Scheme.Spec.obj (op R)))
         rfl
       exact key.symm }
 
+set_option backward.isDefEq.respectTransparency false in
 /-- Backward map: an R-algebra hom `φ : A →ₐ[R] Γ(T.left, ⊤)` yields a
 morphism `T ⟶ specObjOver R A` in `Over (Spec R)` via the `Γ ⊣ Spec`
 adjunction.
 
-Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+Blueprint: affine_group_schemes.spec_representability_via_global_sections
 -/
 noncomputable def algHomToHomOver (T : Over (Scheme.Spec.obj (op R)))
     (φ : letI := gammaAlgebra R T; A →ₐ[R] Γ(T.left, ⊤)) :
@@ -398,11 +400,12 @@ noncomputable def algHomToHomOver (T : Over (Scheme.Spec.obj (op R)))
       rw [hop]
       exact hTHom)
 
+set_option backward.isDefEq.respectTransparency false in
 /-- The representability witness: the forgetful image of
 `pointsPresheaf` is naturally isomorphic to `Hom_{Over Spec R}(-, Spec A)`,
 hence representable by `specObjOver R A`.
 
-Blueprint: linear_algebraic_groups.spec_representability_via_global_sections
+Blueprint: affine_group_schemes.spec_representability_via_global_sections
 -/
 noncomputable def specRepresentability :
     (pointsPresheaf R A ⋙ forget GrpCat).RepresentableBy (specObjOver R A) where
@@ -449,7 +452,7 @@ noncomputable def specRepresentability :
             CommRingCat.of (Γ(T.left, ⊤) : CommRingCat)) => r.hom a) hunop
         -- The LHS reduces to ((ΓSpecIso A).inv ≫ ...).hom a,
         -- the RHS to (CommRingCat.ofHom φ.toRingHom).hom a = φ a.
-        simpa using this }
+        simpa [homOverToAlgHom, algHomToHomOver] using this }
   homEquiv_comp := by
     intro X X' g f
     -- Naturality of the homEquiv: both sides reduce to the AlgHom
@@ -495,5 +498,10 @@ via the Yoneda lemma from the convolution group on
 noncomputable def hopfSpecGrpObj : GrpObj (specObjOver R A) :=
   GrpObj.ofRepresentableBy (specObjOver R A) (pointsPresheaf R A)
     (specRepresentability R A)
+
+/-- `hopfSpecGrpObj` as an instance: `Spec A` of a Hopf algebra is a
+group object, canonically. -/
+noncomputable instance specObjOver.instGrpObj : GrpObj (specObjOver R A) :=
+  hopfSpecGrpObj R A
 
 end Langlands.AlgebraicGeometry.AlgHomPointsPresheaf

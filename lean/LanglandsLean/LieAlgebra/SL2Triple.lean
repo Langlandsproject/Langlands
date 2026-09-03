@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Lie.Matrix
 import Mathlib.Algebra.Lie.Nilpotent
+import Mathlib.Algebra.Lie.AdjointAction.Basic
 import Mathlib.LinearAlgebra.Matrix.Notation
 import Mathlib.Tactic
 
@@ -11,6 +12,8 @@ open scoped Matrix
 abbrev Mat2 (K : Type*) := Matrix (Fin 2) (Fin 2) K
 
 variable (K : Type*) [CommRing K]
+
+attribute [local instance 100] LieRing.ofAssociativeRing
 
 def e : Mat2 K := !![0, 1; 0, 0]
 
@@ -53,7 +56,7 @@ theorem f_isNilpotent : IsNilpotent (f K) := by
 
 theorem ad_e_isNilpotent :
     IsNilpotent (LieAlgebra.ad K (Mat2 K) (e K)) :=
-  LieAlgebra.ad_nilpotent_of_nilpotent K (e_isNilpotent K)
+  LieAlgebra.ad_nilpotent_of_nilpotent (R := K) (e_isNilpotent K)
 
 end StandardMatrixSL2
 end LanglandsLean

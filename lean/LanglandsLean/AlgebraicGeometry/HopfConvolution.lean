@@ -29,7 +29,7 @@ operation on `A →ₐ[R] B`. The further node
 
 ## Blueprint node
 
-`linear_algebraic_groups.algebra_hom_convolution`.
+`affine_group_schemes.algebra_hom_convolution`.
 
 ## GitHub issue
 
@@ -72,7 +72,7 @@ multiplication `Algebra.TensorProduct.lmul'` — which is automatically
 an algebra hom.
 
 Blueprint node:
-`linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom`.
+`affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom`.
 GitHub issue: #15.
 -/
 
@@ -96,7 +96,7 @@ g` is an algebra hom because `f, g` are; the multiplication
 `Algebra.TensorProduct.lmul'` of a commutative algebra is an algebra
 hom).
 
-Blueprint: linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
+Blueprint: affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom
 -/
 noncomputable def convAlg {B : Type*} [CommSemiring B] [Algebra R B]
     (f g : A →ₐ[R] B) : A →ₐ[R] B :=
@@ -106,7 +106,7 @@ noncomputable def convAlg {B : Type*} [CommSemiring B] [Algebra R B]
 /-- The underlying linear map of `convAlg f g` agrees with the
 `convLinear f g` definition.
 
-Blueprint: linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
+Blueprint: affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom
 -/
 theorem convAlg_toLinearMap {B : Type*} [CommSemiring B] [Algebra R B]
     (f g : A →ₐ[R] B) :
@@ -118,7 +118,7 @@ theorem convAlg_toLinearMap {B : Type*} [CommSemiring B] [Algebra R B]
 
 /-- Pointwise: `convAlg f g a = convLinear f g a`.
 
-Blueprint: linear_algebraic_groups.convolution_of_algebra_homs_is_algebra_hom
+Blueprint: affine_group_schemes.convolution_of_algebra_homs_is_algebra_hom
 -/
 theorem convAlg_apply {B : Type*} [CommSemiring B] [Algebra R B]
     (f g : A →ₐ[R] B) (a : A) : convAlg f g a = convLinear f g a := by

@@ -1,0 +1,14 @@
+// Zed reads this per worktree — there is no global debug.json, so every Lean
+// project needs its own copy.
+//
+// "Lean Goals" is not a debugger: the lean-goalview DAP adapter presents the
+// goal state at the cursor as a permanently-suspended frame, so the Variables
+// tree becomes an infoview. It reads the proxy's socket, so the Lean LSP must
+// already be running — open a .lean file first, then hit ▶ in the Debug panel.
+[
+  {
+    "label": "Lean Goals",
+    "adapter": "lean-goalview",
+    "request": "launch"
+  }
+]

@@ -27,16 +27,8 @@ DEFAULT_MDBLUEPRINT_ROOT = Path(os.environ.get("MDBLUEPRINT_ROOT", "~/mycodes/md
 DEFAULT_PAGES_ROOT = Path(os.environ.get("PAGES_ROOT", "~/mydoc/jiajunma.github.io")).expanduser()
 DEFAULT_PAGES_SUBDIR = "Langlands"
 EXPECTED_ROOT_TOPICS = {
-    "foundational_inputs",
-    "linear_algebraic_groups",
-    "descent_and_forms",
-    "reductive_structure",
-    "root_data_and_duality",
-    "classical_and_exceptional_groups",
-    "buildings_and_parahorics",
-    "kottwitz_structures",
-    "conjugacy_classes",
-    "bd_covers",
+    "Foundations",
+    "AlgebraicGroups",
 }
 
 
@@ -265,8 +257,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             pages = [
                 "index.html",
                 "dep_graph_document.html",
-                "linear_algebraic_groups/index.html",
-                "root_data_and_duality/root_data_and_duality_root_data.html",
+                "AlgebraicGroups/Tori/index.html",
+                "AlgebraicGroups/Tori/tori_f_tori_galois_module_classification.html",
             ]
         render_check(paths, pages, dry_run=args.dry_run)
         sync_pages(paths, dry_run=args.dry_run)

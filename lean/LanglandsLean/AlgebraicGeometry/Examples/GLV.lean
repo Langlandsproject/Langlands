@@ -24,7 +24,7 @@ This file defines `GLV R V` as `GLn R (Module.finrank R V)` — i.e., as
 A basis-free, intrinsically defined `GL(V)` would require constructing
 the automorphism group scheme of `V` directly (via the functor
 `B ↦ (V ⊗_R B)ˣ` and a representability theorem); see the blueprint
-node `linear_algebraic_groups.general_linear_group_of_module` for the
+node `linear_algebraic_groups.gl_v_group_scheme` for the
 mathematical statement.
 
 ## Main declarations

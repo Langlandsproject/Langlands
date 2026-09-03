@@ -46,7 +46,7 @@ structure on the coordinate ring) is **not yet installed** — it requires:
    reducible to checking on the generators `X_{ij}`).
 
 This is a substantial follow-up (~300-500 LoC). See blueprint node
-`linear_algebraic_groups.general_linear_group_scheme`.
+`affine_group_schemes.general_linear_group_scheme`.
 
 ## Main declarations
 
@@ -153,7 +153,7 @@ needed:
 The construction is documented in any standard reference (e.g.,
 Waterhouse "Introduction to Affine Group Schemes", §1.5) but the
 formalization is ~300-500 LoC. Tracked in blueprint
-`linear_algebraic_groups.general_linear_group_scheme` (status:
+`affine_group_schemes.general_linear_group_scheme` (status:
 `admitted`, awaiting Lean implementation).
 
 Once installed, the IsAlgebraicGroup instance follows automatically
